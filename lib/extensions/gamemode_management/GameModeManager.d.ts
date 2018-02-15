@@ -1,0 +1,69 @@
+/// <reference types="bluebird" />
+import { IGame } from '../../types/IGame';
+import { IState } from '../../types/IState';
+import * as Promise from 'bluebird';
+import * as Redux from 'redux';
+/**
+ * discovers game modes
+ *
+ * @class GameModeManager
+ */
+declare class GameModeManager {
+    private mBasePath;
+    private mError;
+    private mStore;
+    private mKnownGames;
+    private mActiveSearch;
+    private mOnGameModeActivated;
+    constructor(basePath: string, extensionGames: IGame[], onGameModeActivated: (mode: string) => void);
+    /**
+     * attach this manager to the specified store
+     *
+     * @param {Redux.Store<IStateEx>} store
+     *
+     * @memberOf GameModeManager
+     */
+    attachToStore(store: Redux.Store<IState>): void;
+    /**
+     * update the game mode being managed
+     *
+     * @param {string} newMode
+     *
+     * @memberOf GameModeManager
+     */
+    setGameMode(oldMode: string, newMode: string): Promise<void>;
+    /**
+     * prepare change to a different game mode
+     *
+     * @param {string} gameMode
+     * @returns {Promise<void>}
+     *
+     * @memberOf GameModeManager
+     */
+    setupGameMode(gameMode: string): Promise<void>;
+    readonly games: IGame[];
+    /**
+     * starts game discovery, only using the search function from the game
+     * extension
+     *
+     * @memberOf GameModeManager
+     */
+    startQuickDiscovery(): Promise<string[]>;
+    /**
+     * start game discovery using known files
+     *
+     * @memberOf GameModeManager
+     */
+    startSearchDiscovery(): void;
+    /**
+     * stop search discovery
+     *
+     * @memberOf GameModeManager
+     */
+    stopSearchDiscovery(): void;
+    private storeGame;
+    private storeTool(tool);
+    private onDiscoveredTool;
+    private onDiscoveredGame;
+}
+export default GameModeManager;
