@@ -182,6 +182,9 @@ export interface ISettingsMods {
         [gameId: string]: string;
     };
 }
+export interface ISettingsUpdate {
+    channel: 'stable' | 'beta' | 'none';
+}
 export interface ISettings {
     interface: ISettingsInterface;
     gameMode: ISettingsGameMode;
@@ -190,6 +193,7 @@ export interface ISettings {
     downloads: ISettingsDownloads;
     mods: ISettingsMods;
     tables: ITableStates;
+    update: ISettingsUpdate;
 }
 export interface ISessionGameMode {
     known: IGameStored[];

@@ -12,4 +12,4 @@ export declare function resolveCategoryPath(category: string, state: IState): st
  * @param {number} category
  * @param {Redux.Store<any>} store
  */
-export declare function resolveCategoryName(category: string, state: IState): any;
+export declare function resolveCategoryName(category: string, state: IState): {};

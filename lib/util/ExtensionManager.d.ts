@@ -108,7 +108,7 @@ declare class ExtensionManager {
     private saveModMeta;
     private openArchive;
     private loadDynamicExtension(extensionPath);
-    private loadDynamicExtensions(extensionsPath);
+    private loadDynamicExtensions(extensionsPath, loadedExtensions);
     /**
      * retrieves all extensions to the base functionality, both the static
      * and external ones.
