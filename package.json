@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "bin": { "extractInfo": "./bin/extractInfo.js" },
   "scripts": {
+    "doc": "typedoc.cmd ../src/index.ts",
     "build": "tsc -p . -d"
   },
   "typings": "lib/index",
