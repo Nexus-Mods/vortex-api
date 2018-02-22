@@ -6,5 +6,5 @@ Technically you don't need this module. When your extension run (regularly), vor
 
 # API Reference
 
-The API reference is available at https://Nexus-Mods.github.io/vortex-api.
+The API reference is available at https://nexus-mods.github.io/vortex-api.
 However, for technical reasons this reference may currently contain classes and interfaces that are not actually exposed through the api.
