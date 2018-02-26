@@ -31,4 +31,8 @@ export declare class Archive {
      * create this archive from the files in sourcePath
      */
     readonly create: (sourcePath: string) => Promise<void>;
+    /**
+     * add a single file to the archive
+     */
+    readonly addFile: (filePath: string, sourcePath: string) => Promise<void>;
 }
