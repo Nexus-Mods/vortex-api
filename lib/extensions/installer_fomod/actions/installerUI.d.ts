@@ -1,4 +1,6 @@
-export declare const startDialog: any;
-export declare const endDialog: any;
-export declare const setDialogState: any;
-export declare const setInstallerDataPath: any;
+import { IInstallerInfo, IInstallerState } from '../types/interface';
+import * as reduxAct from 'redux-act';
+export declare const startDialog: reduxAct.ComplexActionCreator1<IInstallerInfo, any, {}>;
+export declare const endDialog: reduxAct.EmptyActionCreator;
+export declare const setDialogState: reduxAct.ComplexActionCreator1<IInstallerState, any, {}>;
+export declare const setInstallerDataPath: reduxAct.ComplexActionCreator1<string, any, {}>;

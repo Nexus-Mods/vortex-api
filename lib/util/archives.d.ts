@@ -11,9 +11,24 @@ import * as Promise from 'bluebird';
 export declare class Archive {
     private mHandler;
     constructor(handler: IArchiveHandler);
+    /**
+     * list files at the specified path
+     */
     readonly readDir: (archivePath: string) => Promise<string[]>;
+    /**
+     * read a file at the specified path via a stream
+     */
     readonly readFile: (filePath: string) => NodeJS.ReadableStream;
+    /**
+     * extract a single file
+     */
     readonly extractFile: (filePath: string, outputPath: string) => Promise<void>;
+    /**
+     * extract the entire archive
+     */
     readonly extractAll: (outputPath: string) => Promise<void>;
+    /**
+     * create this archive from the files in sourcePath
+     */
     readonly create: (sourcePath: string) => Promise<void>;
 }

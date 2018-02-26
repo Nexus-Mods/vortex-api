@@ -2,23 +2,31 @@
 import { DialogActions, DialogType, IDialogContent, IDialogResult } from '../types/IDialog';
 import { INotification } from '../types/INotification';
 import * as Promise from 'bluebird';
+import * as reduxAct from 'redux-act';
 export * from '../types/IDialog';
 /**
  * adds a notification to be displayed. Takes one parameter of type INotification. The id may be
  * left unset, in that case one will be generated
  * TODO: this stores a function into the store which seems to work but isn't supported
  */
-export declare const startNotification: any;
+export declare const startNotification: reduxAct.ComplexActionCreator1<any, any, {}>;
 /**
  * dismiss a notification. Takes the id of the notification
  */
-export declare const dismissNotification: any;
+export declare const dismissNotification: reduxAct.ComplexActionCreator1<any, any, {}>;
 /**
  * show a modal dialog to the user
  *
  * don't call this directly, use showDialog
  */
-export declare const addDialog: any;
+export declare const addDialog: reduxAct.ComplexActionCreator6<string, string, string, IDialogContent, string, string[], {
+    id: string;
+    type: string;
+    title: string;
+    content: IDialogContent;
+    defaultAction: string;
+    actions: string[];
+}, {}>;
 /**
  * dismiss the dialog being displayed
  *
@@ -26,7 +34,7 @@ export declare const addDialog: any;
  * you leak (a tiny amount of) memory and the action callbacks aren't called.
  * Use closeDialog instead
  */
-export declare const dismissDialog: any;
+export declare const dismissDialog: reduxAct.ComplexActionCreator1<any, any, {}>;
 /**
  * show a notification
  *

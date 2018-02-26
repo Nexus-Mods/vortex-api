@@ -1,3 +1,8 @@
-export declare const setPhaseCount: any;
-export declare const discoveryProgress: any;
-export declare const discoveryFinished: any;
+import * as reduxAct from 'redux-act';
+export declare const setPhaseCount: reduxAct.ComplexActionCreator1<{}, {}, {}>;
+export declare const discoveryProgress: reduxAct.ComplexActionCreator3<number, number, string, {
+    idx: number;
+    percent: number;
+    directory: string;
+}, {}>;
+export declare const discoveryFinished: reduxAct.EmptyActionCreator;

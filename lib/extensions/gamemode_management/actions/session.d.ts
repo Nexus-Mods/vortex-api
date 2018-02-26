@@ -1,4 +1,5 @@
+import * as reduxAct from 'redux-act';
 /**
  * sets the list of known/supported games
  */
-export declare const setKnownGames: any;
+export declare const setKnownGames: reduxAct.ComplexActionCreator1<{}, {}, {}>;

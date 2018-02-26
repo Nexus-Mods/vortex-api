@@ -1,1 +1,2 @@
-export declare const showCategoriesDialog: any;
+import * as reduxAct from 'redux-act';
+export declare const showCategoriesDialog: reduxAct.ComplexActionCreator1<{}, {}, {}>;

@@ -8,7 +8,7 @@
     "doc": "typedoc.cmd ../src/index.ts",
     "build": "tsc -p . -d"
   },
-  "typings": "lib/index",
+  "typings": "lib/index.d.ts",
   "files": [
     "lib/",
     "bin/"
