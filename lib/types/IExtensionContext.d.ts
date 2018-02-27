@@ -127,6 +127,7 @@ export interface IArchiveHandler {
     extractAll(outputPath: string): Promise<void>;
     addFile?(filePath: string, sourcePath: string): Promise<void>;
     create?(sourcePath: string): Promise<void>;
+    write?(): Promise<void>;
 }
 export declare type ArchiveHandlerCreator = (fileName: string, options: IArchiveOptions) => Promise<IArchiveHandler>;
 export declare type AttributeExtractor = (modInfo: any, modPath: string) => Promise<{

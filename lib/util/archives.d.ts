@@ -35,4 +35,5 @@ export declare class Archive {
      * add a single file to the archive
      */
     readonly addFile: (filePath: string, sourcePath: string) => Promise<void>;
+    readonly write: () => Promise<void>;
 }

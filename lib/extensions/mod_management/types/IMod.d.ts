@@ -10,7 +10,7 @@ export interface IMod {
     state: ModState;
     type: string;
     archiveId?: string;
-    installationPath?: string;
+    installationPath: string;
     attributes: {
         [id: string]: any;
     };
