@@ -56,13 +56,13 @@ export interface IDashletOptions {
 }
 export declare type RegisterDashlet = (title: string, width: 1 | 2 | 3, height: 1 | 2 | 3 | 4 | 5, position: number, component: React.ComponentClass<any>, isVisible: (state) => boolean, props: PropsCallback, options: IDashletOptions) => void;
 export declare type RegisterDialog = (id: string, element: React.ComponentClass<any> | React.StatelessComponent<any>, props?: PropsCallback) => void;
-export declare type ToDoType = 'settings' | 'search' | 'more';
+export declare type ToDoType = 'settings' | 'search' | 'workaround' | 'more';
 export interface IToDoButton {
     text: string;
     icon: string;
     onClick: () => void;
 }
-export declare type RegisterToDo = (id: string, type: ToDoType, props: () => any, icon: ((props: any) => JSX.Element) | string, text: ((t: I18next.TranslationFunction, props: any) => JSX.Element) | string, action: (props: any) => void, condition: (props: any) => boolean, value: ((t: I18next.TranslationFunction, props: any) => JSX.Element) | string, priority: number) => void;
+export declare type RegisterToDo = (id: string, type: ToDoType, props: (state: any) => any, icon: ((props: any) => JSX.Element) | string, text: ((t: I18next.TranslationFunction, props: any) => JSX.Element) | string, action: (props: any) => void, condition: (props: any) => boolean, value: ((t: I18next.TranslationFunction, props: any) => JSX.Element) | string, priority: number) => void;
 export interface IRegisterProtocol {
     (protocol: string, callback: (url: string) => void): any;
 }
