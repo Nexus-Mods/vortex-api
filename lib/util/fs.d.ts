@@ -11,3 +11,4 @@ export declare function copyAsync(src: string, dest: string, options?: RegExp | 
 export declare function removeAsync(dirPath: string): Promise<void>;
 export declare function unlinkAsync(dirPath: string): Promise<void>;
 export declare function rmdirAsync(dirPath: string): Promise<void>;
+export declare function ensureDirWritableAsync(dirPath: string, confirm: () => Promise<void>): Promise<void>;

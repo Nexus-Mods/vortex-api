@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { IExtensionApi } from './IExtensionContext';
 /**
  * the context object passed along with all components

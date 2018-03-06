@@ -1,3 +1,4 @@
+/// <reference types="react" />
 /**
  * React Component Wrapper for async require. This requires the
  * component asynchronously (assuming it's the default export),

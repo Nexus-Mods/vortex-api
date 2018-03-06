@@ -61,6 +61,7 @@ declare class GameModeManager {
      * @memberOf GameModeManager
      */
     stopSearchDiscovery(): void;
+    private ensureWritable(modPath);
     private storeGame;
     private storeTool(tool);
     private onDiscoveredTool;
