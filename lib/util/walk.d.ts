@@ -2,6 +2,9 @@
 /// <reference types="bluebird" />
 import * as fs from './fs';
 import * as Promise from 'bluebird';
+export interface IWalkOptions {
+    ignoreErrors?: string[] | true;
+}
 /**
  * recursively walk the target directory
  *
@@ -12,5 +15,5 @@ import * as Promise from 'bluebird';
  *                       rejected, the walk is interrupted
  * @returns {Promise<void>} a promise that is resolved once the search is complete
  */
-declare function walk(target: string, callback: (iterPath: string, stats: fs.Stats) => Promise<any>): Promise<void>;
+declare function walk(target: string, callback: (iterPath: string, stats: fs.Stats) => Promise<any>, options?: IWalkOptions): Promise<void>;
 export default walk;

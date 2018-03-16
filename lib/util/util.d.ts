@@ -77,3 +77,9 @@ export declare function spawnSelf(args: string[]): void;
 export declare function bytesToString(bytes: number): string;
 export declare function encodeHTML(input: string): string;
 export declare function decodeHTML(input: string): string;
+/**
+ * test if a directory is a sub-directory of another one
+ * @param child path of the presumed sub-directory
+ * @param parent path of the presumed parent directory
+ */
+export declare function isChildPath(child: string, parent: string): boolean;

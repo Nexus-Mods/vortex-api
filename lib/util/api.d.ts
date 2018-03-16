@@ -5,7 +5,9 @@ import { resolveCategoryName, resolveCategoryPath } from '../extensions/category
 import { getGame, getGames } from '../extensions/gamemode_management';
 import deriveModInstallName from '../extensions/mod_management/modIdManager';
 import renderModName from '../extensions/mod_management/util/modName';
+import resolvePath from '../extensions/mod_management/util/resolvePath';
 import sortMods from '../extensions/mod_management/util/sort';
+import testModReference from '../extensions/mod_management/util/testModReference';
 import { Archive } from './archives';
 import AsyncComponent from './AsyncComponent';
 import copyRecursive from './copyRecursive';
@@ -26,7 +28,7 @@ import steam, { ISteamEntry } from './Steam';
 import runThreaded from './thread';
 import { bytesToString, copyFileAtomic, isNullOrWhitespace, removePersistent, setdefault } from './util';
 import walk from './walk';
-export { Archive, AsyncComponent, bytesToString, copyFileAtomic, copyRecursive, Debouncer, delayed, deriveModInstallName as deriveInstallName, extend, getCurrentLanguage, getGame, getGames, getNormalizeFunc, isNullOrWhitespace, LazyComponent, lazyRequire, makeReactive, Normalize, NotSupportedError, ProcessCanceled, ReduxProp, relativeTime, removePersistent, renderModName, resolveCategoryName, resolveCategoryPath, runElevated, runThreaded, setdefault, sortMods, steam, ISteamEntry, terminate, UserCanceled, walk };
+export { Archive, AsyncComponent, bytesToString, copyFileAtomic, copyRecursive, Debouncer, delayed, deriveModInstallName as deriveInstallName, extend, getCurrentLanguage, getGame, getGames, getNormalizeFunc, isNullOrWhitespace, LazyComponent, lazyRequire, makeReactive, Normalize, NotSupportedError, ProcessCanceled, ReduxProp, relativeTime, removePersistent, renderModName, resolveCategoryName, resolveCategoryPath, resolvePath, runElevated, runThreaded, setdefault, sortMods, steam, ISteamEntry, terminate, testModReference, UserCanceled, walk };
 export declare type TextGroup = 'mod';
 import * as I18next from 'i18next';
 export declare function getText(group: TextGroup, textId: string, t: I18next.TranslationFunction): any;

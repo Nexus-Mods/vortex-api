@@ -1,6 +1,6 @@
 /// <reference types="bluebird" />
 import { IModType } from '../extensions/gamemode_management/types/IModType';
-import { IDiscoveryResult } from './IState';
+import { IDiscoveryResult, IMod } from './IState';
 import { ITool } from './ITool';
 import * as Promise from 'bluebird';
 export { IModType };
@@ -70,13 +70,16 @@ export interface IGame extends ITool {
      *          true then the file will be placed as c:/awesomegame/mods/crazytexture.dds.
      *          If mergeMods is false then it will be c:/awesomegame/mods/crazymod/crazytexture.dds.
      *
-     * Note: This flag is currently not used, vortex always acts as if mergeMods was true, the
-     *   additional directory level is introduced by the mod installer
-     *
-     * @type {boolean}
-     * @memberOf IGame
+     * Note: For many games the mods are already packaged in such a way that the mod has an
+     *       additional subdirectory. In games where this is the standard, mergeMods should be true,
+     *       otherwise Vortex would be introducing one more directory level.
+     * Note: This should be considered together with "stop folder" handling: If the installer has
+     *       stop folders set up for a game it will attempt to eliminate "unnecessary" sub
+     *       directories from the mod package.
+     * TODO The name "mergeMods" is horrible since we also talk about "merging" in the context of
+     *      combining individual files (archives) during mod deployment which is independent of this
      */
-    mergeMods: boolean;
+    mergeMods: boolean | ((mod: IMod) => string);
     /**
      * determines if a file is to be merged with others with the same path, instead of the
      * highest-priority one being used. This only work if support for repackaging the file type

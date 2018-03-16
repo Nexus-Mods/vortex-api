@@ -1,19 +1,18 @@
 /// <reference types="bluebird" />
 import { DialogActions, DialogType, IDialogContent, IDialogResult } from '../types/IDialog';
-import { INotification } from '../types/INotification';
+import { INotification, NotificationDismiss } from '../types/INotification';
 import * as Promise from 'bluebird';
 import * as reduxAct from 'redux-act';
 export * from '../types/IDialog';
 /**
  * adds a notification to be displayed. Takes one parameter of type INotification. The id may be
  * left unset, in that case one will be generated
- * TODO: this stores a function into the store which seems to work but isn't supported
  */
 export declare const startNotification: reduxAct.ComplexActionCreator1<any, any, {}>;
 /**
  * dismiss a notification. Takes the id of the notification
  */
-export declare const dismissNotification: reduxAct.ComplexActionCreator1<any, any, {}>;
+export declare const stopNotification: reduxAct.ComplexActionCreator1<any, any, {}>;
 /**
  * show a modal dialog to the user
  *
@@ -35,6 +34,7 @@ export declare const addDialog: reduxAct.ComplexActionCreator6<string, string, s
  * Use closeDialog instead
  */
 export declare const dismissDialog: reduxAct.ComplexActionCreator1<any, any, {}>;
+export declare function fireNotificationAction(notiId: string, notiProcess: string, action: number, dismiss: NotificationDismiss): void;
 /**
  * show a notification
  *
@@ -43,6 +43,7 @@ export declare const dismissDialog: reduxAct.ComplexActionCreator1<any, any, {}>
  * @returns
  */
 export declare function addNotification(notification: INotification): (dispatch: any) => Promise<void>;
+export declare function dismissNotification(id: string): (dispatch: any) => Promise<void>;
 /**
  * show a dialog
  *
@@ -55,3 +56,4 @@ export declare function addNotification(notification: INotification): (dispatch:
  */
 export declare function showDialog(type: DialogType, title: string, content: IDialogContent, actions: DialogActions): (dispatch: any) => Promise<IDialogResult>;
 export declare function closeDialog(id: string, actionKey: string, input: any): (dispatch: any) => void;
+export declare function triggerDialogLink(id: string, idx: number): void;
