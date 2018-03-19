@@ -1,6 +1,7 @@
 /// <reference types="bluebird" />
 import { IError } from '../types/IError';
 import * as Promise from 'bluebird';
+export declare function genHash(error: IError): any;
 export declare function createErrorReport(type: string, error: IError, labels?: string[]): void;
 export declare function sendReport(fileName: string): Promise<void>;
 /**
