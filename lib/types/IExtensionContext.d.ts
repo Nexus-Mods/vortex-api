@@ -21,6 +21,8 @@ import * as I18next from 'i18next';
 import { ILookupResult, IModInfo, IReference } from 'modmeta-db';
 import * as React from 'react';
 import * as Redux from 'redux';
+import { IDialogContent, DialogActions } from './api';
+import { DialogType, IDialogResult } from './IDialog';
 export { TestSupported, IInstallResult, IInstruction, IDeployedFile, IDeploymentMethod, IFileChange, InstallFunc, ISupportedResult, ProgressDelegate };
 export declare type PropsCallback = () => any;
 /**
@@ -170,6 +172,18 @@ export declare type MergeTest = (game: IGame, gameDiscovery: IDiscoveryResult) =
  * callback to do the actual merging
  */
 export declare type MergeFunc = (filePath: string, mergeDir: string) => Promise<void>;
+export interface IRunOptions {
+    cwd?: string;
+    env?: {
+        [key: string]: string;
+    };
+    suggestDeploy?: boolean;
+}
+export interface IRunParameters {
+    executable: string;
+    args: string[];
+    options: IRunOptions;
+}
 /**
  * interface for convenience functions made available to extensions
  *
@@ -195,6 +209,10 @@ export interface IExtensionApi {
      * @memberOf IExtensionApi
      */
     showErrorNotification?: (message: string, detail: string | Error | any, options?: IErrorOptions) => void;
+    /**
+     * show a dialog
+     */
+    showDialog?: (type: DialogType, title: string, content: IDialogContent, actions: DialogActions) => Promise<IDialogResult>;
     /**
      * hides a notification by its id
      *
@@ -331,6 +349,12 @@ export interface IExtensionApi {
      * @memberOf IExtensionContext
      */
     setStylesheet: (key: string, filePath: string) => void;
+    /**
+     * run an executable. This is comparable to node.js child_process.spawn but it allows us to add
+     * extensions, like support interpreters and hooks.
+     * It will also automatically ask the user to authorize elevation if the executable requires it
+     */
+    runExecutable: (executable: string, args: string[], options: IRunOptions) => Promise<void>;
 }
 export interface IStateVerifier {
     type?: 'map' | 'string' | 'boolean' | 'number' | 'object';
@@ -634,6 +658,11 @@ export interface IExtensionContext {
      * string for the default mod type
      */
     registerMerge: (test: MergeTest, merge: MergeFunc, modType: string) => void;
+    /**
+     * register an interpreter to be used to run files of the specified type when starting with
+     * IExtensionApi.runExecutable
+     */
+    registerInterpreter: (extension: string, apply: (call: IRunParameters) => IRunParameters) => void;
     /**
      * register a dependency on a different extension
      * @param {string} extId id of the extension that this one depends on

@@ -4,6 +4,7 @@ export * from './IComponentContext';
 export * from './IDialog';
 export * from './IExtensionContext';
 export * from './IGame';
+export * from './IModifiers';
 export * from './INotification';
 export * from './IState';
 export * from './ITestResult';

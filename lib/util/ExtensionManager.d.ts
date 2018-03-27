@@ -33,6 +33,7 @@ declare class ExtensionManager {
     private mContextProxyHandler;
     private mExtensionState;
     private mLoadFailures;
+    private mInterpreters;
     constructor(initStore?: Redux.Store<any>, eventEmitter?: NodeJS.EventEmitter);
     setTranslation(translator: I18next.i18n): void;
     /**
@@ -107,6 +108,9 @@ declare class ExtensionManager {
     private lookupModMeta;
     private saveModMeta;
     private openArchive;
+    private queryDeploy;
+    private checkDeploy();
+    private runExecutable;
     private loadDynamicExtension(extensionPath);
     private loadDynamicExtensions(extensionsPath, loadedExtensions);
     /**
