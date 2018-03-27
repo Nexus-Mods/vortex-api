@@ -21,7 +21,7 @@ import * as I18next from 'i18next';
 import { ILookupResult, IModInfo, IReference } from 'modmeta-db';
 import * as React from 'react';
 import * as Redux from 'redux';
-import { IDialogContent, DialogActions } from './api';
+import { DialogActions, IDialogContent } from './api';
 import { DialogType, IDialogResult } from './IDialog';
 export { TestSupported, IInstallResult, IInstruction, IDeployedFile, IDeploymentMethod, IFileChange, InstallFunc, ISupportedResult, ProgressDelegate };
 export declare type PropsCallback = () => any;
@@ -172,6 +172,9 @@ export declare type MergeTest = (game: IGame, gameDiscovery: IDiscoveryResult) =
  * callback to do the actual merging
  */
 export declare type MergeFunc = (filePath: string, mergeDir: string) => Promise<void>;
+/**
+ * options used when starting an external application through runExecutable
+ */
 export interface IRunOptions {
     cwd?: string;
     env?: {
@@ -179,6 +182,10 @@ export interface IRunOptions {
     };
     suggestDeploy?: boolean;
 }
+/**
+ * all parameters passed to runExecutable. This is used to support interpreters
+ * changing the parameters
+ */
 export interface IRunParameters {
     executable: string;
     args: string[];
