@@ -2,11 +2,12 @@
 import * as Promise from 'bluebird';
 import * as fs from 'fs-extra-promise';
 export { constants, FSWatcher, Stats, WriteStream } from 'fs';
-export { accessSync, chmodAsync, closeAsync, closeSync, createReadStream, createWriteStream, ensureDirSync, fsyncAsync, linkAsync, linkSync, lstatAsync, moveAsync, openSync, openAsync, readFileAsync, readFileSync, readlinkAsync, readJSONSync, removeSync, renameAsync, statAsync, statSync, symlinkAsync, watch, writeAsync, writeFileAsync, writeSync } from 'fs-extra-promise';
+export { accessSync, chmodAsync, closeAsync, closeSync, createReadStream, createWriteStream, ensureDirSync, fsyncAsync, linkAsync, linkSync, lstatAsync, moveAsync, openSync, openAsync, readFileSync, readlinkAsync, readJSONSync, removeSync, renameAsync, statAsync, statSync, symlinkAsync, watch, writeAsync, writeFileAsync, writeSync } from 'fs-extra-promise';
 declare const mkdirAsync: typeof fs.mkdirAsync;
 declare const utimesAsync: typeof fs.utimesAsync;
 declare const readdirAsync: typeof fs.readdirAsync;
-export { mkdirAsync, readdirAsync, utimesAsync };
+declare const readFileAsync: typeof fs.readFileAsync;
+export { mkdirAsync, readdirAsync, readFileAsync, utimesAsync };
 export declare function ensureFileAsync(filePath: string): Promise<void>;
 export declare function ensureDirAsync(dirPath: string): Promise<void>;
 export declare function copyAsync(src: string, dest: string, options?: RegExp | ((src: string, dest: string) => boolean) | fs.CopyOptions): Promise<void>;
