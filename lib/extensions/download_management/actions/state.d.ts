@@ -94,3 +94,7 @@ export declare const setDownloadInstalled: reduxAct.ComplexActionCreator3<string
     gameId: string;
     modId: string;
 }, {}>;
+export declare const setDownloadTime: reduxAct.ComplexActionCreator2<string, number, {
+    id: string;
+    time: number;
+}, {}>;
