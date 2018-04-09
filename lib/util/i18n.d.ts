@@ -1,4 +1,6 @@
 /// <reference types="i18next" />
+/// <reference types="bluebird" />
+import * as Promise from 'bluebird';
 import * as I18next from 'i18next';
 export interface IInitResult {
     i18n: I18next.i18n;

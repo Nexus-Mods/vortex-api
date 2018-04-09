@@ -270,6 +270,12 @@ export interface IExtensionApi {
      */
     translate: I18next.TranslationFunction;
     /**
+     * get direct access to the i18next object managing localisation.
+     * This is only needed to influence how localisation works in general,
+     * to just translate a text, use "translate"
+     */
+    getI18n: () => I18next.i18n;
+    /**
      * retrieve path for a known directory location.
      *
      * Note: This uses electrons ids for known folder locations.
@@ -670,6 +676,12 @@ export interface IExtensionContext {
      * IExtensionApi.runExecutable
      */
     registerInterpreter: (extension: string, apply: (call: IRunParameters) => IRunParameters) => void;
+    /**
+     * specify that a certain range of versions of vortex is required
+     * (see https://www.npmjs.com/package/semver for syntax documentation).
+     * If you call this multiple times, all ranges have to match so that makes little sense
+     */
+    requireVersion: (versionRange: string) => void;
     /**
      * register a dependency on a different extension
      * @param {string} extId id of the extension that this one depends on

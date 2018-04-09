@@ -92,6 +92,7 @@ declare class ExtensionManager {
     getProtocolHandler(protocol: string): (url: string) => void;
     private getModDB;
     private stateChangeHandler;
+    private showErrorBox;
     /**
      * initialize all extensions
      */
