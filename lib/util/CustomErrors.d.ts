@@ -4,6 +4,9 @@ export declare class NotSupportedError extends Error {
 export declare class ProcessCanceled extends Error {
     constructor(message: string);
 }
+export declare class DataInvalid extends Error {
+    constructor(message: string);
+}
 export declare class UserCanceled extends Error {
     constructor();
 }

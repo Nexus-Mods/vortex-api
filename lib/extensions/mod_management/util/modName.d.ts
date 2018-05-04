@@ -2,6 +2,9 @@ import { IMod } from '../types/IMod';
 export interface INameOptions {
     version: boolean;
 }
+export declare function modNameFromAttributes(mod: {
+    [key: string]: any;
+}, options?: INameOptions): string;
 /**
  * determins the mod name to show to the user based on the mod attributes.
  * absolutely never use this function for anything other than showing the output

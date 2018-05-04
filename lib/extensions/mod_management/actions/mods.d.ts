@@ -1,5 +1,4 @@
-import { IMod, ModState } from '../types/IMod';
-import { IRule } from 'modmeta-db';
+import { IMod, IModRule, ModState } from '../types/IMod';
 import * as reduxAct from 'redux-act';
 export declare const addMod: reduxAct.ComplexActionCreator2<string, IMod, {
     gameId: string;
@@ -51,18 +50,18 @@ export declare const setModType: reduxAct.ComplexActionCreator3<string, string, 
 /**
  * add a dependency rule for this mod
  */
-export declare const addModRule: reduxAct.ComplexActionCreator3<string, string, IRule, {
+export declare const addModRule: reduxAct.ComplexActionCreator3<string, string, IModRule, {
     gameId: string;
     modId: string;
-    rule: IRule;
+    rule: IModRule;
 }, {}>;
 /**
  * remove a dependency rule from this mod
  */
-export declare const removeModRule: reduxAct.ComplexActionCreator3<string, string, IRule, {
+export declare const removeModRule: reduxAct.ComplexActionCreator3<string, string, IModRule, {
     gameId: string;
     modId: string;
-    rule: IRule;
+    rule: IModRule;
 }, {}>;
 export declare const setINITweakEnabled: reduxAct.ComplexActionCreator4<string, string, string, boolean, {
     gameId: string;

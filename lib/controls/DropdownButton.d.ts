@@ -19,6 +19,7 @@ declare class MyDropdownButton extends React.Component<IProps, {
     right: boolean;
 }> {
     private mNode;
+    private mOpen;
     constructor(props: IProps);
     componentDidMount(): void;
     render(): JSX.Element;

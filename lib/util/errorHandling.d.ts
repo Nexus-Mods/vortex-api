@@ -2,8 +2,10 @@
 import { IError } from '../types/IError';
 import * as Promise from 'bluebird';
 export declare function genHash(error: IError): any;
-export declare function createErrorReport(type: string, error: IError, labels?: string[]): void;
-export declare function sendReport(fileName: string): Promise<void>;
+export declare function createErrorReport(type: string, error: IError, labels: string[], state: any): void;
+export declare function setApiKey(key: string): void;
+export declare function sendReportFile(fileName: string): Promise<void>;
+export declare function sendReport(type: string, error: IError, labels: string[], reporterId?: string): Promise<void>;
 /**
  * display an error message and quit the application
  * on confirmation.
@@ -13,4 +15,5 @@ export declare function sendReport(fileName: string): Promise<void>;
  * @export
  * @param {ITermination} error
  */
-export declare function terminate(error: IError): void;
+export declare function terminate(error: IError, state: any): void;
+export declare function toError(input: any): IError;

@@ -19,7 +19,7 @@ export declare class ExtensionProvider extends React.Component<IExtensionProps, 
 }
 export interface IExtensibleProps {
     group?: string;
-    staticElements: any[];
+    staticElements?: any[];
 }
 /**
  * extension function. This function creates a wrapper around a component that
@@ -29,4 +29,4 @@ export interface IExtensibleProps {
  * @param {(React.ComponentClass<P & IExtensionProps>)} ComponentToWrap the component to wrap
  * @returns {React.ComponentClass<P>} the wrapper component
  */
-export declare function extend(registerFunc: (...args) => void): <P, S>(ComponentToWrap: React.ComponentClass<P>) => any;
+export declare function extend(registerFunc: (...args) => void, groupProp?: string): <P, S>(ComponentToWrap: React.ComponentClass<P>) => any;

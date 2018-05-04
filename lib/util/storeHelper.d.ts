@@ -1,4 +1,7 @@
 /// <reference types="bluebird" />
+/**
+ * Helper functions when working with immutable state (or immutable objects in general)
+ */
 import { IGameStored } from '../extensions/gamemode_management/types/IGameStored';
 import * as Promise from 'bluebird';
 import * as Redux from 'redux';
@@ -64,15 +67,18 @@ export declare function deleteOrNop<T>(state: T, path: Array<(string | number)>)
 /**
  * push an item to an array inside state. This creates all intermediate
  * nodes and the array itself as necessary
- *
- * @export
- * @template T
- * @param {T} state
- * @param {string[]} path
- * @param {*} value
- * @returns {T}
+ * @param state immutable object to update
+ * @param path path to the item to update
+ * @param value the value to add.
  */
 export declare function pushSafe<T>(state: T, path: Array<(string | number)>, value: any): T;
+/**
+ * add an item to an array inside state but don't allow duplicates
+ * @param state immutable object to update
+ * @param path path to the item to update
+ * @param value the value to add.
+ */
+export declare function addUniqueSafe<T>(state: T, path: Array<(string | number)>, value: any): T;
 /**
  * remove a value from an array by value
  *

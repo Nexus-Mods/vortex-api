@@ -16,7 +16,17 @@ declare class Debouncer {
     private mRunning;
     private mReschedule;
     private mArgs;
-    constructor(func: (...args: any[]) => Error | Promise<void>, debounceMS: number);
+    private mResetting;
+    /**
+     * constructor
+     * @param func the function to call when the timer expired
+     * @param debounceMS the (minimum) time between two calls
+     * @param reset if true (the default) the time is reset with every
+     *              time schedule gets called. This means if the debouncer
+     *              is triggered regularly in less than debounceMS it never
+     *              gets run.
+     */
+    constructor(func: (...args: any[]) => Error | Promise<void>, debounceMS: number, reset?: boolean);
     /**
      * schedule the function and invoke the callback once that is done
      * @param callback the callback to invoke upon completion

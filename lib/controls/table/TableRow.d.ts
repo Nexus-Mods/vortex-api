@@ -19,19 +19,9 @@ export interface IRowProps {
     highlighted: boolean;
     domRef?: (ref) => void;
     container: HTMLElement;
-    initVisible: boolean;
+    visible: boolean;
+    onSetVisible: (rowId: string, visible: boolean) => void;
     onHighlight: (rowId: string, highlight: boolean) => void;
 }
-declare class TableRow extends React.Component<IRowProps, {}> {
-    shouldComponentUpdate(nextProps: IRowProps): boolean;
-    render(): JSX.Element;
-    private renderPlaceholder;
-    private renderRow;
-    private selectDefaultAction;
-    private selectAction;
-    private renderDefault;
-    private renderAttribute;
-    private highlight;
-    private renderCell(attribute, rawData, calculatedData, t, right);
-}
-export default TableRow;
+declare const _default: React.ComponentClass<IRowProps>;
+export default _default;

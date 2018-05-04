@@ -4,11 +4,8 @@ export interface IProps {
     container?: HTMLElement;
     placeholder: () => React.ReactNode;
     content: () => React.ReactNode;
-    startVisible: boolean;
-}
-export interface IState {
     visible: boolean;
-    visibleTime: number;
+    setVisible: (visible: boolean) => void;
 }
 /**
  * proxy component that delays loading of a control until it comes into view
@@ -16,14 +13,15 @@ export interface IState {
  * @class VisibilityProxy
  * @extends {React.Component<IProps, IState>}
  */
-declare class VisibilityProxy extends React.Component<any, IState> {
+declare class VisibilityProxy extends React.PureComponent<any, {}> {
     private static sObservers;
     private static sInstances;
     private static getObserver(container);
     private static callback(entries, observer);
     private static observe(container, target, cb);
     private static unobserve(container, target);
-    constructor(props: IProps);
+    private mLastVisible;
+    private mVisibleTime;
     componentDidMount(): void;
     componentWillUnmount(): void;
     render(): JSX.Element;

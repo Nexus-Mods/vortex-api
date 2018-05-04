@@ -1,4 +1,4 @@
-import { IRule } from 'modmeta-db';
+import { IReference, IRule } from 'modmeta-db';
 export declare type ModState = 'downloading' | 'downloaded' | 'installing' | 'installed';
 /**
  * represents a mod in all states (being downloaded, downloaded, installed)
@@ -16,4 +16,10 @@ export interface IMod {
     };
     rules?: IRule[];
     enabledINITweaks?: string[];
+}
+export interface IModReference extends IReference {
+    id?: string;
+}
+export interface IModRule extends IRule {
+    reference: IModReference;
 }

@@ -3,10 +3,10 @@ import * as React from 'react';
 export interface IToolbarIconProps {
     id?: string;
     instanceId?: string[];
-    text: string;
+    text?: string;
     placement?: 'top' | 'right' | 'bottom' | 'left';
     iconSet?: string;
-    icon: string;
+    icon?: string;
     onClick?: (ids: string[]) => void;
     pulse?: boolean;
     disabled?: boolean;

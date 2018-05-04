@@ -49,4 +49,11 @@ export declare function showInfo<S>(dispatch: Redux.Dispatch<S>, message: string
  *                        want string or Errors but since some node apis return non-Error objects
  *                        where Errors are expected we have to be a bit more flexible here.
  */
-export declare function showError<S>(dispatch: Redux.Dispatch<S>, message: string, details?: string | Error | any, isHTML?: boolean, id?: string, allowReport?: boolean): void;
+export declare function showError<S>(dispatch: Redux.Dispatch<S>, message: string, details?: string | Error | any, options?: {
+    replace?: {
+        [key: string]: string;
+    };
+    isHTML?: boolean;
+    id?: string;
+    allowReport?: boolean;
+}): void;

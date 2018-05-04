@@ -1,5 +1,4 @@
-import { IReference } from 'modmeta-db';
-import { IMod } from '../types/IMod';
+import { IMod, IModReference } from '../types/IMod';
 export interface IModLookupInfo {
     id: string;
     fileMD5: string;
@@ -10,5 +9,5 @@ export interface IModLookupInfo {
     customFileName?: string;
     version: string;
 }
-export declare function testModReference(mod: IMod | IModLookupInfo, reference: IReference): boolean;
+export declare function testModReference(mod: IMod | IModLookupInfo, reference: IModReference): boolean;
 export default testModReference;

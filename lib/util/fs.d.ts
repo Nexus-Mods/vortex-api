@@ -1,6 +1,8 @@
 /// <reference types="bluebird" />
+/// <reference types="i18next" />
 import * as Promise from 'bluebird';
 import * as fs from 'fs-extra-promise';
+import * as I18next from 'i18next';
 export { constants, FSWatcher, Stats, WriteStream } from 'fs';
 export { accessSync, chmodAsync, closeAsync, closeSync, createReadStream, createWriteStream, fsyncAsync, linkAsync, linkSync, lstatAsync, moveAsync, openSync, openAsync, readFileSync, readlinkAsync, readJSONSync, removeSync, statAsync, statSync, symlinkAsync, watch, writeSync } from 'fs-extra-promise';
 declare const mkdirAsync: typeof fs.mkdirAsync;
@@ -19,3 +21,4 @@ export declare function removeAsync(dirPath: string): Promise<void>;
 export declare function unlinkAsync(dirPath: string): Promise<void>;
 export declare function rmdirAsync(dirPath: string): Promise<void>;
 export declare function ensureDirWritableAsync(dirPath: string, confirm: () => Promise<void>): Promise<void>;
+export declare function forcePerm<T>(t: I18next.TranslationFunction, op: () => Promise<T>): Promise<T>;
