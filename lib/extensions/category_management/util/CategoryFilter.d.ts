@@ -6,6 +6,7 @@ declare class CategoryFilter implements ITableFilter {
     component: React.ComponentClass<IFilterProps>;
     raw: string;
     matches(filter: any, value: any, state: IState): boolean;
+    isEmpty(filter: any): boolean;
     private categoryChain(category, state);
 }
 export default CategoryFilter;

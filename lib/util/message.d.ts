@@ -37,6 +37,14 @@ export declare function showActivity<S>(dispatch: Redux.Dispatch<S>, message: st
  * @param {string} [id]
  */
 export declare function showInfo<S>(dispatch: Redux.Dispatch<S>, message: string, id?: string): void;
+export interface IErrorOptions {
+    replace?: {
+        [key: string]: string;
+    };
+    isHTML?: boolean;
+    id?: string;
+    allowReport?: boolean;
+}
 /**
  * show an error notification with an optional "more" button that displays further details
  * in a modal dialog.
@@ -49,11 +57,4 @@ export declare function showInfo<S>(dispatch: Redux.Dispatch<S>, message: string
  *                        want string or Errors but since some node apis return non-Error objects
  *                        where Errors are expected we have to be a bit more flexible here.
  */
-export declare function showError<S>(dispatch: Redux.Dispatch<S>, message: string, details?: string | Error | any, options?: {
-    replace?: {
-        [key: string]: string;
-    };
-    isHTML?: boolean;
-    id?: string;
-    allowReport?: boolean;
-}): void;
+export declare function showError<S>(dispatch: Redux.Dispatch<S>, message: string, details?: string | Error | any, options?: IErrorOptions): void;

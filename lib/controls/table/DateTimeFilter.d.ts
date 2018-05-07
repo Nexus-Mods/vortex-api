@@ -14,5 +14,6 @@ declare class DateTimeFilter implements ITableFilter {
     component: typeof DateTimeFilterComponent;
     raw: boolean;
     matches(filter: any, input: any): boolean;
+    isEmpty(filter: any): boolean;
 }
 export default DateTimeFilter;
