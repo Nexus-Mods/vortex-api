@@ -55,6 +55,6 @@ export declare const clearSearchPaths: reduxAct.EmptyActionCreator;
  * remove a search path
  */
 export declare const removeSearchPath: reduxAct.ComplexActionCreator1<any, any, {}>;
-export declare const setPickerLayout: reduxAct.ComplexActionCreator1<"list" | "small" | "large", {
-    layout: "list" | "small" | "large";
+export declare const setPickerLayout: reduxAct.ComplexActionCreator1<"small" | "list" | "large", {
+    layout: "small" | "list" | "large";
 }, {}>;

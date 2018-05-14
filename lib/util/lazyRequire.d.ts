@@ -1,1 +1,1 @@
-export default function <T>(moduleId: string, basedir?: string, exportId?: string): T;
+export default function <T>(delayed: () => T, exportId?: string): T;

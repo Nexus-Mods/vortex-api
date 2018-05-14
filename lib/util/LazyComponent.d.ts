@@ -1,2 +1,2 @@
 /// <reference types="react" />
-export default function <T>(moduleId: string, basedir?: string): (props: any) => JSX.Element;
+export default function <T>(load: () => any): (props: any) => JSX.Element;

@@ -4,7 +4,7 @@ import * as Promise from 'bluebird';
 import * as fs from 'fs-extra-promise';
 import * as I18next from 'i18next';
 export { constants, FSWatcher, Stats, WriteStream } from 'fs';
-export { accessSync, chmodAsync, closeAsync, closeSync, createReadStream, createWriteStream, fsyncAsync, linkAsync, linkSync, lstatAsync, moveAsync, openSync, openAsync, readFileSync, readlinkAsync, readJSONSync, removeSync, statAsync, statSync, symlinkAsync, watch, writeSync } from 'fs-extra-promise';
+export { accessSync, chmodAsync, closeAsync, closeSync, createReadStream, createWriteStream, fsyncAsync, linkAsync, linkSync, lstatAsync, moveAsync, openSync, openAsync, readFileSync, readlinkAsync, readJSONSync, removeSync, statAsync, statSync, symlinkAsync, watch, writeFileSync, writeSync } from 'fs-extra-promise';
 declare const mkdirAsync: typeof fs.mkdirAsync;
 declare const utimesAsync: typeof fs.utimesAsync;
 declare const readdirAsync: typeof fs.readdirAsync;
