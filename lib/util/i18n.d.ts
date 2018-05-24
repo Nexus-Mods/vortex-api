@@ -16,6 +16,7 @@ export interface IInitResult {
  */
 declare function init(language: string): Promise<IInitResult>;
 export declare function getCurrentLanguage(): string;
+export declare function globalT(key: string | string[], options: I18next.TranslationOptions): any;
 export declare function debugTranslations(enable?: boolean): void;
 export declare function getMissingTranslations(): {
     common: {};

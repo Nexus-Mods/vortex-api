@@ -1,5 +1,5 @@
 /// <reference types="bluebird" />
-import * as Promise from 'bluebird';
+import * as Bluebird from 'bluebird';
 /**
  * run a function as an elevated process (windows only!).
  * This is quite a hack because obviously windows doesn't allow us to elevate a
@@ -17,8 +17,8 @@ import * as Promise from 'bluebird';
  * @param {Object} args arguments to be passed into the elevated process
  * @param {string} moduleBase base directory for all relative require call. If undefined,
  *                 the directory of this very file (elevated.js) will be used.
- * @returns {Promise<any>} a promise that will be resolved as soon as the process is started
+ * @returns {Bluebird<any>} a promise that will be resolved as soon as the process is started
  *                         (which happens after the user confirmed elevation)
  */
-declare function runElevated(ipcPath: string, func: (ipc: any) => void, args?: any, moduleBase?: string): Promise<any>;
+declare function runElevated(ipcPath: string, func: (ipc: any) => void | Promise<void> | Bluebird<void>, args?: any, moduleBase?: string): Bluebird<any>;
 export default runElevated;
