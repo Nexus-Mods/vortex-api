@@ -1,6 +1,7 @@
 /// <reference types="bluebird" />
 import { IError } from '../types/IError';
 import * as Promise from 'bluebird';
+import { IErrorOptions } from '../types/api';
 export declare function genHash(error: IError): any;
 export declare function createErrorReport(type: string, error: IError, labels: string[], state: any): void;
 export declare function setApiKey(key: string): void;
@@ -16,4 +17,4 @@ export declare function sendReport(type: string, error: IError, labels: string[]
  * @param {ITermination} error
  */
 export declare function terminate(error: IError, state: any): void;
-export declare function toError(input: any): IError;
+export declare function toError(input: any, options?: IErrorOptions): IError;
