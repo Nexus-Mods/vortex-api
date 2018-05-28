@@ -1,2 +1,2 @@
-declare function runElevatedCustomTool(ipcClient: any): void;
+declare function runElevatedCustomTool(ipcClient: any): Promise<void>;
 export default runElevatedCustomTool;

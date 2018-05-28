@@ -7,6 +7,7 @@ export interface IToolbarIconProps {
     placement?: 'top' | 'right' | 'bottom' | 'left';
     iconSet?: string;
     icon?: string;
+    tooltip?: string;
     onClick?: (ids: string[]) => void;
     pulse?: boolean;
     disabled?: boolean;

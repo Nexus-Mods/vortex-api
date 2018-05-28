@@ -18,3 +18,8 @@ export declare class HTTPError extends Error {
     constructor(statusCode: number, message: string, body: string);
     readonly body: string;
 }
+export declare class MissingInterpreter extends Error {
+    private mURL;
+    constructor(message: string, url?: string);
+    readonly url: string;
+}

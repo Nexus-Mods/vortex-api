@@ -13,12 +13,6 @@ export declare const setDialogVisible: reduxAct.ComplexActionCreator1<string, {
 export declare const setSettingsPage: reduxAct.ComplexActionCreator1<string, {
     pageId: string;
 }, {}>;
-/**
- * open the overlay for the current page
- */
-export declare const setOverlayOpen: reduxAct.ComplexActionCreator1<boolean, {
-    open: boolean;
-}, {}>;
 export declare const setOpenMainPage: reduxAct.ComplexActionCreator2<string, boolean, {
     page: string;
     secondary: boolean;
