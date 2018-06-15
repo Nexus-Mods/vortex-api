@@ -22,3 +22,4 @@ export declare const setUpdatingMods: reduxAct.ComplexActionCreator2<string, boo
     gameId: string;
     updatingMods: boolean;
 }, {}>;
+export declare const setShowModDropzone: reduxAct.ComplexActionCreator1<{}, {}, {}>;

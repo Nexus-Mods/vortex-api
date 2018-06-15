@@ -112,6 +112,7 @@ declare class ExtensionManager {
     private queryDeploy;
     private checkDeploy();
     private runExecutable;
+    private startIPC(ipcPath);
     private loadDynamicExtension(extensionPath);
     private loadDynamicExtensions(extensionsPath, loadedExtensions);
     /**

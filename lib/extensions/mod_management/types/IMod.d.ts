@@ -16,6 +16,7 @@ export interface IMod {
     };
     rules?: IRule[];
     enabledINITweaks?: string[];
+    fileOverrides?: string[];
 }
 export interface IModReference extends IReference {
     id?: string;
