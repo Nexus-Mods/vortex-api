@@ -16,9 +16,5 @@
   "author": "Black Tree Gaming Ltd",
   "license": "GPL-3.0",
   "peerDependencies": {
-    "bluebird": "^3.4.6",
-    "electron": "^2.0.2",
-    "redux-act": "^1.7.4",
-    "winston": "^3.0.0"
   }
 }
