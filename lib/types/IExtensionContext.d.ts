@@ -66,7 +66,7 @@ export interface IToDoButton {
 }
 export declare type RegisterToDo = (id: string, type: ToDoType, props: (state: any) => any, icon: ((props: any) => JSX.Element) | string, text: ((t: I18next.TranslationFunction, props: any) => JSX.Element) | string, action: (props: any) => void, condition: (props: any) => boolean, value: ((t: I18next.TranslationFunction, props: any) => JSX.Element) | string, priority: number) => void;
 export interface IRegisterProtocol {
-    (protocol: string, callback: (url: string) => void): any;
+    (protocol: string, def: boolean, callback: (url: string) => void): any;
 }
 export interface IFileFilter {
     name: string;
@@ -273,6 +273,10 @@ export interface IExtensionApi {
      */
     translate: I18next.TranslationFunction;
     /**
+     * active locale
+     */
+    locale: () => string;
+    /**
      * get direct access to the i18next object managing localisation.
      * This is only needed to influence how localisation works in general,
      * to just translate a text, use "translate"
@@ -305,7 +309,10 @@ export interface IExtensionApi {
      */
     onStateChange?: (path: string[], callback: StateChangeCallback) => void;
     /**
-     * registers an uri protocol to be handled by this application
+     * registers an uri protocol to be handled by this application. If the "def"ault parameter
+     * is set to true, this application will also be inserted as the system wide default handler
+     * for the protocol. Use with caution, as this will overwrite the previous value, which
+     * can't be undone automatically
      *
      * @type {IRegisterProtocol}
      * @memberOf IExtensionContext
