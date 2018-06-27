@@ -16,6 +16,7 @@ export interface IHeaderProps {
     t: I18next.TranslationFunction;
 }
 declare class HeaderCell extends React.Component<IHeaderProps, {}> {
+    shouldComponentUpdate(newProps: IHeaderProps): boolean;
     render(): JSX.Element;
     private renderSortIndicator();
     private renderFilterIndicator();

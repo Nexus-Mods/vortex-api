@@ -1,7 +1,7 @@
 /// <reference types="react" />
 import { IFilterProps, ITableFilter } from '../../types/ITableAttribute';
-import * as React from 'react';
-export declare class DateTimeFilterComponent extends React.Component<IFilterProps, {}> {
+import { ComponentEx } from '../../util/ComponentEx';
+export declare class DateTimeFilterComponent extends ComponentEx<IFilterProps, {}> {
     private currentComparison;
     private currentValue;
     private comparisons;

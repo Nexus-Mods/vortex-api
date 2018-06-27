@@ -102,7 +102,7 @@ export declare function removeValue<T>(state: T, path: Array<(string | number)>,
  */
 export declare function removeValueIf<T extends object>(state: T, path: Array<(string | number)>, predicate: (element: any) => boolean): T;
 /**
- * shallow merge a value into the store at the  specified location
+ * shallow merge a value into the store at the specified location
  *
  * @export
  * @template T

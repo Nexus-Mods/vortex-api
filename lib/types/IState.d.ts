@@ -114,6 +114,7 @@ export interface IApp {
     extensions: {
         [id: string]: IExtensionState;
     };
+    warnedAdmin: number;
 }
 /**
  * settings relating to the user (os account) personally
