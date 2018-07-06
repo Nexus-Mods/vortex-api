@@ -17,6 +17,10 @@ import * as Redux from 'redux';
  * @returns {T}
  */
 export declare function getSafe<T>(state: any, path: Array<(string | number)>, fallback: T): T;
+/**
+ * case insensitive variant of getSafe
+ */
+export declare function getSafeCI<T>(state: any, path: Array<(string | number)>, fallback: T): T;
 export declare function mutateSafe<T>(state: T, path: Array<(string | number)>, value: any): void;
 /**
  * set an item in state, creating all intermediate nodes as necessary

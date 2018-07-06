@@ -382,6 +382,7 @@ export interface IExtensionApi {
 export interface IStateVerifier {
     type?: 'map' | 'string' | 'boolean' | 'number' | 'object';
     noUndefined?: boolean;
+    noNull?: boolean;
     elements?: {
         [key: string]: IStateVerifier;
     };
