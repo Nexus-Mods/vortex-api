@@ -40,6 +40,18 @@ export declare const setModAttribute: reduxAct.ComplexActionCreator4<string, str
     value: any;
 }, {}>;
 /**
+ * set multiple mod attributes at once
+ */
+export declare const setModAttributes: reduxAct.ComplexActionCreator3<string, string, {
+    [attribute: string]: any;
+}, {
+    gameId: string;
+    modId: string;
+    attributes: {
+        [attribute: string]: any;
+    };
+}, {}>;
+/**
  * sets the type of a mod
  */
 export declare const setModType: reduxAct.ComplexActionCreator3<string, string, string, {

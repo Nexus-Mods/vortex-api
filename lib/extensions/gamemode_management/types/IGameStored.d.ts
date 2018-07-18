@@ -14,4 +14,5 @@ export interface IGameStored {
     details?: {
         [key: string]: any;
     };
+    shell?: boolean;
 }

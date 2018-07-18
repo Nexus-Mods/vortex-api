@@ -17,5 +17,5 @@ export declare function sendReport(type: string, error: IError, labels: string[]
  * @export
  * @param {ITermination} error
  */
-export declare function terminate(error: IError, state: any): void;
+export declare function terminate(error: IError, state: any, allowReport?: boolean): void;
 export declare function toError(input: any, options?: IErrorOptions): IError;

@@ -10,7 +10,6 @@ export interface IHeaderProps {
     attribute: ITableAttribute;
     state: IAttributeState;
     doFilter: boolean;
-    advancedMode: boolean;
     onSetSortDirection: (id: string, dir: SortDirection) => void;
     onSetFilter: (id?: string, filter?: any) => void;
     t: I18next.TranslationFunction;

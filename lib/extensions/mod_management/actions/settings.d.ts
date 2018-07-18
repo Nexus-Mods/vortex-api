@@ -23,3 +23,4 @@ export declare const setUpdatingMods: reduxAct.ComplexActionCreator2<string, boo
     updatingMods: boolean;
 }, {}>;
 export declare const setShowModDropzone: reduxAct.ComplexActionCreator1<{}, {}, {}>;
+export declare const setConfirmPurge: reduxAct.ComplexActionCreator1<boolean, boolean, {}>;

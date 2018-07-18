@@ -8,4 +8,5 @@ export interface IToolStored {
     environment: {
         [key: string]: string;
     };
+    shell?: boolean;
 }

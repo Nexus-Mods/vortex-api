@@ -40,6 +40,7 @@ export interface IWindow {
     size: IDimensions;
     tabsMinimized: boolean;
     customTitlebar: boolean;
+    minimizeToTray: boolean;
 }
 /**
  * state regarding all manner of user interaction
@@ -185,6 +186,7 @@ export interface ISettingsMods {
         [gameId: string]: string;
     };
     showDropzone: boolean;
+    confirmPurge: boolean;
 }
 export interface ISettingsUpdate {
     channel: 'stable' | 'beta' | 'none';
