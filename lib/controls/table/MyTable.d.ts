@@ -9,6 +9,10 @@ export declare function THead(props: DProps<HTMLTableSectionElement> & {
 export declare function TBody(props: DProps<HTMLTableSectionElement> & {
     domRef?: ((instance: any | null) => any);
 }): JSX.Element;
-export declare function TH(props: DProps<HTMLTableHeaderCellElement>): JSX.Element;
+export declare class TH extends React.Component<DProps<HTMLTableHeaderCellElement> & {
+    domRef?: (ref: HTMLDivElement) => void;
+}, {}> {
+    render(): JSX.Element;
+}
 export declare function TR(props: DProps<HTMLTableRowElement>): JSX.Element;
 export declare function TD(props: DProps<HTMLTableCellElement>): JSX.Element;

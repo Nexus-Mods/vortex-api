@@ -23,6 +23,7 @@ import * as React from 'react';
 import * as Redux from 'redux';
 import { DialogActions, IDialogContent } from './api';
 import { DialogType, IDialogResult } from './IDialog';
+import { TestEvent } from '../extensions/test_runner';
 export { TestSupported, IInstallResult, IInstruction, IDeployedFile, IDeploymentMethod, IFileChange, InstallFunc, ISupportedResult, ProgressDelegate };
 export declare type PropsCallback = () => any;
 /**
@@ -33,7 +34,7 @@ export declare type PropsCallback = () => any;
  */
 export declare type PersistingType = 'global' | 'game' | 'profile';
 export declare type CheckFunction = () => Promise<ITestResult>;
-export declare type RegisterSettings = (title: string, element: React.ComponentClass<any> | React.StatelessComponent<any>, props?: PropsCallback, visible?: () => boolean) => void;
+export declare type RegisterSettings = (title: string, element: React.ComponentClass<any> | React.StatelessComponent<any>, props?: PropsCallback, visible?: () => boolean, priority?: number) => void;
 export declare type RegisterAction = (group: string, position: number, iconOrComponent: string | React.ComponentClass<any> | React.StatelessComponent<any>, options: IActionOptions, titleOrProps?: string | PropsCallback, actionOrCondition?: (instanceIds?: string[]) => void | boolean, condition?: (instanceIds?: string[]) => boolean) => void;
 export declare type RegisterFooter = (id: string, element: React.ComponentClass<any>, props?: PropsCallback) => void;
 export declare type RegisterBanner = (group: string, component: React.ComponentClass<any> | React.StatelessComponent<any>, options: IBannerOptions) => void;
@@ -379,6 +380,17 @@ export interface IExtensionApi {
      * It will also automatically ask the user to authorize elevation if the executable requires it
      */
     runExecutable: (executable: string, args: string[], options: IRunOptions) => Promise<void>;
+    /**
+     * emit an event and allow every receiver to return a Promise. This call will only return
+     * after all these Promises are resolved.
+     * Note that errors are ignored atm, if the listener has an error to report, it has do so itself
+     */
+    emitAndAwait: (eventName: string, ...args: any[]) => Promise<void>;
+    /**
+     * handle an event emitted with emitAndAwait. The listener can return a promise and the emitter
+     * will only return after all promises from handlers are returned.
+     */
+    onAsync: (eventName: string, listener: (...args: any[]) => Promise<void>) => void;
 }
 export interface IStateVerifier {
     type?: 'map' | 'string' | 'boolean' | 'number' | 'object';
@@ -602,7 +614,7 @@ export interface IExtensionContext {
      *
      * @memberOf IExtensionContext
      */
-    registerTest: (id: string, event: string, check: CheckFunction) => void;
+    registerTest: (id: string, event: TestEvent, check: CheckFunction) => void;
     /**
      * register a handler for archive types so the content of such archives is exposed to
      * the application (especially other extensions)
@@ -614,9 +626,8 @@ export interface IExtensionContext {
      * registers support for a game
      *
      * @param {IGame} game
-     * @param {string} extensionPath path to the extension assets
      */
-    registerGame: (game: IGame, extensionPath: string) => void;
+    registerGame: (game: IGame) => void;
     /**
      * registers a provider for general information about a game
      * @param {string} id unique id identifying the provider

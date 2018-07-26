@@ -59,6 +59,10 @@ export declare const setModType: reduxAct.ComplexActionCreator3<string, string, 
     modId: string;
     type: string;
 }, {}>;
+export declare const clearModRules: reduxAct.ComplexActionCreator2<string, string, {
+    gameId: string;
+    modId: string;
+}, {}>;
 /**
  * add a dependency rule for this mod
  */

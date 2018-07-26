@@ -15,10 +15,14 @@ export interface IHeaderProps {
     t: I18next.TranslationFunction;
 }
 declare class HeaderCell extends React.Component<IHeaderProps, {}> {
+    private mMinWidth;
+    private mRef;
     shouldComponentUpdate(newProps: IHeaderProps): boolean;
     render(): JSX.Element;
+    updateWidth(): void;
     private renderSortIndicator();
     private renderFilterIndicator();
+    private setRef;
     private cycleDirection;
     private setDirection;
     private toggleFilter;
