@@ -11,7 +11,7 @@ export interface IMod {
     type: string;
     archiveId?: string;
     installationPath: string;
-    attributes: {
+    attributes?: {
         [id: string]: any;
     };
     rules?: IRule[];

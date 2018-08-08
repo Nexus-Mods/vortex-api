@@ -29,7 +29,6 @@ declare class ExtensionManager {
     private mModDBGame;
     private mModDBAPIKey;
     private mModDBCache;
-    private mPid;
     private mContextProxyHandler;
     private mExtensionState;
     private mLoadFailures;

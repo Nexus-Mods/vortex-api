@@ -400,6 +400,7 @@ export interface IStateVerifier {
         [key: string]: IStateVerifier;
     };
     required?: boolean;
+    deleteBroken?: boolean | 'parent';
     repair?: (input: any, def: any) => any;
 }
 /**
