@@ -11,11 +11,12 @@ export interface IMod {
     type: string;
     archiveId?: string;
     installationPath: string;
-    attributes: {
+    attributes?: {
         [id: string]: any;
     };
     rules?: IRule[];
     enabledINITweaks?: string[];
+    fileOverrides?: string[];
 }
 export interface IModReference extends IReference {
     id?: string;

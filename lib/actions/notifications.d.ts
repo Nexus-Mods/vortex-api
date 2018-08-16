@@ -9,6 +9,13 @@ export * from '../types/IDialog';
  * left unset, in that case one will be generated
  */
 export declare const startNotification: reduxAct.ComplexActionCreator1<any, any, {}>;
+export declare const updateNotification: reduxAct.ComplexActionCreator3<string, number, string, {
+    id: string;
+    progress: number;
+    message: string;
+}, {
+    forward: boolean;
+}>;
 /**
  * dismiss a notification. Takes the id of the notification
  */

@@ -29,7 +29,6 @@ declare class ExtensionManager {
     private mModDBGame;
     private mModDBAPIKey;
     private mModDBCache;
-    private mPid;
     private mContextProxyHandler;
     private mExtensionState;
     private mLoadFailures;
@@ -91,6 +90,7 @@ declare class ExtensionManager {
     renderStyle(): Promise<void>;
     getProtocolHandler(protocol: string): (url: string) => void;
     private getModDB;
+    private connectMetaDB(gameId, apiKey);
     private stateChangeHandler;
     private showErrorBox;
     /**
@@ -112,6 +112,8 @@ declare class ExtensionManager {
     private queryDeploy;
     private checkDeploy();
     private runExecutable;
+    private emitAndAwait;
+    private onAsync;
     private startIPC(ipcPath);
     private loadDynamicExtension(extensionPath);
     private loadDynamicExtensions(extensionsPath, loadedExtensions);

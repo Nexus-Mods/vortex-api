@@ -106,6 +106,10 @@ export interface ITableAttribute<T = any> {
      */
     isVolatile?: boolean;
     /**
+     * Never shrink the column while scrolling, it can still grow though
+     */
+    noShrink?: boolean;
+    /**
      * when using external data (not part of the data passed to the table) in calc or customRenderer,
      * set this parameter.
      * This function gets called with a callback that then needs to be called whenever the external
@@ -178,6 +182,12 @@ export interface ITableAttribute<T = any> {
          * allow inline editing of this cell
          */
         inline?: boolean;
+        /**
+         * Affects how choices are displayed if you have a choice attribute
+         * if true (or undefined) then we display a dropdown box where each item immediately triggers
+         * an action. If false, render a selection box
+         */
+        actions?: boolean;
         /**
          * if set, this field is a drop-down selection with the choices returned by this function.
          * Please note: the value returned by calc has to appear in the text-field of one of these

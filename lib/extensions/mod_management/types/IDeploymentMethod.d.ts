@@ -1,5 +1,6 @@
 /// <reference types="i18next" />
 /// <reference types="bluebird" />
+import { Normalize } from '../../../util/getNormalizeFunc';
 import { IMod } from './IMod';
 import * as Promise from 'bluebird';
 import * as I18next from 'i18next';
@@ -106,10 +107,13 @@ export interface IDeploymentMethod {
      *                        we're deploying from scratch (true)
      * @param {IDeployedFile[]} lastActivation previous deployment state to be used as
      *                                         the reference for newly deployed files
+     * @param {Normalize} normalize a path normalization function. This needs to be used
+     *                              when comparing strings against the blacklist or when storing
+     *                              relative path into the deployment manifest
      *
      * @memberOf IModActivator
      */
-    prepare: (dataPath: string, clean: boolean, lastActivation: IDeployedFile[]) => Promise<void>;
+    prepare: (dataPath: string, clean: boolean, lastActivation: IDeployedFile[], normalize: Normalize) => Promise<void>;
     /**
      * called after an activate call was made for all active mods,
      * in case this activator needs to do postprocessing

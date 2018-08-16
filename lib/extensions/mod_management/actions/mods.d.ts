@@ -40,12 +40,28 @@ export declare const setModAttribute: reduxAct.ComplexActionCreator4<string, str
     value: any;
 }, {}>;
 /**
+ * set multiple mod attributes at once
+ */
+export declare const setModAttributes: reduxAct.ComplexActionCreator3<string, string, {
+    [attribute: string]: any;
+}, {
+    gameId: string;
+    modId: string;
+    attributes: {
+        [attribute: string]: any;
+    };
+}, {}>;
+/**
  * sets the type of a mod
  */
 export declare const setModType: reduxAct.ComplexActionCreator3<string, string, string, {
     gameId: string;
     modId: string;
     type: string;
+}, {}>;
+export declare const clearModRules: reduxAct.ComplexActionCreator2<string, string, {
+    gameId: string;
+    modId: string;
 }, {}>;
 /**
  * add a dependency rule for this mod
@@ -68,4 +84,12 @@ export declare const setINITweakEnabled: reduxAct.ComplexActionCreator4<string, 
     modId: string;
     tweak: string;
     enabled: boolean;
+}, {}>;
+/**
+ * set list of files that will always be provided by this mod, no matter the deployment order
+ */
+export declare const setFileOverride: reduxAct.ComplexActionCreator3<string, string, string[], {
+    gameId: string;
+    modId: string;
+    files: string[];
 }, {}>;

@@ -9,13 +9,11 @@ import * as Redux from 'redux';
  * @class GameModeManager
  */
 declare class GameModeManager {
-    private mBasePath;
-    private mError;
     private mStore;
     private mKnownGames;
     private mActiveSearch;
     private mOnGameModeActivated;
-    constructor(basePath: string, extensionGames: IGame[], onGameModeActivated: (mode: string) => void);
+    constructor(extensionGames: IGame[], onGameModeActivated: (mode: string) => void);
     /**
      * attach this manager to the specified store
      *
@@ -66,5 +64,6 @@ declare class GameModeManager {
     private storeTool(tool);
     private onDiscoveredTool;
     private onDiscoveredGame;
+    private onError;
 }
 export default GameModeManager;

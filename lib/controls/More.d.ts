@@ -21,7 +21,6 @@ export interface IComponentState {
  * @returns
  */
 declare class More extends React.Component<IProps, IComponentState> {
-    private mPopoverRef;
     private mRef;
     constructor(props: IProps);
     render(): JSX.Element;

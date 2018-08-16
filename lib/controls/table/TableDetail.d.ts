@@ -22,7 +22,6 @@ declare class DetailBox extends ComponentEx<IDetailProps, {}> {
     constructor(props: IDetailProps);
     shouldComponentUpdate(nextProps: IDetailProps): boolean;
     render(): JSX.Element;
-    private renderHandle();
     private renderDetail;
     private onChangeData;
 }

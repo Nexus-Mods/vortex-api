@@ -73,7 +73,10 @@ export declare const removeDownload: reduxAct.ComplexActionCreator1<string, {
 /**
  * sets the current download speed in bytes/second
  */
-export declare const setDownloadSpeed: reduxAct.ComplexActionCreator1<{}, {}, {}>;
+export declare const setDownloadSpeed: reduxAct.ComplexActionCreator1<{}, {}, {
+    forward: boolean;
+}>;
+export declare const setDownloadSpeeds: reduxAct.ComplexActionCreator1<{}, {}, {}>;
 /**
  * add a file that has been found on disk but where we weren't involved
  * in the download.
@@ -97,4 +100,8 @@ export declare const setDownloadInstalled: reduxAct.ComplexActionCreator3<string
 export declare const setDownloadTime: reduxAct.ComplexActionCreator2<string, number, {
     id: string;
     time: number;
+}, {}>;
+export declare const setCompatibleGames: reduxAct.ComplexActionCreator2<string, string[], {
+    id: string;
+    games: string[];
 }, {}>;

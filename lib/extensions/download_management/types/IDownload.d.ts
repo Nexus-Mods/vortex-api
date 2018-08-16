@@ -39,14 +39,14 @@ export interface IDownload {
      * @type {string}
      * @memberOf IDownload
      */
-    localPath: string;
+    localPath?: string;
     /**
-     * id of the game to which this download applies.
+     * id of the game(s) to which this archive is compatible.
      *
      * @type {string}
      * @memberOf IDownload
      */
-    game: string;
+    game: string[];
     /**
      * info about the mod being downloaded. This will
      * be associated with the mod entry after its installation
@@ -73,7 +73,7 @@ export interface IDownload {
      * @type {string}
      * @memberOf IDownload
      */
-    fileMD5: string;
+    fileMD5?: string;
     /**
      * MS timestamp the download was started
      */

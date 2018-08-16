@@ -32,4 +32,4 @@ export declare function discoverRelativeTools(game: IGame, gamePath: string, dis
  */
 export declare function searchDiscovery(knownGames: IGame[], discoveredGames: {
     [id: string]: IDiscoveryResult;
-}, searchPaths: string[], onDiscoveredGame: DiscoveredCB, onDiscoveredTool: DiscoveredToolCB, progressCB: (idx: number, percent: number, label: string) => void): Promise<any>;
+}, searchPaths: string[], onDiscoveredGame: DiscoveredCB, onDiscoveredTool: DiscoveredToolCB, onError: (title: string, message: string) => void, progressCB: (idx: number, percent: number, label: string) => void): Promise<any>;

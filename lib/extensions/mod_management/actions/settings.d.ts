@@ -1,11 +1,9 @@
 import * as reduxAct from 'redux-act';
 /**
- * change a path (base, download or installation) for
- * storing things. Supports placeholders
+ * change the mod install path. Supports placeholders
  */
-export declare const setPath: reduxAct.ComplexActionCreator3<string, string, string, {
+export declare const setInstallPath: reduxAct.ComplexActionCreator2<string, string, {
     gameId: string;
-    key: string;
     path: string;
 }, {}>;
 /**
@@ -23,3 +21,4 @@ export declare const setUpdatingMods: reduxAct.ComplexActionCreator2<string, boo
     updatingMods: boolean;
 }, {}>;
 export declare const setShowModDropzone: reduxAct.ComplexActionCreator1<{}, {}, {}>;
+export declare const setConfirmPurge: reduxAct.ComplexActionCreator1<boolean, boolean, {}>;

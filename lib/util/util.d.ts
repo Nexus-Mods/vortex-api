@@ -1,5 +1,7 @@
+/// <reference types="node" />
 /// <reference types="bluebird" />
 import * as Promise from 'bluebird';
+import * as fs from 'fs-extra-promise';
 import * as Redux from 'redux';
 /**
  * count the elements in an array for which the predicate matches
@@ -25,6 +27,7 @@ export declare function sum(container: number[]): number;
  * on obj, it will be set to the default value and that is returned.
  */
 export declare function setdefault<T>(obj: any, key: PropertyKey, def: T): T;
+export declare function writeFileAtomic(filePath: string, data: string | Buffer | Uint8Array, options?: fs.WriteFileOptions): Promise<void>;
 /**
  * copy a file in such a way that it will not replace the target if the copy is
  * somehow interrupted. The file is first copied to a temporary file in the same
