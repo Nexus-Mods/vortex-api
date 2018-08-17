@@ -57,14 +57,17 @@ function output(moduleName, basePath) {
   };
 }
 
-function loaders() {
-  return [
+function loaders(version) {
+  const res = [
     {test: /\.tsx?$/, loader: 'ts-loader' },
-    {test: /\.json$/, loader: 'json-loader'},
   ];
+  if (version < 4) {
+    res.push({test: /\.json$/, loader: 'json-loader'});
+  }
+  return res;
 }
 
-function config(moduleName, basePath) {
+function config(moduleName, basePath, version) {
   let tsx = true;
   try {
     fs.statSync('./src/index.tsx');
@@ -76,8 +79,10 @@ function config(moduleName, basePath) {
     target: 'electron-renderer',
     node: {__filename: false, __dirname: false},
     output: output(moduleName, basePath),
-    module: {
-      loaders: loaders(),
+    module: (version === undefined) || (version < 4) ? {
+      loaders: loaders(version),
+    } : {
+      rules: loaders(version),
     },
     resolve: {extensions: ['.js', '.jsx', '.json', '.ts', '.tsx']},
     devtool: 'source-map',
