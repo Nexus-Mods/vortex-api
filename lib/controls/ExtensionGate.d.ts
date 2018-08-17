@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import * as React from 'react';
 /**
  * wraps a control that was added by an extension.
@@ -25,6 +24,6 @@ declare class ExtensionGate extends React.Component<{
     componentWillMount(): void;
     componentWillUnmount(): void;
     render(): JSX.Element;
-    private updateWrappers(props);
+    private updateWrappers;
 }
 export default ExtensionGate;

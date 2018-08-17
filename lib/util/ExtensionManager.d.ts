@@ -1,7 +1,5 @@
 /// <reference types="node" />
-/// <reference types="i18next" />
-/// <reference types="bluebird" />
-import { IExtensionApi } from '../types/IExtensionContext';
+import { IExtensionApi, ThunkStore } from '../types/IExtensionContext';
 import * as Promise from 'bluebird';
 import * as I18next from 'i18next';
 import * as Redux from 'redux';
@@ -43,7 +41,7 @@ declare class ExtensionManager {
      *
      * @memberOf ExtensionManager
      */
-    setStore<S>(store: Redux.Store<S>): void;
+    setStore<S>(store: ThunkStore<S>): void;
     /**
      * set up the api for the main process.
      *
@@ -90,33 +88,33 @@ declare class ExtensionManager {
     renderStyle(): Promise<void>;
     getProtocolHandler(protocol: string): (url: string) => void;
     private getModDB;
-    private connectMetaDB(gameId, apiKey);
+    private connectMetaDB;
     private stateChangeHandler;
     private showErrorBox;
     /**
      * initialize all extensions
      */
-    private initExtensions();
-    private getPath(name);
-    private selectFile(options);
-    private selectExecutable(options);
-    private selectDir(options);
+    private initExtensions;
+    private getPath;
+    private selectFile;
+    private selectExecutable;
+    private selectDir;
     private registerProtocol;
     private registerArchiveHandler;
-    private deregisterProtocol(protocol);
+    private deregisterProtocol;
     private lookupModReference;
-    private modLookupId(detail);
+    private modLookupId;
     private lookupModMeta;
     private saveModMeta;
     private openArchive;
     private queryDeploy;
-    private checkDeploy();
+    private checkDeploy;
     private runExecutable;
     private emitAndAwait;
     private onAsync;
-    private startIPC(ipcPath);
-    private loadDynamicExtension(extensionPath);
-    private loadDynamicExtensions(extensionsPath, loadedExtensions);
+    private startIPC;
+    private loadDynamicExtension;
+    private loadDynamicExtensions;
     /**
      * retrieves all extensions to the base functionality, both the static
      * and external ones.
@@ -124,6 +122,6 @@ declare class ExtensionManager {
      *
      * @returns {ExtensionInit[]}
      */
-    private loadExtensions();
+    private loadExtensions;
 }
 export default ExtensionManager;

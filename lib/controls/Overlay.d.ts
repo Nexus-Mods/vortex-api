@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import * as React from 'react';
 import { Overlay } from 'react-bootstrap';
 export interface IBaseProps {

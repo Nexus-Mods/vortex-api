@@ -43,6 +43,6 @@ declare class Progress {
      * @memberOf Progress
      */
     derive(): Progress;
-    private currentProgress();
+    private currentProgress;
 }
 export default Progress;

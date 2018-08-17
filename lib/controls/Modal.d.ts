@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import * as React from 'react';
 import { Modal, ModalBody, ModalFooter, ModalHeader, ModalTitle } from 'react-bootstrap';
 declare class MyModal extends React.PureComponent<typeof Modal.prototype.props, {}> {

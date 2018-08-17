@@ -1,8 +1,7 @@
 /// <reference types="node" />
-/// <reference types="bluebird" />
+import { ThunkStore } from '../types/IExtensionContext';
 import * as Promise from 'bluebird';
 import * as fs from 'fs-extra-promise';
-import * as Redux from 'redux';
 /**
  * count the elements in an array for which the predicate matches
  *
@@ -41,7 +40,7 @@ export declare function writeFileAtomic(filePath: string, data: string | Buffer 
  * @returns {Promise<void>}
  */
 export declare function copyFileAtomic(srcPath: string, destPath: string): Promise<void>;
-export declare function removePersistent(store: Redux.Store<any>, destPath: string): Promise<void>;
+export declare function removePersistent(store: ThunkStore<any>, destPath: string): Promise<void>;
 /**
  * An ellipsis ("this text is too lo...") function. Usually these
  * functions clip the text at the end but often (i.e. when

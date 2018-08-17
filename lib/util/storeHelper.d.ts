@@ -1,4 +1,3 @@
-/// <reference types="bluebird" />
 /**
  * Helper functions when working with immutable state (or immutable objects in general)
  */

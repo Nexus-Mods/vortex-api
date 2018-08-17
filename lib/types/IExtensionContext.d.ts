@@ -1,16 +1,16 @@
-/// <reference types="bluebird" />
-/// <reference types="react" />
-/// <reference types="i18next" />
 /// <reference types="node" />
 import { IDeployedFile, IDeploymentMethod, IFileChange } from '../extensions/mod_management/types/IDeploymentMethod';
 import { IInstallResult, IInstruction } from '../extensions/mod_management/types/IInstallResult';
 import { InstallFunc, ProgressDelegate } from '../extensions/mod_management/types/InstallFunc';
 import { ISupportedResult, TestSupported } from '../extensions/mod_management/types/TestSupported';
+import { TestEvent } from '../extensions/test_runner';
 import { Archive } from '../util/archives';
 import ReduxProp from '../util/ReduxProp';
 import { SanityCheck } from '../util/reduxSanity';
+import { DialogActions, IDialogContent } from './api';
 import { IActionOptions } from './IActionDefinition';
 import { IBannerOptions } from './IBannerOptions';
+import { DialogType, IDialogResult } from './IDialog';
 import { IGame } from './IGame';
 import { INotification } from './INotification';
 import { IDiscoveryResult } from './IState';
@@ -21,10 +21,11 @@ import * as I18next from 'i18next';
 import { ILookupResult, IModInfo, IReference } from 'modmeta-db';
 import * as React from 'react';
 import * as Redux from 'redux';
-import { DialogActions, IDialogContent } from './api';
-import { DialogType, IDialogResult } from './IDialog';
-import { TestEvent } from '../extensions/test_runner';
+import { ThunkDispatch } from 'redux-thunk';
 export { TestSupported, IInstallResult, IInstruction, IDeployedFile, IDeploymentMethod, IFileChange, InstallFunc, ISupportedResult, ProgressDelegate };
+export interface ThunkStore<S> extends Redux.Store<S> {
+    dispatch: ThunkDispatch<S, null, Redux.Action>;
+}
 export declare type PropsCallback = () => any;
 /**
  * determines where persisted state is stored and when it gets loaded.
@@ -57,7 +58,7 @@ export interface IDashletOptions {
     fixed?: boolean;
     closable?: boolean;
 }
-export declare type RegisterDashlet = (title: string, width: 1 | 2 | 3, height: 1 | 2 | 3 | 4 | 5, position: number, component: React.ComponentClass<any>, isVisible: (state) => boolean, props: PropsCallback, options: IDashletOptions) => void;
+export declare type RegisterDashlet = (title: string, width: 1 | 2 | 3, height: 1 | 2 | 3 | 4 | 5, position: number, component: React.ComponentClass<any>, isVisible: (state: any) => boolean, props: PropsCallback, options: IDashletOptions) => void;
 export declare type RegisterDialog = (id: string, element: React.ComponentClass<any> | React.StatelessComponent<any>, props?: PropsCallback) => void;
 export declare type ToDoType = 'settings' | 'search' | 'workaround' | 'more';
 export interface IToDoButton {
@@ -262,7 +263,7 @@ export interface IExtensionApi {
      * @type {Redux.Store<any>}
      * @memberOf IExtensionApi
      */
-    store?: Redux.Store<any>;
+    store?: ThunkStore<any>;
     /**
      * event emitter
      *

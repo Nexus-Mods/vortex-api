@@ -117,6 +117,7 @@ export interface IApp {
         [id: string]: IExtensionState;
     };
     warnedAdmin: number;
+    migrations: string[];
 }
 /**
  * settings relating to the user (os account) personally

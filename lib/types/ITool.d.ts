@@ -1,4 +1,3 @@
-/// <reference types="bluebird" />
 import * as Promise from 'bluebird';
 /**
  * static information about a tool associated with a game.

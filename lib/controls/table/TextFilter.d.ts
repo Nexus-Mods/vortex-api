@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { IFilterProps, ITableFilter } from '../../types/ITableAttribute';
 import * as React from 'react';
 export declare class TextFilterComponent extends React.Component<IFilterProps, {}> {

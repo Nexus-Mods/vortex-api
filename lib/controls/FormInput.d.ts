@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { ValidationState } from '../types/ITableAttribute';
 import * as React from 'react';
 export interface IProps {
@@ -10,5 +9,5 @@ export interface IProps {
     placeholder?: string;
     validate?: (value: any) => ValidationState;
 }
-declare const _default: React.ComponentClass<IProps>;
+declare const _default: React.ComponentClass<IProps, React.ComponentState>;
 export default _default;

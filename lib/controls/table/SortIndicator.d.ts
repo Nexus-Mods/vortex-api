@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { SortDirection } from '../../types/SortDirection';
 import * as React from 'react';
 export interface IProps {
@@ -8,6 +7,6 @@ export interface IProps {
 declare class SortIndicator extends React.Component<IProps, {}> {
     render(): JSX.Element;
     private cycleDirection;
-    private icon(direction);
+    private icon;
 }
 export default SortIndicator;

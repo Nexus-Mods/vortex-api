@@ -1,10 +1,20 @@
-/// <reference types="bluebird" />
-/// <reference types="i18next" />
+/**
+ * wrapper for the fs / fs-extra-promise module
+ * this allows us to customise the behaviour of fs function across the application.
+ * The api should remain compatible with fs-extra-promise, but extensions can be made
+ * Notable behaviour changes:
+ * - common async functions now retrieve a backtrace before calling, so that on error
+ *   they can provide a useful backtrace to where the function was called
+ *   (for many error cases the original function didn't have a stack trace in the first place)
+ * - retrying on functions that commonly fail temporarily due to external applications
+ *   (virus scanners, functions called from vortex) locking files.
+ * - ignoring ENOENT error when deleting a file.
+ */
 import * as PromiseBB from 'bluebird';
 import * as fs from 'fs-extra-promise';
 import * as I18next from 'i18next';
 export { constants, FSWatcher, Stats, WriteStream } from 'fs';
-export { accessSync, closeSync, createReadStream, createWriteStream, linkSync, openSync, readFileSync, readJSONSync, statSync, watch, writeFileSync, writeSync } from 'fs-extra-promise';
+export { accessSync, closeSync, createReadStream, createWriteStream, linkSync, openSync, readFileSync, readJSONSync, statSync, watch, writeFileSync, writeSync, } from 'fs-extra-promise';
 declare const chmodAsync: typeof fs.chmodAsync;
 declare const closeAsync: typeof fs.closeAsync;
 declare const fsyncAsync: typeof fs.fsyncAsync;
@@ -21,7 +31,7 @@ declare const symlinkAsync: typeof fs.symlinkAsync;
 declare const utimesAsync: typeof fs.utimesAsync;
 declare const writeAsync: typeof fs.writeAsync;
 declare const writeFileAsync: typeof fs.writeFileAsync;
-export { chmodAsync, closeAsync, fsyncAsync, linkAsync, lstatAsync, mkdirAsync, moveAsync, openAsync, readlinkAsync, readdirAsync, readFileAsync, statAsync, symlinkAsync, utimesAsync, writeAsync, writeFileAsync };
+export { chmodAsync, closeAsync, fsyncAsync, linkAsync, lstatAsync, mkdirAsync, moveAsync, openAsync, readlinkAsync, readdirAsync, readFileAsync, statAsync, symlinkAsync, utimesAsync, writeAsync, writeFileAsync, };
 export declare function ensureDirSync(dirPath: string): void;
 export declare function ensureFileAsync(filePath: string): PromiseBB<void>;
 export declare function ensureDirAsync(dirPath: string): PromiseBB<void>;

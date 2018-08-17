@@ -1,4 +1,3 @@
-/// <reference types="bluebird" />
 import { IError } from '../types/IError';
 import * as Promise from 'bluebird';
 import { IFeedbackResponse } from 'nexus-api';

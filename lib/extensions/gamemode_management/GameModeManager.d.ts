@@ -1,4 +1,3 @@
-/// <reference types="bluebird" />
 import { IGame } from '../../types/IGame';
 import { IState } from '../../types/IState';
 import * as Promise from 'bluebird';
@@ -59,9 +58,9 @@ declare class GameModeManager {
      * @memberOf GameModeManager
      */
     stopSearchDiscovery(): void;
-    private ensureWritable(modPath);
+    private ensureWritable;
     private storeGame;
-    private storeTool(tool);
+    private storeTool;
     private onDiscoveredTool;
     private onDiscoveredGame;
     private onError;

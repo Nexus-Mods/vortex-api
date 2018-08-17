@@ -1,4 +1,3 @@
-/// <reference types="bluebird" />
 import * as Promise from 'bluebird';
 export interface ISupportedResult {
     supported: boolean;

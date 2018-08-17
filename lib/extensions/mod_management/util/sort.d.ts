@@ -1,4 +1,3 @@
-/// <reference types="bluebird" />
 import { IExtensionApi } from '../../../types/IExtensionContext';
 import { IMod } from '../types/IMod';
 import * as Promise from 'bluebird';

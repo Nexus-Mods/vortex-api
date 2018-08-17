@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { IActionDefinition } from '../types/IActionDefinition';
 import { ITableState } from '../types/IState';
 import { IExtensibleProps } from '../util/ExtensionProvider';
@@ -32,10 +31,6 @@ export interface ILookupCalculated {
         [attributeId: string]: any;
     };
 }
-export declare function makeGetSelection(tableId: string): ((state: any) => string[]) & {
-    resultFunc: (res: ITableState) => string[];
-    recomputations: () => number;
-    resetRecomputations: () => number;
-};
-declare const _default: React.ComponentClass<IBaseProps & IExtensibleProps>;
+export declare function makeGetSelection(tableId: string): import("../../../../Projects/Vortex/node_modules/reselect").OutputSelector<any, string[], (res: ITableState) => string[]>;
+declare const _default: React.ComponentClass<IBaseProps & IExtensibleProps, React.ComponentState>;
 export default _default;

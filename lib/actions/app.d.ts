@@ -7,5 +7,6 @@ export declare const setExtensionEnabled: reduxAct.ComplexActionCreator2<string,
 }, {}>;
 export declare const removeExtension: reduxAct.ComplexActionCreator1<any, any, {}>;
 export declare const forgetExtension: reduxAct.ComplexActionCreator1<any, any, {}>;
+export declare const completeMigration: reduxAct.ComplexActionCreator1<any, any, {}>;
 export declare const setInstanceId: reduxAct.ComplexActionCreator1<any, any, {}>;
 export declare const setWarnedAdmin: reduxAct.ComplexActionCreator1<any, any, {}>;

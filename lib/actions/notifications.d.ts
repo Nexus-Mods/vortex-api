@@ -1,15 +1,13 @@
-/// <reference types="bluebird" />
 import { DialogActions, DialogType, IDialogContent, IDialogResult } from '../types/IDialog';
 import { INotification, NotificationDismiss } from '../types/INotification';
 import * as Promise from 'bluebird';
-import * as reduxAct from 'redux-act';
 export * from '../types/IDialog';
 /**
  * adds a notification to be displayed. Takes one parameter of type INotification. The id may be
  * left unset, in that case one will be generated
  */
-export declare const startNotification: reduxAct.ComplexActionCreator1<any, any, {}>;
-export declare const updateNotification: reduxAct.ComplexActionCreator3<string, number, string, {
+export declare const startNotification: import("../../../../Projects/Vortex/node_modules/redux-act").ComplexActionCreator1<any, any, {}>;
+export declare const updateNotification: import("../../../../Projects/Vortex/node_modules/redux-act").ComplexActionCreator3<string, number, string, {
     id: string;
     progress: number;
     message: string;
@@ -19,13 +17,13 @@ export declare const updateNotification: reduxAct.ComplexActionCreator3<string, 
 /**
  * dismiss a notification. Takes the id of the notification
  */
-export declare const stopNotification: reduxAct.ComplexActionCreator1<any, any, {}>;
+export declare const stopNotification: import("../../../../Projects/Vortex/node_modules/redux-act").ComplexActionCreator1<any, any, {}>;
 /**
  * show a modal dialog to the user
  *
  * don't call this directly, use showDialog
  */
-export declare const addDialog: reduxAct.ComplexActionCreator6<string, string, string, IDialogContent, string, string[], {
+export declare const addDialog: import("../../../../Projects/Vortex/node_modules/redux-act").ComplexActionCreator6<string, string, string, IDialogContent, string, string[], {
     id: string;
     type: string;
     title: string;
@@ -40,7 +38,7 @@ export declare const addDialog: reduxAct.ComplexActionCreator6<string, string, s
  * you leak (a tiny amount of) memory and the action callbacks aren't called.
  * Use closeDialog instead
  */
-export declare const dismissDialog: reduxAct.ComplexActionCreator1<any, any, {}>;
+export declare const dismissDialog: import("../../../../Projects/Vortex/node_modules/redux-act").ComplexActionCreator1<any, any, {}>;
 export declare function fireNotificationAction(notiId: string, notiProcess: string, action: number, dismiss: NotificationDismiss): void;
 /**
  * show a notification

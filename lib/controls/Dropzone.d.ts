@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import * as React from 'react';
 export declare type DropType = 'urls' | 'files';
 export interface IBaseProps {
@@ -13,5 +12,5 @@ export interface IBaseProps {
     style?: React.CSSProperties;
     dragOverlay?: JSX.Element;
 }
-declare const _default: React.ComponentClass<IBaseProps>;
+declare const _default: React.ComponentClass<IBaseProps, React.ComponentState>;
 export default _default;

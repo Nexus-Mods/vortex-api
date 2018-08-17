@@ -1,11 +1,7 @@
 import { IDiscoveryResult } from './types/IDiscoveryResult';
 import { IGameStored } from './types/IGameStored';
 export declare function knownGames(state: any): IGameStored[];
-export declare const currentGame: ((state: any) => IGameStored) & {
-    resultFunc: (res1: IGameStored[], res2: string) => IGameStored;
-    recomputations: () => number;
-    resetRecomputations: () => number;
-};
+export declare const currentGame: import("../../../../../Projects/Vortex/node_modules/reselect").OutputSelector<any, IGameStored, (res1: IGameStored[], res2: string) => IGameStored>;
 /**
  * return the discovery information about a game
  *

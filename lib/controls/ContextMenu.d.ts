@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { IActionDefinitionEx } from './ActionControl';
 import * as React from 'react';
 export interface IMenuActionProps {
@@ -15,5 +14,5 @@ export interface IContextMenuProps {
     onHide: () => void;
     instanceId: string;
 }
-declare const _default: React.ComponentClass<IContextMenuProps>;
+declare const _default: React.ComponentClass<IContextMenuProps, React.ComponentState>;
 export default _default;

@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import ExtensionManager from './ExtensionManager';
 import * as React from 'react';
 export interface IExtensionProps {
@@ -29,4 +28,4 @@ export interface IExtensibleProps {
  * @param {(React.ComponentClass<P & IExtensionProps>)} ComponentToWrap the component to wrap
  * @returns {React.ComponentClass<P>} the wrapper component
  */
-export declare function extend(registerFunc: (...args) => void, groupProp?: string): <P, S>(ComponentToWrap: React.ComponentClass<P>) => any;
+export declare function extend(registerFunc: (...args: any[]) => void, groupProp?: string): <P, S>(ComponentToWrap: React.ComponentClass<P, React.ComponentState>) => any;

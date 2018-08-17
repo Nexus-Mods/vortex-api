@@ -1,5 +1,3 @@
-/// <reference types="i18next" />
-/// <reference types="bluebird" />
 import { Normalize } from '../../../util/getNormalizeFunc';
 import { IMod } from './IMod';
 import * as Promise from 'bluebird';

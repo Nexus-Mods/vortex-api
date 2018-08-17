@@ -1,6 +1,3 @@
-/// <reference types="i18next" />
-/// <reference types="bluebird" />
-/// <reference types="react" />
 import { IMod } from '../../mod_management/types/IMod';
 import { IDiscoveryResult } from '../types/IDiscoveryResult';
 import { IGameStored } from '../types/IGameStored';
@@ -21,5 +18,5 @@ export interface IProps {
     onRefreshGameInfo: (gameId: string) => Promise<void>;
     onBrowseGameLocation: (gameId: string) => Promise<void>;
 }
-declare const _default: React.ComponentClass<IProps>;
+declare const _default: React.ComponentClass<IProps, React.ComponentState>;
 export default _default;

@@ -1,5 +1,4 @@
 /// <reference types="node" />
-/// <reference types="bluebird" />
 import * as fs from './fs';
 import * as Promise from 'bluebird';
 export interface IWalkOptions {

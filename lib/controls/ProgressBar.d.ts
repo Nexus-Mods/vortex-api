@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import * as React from 'react';
 export interface IBaseProps {
     className?: string;
@@ -15,7 +14,7 @@ export interface IBaseProps {
  */
 declare class ProgressBar extends React.PureComponent<IBaseProps, {}> {
     render(): JSX.Element;
-    private renderLabels();
-    private renderPercentage(percent);
+    private renderLabels;
+    private renderPercentage;
 }
 export default ProgressBar;

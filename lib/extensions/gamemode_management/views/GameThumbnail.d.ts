@@ -1,6 +1,3 @@
-/// <reference types="i18next" />
-/// <reference types="bluebird" />
-/// <reference types="react" />
 import { IGameStored } from '../types/IGameStored';
 import * as Promise from 'bluebird';
 import * as I18next from 'i18next';
@@ -15,5 +12,5 @@ export interface IBaseProps {
     container?: HTMLElement;
     onLaunch?: () => void;
 }
-declare const _default: React.ComponentClass<IBaseProps>;
+declare const _default: React.ComponentClass<IBaseProps, React.ComponentState>;
 export default _default;

@@ -1,4 +1,3 @@
-/// <reference types="i18next" />
 import { IMod } from '../../mod_management/types/IMod';
 import * as I18next from 'i18next';
 /**

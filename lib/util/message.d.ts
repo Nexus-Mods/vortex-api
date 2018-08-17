@@ -1,4 +1,6 @@
+import { IState } from '../types/IState';
 import * as Redux from 'redux';
+import { ThunkDispatch } from 'redux-thunk';
 /**
  * calculate a reasonable time to display a message based on the
  * amount of text.
@@ -21,11 +23,11 @@ export declare function calcDuration(messageLength: number): number;
  * @param {string} message
  * @param {string} [id]
  */
-export declare function showSuccess<S>(dispatch: Redux.Dispatch<S>, message: string, id?: string): void;
+export declare function showSuccess<S>(dispatch: ThunkDispatch<IState, null, Redux.Action>, message: string, id?: string): void;
 /**
  * show activity notification
  */
-export declare function showActivity<S>(dispatch: Redux.Dispatch<S>, message: string, id?: string): void;
+export declare function showActivity<S>(dispatch: ThunkDispatch<IState, null, Redux.Action>, message: string, id?: string): void;
 /**
  * show an info notification. Please don't use this for important stuff as the message
  * has a timer based on message length
@@ -36,7 +38,7 @@ export declare function showActivity<S>(dispatch: Redux.Dispatch<S>, message: st
  * @param {string} message
  * @param {string} [id]
  */
-export declare function showInfo<S>(dispatch: Redux.Dispatch<S>, message: string, id?: string): void;
+export declare function showInfo<S>(dispatch: ThunkDispatch<IState, null, Redux.Action>, message: string, id?: string): void;
 export interface IErrorOptions {
     replace?: {
         [key: string]: string;
@@ -57,4 +59,4 @@ export interface IErrorOptions {
  *                        want string or Errors but since some node apis return non-Error objects
  *                        where Errors are expected we have to be a bit more flexible here.
  */
-export declare function showError<S>(dispatch: Redux.Dispatch<S>, message: string, details?: string | Error | any, options?: IErrorOptions): void;
+export declare function showError<S>(dispatch: ThunkDispatch<IState, null, Redux.Action>, message: string, details?: string | Error | any, options?: IErrorOptions): void;

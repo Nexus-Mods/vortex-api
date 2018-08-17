@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import Step from './Step';
 import * as React from 'react';
 export interface IStepsProps {

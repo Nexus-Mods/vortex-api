@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { ButtonType } from './IconBar';
 import * as React from 'react';
 import { Button as BootstrapButton, NavItem as BootstrapNavItem } from 'react-bootstrap';

@@ -1,4 +1,3 @@
-/// <reference types="i18next" />
 /// <reference types="react" />
 import { ITableAttribute } from '../../types/ITableAttribute';
 import { ComponentEx } from '../../util/ComponentEx';

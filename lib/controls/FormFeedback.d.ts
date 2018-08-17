@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import * as React from 'react';
 export interface IFormFeedbackProps {
     pending?: boolean;
@@ -10,6 +9,6 @@ declare class FormFeedback extends React.Component<IFormFeedbackProps, {}> {
         bsRole: string;
     };
     render(): JSX.Element;
-    private icon(state, pending);
+    private icon;
 }
 export default FormFeedback;

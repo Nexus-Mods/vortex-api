@@ -1,4 +1,3 @@
-/// <reference types="bluebird" />
 import * as Promise from 'bluebird';
 /**
  * management function. Prevents a function from being called too often
@@ -60,8 +59,8 @@ declare class Debouncer {
      */
     wait(callback: (err: Error) => void, immediately?: boolean): void;
     clear(): void;
-    private run();
-    private invokeCallbacks(localCallbacks, err);
-    private startTimer();
+    private run;
+    private invokeCallbacks;
+    private startTimer;
 }
 export default Debouncer;
