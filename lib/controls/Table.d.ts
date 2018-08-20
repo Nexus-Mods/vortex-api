@@ -31,6 +31,6 @@ export interface ILookupCalculated {
         [attributeId: string]: any;
     };
 }
-export declare function makeGetSelection(tableId: string): import("../../../../Projects/Vortex/node_modules/reselect").OutputSelector<any, string[], (res: ITableState) => string[]>;
+export declare function makeGetSelection(tableId: string): import("../../../../Work/Vortex_0_15/node_modules/reselect").OutputSelector<any, string[], (res: ITableState) => string[]>;
 declare const _default: React.ComponentClass<IBaseProps & IExtensibleProps, React.ComponentState>;
 export default _default;
