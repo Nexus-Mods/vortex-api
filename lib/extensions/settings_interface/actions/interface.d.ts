@@ -12,3 +12,4 @@ export declare const setAdvancedMode: reduxAct.ComplexActionCreator1<boolean, {
 export declare const setProfilesVisible: reduxAct.ComplexActionCreator1<boolean, {
     visible: boolean;
 }, {}>;
+export declare const setDesktopNotifications: reduxAct.ComplexActionCreator1<boolean, boolean, {}>;

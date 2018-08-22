@@ -76,7 +76,7 @@ function config(moduleName, basePath, version) {
   }
   return {
     entry: tsx ? './src/index.tsx' : './src/index.ts',
-    mode: process.env.NODE_ENV || 'development',
+    mode: process.env.TARGET_ENV || 'development',
     target: 'electron-renderer',
     node: {__filename: false, __dirname: false},
     output: output(moduleName, basePath),

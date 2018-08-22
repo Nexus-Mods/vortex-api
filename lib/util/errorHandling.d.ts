@@ -1,10 +1,12 @@
 import { IError } from '../types/IError';
 import * as Promise from 'bluebird';
 import { IFeedbackResponse } from 'nexus-api';
-import { IErrorOptions } from '../types/api';
+import { IErrorOptions, IExtensionApi } from '../types/api';
 export declare function genHash(error: IError): any;
 export declare function createErrorReport(type: string, error: IError, labels: string[], state: any): void;
 export declare function setApiKey(key: string): void;
+export declare function setOutdated(api: IExtensionApi): void;
+export declare function isOutdated(): boolean;
 export declare function sendReportFile(fileName: string): Promise<IFeedbackResponse>;
 export declare function sendReport(type: string, error: IError, labels: string[], reporterId?: string): Promise<IFeedbackResponse>;
 /**
