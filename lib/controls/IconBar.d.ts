@@ -12,6 +12,7 @@ export interface IBaseProps {
     buttonType?: ButtonType;
     orientation?: 'horizontal' | 'vertical';
     collapse?: boolean | 'force';
+    groupByIcon?: boolean;
     filter?: (action: IActionDefinition) => boolean;
     icon?: string;
     pullRight?: boolean;
