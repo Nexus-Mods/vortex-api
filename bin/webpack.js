@@ -74,9 +74,8 @@ function config(moduleName, basePath, version) {
   } catch (err) {
     tsx = false;
   }
-  return {
+  const res = {
     entry: tsx ? './src/index.tsx' : './src/index.ts',
-    mode: process.env.TARGET_ENV || 'development',
     target: 'electron-renderer',
     node: {__filename: false, __dirname: false},
     output: output(moduleName, basePath),
@@ -89,6 +88,12 @@ function config(moduleName, basePath, version) {
     devtool: 'source-map',
     externals: externals(),
   };
+
+  if (version >= 4) {
+    res['mode'] = process.env.TARGET_ENV || 'development';
+  }
+
+  return res;
 }
 
 module.exports = {
