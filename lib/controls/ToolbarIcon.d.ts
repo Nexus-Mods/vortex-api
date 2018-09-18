@@ -9,6 +9,7 @@ export interface IToolbarIconProps {
     tooltip?: string;
     onClick?: (ids: string[]) => void;
     pulse?: boolean;
+    spin?: boolean;
     disabled?: boolean;
     className?: string;
 }

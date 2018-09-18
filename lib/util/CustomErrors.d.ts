@@ -26,3 +26,6 @@ export declare class MissingInterpreter extends Error {
     constructor(message: string, url?: string);
     readonly url: string;
 }
+export declare class NotFound extends Error {
+    constructor(what: string);
+}

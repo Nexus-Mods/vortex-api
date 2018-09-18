@@ -26,7 +26,7 @@ export declare function sum(container: number[]): number;
  * on obj, it will be set to the default value and that is returned.
  */
 export declare function setdefault<T>(obj: any, key: PropertyKey, def: T): T;
-export declare function writeFileAtomic(filePath: string, data: string | Buffer | Uint8Array, options?: fs.WriteFileOptions): Promise<void>;
+export declare function writeFileAtomic(filePath: string, data: string | Buffer, options?: fs.WriteFileOptions): Promise<void>;
 /**
  * copy a file in such a way that it will not replace the target if the copy is
  * somehow interrupted. The file is first copied to a temporary file in the same
