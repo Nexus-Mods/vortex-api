@@ -1,3 +1,6 @@
+/**
+ * wrapper for logging functionality
+ */
 export declare type LogLevel = 'debug' | 'info' | 'warn' | 'error';
 export declare function setLogPath(basePath: string): void;
 /**

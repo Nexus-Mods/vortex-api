@@ -1,4 +1,3 @@
-/// <reference types="bluebird" />
 import { IGameDetail } from '../../../types/IExtensionContext';
 import { IGame } from '../../../types/IGame';
 import { IDiscoveryResult } from '../types/IDiscoveryResult';

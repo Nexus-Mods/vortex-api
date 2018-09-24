@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import * as React from 'react';
 import { IComponentContext } from '../types/IComponentContext';
 import { II18NProps } from '../types/II18NProps';
@@ -16,9 +15,9 @@ export declare class StateProxyHandler<T extends object> implements ProxyHandler
     get(target: T, key: PropertyKey): any;
     deleteProperty(target: T, key: PropertyKey): boolean;
     set(target: T, key: PropertyKey, value: any, receiver: any): boolean;
-    private baseObject();
-    private setBaseObject(newObj);
-    private derive(obj, key);
+    private baseObject;
+    private setBaseObject;
+    private derive;
 }
 /**
  * convenience extension for React.Component that adds support for the

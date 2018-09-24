@@ -1,4 +1,3 @@
-/// <reference types="i18next" />
 import { IMod } from '../../mod_management/types/IMod';
 import { ICategory } from '../types/ICategoryDictionary';
 import { ICategoriesTree } from '../types/ITrees';

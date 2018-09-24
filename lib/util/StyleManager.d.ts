@@ -1,4 +1,3 @@
-/// <reference types="bluebird" />
 import * as Promise from 'bluebird';
 import { IExtensionApi } from '../types/IExtensionContext';
 declare class StyleManager {
@@ -27,6 +26,6 @@ declare class StyleManager {
      */
     setSheet(key: string, filePath: string): void;
     renderNow(): Promise<void>;
-    private render();
+    private render;
 }
 export default StyleManager;

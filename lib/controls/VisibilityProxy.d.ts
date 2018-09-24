@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import * as React from 'react';
 export interface IProps {
     container?: HTMLElement;
@@ -16,10 +15,10 @@ export interface IProps {
 declare class VisibilityProxy extends React.PureComponent<any, {}> {
     private static sObservers;
     private static sInstances;
-    private static getObserver(container);
-    private static callback(entries, observer);
-    private static observe(container, target, cb);
-    private static unobserve(container, target);
+    private static getObserver;
+    private static callback;
+    private static observe;
+    private static unobserve;
     private mLastVisible;
     private mVisibleTime;
     componentDidMount(): void;

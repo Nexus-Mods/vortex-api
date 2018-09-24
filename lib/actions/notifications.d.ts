@@ -1,4 +1,3 @@
-/// <reference types="bluebird" />
 import { DialogActions, DialogType, IDialogContent, IDialogResult } from '../types/IDialog';
 import { INotification, NotificationDismiss } from '../types/INotification';
 import * as Promise from 'bluebird';

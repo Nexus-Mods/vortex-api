@@ -1,4 +1,3 @@
-/// <reference types="i18next" />
 export * from './message';
 export * from './storeHelper';
 import { resolveCategoryName, resolveCategoryPath } from '../extensions/category_management';
@@ -27,7 +26,7 @@ import steam, { GameNotFound, ISteamEntry } from './Steam';
 import { bytesToString, copyFileAtomic, isNullOrWhitespace, objDiff, removePersistent, setdefault } from './util';
 import walk from './walk';
 import { runElevated, runThreaded } from 'vortex-run';
-export { Archive, bytesToString, copyFileAtomic, copyRecursive, DataInvalid, Debouncer, delayed, deriveModInstallName as deriveInstallName, extend, GameNotFound, getCurrentLanguage, getGame, getGames, getNormalizeFunc, getReduxLog, isNullOrWhitespace, LazyComponent, lazyRequire, makeReactive, MissingInterpreter, Normalize, NotFound, NotSupportedError, objDiff, opn, ProcessCanceled, ReduxProp, relativeTime, removePersistent, renderModName, resolveCategoryName, resolveCategoryPath, runElevated, runThreaded, setdefault, SetupError, sortMods, steam, ISteamEntry, terminate, testModReference, UserCanceled, walk };
+export { Archive, bytesToString, copyFileAtomic, copyRecursive, DataInvalid, Debouncer, delayed, deriveModInstallName as deriveInstallName, extend, GameNotFound, getCurrentLanguage, getGame, getGames, getNormalizeFunc, getReduxLog, isNullOrWhitespace, LazyComponent, lazyRequire, makeReactive, MissingInterpreter, Normalize, NotFound, NotSupportedError, objDiff, opn, ProcessCanceled, ReduxProp, relativeTime, removePersistent, renderModName, resolveCategoryName, resolveCategoryPath, runElevated, runThreaded, setdefault, SetupError, sortMods, steam, ISteamEntry, terminate, testModReference, UserCanceled, walk, };
 export declare type TextGroup = 'mod';
 import * as I18next from 'i18next';
 export declare function getText(group: TextGroup, textId: string, t: I18next.TranslationFunction): any;

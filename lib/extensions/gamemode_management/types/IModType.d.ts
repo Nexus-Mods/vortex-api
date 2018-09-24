@@ -1,4 +1,3 @@
-/// <reference types="bluebird" />
 import { IInstruction } from '../../../types/IExtensionContext';
 import { IGame } from '../../../types/IGame';
 import * as Promise from 'bluebird';

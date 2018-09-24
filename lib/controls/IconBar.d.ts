@@ -1,5 +1,3 @@
-/// <reference types="i18next" />
-/// <reference types="react" />
 import { IActionDefinition } from '../types/IActionDefinition';
 import { IExtensibleProps } from '../util/ExtensionProvider';
 import { IActionControlProps } from './ActionControl';
@@ -21,5 +19,6 @@ export interface IBaseProps {
     clickAnywhere?: boolean;
     t: I18next.TranslationFunction;
 }
-declare const _default: React.ComponentClass<IBaseProps & IActionControlProps & IExtensibleProps & React.HTMLAttributes<any>>;
+declare type ExportType = IBaseProps & IActionControlProps & IExtensibleProps & React.HTMLAttributes<any>;
+declare const _default: React.ComponentClass<ExportType, React.ComponentState>;
 export default _default;

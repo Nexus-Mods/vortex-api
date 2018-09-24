@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import * as React from 'react';
 export interface IIconProps {
     className?: string;
@@ -21,7 +20,7 @@ declare class Icon extends React.Component<IIconProps, {}> {
     componentWillReceiveProps(newProps: IIconProps): void;
     render(): JSX.Element;
     private setRef;
-    private setIcon(props);
-    private loadSet(set);
+    private setIcon;
+    private loadSet;
 }
 export default Icon;

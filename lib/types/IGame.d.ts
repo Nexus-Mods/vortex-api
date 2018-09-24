@@ -1,4 +1,3 @@
-/// <reference types="bluebird" />
 import { IModType } from '../extensions/gamemode_management/types/IModType';
 import { IDiscoveryResult, IMod } from './IState';
 import { ITool } from './ITool';

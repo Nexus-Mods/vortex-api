@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { IExtensibleProps } from '../util/ExtensionProvider';
 import { IActionControlProps } from './ActionControl';
 import * as React from 'react';
@@ -10,5 +9,6 @@ export interface IBaseProps {
     buttonType?: ButtonType;
     orientation?: 'horizontal' | 'vertical';
 }
-declare const _default: React.ComponentClass<IBaseProps & IActionControlProps & IExtensibleProps & React.HTMLAttributes<any>>;
+declare type ExportType = IBaseProps & IActionControlProps & IExtensibleProps & React.HTMLAttributes<any>;
+declare const _default: React.ComponentClass<ExportType, React.ComponentState>;
 export default _default;

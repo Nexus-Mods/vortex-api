@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import * as React from 'react';
 export interface IBar {
     value: number;
@@ -14,5 +13,5 @@ export interface IBaseProps {
     maxWidth?: number;
     style?: React.CSSProperties;
 }
-declare const _default: React.ComponentClass<IBaseProps>;
+declare const _default: React.ComponentClass<IBaseProps, React.ComponentState>;
 export default _default;

@@ -1,4 +1,3 @@
-/// <reference types="bluebird" />
 import { IInstallResult } from './IInstallResult';
 import * as Promise from 'bluebird';
 export declare type ProgressDelegate = (perc: number) => void;

@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { ButtonType } from './IconBar';
 import * as React from 'react';
 import { IActionDefinition } from '../types/api';
@@ -12,6 +11,6 @@ export interface IToolbarDropdownProps {
 }
 declare class ToolbarDropdown extends React.PureComponent<IToolbarDropdownProps, {}> {
     render(): JSX.Element;
-    private renderTitle(shared);
+    private renderTitle;
 }
 export default ToolbarDropdown;

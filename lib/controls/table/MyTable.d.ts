@@ -1,4 +1,8 @@
-/// <reference types="react" />
+/**
+ * replacement for the react table using
+ * the css display classes 'table', 'table-row' and so on
+ * instead of <table>, <tr>, ... for more flexibility
+ */
 import * as React from 'react';
 import { TableProps } from 'react-bootstrap';
 export declare function Table(props: TableProps): JSX.Element;

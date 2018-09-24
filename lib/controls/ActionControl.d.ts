@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { IActionDefinition } from '../types/IActionDefinition';
 import * as React from 'react';
 export interface IActionControlProps {
@@ -11,5 +10,5 @@ export interface IExtensionProps {
 export interface IActionDefinitionEx extends IActionDefinition {
     show: boolean | string;
 }
-declare const _default: React.ComponentClass<IActionControlProps>;
+declare const _default: React.ComponentClass<IActionControlProps, React.ComponentState>;
 export default _default;

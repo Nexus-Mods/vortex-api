@@ -1,4 +1,3 @@
-/// <reference types="i18next" />
 /// <reference types="react" />
 import * as I18next from 'i18next';
 export declare type AttributeRenderer = 'progress';

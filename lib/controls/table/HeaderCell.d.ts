@@ -1,5 +1,3 @@
-/// <reference types="i18next" />
-/// <reference types="react" />
 import { IAttributeState } from '../../types/IAttributeState';
 import { ITableAttribute } from '../../types/ITableAttribute';
 import { SortDirection } from '../../types/SortDirection';
@@ -20,7 +18,7 @@ declare class HeaderCell extends React.Component<IHeaderProps, {}> {
     shouldComponentUpdate(newProps: IHeaderProps): boolean;
     render(): JSX.Element;
     updateWidth(): void;
-    private renderSortIndicator();
+    private renderSortIndicator;
     private setRef;
     private cycleDirection;
     private setDirection;

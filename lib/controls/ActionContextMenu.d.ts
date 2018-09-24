@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { IExtensibleProps } from '../util/ExtensionProvider';
 import { IActionControlProps } from './ActionControl';
 import { IContextMenuProps } from './ContextMenu';

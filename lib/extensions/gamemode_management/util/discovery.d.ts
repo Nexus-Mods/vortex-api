@@ -1,4 +1,3 @@
-/// <reference types="bluebird" />
 import { IDiscoveredTool } from '../../../types/IDiscoveredTool';
 import { IGame } from '../../../types/IGame';
 import { IDiscoveryResult } from '../types/IDiscoveryResult';

@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import * as React from 'react';
 import { Dropdown, DropdownMenu, DropdownToggle } from 'react-bootstrap';
 export interface IBaseProps {

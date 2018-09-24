@@ -1,5 +1,4 @@
 /// <reference types="node" />
-/// <reference types="bluebird" />
 import { ThunkStore } from '../types/IExtensionContext';
 import * as Promise from 'bluebird';
 import * as fs from 'fs-extra-promise';
