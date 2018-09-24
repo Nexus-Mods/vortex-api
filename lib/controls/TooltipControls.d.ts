@@ -26,6 +26,7 @@ export interface IIconButtonExtraProps {
     flip?: 'horizontal' | 'vertical';
     rotate?: number;
     rotateId?: string;
+    vertical?: boolean;
 }
 export declare type IconButtonProps = ButtonProps & IIconButtonExtraProps;
 export declare class IconButton extends React.Component<IconButtonProps, {}> {

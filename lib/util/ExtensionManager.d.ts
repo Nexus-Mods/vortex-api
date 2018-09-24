@@ -1,7 +1,7 @@
 /// <reference types="node" />
 /// <reference types="i18next" />
 /// <reference types="bluebird" />
-import { IExtensionApi } from '../types/IExtensionContext';
+import { IExtensionApi, ThunkStore } from '../types/IExtensionContext';
 import * as Promise from 'bluebird';
 import * as I18next from 'i18next';
 import * as Redux from 'redux';
@@ -43,7 +43,7 @@ declare class ExtensionManager {
      *
      * @memberOf ExtensionManager
      */
-    setStore<S>(store: Redux.Store<S>): void;
+    setStore<S>(store: ThunkStore<S>): void;
     /**
      * set up the api for the main process.
      *
@@ -90,6 +90,7 @@ declare class ExtensionManager {
     renderStyle(): Promise<void>;
     getProtocolHandler(protocol: string): (url: string) => void;
     private getModDB;
+    private connectMetaDB(gameId, apiKey);
     private stateChangeHandler;
     private showErrorBox;
     /**

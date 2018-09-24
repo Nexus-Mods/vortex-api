@@ -21,10 +21,8 @@ declare class HeaderCell extends React.Component<IHeaderProps, {}> {
     render(): JSX.Element;
     updateWidth(): void;
     private renderSortIndicator();
-    private renderFilterIndicator();
     private setRef;
     private cycleDirection;
     private setDirection;
-    private toggleFilter;
 }
 export default HeaderCell;

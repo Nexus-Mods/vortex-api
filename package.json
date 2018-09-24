@@ -1,6 +1,6 @@
 {
   "name": "vortex-api",
-  "version": "0.15.7",
+  "version": "0.16.6-pre.2",
   "description": "Library exporting nmm components extensions may use",
   "main": "lib/index.js",
   "bin": { "extractInfo": "./bin/extractInfo.js" },
@@ -16,6 +16,5 @@
   "author": "Black Tree Gaming Ltd",
   "license": "GPL-3.0",
   "peerDependencies": {
-    "bluebird": "^3.4.6"
   }
 }

@@ -6,6 +6,7 @@ export declare const currentGame: ((state: any) => IGameStored) & {
     recomputations: () => number;
     resetRecomputations: () => number;
 };
+export declare const gameById: any;
 /**
  * return the discovery information about a game
  *
@@ -14,4 +15,5 @@ export declare const currentGame: ((state: any) => IGameStored) & {
  * @returns {IDiscoveryResult}
  */
 export declare function currentGameDiscovery(state: any): IDiscoveryResult;
+export declare const discoveryByGame: any;
 export declare function gameName(state: any, gameId: string): string;

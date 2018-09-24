@@ -2,9 +2,7 @@
 import * as React from 'react';
 export interface IIconProps {
     className?: string;
-    style?: {
-        [key: string]: string | number;
-    };
+    style?: React.CSSProperties;
     set?: string;
     name: string;
     spin?: boolean;
@@ -19,7 +17,6 @@ export interface IIconProps {
 declare class Icon extends React.Component<IIconProps, {}> {
     private static sCache;
     private mCurrentSize;
-    private mTicks;
     componentWillMount(): void;
     componentWillReceiveProps(newProps: IIconProps): void;
     render(): JSX.Element;

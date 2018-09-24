@@ -9,8 +9,10 @@ import { ISupportedResult, TestSupported } from '../extensions/mod_management/ty
 import { Archive } from '../util/archives';
 import ReduxProp from '../util/ReduxProp';
 import { SanityCheck } from '../util/reduxSanity';
+import { DialogActions, IDialogContent } from './api';
 import { IActionOptions } from './IActionDefinition';
 import { IBannerOptions } from './IBannerOptions';
+import { DialogType, IDialogResult } from './IDialog';
 import { IGame } from './IGame';
 import { INotification } from './INotification';
 import { IDiscoveryResult } from './IState';
@@ -21,10 +23,11 @@ import * as I18next from 'i18next';
 import { ILookupResult, IModInfo, IReference } from 'modmeta-db';
 import * as React from 'react';
 import * as Redux from 'redux';
-import { DialogActions, IDialogContent } from './api';
-import { DialogType, IDialogResult } from './IDialog';
-import { TestEvent } from '../extensions/test_runner';
-export { TestSupported, IInstallResult, IInstruction, IDeployedFile, IDeploymentMethod, IFileChange, InstallFunc, ISupportedResult, ProgressDelegate };
+import { ThunkDispatch } from 'redux-thunk';
+export { TestSupported, IInstallResult, IInstruction, IDeployedFile, IDeploymentMethod, IFileChange, ILookupResult, IModInfo, IReference, InstallFunc, ISupportedResult, ProgressDelegate };
+export interface ThunkStore<S> extends Redux.Store<S> {
+    dispatch: ThunkDispatch<S, null, Redux.Action>;
+}
 export declare type PropsCallback = () => any;
 /**
  * determines where persisted state is stored and when it gets loaded.
@@ -35,7 +38,7 @@ export declare type PropsCallback = () => any;
 export declare type PersistingType = 'global' | 'game' | 'profile';
 export declare type CheckFunction = () => Promise<ITestResult>;
 export declare type RegisterSettings = (title: string, element: React.ComponentClass<any> | React.StatelessComponent<any>, props?: PropsCallback, visible?: () => boolean, priority?: number) => void;
-export declare type RegisterAction = (group: string, position: number, iconOrComponent: string | React.ComponentClass<any> | React.StatelessComponent<any>, options: IActionOptions, titleOrProps?: string | PropsCallback, actionOrCondition?: (instanceIds?: string[]) => void | boolean, condition?: (instanceIds?: string[]) => boolean) => void;
+export declare type RegisterAction = (group: string, position: number, iconOrComponent: string | React.ComponentClass<any> | React.StatelessComponent<any>, options: IActionOptions, titleOrProps?: string | PropsCallback, actionOrCondition?: (instanceIds?: string[]) => void | boolean, condition?: (instanceIds?: string[]) => boolean | string) => void;
 export declare type RegisterFooter = (id: string, element: React.ComponentClass<any>, props?: PropsCallback) => void;
 export declare type RegisterBanner = (group: string, component: React.ComponentClass<any> | React.StatelessComponent<any>, options: IBannerOptions) => void;
 export interface IMainPageOptions {
@@ -44,7 +47,15 @@ export interface IMainPageOptions {
      * name collisions if another extension is already using the same title.
      */
     id?: string;
+    /**
+     * A hotkey to be pressed together with Ctrl+Shift to open that page
+     */
     hotkey?: string;
+    /**
+     * A hotkey to be pressed to open that page. In this case the caller has to specify any modifiers
+     * in the format required by electron
+     */
+    hotkeyRaw?: string;
     visible?: () => boolean;
     group: 'dashboard' | 'global' | 'per-game' | 'support' | 'hidden';
     priority?: number;
@@ -262,7 +273,7 @@ export interface IExtensionApi {
      * @type {Redux.Store<any>}
      * @memberOf IExtensionApi
      */
-    store?: Redux.Store<any>;
+    store?: ThunkStore<any>;
     /**
      * event emitter
      *
@@ -391,6 +402,11 @@ export interface IExtensionApi {
      * will only return after all promises from handlers are returned.
      */
     onAsync: (eventName: string, listener: (...args: any[]) => Promise<void>) => void;
+    /**
+     * returns true if the running version of Vortex is considered outdated. This is mostly used
+     * to determine if feedback should be sent to Nexus Mods.
+     */
+    isOutdated: () => boolean;
 }
 export interface IStateVerifier {
     type?: 'map' | 'string' | 'boolean' | 'number' | 'object';
@@ -615,7 +631,7 @@ export interface IExtensionContext {
      *
      * @memberOf IExtensionContext
      */
-    registerTest: (id: string, event: TestEvent, check: CheckFunction) => void;
+    registerTest: (id: string, event: string, check: CheckFunction) => void;
     /**
      * register a handler for archive types so the content of such archives is exposed to
      * the application (especially other extensions)

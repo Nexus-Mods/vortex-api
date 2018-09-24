@@ -155,6 +155,11 @@ export interface ITableAttribute<T = any> {
      */
     sortFuncRaw?: (lhs: T, rhs: T, locale: string) => number;
     /**
+     * if specified, this is called to determine if the attribute is visible at all.
+     * This can be used to hide attributes on game where they aren't supported
+     */
+    condition?: () => boolean;
+    /**
      * does this attribute support displaying and editing multiple values? defaults to false.
      * If this is false the attribute is not displayed with multiple items selected. If this is true,
      * customRenderer receives an array of objects to display and onChangeValue receive an array of
@@ -188,6 +193,11 @@ export interface ITableAttribute<T = any> {
          * an action. If false, render a selection box
          */
         actions?: boolean;
+        /**
+         * if set, this is called to determine the placeholder to be displayed when the input box is empty.
+         * Has no effect if this edit config doesn't generate an input box
+         */
+        placeholder?: () => string;
         /**
          * if set, this field is a drop-down selection with the choices returned by this function.
          * Please note: the value returned by calc has to appear in the text-field of one of these

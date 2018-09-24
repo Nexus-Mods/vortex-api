@@ -34,19 +34,21 @@ export interface IDownload {
      */
     urls: string[];
     /**
-     * path of the file being downloaded to
+     * path of the file being downloaded to. This is relative to the base download
+     * directory for the game and since we use a flat directory structure, this is
+     * in practice just the file name
      *
      * @type {string}
      * @memberOf IDownload
      */
     localPath?: string;
     /**
-     * id of the game to which this download applies.
+     * id of the game(s) to which this archive is compatible.
      *
      * @type {string}
      * @memberOf IDownload
      */
-    game: string;
+    game: string[];
     /**
      * info about the mod being downloaded. This will
      * be associated with the mod entry after its installation

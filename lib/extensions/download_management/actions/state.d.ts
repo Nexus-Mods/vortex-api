@@ -101,3 +101,7 @@ export declare const setDownloadTime: reduxAct.ComplexActionCreator2<string, num
     id: string;
     time: number;
 }, {}>;
+export declare const setCompatibleGames: reduxAct.ComplexActionCreator2<string, string[], {
+    id: string;
+    games: string[];
+}, {}>;

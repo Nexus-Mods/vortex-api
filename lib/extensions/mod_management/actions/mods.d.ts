@@ -85,3 +85,11 @@ export declare const setINITweakEnabled: reduxAct.ComplexActionCreator4<string, 
     tweak: string;
     enabled: boolean;
 }, {}>;
+/**
+ * set list of files that will always be provided by this mod, no matter the deployment order
+ */
+export declare const setFileOverride: reduxAct.ComplexActionCreator3<string, string, string[], {
+    gameId: string;
+    modId: string;
+    files: string[];
+}, {}>;
