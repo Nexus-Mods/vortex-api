@@ -266,6 +266,11 @@ export interface IState {
             [gameId: string]: ICategoryDictionary;
         };
         gameMode: IStateGameMode;
+        deployment: {
+            needToDeploy: {
+                [gameId: string]: boolean;
+            };
+        };
     };
 }
 export interface IDiscoveryPhase {

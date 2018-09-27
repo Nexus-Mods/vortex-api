@@ -18,5 +18,9 @@ export declare class TH extends React.Component<DProps<HTMLTableHeaderCellElemen
 }, {}> {
     render(): JSX.Element;
 }
-export declare function TR(props: DProps<HTMLTableRowElement>): JSX.Element;
-export declare function TD(props: DProps<HTMLTableCellElement>): JSX.Element;
+export declare function TR(props: DProps<HTMLTableRowElement> & {
+    domRef?: (ref: HTMLDivElement) => void;
+}): JSX.Element;
+export declare function TD(props: DProps<HTMLTableCellElement> & {
+    domRef?: (ref: HTMLDivElement) => void;
+}): JSX.Element;
