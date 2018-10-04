@@ -104,9 +104,11 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="itableattribute.html#calc" class="tsd-kind-icon">calc</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="itableattribute.html#condition" class="tsd-kind-icon">condition</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="itableattribute.html#customrenderer" class="tsd-kind-icon">custom<wbr>Renderer</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="itableattribute.html#description" class="tsd-kind-icon">description</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="itableattribute.html#edit" class="tsd-kind-icon">edit</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="itableattribute.html#externaldata" class="tsd-kind-icon">external<wbr>Data</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="itableattribute.html#filter" class="tsd-kind-icon">filter</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="itableattribute.html#help" class="tsd-kind-icon">help</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="itableattribute.html#icon" class="tsd-kind-icon">icon</a></li>
@@ -117,8 +119,10 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="itableattribute.html#istoggleable" class="tsd-kind-icon">is<wbr>Toggleable</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="itableattribute.html#isvolatile" class="tsd-kind-icon">is<wbr>Volatile</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="itableattribute.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="itableattribute.html#noshrink" class="tsd-kind-icon">no<wbr>Shrink</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="itableattribute.html#placement" class="tsd-kind-icon">placement</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="itableattribute.html#sortfunc" class="tsd-kind-icon">sort<wbr>Func</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="itableattribute.html#sortfuncraw" class="tsd-kind-icon">sort<wbr>Func<wbr>Raw</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="itableattribute.html#supportsmultiple" class="tsd-kind-icon">supports<wbr>Multiple</a></li>
 							</ul>
 						</section>
@@ -133,7 +137,7 @@
 					<div class="tsd-signature tsd-kind-icon">calc<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/ITableAttribute.ts:130</li>
+							<li>Defined in types/ITableAttribute.ts:151</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -180,12 +184,43 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="condition" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> condition</h3>
+					<div class="tsd-signature tsd-kind-icon">condition<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in types/ITableAttribute.ts:168</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>if specified, this is called to determine if the attribute is visible at all.
+							This can be used to hide attributes on game where they aren&#39;t supported</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="customrenderer" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> custom<wbr>Renderer</h3>
 					<div class="tsd-signature tsd-kind-icon">custom<wbr>Renderer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/ITableAttribute.ts:115</li>
+							<li>Defined in types/ITableAttribute.ts:136</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -232,7 +267,7 @@
 					<div class="tsd-signature tsd-kind-icon">description<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/ITableAttribute.ts:57</li>
+							<li>Defined in types/ITableAttribute.ts:65</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -248,7 +283,7 @@
 					<div class="tsd-signature tsd-kind-icon">edit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/ITableAttribute.ts:154</li>
+							<li>Defined in types/ITableAttribute.ts:186</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -262,6 +297,16 @@
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> actions<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Affects how choices are displayed if you have a choice attribute
+											if true (or undefined) then we display a dropdown box where each item immediately triggers
+										an action. If false, render a selection box</p>
+									</div>
+								</div>
+							</li>
 							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> choices<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span></h5>
 								<div class="tsd-comment tsd-typography">
@@ -326,6 +371,27 @@
 								</ul>
 							</li>
 							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> placeholder<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>if set, this is called to determine the placeholder to be displayed when the input box is empty.
+										Has no effect if this edit config doesn&#39;t generate an input box</p>
+									</div>
+								</div>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter-siganture">
+										<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported">
+											<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+										</ul>
+										<ul class="tsd-descriptions">
+											<li class="tsd-description">
+												<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> read<wbr>Only<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span></h5>
 								<div class="tsd-comment tsd-typography">
 									<div class="lead">
@@ -383,12 +449,63 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="externaldata" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> external<wbr>Data</h3>
+					<div class="tsd-signature tsd-kind-icon">external<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in types/ITableAttribute.ts:124</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>when using external data (not part of the data passed to the table) in calc or customRenderer,
+								set this parameter.
+								This function gets called with a callback that then needs to be called whenever the external
+							data (any of it) changes to cause a rerender.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>onChanged<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>onChanged: <span class="tsd-signature-type">function</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter-siganture">
+														<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+															<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+														</ul>
+														<ul class="tsd-descriptions">
+															<li class="tsd-description">
+																<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="filter" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> filter</h3>
 					<div class="tsd-signature tsd-kind-icon">filter<span class="tsd-signature-symbol">:</span> <a href="itablefilter.html" class="tsd-signature-type">ITableFilter</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/ITableAttribute.ts:80</li>
+							<li>Defined in types/ITableAttribute.ts:88</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -403,7 +520,7 @@
 					<div class="tsd-signature tsd-kind-icon">help<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/ITableAttribute.ts:63</li>
+							<li>Defined in types/ITableAttribute.ts:71</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -420,7 +537,7 @@
 					<div class="tsd-signature tsd-kind-icon">icon<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/ITableAttribute.ts:68</li>
+							<li>Defined in types/ITableAttribute.ts:76</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -436,7 +553,7 @@
 					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/ITableAttribute.ts:48</li>
+							<li>Defined in types/ITableAttribute.ts:56</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -451,7 +568,7 @@
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Default<wbr>Sort<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/ITableAttribute.ts:90</li>
+							<li>Defined in types/ITableAttribute.ts:98</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -467,7 +584,7 @@
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Default<wbr>Visible<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/ITableAttribute.ts:85</li>
+							<li>Defined in types/ITableAttribute.ts:93</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -483,7 +600,7 @@
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Sortable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/ITableAttribute.ts:76</li>
+							<li>Defined in types/ITableAttribute.ts:84</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -498,7 +615,7 @@
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Toggleable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/ITableAttribute.ts:72</li>
+							<li>Defined in types/ITableAttribute.ts:80</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -513,15 +630,17 @@
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Volatile<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/ITableAttribute.ts:103</li>
+							<li>Defined in types/ITableAttribute.ts:113</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>if true, the calc-function for this attribute is called from time to time to see if it changed.
+							<p>TODO: Obsolete
+								if true, the calc-function for this attribute is called whenever table data is refreshed,
+								even if the corresponding row data didn&#39;t change.
 								Otherwise (default) the values for this attribute are only updated when the input data to the
-								table changes. This means you need this flag, if the value of the attribute may change without
-								the table data changing.
+								row changes. This means you need this flag, if the value of the attribute may change without
+								the row data changing.
 								This is the case for example when your extension generates data in a separate object and then
 								only uses the row id to look up data from that object.
 								If you fail to set this flag when the rendered data isn&#39;t part of the table data
@@ -537,7 +656,7 @@
 					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/ITableAttribute.ts:52</li>
+							<li>Defined in types/ITableAttribute.ts:60</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -547,12 +666,27 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="noshrink" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> no<wbr>Shrink</h3>
+					<div class="tsd-signature tsd-kind-icon">no<wbr>Shrink<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in types/ITableAttribute.ts:117</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Never shrink the column while scrolling, it can still grow though</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="placement" class="tsd-anchor"></a>
 					<h3>placement</h3>
 					<div class="tsd-signature tsd-kind-icon">placement<span class="tsd-signature-symbol">:</span> <a href="../globals.html#placement" class="tsd-signature-type">Placement</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/ITableAttribute.ts:109</li>
+							<li>Defined in types/ITableAttribute.ts:130</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -569,14 +703,14 @@
 					<div class="tsd-signature tsd-kind-icon">sort<wbr>Func<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/ITableAttribute.ts:136</li>
+							<li>Defined in types/ITableAttribute.ts:157</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>custom function for sorting by this attribute. The parameters passed in (lhs and rhs) are
-								by calc (cached). Return <0 if lhs is smaller than rhs, >0 if it&#39;s bigger and =0 if they are
-							equal.</p>
+								the output of calc (cached). Return <0 if lhs is smaller than rhs, >0 if it&#39;s bigger and
+							=0 if they are equal.</p>
 						</div>
 					</div>
 					<div class="tsd-type-declaration">
@@ -608,12 +742,56 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="sortfuncraw" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> sort<wbr>Func<wbr>Raw</h3>
+					<div class="tsd-signature tsd-kind-icon">sort<wbr>Func<wbr>Raw<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in types/ITableAttribute.ts:163</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>custom function for sorting by this attribute. The parameters passed in (lhs and rhs) are
+								the objects to compare. Return <0 if lhs is smaller than rhs, >0 if it&#39;s bigger and
+							=0 if they are equal.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>lhs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, rhs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, locale<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>lhs: <span class="tsd-signature-type">T</span></h5>
+											</li>
+											<li>
+												<h5>rhs: <span class="tsd-signature-type">T</span></h5>
+											</li>
+											<li>
+												<h5>locale: <span class="tsd-signature-type">string</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="supportsmultiple" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> supports<wbr>Multiple</h3>
 					<div class="tsd-signature tsd-kind-icon">supports<wbr>Multiple<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/ITableAttribute.ts:146</li>
+							<li>Defined in types/ITableAttribute.ts:178</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -654,6 +832,9 @@
 								<a href="itableattribute.html#calc" class="tsd-kind-icon">calc</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="itableattribute.html#condition" class="tsd-kind-icon">condition</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="itableattribute.html#customrenderer" class="tsd-kind-icon">custom<wbr>Renderer</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
@@ -661,6 +842,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="itableattribute.html#edit" class="tsd-kind-icon">edit</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="itableattribute.html#externaldata" class="tsd-kind-icon">external<wbr>Data</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="itableattribute.html#filter" class="tsd-kind-icon">filter</a>
@@ -693,10 +877,16 @@
 								<a href="itableattribute.html#name" class="tsd-kind-icon">name</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="itableattribute.html#noshrink" class="tsd-kind-icon">no<wbr>Shrink</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="itableattribute.html#placement" class="tsd-kind-icon">placement</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="itableattribute.html#sortfunc" class="tsd-kind-icon">sort<wbr>Func</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="itableattribute.html#sortfuncraw" class="tsd-kind-icon">sort<wbr>Func<wbr>Raw</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="itableattribute.html#supportsmultiple" class="tsd-kind-icon">supports<wbr>Multiple</a>

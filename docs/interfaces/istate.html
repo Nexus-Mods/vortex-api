@@ -102,8 +102,6 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="istate.html#session" class="tsd-kind-icon">session</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="istate.html#settings" class="tsd-kind-icon">settings</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="istate.html#user" class="tsd-kind-icon">user</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="istate.html#visible" class="tsd-kind-icon">visible</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="istate.html#visibletime" class="tsd-kind-icon">visible<wbr>Time</a></li>
 							</ul>
 						</section>
 					</div>
@@ -117,7 +115,7 @@
 					<div class="tsd-signature tsd-kind-icon">app<span class="tsd-signature-symbol">:</span> <a href="iapp.html" class="tsd-signature-type">IApp</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/IState.ts:232</li>
+							<li>Defined in types/IState.ts:247</li>
 						</ul>
 					</aside>
 				</section>
@@ -127,7 +125,7 @@
 					<div class="tsd-signature tsd-kind-icon">confidential<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/IState.ts:234</li>
+							<li>Defined in types/IState.ts:249</li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -145,7 +143,7 @@
 					<div class="tsd-signature tsd-kind-icon">persistent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/IState.ts:245</li>
+							<li>Defined in types/IState.ts:260</li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -156,6 +154,19 @@
 								<ul class="tsd-parameters">
 									<li class="tsd-parameter-index-signature">
 										<h5><span class="tsd-signature-symbol">[</span>gameId: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><a href="icategorydictionary.html" class="tsd-signature-type">ICategoryDictionary</a></h5>
+									</li>
+								</ul>
+							</li>
+							<li class="tsd-parameter">
+								<h5>deployment<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>need<wbr>ToDeploy<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+										<ul class="tsd-parameters">
+											<li class="tsd-parameter-index-signature">
+												<h5><span class="tsd-signature-symbol">[</span>gameId: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">boolean</span></h5>
+											</li>
+										</ul>
 									</li>
 								</ul>
 							</li>
@@ -185,7 +196,7 @@
 					<div class="tsd-signature tsd-kind-icon">session<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/IState.ts:237</li>
+							<li>Defined in types/IState.ts:252</li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -215,7 +226,7 @@
 					<div class="tsd-signature tsd-kind-icon">settings<span class="tsd-signature-symbol">:</span> <a href="isettings.html" class="tsd-signature-type">ISettings</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/IState.ts:244</li>
+							<li>Defined in types/IState.ts:259</li>
 						</ul>
 					</aside>
 				</section>
@@ -225,27 +236,7 @@
 					<div class="tsd-signature tsd-kind-icon">user<span class="tsd-signature-symbol">:</span> <a href="iuser.html" class="tsd-signature-type">IUser</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/IState.ts:233</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a name="visible" class="tsd-anchor"></a>
-					<h3>visible</h3>
-					<div class="tsd-signature tsd-kind-icon">visible<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in controls/VisibilityProxy.tsx:21</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a name="visibletime" class="tsd-anchor"></a>
-					<h3>visible<wbr>Time</h3>
-					<div class="tsd-signature tsd-kind-icon">visible<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in controls/VisibilityProxy.tsx:22</li>
+							<li>Defined in types/IState.ts:248</li>
 						</ul>
 					</aside>
 				</section>
@@ -283,12 +274,6 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="istate.html#user" class="tsd-kind-icon">user</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-								<a href="istate.html#visible" class="tsd-kind-icon">visible</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-								<a href="istate.html#visibletime" class="tsd-kind-icon">visible<wbr>Time</a>
 							</li>
 						</ul>
 					</li>

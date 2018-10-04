@@ -74,15 +74,6 @@
 					</li>
 				</ul>
 			</section>
-			<section class="tsd-panel tsd-kind-interface tsd-is-external tsd-is-not-exported">
-				<h3 class="tsd-before-signature">Indexable</h3>
-				<div class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">[</span>bannerIdx: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">object</span></div>
-				<ul class="tsd-parameters">
-					<li class="tsd-parameter-index-signature">
-						<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></h5>
-					</li>
-				</ul>
-			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
@@ -92,10 +83,13 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="iconnectedprops.html#advancedmode" class="tsd-kind-icon">advanced<wbr>Mode</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="iconnectedprops.html#attributestate" class="tsd-kind-icon">attribute<wbr>State</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="iconnectedprops.html#bannerprops" class="tsd-kind-icon">banner<wbr>Props</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="iconnectedprops.html#categories" class="tsd-kind-icon">categories</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="iconnectedprops.html#discoveredgames" class="tsd-kind-icon">discovered<wbr>Games</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="iconnectedprops.html#discovery" class="tsd-kind-icon">discovery</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="iconnectedprops.html#downloads" class="tsd-kind-icon">downloads</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="iconnectedprops.html#filter" class="tsd-kind-icon">filter</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="iconnectedprops.html#gameid" class="tsd-kind-icon">game<wbr>Id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="iconnectedprops.html#gameinfo" class="tsd-kind-icon">game<wbr>Info</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="iconnectedprops.html#gamemode" class="tsd-kind-icon">game<wbr>Mode</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="iconnectedprops.html#gamesdiscovered" class="tsd-kind-icon">games<wbr>Discovered</a></li>
@@ -109,7 +103,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="iconnectedprops.html#profiles" class="tsd-kind-icon">profiles</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="iconnectedprops.html#searchpaths" class="tsd-kind-icon">search<wbr>Paths</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="iconnectedprops.html#showdialog" class="tsd-kind-icon">show<wbr>Dialog</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="iconnectedprops.html#splitpos" class="tsd-kind-icon">split<wbr>Pos</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="iconnectedprops.html#updaterunning" class="tsd-kind-icon">update<wbr>Running</a></li>
 							</ul>
 						</section>
 					</div>
@@ -124,7 +118,6 @@
 					<aside class="tsd-sources">
 						<ul>
 							<li>Defined in controls/Advanced.tsx:7</li>
-							<li>Defined in controls/Table.tsx:62</li>
 						</ul>
 					</aside>
 				</section>
@@ -134,7 +127,7 @@
 					<div class="tsd-signature tsd-kind-icon">attribute<wbr>State<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in controls/Table.tsx:58</li>
+							<li>Defined in controls/Table.tsx:55</li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -147,12 +140,35 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+					<a name="bannerprops" class="tsd-anchor"></a>
+					<h3>banner<wbr>Props</h3>
+					<div class="tsd-signature tsd-kind-icon">banner<wbr>Props<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in controls/Banner.tsx:25</li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>bannerIdx: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">object</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter-index-signature">
+										<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></h5>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
 					<a name="categories" class="tsd-anchor"></a>
 					<h3>categories</h3>
 					<div class="tsd-signature tsd-kind-icon">categories<span class="tsd-signature-symbol">:</span> <a href="icategorydictionary.html" class="tsd-signature-type">ICategoryDictionary</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/category_management/util/CategoryFilter.tsx:15</li>
+							<li>Defined in extensions/category_management/util/CategoryFilter.tsx:20</li>
 							<li>Defined in extensions/category_management/views/CategoryList.tsx:52</li>
 						</ul>
 					</aside>
@@ -163,8 +179,8 @@
 					<div class="tsd-signature tsd-kind-icon">discovered<wbr>Games<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/gamemode_management/views/GamePicker.tsx:57</li>
-							<li>Defined in extensions/gamemode_management/views/RecentlyManagedDashlet.tsx:24</li>
+							<li>Defined in extensions/gamemode_management/views/GamePicker.tsx:48</li>
+							<li>Defined in extensions/gamemode_management/views/RecentlyManagedDashlet.tsx:23</li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -182,10 +198,28 @@
 					<div class="tsd-signature tsd-kind-icon">discovery<span class="tsd-signature-symbol">:</span> <a href="idiscoverystate.html" class="tsd-signature-type">IDiscoveryState</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/gamemode_management/views/GamePicker.tsx:61</li>
+							<li>Defined in extensions/gamemode_management/views/GamePicker.tsx:52</li>
 							<li>Defined in extensions/gamemode_management/views/ProgressFooter.tsx:15</li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+					<a name="downloads" class="tsd-anchor"></a>
+					<h3>downloads</h3>
+					<div class="tsd-signature tsd-kind-icon">downloads<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in extensions/category_management/util/CategoryFilter.tsx:22</li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>archiveId: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><a href="idownload.html" class="tsd-signature-type">IDownload</a></h5>
+							</li>
+						</ul>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
 					<a name="filter" class="tsd-anchor"></a>
@@ -193,7 +227,7 @@
 					<div class="tsd-signature tsd-kind-icon">filter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in controls/Table.tsx:61</li>
+							<li>Defined in controls/Table.tsx:57</li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -206,12 +240,22 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+					<a name="gameid" class="tsd-anchor"></a>
+					<h3>game<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">game<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in extensions/category_management/util/CategoryFilter.tsx:19</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
 					<a name="gameinfo" class="tsd-anchor"></a>
 					<h3>game<wbr>Info</h3>
 					<div class="tsd-signature tsd-kind-icon">game<wbr>Info<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/gamemode_management/views/GameInfoPopover.tsx:22</li>
+							<li>Defined in extensions/gamemode_management/views/GameInfoPopover.tsx:20</li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -230,8 +274,9 @@
 					<aside class="tsd-sources">
 						<ul>
 							<li>Defined in extensions/category_management/views/CategoryList.tsx:50</li>
-							<li>Defined in extensions/gamemode_management/views/GamePicker.tsx:60</li>
-							<li>Defined in extensions/gamemode_management/views/RecentlyManagedDashlet.tsx:22</li>
+							<li>Defined in extensions/mod_management/views/CheckModVersionsButton.tsx:21</li>
+							<li>Defined in extensions/gamemode_management/views/GamePicker.tsx:51</li>
+							<li>Defined in extensions/gamemode_management/views/RecentlyManagedDashlet.tsx:21</li>
 						</ul>
 					</aside>
 				</section>
@@ -241,7 +286,7 @@
 					<div class="tsd-signature tsd-kind-icon">games<wbr>Discovered<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/gamemode_management/views/HideGameIcon.tsx:19</li>
+							<li>Defined in extensions/gamemode_management/views/HideGameIcon.tsx:20</li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -259,8 +304,8 @@
 					<div class="tsd-signature tsd-kind-icon">known<wbr>Games<span class="tsd-signature-symbol">:</span> <a href="igamestored.html" class="tsd-signature-type">IGameStored</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/gamemode_management/views/GamePicker.tsx:59</li>
-							<li>Defined in extensions/gamemode_management/views/RecentlyManagedDashlet.tsx:23</li>
+							<li>Defined in extensions/gamemode_management/views/GamePicker.tsx:50</li>
+							<li>Defined in extensions/gamemode_management/views/RecentlyManagedDashlet.tsx:22</li>
 						</ul>
 					</aside>
 				</section>
@@ -271,8 +316,8 @@
 					<aside class="tsd-sources">
 						<ul>
 							<li>Defined in extensions/category_management/views/CategoryList.tsx:51</li>
-							<li>Defined in extensions/gamemode_management/views/GameInfoPopover.tsx:25</li>
-							<li>Defined in controls/Table.tsx:60</li>
+							<li>Defined in extensions/gamemode_management/views/GameInfoPopover.tsx:23</li>
+							<li>Defined in controls/Table.tsx:56</li>
 						</ul>
 					</aside>
 				</section>
@@ -282,7 +327,7 @@
 					<div class="tsd-signature tsd-kind-icon">last<wbr>Active<wbr>Profile<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/gamemode_management/views/RecentlyManagedDashlet.tsx:25</li>
+							<li>Defined in extensions/gamemode_management/views/RecentlyManagedDashlet.tsx:24</li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -301,7 +346,6 @@
 					<aside class="tsd-sources">
 						<ul>
 							<li>Defined in views/MainPageHeader.tsx:16</li>
-							<li>Defined in views/MainPageOverlay.tsx:16</li>
 						</ul>
 					</aside>
 				</section>
@@ -311,8 +355,9 @@
 					<div class="tsd-signature tsd-kind-icon">mods<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/category_management/util/CategoryFilter.tsx:16</li>
+							<li>Defined in extensions/category_management/util/CategoryFilter.tsx:21</li>
 							<li>Defined in extensions/category_management/views/CategoryList.tsx:53</li>
+							<li>Defined in extensions/mod_management/views/CheckModVersionsButton.tsx:20</li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -330,7 +375,7 @@
 					<div class="tsd-signature tsd-kind-icon">picker<wbr>Layout<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"list"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"small"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"large"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/gamemode_management/views/GamePicker.tsx:62</li>
+							<li>Defined in extensions/gamemode_management/views/GamePicker.tsx:53</li>
 						</ul>
 					</aside>
 				</section>
@@ -340,7 +385,7 @@
 					<div class="tsd-signature tsd-kind-icon">profile<span class="tsd-signature-symbol">:</span> <a href="iprofile.html" class="tsd-signature-type">IProfile</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/gamemode_management/views/GameThumbnail.tsx:32</li>
+							<li>Defined in extensions/gamemode_management/views/GameThumbnail.tsx:33</li>
 						</ul>
 					</aside>
 				</section>
@@ -350,8 +395,8 @@
 					<div class="tsd-signature tsd-kind-icon">profiles<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/gamemode_management/views/GamePicker.tsx:58</li>
-							<li>Defined in extensions/gamemode_management/views/RecentlyManagedDashlet.tsx:26</li>
+							<li>Defined in extensions/gamemode_management/views/GamePicker.tsx:49</li>
+							<li>Defined in extensions/gamemode_management/views/RecentlyManagedDashlet.tsx:25</li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -369,7 +414,7 @@
 					<div class="tsd-signature tsd-kind-icon">search<wbr>Paths<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/gamemode_management/views/Settings.tsx:57</li>
+							<li>Defined in extensions/gamemode_management/views/Settings.tsx:56</li>
 						</ul>
 					</aside>
 				</section>
@@ -379,17 +424,17 @@
 					<div class="tsd-signature tsd-kind-icon">show<wbr>Dialog<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/category_management/views/CategoryDialog.tsx:13</li>
+							<li>Defined in extensions/category_management/views/CategoryDialog.tsx:14</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-					<a name="splitpos" class="tsd-anchor"></a>
-					<h3>split<wbr>Pos</h3>
-					<div class="tsd-signature tsd-kind-icon">split<wbr>Pos<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="updaterunning" class="tsd-anchor"></a>
+					<h3>update<wbr>Running</h3>
+					<div class="tsd-signature tsd-kind-icon">update<wbr>Running<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in controls/Table.tsx:59</li>
+							<li>Defined in extensions/mod_management/views/CheckModVersionsButton.tsx:22</li>
 						</ul>
 					</aside>
 				</section>
@@ -417,6 +462,9 @@
 								<a href="iconnectedprops.html#attributestate" class="tsd-kind-icon">attribute<wbr>State</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+								<a href="iconnectedprops.html#bannerprops" class="tsd-kind-icon">banner<wbr>Props</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
 								<a href="iconnectedprops.html#categories" class="tsd-kind-icon">categories</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
@@ -426,7 +474,13 @@
 								<a href="iconnectedprops.html#discovery" class="tsd-kind-icon">discovery</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+								<a href="iconnectedprops.html#downloads" class="tsd-kind-icon">downloads</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
 								<a href="iconnectedprops.html#filter" class="tsd-kind-icon">filter</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+								<a href="iconnectedprops.html#gameid" class="tsd-kind-icon">game<wbr>Id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
 								<a href="iconnectedprops.html#gameinfo" class="tsd-kind-icon">game<wbr>Info</a>
@@ -468,7 +522,7 @@
 								<a href="iconnectedprops.html#showdialog" class="tsd-kind-icon">show<wbr>Dialog</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-								<a href="iconnectedprops.html#splitpos" class="tsd-kind-icon">split<wbr>Pos</a>
+								<a href="iconnectedprops.html#updaterunning" class="tsd-kind-icon">update<wbr>Running</a>
 							</li>
 						</ul>
 					</li>

@@ -115,6 +115,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="igame.html#relative" class="tsd-kind-icon">relative</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="igame.html#requiredfiles" class="tsd-kind-icon">required<wbr>Files</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="igame.html#setup" class="tsd-kind-icon">setup</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="igame.html#shell" class="tsd-kind-icon">shell</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="igame.html#shortname" class="tsd-kind-icon">short<wbr>Name</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="igame.html#supportedtools" class="tsd-kind-icon">supported<wbr>Tools</a></li>
 							</ul>
@@ -130,7 +131,7 @@
 					<div class="tsd-signature tsd-kind-icon">details<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/IGame.ts:107</li>
+							<li>Defined in types/IGame.ts:110</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -346,7 +347,7 @@
 					<div class="tsd-signature tsd-kind-icon">merge<wbr>Archive<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/IGame.ts:92</li>
+							<li>Defined in types/IGame.ts:95</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -381,10 +382,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="mergemods" class="tsd-anchor"></a>
 					<h3>merge<wbr>Mods</h3>
-					<div class="tsd-signature tsd-kind-icon">merge<wbr>Mods<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<div class="tsd-signature tsd-kind-icon">merge<wbr>Mods<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/IGame.ts:85</li>
+							<li>Defined in types/IGame.ts:88</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -396,16 +397,14 @@
 								true then the file will be placed as c:/awesomegame/mods/crazytexture.dds.
 							If mergeMods is false then it will be c:/awesomegame/mods/crazymod/crazytexture.dds.</p>
 						</div>
-						<p>Note: This flag is currently not used, vortex always acts as if mergeMods was true, the
-						additional directory level is introduced by the mod installer</p>
-						<dl class="tsd-comment-tags">
-							<dt>type</dt>
-							<dd><p>{boolean}</p>
-							</dd>
-							<dt>memberof</dt>
-							<dd><p>IGame</p>
-							</dd>
-						</dl>
+						<p>Note: For many games the mods are already packaged in such a way that the mod has an
+							additional subdirectory. In games where this is the standard, mergeMods should be true,
+							otherwise Vortex would be introducing one more directory level.
+							Note: This should be considered together with &quot;stop folder&quot; handling: If the installer has
+							stop folders set up for a game it will attempt to eliminate &quot;unnecessary&quot; sub
+							directories from the mod package.
+							TODO The name &quot;mergeMods&quot; is horrible since we also talk about &quot;merging&quot; in the context of
+						combining individual files (archives) during mod deployment which is independent of this</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
@@ -624,7 +623,7 @@
 					<div class="tsd-signature tsd-kind-icon">setup<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/IGame.ts:99</li>
+							<li>Defined in types/IGame.ts:102</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -654,6 +653,22 @@
 								</ul>
 							</li>
 						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a name="shell" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> shell</h3>
+					<div class="tsd-signature tsd-kind-icon">shell<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="itool.html">ITool</a>.<a href="itool.html#shell">shell</a></p>
+						<ul>
+							<li>Defined in types/ITool.ts:122</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>if true, the tool will be run inside a shell</p>
+						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
@@ -762,6 +777,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="igame.html#setup" class="tsd-kind-icon">setup</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+								<a href="igame.html#shell" class="tsd-kind-icon">shell</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
 								<a href="igame.html#shortname" class="tsd-kind-icon">short<wbr>Name</a>

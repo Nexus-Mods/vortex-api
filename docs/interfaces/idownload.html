@@ -121,7 +121,7 @@
 					<div class="tsd-signature tsd-kind-icon">chunks<span class="tsd-signature-symbol">:</span> <a href="ichunk.html" class="tsd-signature-type">IChunk</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/download_management/types/IDownload.ts:112</li>
+							<li>Defined in extensions/download_management/types/IDownload.ts:114</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -156,11 +156,11 @@
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="filemd5" class="tsd-anchor"></a>
-					<h3>fileMD5</h3>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> fileMD5</h3>
 					<div class="tsd-signature tsd-kind-icon">fileMD5<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/download_management/types/IDownload.ts:81</li>
+							<li>Defined in extensions/download_management/types/IDownload.ts:83</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -180,30 +180,30 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="filetime" class="tsd-anchor"></a>
 					<h3>file<wbr>Time</h3>
-					<div class="tsd-signature tsd-kind-icon">file<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<div class="tsd-signature tsd-kind-icon">file<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/download_management/types/IDownload.ts:91</li>
+							<li>Defined in extensions/download_management/types/IDownload.ts:93</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>date/time the file finished downloading</p>
+							<p>MS timestamp the file finished downloading</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="game" class="tsd-anchor"></a>
 					<h3>game</h3>
-					<div class="tsd-signature tsd-kind-icon">game<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<div class="tsd-signature tsd-kind-icon">game<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/download_management/types/IDownload.ts:56</li>
+							<li>Defined in extensions/download_management/types/IDownload.ts:58</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>id of the game to which this download applies.</p>
+							<p>id of the game(s) to which this archive is compatible.</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>type</dt>
@@ -221,7 +221,7 @@
 					<div class="tsd-signature tsd-kind-icon">installed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/download_management/types/IDownload.ts:73</li>
+							<li>Defined in extensions/download_management/types/IDownload.ts:75</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -246,16 +246,18 @@
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="localpath" class="tsd-anchor"></a>
-					<h3>local<wbr>Path</h3>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> local<wbr>Path</h3>
 					<div class="tsd-signature tsd-kind-icon">local<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/download_management/types/IDownload.ts:48</li>
+							<li>Defined in extensions/download_management/types/IDownload.ts:50</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>path of the file being downloaded to</p>
+							<p>path of the file being downloaded to. This is relative to the base download
+								directory for the game and since we use a flat directory structure, this is
+							in practice just the file name</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>type</dt>
@@ -273,7 +275,7 @@
 					<div class="tsd-signature tsd-kind-icon">mod<wbr>Info<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/download_management/types/IDownload.ts:65</li>
+							<li>Defined in extensions/download_management/types/IDownload.ts:67</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -305,7 +307,7 @@
 					<div class="tsd-signature tsd-kind-icon">received<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/download_management/types/IDownload.ts:107</li>
+							<li>Defined in extensions/download_management/types/IDownload.ts:109</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -328,7 +330,7 @@
 					<div class="tsd-signature tsd-kind-icon">size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/download_management/types/IDownload.ts:99</li>
+							<li>Defined in extensions/download_management/types/IDownload.ts:101</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -348,15 +350,15 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="starttime" class="tsd-anchor"></a>
 					<h3>start<wbr>Time</h3>
-					<div class="tsd-signature tsd-kind-icon">start<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
+					<div class="tsd-signature tsd-kind-icon">start<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/download_management/types/IDownload.ts:86</li>
+							<li>Defined in extensions/download_management/types/IDownload.ts:88</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>date/time the download was started</p>
+							<p>MS timestamp the download was started</p>
 						</div>
 					</div>
 				</section>
