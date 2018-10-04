@@ -406,7 +406,7 @@ export interface IExtensionApi {
     isOutdated: () => boolean;
 }
 export interface IStateVerifier {
-    type?: 'map' | 'string' | 'boolean' | 'number' | 'object';
+    type?: 'map' | 'string' | 'boolean' | 'number' | 'object' | 'array';
     noUndefined?: boolean;
     noNull?: boolean;
     elements?: {
@@ -415,6 +415,18 @@ export interface IStateVerifier {
     required?: boolean;
     deleteBroken?: boolean | 'parent';
     repair?: (input: any, def: any) => any;
+}
+/**
+ * The repair function can't fix a value so delete it instead
+ */
+export declare class VerifierDrop extends Error {
+    constructor();
+}
+/**
+ * The repair function can't fix a value so delete the parent object instead
+ */
+export declare class VerifierDropParent extends Error {
+    constructor();
 }
 /**
  * specification a reducer registration has to follow.
