@@ -33,6 +33,7 @@ function externalsDirect() {
     'util',
     'vortex-api',
     'vortex-parse-ini',
+    'winapi-bindings',
     'winreg',
     'winston',
   ].reduce((prev, key) => {
