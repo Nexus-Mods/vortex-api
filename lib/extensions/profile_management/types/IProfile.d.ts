@@ -9,6 +9,7 @@ export interface IProfile {
         [id: string]: IProfileMod;
     };
     lastActivated: number;
+    pendingRemove?: boolean;
     features?: {
         [featureId: string]: any;
     };

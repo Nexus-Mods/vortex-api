@@ -64,6 +64,7 @@ export interface IDialogContent {
     options?: {
         translated?: boolean;
         wrap?: boolean;
+        hideMessage?: boolean;
     };
 }
 export interface IDialogResult {

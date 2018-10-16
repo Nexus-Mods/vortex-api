@@ -1,3 +1,4 @@
+import { IErrorOptions } from '../types/IExtensionContext';
 import { IState } from '../types/IState';
 import * as Redux from 'redux';
 import { ThunkDispatch } from 'redux-thunk';
@@ -39,14 +40,6 @@ export declare function showActivity<S>(dispatch: ThunkDispatch<IState, null, Re
  * @param {string} [id]
  */
 export declare function showInfo<S>(dispatch: ThunkDispatch<IState, null, Redux.Action>, message: string, id?: string): void;
-export interface IErrorOptions {
-    replace?: {
-        [key: string]: string;
-    };
-    isHTML?: boolean;
-    id?: string;
-    allowReport?: boolean;
-}
 /**
  * show an error notification with an optional "more" button that displays further details
  * in a modal dialog.
@@ -59,4 +52,4 @@ export interface IErrorOptions {
  *                        want string or Errors but since some node apis return non-Error objects
  *                        where Errors are expected we have to be a bit more flexible here.
  */
-export declare function showError<S>(dispatch: ThunkDispatch<IState, null, Redux.Action>, message: string, details?: string | Error | any, options?: IErrorOptions): void;
+export declare function showError(dispatch: ThunkDispatch<IState, null, Redux.Action>, message: string, details?: string | Error | any, options?: IErrorOptions): void;

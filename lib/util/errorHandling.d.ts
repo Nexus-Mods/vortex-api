@@ -1,8 +1,7 @@
+import { IErrorOptions, IExtensionApi } from '../types/api';
 import { IError } from '../types/IError';
 import * as Promise from 'bluebird';
 import { IFeedbackResponse } from 'nexus-api';
-import { IErrorOptions, IExtensionApi } from '../types/api';
-export declare function genHash(error: IError): any;
 export declare function createErrorReport(type: string, error: IError, labels: string[], state: any, sourceProcess?: string): void;
 export declare function setApiKey(key: string): void;
 export declare function setOutdated(api: IExtensionApi): void;
@@ -19,4 +18,10 @@ export declare function sendReport(type: string, error: IError, labels: string[]
  * @param {ITermination} error
  */
 export declare function terminate(error: IError, state: any, allowReport?: boolean, source?: string): void;
+/**
+ * render error message for internal processing (issue tracker and such).
+ * It's important this doesn't translate the error message or lose information
+ * @param input
+ * @param options
+ */
 export declare function toError(input: any, options?: IErrorOptions): IError;
