@@ -112,6 +112,8 @@ declare class ExtensionManager {
     private runExecutable;
     private emitAndAwait;
     private onAsync;
+    private highlightCSS;
+    private highlightControl;
     private startIPC;
     private loadDynamicExtension;
     private loadDynamicExtensions;

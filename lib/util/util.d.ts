@@ -77,6 +77,8 @@ export declare function objDiff(lhs: any, rhs: any): any;
  */
 export declare function spawnSelf(args: string[]): void;
 export declare function bytesToString(bytes: number): string;
+export declare function pad(value: number, padding: string, width: number): string;
+export declare function timeToString(seconds: number): string;
 export declare function encodeHTML(input: string): string;
 export declare function decodeHTML(input: string): string;
 /**

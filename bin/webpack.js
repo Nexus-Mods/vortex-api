@@ -34,7 +34,6 @@ function externalsDirect() {
     'vortex-api',
     'vortex-parse-ini',
     'winapi-bindings',
-    'winreg',
     'winston',
   ].reduce((prev, key) => {
     prev[key] = key;

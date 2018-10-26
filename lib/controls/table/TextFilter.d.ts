@@ -7,8 +7,8 @@ export declare class TextFilterComponent extends React.Component<IFilterProps, {
 declare class TextFilter implements ITableFilter {
     component: typeof TextFilterComponent;
     raw: boolean;
-    private mCaseSensitive;
-    constructor(caseSensitive: boolean);
+    private mCaseInsensitive;
+    constructor(ignoreCase: boolean);
     matches(filter: any, value: any): boolean;
 }
 export default TextFilter;
