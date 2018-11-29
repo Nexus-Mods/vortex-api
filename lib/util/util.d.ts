@@ -26,7 +26,7 @@ export declare function sum(container: number[]): number;
  * on obj, it will be set to the default value and that is returned.
  */
 export declare function setdefault<T>(obj: any, key: PropertyKey, def: T): T;
-export declare function writeFileAtomic(filePath: string, data: string | Buffer, options?: fs.WriteFileOptions): Promise<void>;
+export declare function writeFileAtomic(filePath: string, input: string | Buffer, options?: fs.WriteFileOptions): Promise<void>;
 /**
  * copy a file in such a way that it will not replace the target if the copy is
  * somehow interrupted. The file is first copied to a temporary file in the same
@@ -87,3 +87,12 @@ export declare function decodeHTML(input: string): string;
  * @param parent path of the presumed parent directory
  */
 export declare function isChildPath(child: string, parent: string): boolean;
+/**
+ * Move the content of a directory to another - Using a move operation if it's on the same
+ * drive and a copy+delete if not.
+ * This works around or properly reports common problems, like when the destination directory
+ * is a parent of the source directory
+ * @param source
+ * @param dest
+ */
+export declare function transferPath(source: string, dest: string, progress: (from: string, to: string, percentage: number) => void): Promise<void>;

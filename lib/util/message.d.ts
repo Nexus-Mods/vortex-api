@@ -53,6 +53,11 @@ export declare function showInfo<S>(dispatch: ThunkDispatch<IState, null, Redux.
  *                        where Errors are expected we have to be a bit more flexible here.
  */
 export declare function showError(dispatch: ThunkDispatch<IState, null, Redux.Action>, message: string, details?: string | Error | any, options?: IErrorOptions): void;
+export declare function prettifyNodeErrorMessage(err: any): {
+    message: string;
+    replace?: any;
+    allowReport?: boolean;
+};
 /**
  * render error message for display to the user
  * @param err
@@ -61,5 +66,6 @@ export declare function renderError(err: string | Error | any): {
     message?: string;
     text?: string;
     parameters?: any;
+    allowReport?: boolean;
     wrap: boolean;
 };

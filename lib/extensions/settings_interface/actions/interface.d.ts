@@ -13,3 +13,6 @@ export declare const setProfilesVisible: reduxAct.ComplexActionCreator1<boolean,
     visible: boolean;
 }, {}>;
 export declare const setDesktopNotifications: reduxAct.ComplexActionCreator1<boolean, boolean, {}>;
+export declare const setHideTopLevelCategory: reduxAct.ComplexActionCreator1<boolean, {
+    hide: boolean;
+}, {}>;

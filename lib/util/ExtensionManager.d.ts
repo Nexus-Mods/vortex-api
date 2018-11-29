@@ -31,6 +31,7 @@ declare class ExtensionManager {
     private mExtensionState;
     private mLoadFailures;
     private mInterpreters;
+    private mStartHooks;
     constructor(initStore?: Redux.Store<any>, eventEmitter?: NodeJS.EventEmitter);
     setTranslation(translator: I18next.i18n): void;
     /**
@@ -107,8 +108,7 @@ declare class ExtensionManager {
     private lookupModMeta;
     private saveModMeta;
     private openArchive;
-    private queryDeploy;
-    private checkDeploy;
+    private applyStartHooks;
     private runExecutable;
     private emitAndAwait;
     private onAsync;

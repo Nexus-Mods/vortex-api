@@ -10,6 +10,9 @@ export declare class DataInvalid extends Error {
 export declare class UserCanceled extends Error {
     constructor();
 }
+export declare class MissingDependency extends Error {
+    constructor();
+}
 export declare class SetupError extends Error {
     constructor(message: string);
 }
