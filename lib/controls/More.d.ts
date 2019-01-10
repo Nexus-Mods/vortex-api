@@ -10,5 +10,5 @@ export interface IProps {
 export interface IComponentState {
     open: boolean;
 }
-declare const _default: React.ComponentClass<Pick<IProps, "name" | "children" | "container" | "id" | "orientation" | "wikiId"> & import("react-i18next/src/translate").TranslateHocProps, React.ComponentState>;
+declare const _default: React.ComponentClass<IProps, React.ComponentState>;
 export default _default;
