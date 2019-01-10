@@ -15,4 +15,6 @@ export interface IGameStored {
         [key: string]: any;
     };
     shell?: boolean;
+    contributed?: string;
+    final?: boolean;
 }

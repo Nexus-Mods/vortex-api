@@ -37,6 +37,15 @@ export interface IGame extends ITool {
         [typeId: string]: string;
     };
     /**
+     * Determine whether the game needs to be executed via Steam
+     *
+     * If this returns true, Vortex will attempt to start up the game
+     * using Steam's CLI applaunch command.
+     *
+     * @param gamePath path where the game is installed.
+     */
+    requiresSteamStart?: (gamePath: string) => Promise<boolean>;
+    /**
      * returns the mod type extensions applicable to this game (all
      * mod types except the default
      *
@@ -100,4 +109,12 @@ export interface IGame extends ITool {
     details?: {
         [key: string]: any;
     };
+    /**
+     * set to name of the contributor that added support for this game. For officialy supported games this is undefined
+     */
+    contributed?: string;
+    /**
+     * set to true if support for this game has been fully tested
+     */
+    final?: boolean;
 }

@@ -152,6 +152,9 @@ export interface ISettingsInterface {
     dashletSettings: {
         [dashletId: string]: IDashletSettings;
     };
+    usage: {
+        [usageId: string]: boolean;
+    };
 }
 export interface ISettingsAutomation {
     deploy: boolean;

@@ -4,7 +4,14 @@ export interface IDialogAction {
     default?: boolean;
     action?: (label: string) => void;
 }
+export interface IConditionResult {
+    actions: string[];
+    errorText: string;
+    id: string;
+}
+export declare type ConditionResults = IConditionResult[];
 export declare type DialogActions = IDialogAction[];
+export declare type Condition = (content: IDialogContent) => ConditionResults;
 export interface IDialog {
     id: string;
     type: DialogType;
@@ -13,13 +20,14 @@ export interface IDialog {
     defaultAction: string;
     actions: string[];
 }
-export interface ICheckbox {
+export interface IControlBase {
     id: string;
+}
+export interface ICheckbox extends IControlBase {
     text: string;
     value: boolean;
 }
-export interface IInput {
-    id: string;
+export interface IInput extends IControlBase {
     type?: 'text' | 'password' | 'number' | 'date' | 'time' | 'email' | 'url';
     value?: string;
     label?: string;
@@ -66,6 +74,7 @@ export interface IDialogContent {
         wrap?: boolean;
         hideMessage?: boolean;
     };
+    condition?: Condition;
 }
 export interface IDialogResult {
     action: string;

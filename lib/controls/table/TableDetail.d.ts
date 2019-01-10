@@ -17,11 +17,19 @@ export interface IDetailProps {
     title: string;
     onToggleShow: () => void;
 }
-declare class DetailBox extends ComponentEx<IDetailProps, {}> {
+declare class DetailBox extends ComponentEx<IDetailProps, {
+    hovered: boolean;
+}> {
+    private mFormRef;
     constructor(props: IDetailProps);
-    shouldComponentUpdate(nextProps: IDetailProps): boolean;
+    shouldComponentUpdate(nextProps: IDetailProps, nextState: {
+        hovered: boolean;
+    }): boolean;
     render(): JSX.Element;
     private renderDetail;
+    private setFormRef;
+    private startHover;
+    private stopHover;
     private onChangeData;
 }
 export default DetailBox;

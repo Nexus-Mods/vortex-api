@@ -30,6 +30,7 @@ function externalsDirect() {
     'request',
     'semver',
     'semvish',
+    'turbowalk',
     'util',
     'vortex-api',
     'vortex-parse-ini',

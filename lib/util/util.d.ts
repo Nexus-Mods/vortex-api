@@ -81,6 +81,7 @@ export declare function pad(value: number, padding: string, width: number): stri
 export declare function timeToString(seconds: number): string;
 export declare function encodeHTML(input: string): string;
 export declare function decodeHTML(input: string): string;
+export declare function getAllPropertyNames(obj: Object): string[];
 /**
  * test if a directory is a sub-directory of another one
  * @param child path of the presumed sub-directory

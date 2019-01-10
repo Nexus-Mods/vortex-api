@@ -16,3 +16,7 @@ export declare const setDesktopNotifications: reduxAct.ComplexActionCreator1<boo
 export declare const setHideTopLevelCategory: reduxAct.ComplexActionCreator1<boolean, {
     hide: boolean;
 }, {}>;
+export declare const showUsageInstruction: reduxAct.ComplexActionCreator2<string, boolean, {
+    usageId: string;
+    show: boolean;
+}, {}>;

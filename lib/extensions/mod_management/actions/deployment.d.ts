@@ -1,4 +1,5 @@
-export declare const setDeploymentNecessary: import("../../../../../../Work/Vortex/node_modules/redux-act").ComplexActionCreator2<string, boolean, {
+import * as reduxAct from 'redux-act';
+export declare const setDeploymentNecessary: reduxAct.ComplexActionCreator2<string, boolean, {
     gameId: string;
     required: boolean;
 }, {}>;

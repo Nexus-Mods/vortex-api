@@ -2,6 +2,7 @@ import { IActionDefinition } from '../types/IActionDefinition';
 import { ITableState } from '../types/IState';
 import { IExtensibleProps } from '../util/ExtensionProvider';
 import * as React from 'react';
+import { OutputSelector } from 'reselect';
 export declare type ChangeDataHandler = (rowId: string, attributeId: string, newValue: any) => void;
 export interface ITableRowAction extends IActionDefinition {
     singleRowAction?: boolean;
@@ -31,6 +32,6 @@ export interface ILookupCalculated {
         [attributeId: string]: any;
     };
 }
-export declare function makeGetSelection(tableId: string): import("../../../../Work/Vortex/node_modules/reselect").OutputSelector<any, string[], (res: ITableState) => string[]>;
+export declare function makeGetSelection(tableId: string): OutputSelector<any, string[], (res: ITableState) => string[]>;
 declare const _default: React.ComponentClass<IBaseProps & IExtensibleProps, React.ComponentState>;
 export default _default;

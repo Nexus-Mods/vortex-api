@@ -20,9 +20,13 @@ export declare class TemporaryError extends Error {
     constructor(message: string);
 }
 export declare class HTTPError extends Error {
-    private mBody;
-    constructor(statusCode: number, message: string, body: string);
-    readonly body: string;
+    private mCode;
+    private mMessage;
+    private mURL;
+    constructor(statusCode: number, message: string, url: string);
+    readonly statusCode: number;
+    readonly statusMessage: string;
+    readonly url: string;
 }
 export declare class MissingInterpreter extends Error {
     private mURL;
