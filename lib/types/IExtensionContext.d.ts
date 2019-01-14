@@ -195,6 +195,7 @@ export interface IRunOptions {
     };
     suggestDeploy?: boolean;
     shell?: boolean;
+    detach?: boolean;
 }
 /**
  * all parameters passed to runExecutable. This is used to support interpreters
