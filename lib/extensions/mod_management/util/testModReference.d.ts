@@ -1,6 +1,6 @@
 import { IMod, IModReference } from '../types/IMod';
 export interface IModLookupInfo {
-    id: string;
+    id?: string;
     fileMD5: string;
     fileSizeBytes: number;
     fileName: string;
