@@ -234,7 +234,11 @@ export interface IExtensionApi {
     /**
      * show a dialog
      */
-    showDialog?: (type: DialogType, title: string, content: IDialogContent, actions: DialogActions) => Promise<IDialogResult>;
+    showDialog?: (type: DialogType, title: string, content: IDialogContent, actions: DialogActions, id?: string) => Promise<IDialogResult>;
+    /**
+     * close a dialog
+     */
+    closeDialog?: (id: string, actionKey?: string, input?: any) => void;
     /**
      * hides a notification by its id
      *
@@ -342,6 +346,12 @@ export interface IExtensionApi {
      * @memberOf IExtensionApi
      */
     lookupModReference: (ref: IReference) => Promise<ILookupResult[]>;
+    /**
+     * add a meta server
+     * Please note that setting a server with the same id again will replace the existing one
+     * with that id and setting it to undefined removes it
+     */
+    addMetaServer: (id: string, server?: any) => void;
     /**
      * find meta information about a mod
      * this will calculate a hash and the file size of the specified file

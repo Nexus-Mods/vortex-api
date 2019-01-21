@@ -32,6 +32,8 @@ declare class ExtensionManager {
     private mLoadFailures;
     private mInterpreters;
     private mStartHooks;
+    private mProgrammaticMetaServers;
+    private mForceDBReconnect;
     constructor(initStore?: Redux.Store<any>, eventEmitter?: NodeJS.EventEmitter);
     setTranslation(translator: I18next.i18n): void;
     /**
@@ -89,6 +91,7 @@ declare class ExtensionManager {
     renderStyle(): Promise<void>;
     getProtocolHandler(protocol: string): (url: string) => void;
     private getModDB;
+    private getMetaServerList;
     private connectMetaDB;
     private stateChangeHandler;
     private showErrorBox;
@@ -114,6 +117,7 @@ declare class ExtensionManager {
     private onAsync;
     private highlightCSS;
     private highlightControl;
+    private addMetaServer;
     private startIPC;
     private loadDynamicExtension;
     private loadDynamicExtensions;

@@ -60,6 +60,6 @@ export declare function dismissNotification(id: string): (dispatch: any) => Prom
  * @param {IDialogActions} actions
  * @returns
  */
-export declare function showDialog(type: DialogType, title: string, content: IDialogContent, actions: DialogActions): (dispatch: any) => Promise<IDialogResult>;
-export declare function closeDialog(id: string, actionKey: string, input: any): (dispatch: any) => void;
+export declare function showDialog(type: DialogType, title: string, content: IDialogContent, actions: DialogActions, inId?: string): (dispatch: any) => Promise<IDialogResult>;
+export declare function closeDialog(id: string, actionKey?: string, input?: any): (dispatch: any) => void;
 export declare function triggerDialogLink(id: string, idx: number): void;
