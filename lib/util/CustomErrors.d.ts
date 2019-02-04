@@ -1,6 +1,15 @@
 export declare class NotSupportedError extends Error {
     constructor();
 }
+export declare class ServiceTemporarilyUnavailable extends Error {
+    constructor(service: string);
+}
+export declare class UnsupportedOperatingSystem extends Error {
+    constructor();
+}
+export declare class InsufficientDiskSpace extends Error {
+    constructor(mountPoint: string);
+}
 export declare class ProcessCanceled extends Error {
     constructor(message: string);
 }

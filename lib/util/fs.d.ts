@@ -10,11 +10,12 @@
  *   (virus scanners, functions called from vortex) locking files.
  * - ignoring ENOENT error when deleting a file.
  */
+/// <reference types="node" />
 import * as PromiseBB from 'bluebird';
 import * as fs from 'fs-extra-promise';
 import * as I18next from 'i18next';
 export { constants, FSWatcher, Stats, WriteStream } from 'fs';
-export { accessSync, closeSync, createReadStream, createWriteStream, linkSync, openSync, readFileSync, readJSONSync, statSync, watch, writeFileSync, writeSync, } from 'fs-extra-promise';
+export { accessSync, closeSync, createReadStream, createWriteStream, linkSync, openSync, readFileSync, readJSONSync, statSync, symlinkSync, watch, writeFileSync, writeSync, } from 'fs-extra-promise';
 declare const chmodAsync: typeof fs.chmodAsync;
 declare const closeAsync: typeof fs.closeAsync;
 declare const fsyncAsync: typeof fs.fsyncAsync;
@@ -56,4 +57,7 @@ export declare function unlinkAsync(dirPath: string): PromiseBB<void>;
 export declare function renameAsync(sourcePath: string, destinationPath: string): PromiseBB<void>;
 export declare function rmdirAsync(dirPath: string): PromiseBB<void>;
 export declare function ensureDirWritableAsync(dirPath: string, confirm: () => PromiseBB<void>): PromiseBB<void>;
-export declare function forcePerm<T>(t: I18next.TranslationFunction, op: () => PromiseBB<T>): PromiseBB<T>;
+export declare function changeFileOwnership(filePath: string, stat: fs.Stats): PromiseBB<void>;
+export declare function changeFileAttributes(filePath: string, wantedAttributes: number, stat: fs.Stats): PromiseBB<void>;
+export declare function ensureFileWritableAsync(filePath: string): PromiseBB<void>;
+export declare function forcePerm<T>(t: I18next.TranslationFunction, op: () => PromiseBB<T>, filePath?: string): PromiseBB<T>;
