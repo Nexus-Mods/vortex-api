@@ -22,6 +22,7 @@ declare const fsyncAsync: typeof fs.fsyncAsync;
 declare const linkAsync: typeof fs.linkAsync;
 declare const lstatAsync: typeof fs.lstatAsync;
 declare const mkdirAsync: typeof fs.mkdirAsync;
+declare const mkdirsAsync: typeof fs.mkdirsAsync;
 declare const moveAsync: typeof fs.moveAsync;
 declare const openAsync: typeof fs.openAsync;
 declare const readdirAsync: typeof fs.readdirAsync;
@@ -33,17 +34,17 @@ declare const utimesAsync: typeof fs.utimesAsync;
 declare const writeAsync: typeof fs.writeAsync;
 declare const writeFileAsync: typeof fs.writeFileAsync;
 declare const isDirectoryAsync: typeof fs.isDirectoryAsync;
-export { chmodAsync, closeAsync, fsyncAsync, linkAsync, lstatAsync, mkdirAsync, moveAsync, openAsync, readlinkAsync, readdirAsync, readFileAsync, statAsync, symlinkAsync, utimesAsync, writeAsync, writeFileAsync, isDirectoryAsync, };
+export { chmodAsync, closeAsync, fsyncAsync, linkAsync, lstatAsync, mkdirAsync, mkdirsAsync, moveAsync, openAsync, readlinkAsync, readdirAsync, readFileAsync, statAsync, symlinkAsync, utimesAsync, writeAsync, writeFileAsync, isDirectoryAsync, };
 export declare function ensureDirSync(dirPath: string): void;
 export declare function ensureFileAsync(filePath: string): PromiseBB<void>;
 export declare function ensureDirAsync(dirPath: string): PromiseBB<void>;
 /**
  * copy file
- * The copy function from fs-extra doesn't (at the time of writing) correctly check that a file isn't
- * copied onto itself (it fails for links or potentially on case insensitive disks), so this makes
- * a check based on the ino number.
- * Unfortunately a bug in node.js (https://github.com/nodejs/node/issues/12115) prevents this check from
- * working reliably so it can currently be disabled.
+ * The copy function from fs-extra doesn't (at the time of writing) correctly check that a file
+ * isn't copied onto itself (it fails for links or potentially on case insensitive disks),
+ * so this makes a check based on the ino number.
+ * Unfortunately a bug in node.js (https://github.com/nodejs/node/issues/12115) prevents this
+ * check from working reliably so it can currently be disabled.
  * @param src file to copy
  * @param dest destination path
  * @param options copy options (see documentation for fs)

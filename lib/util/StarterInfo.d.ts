@@ -26,10 +26,10 @@ declare type OnShowErrorFunc = (message: string, details?: string | Error | any,
  */
 declare class StarterInfo implements IStarterInfo {
     static getGameIcon(game: IGameStored, gameDiscovery: IDiscoveryResult): string;
+    static run(info: StarterInfo, api: IExtensionApi, onShowError: OnShowErrorFunc): Promise<void>;
     private static executeWithSteam;
     private static executeWithEpic;
     private static runGameExecutable;
-    static run(info: StarterInfo, api: IExtensionApi, onShowError: OnShowErrorFunc): Promise<void>;
     private static runThroughLauncher;
     private static gameIcon;
     private static gameIconRW;

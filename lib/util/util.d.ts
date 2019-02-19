@@ -81,30 +81,10 @@ export declare function pad(value: number, padding: string, width: number): stri
 export declare function timeToString(seconds: number): string;
 export declare function encodeHTML(input: string): string;
 export declare function decodeHTML(input: string): string;
-export declare function getAllPropertyNames(obj: Object): string[];
+export declare function getAllPropertyNames(obj: object): string[];
 /**
  * test if a directory is a sub-directory of another one
  * @param child path of the presumed sub-directory
  * @param parent path of the presumed parent directory
  */
 export declare function isChildPath(child: string, parent: string): boolean;
-/**
- * Test whether it is viable to transfer files and directories from
- *  a source directory to a new proposed destination directory.
- * Note:
- * - Currently will only test whether there's enough disk space at the destination
- *    folder.
- *
- * @param source The current source folder.
- * @param destination The proposed destination folder.
- */
-export declare function testPathTransfer(source: string, destination: string): Promise<void>;
-/**
- * Move the content of a directory to another - Using a move operation if it's on the same
- * drive and a copy+delete if not.
- * This works around or properly reports common problems, like when the destination directory
- * is a parent of the source directory
- * @param source
- * @param dest
- */
-export declare function transferPath(source: string, dest: string, progress: (from: string, to: string, percentage: number) => void): Promise<void>;

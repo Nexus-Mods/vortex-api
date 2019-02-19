@@ -752,14 +752,14 @@ export interface IExtensionContext {
      */
     registerInterpreter: (extension: string, apply: (call: IRunParameters) => IRunParameters) => void;
     /**
-     * register a hook to be called before Vortex starts any tool and is allowed to replace parameter or
-     * cancel the start by rejecting with ProcessCanceled or UserCanceled.
+     * register a hook to be called before Vortex starts any tool and is allowed to replace parameter
+     * or cancel the start by rejecting with ProcessCanceled or UserCanceled.
      * This could be used as a more powerful replacement for registerInterpreter.
      * Interpreters registered with registerInterpreter will be processed before any hooks are applied
-     * @param {number} priority Hooks are applied in ascending priority order. Please choose priorities
-     *                          with a bit of space between hooks you know about so that other extension
-     *                          developers can insert their own hooks between. non-extension hooks will be
-     *                          applied in steps of 100
+     * @param {number} priority Hooks are applied in ascending priority order. Please choose
+     *                          priorities with a bit of space between hooks you know about so that
+     *                          other extension developers can insert their own hooks between.
+     *                          Non-extension hooks will be applied in steps of 100
      * @param {string} id identifier for the hook. This will only be used for logging
      * @param {function} hook the hook to be called
      */

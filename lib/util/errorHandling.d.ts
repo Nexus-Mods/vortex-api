@@ -21,7 +21,5 @@ export declare function terminate(error: IError, state: any, allowReport?: boole
 /**
  * render error message for internal processing (issue tracker and such).
  * It's important this doesn't translate the error message or lose information
- * @param input
- * @param options
  */
 export declare function toError(input: any, options?: IErrorOptions): IError;

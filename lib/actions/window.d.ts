@@ -15,5 +15,6 @@ export declare const setWindowPosition: reduxAct.ComplexActionCreator1<any, any,
  * fullscreen makes the window borderless + fill the screen
  */
 export declare const setMaximized: reduxAct.ComplexActionCreator1<any, any, {}>;
+export declare const setZoomFactor: reduxAct.ComplexActionCreator1<any, any, {}>;
 export declare const setTabsMinimized: reduxAct.ComplexActionCreator1<any, any, {}>;
 export declare const setCustomTitlebar: reduxAct.ComplexActionCreator1<any, any, {}>;
