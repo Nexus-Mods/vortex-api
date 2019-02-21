@@ -98,10 +98,12 @@
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="igame.html#contributed" class="tsd-kind-icon">contributed</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="igame.html#details" class="tsd-kind-icon">details</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="igame.html#environment" class="tsd-kind-icon">environment</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="igame.html#executable" class="tsd-kind-icon">executable</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="igame.html#extensionpath" class="tsd-kind-icon">extension<wbr>Path</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="igame.html#final" class="tsd-kind-icon">final</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="igame.html#getmodpaths" class="tsd-kind-icon">get<wbr>Mod<wbr>Paths</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="igame.html#id" class="tsd-kind-icon">id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="igame.html#logo" class="tsd-kind-icon">logo</a></li>
@@ -114,6 +116,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="igame.html#querypath" class="tsd-kind-icon">query<wbr>Path</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="igame.html#relative" class="tsd-kind-icon">relative</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="igame.html#requiredfiles" class="tsd-kind-icon">required<wbr>Files</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="igame.html#requireslauncher" class="tsd-kind-icon">requires<wbr>Launcher</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="igame.html#setup" class="tsd-kind-icon">setup</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="igame.html#shell" class="tsd-kind-icon">shell</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="igame.html#shortname" class="tsd-kind-icon">short<wbr>Name</a></li>
@@ -126,12 +129,27 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="contributed" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> contributed</h3>
+					<div class="tsd-signature tsd-kind-icon">contributed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in types/IGame.ts:125</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>set to name of the contributor that added support for this game. For officialy supported games this is undefined</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="details" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> details</h3>
 					<div class="tsd-signature tsd-kind-icon">details<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/IGame.ts:110</li>
+							<li>Defined in types/IGame.ts:120</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -218,7 +236,7 @@
 					<div class="tsd-signature tsd-kind-icon">extension<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/IGame.ts:69</li>
+							<li>Defined in types/IGame.ts:79</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -237,12 +255,27 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="final" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> final</h3>
+					<div class="tsd-signature tsd-kind-icon">final<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in types/IGame.ts:130</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>set to true if support for this game has been fully tested</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="getmodpaths" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> get<wbr>Mod<wbr>Paths</h3>
 					<div class="tsd-signature tsd-kind-icon">get<wbr>Mod<wbr>Paths<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/IGame.ts:41</li>
+							<li>Defined in types/IGame.ts:42</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -347,7 +380,7 @@
 					<div class="tsd-signature tsd-kind-icon">merge<wbr>Archive<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/IGame.ts:95</li>
+							<li>Defined in types/IGame.ts:105</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -385,7 +418,7 @@
 					<div class="tsd-signature tsd-kind-icon">merge<wbr>Mods<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/IGame.ts:88</li>
+							<li>Defined in types/IGame.ts:98</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -413,7 +446,7 @@
 					<div class="tsd-signature tsd-kind-icon">mod<wbr>Types<span class="tsd-signature-symbol">:</span> <a href="imodtype.html" class="tsd-signature-type">IModType</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/IGame.ts:53</li>
+							<li>Defined in types/IGame.ts:63</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -484,7 +517,7 @@
 					<div class="tsd-signature tsd-kind-icon">query<wbr>Mod<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/IGame.ts:28</li>
+							<li>Defined in types/IGame.ts:29</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -618,12 +651,54 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="requireslauncher" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> requires<wbr>Launcher</h3>
+					<div class="tsd-signature tsd-kind-icon">requires<wbr>Launcher<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in types/IGame.ts:51</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Determine whether the game needs to be executed via a launcher, like Steam or EpicGamesLauncher</p>
+						</div>
+						<p>If this returns a value, Vortex will use appropriate code for that launcher</p>
+						<dl class="tsd-comment-tags">
+							<dt>param</dt>
+							<dd><p>path where the game is installed.</p>
+							</dd>
+						</dl>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>gamePath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>gamePath: <span class="tsd-signature-type">string</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="setup" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> setup</h3>
 					<div class="tsd-signature tsd-kind-icon">setup<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/IGame.ts:102</li>
+							<li>Defined in types/IGame.ts:112</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -696,7 +771,7 @@
 					<div class="tsd-signature tsd-kind-icon">supported<wbr>Tools<span class="tsd-signature-symbol">:</span> <a href="itool.html" class="tsd-signature-type">ITool</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/IGame.ts:60</li>
+							<li>Defined in types/IGame.ts:70</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -728,6 +803,9 @@
 						<a href="igame.html" class="tsd-kind-icon">IGame</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="igame.html#contributed" class="tsd-kind-icon">contributed</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="igame.html#details" class="tsd-kind-icon">details</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
@@ -738,6 +816,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="igame.html#extensionpath" class="tsd-kind-icon">extension<wbr>Path</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="igame.html#final" class="tsd-kind-icon">final</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="igame.html#getmodpaths" class="tsd-kind-icon">get<wbr>Mod<wbr>Paths</a>
@@ -774,6 +855,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
 								<a href="igame.html#requiredfiles" class="tsd-kind-icon">required<wbr>Files</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="igame.html#requireslauncher" class="tsd-kind-icon">requires<wbr>Launcher</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="igame.html#setup" class="tsd-kind-icon">setup</a>

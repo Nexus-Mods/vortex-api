@@ -92,7 +92,9 @@
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="httperror.html#mbody" class="tsd-kind-icon">m<wbr>Body</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="httperror.html#mcode" class="tsd-kind-icon">m<wbr>Code</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="httperror.html#mmessage" class="tsd-kind-icon">m<wbr>Message</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="httperror.html#murl" class="tsd-kind-icon">mURL</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="httperror.html#error" class="tsd-kind-icon">Error</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="httperror.html#message" class="tsd-kind-icon">message</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="httperror.html#name" class="tsd-kind-icon">name</a></li>
@@ -102,7 +104,9 @@
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-external"><a href="httperror.html#body" class="tsd-kind-icon">body</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-external"><a href="httperror.html#statuscode" class="tsd-kind-icon">status<wbr>Code</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-external"><a href="httperror.html#statusmessage" class="tsd-kind-icon">status<wbr>Message</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-external"><a href="httperror.html#url" class="tsd-kind-icon">url</a></li>
 							</ul>
 						</section>
 					</div>
@@ -114,13 +118,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">new HTTPError<span class="tsd-signature-symbol">(</span>statusCode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, body<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="httperror.html" class="tsd-signature-type">HTTPError</a></li>
+						<li class="tsd-signature tsd-kind-icon">new HTTPError<span class="tsd-signature-symbol">(</span>statusCode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="httperror.html" class="tsd-signature-type">HTTPError</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in util/CustomErrors.ts:46</li>
+									<li>Defined in util/CustomErrors.ts:76</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -132,7 +136,7 @@
 									<h5>message: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5>body: <span class="tsd-signature-type">string</span></h5>
+									<h5>url: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="httperror.html" class="tsd-signature-type">HTTPError</a></h4>
@@ -143,12 +147,32 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
-					<a name="mbody" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> m<wbr>Body</h3>
-					<div class="tsd-signature tsd-kind-icon">m<wbr>Body<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="mcode" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> m<wbr>Code</h3>
+					<div class="tsd-signature tsd-kind-icon">m<wbr>Code<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in util/CustomErrors.ts:46</li>
+							<li>Defined in util/CustomErrors.ts:74</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
+					<a name="mmessage" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> m<wbr>Message</h3>
+					<div class="tsd-signature tsd-kind-icon">m<wbr>Message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in util/CustomErrors.ts:75</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
+					<a name="murl" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> mURL</h3>
+					<div class="tsd-signature tsd-kind-icon">mURL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in util/CustomErrors.ts:76</li>
 						</ul>
 					</aside>
 				</section>
@@ -200,16 +224,50 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Accessors</h2>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
-					<a name="body" class="tsd-anchor"></a>
-					<h3>body</h3>
+					<a name="statuscode" class="tsd-anchor"></a>
+					<h3>status<wbr>Code</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> body<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> statusCode<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in util/CustomErrors.ts:53</li>
+									<li>Defined in util/CustomErrors.ts:85</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+					<a name="statusmessage" class="tsd-anchor"></a>
+					<h3>status<wbr>Message</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> statusMessage<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in util/CustomErrors.ts:89</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+					<a name="url" class="tsd-anchor"></a>
+					<h3>url</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> url<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in util/CustomErrors.ts:93</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -237,7 +295,13 @@
 								<a href="httperror.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
-								<a href="httperror.html#mbody" class="tsd-kind-icon">m<wbr>Body</a>
+								<a href="httperror.html#mcode" class="tsd-kind-icon">m<wbr>Code</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
+								<a href="httperror.html#mmessage" class="tsd-kind-icon">m<wbr>Message</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
+								<a href="httperror.html#murl" class="tsd-kind-icon">mURL</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
 								<a href="httperror.html#error" class="tsd-kind-icon">Error</a>
@@ -252,7 +316,13 @@
 								<a href="httperror.html#stack" class="tsd-kind-icon">stack</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
-								<a href="httperror.html#body" class="tsd-kind-icon">body</a>
+								<a href="httperror.html#statuscode" class="tsd-kind-icon">status<wbr>Code</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+								<a href="httperror.html#statusmessage" class="tsd-kind-icon">status<wbr>Message</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+								<a href="httperror.html#url" class="tsd-kind-icon">url</a>
 							</li>
 						</ul>
 					</li>

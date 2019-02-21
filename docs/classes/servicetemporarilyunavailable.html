@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IPath | vortex_devel</title>
+	<title>ServiceTemporarilyUnavailable | vortex_devel</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="ipath.html">IPath</a>
+					<a href="servicetemporarilyunavailable.html">ServiceTemporarilyUnavailable</a>
 				</li>
 			</ul>
-			<h1>Interface IPath</h1>
+			<h1>Class ServiceTemporarilyUnavailable</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,12 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IPath</span>
+						<span class="tsd-signature-type">Error</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">ServiceTemporarilyUnavailable</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -78,35 +83,93 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-external tsd-is-not-exported">
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-external"><a href="servicetemporarilyunavailable.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="ipath.html#attrs" class="tsd-kind-icon">attrs</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="ipath.html#path" class="tsd-kind-icon">path</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="servicetemporarilyunavailable.html#error" class="tsd-kind-icon">Error</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="servicetemporarilyunavailable.html#message" class="tsd-kind-icon">message</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="servicetemporarilyunavailable.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-static tsd-is-external"><a href="servicetemporarilyunavailable.html#stack" class="tsd-kind-icon">stack</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-external tsd-is-not-exported">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-external">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Service<wbr>Temporarily<wbr>Unavailable<span class="tsd-signature-symbol">(</span>service<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="servicetemporarilyunavailable.html" class="tsd-signature-type">ServiceTemporarilyUnavailable</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in util/CustomErrors.ts:10</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>service: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="servicetemporarilyunavailable.html" class="tsd-signature-type">ServiceTemporarilyUnavailable</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-					<a name="attrs" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> attrs</h3>
-					<div class="tsd-signature tsd-kind-icon">attrs<span class="tsd-signature-symbol">:</span> <a href="iattrmap.html" class="tsd-signature-type">IAttrMap</a></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="error" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> Error</h3>
+					<div class="tsd-signature tsd-kind-icon">Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ErrorConstructor</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in controls/Icon.tsx:40</li>
+							<li>Defined in C:/Users/Tannin/AppData/Local/Yarn/config/global/node_modules/typescript/lib/lib.es6.d.ts:896</li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-					<a name="path" class="tsd-anchor"></a>
-					<h3>path</h3>
-					<div class="tsd-signature tsd-kind-icon">path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+					<a name="message" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> message</h3>
+					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from Error.message</p>
 						<ul>
-							<li>Defined in controls/Icon.tsx:39</li>
+							<li>Defined in C:/Users/Tannin/AppData/Local/Yarn/config/global/node_modules/typescript/lib/lib.es6.d.ts:886</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+					<a name="name" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from Error.name</p>
+						<ul>
+							<li>Defined in C:/Users/Tannin/AppData/Local/Yarn/config/global/node_modules/typescript/lib/lib.es6.d.ts:885</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-static tsd-is-external">
+					<a name="stack" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagOptional">Optional</span> stack</h3>
+					<div class="tsd-signature tsd-kind-icon">stack<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from Error.stack</p>
+						<p>Overrides Error.stack</p>
+						<ul>
+							<li>Defined in C:/Users/Tannin/AppData/Local/Yarn/config/global/node_modules/typescript/lib/lib.es6.d.ts:887</li>
 						</ul>
 					</aside>
 				</section>
@@ -124,14 +187,23 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-is-external tsd-is-not-exported">
-						<a href="ipath.html" class="tsd-kind-icon">IPath</a>
+					<li class="current tsd-kind-class tsd-is-external">
+						<a href="servicetemporarilyunavailable.html" class="tsd-kind-icon">Service<wbr>Temporarily<wbr>Unavailable</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-								<a href="ipath.html#attrs" class="tsd-kind-icon">attrs</a>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-external">
+								<a href="servicetemporarilyunavailable.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-								<a href="ipath.html#path" class="tsd-kind-icon">path</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="servicetemporarilyunavailable.html#error" class="tsd-kind-icon">Error</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+								<a href="servicetemporarilyunavailable.html#message" class="tsd-kind-icon">message</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+								<a href="servicetemporarilyunavailable.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-static tsd-is-external">
+								<a href="servicetemporarilyunavailable.html#stack" class="tsd-kind-icon">stack</a>
 							</li>
 						</ul>
 					</li>

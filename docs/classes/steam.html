@@ -116,6 +116,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external tsd-is-not-exported"><a href="steam.html#allgames" class="tsd-kind-icon">all<wbr>Games</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external tsd-is-not-exported"><a href="steam.html#findbyappid" class="tsd-kind-icon">find<wbr>ByApp<wbr>Id</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external tsd-is-not-exported"><a href="steam.html#findbyname" class="tsd-kind-icon">find<wbr>ByName</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external tsd-is-not-exported"><a href="steam.html#getsteamexecutionpath" class="tsd-kind-icon">get<wbr>Steam<wbr>Execution<wbr>Path</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external tsd-is-not-exported"><a href="steam.html#parsemanifests" class="tsd-kind-icon">parse<wbr>Manifests</a></li>
 							</ul>
 						</section>
@@ -134,7 +135,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in util/Steam.ts:44</li>
+									<li>Defined in util/Steam.ts:74</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="steam.html" class="tsd-signature-type">Steam</a></h4>
@@ -150,17 +151,17 @@
 					<div class="tsd-signature tsd-kind-icon">m<wbr>Base<wbr>Folder<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in util/Steam.ts:43</li>
+							<li>Defined in util/Steam.ts:73</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external tsd-is-not-exported">
 					<a name="mcache" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> m<wbr>Cache</h3>
-					<div class="tsd-signature tsd-kind-icon">m<wbr>Cache<span class="tsd-signature-symbol">:</span> <a href="../interfaces/isteamentry.html" class="tsd-signature-type">ISteamEntry</a><span class="tsd-signature-symbol">[]</span></div>
+					<div class="tsd-signature tsd-kind-icon">m<wbr>Cache<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/isteamentry.html" class="tsd-signature-type">ISteamEntry</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in util/Steam.ts:44</li>
+							<li>Defined in util/Steam.ts:74</li>
 						</ul>
 					</aside>
 				</section>
@@ -170,7 +171,7 @@
 					<div class="tsd-signature tsd-kind-icon">Game<wbr>Not<wbr>Found<span class="tsd-signature-symbol">:</span> <a href="gamenotfound.html" class="tsd-signature-type">GameNotFound</a><span class="tsd-signature-symbol"> =&nbsp;GameNotFound</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in util/Steam.ts:42</li>
+							<li>Defined in util/Steam.ts:72</li>
 						</ul>
 					</aside>
 				</section>
@@ -188,7 +189,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/isteam.html">ISteam</a>.<a href="../interfaces/isteam.html#allgames">allGames</a></p>
 								<ul>
-									<li>Defined in util/Steam.ts:119</li>
+									<li>Defined in util/Steam.ts:156</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/isteamentry.html" class="tsd-signature-type">ISteamEntry</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -206,7 +207,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/isteam.html">ISteam</a>.<a href="../interfaces/isteam.html#findbyappid">findByAppId</a></p>
 								<ul>
-									<li>Defined in util/Steam.ts:101</li>
+									<li>Defined in util/Steam.ts:138</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -235,7 +236,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/isteam.html">ISteam</a>.<a href="../interfaces/isteam.html#findbyname">findByName</a></p>
 								<ul>
-									<li>Defined in util/Steam.ts:85</li>
+									<li>Defined in util/Steam.ts:95</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -253,6 +254,46 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external tsd-is-not-exported">
+					<a name="getsteamexecutionpath" class="tsd-anchor"></a>
+					<h3>get<wbr>Steam<wbr>Execution<wbr>Path</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Steam<wbr>Execution<wbr>Path<span class="tsd-signature-symbol">(</span>gamePath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, args<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/isteamexec.html" class="tsd-signature-type">ISteamExec</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/isteam.html">ISteam</a>.<a href="../interfaces/isteam.html#getsteamexecutionpath">getSteamExecutionPath</a></p>
+								<ul>
+									<li>Defined in util/Steam.ts:115</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Look up Steam&#39;s executable path and launch arguments for
+									the game we&#39;re attempting to start-up.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>gamePath: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Used to identify the game&#39;s cache entry and retrieve the
+										corresponding appId.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> args: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Can be used to add additional launch arguments.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/isteamexec.html" class="tsd-signature-type">ISteamExec</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external tsd-is-not-exported">
 					<a name="parsemanifests" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> parse<wbr>Manifests</h3>
@@ -263,7 +304,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in util/Steam.ts:126</li>
+									<li>Defined in util/Steam.ts:163</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/isteamentry.html" class="tsd-signature-type">ISteamEntry</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -307,6 +348,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external tsd-is-not-exported">
 								<a href="steam.html#findbyname" class="tsd-kind-icon">find<wbr>ByName</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external tsd-is-not-exported">
+								<a href="steam.html#getsteamexecutionpath" class="tsd-kind-icon">get<wbr>Steam<wbr>Execution<wbr>Path</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external tsd-is-not-exported">
 								<a href="steam.html#parsemanifests" class="tsd-kind-icon">parse<wbr>Manifests</a>

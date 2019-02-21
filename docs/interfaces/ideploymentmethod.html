@@ -82,6 +82,7 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ideploymentmethod.html#activate" class="tsd-kind-icon">activate</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ideploymentmethod.html#cancel" class="tsd-kind-icon">cancel</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ideploymentmethod.html#deactivate" class="tsd-kind-icon">deactivate</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ideploymentmethod.html#description" class="tsd-kind-icon">description</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ideploymentmethod.html#detaileddescription" class="tsd-kind-icon">detailed<wbr>Description</a></li>
@@ -92,6 +93,8 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ideploymentmethod.html#isfallbackpurgesafe" class="tsd-kind-icon">is<wbr>Fallback<wbr>Purge<wbr>Safe</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ideploymentmethod.html#issupported" class="tsd-kind-icon">is<wbr>Supported</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ideploymentmethod.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ideploymentmethod.html#postpurge" class="tsd-kind-icon">post<wbr>Purge</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ideploymentmethod.html#prepurge" class="tsd-kind-icon">pre<wbr>Purge</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ideploymentmethod.html#prepare" class="tsd-kind-icon">prepare</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ideploymentmethod.html#purge" class="tsd-kind-icon">purge</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ideploymentmethod.html#usergate" class="tsd-kind-icon">user<wbr>Gate</a></li>
@@ -108,7 +111,7 @@
 					<div class="tsd-signature tsd-kind-icon">activate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:169</li>
+							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:215</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -124,7 +127,7 @@
 								mod subdirectory</p>
 							</dd>
 							<dt>param</dt>
-							<dd><p>game path where mods are installed to (destination)</p>
+							<dd><p>relative path within the data path where mods are installed to</p>
 							</dd>
 							<dt>param</dt>
 							<dd><p>list of files to skip</p>
@@ -166,17 +169,21 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a name="deactivate" class="tsd-anchor"></a>
-					<h3>deactivate</h3>
-					<div class="tsd-signature tsd-kind-icon">deactivate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<a name="cancel" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> cancel</h3>
+					<div class="tsd-signature tsd-kind-icon">cancel<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:175</li>
+							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:201</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>deactivate the specified mod, removing all files it has deployed to the destination</p>
+							<p>if defined, this gets called instead of finalize if an error occurred since prepare was called.
+								This allows the deployment method to reset all state without actually doing anything in case
+								things went wrong.
+								If this is not defined, nothing gets called. In this case the deployment method can&#39;t have any
+							state set up in prepare that would cause issues if finalize doesn&#39;t get called.</p>
 						</div>
 					</div>
 					<div class="tsd-type-declaration">
@@ -184,20 +191,67 @@
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter-siganture">
 								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>installPath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, dataPath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, mod<span class="tsd-signature-symbol">: </span><a href="imod.html" class="tsd-signature-type">IMod</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>gameId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, dataPath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, installationPath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
 										<h4 class="tsd-parameters-title">Parameters</h4>
 										<ul class="tsd-parameters">
 											<li>
-												<h5>installPath: <span class="tsd-signature-type">string</span></h5>
+												<h5>gameId: <span class="tsd-signature-type">string</span></h5>
 											</li>
 											<li>
 												<h5>dataPath: <span class="tsd-signature-type">string</span></h5>
 											</li>
 											<li>
-												<h5>mod: <a href="imod.html" class="tsd-signature-type">IMod</a></h5>
+												<h5>installationPath: <span class="tsd-signature-type">string</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="deactivate" class="tsd-anchor"></a>
+					<h3>deactivate</h3>
+					<div class="tsd-signature tsd-kind-icon">deactivate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:223</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>deactivate the specified mod, removing all files it has deployed to the destination</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>param</dt>
+							<dd><p>source where the mod is installed</p>
+							</dd>
+							<dt>param</dt>
+							<dd><p>relative path within the data path where mods are installed to</p>
+							</dd>
+						</dl>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>sourcePath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, dataPath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>sourcePath: <span class="tsd-signature-type">string</span></h5>
+											</li>
+											<li>
+												<h5>dataPath: <span class="tsd-signature-type">string</span></h5>
 											</li>
 										</ul>
 										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -213,7 +267,7 @@
 					<div class="tsd-signature tsd-kind-icon">description<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:83</li>
+							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:118</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -236,7 +290,7 @@
 					<div class="tsd-signature tsd-kind-icon">detailed<wbr>Description<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:100</li>
+							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:135</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -280,7 +334,7 @@
 					<div class="tsd-signature tsd-kind-icon">external<wbr>Changes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:198</li>
+							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:261</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -337,7 +391,7 @@
 					<div class="tsd-signature tsd-kind-icon">finalize<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:154</li>
+							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:189</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -419,7 +473,7 @@
 					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:67</li>
+							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:102</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -442,7 +496,7 @@
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Active<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:207</li>
+							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:270</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -478,7 +532,7 @@
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Fallback<wbr>Purge<wbr>Safe<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:92</li>
+							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:127</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -502,7 +556,7 @@
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Supported<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:111</li>
+							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:146</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -523,7 +577,7 @@
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter-siganture">
 								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, gameId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, modTypeId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, gameId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, modTypeId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="iunavailablereason.html" class="tsd-signature-type">IUnavailableReason</a></li>
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
@@ -539,7 +593,7 @@
 												<h5>modTypeId: <span class="tsd-signature-type">string</span></h5>
 											</li>
 										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+										<h4 class="tsd-returns-title">Returns <a href="iunavailablereason.html" class="tsd-signature-type">IUnavailableReason</a></h4>
 									</li>
 								</ul>
 							</li>
@@ -552,7 +606,7 @@
 					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:75</li>
+							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:110</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -570,12 +624,83 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="postpurge" class="tsd-anchor"></a>
+					<h3>post<wbr>Purge</h3>
+					<div class="tsd-signature tsd-kind-icon">post<wbr>Purge<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:251</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>called after mods were purged. If multiple mod types wer purged, this is only called
+								after they are all done.
+							Like prePurge, this is intended for optimizations</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="prepurge" class="tsd-anchor"></a>
+					<h3>pre<wbr>Purge</h3>
+					<div class="tsd-signature tsd-kind-icon">pre<wbr>Purge<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:231</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>called before mods are being purged. If multiple mod types are going to be purged,
+								this is only called once.
+								This is primarily useful for optimization, to avoid work being done redundantly
+							for every modtype-purge</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>installPath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>installPath: <span class="tsd-signature-type">string</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="prepare" class="tsd-anchor"></a>
 					<h3>prepare</h3>
 					<div class="tsd-signature tsd-kind-icon">prepare<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:136</li>
+							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:171</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -643,7 +768,7 @@
 					<div class="tsd-signature tsd-kind-icon">purge<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:188</li>
+							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:244</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -697,7 +822,7 @@
 					<div class="tsd-signature tsd-kind-icon">user<wbr>Gate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:119</li>
+							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:154</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -748,6 +873,9 @@
 								<a href="ideploymentmethod.html#activate" class="tsd-kind-icon">activate</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="ideploymentmethod.html#cancel" class="tsd-kind-icon">cancel</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="ideploymentmethod.html#deactivate" class="tsd-kind-icon">deactivate</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
@@ -776,6 +904,12 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="ideploymentmethod.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="ideploymentmethod.html#postpurge" class="tsd-kind-icon">post<wbr>Purge</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="ideploymentmethod.html#prepurge" class="tsd-kind-icon">pre<wbr>Purge</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="ideploymentmethod.html#prepare" class="tsd-kind-icon">prepare</a>

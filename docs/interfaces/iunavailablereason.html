@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IRect | vortex_devel</title>
+	<title>IUnavailableReason | vortex_devel</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,21 +56,28 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="irect.html">IRect</a>
+					<a href="iunavailablereason.html">IUnavailableReason</a>
 				</li>
 			</ul>
-			<h1>Interface IRect</h1>
+			<h1>Interface IUnavailableReason</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Indicates why a deployment method is unavailable an if it can be made to work</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IRect</span>
+						<span class="target">IUnavailableReason</span>
 					</li>
 				</ul>
 			</section>
@@ -78,59 +85,145 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-external tsd-is-not-exported">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="irect.html#bottom" class="tsd-kind-icon">bottom</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="irect.html#left" class="tsd-kind-icon">left</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="irect.html#right" class="tsd-kind-icon">right</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="irect.html#top" class="tsd-kind-icon">top</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="iunavailablereason.html#description" class="tsd-kind-icon">description</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="iunavailablereason.html#fixcallback" class="tsd-kind-icon">fix<wbr>Callback</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="iunavailablereason.html#order" class="tsd-kind-icon">order</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="iunavailablereason.html#solution" class="tsd-kind-icon">solution</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-external tsd-is-not-exported">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-					<a name="bottom" class="tsd-anchor"></a>
-					<h3>bottom</h3>
-					<div class="tsd-signature tsd-kind-icon">bottom<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="description" class="tsd-anchor"></a>
+					<h3>description</h3>
+					<div class="tsd-signature tsd-kind-icon">description<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in controls/VisibilityProxy.tsx:8</li>
+							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:76</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>description (english) why the deployment method is unavailable</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">i18next.TranslationFunction</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>t: <span class="tsd-signature-type">i18next.TranslationFunction</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-					<a name="left" class="tsd-anchor"></a>
-					<h3>left</h3>
-					<div class="tsd-signature tsd-kind-icon">left<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="fixcallback" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> fix<wbr>Callback</h3>
+					<div class="tsd-signature tsd-kind-icon">fix<wbr>Callback<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in controls/VisibilityProxy.tsx:9</li>
+							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:85</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>if the problem can be fixed automatically, this can be set to a function that takes care
+							of it</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>api<span class="tsd-signature-symbol">: </span><a href="iextensionapi.html" class="tsd-signature-type">IExtensionApi</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>api: <a href="iextensionapi.html" class="tsd-signature-type">IExtensionApi</a></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-					<a name="right" class="tsd-anchor"></a>
-					<h3>right</h3>
-					<div class="tsd-signature tsd-kind-icon">right<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="order" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> order</h3>
+					<div class="tsd-signature tsd-kind-icon">order<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in controls/VisibilityProxy.tsx:10</li>
+							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:91</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>When no method is supported, Vortex will offer possible solutions in this order.
+								It should indicate both how much effort the solution is and also a general preference for
+							this deployment methods so that the preferred method has a lower order number than others.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-					<a name="top" class="tsd-anchor"></a>
-					<h3>top</h3>
-					<div class="tsd-signature tsd-kind-icon">top<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="solution" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> solution</h3>
+					<div class="tsd-signature tsd-kind-icon">solution<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in controls/VisibilityProxy.tsx:7</li>
+							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:80</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>describes the solution to make this</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">i18next.TranslationFunction</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>t: <span class="tsd-signature-type">i18next.TranslationFunction</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -146,20 +239,20 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-is-external tsd-is-not-exported">
-						<a href="irect.html" class="tsd-kind-icon">IRect</a>
+					<li class="current tsd-kind-interface tsd-is-external">
+						<a href="iunavailablereason.html" class="tsd-kind-icon">IUnavailable<wbr>Reason</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-								<a href="irect.html#bottom" class="tsd-kind-icon">bottom</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="iunavailablereason.html#description" class="tsd-kind-icon">description</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-								<a href="irect.html#left" class="tsd-kind-icon">left</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="iunavailablereason.html#fixcallback" class="tsd-kind-icon">fix<wbr>Callback</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-								<a href="irect.html#right" class="tsd-kind-icon">right</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="iunavailablereason.html#order" class="tsd-kind-icon">order</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-								<a href="irect.html#top" class="tsd-kind-icon">top</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="iunavailablereason.html#solution" class="tsd-kind-icon">solution</a>
 							</li>
 						</ul>
 					</li>

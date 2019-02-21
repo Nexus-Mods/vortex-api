@@ -137,7 +137,7 @@
 					<div class="tsd-signature tsd-kind-icon">calc<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/ITableAttribute.ts:151</li>
+							<li>Defined in types/ITableAttribute.ts:153</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -189,13 +189,16 @@
 					<div class="tsd-signature tsd-kind-icon">condition<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/ITableAttribute.ts:168</li>
+							<li>Defined in types/ITableAttribute.ts:173</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>if specified, this is called to determine if the attribute is visible at all.
-							This can be used to hide attributes on game where they aren&#39;t supported</p>
+								This can be used to hide attributes on game where they aren&#39;t supported.
+								This will only be evaluated when the table is created, when the user switches column visibility
+								manually or when the list of table columns programatically changes but you can not use it
+							to dynamically hide columns <em>without</em> changing any table props.</p>
 						</div>
 					</div>
 					<div class="tsd-type-declaration">
@@ -220,14 +223,16 @@
 					<div class="tsd-signature tsd-kind-icon">custom<wbr>Renderer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/ITableAttribute.ts:136</li>
+							<li>Defined in types/ITableAttribute.ts:138</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>if specified this function is used to render the value in the table instead of the usual cell
 								renderer. Please note that if you want caching or asynchronous calculation for this cell you&#39;ll
-							have to implement it yourself.</p>
+								have to implement it yourself.
+								Also note that table cells using customRenderer will do more unnecessary rerenders than a
+							calc-based field so please use customRenderer only when neccessary.</p>
 						</div>
 					</div>
 					<div class="tsd-type-declaration">
@@ -283,7 +288,7 @@
 					<div class="tsd-signature tsd-kind-icon">edit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/ITableAttribute.ts:186</li>
+							<li>Defined in types/ITableAttribute.ts:191</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -374,8 +379,8 @@
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> placeholder<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span></h5>
 								<div class="tsd-comment tsd-typography">
 									<div class="lead">
-										<p>if set, this is called to determine the placeholder to be displayed when the input box is empty.
-										Has no effect if this edit config doesn&#39;t generate an input box</p>
+										<p>if set, this is called to determine the placeholder to be displayed when the input box is
+										empty. Has no effect if this edit config doesn&#39;t generate an input box</p>
 									</div>
 								</div>
 								<ul class="tsd-parameters">
@@ -703,7 +708,7 @@
 					<div class="tsd-signature tsd-kind-icon">sort<wbr>Func<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/ITableAttribute.ts:157</li>
+							<li>Defined in types/ITableAttribute.ts:159</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -747,7 +752,7 @@
 					<div class="tsd-signature tsd-kind-icon">sort<wbr>Func<wbr>Raw<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/ITableAttribute.ts:163</li>
+							<li>Defined in types/ITableAttribute.ts:165</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -791,7 +796,7 @@
 					<div class="tsd-signature tsd-kind-icon">supports<wbr>Multiple<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/ITableAttribute.ts:178</li>
+							<li>Defined in types/ITableAttribute.ts:183</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">

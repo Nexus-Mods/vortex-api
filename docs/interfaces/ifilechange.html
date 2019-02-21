@@ -89,8 +89,10 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ifilechange.html#changetype" class="tsd-kind-icon">change<wbr>Type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ifilechange.html#desttime" class="tsd-kind-icon">dest<wbr>Time</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ifilechange.html#filepath" class="tsd-kind-icon">file<wbr>Path</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ifilechange.html#source" class="tsd-kind-icon">source</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="ifilechange.html#sourcetime" class="tsd-kind-icon">source<wbr>Time</a></li>
 							</ul>
 						</section>
 					</div>
@@ -104,7 +106,7 @@
 					<div class="tsd-signature tsd-kind-icon">change<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"refchange"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"valchange"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"deleted"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"srcdeleted"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:33</li>
+							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:35</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -125,12 +127,27 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="desttime" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> dest<wbr>Time</h3>
+					<div class="tsd-signature tsd-kind-icon">dest<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:39</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>time the deployed file was last changed</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="filepath" class="tsd-anchor"></a>
 					<h3>file<wbr>Path</h3>
 					<div class="tsd-signature tsd-kind-icon">file<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:14</li>
+							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:16</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -145,12 +162,27 @@
 					<div class="tsd-signature tsd-kind-icon">source<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:18</li>
+							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:20</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>the source mod</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="sourcetime" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> source<wbr>Time</h3>
+					<div class="tsd-signature tsd-kind-icon">source<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in extensions/mod_management/types/IDeploymentMethod.ts:43</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>time the staging file was last changed</p>
 						</div>
 					</div>
 				</section>
@@ -175,10 +207,16 @@
 								<a href="ifilechange.html#changetype" class="tsd-kind-icon">change<wbr>Type</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="ifilechange.html#desttime" class="tsd-kind-icon">dest<wbr>Time</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="ifilechange.html#filepath" class="tsd-kind-icon">file<wbr>Path</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="ifilechange.html#source" class="tsd-kind-icon">source</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="ifilechange.html#sourcetime" class="tsd-kind-icon">source<wbr>Time</a>
 							</li>
 						</ul>
 					</li>
