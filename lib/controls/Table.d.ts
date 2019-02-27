@@ -32,6 +32,7 @@ export interface ILookupCalculated {
         [attributeId: string]: any;
     };
 }
-export declare function makeGetSelection(tableId: string): OutputSelector<any, string[], (res: ITableState) => string[]>;
+declare type GetSelection = OutputSelector<any, string[], (res: ITableState) => string[]>;
+export declare function makeGetSelection(tableId: string): GetSelection;
 declare const _default: React.ComponentClass<IBaseProps & IExtensibleProps, React.ComponentState>;
 export default _default;

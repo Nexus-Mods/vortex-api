@@ -60,6 +60,7 @@ declare class Debouncer {
     wait(callback: (err: Error) => void, immediately?: boolean): void;
     clear(): void;
     private run;
+    private reschedule;
     private invokeCallbacks;
     private startTimer;
 }

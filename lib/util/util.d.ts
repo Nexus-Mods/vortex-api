@@ -70,7 +70,7 @@ export declare function truthy(val: any): boolean;
  * @param lhs the left, "before", object
  * @param rhs the right, "after", object
  */
-export declare function objDiff(lhs: any, rhs: any): any;
+export declare function objDiff(lhs: any, rhs: any, skip?: string[]): any;
 /**
  * spawn this application itself
  * @param args
@@ -88,3 +88,7 @@ export declare function getAllPropertyNames(obj: object): string[];
  * @param parent path of the presumed parent directory
  */
 export declare function isChildPath(child: string, parent: string): boolean;
+/**
+ * take any input string and sanitize it into a valid css id
+ */
+export declare function sanitizeCSSId(input: string): string;

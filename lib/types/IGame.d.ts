@@ -112,7 +112,8 @@ export interface IGame extends ITool {
         [key: string]: any;
     };
     /**
-     * set to name of the contributor that added support for this game. For officialy supported games this is undefined
+     * set to name of the contributor that added support for this game. For officialy supported
+     * games this is undefined
      */
     contributed?: string;
     /**
