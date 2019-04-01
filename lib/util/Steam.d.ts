@@ -3,6 +3,7 @@ export interface ISteamEntry {
     appid: string;
     name: string;
     gamePath: string;
+    lastUser: string;
     lastUpdated: Date;
 }
 export interface ISteamExec {

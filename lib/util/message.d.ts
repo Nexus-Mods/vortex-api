@@ -47,12 +47,12 @@ export declare function showInfo<S>(dispatch: ThunkDispatch<IState, null, Redux.
  * @export
  * @template S
  * @param {Redux.Dispatch<S>} dispatch
- * @param {string} message
+ * @param {string} title
  * @param {any} [details] further details about the error (stack and such). The api says we only
  *                        want string or Errors but since some node apis return non-Error objects
  *                        where Errors are expected we have to be a bit more flexible here.
  */
-export declare function showError(dispatch: ThunkDispatch<IState, null, Redux.Action>, message: string, details?: string | Error | any, options?: IErrorOptions): void;
+export declare function showError(dispatch: ThunkDispatch<IState, null, Redux.Action>, title: string, details?: string | Error | any, options?: IErrorOptions): void;
 export interface IPrettifiedError {
     message: string;
     replace?: any;

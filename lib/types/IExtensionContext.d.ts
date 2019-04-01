@@ -85,6 +85,7 @@ export interface IOpenOptions {
     title?: string;
     defaultPath?: string;
     filters?: IFileFilter[];
+    create?: boolean;
 }
 export declare type StateChangeCallback = (previous: any, current: any) => void;
 /**
@@ -151,6 +152,8 @@ export interface IGameDetail {
 }
 export interface IErrorOptions {
     id?: string;
+    message?: string;
+    isBBCode?: boolean;
     isHTML?: boolean;
     allowReport?: boolean;
     hideDetails?: boolean;

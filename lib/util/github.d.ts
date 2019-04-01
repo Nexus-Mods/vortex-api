@@ -65,10 +65,13 @@ export declare class RateLimitExceeded extends Error {
 declare class GitHub {
     private static RELEASE_CUTOFF;
     private static USER_AGENT;
+    private static CONFIG_BRANCH;
     private static repoUrl;
+    private static rawUrl;
     private mReleaseCache;
     private mRatelimitReset;
     releases(): Promise<IGitHubRelease[]>;
+    fetchConfig(config: string): Promise<any>;
     private query;
     private queryReleases;
 }

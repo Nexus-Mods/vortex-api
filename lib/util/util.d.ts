@@ -1,5 +1,6 @@
 /// <reference types="node" />
 import { ThunkStore } from '../types/IExtensionContext';
+import { Normalize } from './getNormalizeFunc';
 import * as Promise from 'bluebird';
 import * as fs from 'fs-extra-promise';
 /**
@@ -26,6 +27,7 @@ export declare function sum(container: number[]): number;
  * on obj, it will be set to the default value and that is returned.
  */
 export declare function setdefault<T>(obj: any, key: PropertyKey, def: T): T;
+export declare function fileMD5(filePath: string): Promise<string>;
 export declare function writeFileAtomic(filePath: string, input: string | Buffer, options?: fs.WriteFileOptions): Promise<void>;
 /**
  * copy a file in such a way that it will not replace the target if the copy is
@@ -87,8 +89,12 @@ export declare function getAllPropertyNames(obj: object): string[];
  * @param child path of the presumed sub-directory
  * @param parent path of the presumed parent directory
  */
-export declare function isChildPath(child: string, parent: string): boolean;
+export declare function isChildPath(child: string, parent: string, normalize?: Normalize): boolean;
 /**
  * take any input string and sanitize it into a valid css id
  */
 export declare function sanitizeCSSId(input: string): string;
+/**
+ * remove the BOM from the input string. doesn't do anything if there is none.
+ */
+export declare function deBOM(input: string): string;

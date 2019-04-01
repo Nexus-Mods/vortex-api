@@ -1,4 +1,5 @@
 import { IReference, IRule } from 'modmeta-db';
+export { IReference, IRule };
 export declare type ModState = 'downloading' | 'downloaded' | 'installing' | 'installed';
 /**
  * represents a mod in all states (being downloaded, downloaded, installed)
