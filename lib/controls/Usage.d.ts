@@ -4,5 +4,5 @@ export interface IUsageProps {
     persistent?: boolean;
     className?: string;
 }
-declare const _default: React.ComponentClass<IUsageProps, React.ComponentState>;
+declare const _default: React.ComponentClass<IUsageProps, any>;
 export default _default;

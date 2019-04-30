@@ -7,6 +7,7 @@ export interface IIconProps {
     spin?: boolean;
     pulse?: boolean;
     stroke?: boolean;
+    hollow?: boolean;
     border?: boolean;
     flip?: 'horizontal' | 'vertical';
     rotate?: number;

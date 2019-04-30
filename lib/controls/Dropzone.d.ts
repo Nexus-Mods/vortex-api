@@ -12,5 +12,5 @@ export interface IBaseProps {
     style?: React.CSSProperties;
     dragOverlay?: JSX.Element;
 }
-declare const _default: React.ComponentClass<IBaseProps, React.ComponentState>;
+declare const _default: React.ComponentClass<IBaseProps, any>;
 export default _default;

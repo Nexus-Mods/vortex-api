@@ -10,5 +10,5 @@ export interface IBaseProps {
     orientation?: 'horizontal' | 'vertical';
 }
 declare type ExportType = IBaseProps & IActionControlProps & IExtensibleProps & React.HTMLAttributes<any>;
-declare const _default: React.ComponentClass<ExportType, React.ComponentState>;
+declare const _default: React.ComponentClass<ExportType, any>;
 export default _default;

@@ -1,7 +1,7 @@
 import { IActionDefinition } from '../types/IActionDefinition';
 import { IExtensibleProps } from '../util/ExtensionProvider';
 import { IActionControlProps } from './ActionControl';
-import * as I18next from 'i18next';
+import I18next from 'i18next';
 import * as React from 'react';
 export declare type ButtonType = 'text' | 'icon' | 'both' | 'menu';
 export interface IBaseProps {
@@ -17,8 +17,8 @@ export interface IBaseProps {
     icon?: string;
     pullRight?: boolean;
     clickAnywhere?: boolean;
-    t: I18next.TranslationFunction;
+    t: I18next.TFunction;
 }
 declare type ExportType = IBaseProps & IActionControlProps & IExtensibleProps & React.HTMLAttributes<any>;
-declare const _default: React.ComponentClass<ExportType, React.ComponentState>;
+declare const _default: React.ComponentClass<ExportType, any>;
 export default _default;

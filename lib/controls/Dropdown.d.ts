@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Dropdown, DropdownMenu, DropdownToggle } from 'react-bootstrap';
+import { Dropdown } from 'react-bootstrap';
 export interface IBaseProps {
     container?: Element;
 }
@@ -22,8 +22,8 @@ export declare class DummyMenu extends React.Component<{}, {}> {
 declare class MyDropdown extends React.Component<IProps, {
     up: boolean;
 }> {
-    static Menu: typeof DropdownMenu;
-    static Toggle: typeof DropdownToggle;
+    static Menu: typeof Dropdown.Menu;
+    static Toggle: typeof Dropdown.Toggle;
     private mNode;
     private mOpen;
     constructor(props: IProps);

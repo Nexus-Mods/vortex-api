@@ -1,7 +1,7 @@
 import { IAttributeState } from '../../types/IAttributeState';
 import { ITableAttribute } from '../../types/ITableAttribute';
 import { SortDirection } from '../../types/SortDirection';
-import * as I18next from 'i18next';
+import I18next from 'i18next';
 import * as React from 'react';
 export interface IHeaderProps {
     className: string;
@@ -10,7 +10,7 @@ export interface IHeaderProps {
     doFilter: boolean;
     onSetSortDirection: (id: string, dir: SortDirection) => void;
     onSetFilter: (id?: string, filter?: any) => void;
-    t: I18next.TranslationFunction;
+    t: I18next.TFunction;
 }
 declare class HeaderCell extends React.Component<IHeaderProps, {}> {
     private mMinWidth;

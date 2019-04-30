@@ -1,7 +1,7 @@
 /// <reference types="node" />
 import { IExtensionApi, ThunkStore } from '../types/IExtensionContext';
 import * as Promise from 'bluebird';
-import * as I18next from 'i18next';
+import I18next from 'i18next';
 import * as Redux from 'redux';
 /**
  * interface to extensions. This loads extensions and provides the api extensions
@@ -99,6 +99,7 @@ declare class ExtensionManager {
      * initialize all extensions
      */
     private initExtensions;
+    private migrateExtensions;
     private getPath;
     private selectFile;
     private selectExecutable;
@@ -113,6 +114,7 @@ declare class ExtensionManager {
     private openArchive;
     private applyStartHooks;
     private runExecutable;
+    private runElevated;
     private emitAndAwait;
     private onAsync;
     private highlightCSS;

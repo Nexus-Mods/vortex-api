@@ -22,6 +22,9 @@ export declare class UserCanceled extends Error {
 export declare class MissingDependency extends Error {
     constructor();
 }
+export declare class DocumentsPathMissing extends Error {
+    constructor();
+}
 export declare class SetupError extends Error {
     constructor(message: string);
 }

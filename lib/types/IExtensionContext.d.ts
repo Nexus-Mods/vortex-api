@@ -16,7 +16,7 @@ import { IDiscoveryResult } from './IState';
 import { ITableAttribute } from './ITableAttribute';
 import { ITestResult } from './ITestResult';
 import * as Promise from 'bluebird';
-import * as I18next from 'i18next';
+import I18next from 'i18next';
 import { ILookupResult, IModInfo, IReference } from 'modmeta-db';
 import * as React from 'react';
 import * as Redux from 'redux';
@@ -65,7 +65,7 @@ export interface IDashletOptions {
     fixed?: boolean;
     closable?: boolean;
 }
-export declare type RegisterDashlet = (title: string, width: 1 | 2 | 3, height: 1 | 2 | 3 | 4 | 5, position: number, component: React.ComponentClass<any>, isVisible: (state: any) => boolean, props: PropsCallback, options: IDashletOptions) => void;
+export declare type RegisterDashlet = (title: string, width: 1 | 2 | 3, height: 1 | 2 | 3 | 4 | 5, position: number, component: React.ComponentClass<any> | React.FunctionComponent<any>, isVisible: (state: any) => boolean, props: PropsCallback, options: IDashletOptions) => void;
 export declare type RegisterDialog = (id: string, element: React.ComponentClass<any> | React.StatelessComponent<any>, props?: PropsCallback) => void;
 export declare type ToDoType = 'settings' | 'search' | 'workaround' | 'more';
 export interface IToDoButton {
@@ -73,7 +73,7 @@ export interface IToDoButton {
     icon: string;
     onClick: () => void;
 }
-export declare type RegisterToDo = (id: string, type: ToDoType, props: (state: any) => any, icon: ((props: any) => JSX.Element) | string, text: ((t: I18next.TranslationFunction, props: any) => JSX.Element) | string, action: (props: any) => void, condition: (props: any) => boolean, value: ((t: I18next.TranslationFunction, props: any) => JSX.Element) | string, priority: number) => void;
+export declare type RegisterToDo = (id: string, type: ToDoType, props: (state: any) => any, icon: ((props: any) => JSX.Element) | string, text: ((t: I18next.TFunction, props: any) => JSX.Element) | string, action: (props: any) => void, condition: (props: any) => boolean, value: ((t: I18next.TFunction, props: any) => JSX.Element) | string, priority: number) => void;
 export interface IRegisterProtocol {
     (protocol: string, def: boolean, callback: (url: string) => void): any;
 }
@@ -290,7 +290,7 @@ export interface IExtensionApi {
     /**
      * translation function
      */
-    translate: I18next.TranslationFunction;
+    translate: I18next.TFunction;
     /**
      * active locale
      */
@@ -767,6 +767,26 @@ export interface IExtensionContext {
      * @param {function} hook the hook to be called
      */
     registerStartHook: (priority: number, id: string, hook: (call: IRunParameters) => Promise<IRunParameters>) => void;
+    /**
+     * register a migration step. This migration is always called when the loaded extension has
+     * a different version from the one that was used last.
+     * This way when the new version requires any form of migration (upgrading state for example)
+     * it can be done from there. The version that was previously run is being passed to the migration
+     * function so the extension can determine if the upgrade is actually necessary and if so, which
+     * (if there are multiple).
+     * If the extension was never loaded before, the version "0.0.0" is passed in.
+     * Please note: Vortex will continue running, with the extension loaded, after migrate is called,
+     *   it is not currently possible to delay loading an extension until the migration is complete.
+     *   This means one of these to be true:
+     *     - the extension is functional without the migration, at least so much so that it doesn't
+     *       cause "damage"
+     *     - the extension disables/blocks itself until the migration is done
+     *     - the migration is synchronous so that the migrate function doesn't return until it's done.
+     * @param {function} migrate called if the running extension version differs from the old one.
+     *                           As soon as the promise returned from this is resolved, the stored version
+     *                           number is updated.
+     */
+    registerMigration: (migrate: (oldVersion: string) => Promise<void>) => void;
     /**
      * specify that a certain range of versions of vortex is required
      * (see https://www.npmjs.com/package/semver for syntax documentation).

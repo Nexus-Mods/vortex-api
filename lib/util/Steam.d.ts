@@ -26,7 +26,7 @@ export interface ISteam {
     findByName(namePattern: string): Promise<ISteamEntry>;
     findByAppId(appId: string | string[]): Promise<ISteamEntry>;
     allGames(): Promise<ISteamEntry[]>;
-    getSteamExecutionPath(gamePath: string, args?: string[]): Promise<ISteamExec>;
+    getGameExecutionInfo(gamePath: string, appId?: number, args?: string[]): Promise<ISteamExec>;
 }
 declare const instance: ISteam;
 export default instance;

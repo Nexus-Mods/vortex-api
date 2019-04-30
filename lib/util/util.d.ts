@@ -98,3 +98,20 @@ export declare function sanitizeCSSId(input: string): string;
  * remove the BOM from the input string. doesn't do anything if there is none.
  */
 export declare function deBOM(input: string): string;
+/**
+ * escape a string for use in a regular expression
+ * @param string
+ */
+export declare function escapeRE(input: string): string;
+/**
+ * characters invalid in a file path
+ */
+declare const INVALID_FILEPATH_CHARACTERS: string[];
+/**
+ * characters invalid in a file name
+ */
+declare const INVALID_FILENAME_CHARACTERS: any[];
+declare const INVALID_FILENAME_RE: RegExp;
+export declare function isFilenameValid(input: string): boolean;
+export declare function isPathValid(input: string, allowRelative?: boolean): boolean;
+export { INVALID_FILEPATH_CHARACTERS, INVALID_FILENAME_RE, INVALID_FILENAME_CHARACTERS, };

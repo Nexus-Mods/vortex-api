@@ -1,5 +1,4 @@
-/// <reference types="react" />
-import * as I18next from 'i18next';
+import I18next from 'i18next';
 export declare type AttributeRenderer = 'progress';
 export declare type Placement = 'table' | 'detail' | 'both';
 export declare type ValidationState = 'success' | 'warning' | 'error';
@@ -16,7 +15,7 @@ export interface IEditChoice {
 export interface IFilterProps {
     filter: any;
     attributeId: string;
-    t: I18next.TranslationFunction;
+    t: I18next.TFunction;
     onSetFilter: (attributeId: string, value: any) => void;
 }
 export interface ITableFilter {
@@ -128,7 +127,7 @@ export interface ITableAttribute<T = any> {
      * Also note that table cells using customRenderer will do more unnecessary rerenders than a
      * calc-based field so please use customRenderer only when neccessary.
      */
-    customRenderer?: (object: T | T[], detailCell: boolean, t: I18next.TranslationFunction, props: ICustomProps) => JSX.Element;
+    customRenderer?: (object: T | T[], detailCell: boolean, t: I18next.TFunction, props: ICustomProps) => JSX.Element;
     /**
      * determine the display value for this attribute. This is used for display if customRenderer is
      * not specified. It's also used for sorting the table so unless isSortable is false and a
@@ -142,7 +141,7 @@ export interface ITableAttribute<T = any> {
      *        This means that if you bind a variable to your calc function which is not part of
      *        the Table props the Table may appear glitchy as it won't update as necessary.
      */
-    calc?: (object: T, t: I18next.TranslationFunction) => any | Promise<any>;
+    calc?: (object: T, t: I18next.TFunction) => any | Promise<any>;
     /**
      * custom function for sorting by this attribute. The parameters passed in (lhs and rhs) are
      * the output of calc (cached). Return <0 if lhs is smaller than rhs, >0 if it's bigger and

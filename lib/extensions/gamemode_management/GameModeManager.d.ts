@@ -28,7 +28,7 @@ declare class GameModeManager {
      *
      * @memberOf GameModeManager
      */
-    setGameMode(oldMode: string, newMode: string): Promise<void>;
+    setGameMode(oldMode: string, newMode: string, profileId: any): Promise<void>;
     /**
      * prepare change to a different game mode
      *

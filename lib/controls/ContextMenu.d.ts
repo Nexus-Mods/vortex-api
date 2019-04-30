@@ -15,5 +15,5 @@ export interface IContextMenuProps {
     instanceId: string;
     actions?: IActionDefinitionEx[];
 }
-declare const _default: React.ComponentClass<IContextMenuProps, React.ComponentState>;
+declare const _default: React.ComponentClass<IContextMenuProps, any>;
 export default _default;

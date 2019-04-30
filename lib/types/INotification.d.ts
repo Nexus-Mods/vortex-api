@@ -69,6 +69,10 @@ export interface INotification {
      */
     message: string;
     /**
+     * time the notification was created
+     */
+    createdTime?: number;
+    /**
      * replacement parameters for the localisation of title and message (the same
      * replacement dictionary will be used for both)
      */

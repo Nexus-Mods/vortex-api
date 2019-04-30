@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { IComponentContext } from '../types/IComponentContext';
-import { II18NProps } from '../types/II18NProps';
-export { translate } from 'react-i18next';
+import { WithTranslation } from 'react-i18next';
 export { connect } from 'react-redux';
 export { extend } from './ExtensionProvider';
+declare let translate: any;
+export { translate, };
 export declare class StateProxyHandler<T extends object> implements ProxyHandler<T> {
     private mComponent;
     private mPath;
@@ -32,13 +33,13 @@ export declare class StateProxyHandler<T extends object> implements ProxyHandler
  * @template P
  * @template S
  */
-export declare class ComponentEx<P, S extends object> extends React.Component<P & II18NProps, S> {
+export declare class ComponentEx<P, S extends object> extends React.Component<P & Partial<WithTranslation>, S> {
     static contextTypes: React.ValidationMap<any>;
     context: IComponentContext;
     nextState: S;
     protected initState(value: S): void;
 }
-export declare class PureComponentEx<P, S extends object> extends React.PureComponent<P & II18NProps, S> {
+export declare class PureComponentEx<P, S extends object> extends React.PureComponent<P & Partial<WithTranslation>, S> {
     static contextTypes: React.ValidationMap<any>;
     context: IComponentContext;
     nextState: S;

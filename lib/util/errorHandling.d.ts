@@ -2,12 +2,18 @@ import { IErrorOptions, IExtensionApi } from '../types/api';
 import { IError } from '../types/IError';
 import * as Promise from 'bluebird';
 import { IFeedbackResponse } from 'nexus-api';
-export declare function createErrorReport(type: string, error: IError, labels: string[], state: any, sourceProcess?: string): void;
+interface IErrorContext {
+    [id: string]: string;
+}
+export declare function createErrorReport(type: string, error: IError, context: IErrorContext, labels: string[], state: any, sourceProcess?: string): void;
 export declare function setApiKey(key: string): void;
 export declare function setOutdated(api: IExtensionApi): void;
 export declare function isOutdated(): boolean;
+export declare function didIgnoreError(): boolean;
 export declare function sendReportFile(fileName: string): Promise<IFeedbackResponse>;
-export declare function sendReport(type: string, error: IError, labels: string[], reporterId?: string, reporterProcess?: string, sourceProcess?: string): Promise<IFeedbackResponse>;
+export declare function sendReport(type: string, error: IError, context: IErrorContext, labels: string[], reporterId?: string, reporterProcess?: string, sourceProcess?: string): Promise<IFeedbackResponse>;
+export declare function setWindow(window: Electron.BrowserWindow): void;
+export declare function getWindow(): Electron.BrowserWindow;
 /**
  * display an error message and quit the application
  * on confirmation.
@@ -23,3 +29,6 @@ export declare function terminate(error: IError, state: any, allowReport?: boole
  * It's important this doesn't translate the error message or lose information
  */
 export declare function toError(input: any, title?: string, options?: IErrorOptions): IError;
+export declare function withContext(id: string, value: string, fun: () => Promise<any>): Promise<any>;
+export declare function getErrorContext(): IErrorContext;
+export {};

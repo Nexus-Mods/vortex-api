@@ -1,4 +1,6 @@
-export declare type InstructionType = 'copy' | 'submodule' | 'generatefile' | 'iniedit' | 'unsupported' | 'attribute' | 'setmodtype' | 'error';
+/// <reference types="node" />
+import { IRule } from './IMod';
+export declare type InstructionType = 'copy' | 'submodule' | 'generatefile' | 'iniedit' | 'unsupported' | 'attribute' | 'setmodtype' | 'error' | 'rule';
 export interface IInstruction {
     type: InstructionType;
     path?: string;
@@ -8,6 +10,8 @@ export interface IInstruction {
     key?: string;
     value?: string;
     submoduleType?: string;
+    data?: Buffer;
+    rule?: IRule;
 }
 export interface IInstallResult {
     instructions: IInstruction[];

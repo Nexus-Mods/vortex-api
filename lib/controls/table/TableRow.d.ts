@@ -1,9 +1,9 @@
 import { ITableAttribute } from '../../types/ITableAttribute';
 import { ITableRowAction } from '../Table';
-import * as I18next from 'i18next';
+import I18next from 'i18next';
 import * as React from 'react';
 export interface IRowProps {
-    t: I18next.TranslationFunction;
+    t: I18next.TFunction;
     id: string;
     tableId: string;
     data: any;
@@ -21,5 +21,5 @@ export interface IRowProps {
     onSetVisible: (rowId: string, visible: boolean) => void;
     onHighlight: (rowId: string, highlight: boolean) => void;
 }
-declare const _default: React.ComponentClass<IRowProps, React.ComponentState>;
+declare const _default: React.ComponentClass<IRowProps, any>;
 export default _default;

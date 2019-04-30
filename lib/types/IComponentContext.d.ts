@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { IExtensionApi } from './IExtensionContext';
 import { IModifiers } from './IModifiers';
 /**

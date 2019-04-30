@@ -50,7 +50,7 @@ export declare class NavItem extends React.Component<NavItemProps, {}> {
  *
  * @interface FontAwesomeProps
  */
-export interface IFontAwesomeProps {
+export interface ITooltipIconProps {
     border?: boolean;
     className?: string;
     fixedWidth?: boolean;
@@ -62,9 +62,11 @@ export interface IFontAwesomeProps {
     rotateId?: string;
     spin?: boolean;
     stack?: string;
+    stroke?: boolean;
+    hollow?: boolean;
     style?: React.CSSProperties;
 }
-export declare type IconProps = ITooltipProps & IFontAwesomeProps;
+export declare type IconProps = ITooltipProps & ITooltipIconProps;
 /**
  * Icon with a tooltip
  *

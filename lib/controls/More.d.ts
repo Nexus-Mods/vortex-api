@@ -1,5 +1,5 @@
 import * as React from 'react';
-export interface IProps {
+export interface IMoreProps {
     id: string;
     name: string;
     wikiId?: string;
@@ -10,5 +10,5 @@ export interface IProps {
 export interface IComponentState {
     open: boolean;
 }
-declare const _default: React.ComponentClass<IProps, React.ComponentState>;
+declare const _default: React.ComponentClass<IMoreProps, any>;
 export default _default;

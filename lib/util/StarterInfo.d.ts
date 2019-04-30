@@ -50,6 +50,9 @@ declare class StarterInfo implements IStarterInfo {
         [key: string]: string;
     };
     shell: boolean;
+    details: {
+        [key: string]: any;
+    };
     private mExtensionPath;
     private mLogoName;
     private mIconPathCache;

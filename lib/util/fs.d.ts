@@ -13,7 +13,7 @@
 /// <reference types="node" />
 import * as PromiseBB from 'bluebird';
 import * as fs from 'fs-extra-promise';
-import * as I18next from 'i18next';
+import I18next from 'i18next';
 export { constants, FSWatcher, Stats, WriteStream } from 'fs';
 export { accessSync, closeSync, createReadStream, createWriteStream, linkSync, openSync, readFileSync, readJSONSync, statSync, symlinkSync, watch, writeFileSync, writeSync, } from 'fs-extra-promise';
 declare const chmodAsync: typeof fs.chmodAsync;
@@ -61,4 +61,4 @@ export declare function ensureDirWritableAsync(dirPath: string, confirm: () => P
 export declare function changeFileOwnership(filePath: string, stat: fs.Stats): PromiseBB<void>;
 export declare function changeFileAttributes(filePath: string, wantedAttributes: number, stat: fs.Stats): PromiseBB<void>;
 export declare function ensureFileWritableAsync(filePath: string): PromiseBB<void>;
-export declare function forcePerm<T>(t: I18next.TranslationFunction, op: () => PromiseBB<T>, filePath?: string): PromiseBB<T>;
+export declare function forcePerm<T>(t: I18next.TFunction, op: () => PromiseBB<T>, filePath?: string): PromiseBB<T>;

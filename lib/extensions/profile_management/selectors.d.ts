@@ -11,33 +11,39 @@ export declare const profileById: ParametricSelector<IState, string, IProfile> &
     resultFunc: (res1: {
         [profileId: string]: IProfile;
     }, res2: string) => IProfile;
+    dependencies: [ParametricSelector<IState, string, {
+        [profileId: string]: IProfile;
+    }>, ParametricSelector<IState, string, string>];
     recomputations: () => number;
     resetRecomputations: () => number;
 } & {
     getMatchingSelector: (state: IState, props: string, ...args: any[]) => OutputParametricSelector<IState, string, IProfile, (res1: {
         [profileId: string]: IProfile;
-    }, res2: string) => IProfile>;
+    }, res2: string) => IProfile, [ParametricSelector<IState, string, {
+        [profileId: string]: IProfile;
+    }>, ParametricSelector<IState, string, string>]>;
     removeMatchingSelector: (state: IState, props: string, ...args: any[]) => void;
     clearCache: () => void;
-    resultFunc: (res1: {
-        [profileId: string]: IProfile;
-    }, res2: string) => IProfile;
     cache: ICacheObject;
+    keySelector: import("re-reselect").ParametricKeySelector<IState, string>;
 };
 export declare const lastActiveProfileForGame: ParametricSelector<IState, string, string> & {
     resultFunc: (res1: {
         [gameId: string]: string;
     }, res2: string) => string;
+    dependencies: [ParametricSelector<IState, string, {
+        [gameId: string]: string;
+    }>, ParametricSelector<IState, string, string>];
     recomputations: () => number;
     resetRecomputations: () => number;
 } & {
     getMatchingSelector: (state: IState, props: string, ...args: any[]) => OutputParametricSelector<IState, string, string, (res1: {
         [gameId: string]: string;
-    }, res2: string) => string>;
+    }, res2: string) => string, [ParametricSelector<IState, string, {
+        [gameId: string]: string;
+    }>, ParametricSelector<IState, string, string>]>;
     removeMatchingSelector: (state: IState, props: string, ...args: any[]) => void;
     clearCache: () => void;
-    resultFunc: (res1: {
-        [gameId: string]: string;
-    }, res2: string) => string;
     cache: ICacheObject;
+    keySelector: import("re-reselect").ParametricKeySelector<IState, string>;
 };

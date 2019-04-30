@@ -5,5 +5,5 @@ export interface IComponentContext {
     headerPortal: () => HTMLElement;
     page: string;
 }
-declare const _default: React.ComponentClass<{}, React.ComponentState>;
+declare const _default: React.ComponentClass<{}, any>;
 export default _default;

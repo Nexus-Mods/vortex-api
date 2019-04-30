@@ -104,6 +104,7 @@ export interface ITableState {
 }
 export interface IExtensionState {
     enabled: boolean | 'failed';
+    version: string;
     remove: boolean;
 }
 /**
@@ -158,6 +159,7 @@ export interface ISettingsInterface {
 }
 export interface ISettingsAutomation {
     deploy: boolean;
+    enable: boolean;
 }
 export interface ISettingsProfiles {
     activeProfileId: string;
@@ -212,6 +214,9 @@ export interface ISettings {
     mods: ISettingsMods;
     tables: ITableStates;
     update: ISettingsUpdate;
+}
+export interface IStateTransactions {
+    transfer: {};
 }
 export interface ISessionGameMode {
     known: IGameStored[];
@@ -275,6 +280,7 @@ export interface IState {
                 [gameId: string]: boolean;
             };
         };
+        transactions: IStateTransactions;
     };
 }
 export interface IDiscoveryPhase {
