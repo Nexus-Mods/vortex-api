@@ -96,6 +96,7 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="inotification.html#actions" class="tsd-kind-icon">actions</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="inotification.html#createdtime" class="tsd-kind-icon">created<wbr>Time</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="inotification.html#displayms" class="tsd-kind-icon">displayMS</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="inotification.html#group" class="tsd-kind-icon">group</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="inotification.html#icon" class="tsd-kind-icon">icon</a></li>
@@ -103,6 +104,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="inotification.html#localize" class="tsd-kind-icon">localize</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="inotification.html#message-1" class="tsd-kind-icon">message</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="inotification.html#nodismiss" class="tsd-kind-icon">no<wbr>Dismiss</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="inotification.html#process" class="tsd-kind-icon">process</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="inotification.html#progress" class="tsd-kind-icon">progress</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="inotification.html#replace" class="tsd-kind-icon">replace</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="inotification.html#title-1" class="tsd-kind-icon">title</a></li>
@@ -120,7 +122,7 @@
 					<div class="tsd-signature tsd-kind-icon">actions<span class="tsd-signature-symbol">:</span> <a href="inotificationaction.html" class="tsd-signature-type">INotificationAction</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/INotification.ts:126</li>
+							<li>Defined in types/INotification.ts:138</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -141,12 +143,27 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="createdtime" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> created<wbr>Time</h3>
+					<div class="tsd-signature tsd-kind-icon">created<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in types/INotification.ts:83</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>time the notification was created</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="displayms" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> displayMS</h3>
 					<div class="tsd-signature tsd-kind-icon">displayMS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/INotification.ts:107</li>
+							<li>Defined in types/INotification.ts:116</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -179,7 +196,7 @@
 					<div class="tsd-signature tsd-kind-icon">group<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/INotification.ts:112</li>
+							<li>Defined in types/INotification.ts:122</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -247,7 +264,7 @@
 					<div class="tsd-signature tsd-kind-icon">localize<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/INotification.ts:86</li>
+							<li>Defined in types/INotification.ts:94</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -273,7 +290,7 @@
 					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/INotification.ts:77</li>
+							<li>Defined in types/INotification.ts:78</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -296,12 +313,27 @@
 					<div class="tsd-signature tsd-kind-icon">no<wbr>Dismiss<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/INotification.ts:116</li>
+							<li>Defined in types/INotification.ts:127</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>if set, no Dismiss button is provided automatically</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="process" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> process</h3>
+					<div class="tsd-signature tsd-kind-icon">process<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in types/INotification.ts:143</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>id of the process that triggered this action</p>
 						</div>
 					</div>
 				</section>
@@ -326,7 +358,7 @@
 					<div class="tsd-signature tsd-kind-icon">replace<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/INotification.ts:82</li>
+							<li>Defined in types/INotification.ts:89</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -382,14 +414,11 @@
 								its look but also features to a degree.
 							Possible values:</p>
 							<ul>
-								<li>&#39;activity&#39;: a notification that represents an activity. will have a<pre><code>        spinner icon. Otherwise <span class="hljs-keyword">it </span>looks like an <span class="hljs-meta">info</span> notification
-</code></pre></li>
+								<li>&#39;activity&#39;: a notification that represents an activity. will have a<pre><code>        spinner icon. Otherwise <span class="hljs-keyword">it </span>looks like an <span class="hljs-meta">info</span> notification</code></pre></li>
 								<li>&#39;global&#39;: This notification will always be visible, so if the window<pre><code>      doesn't have the focus, <span class="hljs-literal">this</span> will <span class="hljs-keyword">be</span> displayed <span class="hljs-keyword">as</span> a native
       system notification. <span class="hljs-type">These</span> notifications can <span class="hljs-keyword">not</span> <span class="hljs-keyword">be</span>
-      programatically dismissed <span class="hljs-keyword">and</span> actions are <span class="hljs-keyword">not</span> supported
-</code></pre></li>
-								<li>&#39;success&#39;: notification about a successful operation (ideally the<pre><code>      <span class="hljs-built_in"> user </span>should be aware of the operation)
-</code></pre></li>
+      programatically dismissed <span class="hljs-keyword">and</span> actions are <span class="hljs-keyword">not</span> supported</code></pre></li>
+								<li>&#39;success&#39;: notification about a successful operation (ideally the<pre><code>      <span class="hljs-built_in"> user </span>should be aware of the operation)</code></pre></li>
 								<li>&#39;info&#39;: neutral information notification</li>
 								<li>&#39;error&#39;: Error notification (something went wrong)</li>
 							</ul>
@@ -425,6 +454,9 @@
 								<a href="inotification.html#actions" class="tsd-kind-icon">actions</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="inotification.html#createdtime" class="tsd-kind-icon">created<wbr>Time</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="inotification.html#displayms" class="tsd-kind-icon">displayMS</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
@@ -444,6 +476,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="inotification.html#nodismiss" class="tsd-kind-icon">no<wbr>Dismiss</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="inotification.html#process" class="tsd-kind-icon">process</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="inotification.html#progress" class="tsd-kind-icon">progress</a>

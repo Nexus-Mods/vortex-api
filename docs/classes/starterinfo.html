@@ -106,7 +106,9 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="starterinfo.html#commandline" class="tsd-kind-icon">command<wbr>Line</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="starterinfo.html#details" class="tsd-kind-icon">details</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="starterinfo.html#environment" class="tsd-kind-icon">environment</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="starterinfo.html#exclusive" class="tsd-kind-icon">exclusive</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="starterinfo.html#exepath" class="tsd-kind-icon">exe<wbr>Path</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="starterinfo.html#gameid" class="tsd-kind-icon">game<wbr>Id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="starterinfo.html#iconoutpath" class="tsd-kind-icon">icon<wbr>Out<wbr>Path</a></li>
@@ -116,6 +118,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="starterinfo.html#miconpathcache" class="tsd-kind-icon">m<wbr>Icon<wbr>Path<wbr>Cache</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="starterinfo.html#mlogoname" class="tsd-kind-icon">m<wbr>Logo<wbr>Name</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="starterinfo.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="starterinfo.html#originalenvironment" class="tsd-kind-icon">original<wbr>Environment</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="starterinfo.html#shell" class="tsd-kind-icon">shell</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="starterinfo.html#workingdirectory" class="tsd-kind-icon">working<wbr>Directory</a></li>
 							</ul>
@@ -158,7 +161,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in util/StarterInfo.ts:234</li>
+									<li>Defined in util/StarterInfo.ts:260</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -190,9 +193,27 @@
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/istarterinfo.html">IStarterInfo</a>.<a href="../interfaces/istarterinfo.html#commandline">commandLine</a></p>
 						<ul>
-							<li>Defined in util/StarterInfo.ts:228</li>
+							<li>Defined in util/StarterInfo.ts:251</li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="details" class="tsd-anchor"></a>
+					<h3>details</h3>
+					<div class="tsd-signature tsd-kind-icon">details<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in util/StarterInfo.ts:256</li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></h5>
+							</li>
+						</ul>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
 					<a name="environment" class="tsd-anchor"></a>
@@ -201,7 +222,7 @@
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/istarterinfo.html">IStarterInfo</a>.<a href="../interfaces/istarterinfo.html#environment">environment</a></p>
 						<ul>
-							<li>Defined in util/StarterInfo.ts:230</li>
+							<li>Defined in util/StarterInfo.ts:253</li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -214,13 +235,24 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="exclusive" class="tsd-anchor"></a>
+					<h3>exclusive</h3>
+					<div class="tsd-signature tsd-kind-icon">exclusive<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/istarterinfo.html">IStarterInfo</a>.<a href="../interfaces/istarterinfo.html#exclusive">exclusive</a></p>
+						<ul>
+							<li>Defined in util/StarterInfo.ts:257</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
 					<a name="exepath" class="tsd-anchor"></a>
 					<h3>exe<wbr>Path</h3>
 					<div class="tsd-signature tsd-kind-icon">exe<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/istarterinfo.html">IStarterInfo</a>.<a href="../interfaces/istarterinfo.html#exepath">exePath</a></p>
 						<ul>
-							<li>Defined in util/StarterInfo.ts:227</li>
+							<li>Defined in util/StarterInfo.ts:250</li>
 						</ul>
 					</aside>
 				</section>
@@ -231,7 +263,7 @@
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/istarterinfo.html">IStarterInfo</a>.<a href="../interfaces/istarterinfo.html#gameid">gameId</a></p>
 						<ul>
-							<li>Defined in util/StarterInfo.ts:223</li>
+							<li>Defined in util/StarterInfo.ts:246</li>
 						</ul>
 					</aside>
 				</section>
@@ -242,7 +274,7 @@
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/istarterinfo.html">IStarterInfo</a>.<a href="../interfaces/istarterinfo.html#iconoutpath">iconOutPath</a></p>
 						<ul>
-							<li>Defined in util/StarterInfo.ts:225</li>
+							<li>Defined in util/StarterInfo.ts:248</li>
 						</ul>
 					</aside>
 				</section>
@@ -253,7 +285,7 @@
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/istarterinfo.html">IStarterInfo</a>.<a href="../interfaces/istarterinfo.html#id">id</a></p>
 						<ul>
-							<li>Defined in util/StarterInfo.ts:222</li>
+							<li>Defined in util/StarterInfo.ts:245</li>
 						</ul>
 					</aside>
 				</section>
@@ -264,7 +296,7 @@
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/istarterinfo.html">IStarterInfo</a>.<a href="../interfaces/istarterinfo.html#isgame">isGame</a></p>
 						<ul>
-							<li>Defined in util/StarterInfo.ts:224</li>
+							<li>Defined in util/StarterInfo.ts:247</li>
 						</ul>
 					</aside>
 				</section>
@@ -274,7 +306,7 @@
 					<div class="tsd-signature tsd-kind-icon">m<wbr>Extension<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in util/StarterInfo.ts:232</li>
+							<li>Defined in util/StarterInfo.ts:258</li>
 						</ul>
 					</aside>
 				</section>
@@ -284,7 +316,7 @@
 					<div class="tsd-signature tsd-kind-icon">m<wbr>Icon<wbr>Path<wbr>Cache<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in util/StarterInfo.ts:234</li>
+							<li>Defined in util/StarterInfo.ts:260</li>
 						</ul>
 					</aside>
 				</section>
@@ -294,7 +326,7 @@
 					<div class="tsd-signature tsd-kind-icon">m<wbr>Logo<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in util/StarterInfo.ts:233</li>
+							<li>Defined in util/StarterInfo.ts:259</li>
 						</ul>
 					</aside>
 				</section>
@@ -305,9 +337,27 @@
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/istarterinfo.html">IStarterInfo</a>.<a href="../interfaces/istarterinfo.html#name">name</a></p>
 						<ul>
-							<li>Defined in util/StarterInfo.ts:226</li>
+							<li>Defined in util/StarterInfo.ts:249</li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="originalenvironment" class="tsd-anchor"></a>
+					<h3>original<wbr>Environment</h3>
+					<div class="tsd-signature tsd-kind-icon">original<wbr>Environment<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in util/StarterInfo.ts:254</li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
 					<a name="shell" class="tsd-anchor"></a>
@@ -315,7 +365,7 @@
 					<div class="tsd-signature tsd-kind-icon">shell<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in util/StarterInfo.ts:231</li>
+							<li>Defined in util/StarterInfo.ts:255</li>
 						</ul>
 					</aside>
 				</section>
@@ -326,7 +376,7 @@
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/istarterinfo.html">IStarterInfo</a>.<a href="../interfaces/istarterinfo.html#workingdirectory">workingDirectory</a></p>
 						<ul>
-							<li>Defined in util/StarterInfo.ts:229</li>
+							<li>Defined in util/StarterInfo.ts:252</li>
 						</ul>
 					</aside>
 				</section>
@@ -343,7 +393,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in util/StarterInfo.ts:255</li>
+									<li>Defined in util/StarterInfo.ts:281</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -363,7 +413,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in util/StarterInfo.ts:269</li>
+									<li>Defined in util/StarterInfo.ts:295</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -389,7 +439,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in util/StarterInfo.ts:280</li>
+									<li>Defined in util/StarterInfo.ts:311</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -418,7 +468,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in util/StarterInfo.ts:111</li>
+									<li>Defined in util/StarterInfo.ts:126</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -447,7 +497,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in util/StarterInfo.ts:91</li>
+									<li>Defined in util/StarterInfo.ts:104</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -473,7 +523,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in util/StarterInfo.ts:184</li>
+									<li>Defined in util/StarterInfo.ts:204</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -502,7 +552,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in util/StarterInfo.ts:198</li>
+									<li>Defined in util/StarterInfo.ts:218</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -525,7 +575,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in util/StarterInfo.ts:55</li>
+									<li>Defined in util/StarterInfo.ts:57</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -545,13 +595,13 @@
 					<a name="run" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> run</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">run<span class="tsd-signature-symbol">(</span>info<span class="tsd-signature-symbol">: </span><a href="starterinfo.html" class="tsd-signature-type">StarterInfo</a>, api<span class="tsd-signature-symbol">: </span><a href="../interfaces/iextensionapi.html" class="tsd-signature-type">IExtensionApi</a>, onShowError<span class="tsd-signature-symbol">: </span><a href="../globals.html#onshowerrorfunc" class="tsd-signature-type">OnShowErrorFunc</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Bluebird</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">run<span class="tsd-signature-symbol">(</span>info<span class="tsd-signature-symbol">: </span><a href="starterinfo.html" class="tsd-signature-type">StarterInfo</a>, api<span class="tsd-signature-symbol">: </span><a href="../interfaces/iextensionapi.html" class="tsd-signature-type">IExtensionApi</a>, onShowError<span class="tsd-signature-symbol">: </span><a href="../globals.html#onshowerrorfunc" class="tsd-signature-type">OnShowErrorFunc</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Bluebird</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in util/StarterInfo.ts:61</li>
+									<li>Defined in util/StarterInfo.ts:63</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -566,7 +616,7 @@
 									<h5>onShowError: <a href="../globals.html#onshowerrorfunc" class="tsd-signature-type">OnShowErrorFunc</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Bluebird</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Bluebird</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -574,13 +624,13 @@
 					<a name="rungameexecutable" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> run<wbr>Game<wbr>Executable</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">run<wbr>Game<wbr>Executable<span class="tsd-signature-symbol">(</span>info<span class="tsd-signature-symbol">: </span><a href="starterinfo.html" class="tsd-signature-type">StarterInfo</a>, api<span class="tsd-signature-symbol">: </span><a href="../interfaces/iextensionapi.html" class="tsd-signature-type">IExtensionApi</a>, onShowError<span class="tsd-signature-symbol">: </span><a href="../globals.html#onshowerrorfunc" class="tsd-signature-type">OnShowErrorFunc</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">run<wbr>Game<wbr>Executable<span class="tsd-signature-symbol">(</span>info<span class="tsd-signature-symbol">: </span><a href="starterinfo.html" class="tsd-signature-type">StarterInfo</a>, api<span class="tsd-signature-symbol">: </span><a href="../interfaces/iextensionapi.html" class="tsd-signature-type">IExtensionApi</a>, onShowError<span class="tsd-signature-symbol">: </span><a href="../globals.html#onshowerrorfunc" class="tsd-signature-type">OnShowErrorFunc</a>, onSpawned<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in util/StarterInfo.ts:118</li>
+									<li>Defined in util/StarterInfo.ts:133</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -593,6 +643,21 @@
 								</li>
 								<li>
 									<h5>onShowError: <a href="../globals.html#onshowerrorfunc" class="tsd-signature-type">OnShowErrorFunc</a></h5>
+								</li>
+								<li>
+									<h5>onSpawned: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -609,7 +674,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in util/StarterInfo.ts:169</li>
+									<li>Defined in util/StarterInfo.ts:189</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -641,7 +706,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in util/StarterInfo.ts:202</li>
+									<li>Defined in util/StarterInfo.ts:222</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -673,7 +738,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in util/StarterInfo.ts:218</li>
+									<li>Defined in util/StarterInfo.ts:241</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -713,7 +778,13 @@
 								<a href="starterinfo.html#commandline" class="tsd-kind-icon">command<wbr>Line</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="starterinfo.html#details" class="tsd-kind-icon">details</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
 								<a href="starterinfo.html#environment" class="tsd-kind-icon">environment</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="starterinfo.html#exclusive" class="tsd-kind-icon">exclusive</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
 								<a href="starterinfo.html#exepath" class="tsd-kind-icon">exe<wbr>Path</a>
@@ -741,6 +812,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
 								<a href="starterinfo.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="starterinfo.html#originalenvironment" class="tsd-kind-icon">original<wbr>Environment</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
 								<a href="starterinfo.html#shell" class="tsd-kind-icon">shell</a>

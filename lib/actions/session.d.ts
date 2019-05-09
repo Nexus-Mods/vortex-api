@@ -31,4 +31,17 @@ export declare const setProgress: reduxAct.ComplexActionCreator4<string, string,
     text: string;
     percent: number;
 }, {}>;
+export declare const setToolRunning: reduxAct.ComplexActionCreator3<string, number, boolean, {
+    exePath: string;
+    started: number;
+    exclusive: boolean;
+}, {}>;
+export declare const setToolPid: reduxAct.ComplexActionCreator3<string, number, boolean, {
+    exePath: string;
+    pid: number;
+    exclusive: boolean;
+}, {}>;
+export declare const setToolStopped: reduxAct.ComplexActionCreator1<string, {
+    exePath: string;
+}, {}>;
 export declare const setExtensionLoadFailures: reduxAct.ComplexActionCreator1<{}, {}, {}>;

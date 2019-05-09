@@ -90,7 +90,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="isteam.html#allgames" class="tsd-kind-icon">all<wbr>Games</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="isteam.html#findbyappid" class="tsd-kind-icon">find<wbr>ByApp<wbr>Id</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="isteam.html#findbyname" class="tsd-kind-icon">find<wbr>ByName</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="isteam.html#getsteamexecutionpath" class="tsd-kind-icon">get<wbr>Steam<wbr>Execution<wbr>Path</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="isteam.html#getgameexecutioninfo" class="tsd-kind-icon">get<wbr>Game<wbr>Execution<wbr>Info</a></li>
 							</ul>
 						</section>
 					</div>
@@ -108,7 +108,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in util/Steam.ts:62</li>
+									<li>Defined in util/Steam.ts:64</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="isteamentry.html" class="tsd-signature-type">ISteamEntry</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -125,7 +125,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in util/Steam.ts:61</li>
+									<li>Defined in util/Steam.ts:63</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -148,7 +148,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in util/Steam.ts:60</li>
+									<li>Defined in util/Steam.ts:62</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -162,22 +162,25 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
-					<a name="getsteamexecutionpath" class="tsd-anchor"></a>
-					<h3>get<wbr>Steam<wbr>Execution<wbr>Path</h3>
+					<a name="getgameexecutioninfo" class="tsd-anchor"></a>
+					<h3>get<wbr>Game<wbr>Execution<wbr>Info</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Steam<wbr>Execution<wbr>Path<span class="tsd-signature-symbol">(</span>gamePath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, args<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="isteamexec.html" class="tsd-signature-type">ISteamExec</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Game<wbr>Execution<wbr>Info<span class="tsd-signature-symbol">(</span>gamePath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, appId<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, args<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="isteamexec.html" class="tsd-signature-type">ISteamExec</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in util/Steam.ts:63</li>
+									<li>Defined in util/Steam.ts:65</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>gamePath: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> appId: <span class="tsd-signature-type">number</span></h5>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> args: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
@@ -214,7 +217,7 @@
 								<a href="isteam.html#findbyname" class="tsd-kind-icon">find<wbr>ByName</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
-								<a href="isteam.html#getsteamexecutionpath" class="tsd-kind-icon">get<wbr>Steam<wbr>Execution<wbr>Path</a>
+								<a href="isteam.html#getgameexecutioninfo" class="tsd-kind-icon">get<wbr>Game<wbr>Execution<wbr>Info</a>
 							</li>
 						</ul>
 					</li>

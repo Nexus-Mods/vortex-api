@@ -9,4 +9,5 @@ export interface IToolStored {
         [key: string]: string;
     };
     shell?: boolean;
+    exclusive?: boolean;
 }

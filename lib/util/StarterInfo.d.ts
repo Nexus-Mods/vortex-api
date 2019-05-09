@@ -14,6 +14,7 @@ export interface IStarterInfo {
     exePath: string;
     commandLine: string[];
     workingDirectory: string;
+    exclusive: boolean;
     environment: {
         [key: string]: string;
     };
@@ -53,6 +54,7 @@ declare class StarterInfo implements IStarterInfo {
     details: {
         [key: string]: any;
     };
+    exclusive: boolean;
     private mExtensionPath;
     private mLogoName;
     private mIconPathCache;

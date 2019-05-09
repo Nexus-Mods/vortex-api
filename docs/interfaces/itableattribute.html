@@ -160,7 +160,7 @@
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter-siganture">
 								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">I18next.TranslationFunction</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">I18next.TFunction</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
@@ -170,7 +170,7 @@
 												<h5>object: <span class="tsd-signature-type">T</span></h5>
 											</li>
 											<li>
-												<h5>t: <span class="tsd-signature-type">I18next.TranslationFunction</span></h5>
+												<h5>t: <span class="tsd-signature-type">I18next.TFunction</span></h5>
 											</li>
 										</ul>
 										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span>
@@ -240,7 +240,7 @@
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter-siganture">
 								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span>, detailCell<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">I18next.TranslationFunction</span>, props<span class="tsd-signature-symbol">: </span><a href="icustomprops.html" class="tsd-signature-type">ICustomProps</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span></li>
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span>, detailCell<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">I18next.TFunction</span>, props<span class="tsd-signature-symbol">: </span><a href="icustomprops.html" class="tsd-signature-type">ICustomProps</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span></li>
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
@@ -253,7 +253,7 @@
 												<h5>detailCell: <span class="tsd-signature-type">boolean</span></h5>
 											</li>
 											<li>
-												<h5>t: <span class="tsd-signature-type">I18next.TranslationFunction</span></h5>
+												<h5>t: <span class="tsd-signature-type">I18next.TFunction</span></h5>
 											</li>
 											<li>
 												<h5>props: <a href="icustomprops.html" class="tsd-signature-type">ICustomProps</a></h5>
@@ -714,7 +714,7 @@
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>custom function for sorting by this attribute. The parameters passed in (lhs and rhs) are
-								the output of calc (cached). Return <0 if lhs is smaller than rhs, >0 if it&#39;s bigger and
+								the output of calc (cached). Return &lt;0 if lhs is smaller than rhs, &gt;0 if it&#39;s bigger and
 							=0 if they are equal.</p>
 						</div>
 					</div>
@@ -758,7 +758,7 @@
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>custom function for sorting by this attribute. The parameters passed in (lhs and rhs) are
-								the objects to compare. Return <0 if lhs is smaller than rhs, >0 if it&#39;s bigger and
+								the objects to compare. Return &lt;0 if lhs is smaller than rhs, &gt;0 if it&#39;s bigger and
 							=0 if they are equal.</p>
 						</div>
 					</div>

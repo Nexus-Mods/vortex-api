@@ -1,8 +1,4 @@
-/// <reference types="node" />
-import { ThunkStore } from '../types/IExtensionContext';
 import { Normalize } from './getNormalizeFunc';
-import * as Promise from 'bluebird';
-import * as fs from 'fs-extra-promise';
 /**
  * count the elements in an array for which the predicate matches
  *
@@ -27,22 +23,6 @@ export declare function sum(container: number[]): number;
  * on obj, it will be set to the default value and that is returned.
  */
 export declare function setdefault<T>(obj: any, key: PropertyKey, def: T): T;
-export declare function fileMD5(filePath: string): Promise<string>;
-export declare function writeFileAtomic(filePath: string, input: string | Buffer, options?: fs.WriteFileOptions): Promise<void>;
-/**
- * copy a file in such a way that it will not replace the target if the copy is
- * somehow interrupted. The file is first copied to a temporary file in the same
- * directory as the destination, then deletes the destination and renames the temp
- * to destination. Since the rename is atomic and the deletion only happens after
- * a successful write this should minimize the risk of error.
- *
- * @export
- * @param {string} srcPath
- * @param {string} destPath
- * @returns {Promise<void>}
- */
-export declare function copyFileAtomic(srcPath: string, destPath: string): Promise<void>;
-export declare function removePersistent(store: ThunkStore<any>, destPath: string): Promise<void>;
 /**
  * An ellipsis ("this text is too lo...") function. Usually these
  * functions clip the text at the end but often (i.e. when
