@@ -113,6 +113,10 @@ export interface IDeploymentMethod {
      */
     readonly isFallbackPurgeSafe: boolean;
     /**
+     * low value means: prefer this method over those with higher value
+     */
+    readonly priority: number;
+    /**
      * returns more extensive description/explanation of the activator.
      *
      * @type {string}
@@ -136,6 +140,11 @@ export interface IDeploymentMethod {
      * @memberof IModActivator
      */
     userGate: () => Promise<void>;
+    /**
+     * called before the deployment method is selected. Primary use is to show usage instructions
+     * the user needs to know before using it
+     */
+    onSelected?: (api: IExtensionApi) => Promise<void>;
     /**
      * called before any calls to activate/deactivate, in case the
      * activator needs to do pre-processing
@@ -234,4 +243,13 @@ export interface IDeploymentMethod {
      * @memberOf IModActivator
      */
     isActive: () => boolean;
+    /**
+     * given a file path (relative to a staging path), return the name under which the
+     * file would be deployed.
+     * This is used in cases where the deployment method may rename files during
+     * deployment for whatever reason.
+     * An example would be move deployment where the file that remains in the staging
+     * folder is just a (differently named) placeholder.
+     */
+    getDeployedPath: (input: string) => string;
 }

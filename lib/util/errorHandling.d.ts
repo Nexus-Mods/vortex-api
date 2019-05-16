@@ -30,5 +30,10 @@ export declare function terminate(error: IError, state: any, allowReport?: boole
  */
 export declare function toError(input: any, title?: string, options?: IErrorOptions): IError;
 export declare function withContext(id: string, value: string, fun: () => Promise<any>): Promise<any>;
+/**
+ * attach context to an error that may be caught after the global context has been reset
+ * @param err
+ */
+export declare function contextify(err: Error): Error;
 export declare function getErrorContext(): IErrorContext;
 export {};
