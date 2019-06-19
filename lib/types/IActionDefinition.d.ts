@@ -17,4 +17,5 @@ export interface IActionDefinition {
     condition?: (instanceId: string | string[]) => boolean | string;
     position?: number;
     options?: IActionOptions;
+    default?: boolean;
 }

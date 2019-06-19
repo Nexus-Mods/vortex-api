@@ -13,6 +13,7 @@ export interface IPlugin {
     description: string;
     image: string;
     type: PluginType;
+    conditionMsg?: string;
 }
 export interface IGroup {
     id: number;

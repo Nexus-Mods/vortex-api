@@ -45,7 +45,6 @@ export declare function showInfo<S>(dispatch: ThunkDispatch<IState, null, Redux.
  * in a modal dialog.
  *
  * @export
- * @template S
  * @param {Redux.Dispatch<S>} dispatch
  * @param {string} title
  * @param {any} [details] further details about the error (stack and such). The api says we only

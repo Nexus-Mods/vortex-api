@@ -1,4 +1,5 @@
 import { Normalize } from './getNormalizeFunc';
+import * as Promise from 'bluebird';
 /**
  * count the elements in an array for which the predicate matches
  *
@@ -54,6 +55,13 @@ export declare function truthy(val: any): boolean;
  */
 export declare function objDiff(lhs: any, rhs: any, skip?: string[]): any;
 /**
+ * create a "queue".
+ * Returns an enqueue function such that that the callback passed to it
+ * will be called only after everything before it in the queue is finished
+ * and with the promise that nothing else in the queue is run in parallel.
+ */
+export declare function makeQueue(): (func: () => Promise<any>, tryOnly: boolean) => Promise<{}>;
+/**
  * spawn this application itself
  * @param args
  */
@@ -83,6 +91,15 @@ export declare function deBOM(input: string): string;
  * @param string
  */
 export declare function escapeRE(input: string): string;
+/**
+ * set a timeout for a promise. When the timeout expires the promise returned by this
+ * resolves with a value of undefined.
+ * @param prom the promise that should be wrapped
+ * @param timeout the time in milliseconds after which this should return
+ * @param cancel if true, the input promise is canceled when the timeout expires. Otherwise
+ *               it's allowed to continue and may finish after all.
+ */
+export declare function timeout<T>(prom: Promise<T>, timeout: number, cancel?: boolean): Promise<T>;
 /**
  * characters invalid in a file path
  */

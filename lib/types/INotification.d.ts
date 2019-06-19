@@ -77,7 +77,7 @@ export interface INotification {
      * replacement dictionary will be used for both)
      */
     replace?: {
-        [key: string]: string;
+        [key: string]: any;
     };
     /**
      * control which part of the notification gets localized. default is true for both

@@ -1,6 +1,11 @@
 export declare class NotSupportedError extends Error {
     constructor();
 }
+export declare class CleanupFailedException extends Error {
+    private mErrorObject;
+    constructor(error: Error);
+    readonly errorObject: Error;
+}
 export declare class ServiceTemporarilyUnavailable extends Error {
     constructor(service: string);
 }

@@ -6,11 +6,12 @@ export interface IToolbarDropdownProps {
     instanceId: string[];
     icons: IActionDefinition[];
     className?: string;
-    buttonType: ButtonType;
+    buttonType?: ButtonType;
     orientation: 'vertical' | 'horizontal';
 }
 declare class ToolbarDropdown extends React.PureComponent<IToolbarDropdownProps, {}> {
     render(): JSX.Element;
     private renderTitle;
+    private invokeDefault;
 }
 export default ToolbarDropdown;
