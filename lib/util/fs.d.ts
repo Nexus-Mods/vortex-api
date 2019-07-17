@@ -19,6 +19,9 @@ export { accessSync, closeSync, createReadStream, createWriteStream, linkSync, o
 export interface ILinkFileOptions {
     showDialogCallback?: () => boolean;
 }
+export interface IRemoveFileOptions {
+    showDialogCallback?: () => boolean;
+}
 declare const chmodAsync: typeof fs.chmodAsync;
 declare const closeAsync: typeof fs.closeAsync;
 declare const fsyncAsync: typeof fs.fsyncAsync;
@@ -29,14 +32,13 @@ declare const moveAsync: typeof fs.moveAsync;
 declare const openAsync: typeof fs.openAsync;
 declare const readdirAsync: typeof fs.readdirAsync;
 declare const readFileAsync: typeof fs.readFileAsync;
-declare const readlinkAsync: typeof fs.readlinkAsync;
 declare const statAsync: typeof fs.statAsync;
 declare const symlinkAsync: typeof fs.symlinkAsync;
 declare const utimesAsync: typeof fs.utimesAsync;
 declare const writeAsync: typeof fs.writeAsync;
 declare const writeFileAsync: typeof fs.writeFileAsync;
 declare const isDirectoryAsync: typeof fs.isDirectoryAsync;
-export { chmodAsync, closeAsync, fsyncAsync, lstatAsync, mkdirAsync, mkdirsAsync, moveAsync, openAsync, readlinkAsync, readdirAsync, readFileAsync, statAsync, symlinkAsync, utimesAsync, writeAsync, writeFileAsync, isDirectoryAsync, };
+export { chmodAsync, closeAsync, fsyncAsync, lstatAsync, mkdirAsync, mkdirsAsync, moveAsync, openAsync, readdirAsync, readFileAsync, statAsync, symlinkAsync, utimesAsync, writeAsync, writeFileAsync, isDirectoryAsync, };
 export declare function ensureDirSync(dirPath: string): void;
 export declare function ensureFileAsync(filePath: string): PromiseBB<void>;
 export declare function ensureDirAsync(dirPath: string): PromiseBB<void>;
@@ -57,10 +59,11 @@ export declare function copyAsync(src: string, dest: string, options?: fs.CopyOp
 }): PromiseBB<void>;
 export declare function linkAsync(src: string, dest: string, options?: ILinkFileOptions): PromiseBB<void>;
 export declare function removeSync(dirPath: string): void;
-export declare function unlinkAsync(filePath: string): PromiseBB<void>;
+export declare function unlinkAsync(filePath: string, options?: IRemoveFileOptions): PromiseBB<void>;
 export declare function renameAsync(sourcePath: string, destinationPath: string): PromiseBB<void>;
 export declare function rmdirAsync(dirPath: string): PromiseBB<void>;
-export declare function removeAsync(remPath: string): PromiseBB<void>;
+export declare function removeAsync(remPath: string, options?: IRemoveFileOptions): PromiseBB<void>;
+export declare function readlinkAsync(linkPath: string): PromiseBB<string>;
 export declare function ensureDirWritableAsync(dirPath: string, confirm: () => PromiseBB<void>): PromiseBB<void>;
 export declare function changeFileOwnership(filePath: string, stat: fs.Stats): PromiseBB<void>;
 export declare function changeFileAttributes(filePath: string, wantedAttributes: number, stat: fs.Stats): PromiseBB<void>;

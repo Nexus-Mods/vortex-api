@@ -45,3 +45,10 @@ export declare const setToolStopped: reduxAct.ComplexActionCreator1<string, {
     exePath: string;
 }, {}>;
 export declare const setExtensionLoadFailures: reduxAct.ComplexActionCreator1<{}, {}, {}>;
+export declare const setUIBlocker: reduxAct.ComplexActionCreator4<string, string, string, boolean, {
+    id: string;
+    icon: string;
+    description: string;
+    mayCancel: boolean;
+}, {}>;
+export declare const clearUIBlocker: reduxAct.ComplexActionCreator1<string, string, {}>;

@@ -13,14 +13,18 @@ export declare function THead(props: DProps<HTMLTableSectionElement> & {
 export declare function TBody(props: DProps<HTMLTableSectionElement> & {
     domRef?: ((instance: any | null) => any);
 }): JSX.Element;
-export declare class TH extends React.Component<DProps<HTMLTableHeaderCellElement> & {
+declare type THProps = DProps<HTMLTableHeaderCellElement> & {
     domRef?: (ref: HTMLDivElement) => void;
-}, {}> {
+};
+export declare class TH extends React.Component<THProps, {}> {
     render(): JSX.Element;
 }
-export declare function TR(props: DProps<HTMLTableRowElement> & {
+declare type TRProps = DProps<HTMLTableRowElement> & {
     domRef?: (ref: HTMLDivElement) => void;
-}): JSX.Element;
-export declare function TD(props: DProps<HTMLTableCellElement> & {
+};
+export declare function TR(props: TRProps): JSX.Element;
+declare type TDProps = DProps<HTMLTableCellElement> & {
     domRef?: (ref: HTMLDivElement) => void;
-}): JSX.Element;
+};
+export declare function TD(props: TDProps): JSX.Element;
+export {};

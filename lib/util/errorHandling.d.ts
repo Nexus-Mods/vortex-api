@@ -35,8 +35,8 @@ export declare function toError(input: any, title?: string, options?: IErrorOpti
  * Please keep in mind that the error context will remain set
  * until it's cleared with clearErrorContext and use "withContext" where possible
  * to ensure the context gets reset
- * @param id
- * @param value
+ * @param id context id
+ * @param value context value
  */
 export declare function setErrorContext(id: string, value: string): void;
 /**
@@ -53,7 +53,7 @@ export declare function clearErrorContext(id: string): void;
 export declare function withContext(id: string, value: string, fun: () => Promise<any>): Promise<any>;
 /**
  * attach context to an error that may be caught after the global context has been reset
- * @param err
+ * @param err the error to add context to
  */
 export declare function contextify(err: Error): Error;
 export declare function getErrorContext(): IErrorContext;

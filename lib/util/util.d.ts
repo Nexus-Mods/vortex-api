@@ -95,11 +95,11 @@ export declare function escapeRE(input: string): string;
  * set a timeout for a promise. When the timeout expires the promise returned by this
  * resolves with a value of undefined.
  * @param prom the promise that should be wrapped
- * @param timeout the time in milliseconds after which this should return
+ * @param delay the time in milliseconds after which this should return
  * @param cancel if true, the input promise is canceled when the timeout expires. Otherwise
  *               it's allowed to continue and may finish after all.
  */
-export declare function timeout<T>(prom: Promise<T>, timeout: number, cancel?: boolean): Promise<T>;
+export declare function timeout<T>(prom: Promise<T>, delay: number, cancel?: boolean): Promise<T>;
 /**
  * characters invalid in a file path
  */

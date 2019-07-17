@@ -34,6 +34,8 @@ declare class ExtensionManager {
     private mStartHooks;
     private mProgrammaticMetaServers;
     private mForceDBReconnect;
+    private mOnUIStarted;
+    private mUIStartedPromise;
     constructor(initStore?: Redux.Store<any>, eventEmitter?: NodeJS.EventEmitter);
     setTranslation(translator: I18next.i18n): void;
     /**
@@ -90,6 +92,7 @@ declare class ExtensionManager {
     doOnce(): Promise<void>;
     renderStyle(): Promise<void>;
     getProtocolHandler(protocol: string): (url: string) => void;
+    setUIReady(): void;
     private getModDB;
     private getMetaServerList;
     private connectMetaDB;

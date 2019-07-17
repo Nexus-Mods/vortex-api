@@ -67,6 +67,11 @@ export interface IRunningTool {
     exclusive: boolean;
     pid: number;
 }
+export interface IUIBlocker {
+    icon: string;
+    description: string;
+    mayCancel: boolean;
+}
 /**
  * "ephemeral" session state.
  * This state is generated at startup and forgotten at application exit
@@ -96,6 +101,9 @@ export interface ISession {
     };
     toolsRunning: {
         [exeId: string]: IRunningTool;
+    };
+    uiBlockers: {
+        [id: string]: IUIBlocker;
     };
 }
 export interface IRowState {

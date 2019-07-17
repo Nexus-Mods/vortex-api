@@ -1,6 +1,6 @@
 import * as Promise from 'bluebird';
 import I18next from 'i18next';
-declare let fallbackTFunc: I18next.TFunction;
+declare const fallbackTFunc: I18next.TFunction;
 export { fallbackTFunc };
 export interface IInitResult {
     i18n: I18next.i18n;

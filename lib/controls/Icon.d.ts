@@ -1,3 +1,4 @@
+import * as Promise from 'bluebird';
 import * as React from 'react';
 export interface IIconProps {
     className?: string;
@@ -14,6 +15,7 @@ export interface IIconProps {
     rotateId?: string;
     svgStyle?: string;
 }
+export declare function installIconSet(set: string, setPath: string): Promise<void>;
 declare class Icon extends React.Component<IIconProps, {}> {
     private static sCache;
     private mCurrentSize;
