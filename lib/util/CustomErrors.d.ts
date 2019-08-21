@@ -21,6 +21,9 @@ export declare class ProcessCanceled extends Error {
 export declare class DataInvalid extends Error {
     constructor(message: string);
 }
+export declare class ArgumentInvalid extends Error {
+    constructor(argument: string);
+}
 export declare class UserCanceled extends Error {
     constructor();
 }
