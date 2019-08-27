@@ -15,6 +15,7 @@ export declare function sendReportFile(fileName: string): Promise<IFeedbackRespo
 export declare function sendReport(type: string, error: IError, context: IErrorContext, labels: string[], reporterId: string, reporterProcess: string, sourceProcess: string, attachment: string): Promise<IFeedbackResponse>;
 export declare function setWindow(window: Electron.BrowserWindow): void;
 export declare function getWindow(): Electron.BrowserWindow;
+export declare function getVisibleWindow(win?: Electron.BrowserWindow): Electron.BrowserWindow | null;
 /**
  * display an error message and quit the application
  * on confirmation.

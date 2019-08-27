@@ -112,3 +112,15 @@ declare const INVALID_FILENAME_RE: RegExp;
 export declare function isFilenameValid(input: string): boolean;
 export declare function isPathValid(input: string, allowRelative?: boolean): boolean;
 export { INVALID_FILEPATH_CHARACTERS, INVALID_FILENAME_RE, INVALID_FILENAME_CHARACTERS, };
+export declare function isMajorDowngrade(previous: string, current: string): boolean;
+/**
+ * turn an object into a flat one meaning all values are PODs, no nested objects/arrays
+ * @param obj the input object
+ * @param key the base key that will be included in all attribute names. You will usually
+ *            want to leave this as an empty array unless the result gets merged with
+ *            something else
+ * @param separator the separator character. Defaults to a dot but if you intend to unflatten
+ *                  the object at some point it may make sense to use something less likely to
+ *                  be part of a key
+ */
+export declare function flatten(obj: any, key?: string[], separator?: string): any;

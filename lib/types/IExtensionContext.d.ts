@@ -1,6 +1,6 @@
 /// <reference types="node" />
 import { IDeployedFile, IDeploymentMethod, IFileChange } from '../extensions/mod_management/types/IDeploymentMethod';
-import { IInstallResult, IInstruction } from '../extensions/mod_management/types/IInstallResult';
+import { IInstallResult, IInstruction, InstructionType } from '../extensions/mod_management/types/IInstallResult';
 import { InstallFunc, ProgressDelegate } from '../extensions/mod_management/types/InstallFunc';
 import { ISupportedResult, TestSupported } from '../extensions/mod_management/types/TestSupported';
 import { Archive } from '../util/archives';
@@ -21,7 +21,7 @@ import { ILookupResult, IModInfo, IReference } from 'modmeta-db';
 import * as React from 'react';
 import * as Redux from 'redux';
 import { ThunkDispatch } from 'redux-thunk';
-export { TestSupported, IInstallResult, IInstruction, IDeployedFile, IDeploymentMethod, IFileChange, ILookupResult, IModInfo, IReference, InstallFunc, ISupportedResult, ProgressDelegate };
+export { TestSupported, IInstallResult, IInstruction, IDeployedFile, IDeploymentMethod, IFileChange, ILookupResult, IModInfo, InstructionType, IReference, InstallFunc, ISupportedResult, ProgressDelegate };
 export interface ThunkStore<S> extends Redux.Store<S> {
     dispatch: ThunkDispatch<S, null, Redux.Action>;
 }
@@ -142,6 +142,12 @@ export interface IArchiveHandler {
     write?(): Promise<void>;
 }
 export declare type ArchiveHandlerCreator = (fileName: string, options: IArchiveOptions) => Promise<IArchiveHandler>;
+/**
+ * callback used to extract download information into mod info.
+ * This also gets called a lot when displaying uninstalled mods in the mod list
+ * (the modPath is going to be undefined) so when that flag is set, the extractor should
+ * not be accessing the disk or network or do any complex coomputation
+ */
 export declare type AttributeExtractor = (modInfo: any, modPath: string) => Promise<{
     [key: string]: any;
 }>;

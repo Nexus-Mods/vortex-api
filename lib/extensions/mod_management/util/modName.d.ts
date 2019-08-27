@@ -1,4 +1,4 @@
-import { IMod } from '../types/IMod';
+import { IMod, IModReference } from '../types/IMod';
 export interface INameOptions {
     version: boolean;
 }
@@ -15,4 +15,5 @@ export declare function modNameFromAttributes(mod: {
  * @returns {string}
  */
 declare function modName(mod: IMod, options?: INameOptions): string;
+export declare function renderModReference(ref: IModReference, mod: IMod): string;
 export default modName;

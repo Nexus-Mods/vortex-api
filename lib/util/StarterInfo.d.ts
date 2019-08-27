@@ -27,6 +27,7 @@ declare type OnShowErrorFunc = (message: string, details?: string | Error | any,
  */
 declare class StarterInfo implements IStarterInfo {
     static getGameIcon(game: IGameStored, gameDiscovery: IDiscoveryResult): string;
+    static toolIconRW(gameId: string, toolId: string): string;
     static run(info: StarterInfo, api: IExtensionApi, onShowError: OnShowErrorFunc): Promise<any>;
     private static executeWithSteam;
     private static executeWithEpic;
@@ -35,7 +36,6 @@ declare class StarterInfo implements IStarterInfo {
     private static gameIcon;
     private static gameIconRW;
     private static toolIcon;
-    private static toolIconRW;
     id: string;
     gameId: string;
     isGame: boolean;
