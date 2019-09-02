@@ -9,5 +9,6 @@ export interface IModLookupInfo {
     customFileName?: string;
     version: string;
 }
+export declare function referenceEqual(lhs: IModReference, rhs: IModReference): boolean;
 export declare function testModReference(mod: IMod | IModLookupInfo, reference: IModReference): boolean;
 export default testModReference;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-export interface IWebView {
+export interface IWebView extends React.DetailedHTMLProps<React.WebViewHTMLAttributes<HTMLWebViewElement>, HTMLWebViewElement> {
     src?: string;
     style?: any;
     autosize?: boolean;

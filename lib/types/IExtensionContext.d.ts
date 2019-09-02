@@ -424,14 +424,14 @@ export interface IExtensionApi {
      * emit an event and allow every receiver to return a Promise. This call will only return
      * after all these Promises are resolved.
      */
-    emitAndAwait: (eventName: string, ...args: any[]) => Promise<void>;
+    emitAndAwait: (eventName: string, ...args: any[]) => Promise<any>;
     /**
      * handle an event emitted with emitAndAwait. The listener can return a promise and the emitter
      * will only return after all promises from handlers are returned.
      * Note that listeners should report all errors themselves, it is considered a bug if the listener
      * returns a rejected promise.
      */
-    onAsync: (eventName: string, listener: (...args: any[]) => Promise<void>) => void;
+    onAsync: (eventName: string, listener: (...args: any[]) => Promise<any>) => void;
     /**
      * returns true if the running version of Vortex is considered outdated. This is mostly used
      * to determine if feedback should be sent to Nexus Mods.

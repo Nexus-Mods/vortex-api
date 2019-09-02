@@ -15,7 +15,7 @@ export interface IMod {
     attributes?: {
         [id: string]: any;
     };
-    rules?: IRule[];
+    rules?: IModRule[];
     enabledINITweaks?: string[];
     fileOverrides?: string[];
 }
@@ -36,4 +36,9 @@ export interface IFileListItem {
 export interface IModRule extends IRule {
     reference: IModReference;
     fileList?: IFileListItem[];
+    downloadHint?: {
+        mode: 'direct' | 'browse' | 'manual';
+        url?: string;
+        instructions?: string;
+    };
 }
