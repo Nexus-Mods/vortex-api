@@ -4,6 +4,9 @@ export interface IDownloadFailCause {
     htmlFile?: string;
     message?: string;
 }
+export interface IDownloadOptions {
+    referer?: string;
+}
 /**
  * download information
  *
