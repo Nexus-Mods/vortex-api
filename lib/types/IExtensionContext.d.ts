@@ -97,6 +97,7 @@ export declare type StateChangeCallback = (previous: any, current: any) => void;
  */
 export interface ILookupDetails {
     filePath?: string;
+    fileName?: string;
     fileMD5?: string;
     fileSize?: number;
     gameId?: string;
