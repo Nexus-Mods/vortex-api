@@ -64,7 +64,7 @@ export declare function renameAsync(sourcePath: string, destinationPath: string)
 export declare function rmdirAsync(dirPath: string): PromiseBB<void>;
 export declare function removeAsync(remPath: string, options?: IRemoveFileOptions): PromiseBB<void>;
 export declare function readlinkAsync(linkPath: string): PromiseBB<string>;
-export declare function ensureDirWritableAsync(dirPath: string, confirm: () => PromiseBB<void>): PromiseBB<void>;
+export declare function ensureDirWritableAsync(dirPath: string, confirm?: () => PromiseBB<void>): PromiseBB<void>;
 export declare function changeFileOwnership(filePath: string, stat: fs.Stats): PromiseBB<void>;
 export declare function changeFileAttributes(filePath: string, wantedAttributes: number, stat: fs.Stats): PromiseBB<void>;
 export declare function makeFileWritableAsync(filePath: string): PromiseBB<void>;

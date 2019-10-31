@@ -26,6 +26,7 @@ export interface IBaseProps {
     defaultSort?: string;
     showHeader?: boolean;
     showDetails?: boolean;
+    hasActions?: boolean;
 }
 export interface ILookupCalculated {
     [rowId: string]: {

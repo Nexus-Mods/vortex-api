@@ -11,6 +11,7 @@ export interface IRowProps {
     attributes: ITableAttribute[];
     sortAttribute: string;
     actions: ITableRowAction[];
+    hasActions: boolean;
     language: string;
     onClick: React.MouseEventHandler<any>;
     selected: boolean;
@@ -18,6 +19,7 @@ export interface IRowProps {
     domRef?: (ref: any) => void;
     container: HTMLElement;
     visible: boolean;
+    grouped: boolean;
     onSetVisible: (rowId: string, visible: boolean) => void;
     onHighlight: (rowId: string, highlight: boolean) => void;
 }
