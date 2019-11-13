@@ -1,4 +1,5 @@
 /// <reference types="node" />
+import { IExtension } from '../extensions/extension_manager/types';
 import { IDeployedFile, IDeploymentMethod, IFileChange } from '../extensions/mod_management/types/IDeploymentMethod';
 import { IInstallResult, IInstruction } from '../extensions/mod_management/types/IInstallResult';
 import { InstallFunc, ProgressDelegate } from '../extensions/mod_management/types/InstallFunc';
@@ -83,7 +84,7 @@ export interface IToDoButton {
 }
 export declare type RegisterToDo = (id: string, type: ToDoType, props: (state: any) => any, icon: ((props: any) => JSX.Element) | string, text: ((t: I18next.TFunction, props: any) => JSX.Element) | string, action: (props: any) => void, condition: (props: any) => boolean, value: ((t: I18next.TFunction, props: any) => JSX.Element) | string, priority: number) => void;
 export interface IRegisterProtocol {
-    (protocol: string, def: boolean, callback: (url: string) => void): any;
+    (protocol: string, def: boolean, callback: (url: string, install: boolean) => void): any;
 }
 export interface IFileFilter {
     name: string;
@@ -175,6 +176,7 @@ export interface IErrorOptions {
         [key: string]: string;
     };
     attachments?: IAttachment[];
+    extension?: IExtension;
 }
 /**
  * a query function that will be called to retrieve information about a game.
@@ -233,6 +235,10 @@ export interface IRunParameters {
  * @interface IExtensionApi
  */
 export interface IExtensionApi {
+    /**
+     * name of the extension to use this api with
+     */
+    extension?: string;
     /**
      * show a notification to the user.
      * This is not available in the call to registerReducer

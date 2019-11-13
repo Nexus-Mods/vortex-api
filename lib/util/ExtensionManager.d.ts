@@ -1,4 +1,5 @@
 /// <reference types="node" />
+import { IExtension } from '../extensions/extension_manager/types';
 import { ExtensionInit } from '../types/Extension';
 import { IExtensionApi, ThunkStore } from '../types/IExtensionContext';
 import * as Promise from 'bluebird';
@@ -9,6 +10,7 @@ interface IRegisteredExtension {
     path: string;
     dynamic: boolean;
     initFunc: ExtensionInit;
+    info?: IExtension;
 }
 /**
  * interface to extensions. This loads extensions and provides the api extensions
@@ -100,7 +102,7 @@ declare class ExtensionManager {
      */
     doOnce(): Promise<void>;
     renderStyle(): Promise<void>;
-    getProtocolHandler(protocol: string): (url: string) => void;
+    getProtocolHandler(protocol: string): (url: string, install: boolean) => void;
     readonly numOnce: number;
     onLoadingExtension(cb: (name: string, idx: number) => void): void;
     setUIReady(): void;

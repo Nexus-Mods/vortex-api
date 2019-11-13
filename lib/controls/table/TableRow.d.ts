@@ -9,6 +9,7 @@ export interface IRowProps {
     data: any;
     rawData: any;
     attributes: ITableAttribute[];
+    inlines: ITableAttribute[];
     sortAttribute: string;
     actions: ITableRowAction[];
     hasActions: boolean;

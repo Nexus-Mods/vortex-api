@@ -1,4 +1,4 @@
-import { IState } from '../../types/IState';
+import { IDiscoveryResult, IState } from '../../types/IState';
 import { ICacheObject, OutputParametricSelector, ParametricSelector } from 're-reselect';
 import { OutputSelector } from 'reselect';
 export declare const installPath: OutputSelector<any, string, (res1: {
@@ -55,4 +55,11 @@ export declare const needToDeployForGame: ParametricSelector<IState, string, boo
     cache: ICacheObject;
     keySelector: import("re-reselect").ParametricKeySelector<IState, string>;
 };
+export declare const modPathsForGame: import("reselect").OutputParametricSelector<IState, string, {
+    [typeId: string]: string;
+}, (res1: {
+    [gameId: string]: IDiscoveryResult;
+}, res2: string) => {
+    [typeId: string]: string;
+}>;
 export {};

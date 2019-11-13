@@ -287,6 +287,7 @@ export interface IState {
             installed: {
                 [extId: string]: IExtension;
             };
+            updateTime: number;
         };
     };
     settings: ISettings;

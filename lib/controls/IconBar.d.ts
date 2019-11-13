@@ -17,6 +17,7 @@ export interface IBaseProps {
     icon?: string;
     pullRight?: boolean;
     clickAnywhere?: boolean;
+    showAll?: boolean;
     t: I18next.TFunction;
 }
 declare type ExportType = IBaseProps & IActionControlProps & IExtensibleProps & React.HTMLAttributes<any>;

@@ -1,6 +1,6 @@
 import I18next from 'i18next';
 export declare type AttributeRenderer = 'progress';
-export declare type Placement = 'table' | 'detail' | 'both';
+export declare type Placement = 'table' | 'detail' | 'both' | 'inline';
 export declare type ValidationState = 'success' | 'warning' | 'error';
 export interface IEditChoice {
     key: string;
