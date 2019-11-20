@@ -1,4 +1,4 @@
-import { IInstruction, IModTypeOptions } from '../../../types/IExtensionContext';
+import { IInstruction } from '../../../types/IExtensionContext';
 import { IGame } from '../../../types/IGame';
 import * as Promise from 'bluebird';
 export interface IModType {
@@ -7,5 +7,4 @@ export interface IModType {
     isSupported: (gameId: string) => boolean;
     getPath: (game: IGame) => string;
     test: (installInstructions: IInstruction[]) => Promise<boolean>;
-    options: IModTypeOptions;
 }

@@ -5,7 +5,6 @@ export interface IProps {
     content: () => React.ReactNode;
     visible: boolean;
     setVisible: (visible: boolean) => void;
-    componentClass?: React.ElementType;
 }
 /**
  * proxy component that delays loading of a control until it comes into view

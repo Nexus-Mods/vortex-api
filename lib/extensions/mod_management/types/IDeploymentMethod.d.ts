@@ -1,7 +1,7 @@
 import { IExtensionApi } from '../../../types/IExtensionContext';
 import { Normalize } from '../../../util/getNormalizeFunc';
+import { TFunction } from '../../../util/i18n';
 import * as Promise from 'bluebird';
-import I18next from 'i18next';
 /**
  * details about a file change
  */
@@ -65,11 +65,11 @@ export interface IUnavailableReason {
     /**
      * description (english) why the deployment method is unavailable
      */
-    description: (t: I18next.TFunction) => string;
+    description: (t: TFunction) => string;
     /**
      * describes the solution to make this
      */
-    solution?: (t: I18next.TFunction) => string;
+    solution?: (t: TFunction) => string;
     /**
      * if the problem can be fixed automatically, this can be set to a function that takes care
      * of it
@@ -122,7 +122,7 @@ export interface IDeploymentMethod {
      * @type {string}
      * @memberOf IDeploymentMethod
      */
-    detailedDescription: (t: I18next.TFunction) => string;
+    detailedDescription: (t: TFunction) => string;
     /**
      * determine if this activator is supported in the current environment
      * If the activator is supported, returns undefined. Otherwise a string

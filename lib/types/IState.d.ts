@@ -7,7 +7,6 @@ import { IDiscoveryResult } from '../extensions/gamemode_management/types/IDisco
 import { IGameStored } from '../extensions/gamemode_management/types/IGameStored';
 import { IMod } from '../extensions/mod_management/types/IMod';
 import { IProfile } from '../extensions/profile_management/types/IProfile';
-import { IAvailableExtension, IExtension } from '../extensions/extension_manager/types';
 export { IDownload, IDiscoveryResult, IGameStored, IMod, IProfile };
 /**
  * interface to represent a position on the screen
@@ -255,8 +254,6 @@ export interface IStateGameMode {
 }
 export interface IBrowserState {
     url: string;
-    instructions: string;
-    subscriber: string;
 }
 export interface IModTable {
     [gameId: string]: {
@@ -282,13 +279,6 @@ export interface IState {
         discovery: IDiscoveryState;
         notifications: INotificationState;
         browser: IBrowserState;
-        extensions: {
-            available: IAvailableExtension[];
-            installed: {
-                [extId: string]: IExtension;
-            };
-            updateTime: number;
-        };
     };
     settings: ISettings;
     persistent: {

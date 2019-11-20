@@ -1,10 +1,10 @@
 /// <reference types="node" />
-import { IExtension } from '../extensions/extension_manager/types';
 import { IDeployedFile, IDeploymentMethod, IFileChange } from '../extensions/mod_management/types/IDeploymentMethod';
 import { IInstallResult, IInstruction } from '../extensions/mod_management/types/IInstallResult';
 import { InstallFunc, ProgressDelegate } from '../extensions/mod_management/types/InstallFunc';
 import { ISupportedResult, TestSupported } from '../extensions/mod_management/types/TestSupported';
 import { Archive } from '../util/archives';
+import { i18n, TFunction } from '../util/i18n';
 import ReduxProp from '../util/ReduxProp';
 import { SanityCheck } from '../util/reduxSanity';
 import { DialogActions, IDialogContent } from './api';
@@ -17,7 +17,6 @@ import { IDiscoveryResult } from './IState';
 import { ITableAttribute } from './ITableAttribute';
 import { ITestResult } from './ITestResult';
 import * as Promise from 'bluebird';
-import I18next from 'i18next';
 import { ILookupResult, IModInfo, IReference } from 'modmeta-db';
 import * as React from 'react';
 import * as Redux from 'redux';
@@ -39,14 +38,6 @@ export declare type RegisterSettings = (title: string, element: React.ComponentC
 export declare type RegisterAction = (group: string, position: number, iconOrComponent: string | React.ComponentClass<any> | React.StatelessComponent<any>, options: IActionOptions, titleOrProps?: string | PropsCallback, actionOrCondition?: (instanceIds?: string[]) => void | boolean, condition?: (instanceIds?: string[]) => boolean | string) => void;
 export declare type RegisterFooter = (id: string, element: React.ComponentClass<any>, props?: PropsCallback) => void;
 export declare type RegisterBanner = (group: string, component: React.ComponentClass<any> | React.StatelessComponent<any>, options: IBannerOptions) => void;
-export interface IModSourceOptions {
-    /**
-     * condition for this source to show up. Please make sure this returns quickly, cache if
-     * necessary.
-     */
-    condition?: () => boolean;
-    icon?: string;
-}
 export interface IMainPageOptions {
     /**
      * id for this page. If none is specified the page title is used. Use the id to avoid
@@ -82,9 +73,9 @@ export interface IToDoButton {
     icon: string;
     onClick: () => void;
 }
-export declare type RegisterToDo = (id: string, type: ToDoType, props: (state: any) => any, icon: ((props: any) => JSX.Element) | string, text: ((t: I18next.TFunction, props: any) => JSX.Element) | string, action: (props: any) => void, condition: (props: any) => boolean, value: ((t: I18next.TFunction, props: any) => JSX.Element) | string, priority: number) => void;
+export declare type RegisterToDo = (id: string, type: ToDoType, props: (state: any) => any, icon: ((props: any) => JSX.Element) | string, text: ((t: TFunction, props: any) => JSX.Element) | string, action: (props: any) => void, condition: (props: any) => boolean, value: ((t: TFunction, props: any) => JSX.Element) | string, priority: number) => void;
 export interface IRegisterProtocol {
-    (protocol: string, def: boolean, callback: (url: string, install: boolean) => void): any;
+    (protocol: string, def: boolean, callback: (url: string) => void): any;
 }
 export interface IFileFilter {
     name: string;
@@ -176,7 +167,6 @@ export interface IErrorOptions {
         [key: string]: string;
     };
     attachments?: IAttachment[];
-    extension?: IExtension;
 }
 /**
  * a query function that will be called to retrieve information about a game.
@@ -235,10 +225,6 @@ export interface IRunParameters {
  * @interface IExtensionApi
  */
 export interface IExtensionApi {
-    /**
-     * name of the extension to use this api with
-     */
-    extension?: string;
     /**
      * show a notification to the user.
      * This is not available in the call to registerReducer
@@ -313,7 +299,7 @@ export interface IExtensionApi {
     /**
      * translation function
      */
-    translate: I18next.TFunction;
+    translate: TFunction;
     /**
      * active locale
      */
@@ -323,7 +309,7 @@ export interface IExtensionApi {
      * This is only needed to influence how localisation works in general,
      * to just translate a text, use "translate"
      */
-    getI18n: () => I18next.i18n;
+    getI18n: () => i18n;
     /**
      * retrieve path for a known directory location.
      *
@@ -432,14 +418,14 @@ export interface IExtensionApi {
      * emit an event and allow every receiver to return a Promise. This call will only return
      * after all these Promises are resolved.
      */
-    emitAndAwait: (eventName: string, ...args: any[]) => Promise<any>;
+    emitAndAwait: (eventName: string, ...args: any[]) => Promise<void>;
     /**
      * handle an event emitted with emitAndAwait. The listener can return a promise and the emitter
      * will only return after all promises from handlers are returned.
      * Note that listeners should report all errors themselves, it is considered a bug if the listener
      * returns a rejected promise.
      */
-    onAsync: (eventName: string, listener: (...args: any[]) => Promise<any>) => void;
+    onAsync: (eventName: string, listener: (...args: any[]) => Promise<void>) => void;
     /**
      * returns true if the running version of Vortex is considered outdated. This is mostly used
      * to determine if feedback should be sent to Nexus Mods.
@@ -501,9 +487,6 @@ export interface IReducerSpec {
     verifiers?: {
         [key: string]: IStateVerifier;
     };
-}
-export interface IModTypeOptions {
-    mergeMods?: boolean;
 }
 /**
  * The extension context is an object passed into all extensions during initialisation.
@@ -621,7 +604,7 @@ export interface IExtensionContext {
      * actual features
      * The source can also be used to browse for further mods
      */
-    registerModSource: (id: string, name: string, onBrowse: () => void, options?: IModSourceOptions) => void;
+    registerModSource: (id: string, name: string, onBrowse: () => void) => void;
     /**
      * register a reducer to introduce new set-operations on the application
      * state.
@@ -752,9 +735,8 @@ export interface IExtensionContext {
      *                                          where games of this type should be installed.
      * @param {(instructions) => Promise<boolean>} test given the list of install instructions,
      *                                                  determine if the installed mod is of this type
-     * @param {IModTypeOptions} options options controlling the mod type
      */
-    registerModType: (id: string, priority: number, isSupported: (gameId: string) => boolean, getPath: (game: IGame) => string, test: (installInstructions: IInstruction[]) => Promise<boolean>, options?: IModTypeOptions) => void;
+    registerModType: (id: string, priority: number, isSupported: (gameId: string) => boolean, getPath: (game: IGame) => string, test: (installInstructions: IInstruction[]) => Promise<boolean>) => void;
     /**
      * register an action sanity check
      * a sanity check like this is called before any redux-action of the specified type and gets

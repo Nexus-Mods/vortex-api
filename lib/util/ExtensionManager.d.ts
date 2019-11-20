@@ -1,17 +1,8 @@
 /// <reference types="node" />
-import { IExtension } from '../extensions/extension_manager/types';
-import { ExtensionInit } from '../types/Extension';
 import { IExtensionApi, ThunkStore } from '../types/IExtensionContext';
 import * as Promise from 'bluebird';
-import I18next from 'i18next';
 import * as Redux from 'redux';
-interface IRegisteredExtension {
-    name: string;
-    path: string;
-    dynamic: boolean;
-    initFunc: ExtensionInit;
-    info?: IExtension;
-}
+import { i18n } from './i18n';
 /**
  * interface to extensions. This loads extensions and provides the api extensions
  * use
@@ -41,14 +32,12 @@ declare class ExtensionManager {
     private mLoadFailures;
     private mInterpreters;
     private mStartHooks;
-    private mLoadingCallbacks;
     private mProgrammaticMetaServers;
     private mForceDBReconnect;
     private mOnUIStarted;
     private mUIStartedPromise;
     constructor(initStore?: Redux.Store<any>, eventEmitter?: NodeJS.EventEmitter);
-    setTranslation(translator: I18next.i18n): void;
-    readonly extensions: IRegisteredExtension[];
+    setTranslation(translator: i18n): void;
     /**
      * sets up the extension manager to work with the specified store
      *
@@ -102,9 +91,7 @@ declare class ExtensionManager {
      */
     doOnce(): Promise<void>;
     renderStyle(): Promise<void>;
-    getProtocolHandler(protocol: string): (url: string, install: boolean) => void;
-    readonly numOnce: number;
-    onLoadingExtension(cb: (name: string, idx: number) => void): void;
+    getProtocolHandler(protocol: string): (url: string) => void;
     setUIReady(): void;
     private getModDB;
     private getMetaServerList;

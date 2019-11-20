@@ -11,9 +11,9 @@
  * - ignoring ENOENT error when deleting a file.
  */
 /// <reference types="node" />
+import { TFunction } from './i18n';
 import * as PromiseBB from 'bluebird';
 import * as fs from 'fs-extra-promise';
-import I18next from 'i18next';
 export { constants, FSWatcher, Stats, WriteStream } from 'fs';
 export { accessSync, closeSync, createReadStream, createWriteStream, linkSync, openSync, readFileSync, readJSONSync, statSync, symlinkSync, watch, writeFileSync, writeSync, } from 'fs-extra-promise';
 export interface ILinkFileOptions {
@@ -64,8 +64,8 @@ export declare function renameAsync(sourcePath: string, destinationPath: string)
 export declare function rmdirAsync(dirPath: string): PromiseBB<void>;
 export declare function removeAsync(remPath: string, options?: IRemoveFileOptions): PromiseBB<void>;
 export declare function readlinkAsync(linkPath: string): PromiseBB<string>;
-export declare function ensureDirWritableAsync(dirPath: string, confirm?: () => PromiseBB<void>): PromiseBB<void>;
+export declare function ensureDirWritableAsync(dirPath: string, confirm: () => PromiseBB<void>): PromiseBB<void>;
 export declare function changeFileOwnership(filePath: string, stat: fs.Stats): PromiseBB<void>;
 export declare function changeFileAttributes(filePath: string, wantedAttributes: number, stat: fs.Stats): PromiseBB<void>;
 export declare function makeFileWritableAsync(filePath: string): PromiseBB<void>;
-export declare function forcePerm<T>(t: I18next.TFunction, op: () => PromiseBB<T>, filePath?: string, maxTries?: number): PromiseBB<T>;
+export declare function forcePerm<T>(t: TFunction, op: () => PromiseBB<T>, filePath?: string, maxTries?: number): PromiseBB<T>;

@@ -25,7 +25,6 @@ declare type TRProps = DProps<HTMLTableRowElement> & {
 export declare function TR(props: TRProps): JSX.Element;
 declare type TDProps = DProps<HTMLTableCellElement> & {
     domRef?: (ref: HTMLDivElement) => void;
-    colSpan?: number;
 };
 export declare function TD(props: TDProps): JSX.Element;
 export {};

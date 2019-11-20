@@ -3,7 +3,6 @@ import * as React from 'react';
 export interface IActionControlProps {
     instanceId?: string | string[];
     filter?: (action: IActionDefinition) => boolean;
-    showAll?: boolean;
 }
 export interface IExtensionProps {
     objects: IActionDefinition[];

@@ -6,7 +6,7 @@ import * as Promise from 'bluebird';
  * purge files using information from the manifest
  */
 export declare function fallbackPurge(api: IExtensionApi): Promise<void>;
-export declare function withActivationLock(func: () => Promise<any>, tryOnly?: boolean): Promise<{}>;
+export declare function withActivationLock(func: () => Promise<any>, tryOnly?: boolean): Promise<unknown>;
 /**
  * return a manifest (detailing which files are currently deployed by Vortex)
  * Please note that the manifest is intended only as kind of a fallback, core functionality
@@ -19,4 +19,4 @@ export declare function withActivationLock(func: () => Promise<any>, tryOnly?: b
  */
 export declare function getManifest(api: IExtensionApi, modType?: string, gameId?: string): Promise<IDeploymentManifest>;
 export declare function loadActivation(api: IExtensionApi, modType: string, deployPath: string, stagingPath: string, activator: IDeploymentMethod): Promise<IDeployedFile[]>;
-export declare function saveActivation(modType: string, instance: string, gamePath: string, stagingPath: string, activation: IDeployedFile[], activatorId?: string): Promise<any>;
+export declare function saveActivation(modType: string, instance: string, gamePath: string, stagingPath: string, activation: IDeployedFile[], activatorId?: string): any;

@@ -1,6 +1,7 @@
-import I18next from 'i18next';
+/// <reference types="react" />
+import { TFunction } from '../util/i18n';
 export declare type AttributeRenderer = 'progress';
-export declare type Placement = 'table' | 'detail' | 'both' | 'inline';
+export declare type Placement = 'table' | 'detail' | 'both';
 export declare type ValidationState = 'success' | 'warning' | 'error';
 export interface IEditChoice {
     key: string;
@@ -15,7 +16,7 @@ export interface IEditChoice {
 export interface IFilterProps {
     filter: any;
     attributeId: string;
-    t: I18next.TFunction;
+    t: TFunction;
     onSetFilter: (attributeId: string, value: any) => void;
 }
 export interface ITableFilter {
@@ -75,13 +76,6 @@ export interface ITableAttribute<T = any> {
      */
     isSortable?: boolean;
     /**
-     * if true (or a function), the table can be grouped by this attribute.
-     * if this is a function it will be called with the object to determine the value to use for
-     * grouping, otherwise the output of calc is used. This function must be fast, unlike calc
-     * the result from this is not cached (at this time)
-     */
-    isGroupable?: boolean | ((object: T, t: I18next.TFunction) => string);
-    /**
      * if set, the table can be filtered by this attribute using the specified control
      */
     filter?: ITableFilter;
@@ -132,9 +126,9 @@ export interface ITableAttribute<T = any> {
      * renderer. Please note that if you want caching or asynchronous calculation for this cell you'll
      * have to implement it yourself.
      * Also note that table cells using customRenderer will do more unnecessary rerenders than a
-     * calc-based field so please use customRenderer only when necessary.
+     * calc-based field so please use customRenderer only when neccessary.
      */
-    customRenderer?: (object: T | T[], detailCell: boolean, t: I18next.TFunction, props: ICustomProps) => JSX.Element;
+    customRenderer?: (object: T | T[], detailCell: boolean, t: TFunction, props: ICustomProps) => JSX.Element;
     /**
      * determine the display value for this attribute. This is used for display if customRenderer is
      * not specified. It's also used for sorting the table so unless isSortable is false and a
@@ -148,7 +142,7 @@ export interface ITableAttribute<T = any> {
      *        This means that if you bind a variable to your calc function which is not part of
      *        the Table props the Table may appear glitchy as it won't update as necessary.
      */
-    calc?: (object: T, t: I18next.TFunction) => any | Promise<any>;
+    calc?: (object: T, t: TFunction) => any | Promise<any>;
     /**
      * custom function for sorting by this attribute. The parameters passed in (lhs and rhs) are
      * the output of calc (cached). Return <0 if lhs is smaller than rhs, >0 if it's bigger and
@@ -165,7 +159,7 @@ export interface ITableAttribute<T = any> {
      * if specified, this is called to determine if the attribute is visible at all.
      * This can be used to hide attributes on game where they aren't supported.
      * This will only be evaluated when the table is created, when the user switches column visibility
-     * manually or when the list of table columns programmatically changes but you can not use it
+     * manually or when the list of table columns programatically changes but you can not use it
      * to dynamically hide columns _without_ changing any table props.
      */
     condition?: () => boolean;
@@ -188,7 +182,7 @@ export interface ITableAttribute<T = any> {
      */
     edit: {
         /**
-         * if set, this function determines if the attribute is editable. If "edit" is an empty
+         * if set, this function determins if the attribute is editable. If "edit" is an empty
          * object, the attribute is readonly. If "edit" is non-empty and "readonly" is
          * undefined, the attribute is editable.
          */
@@ -199,7 +193,7 @@ export interface ITableAttribute<T = any> {
         inline?: boolean;
         /**
          * Affects how choices are displayed if you have a choice attribute
-         * if true (or undefined) then we display a drop-down box where each item immediately triggers
+         * if true (or undefined) then we display a dropdown box where each item immediately triggers
          * an action. If false, render a selection box
          */
         actions?: boolean;

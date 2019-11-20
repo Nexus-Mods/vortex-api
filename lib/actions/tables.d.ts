@@ -15,16 +15,7 @@ export declare const setAttributeFilter: reduxAct.ComplexActionCreator3<string, 
     attributeId: string;
     filter: any;
 }, {}>;
-export declare const setGroupingAttribute: reduxAct.ComplexActionCreator2<string, string, {
+export declare const setSplitPos: reduxAct.ComplexActionCreator2<string, number, {
     tableId: string;
-    attributeId: string;
-}, {}>;
-export declare const collapseGroup: reduxAct.ComplexActionCreator3<string, string, boolean, {
-    tableId: string;
-    groupId: string;
-    collapse: boolean;
-}, {}>;
-export declare const setCollapsedGroups: reduxAct.ComplexActionCreator2<string, string[], {
-    tableId: string;
-    groups: string[];
+    pos: number;
 }, {}>;
