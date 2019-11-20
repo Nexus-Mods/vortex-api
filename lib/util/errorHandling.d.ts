@@ -1,6 +1,6 @@
 import { IErrorOptions, IExtensionApi } from '../types/api';
 import { IError } from '../types/IError';
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 import { IFeedbackResponse } from 'nexus-api';
 interface IErrorContext {
     [id: string]: string;

@@ -1,6 +1,6 @@
 import { IGame } from '../../types/IGame';
 import { IState } from '../../types/IState';
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 import * as Redux from 'redux';
 /**
  * discovers game modes

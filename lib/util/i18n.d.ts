@@ -1,4 +1,4 @@
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 import I18next, { i18n, TOptions } from 'i18next';
 declare type TFunction = typeof I18next.t;
 declare const fallbackTFunc: TFunction;

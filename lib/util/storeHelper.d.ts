@@ -2,7 +2,7 @@
  * Helper functions when working with immutable state (or immutable objects in general)
  */
 import { IGameStored } from '../extensions/gamemode_management/types/IGameStored';
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 import * as Redux from 'redux';
 /**
  * return an item from state or the fallback if the path doesn't lead

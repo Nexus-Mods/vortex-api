@@ -1,5 +1,5 @@
 import { IExtensionApi } from '../types/IExtensionContext';
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 declare class StyleManager {
     private static RENDER_DELAY;
     private mPartials;

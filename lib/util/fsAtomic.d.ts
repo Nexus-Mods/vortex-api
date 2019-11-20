@@ -1,5 +1,5 @@
 /// <reference types="node" />
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 export declare function checksum(input: Buffer): string;
 export declare function fileMD5(filePath: string): Promise<string>;
 export declare function writeFileAtomic(filePath: string, input: string | Buffer): any;

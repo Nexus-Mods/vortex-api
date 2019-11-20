@@ -1,6 +1,6 @@
 import { DialogActions, DialogType, IDialogContent, IDialogResult } from '../types/IDialog';
 import { INotification, NotificationDismiss } from '../types/INotification';
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 import * as reduxAct from 'redux-act';
 export * from '../types/IDialog';
 /**

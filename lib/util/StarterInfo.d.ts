@@ -3,7 +3,7 @@ import { IDiscoveryResult } from '../extensions/gamemode_management/types/IDisco
 import { IGameStored } from '../extensions/gamemode_management/types/IGameStored';
 import { IToolStored } from '../extensions/gamemode_management/types/IToolStored';
 import { IExtensionApi } from '../types/IExtensionContext';
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 export interface IStarterInfo {
     id: string;
     gameId: string;

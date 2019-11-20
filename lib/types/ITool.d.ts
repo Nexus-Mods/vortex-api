@@ -1,4 +1,4 @@
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 /**
  * static information about a tool associated with a game.
  * This info is used to discover such tools and to store that

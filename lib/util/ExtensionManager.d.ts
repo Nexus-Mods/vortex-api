@@ -1,6 +1,6 @@
 /// <reference types="node" />
 import { IExtensionApi, ThunkStore } from '../types/IExtensionContext';
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 import * as Redux from 'redux';
 import { i18n } from './i18n';
 /**

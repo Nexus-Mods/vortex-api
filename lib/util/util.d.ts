@@ -1,5 +1,5 @@
 import { Normalize } from './getNormalizeFunc';
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 /**
  * count the elements in an array for which the predicate matches
  *

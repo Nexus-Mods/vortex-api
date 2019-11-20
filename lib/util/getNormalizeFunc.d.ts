@@ -1,4 +1,4 @@
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 export declare type Normalize = (input: string) => string;
 export interface INormalizeParameters {
     separators?: boolean;

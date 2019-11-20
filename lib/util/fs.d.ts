@@ -12,7 +12,7 @@
  */
 /// <reference types="node" />
 import { TFunction } from './i18n';
-import * as PromiseBB from 'bluebird';
+import PromiseBB from 'bluebird';
 import * as fs from 'fs-extra-promise';
 export { constants, FSWatcher, Stats, WriteStream } from 'fs';
 export { accessSync, closeSync, createReadStream, createWriteStream, linkSync, openSync, readFileSync, readJSONSync, statSync, symlinkSync, watch, writeFileSync, writeSync, } from 'fs-extra-promise';

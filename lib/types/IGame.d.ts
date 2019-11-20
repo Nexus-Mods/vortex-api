@@ -1,7 +1,7 @@
 import { IModType } from '../extensions/gamemode_management/types/IModType';
 import { IDiscoveryResult, IMod } from './IState';
 import { ITool } from './ITool';
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 export { IModType };
 /**
  * interface for game extensions

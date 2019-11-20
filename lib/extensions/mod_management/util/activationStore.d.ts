@@ -1,7 +1,7 @@
 import { IExtensionApi } from '../../../types/IExtensionContext';
 import { IDeploymentManifest } from '../types/IDeploymentManifest';
 import { IDeployedFile, IDeploymentMethod } from '../types/IDeploymentMethod';
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 /**
  * purge files using information from the manifest
  */

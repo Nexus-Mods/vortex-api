@@ -1,4 +1,4 @@
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 /**
  * management function. Prevents a function from being called too often
  * and, for function returning a promise, it ensures that it's not run
