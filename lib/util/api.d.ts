@@ -10,6 +10,7 @@ import { getActivator, getCurrentActivator } from '../extensions/mod_management/
 import renderModName from '../extensions/mod_management/util/modName';
 import sortMods, { CycleError } from '../extensions/mod_management/util/sort';
 import testModReference from '../extensions/mod_management/util/testModReference';
+import GameStoreHelper from '../util/GameStoreHelper';
 import { Archive } from './archives';
 import copyRecursive from './copyRecursive';
 import { ArgumentInvalid, DataInvalid, MissingInterpreter, NotFound, NotSupportedError, ProcessCanceled, SetupError, UserCanceled } from './CustomErrors';
@@ -35,7 +36,7 @@ import { bytesToString, deBOM, isChildPath, makeQueue, objDiff, pad, sanitizeCSS
 import walk from './walk';
 import SevenZip = require('node-7z');
 import { runElevated, runThreaded } from 'vortex-run';
-export { Archive, ArgumentInvalid, bytesToString, copyFileAtomic, copyRecursive, CycleError, DataInvalid, Debouncer, deBOM, deriveModInstallName as deriveInstallName, epicGamesLauncher, extend, fileMD5, GameNotFound, getActivator, getCurrentActivator, getCurrentLanguage, getGame, getGames, getManifest, getNormalizeFunc, getReduxLog, getVisibleWindow, getVortexPath, github, installIconSet, isChildPath, LazyComponent, lazyRequire, makeQueue, makeReactive, MissingInterpreter, Normalize, NotFound, NotSupportedError, objDiff, onceCB, opn, pad, ProcessCanceled, ReduxProp, readExtensibleDir, relativeTime, renderModName, resolveCategoryName, resolveCategoryPath, runElevated, runThreaded, sanitizeCSSId, setdefault, SetupError, SevenZip, sortMods, steam, ISteamEntry, terminate, testModReference, UserCanceled, walk, };
+export { Archive, ArgumentInvalid, bytesToString, copyFileAtomic, copyRecursive, CycleError, DataInvalid, Debouncer, deBOM, deriveModInstallName as deriveInstallName, epicGamesLauncher, extend, fileMD5, GameNotFound, GameStoreHelper, getActivator, getCurrentActivator, getCurrentLanguage, getGame, getGames, getManifest, getNormalizeFunc, getReduxLog, getVisibleWindow, getVortexPath, github, installIconSet, isChildPath, LazyComponent, lazyRequire, makeQueue, makeReactive, MissingInterpreter, Normalize, NotFound, NotSupportedError, objDiff, onceCB, opn, pad, ProcessCanceled, ReduxProp, readExtensibleDir, relativeTime, renderModName, resolveCategoryName, resolveCategoryPath, runElevated, runThreaded, sanitizeCSSId, setdefault, SetupError, SevenZip, sortMods, steam, ISteamEntry, terminate, testModReference, UserCanceled, walk, };
 export declare type TextGroup = 'mod';
 import I18next from 'i18next';
 export declare function getText(group: TextGroup, textId: string, t: I18next.TFunction): string;
