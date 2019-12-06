@@ -15,5 +15,8 @@ export declare function modNameFromAttributes(mod: {
  * @returns {string}
  */
 declare function modName(mod: IMod, options?: INameOptions): string;
-export declare function renderModReference(ref: IModReference, mod: IMod): string;
+export interface IRenderOptions {
+    version?: boolean;
+}
+export declare function renderModReference(ref: IModReference, mod: IMod, options?: IRenderOptions): string;
 export default modName;

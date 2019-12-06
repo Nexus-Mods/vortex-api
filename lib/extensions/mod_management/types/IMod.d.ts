@@ -43,4 +43,7 @@ export interface IModRule extends IRule {
     fileList?: IFileListItem[];
     installerChoices?: any;
     downloadHint?: IDownloadHint;
+    extra?: {
+        [key: string]: any;
+    };
 }

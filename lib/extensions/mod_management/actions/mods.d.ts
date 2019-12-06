@@ -12,6 +12,11 @@ export declare const removeMod: reduxAct.ComplexActionCreator2<string, string, {
     gameId: string;
     modId: string;
 }, {}>;
+export declare const setModArchiveId: reduxAct.ComplexActionCreator3<string, string, string, {
+    gameId: string;
+    modId: string;
+    archiveId: string;
+}, {}>;
 /**
  * sets the state of a mod (whether it's downloaded, installed, ...)
  */

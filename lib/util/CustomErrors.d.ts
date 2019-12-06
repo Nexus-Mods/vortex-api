@@ -16,7 +16,9 @@ export declare class InsufficientDiskSpace extends Error {
     constructor(mountPoint: string);
 }
 export declare class ProcessCanceled extends Error {
-    constructor(message: string);
+    private mExtraInfo;
+    constructor(message: string, extraInfo?: any);
+    readonly extraInfo: any;
 }
 export declare class DataInvalid extends Error {
     constructor(message: string);

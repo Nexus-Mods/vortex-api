@@ -8,6 +8,7 @@ export interface IModLookupInfo {
     logicalFileName?: string;
     customFileName?: string;
     version: string;
+    game?: string[];
 }
 export declare function referenceEqual(lhs: IModReference, rhs: IModReference): boolean;
 export declare function sanitizeExpression(fileName: string): string;
