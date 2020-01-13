@@ -10,35 +10,34 @@
  *   (virus scanners, functions called from vortex) locking files.
  * - ignoring ENOENT error when deleting a file.
  */
-/// <reference types="node" />
 import { TFunction } from './i18n';
 import PromiseBB from 'bluebird';
-import * as fs from 'fs-extra-promise';
+import * as fs from 'fs-extra';
 export { constants, FSWatcher, Stats, WriteStream } from 'fs';
-export { accessSync, closeSync, createReadStream, createWriteStream, linkSync, openSync, readFileSync, readJSONSync, statSync, symlinkSync, watch, writeFileSync, writeSync, } from 'fs-extra-promise';
+export { accessSync, closeSync, createReadStream, createWriteStream, linkSync, openSync, readFileSync, statSync, symlinkSync, watch, writeFileSync, writeSync, } from 'fs';
 export interface ILinkFileOptions {
     showDialogCallback?: () => boolean;
 }
 export interface IRemoveFileOptions {
     showDialogCallback?: () => boolean;
 }
-declare const chmodAsync: typeof fs.chmodAsync;
-declare const closeAsync: typeof fs.closeAsync;
-declare const fsyncAsync: typeof fs.fsyncAsync;
-declare const lstatAsync: typeof fs.lstatAsync;
-declare const mkdirAsync: typeof fs.mkdirAsync;
-declare const mkdirsAsync: typeof fs.mkdirsAsync;
-declare const moveAsync: typeof fs.moveAsync;
-declare const openAsync: typeof fs.openAsync;
-declare const readdirAsync: typeof fs.readdirAsync;
-declare const readFileAsync: typeof fs.readFileAsync;
-declare const statAsync: typeof fs.statAsync;
-declare const symlinkAsync: typeof fs.symlinkAsync;
-declare const utimesAsync: typeof fs.utimesAsync;
-declare const writeAsync: typeof fs.writeAsync;
-declare const writeFileAsync: typeof fs.writeFileAsync;
-declare const isDirectoryAsync: typeof fs.isDirectoryAsync;
-export { chmodAsync, closeAsync, fsyncAsync, lstatAsync, mkdirAsync, mkdirsAsync, moveAsync, openAsync, readdirAsync, readFileAsync, statAsync, symlinkAsync, utimesAsync, writeAsync, writeFileAsync, isDirectoryAsync, };
+declare const chmodAsync: (path: string, mode: string | number) => PromiseBB<void>;
+declare const closeAsync: (fd: number) => PromiseBB<void>;
+declare const fsyncAsync: (fd: number) => PromiseBB<void>;
+declare const lstatAsync: (path: string) => PromiseBB<fs.Stats>;
+declare const mkdirAsync: (path: string) => PromiseBB<void>;
+declare const mkdirsAsync: (path: string) => PromiseBB<void>;
+declare const moveAsync: (src: string, dest: string, options?: fs.MoveOptions) => PromiseBB<void>;
+declare const openAsync: (path: string, flags: string | number, mode?: number) => PromiseBB<number>;
+declare const readdirAsync: (path: string) => PromiseBB<string[]>;
+declare const readFileAsync: (...args: any[]) => PromiseBB<any>;
+declare const statAsync: (path: string) => PromiseBB<fs.Stats>;
+declare const symlinkAsync: (srcpath: string, dstpath: string, type?: string) => PromiseBB<void>;
+declare const utimesAsync: (path: string, atime: number, mtime: number) => PromiseBB<void>;
+declare const writeAsync: (...args: any[]) => PromiseBB<void>;
+declare const writeFileAsync: (file: string, data: any, options?: fs.WriteFileOptions) => PromiseBB<void>;
+export { chmodAsync, closeAsync, fsyncAsync, lstatAsync, mkdirAsync, mkdirsAsync, moveAsync, openAsync, readdirAsync, readFileAsync, statAsync, symlinkAsync, utimesAsync, writeAsync, writeFileAsync, };
+export declare function isDirectoryAsync(dirPath: string): PromiseBB<boolean>;
 export declare function ensureDirSync(dirPath: string): void;
 export declare function ensureFileAsync(filePath: string): PromiseBB<void>;
 export declare function ensureDirAsync(dirPath: string): PromiseBB<void>;
@@ -64,7 +63,7 @@ export declare function renameAsync(sourcePath: string, destinationPath: string)
 export declare function rmdirAsync(dirPath: string): PromiseBB<void>;
 export declare function removeAsync(remPath: string, options?: IRemoveFileOptions): PromiseBB<void>;
 export declare function readlinkAsync(linkPath: string): PromiseBB<string>;
-export declare function ensureDirWritableAsync(dirPath: string, confirm: () => PromiseBB<void>): PromiseBB<void>;
+export declare function ensureDirWritableAsync(dirPath: string, confirm?: () => PromiseBB<void>): PromiseBB<void>;
 export declare function changeFileOwnership(filePath: string, stat: fs.Stats): PromiseBB<void>;
 export declare function changeFileAttributes(filePath: string, wantedAttributes: number, stat: fs.Stats): PromiseBB<void>;
 export declare function makeFileWritableAsync(filePath: string): PromiseBB<void>;

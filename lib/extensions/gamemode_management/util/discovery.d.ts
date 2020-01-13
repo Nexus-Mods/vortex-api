@@ -4,7 +4,7 @@ import { IDiscoveryResult } from '../types/IDiscoveryResult';
 import { Normalize } from '../../../util/getNormalizeFunc';
 import Promise from 'bluebird';
 export declare type DiscoveredCB = (gameId: string, result: IDiscoveryResult) => void;
-export declare type DiscoveredToolCB = (toolId: string, result: IDiscoveredTool) => void;
+export declare type DiscoveredToolCB = (gameId: string, result: IDiscoveredTool) => void;
 /**
  * run the "quick" discovery using functions provided by the game extension
  *

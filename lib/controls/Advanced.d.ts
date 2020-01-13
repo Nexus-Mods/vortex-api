@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { ComponentEx } from '../util/ComponentEx';
 interface IConnectedProps {
     advancedMode: boolean;

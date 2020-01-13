@@ -1,4 +1,5 @@
 import ExtensionManager from './ExtensionManager';
+import { IExtendedProps, IExtensibleProps } from '../types/IExtensionProvider';
 import * as React from 'react';
 declare type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 export interface IExtensionProps {
@@ -16,13 +17,6 @@ export declare class ExtensionProvider extends React.Component<IExtensionProps, 
     private static childContextTypes;
     getChildContext(): any;
     render(): string | number | boolean | {} | React.ReactElement<any, string | ((props: any) => React.ReactElement<any, string | any | (new (props: any) => React.Component<any, any, any>)>) | (new (props: any) => React.Component<any, any, any>)> | React.ReactPortal;
-}
-export interface IExtensibleProps {
-    group?: string;
-    staticElements?: any[];
-}
-export interface IExtendedProps {
-    objects: any[];
 }
 /**
  * extension function. This function creates a wrapper around a component that

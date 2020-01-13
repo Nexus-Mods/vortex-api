@@ -15,15 +15,14 @@ export interface IIconProps {
     rotateId?: string;
     svgStyle?: string;
 }
-export declare function installIconSet(set: string, setPath: string): Promise<void>;
-declare class Icon extends React.Component<IIconProps, {}> {
-    private static sCache;
-    private mCurrentSize;
-    componentWillMount(): void;
-    componentWillReceiveProps(newProps: IIconProps): void;
+export declare function installIconSet(set: string, setPath: string): Promise<Set<string>>;
+declare class Icon extends React.Component<IIconProps, {
+    sets: {
+        [setId: string]: Set<string>;
+    };
+}> {
+    constructor(props: IIconProps);
     render(): JSX.Element;
-    private setRef;
-    private setIcon;
     private loadSet;
 }
 export default Icon;

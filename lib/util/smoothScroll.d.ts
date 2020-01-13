@@ -1,3 +1,2 @@
-import Promise from 'bluebird';
-declare function smoothScroll(element: HTMLElement, targetPos: number, duration: number): Promise<boolean>;
+declare function smoothScroll(element: HTMLElement, targetPos: number, duration: number): any;
 export default smoothScroll;

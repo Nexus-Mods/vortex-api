@@ -1,8 +1,8 @@
 import { IActionDefinition } from '../types/IActionDefinition';
-import { IExtensibleProps } from '../util/ExtensionProvider';
 import { TFunction } from '../util/i18n';
 import { IActionControlProps } from './ActionControl';
 import * as React from 'react';
+import { IExtensibleProps } from '../types/IExtensionProvider';
 export declare type ButtonType = 'text' | 'icon' | 'both' | 'menu';
 export interface IBaseProps {
     className?: string;
@@ -17,6 +17,7 @@ export interface IBaseProps {
     icon?: string;
     pullRight?: boolean;
     clickAnywhere?: boolean;
+    showAll?: boolean;
     t: TFunction;
 }
 declare type ExportType = IBaseProps & IActionControlProps & IExtensibleProps & React.HTMLAttributes<any>;

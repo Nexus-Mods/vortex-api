@@ -1,6 +1,3 @@
-import Promise from 'bluebird';
-export interface IEpicGamesLauncher {
-    isGameInstalled(name: string): Promise<boolean>;
-}
-declare const instance: IEpicGamesLauncher;
+import { IGameStore } from '../types/api';
+declare const instance: IGameStore;
 export default instance;

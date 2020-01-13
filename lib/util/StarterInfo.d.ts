@@ -3,7 +3,6 @@ import { IDiscoveryResult } from '../extensions/gamemode_management/types/IDisco
 import { IGameStored } from '../extensions/gamemode_management/types/IGameStored';
 import { IToolStored } from '../extensions/gamemode_management/types/IToolStored';
 import { IExtensionApi } from '../types/IExtensionContext';
-import Promise from 'bluebird';
 export interface IStarterInfo {
     id: string;
     gameId: string;
@@ -15,6 +14,7 @@ export interface IStarterInfo {
     commandLine: string[];
     workingDirectory: string;
     exclusive: boolean;
+    detach: boolean;
     environment: {
         [key: string]: string;
     };
@@ -28,9 +28,7 @@ declare type OnShowErrorFunc = (message: string, details?: string | Error | any,
 declare class StarterInfo implements IStarterInfo {
     static getGameIcon(game: IGameStored, gameDiscovery: IDiscoveryResult): string;
     static toolIconRW(gameId: string, toolId: string): string;
-    static run(info: StarterInfo, api: IExtensionApi, onShowError: OnShowErrorFunc): Promise<any>;
-    private static executeWithSteam;
-    private static executeWithEpic;
+    static run(info: StarterInfo, api: IExtensionApi, onShowError: OnShowErrorFunc): any;
     private static runGameExecutable;
     private static runThroughLauncher;
     private static gameIcon;
@@ -55,11 +53,13 @@ declare class StarterInfo implements IStarterInfo {
         [key: string]: any;
     };
     exclusive: boolean;
+    detach: boolean;
+    onStart?: 'hide' | 'hide_recover' | 'close';
     private mExtensionPath;
     private mLogoName;
     private mIconPathCache;
     constructor(game: IGameStored, gameDiscovery: IDiscoveryResult, tool?: IToolStored, toolDiscovery?: IDiscoveredTool);
-    readonly iconPath: string;
+    get iconPath(): string;
     private initFromGame;
     private initFromTool;
 }

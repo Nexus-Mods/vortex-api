@@ -3,6 +3,7 @@ import { IDialog } from './IDialog';
 import { INotification } from './INotification';
 import { ICategoryDictionary } from '../extensions/category_management/types/ICategoryDictionary';
 import { IDownload } from '../extensions/download_management/types/IDownload';
+import { IAvailableExtension, IExtension } from '../extensions/extension_manager/types';
 import { IDiscoveryResult } from '../extensions/gamemode_management/types/IDiscoveryResult';
 import { IGameStored } from '../extensions/gamemode_management/types/IGameStored';
 import { IMod } from '../extensions/mod_management/types/IMod';
@@ -254,6 +255,8 @@ export interface IStateGameMode {
 }
 export interface IBrowserState {
     url: string;
+    instructions: string;
+    subscriber: string;
 }
 export interface IModTable {
     [gameId: string]: {
@@ -279,6 +282,13 @@ export interface IState {
         discovery: IDiscoveryState;
         notifications: INotificationState;
         browser: IBrowserState;
+        extensions: {
+            available: IAvailableExtension[];
+            installed: {
+                [extId: string]: IExtension;
+            };
+            updateTime: number;
+        };
     };
     settings: ISettings;
     persistent: {

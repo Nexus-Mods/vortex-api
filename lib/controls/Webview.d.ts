@@ -1,5 +1,5 @@
 import * as React from 'react';
-export interface IWebView {
+export interface IWebView extends React.DetailedHTMLProps<React.WebViewHTMLAttributes<HTMLWebViewElement>, HTMLWebViewElement> {
     src?: string;
     style?: any;
     autosize?: boolean;
@@ -17,6 +17,7 @@ export interface IWebView {
 }
 export interface IWebviewProps {
     onLoading?: (loading: boolean) => void;
+    onNewWindow?: (url: string, disposition: string) => void;
 }
 declare class Webview extends React.Component<IWebviewProps & IWebView, {}> {
     private mNode;
@@ -25,6 +26,7 @@ declare class Webview extends React.Component<IWebviewProps & IWebView, {}> {
     render(): JSX.Element;
     private startLoad;
     private stopLoad;
+    private newWindow;
     private logMessage;
 }
 export default Webview;

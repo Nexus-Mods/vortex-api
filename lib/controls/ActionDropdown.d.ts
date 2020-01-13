@@ -1,4 +1,4 @@
-import { IExtensibleProps } from '../util/ExtensionProvider';
+import { IExtensibleProps } from '../types/IExtensionProvider';
 import { IActionControlProps } from './ActionControl';
 import * as React from 'react';
 export declare type ButtonType = 'text' | 'icon' | 'both' | 'menu';

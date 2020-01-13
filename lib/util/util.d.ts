@@ -60,7 +60,7 @@ export declare function objDiff(lhs: any, rhs: any, skip?: string[]): any;
  * will be called only after everything before it in the queue is finished
  * and with the promise that nothing else in the queue is run in parallel.
  */
-export declare function makeQueue(): (func: () => Promise<any>, tryOnly: boolean) => Promise<unknown>;
+export declare function makeQueue(): (func: () => any, tryOnly: boolean) => any;
 /**
  * spawn this application itself
  * @param args
@@ -113,14 +113,14 @@ export declare function isFilenameValid(input: string): boolean;
 export declare function isPathValid(input: string, allowRelative?: boolean): boolean;
 export { INVALID_FILEPATH_CHARACTERS, INVALID_FILENAME_RE, INVALID_FILENAME_CHARACTERS, };
 export declare function isMajorDowngrade(previous: string, current: string): boolean;
+export interface IFlattenParameters {
+    maxLength?: number;
+    separator?: string;
+    baseKey?: string[];
+}
 /**
  * turn an object into a flat one meaning all values are PODs, no nested objects/arrays
  * @param obj the input object
- * @param key the base key that will be included in all attribute names. You will usually
- *            want to leave this as an empty array unless the result gets merged with
- *            something else
- * @param separator the separator character. Defaults to a dot but if you intend to unflatten
- *                  the object at some point it may make sense to use something less likely to
- *                  be part of a key
+ * @param options parameters controlling the flattening process
  */
-export declare function flatten(obj: any, key?: string[], separator?: string): any;
+export declare function flatten(obj: any, options?: IFlattenParameters): any;

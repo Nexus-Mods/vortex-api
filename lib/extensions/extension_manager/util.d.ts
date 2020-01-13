@@ -14,4 +14,4 @@ export declare function fetchAvailableExtensions(forceCache: boolean, forceDownl
     extensions: IAvailableExtension[];
 }>;
 export declare function downloadAndInstallExtension(api: IExtensionApi, ext: IExtensionDownloadInfo): Promise<boolean>;
-export declare function readExtensibleDir(extType: ExtensionType, bundledPath: string, customPath: string): Promise<any[]>;
+export declare function readExtensibleDir(extType: ExtensionType, bundledPath: string, customPath: string): any;
