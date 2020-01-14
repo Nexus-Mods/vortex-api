@@ -1,6 +1,6 @@
 import * as reduxAct from 'redux-act';
-export declare const setStateVersion: reduxAct.ComplexActionCreator1<{}, {}, {}>;
-export declare const setApplicationVersion: reduxAct.ComplexActionCreator1<{}, {}, {}>;
+export declare const setStateVersion: reduxAct.ComplexActionCreator1<unknown, unknown, {}>;
+export declare const setApplicationVersion: reduxAct.ComplexActionCreator1<unknown, unknown, {}>;
 export declare const setExtensionEnabled: reduxAct.ComplexActionCreator2<string, boolean, {
     extensionId: string;
     enabled: boolean;

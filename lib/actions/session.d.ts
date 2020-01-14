@@ -44,7 +44,7 @@ export declare const setToolPid: reduxAct.ComplexActionCreator3<string, number, 
 export declare const setToolStopped: reduxAct.ComplexActionCreator1<string, {
     exePath: string;
 }, {}>;
-export declare const setExtensionLoadFailures: reduxAct.ComplexActionCreator1<{}, {}, {}>;
+export declare const setExtensionLoadFailures: reduxAct.ComplexActionCreator1<unknown, unknown, {}>;
 export declare const setUIBlocker: reduxAct.ComplexActionCreator4<string, string, string, boolean, {
     id: string;
     icon: string;

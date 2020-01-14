@@ -2,7 +2,7 @@ import * as reduxAct from 'redux-act';
 /**
  * change the user interface language
  */
-export declare const setLanguage: reduxAct.ComplexActionCreator1<{}, {}, {}>;
+export declare const setLanguage: reduxAct.ComplexActionCreator1<unknown, unknown, {}>;
 /**
  * enable or disable advanced mode
  */
@@ -20,3 +20,4 @@ export declare const showUsageInstruction: reduxAct.ComplexActionCreator2<string
     usageId: string;
     show: boolean;
 }, {}>;
+export declare const setRelativeTimes: reduxAct.ComplexActionCreator1<boolean, boolean, {}>;

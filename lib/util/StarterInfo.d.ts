@@ -30,6 +30,8 @@ declare class StarterInfo implements IStarterInfo {
     static getGameIcon(game: IGameStored, gameDiscovery: IDiscoveryResult): string;
     static toolIconRW(gameId: string, toolId: string): string;
     static run(info: StarterInfo, api: IExtensionApi, onShowError: OnShowErrorFunc): Promise<any>;
+    private static executeWithSteam;
+    private static executeWithEpic;
     private static runGameExecutable;
     private static runThroughLauncher;
     private static gameIcon;
@@ -60,7 +62,7 @@ declare class StarterInfo implements IStarterInfo {
     private mLogoName;
     private mIconPathCache;
     constructor(game: IGameStored, gameDiscovery: IDiscoveryResult, tool?: IToolStored, toolDiscovery?: IDiscoveredTool);
-    readonly iconPath: string;
+    get iconPath(): string;
     private initFromGame;
     private initFromTool;
 }

@@ -3,11 +3,11 @@ import { IDialog } from './IDialog';
 import { INotification } from './INotification';
 import { ICategoryDictionary } from '../extensions/category_management/types/ICategoryDictionary';
 import { IDownload } from '../extensions/download_management/types/IDownload';
+import { IAvailableExtension, IExtension } from '../extensions/extension_manager/types';
 import { IDiscoveryResult } from '../extensions/gamemode_management/types/IDiscoveryResult';
 import { IGameStored } from '../extensions/gamemode_management/types/IGameStored';
 import { IMod } from '../extensions/mod_management/types/IMod';
 import { IProfile } from '../extensions/profile_management/types/IProfile';
-import { IAvailableExtension, IExtension } from '../extensions/extension_manager/types';
 export { IDownload, IDiscoveryResult, IGameStored, IMod, IProfile };
 /**
  * interface to represent a position on the screen
@@ -166,6 +166,7 @@ export interface ISettingsInterface {
     profilesVisible: boolean;
     desktopNotifications: boolean;
     hideTopLevelCategory: boolean;
+    relativeTimes: boolean;
     dashboardLayout: string[];
     dashletSettings: {
         [dashletId: string]: IDashletSettings;

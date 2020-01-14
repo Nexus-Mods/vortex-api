@@ -1,6 +1,7 @@
 import * as Promise from 'bluebird';
 import * as React from 'react';
 export interface IIconProps {
+    id?: string;
     className?: string;
     style?: React.CSSProperties;
     set?: string;

@@ -60,7 +60,7 @@ function output(moduleName, basePath) {
 
 function loaders(version) {
   const res = [
-    {test: /\.tsx?$/, loader: 'ts-loader' },
+    {test: /\.tsx?$/, loader: 'ts-loader', options: { transpileOnly: process.env['BUILD_QUICK_AND_DIRTY'] !== undefined } },
   ];
   if (version < 4) {
     res.push({test: /\.json$/, loader: 'json-loader'});
