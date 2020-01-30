@@ -38,6 +38,7 @@ export interface IIconProps {
      * on demand
      */
     getSet: (set: string) => Promise<Set<string>>;
+    onContextMenu?: React.MouseEventHandler<any>;
 }
 /**
  * renders a svg icon (as an instance/ref of a globally defined svg)

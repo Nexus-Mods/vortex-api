@@ -10,6 +10,7 @@
  *   (virus scanners, functions called from vortex) locking files.
  * - ignoring ENOENT error when deleting a file.
  */
+/// <reference types="node" />
 import { TFunction } from './i18n';
 import PromiseBB from 'bluebird';
 import * as fs from 'fs-extra';
@@ -35,8 +36,9 @@ declare const statAsync: (path: string) => PromiseBB<fs.Stats>;
 declare const symlinkAsync: (srcpath: string, dstpath: string, type?: string) => PromiseBB<void>;
 declare const utimesAsync: (path: string, atime: number, mtime: number) => PromiseBB<void>;
 declare const writeAsync: (...args: any[]) => PromiseBB<void>;
+declare const readAsync: (...args: any[]) => PromiseBB<void>;
 declare const writeFileAsync: (file: string, data: any, options?: fs.WriteFileOptions) => PromiseBB<void>;
-export { chmodAsync, closeAsync, fsyncAsync, lstatAsync, mkdirAsync, mkdirsAsync, moveAsync, openAsync, readdirAsync, readFileAsync, statAsync, symlinkAsync, utimesAsync, writeAsync, writeFileAsync, };
+export { chmodAsync, closeAsync, fsyncAsync, lstatAsync, mkdirAsync, mkdirsAsync, moveAsync, openAsync, readdirAsync, readAsync, readFileAsync, statAsync, symlinkAsync, utimesAsync, writeAsync, writeFileAsync, };
 export declare function isDirectoryAsync(dirPath: string): PromiseBB<boolean>;
 export declare function ensureDirSync(dirPath: string): void;
 export declare function ensureFileAsync(filePath: string): PromiseBB<void>;

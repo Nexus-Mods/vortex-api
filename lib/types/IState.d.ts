@@ -166,6 +166,7 @@ export interface ISettingsInterface {
     profilesVisible: boolean;
     desktopNotifications: boolean;
     hideTopLevelCategory: boolean;
+    relativeTimes: boolean;
     dashboardLayout: string[];
     dashletSettings: {
         [dashletId: string]: IDashletSettings;
@@ -218,8 +219,16 @@ export interface ISettingsMods {
     showDropzone: boolean;
     confirmPurge: boolean;
 }
+export interface ISettingsNotification {
+    suppress: {
+        [notificationId: string]: boolean;
+    };
+}
 export interface ISettingsUpdate {
     channel: 'stable' | 'beta' | 'none';
+}
+export interface ISettingsWorkarounds {
+    userSymlinks: boolean;
 }
 export interface ISettings {
     interface: ISettingsInterface;
@@ -229,8 +238,10 @@ export interface ISettings {
     window: IWindow;
     downloads: ISettingsDownloads;
     mods: ISettingsMods;
+    notifications: ISettingsNotification;
     tables: ITableStates;
     update: ISettingsUpdate;
+    workarounds: ISettingsWorkarounds;
 }
 export interface IStateTransactions {
     transfer: {};

@@ -176,6 +176,7 @@ export interface IErrorOptions {
     isBBCode?: boolean;
     isHTML?: boolean;
     allowReport?: boolean;
+    allowSuppress?: boolean;
     hideDetails?: boolean;
     replace?: {
         [key: string]: string;
@@ -222,7 +223,7 @@ export interface IRunOptions {
     shell?: boolean;
     detach?: boolean;
     expectSuccess?: boolean;
-    onSpawned?: () => void;
+    onSpawned?: (pid?: number) => void;
 }
 /**
  * all parameters passed to runExecutable. This is used to support interpreters
@@ -276,6 +277,12 @@ export interface IExtensionApi {
      * @memberOf IExtensionApi
      */
     dismissNotification?: (id: string) => void;
+    /**
+     * hides a notification and don't show it again
+     * if this is called with the second parameter set to false, it re-enables the notification
+     * instead
+     */
+    suppressNotification?: (id: string, suppress?: boolean) => void;
     /**
      * show a system dialog to open a single file
      *
@@ -444,7 +451,7 @@ export interface IExtensionApi {
      * Note that listeners should report all errors themselves, it is considered a bug if the listener
      * returns a rejected promise.
      */
-    onAsync: (eventName: string, listener: (...args: any[]) => Promise<any>) => void;
+    onAsync: (eventName: string, listener: (...args: any[]) => PromiseLike<any>) => void;
     /**
      * returns true if the running version of Vortex is considered outdated. This is mostly used
      * to determine if feedback should be sent to Nexus Mods.
@@ -835,6 +842,21 @@ export interface IExtensionContext {
      *                           version number is updated.
      */
     registerMigration: (migrate: (oldVersion: string) => Promise<void>) => void;
+    /**
+     * register a file to be stored with the profile. It will always be synchronised with the current
+     * profile, so when users switch to a different profile, this file will be copied to the
+     * profile they're switching away from, then the corresponding file from the profile they're
+     * switching to is copied to filePath.
+     * Right now this only supports static file paths, no patterns (glob or regular expressions) and
+     * no way to dynamically find the file to synchronize
+     */
+    registerProfileFile?: (gameId: string, filePath: string) => void;
+    /**
+     * register a profile feature that can be toggled/configured on the profiles screen.
+     * The configured value can be queried at
+     * state.persistent.profiles.<profile id>.features.<feature id>
+     */
+    registerProfileFeature?: (featureId: string, type: string, icon: string, label: string, description: string, supported: () => boolean) => void;
     /**
      * specify that a certain range of versions of vortex is required
      * (see https://www.npmjs.com/package/semver for syntax documentation).

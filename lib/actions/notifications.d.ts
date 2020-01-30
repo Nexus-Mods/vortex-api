@@ -40,6 +40,7 @@ export declare const addDialog: reduxAct.ComplexActionCreator6<string, string, s
  */
 export declare const dismissDialog: reduxAct.ComplexActionCreator1<any, any, {}>;
 export declare function fireNotificationAction(notiId: string, notiProcess: string, action: number, dismiss: NotificationDismiss): void;
+export declare function setupNotificationSuppression(cb: (id: string) => boolean): void;
 /**
  * show a notification
  *

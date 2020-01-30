@@ -17,4 +17,9 @@ export interface INormalizeParameters {
  * @returns {Promise<Normalize>}
  */
 declare function getNormalizeFunc(testPath: string, parameters?: INormalizeParameters): Promise<Normalize>;
+/**
+ * creates a proxy for a dictionary that makes all key access normalized with the specified
+ * normalization function
+ */
+export declare function makeNormalizingDict<T extends object>(input: T, normalize: Normalize): T;
 export default getNormalizeFunc;

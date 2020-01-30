@@ -21,6 +21,7 @@ export interface IRowProps {
     container: HTMLElement;
     visible: boolean;
     grouped: boolean;
+    group: string;
     onSetVisible: (rowId: string, visible: boolean) => void;
     onHighlight: (rowId: string, highlight: boolean) => void;
 }
