@@ -16,8 +16,11 @@ export declare type IExtensionWithState = IExtension & IExtensionState & {
 };
 export interface IExtensionDownloadInfo {
     name: string;
-    modId: number;
-    fileId: number;
+    modId?: number;
+    fileId?: number;
+    github?: string;
+    githubRawPath?: string;
+    githubRelease?: string;
 }
 export interface IAvailableExtension extends IExtensionDownloadInfo {
     description: {
@@ -38,4 +41,9 @@ export interface IAvailableExtension extends IExtensionDownloadInfo {
 export interface IExtensionManifest {
     last_updated: number;
     extensions: IAvailableExtension[];
+}
+export interface ISelector {
+    modId: number;
+    github: string;
+    githubRawPath: string;
 }

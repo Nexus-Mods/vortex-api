@@ -21,7 +21,9 @@ export interface IStarterInfo {
 }
 declare type OnShowErrorFunc = (message: string, details?: string | Error | any, allowReport?: boolean) => void;
 /**
- * holds info about an executable to start
+ * wrapper for information about a game or tool, combining static and runtime/discovery information
+ * for the purpose of actually starting them in a uniform way.
+ * This implements things like running the game through a launcher (steam/epic/...) if necessary
  *
  * @class StarterInfo
  */
@@ -29,7 +31,7 @@ declare class StarterInfo implements IStarterInfo {
     static getGameIcon(game: IGameStored, gameDiscovery: IDiscoveryResult): string;
     static toolIconRW(gameId: string, toolId: string): string;
     static run(info: StarterInfo, api: IExtensionApi, onShowError: OnShowErrorFunc): any;
-    private static runGameExecutable;
+    private static runDirectly;
     private static runThroughLauncher;
     private static gameIcon;
     private static gameIconRW;
