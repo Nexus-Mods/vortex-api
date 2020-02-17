@@ -1,2 +1,2 @@
 import * as reduxAct from 'redux-act';
-export declare const setUserAPIKey: reduxAct.ComplexActionCreator1<unknown, unknown, {}>;
+export declare const setUserAPIKey: reduxAct.ComplexActionCreator1<{}, {}, {}>;

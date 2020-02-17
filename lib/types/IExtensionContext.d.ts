@@ -217,7 +217,7 @@ export interface IRunOptions {
     shell?: boolean;
     detach?: boolean;
     expectSuccess?: boolean;
-    onSpawned?: () => void;
+    onSpawned?: (pid?: number) => void;
 }
 /**
  * all parameters passed to runExecutable. This is used to support interpreters
@@ -810,10 +810,13 @@ export interface IExtensionContext {
      * it can be done from there. The version that was previously run is being passed to the migration
      * function so the extension can determine if the upgrade is actually necessary and if so, which
      * (if there are multiple).
+     * IMPORTANT: Use the old version only to save time, your migration must not cause break anything
+     *   if this version is inaccurate. E.g. if state was manipulated/damaged, Vortex may send 0.0.0
+     *   for the old version even when the current version was run before.
      * If the extension was never loaded before, the version "0.0.0" is passed in.
      * Please note: Vortex will continue running, with the extension loaded, after migrate is called,
      *   it is not currently possible to delay loading an extension until the migration is complete.
-     *   This means one of these to be true:
+     *   This means one of these must be true:
      *     - the extension is functional without the migration, at least so much so that it doesn't
      *       cause "damage"
      *     - the extension disables/blocks itself until the migration is done
@@ -824,6 +827,21 @@ export interface IExtensionContext {
      *                           version number is updated.
      */
     registerMigration: (migrate: (oldVersion: string) => Promise<void>) => void;
+    /**
+     * register a file to be stored with the profile. It will always be synchronised with the current
+     * profile, so when users switch to a different profile, this file will be copied to the
+     * profile they're switching away from, then the corresponding file from the profile they're
+     * switching to is copied to filePath.
+     * Right now this only supports static file paths, no patterns (glob or regular expressions) and
+     * no way to dynamically find the file to synchronize
+     */
+    registerProfileFile?: (gameId: string, filePath: string) => void;
+    /**
+     * register a profile feature that can be toggled/configured on the profiles screen.
+     * The configured value can be queried at
+     * state.persistent.profiles.<profile id>.features.<feature id>
+     */
+    registerProfileFeature?: (featureId: string, type: string, icon: string, label: string, description: string, supported: () => boolean) => void;
     /**
      * specify that a certain range of versions of vortex is required
      * (see https://www.npmjs.com/package/semver for syntax documentation).

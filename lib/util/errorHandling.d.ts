@@ -1,7 +1,7 @@
 import { IErrorOptions, IExtensionApi } from '../types/api';
 import { IError } from '../types/IError';
+import { IFeedbackResponse } from '@nexusmods/nexus-api';
 import * as Promise from 'bluebird';
-import { IFeedbackResponse } from 'nexus-api';
 interface IErrorContext {
     [id: string]: string;
 }

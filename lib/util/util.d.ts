@@ -60,7 +60,7 @@ export declare function objDiff(lhs: any, rhs: any, skip?: string[]): any;
  * will be called only after everything before it in the queue is finished
  * and with the promise that nothing else in the queue is run in parallel.
  */
-export declare function makeQueue(): (func: () => Promise<any>, tryOnly: boolean) => Promise<unknown>;
+export declare function makeQueue(): (func: () => Promise<any>, tryOnly: boolean) => Promise<{}>;
 /**
  * spawn this application itself
  * @param args

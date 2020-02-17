@@ -2,7 +2,7 @@ import * as reduxAct from 'redux-act';
 /**
  * change the user interface language
  */
-export declare const setLanguage: reduxAct.ComplexActionCreator1<unknown, unknown, {}>;
+export declare const setLanguage: reduxAct.ComplexActionCreator1<{}, {}, {}>;
 /**
  * enable or disable advanced mode
  */

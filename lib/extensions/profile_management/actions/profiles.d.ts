@@ -2,9 +2,9 @@ import * as reduxAct from 'redux-act';
 /**
  * add or edit a profile
  */
-export declare const setProfile: reduxAct.ComplexActionCreator1<unknown, unknown, {}>;
-export declare const removeProfile: reduxAct.ComplexActionCreator1<unknown, unknown, {}>;
-export declare const willRemoveProfile: reduxAct.ComplexActionCreator1<unknown, unknown, {}>;
+export declare const setProfile: reduxAct.ComplexActionCreator1<{}, {}, {}>;
+export declare const removeProfile: reduxAct.ComplexActionCreator1<{}, {}, {}>;
+export declare const willRemoveProfile: reduxAct.ComplexActionCreator1<{}, {}, {}>;
 /**
  * enable or disable a mod in a profile
  */

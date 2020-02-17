@@ -13,26 +13,26 @@ export declare class Archive {
     /**
      * list files at the specified path
      */
-    get readDir(): (archivePath: string) => Promise<string[]>;
+    readonly readDir: (archivePath: string) => Promise<string[]>;
     /**
      * read a file at the specified path via a stream
      */
-    get readFile(): (filePath: string) => NodeJS.ReadableStream;
+    readonly readFile: (filePath: string) => NodeJS.ReadableStream;
     /**
      * extract a single file
      */
-    get extractFile(): (filePath: string, outputPath: string) => Promise<void>;
+    readonly extractFile: (filePath: string, outputPath: string) => Promise<void>;
     /**
      * extract the entire archive
      */
-    get extractAll(): (outputPath: string) => Promise<void>;
+    readonly extractAll: (outputPath: string) => Promise<void>;
     /**
      * create this archive from the files in sourcePath
      */
-    get create(): (sourcePath: string) => Promise<void>;
+    readonly create: (sourcePath: string) => Promise<void>;
     /**
      * add a single file to the archive
      */
-    get addFile(): (filePath: string, sourcePath: string) => Promise<void>;
-    get write(): () => Promise<void>;
+    readonly addFile: (filePath: string, sourcePath: string) => Promise<void>;
+    readonly write: () => Promise<void>;
 }

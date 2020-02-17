@@ -6,7 +6,7 @@ import * as Promise from 'bluebird';
  * purge files using information from the manifest
  */
 export declare function fallbackPurge(api: IExtensionApi): Promise<void>;
-export declare function withActivationLock(func: () => Promise<any>, tryOnly?: boolean): Promise<unknown>;
+export declare function withActivationLock(func: () => Promise<any>, tryOnly?: boolean): Promise<{}>;
 /**
  * return a manifest (detailing which files are currently deployed by Vortex)
  * Please note that the manifest is intended only as kind of a fallback, core functionality

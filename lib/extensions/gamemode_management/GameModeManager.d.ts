@@ -38,7 +38,7 @@ declare class GameModeManager {
      * @memberOf GameModeManager
      */
     setupGameMode(gameMode: string): Promise<void>;
-    get games(): IGame[];
+    readonly games: IGame[];
     /**
      * starts game discovery, only using the search function from the game
      * extension

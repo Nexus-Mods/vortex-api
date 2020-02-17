@@ -48,7 +48,7 @@ declare class ExtensionManager {
     private mUIStartedPromise;
     constructor(initStore?: Redux.Store<any>, eventEmitter?: NodeJS.EventEmitter);
     setTranslation(translator: I18next.i18n): void;
-    get extensions(): IRegisteredExtension[];
+    readonly extensions: IRegisteredExtension[];
     /**
      * sets up the extension manager to work with the specified store
      *
@@ -103,7 +103,7 @@ declare class ExtensionManager {
     doOnce(): Promise<void>;
     renderStyle(): Promise<void>;
     getProtocolHandler(protocol: string): (url: string, install: boolean) => void;
-    get numOnce(): number;
+    readonly numOnce: number;
     onLoadingExtension(cb: (name: string, idx: number) => void): void;
     setUIReady(): void;
     private getModDB;

@@ -14,13 +14,13 @@ export declare class GamePathNotMatched extends Error {
     private mGamePath;
     private mEntryPaths;
     constructor(gamePath: string, entries: string[]);
-    get gamePath(): string;
-    get steamEntryPaths(): string[];
+    readonly gamePath: string;
+    readonly steamEntryPaths: string[];
 }
 export declare class GameNotFound extends Error {
     private mSearch;
     constructor(search: string);
-    get search(): any;
+    readonly search: any;
 }
 export interface ISteam {
     findByName(namePattern: string): Promise<ISteamEntry>;

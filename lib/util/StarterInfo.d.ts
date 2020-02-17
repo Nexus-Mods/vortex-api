@@ -62,7 +62,7 @@ declare class StarterInfo implements IStarterInfo {
     private mLogoName;
     private mIconPathCache;
     constructor(game: IGameStored, gameDiscovery: IDiscoveryResult, tool?: IToolStored, toolDiscovery?: IDiscoveredTool);
-    get iconPath(): string;
+    readonly iconPath: string;
     private initFromGame;
     private initFromTool;
 }

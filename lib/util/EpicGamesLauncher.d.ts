@@ -12,7 +12,7 @@ export interface IEpicGamesLauncher {
 export declare class EpicGameNotFound extends Error {
     private mName;
     constructor(name: string);
-    get epicName(): any;
+    readonly epicName: any;
 }
 declare const instance: IEpicGamesLauncher;
 export default instance;
