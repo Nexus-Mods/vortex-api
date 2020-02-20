@@ -123,6 +123,7 @@ export interface IExtensionState {
     enabled: boolean | 'failed';
     version: string;
     remove: boolean;
+    endorsed: string;
 }
 /**
  * settings relating to the vortex application itself

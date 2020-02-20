@@ -9,6 +9,10 @@ export declare const setExtensionVersion: reduxAct.ComplexActionCreator2<string,
     extensionId: string;
     version: string;
 }, {}>;
+export declare const setExtensionEndorsed: reduxAct.ComplexActionCreator2<string, string, {
+    extensionId: string;
+    endorsed: string;
+}, {}>;
 export declare const removeExtension: reduxAct.ComplexActionCreator1<any, any, {}>;
 export declare const forgetExtension: reduxAct.ComplexActionCreator1<any, any, {}>;
 export declare const completeMigration: reduxAct.ComplexActionCreator1<any, any, {}>;

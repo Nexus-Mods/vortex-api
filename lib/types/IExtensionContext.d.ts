@@ -15,7 +15,7 @@ import { DialogType, IDialogResult } from './IDialog';
 import { IGame } from './IGame';
 import { IGameStore } from './IGameStore';
 import { INotification } from './INotification';
-import { IDiscoveryResult } from './IState';
+import { IDiscoveryResult, IState } from './IState';
 import { ITableAttribute } from './ITableAttribute';
 import { ITestResult } from './ITestResult';
 import Promise from 'bluebird';
@@ -23,6 +23,7 @@ import { ILookupResult, IModInfo, IReference } from 'modmeta-db';
 import * as React from 'react';
 import * as Redux from 'redux';
 import { ThunkDispatch } from 'redux-thunk';
+import { IRegisteredExtension } from '../util/ExtensionManager';
 export { TestSupported, IInstallResult, IInstruction, IDeployedFile, IDeploymentMethod, IFileChange, ILookupResult, IModInfo, IReference, InstallFunc, ISupportedResult, ProgressDelegate };
 export interface ThunkStore<S> extends Redux.Store<S> {
     dispatch: ThunkDispatch<S, null, Redux.Action>;
@@ -75,7 +76,11 @@ export interface IDashletOptions {
     fixed?: boolean;
     closable?: boolean;
 }
-export declare type RegisterDashlet = (title: string, width: 1 | 2 | 3, height: 1 | 2 | 3 | 4 | 5, position: number, component: React.ComponentClass<any> | React.FunctionComponent<any>, isVisible: (state: any) => boolean, props: PropsCallback, options: IDashletOptions) => void;
+/**
+ * @param height Height of the dashlet in rows. Please note that 1 row is very slim, it's not
+ *               commonly used in practice
+ */
+export declare type RegisterDashlet = (title: string, width: 1 | 2 | 3, height: 1 | 2 | 3 | 4 | 5 | 6, position: number, component: React.ComponentClass<any> | React.FunctionComponent<any>, isVisible: (state: any) => boolean, props: PropsCallback, options: IDashletOptions) => void;
 export declare type RegisterDialog = (id: string, element: React.ComponentClass<any> | React.StatelessComponent<any>, props?: PropsCallback) => void;
 export declare type ToDoType = 'settings' | 'search' | 'workaround' | 'more';
 export interface IToDoButton {
@@ -196,15 +201,15 @@ export declare type GameInfoQuery = (game: any) => Promise<{
     [key: string]: IGameDetail;
 }>;
 export interface IMergeFilter {
-    baseFiles: () => Array<{
+    baseFiles: (deployedFiles: IDeployedFile[]) => Array<{
         in: string;
         out: string;
     }>;
     filter: (fileName: string) => boolean;
 }
 /**
- * callback to determine if a merge function applies to a game. If true, return an
- * object that describes what files to merge
+ * callback to determine if a merge function applies to a game. If so, return an
+ * object that describes what files to merge, otherwise return undefined
  */
 export declare type MergeTest = (game: IGame, gameDiscovery: IDiscoveryResult) => IMergeFilter;
 /**
@@ -470,6 +475,14 @@ export interface IExtensionApi {
      * Specifically events can only be sent once this event has been triggered
      */
     awaitUI: () => Promise<void>;
+    /**
+     * wrapper for api.store.getState() with the benefit that it automatically assigns a type
+     */
+    getState: <T extends IState = IState>() => T;
+    /**
+     * get a list of extensions currently loaded into Vortex
+     */
+    getLoadedExtensions: () => IRegisteredExtension[];
 }
 export interface IStateVerifier {
     description: (input: any) => string;
@@ -828,10 +841,13 @@ export interface IExtensionContext {
      * it can be done from there. The version that was previously run is being passed to the migration
      * function so the extension can determine if the upgrade is actually necessary and if so, which
      * (if there are multiple).
+     * IMPORTANT: Use the old version only to save time, your migration must not cause break anything
+     *   if this version is inaccurate. E.g. if state was manipulated/damaged, Vortex may send 0.0.0
+     *   for the old version even when the current version was run before.
      * If the extension was never loaded before, the version "0.0.0" is passed in.
      * Please note: Vortex will continue running, with the extension loaded, after migrate is called,
      *   it is not currently possible to delay loading an extension until the migration is complete.
-     *   This means one of these to be true:
+     *   This means one of these must be true:
      *     - the extension is functional without the migration, at least so much so that it doesn't
      *       cause "damage"
      *     - the extension disables/blocks itself until the migration is done

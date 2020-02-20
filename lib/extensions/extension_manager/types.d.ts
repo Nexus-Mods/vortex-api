@@ -33,10 +33,15 @@ export interface IAvailableExtension extends IExtensionDownloadInfo {
     gameName?: string;
     image: string;
     author: string;
+    uploader: string;
     version: string;
     downloads: number;
     endorsements: number;
+    timestamp: number;
     tags: string[];
+    dependencies?: {
+        [key: string]: any;
+    };
 }
 export interface IExtensionManifest {
     last_updated: number;

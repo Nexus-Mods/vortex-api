@@ -4,6 +4,7 @@ declare class StyleManager {
     private static RENDER_DELAY;
     private mPartials;
     private mRenderDebouncer;
+    private mExpectingResult;
     constructor(api: IExtensionApi);
     /**
      * insert or replace a sheet.

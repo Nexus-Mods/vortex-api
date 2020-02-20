@@ -2,10 +2,11 @@
 import { IExtension } from '../extensions/extension_manager/types';
 import { ExtensionInit } from '../types/Extension';
 import { IExtensionApi, ThunkStore } from '../types/IExtensionContext';
+import { IState } from '../types/IState';
+import { i18n } from './i18n';
 import Promise from 'bluebird';
 import * as Redux from 'redux';
-import { i18n } from './i18n';
-interface IRegisteredExtension {
+export interface IRegisteredExtension {
     name: string;
     path: string;
     dynamic: boolean;
@@ -46,6 +47,7 @@ declare class ExtensionManager {
     private mForceDBReconnect;
     private mOnUIStarted;
     private mUIStartedPromise;
+    private mOutdated;
     constructor(initStore?: Redux.Store<any>, eventEmitter?: NodeJS.EventEmitter);
     setTranslation(translator: i18n): void;
     get extensions(): IRegisteredExtension[];
@@ -57,7 +59,7 @@ declare class ExtensionManager {
      *
      * @memberOf ExtensionManager
      */
-    setStore<S>(store: ThunkStore<S>): void;
+    setStore<S extends IState>(store: ThunkStore<S>): void;
     /**
      * set up the api for the main process.
      *

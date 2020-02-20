@@ -15,6 +15,8 @@ export interface IStarterInfo {
     workingDirectory: string;
     exclusive: boolean;
     detach: boolean;
+    shell: boolean;
+    onStart?: 'hide' | 'hide_recover' | 'close';
     environment: {
         [key: string]: string;
     };
@@ -30,7 +32,7 @@ declare type OnShowErrorFunc = (message: string, details?: string | Error | any,
 declare class StarterInfo implements IStarterInfo {
     static getGameIcon(game: IGameStored, gameDiscovery: IDiscoveryResult): string;
     static toolIconRW(gameId: string, toolId: string): string;
-    static run(info: StarterInfo, api: IExtensionApi, onShowError: OnShowErrorFunc): any;
+    static run(info: IStarterInfo, api: IExtensionApi, onShowError: OnShowErrorFunc): any;
     private static runDirectly;
     private static runThroughLauncher;
     private static gameIcon;

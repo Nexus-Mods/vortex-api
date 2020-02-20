@@ -16,6 +16,8 @@ export { IExecInfo } from '../types/IExecInfo';
 export { IGameStoreEntry } from './IGameStoreEntry';
 export { GameEntryNotFound, GameStoreNotFound, IGameStore } from './IGameStore';
 export { IStarterInfo } from '../util/StarterInfo';
+export { IRegisteredExtension } from '../util/ExtensionManager';
+export { IAvailableExtension, IExtension } from '../extensions/extension_manager/types';
 export { IDeploymentMethod, IUnavailableReason, } from '../extensions/mod_management/types/IDeploymentMethod';
 export { IDiscoveryResult } from '../extensions/gamemode_management/types/IDiscoveryResult';
 export { IGameStored } from '../extensions/gamemode_management/types/IGameStored';
