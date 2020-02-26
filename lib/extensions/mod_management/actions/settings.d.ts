@@ -15,3 +15,4 @@ export declare const setActivator: reduxAct.ComplexActionCreator2<string, string
 }, {}>;
 export declare const setShowModDropzone: reduxAct.ComplexActionCreator1<unknown, unknown, {}>;
 export declare const setConfirmPurge: reduxAct.ComplexActionCreator1<boolean, boolean, {}>;
+export declare const setCleanupOnDeploy: reduxAct.ComplexActionCreator1<boolean, boolean, {}>;

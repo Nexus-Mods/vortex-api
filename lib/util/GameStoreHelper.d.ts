@@ -1,4 +1,4 @@
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 import { IGameStore, IGameStoreEntry } from '../types/api';
 declare class GameStoreHelper {
     private mStores;

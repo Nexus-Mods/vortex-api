@@ -1,6 +1,6 @@
 {
   "name": "vortex-api",
-  "version": "1.2.0-electron7.1",
+  "version": "1.2.0-electron7.2",
   "description": "Library exporting nmm components extensions may use",
   "main": "lib/index.js",
   "bin": { "extractInfo": "./bin/extractInfo.js" },

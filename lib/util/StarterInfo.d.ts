@@ -20,6 +20,7 @@ export interface IStarterInfo {
     environment: {
         [key: string]: string;
     };
+    defaultPrimary?: boolean;
 }
 declare type OnShowErrorFunc = (message: string, details?: string | Error | any, allowReport?: boolean) => void;
 /**
@@ -59,6 +60,7 @@ declare class StarterInfo implements IStarterInfo {
     exclusive: boolean;
     detach: boolean;
     onStart?: 'hide' | 'hide_recover' | 'close';
+    defaultPrimary: boolean;
     private mExtensionPath;
     private mLogoName;
     private mIconPathCache;

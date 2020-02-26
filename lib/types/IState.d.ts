@@ -219,6 +219,7 @@ export interface ISettingsMods {
     };
     showDropzone: boolean;
     confirmPurge: boolean;
+    cleanupOnDeploy: boolean;
 }
 export interface ISettingsNotification {
     suppress: {

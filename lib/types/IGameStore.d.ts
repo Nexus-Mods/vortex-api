@@ -1,7 +1,7 @@
 import { IExecInfo } from './IExecInfo';
 import { IExtensionApi } from './IExtensionContext';
 import { IGameStoreEntry } from './IGameStoreEntry';
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 export declare class GameStoreNotFound extends Error {
     private mName;
     constructor(name: any);
