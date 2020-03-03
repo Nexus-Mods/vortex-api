@@ -1,5 +1,5 @@
 import { IActionDefinition } from '../types/IActionDefinition';
-import { IExtensibleProps } from '../util/ExtensionProvider';
+import { IExtensibleProps } from '../types/IExtensionProvider';
 import { IActionControlProps } from './ActionControl';
 import I18next from 'i18next';
 import * as React from 'react';
@@ -17,6 +17,7 @@ export interface IBaseProps {
     icon?: string;
     pullRight?: boolean;
     clickAnywhere?: boolean;
+    showAll?: boolean;
     t: I18next.TFunction;
 }
 declare type ExportType = IBaseProps & IActionControlProps & IExtensibleProps & React.HTMLAttributes<any>;

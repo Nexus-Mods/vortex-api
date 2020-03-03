@@ -5,11 +5,12 @@ export interface IMenuActionProps {
     action: IActionDefinitionEx;
     instanceId: string | string[];
 }
+export interface IContextPosition {
+    x: number;
+    y: number;
+}
 export interface IContextMenuProps {
-    position: {
-        x: number;
-        y: number;
-    };
+    position?: IContextPosition;
     visible: boolean;
     onHide: () => void;
     instanceId: string;

@@ -1,6 +1,6 @@
 /// <reference types="node" />
 import * as Promise from 'bluebird';
-export declare function writeFileAtomic(filePath: string, input: string | Buffer): any;
+export declare function writeFileAtomic(filePath: string, input: string | Buffer): Promise<void>;
 /**
  * copy a file in such a way that it will not replace the target if the copy is
  * somehow interrupted. The file is first copied to a temporary file in the same

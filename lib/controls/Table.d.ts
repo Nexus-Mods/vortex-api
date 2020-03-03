@@ -1,6 +1,6 @@
 import { IActionDefinition } from '../types/IActionDefinition';
+import { IExtensibleProps } from '../types/IExtensionProvider';
 import { ITableState } from '../types/IState';
-import { IExtensibleProps } from '../util/ExtensionProvider';
 import * as React from 'react';
 import { OutputSelector } from 'reselect';
 export declare type ChangeDataHandler = (rowId: string, attributeId: string, newValue: any) => void;
@@ -26,6 +26,7 @@ export interface IBaseProps {
     defaultSort?: string;
     showHeader?: boolean;
     showDetails?: boolean;
+    hasActions?: boolean;
 }
 export interface ILookupCalculated {
     [rowId: string]: {

@@ -19,4 +19,4 @@ export declare function withActivationLock(func: () => Promise<any>, tryOnly?: b
  */
 export declare function getManifest(api: IExtensionApi, modType?: string, gameId?: string): Promise<IDeploymentManifest>;
 export declare function loadActivation(api: IExtensionApi, modType: string, deployPath: string, stagingPath: string, activator: IDeploymentMethod): Promise<IDeployedFile[]>;
-export declare function saveActivation(modType: string, instance: string, gamePath: string, stagingPath: string, activation: IDeployedFile[], activatorId?: string): any;
+export declare function saveActivation(modType: string, instance: string, gamePath: string, stagingPath: string, activation: IDeployedFile[], activatorId?: string): Promise<any>;

@@ -9,5 +9,7 @@ export interface IToolStored {
         [key: string]: string;
     };
     shell?: boolean;
+    detach?: boolean;
+    onStart?: 'hide' | 'close';
     exclusive?: boolean;
 }
