@@ -124,3 +124,4 @@ export interface IFlattenParameters {
  * @param options parameters controlling the flattening process
  */
 export declare function flatten(obj: any, options?: IFlattenParameters): any;
+export declare function toPromise<ResT>(func: (cb: any) => void): Promise<ResT>;

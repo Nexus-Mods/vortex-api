@@ -19,8 +19,16 @@ export interface IMod {
     enabledINITweaks?: string[];
     fileOverrides?: string[];
 }
+export interface IModRepoId {
+    gameId?: string;
+    modId?: string;
+    fileId: string;
+}
 export interface IModReference extends IReference {
     id?: string;
+    repo?: {
+        repository: string;
+    } & IModRepoId;
     description?: string;
 }
 /**

@@ -7,7 +7,7 @@ import { ISupportedResult, TestSupported } from '../extensions/mod_management/ty
 import { Archive } from '../util/archives';
 import ReduxProp from '../util/ReduxProp';
 import { SanityCheck } from '../util/reduxSanity';
-import { DialogActions, IDialogContent } from './api';
+import { DialogActions, IDialogContent, IModReference, IModRepoId } from './api';
 import { IActionOptions } from './IActionDefinition';
 import { IBannerOptions } from './IBannerOptions';
 import { DialogType, IDialogResult } from './IDialog';
@@ -23,6 +23,7 @@ import { ILookupResult, IModInfo, IReference } from 'modmeta-db';
 import * as React from 'react';
 import * as Redux from 'redux';
 import { ThunkDispatch } from 'redux-thunk';
+import { IModLookupResult } from './IModLookupResult';
 export { TestSupported, IInstallResult, IInstruction, IDeployedFile, IDeploymentMethod, IFileChange, ILookupResult, IModInfo, InstructionType, IReference, InstallFunc, ISupportedResult, ProgressDelegate };
 export interface ThunkStore<S> extends Redux.Store<S> {
     dispatch: ThunkDispatch<S, null, Redux.Action>;
@@ -86,6 +87,9 @@ export interface IToDoButton {
 export declare type RegisterToDo = (id: string, type: ToDoType, props: (state: any) => any, icon: ((props: any) => JSX.Element) | string, text: ((t: I18next.TFunction, props: any) => JSX.Element) | string, action: (props: any) => void, condition: (props: any) => boolean, value: ((t: I18next.TFunction, props: any) => JSX.Element) | string, priority: number) => void;
 export interface IRegisterProtocol {
     (protocol: string, def: boolean, callback: (url: string, install: boolean) => void): any;
+}
+export interface IRegisterRepositoryLookup {
+    (repositoryId: string, preferOverMD5: boolean, callback: (id: IModRepoId) => Promise<IModLookupResult[]>): any;
 }
 export interface IFileFilter {
     name: string;
@@ -373,6 +377,15 @@ export interface IExtensionApi {
      */
     registerProtocol: IRegisterProtocol;
     /**
+     * registers a lookup mechanism that can be used to look up information about a mod based on ids.
+     * This will either work as a fallback or as a replacement to the md5 based lookup for
+     * applicable mods.
+     * The "repositoryId" should be the same as the "source" used.
+     * It's possible to return multiple results if the input data doesn't definitively identify a single
+     * item but this might be a bit of a mess to figure out later.
+     */
+    registerRepositoryLookup: IRegisterRepositoryLookup;
+    /**
      * deregister an uri protocol currently being handled by us
      *
      * @memberOf IExtensionApi
@@ -383,7 +396,7 @@ export interface IExtensionApi {
      *
      * @memberOf IExtensionApi
      */
-    lookupModReference: (ref: IReference) => Promise<ILookupResult[]>;
+    lookupModReference: (ref: IModReference) => Promise<IModLookupResult[]>;
     /**
      * add a meta server
      * Please note that setting a server with the same id again will replace the existing one
@@ -400,7 +413,7 @@ export interface IExtensionApi {
      *
      * @memberOf IExtensionApi
      */
-    lookupModMeta: (details: ILookupDetails) => Promise<ILookupResult[]>;
+    lookupModMeta: (details: ILookupDetails) => Promise<IModLookupResult[]>;
     /**
      * save meta information about a mod
      *
@@ -516,6 +529,7 @@ export interface IReducerSpec {
 }
 export interface IModTypeOptions {
     mergeMods?: boolean;
+    name?: string;
 }
 /**
  * The extension context is an object passed into all extensions during initialisation.
