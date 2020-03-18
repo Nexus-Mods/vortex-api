@@ -106,6 +106,7 @@ export interface ISession {
     uiBlockers: {
         [id: string]: IUIBlocker;
     };
+    networkConnected: boolean;
 }
 export interface IRowState {
     selected: boolean;

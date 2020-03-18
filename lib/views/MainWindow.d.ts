@@ -60,11 +60,10 @@ export declare class MainWindow extends React.Component<IProps, IMainWindowState
     private sidebarTimer;
     constructor(props: IProps);
     getChildContext(): IComponentContext;
-    componentWillMount(): void;
     componentDidMount(): void;
     componentWillUnmount(): void;
     shouldComponentUpdate(nextProps: IProps, nextState: IMainWindowState): boolean;
-    componentWillReceiveProps(newProps: IProps): void;
+    UNSAFE_componentWillReceiveProps(newProps: IProps): void;
     render(): JSX.Element;
     private getModifiers;
     private renderWait;

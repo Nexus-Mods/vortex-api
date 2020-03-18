@@ -1,6 +1,6 @@
 import * as React from 'react';
 declare class WindowControls extends React.Component<{}, {}> {
-    componentWillMount(): void;
+    componentDidMount(): void;
     componentWillUnmount(): void;
     render(): JSX.Element;
     private minimize;

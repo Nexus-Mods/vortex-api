@@ -46,8 +46,8 @@ export interface IIconProps {
 declare class Icon extends React.Component<IIconProps, {}> {
     private static sCache;
     private mCurrentSize;
-    componentWillMount(): void;
-    componentWillReceiveProps(newProps: IIconProps): void;
+    componentDidMount(): void;
+    UNSAFE_componentWillReceiveProps(newProps: IIconProps): void;
     render(): JSX.Element;
     private setRef;
     private setIcon;

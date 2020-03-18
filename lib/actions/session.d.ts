@@ -52,3 +52,4 @@ export declare const setUIBlocker: reduxAct.ComplexActionCreator4<string, string
     mayCancel: boolean;
 }, {}>;
 export declare const clearUIBlocker: reduxAct.ComplexActionCreator1<string, string, {}>;
+export declare const setNetworkConnected: reduxAct.ComplexActionCreator1<boolean, boolean, {}>;
