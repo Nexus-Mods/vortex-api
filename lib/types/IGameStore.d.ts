@@ -2,9 +2,7 @@ import { IExecInfo } from './IExecInfo';
 import { IExtensionApi } from './IExtensionContext';
 import { IGameStoreEntry } from './IGameStoreEntry';
 import * as Promise from 'bluebird';
-
-export declare type GameLaunchType = 'posix' | 'commandline';
-
+export declare type GameLaunchType = 'gamestore' | 'commandline';
 export declare class GameStoreNotFound extends Error {
     private mName;
     constructor(name: any);
@@ -29,10 +27,9 @@ export declare class GameEntryNotFound extends Error {
 // }>;
 export interface ICustomExecutionInfo {
     appId: string;
-    args: string[];
+    parameters: string[];
     launchType?: GameLaunchType;
 }
-
 /**
  * interface for game store launcher extensions
  *
