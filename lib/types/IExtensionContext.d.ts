@@ -530,6 +530,7 @@ export interface IReducerSpec {
 export interface IModTypeOptions {
     mergeMods?: boolean;
     deploymentEssential?: boolean;
+    name?: string;
 }
 /**
  * The extension context is an object passed into all extensions during initialisation.
