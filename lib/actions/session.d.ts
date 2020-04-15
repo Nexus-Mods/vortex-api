@@ -1,3 +1,4 @@
+import { IParameters } from '../util/commandLine';
 import * as reduxAct from 'redux-act';
 /**
  * action to choose which item in a group to display (all other items in the
@@ -53,3 +54,4 @@ export declare const setUIBlocker: reduxAct.ComplexActionCreator4<string, string
 }, {}>;
 export declare const clearUIBlocker: reduxAct.ComplexActionCreator1<string, string, {}>;
 export declare const setNetworkConnected: reduxAct.ComplexActionCreator1<boolean, boolean, {}>;
+export declare const setCommandLine: reduxAct.ComplexActionCreator1<IParameters, IParameters, {}>;

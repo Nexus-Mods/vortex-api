@@ -3,6 +3,7 @@ export interface IParameters {
     install?: string;
     report?: string;
     restore?: string;
+    game?: string;
     get?: string;
     set?: string[];
     del?: string;
@@ -13,5 +14,5 @@ export interface IParameters {
 }
 declare function parseCommandline(argv: string[], electronIsShitHack: boolean): IParameters;
 export declare function filterArgs(input: string[]): string[];
-export declare function relaunch(): void;
+export declare function relaunch(args?: string[]): void;
 export default parseCommandline;

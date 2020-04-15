@@ -8,6 +8,7 @@ import { IDiscoveryResult } from '../extensions/gamemode_management/types/IDisco
 import { IGameStored } from '../extensions/gamemode_management/types/IGameStored';
 import { IMod } from '../extensions/mod_management/types/IMod';
 import { IProfile } from '../extensions/profile_management/types/IProfile';
+import { IParameters } from '../util/commandLine';
 export { IDownload, IDiscoveryResult, IGameStored, IMod, IProfile };
 /**
  * interface to represent a position on the screen
@@ -107,6 +108,7 @@ export interface ISession {
         [id: string]: IUIBlocker;
     };
     networkConnected: boolean;
+    commandLine: IParameters;
 }
 export interface IRowState {
     selected: boolean;

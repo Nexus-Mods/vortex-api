@@ -7,7 +7,6 @@ export interface IStarterInfo {
     id: string;
     gameId: string;
     isGame: boolean;
-    iconPath: string;
     iconOutPath: string;
     name: string;
     exePath: string;
@@ -21,6 +20,8 @@ export interface IStarterInfo {
         [key: string]: string;
     };
     defaultPrimary?: boolean;
+    extensionPath: string;
+    logoName: string;
 }
 declare type OnShowErrorFunc = (message: string, details?: string | Error | any, allowReport?: boolean) => void;
 /**
@@ -34,6 +35,7 @@ declare class StarterInfo implements IStarterInfo {
     static getGameIcon(game: IGameStored, gameDiscovery: IDiscoveryResult): string;
     static toolIconRW(gameId: string, toolId: string): string;
     static run(info: IStarterInfo, api: IExtensionApi, onShowError: OnShowErrorFunc): any;
+    static getIconPath(info: IStarterInfo): string;
     private static runDirectly;
     private static runThroughLauncher;
     private static gameIcon;
@@ -61,11 +63,9 @@ declare class StarterInfo implements IStarterInfo {
     detach: boolean;
     onStart?: 'hide' | 'hide_recover' | 'close';
     defaultPrimary: boolean;
-    private mExtensionPath;
-    private mLogoName;
-    private mIconPathCache;
+    extensionPath: string;
+    logoName: string;
     constructor(game: IGameStored, gameDiscovery: IDiscoveryResult, tool?: IToolStored, toolDiscovery?: IDiscoveredTool);
-    get iconPath(): string;
     private initFromGame;
     private initFromTool;
 }
