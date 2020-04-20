@@ -96,7 +96,8 @@ function config(moduleName, basePath, version) {
     externals: externals(),
   };
 
-  if (ForkTsCheckerWebpackPlugin !== undefined) {
+  if ((ForkTsCheckerWebpackPlugin !== undefined)
+      && (process.env['BUILD_QUICK_AND_DIRTY'] === undefined)) {
     res.plugins.push(new ForkTsCheckerWebpackPlugin());
   }
 
