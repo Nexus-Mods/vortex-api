@@ -3,6 +3,7 @@ import { IDiscoveryResult } from '../extensions/gamemode_management/types/IDisco
 import { IGameStored } from '../extensions/gamemode_management/types/IGameStored';
 import { IToolStored } from '../extensions/gamemode_management/types/IToolStored';
 import { IExtensionApi } from '../types/IExtensionContext';
+import Promise from 'bluebird';
 export interface IStarterInfo {
     id: string;
     gameId: string;
@@ -34,7 +35,7 @@ declare type OnShowErrorFunc = (message: string, details?: string | Error | any,
 declare class StarterInfo implements IStarterInfo {
     static getGameIcon(game: IGameStored, gameDiscovery: IDiscoveryResult): string;
     static toolIconRW(gameId: string, toolId: string): string;
-    static run(info: IStarterInfo, api: IExtensionApi, onShowError: OnShowErrorFunc): any;
+    static run(info: IStarterInfo, api: IExtensionApi, onShowError: OnShowErrorFunc): Promise<any>;
     static getIconPath(info: IStarterInfo): string;
     private static runDirectly;
     private static runThroughLauncher;

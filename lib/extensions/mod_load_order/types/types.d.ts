@@ -25,6 +25,7 @@ export interface ILoadOrderDisplayItem {
     prefix?: string;
     locked?: boolean;
     external?: boolean;
+    official?: boolean;
     invalid?: boolean;
     message?: string;
     condition?: (lhs: ILoadOrderDisplayItem, rhs: ILoadOrderDisplayItem) => IDnDConditionResult;

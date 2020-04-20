@@ -23,7 +23,11 @@ declare class Icon extends React.Component<IIconProps, {
         [setId: string]: Set<string>;
     };
 }> {
+    private mLoadPromise;
+    private mMounted;
     constructor(props: IIconProps);
+    componentDidMount(): void;
+    componentWillUnmount(): void;
     render(): JSX.Element;
     private loadSet;
 }

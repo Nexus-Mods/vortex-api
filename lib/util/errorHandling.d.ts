@@ -51,7 +51,7 @@ export declare function clearErrorContext(id: string): void;
  * @param value context value
  * @param fun the function to set
  */
-export declare function withContext(id: string, value: string, fun: () => Promise<any>): any;
+export declare function withContext(id: string, value: string, fun: () => Promise<any>): Promise<any>;
 /**
  * attach context to an error that may be caught after the global context has been reset
  * @param err the error to add context to

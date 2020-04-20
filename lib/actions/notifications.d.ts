@@ -1,5 +1,6 @@
-import { DialogActions, DialogType, IDialogContent } from '../types/IDialog';
+import { DialogActions, DialogType, IDialogContent, IDialogResult } from '../types/IDialog';
 import { INotification, NotificationDismiss } from '../types/INotification';
+import Promise from 'bluebird';
 import * as reduxAct from 'redux-act';
 export * from '../types/IDialog';
 /**
@@ -48,8 +49,8 @@ export declare function setupNotificationSuppression(cb: (id: string) => boolean
  * @param {INotification} notification
  * @returns
  */
-export declare function addNotification(notification: INotification): (dispatch: any) => any;
-export declare function dismissNotification(id: string): (dispatch: any) => any;
+export declare function addNotification(notification: INotification): (dispatch: any) => Promise<void>;
+export declare function dismissNotification(id: string): (dispatch: any) => Promise<void>;
 /**
  * show a dialog
  *
@@ -60,6 +61,6 @@ export declare function dismissNotification(id: string): (dispatch: any) => any;
  * @param {IDialogActions} actions
  * @returns
  */
-export declare function showDialog(type: DialogType, title: string, content: IDialogContent, actions: DialogActions, inId?: string): (dispatch: any) => any;
+export declare function showDialog(type: DialogType, title: string, content: IDialogContent, actions: DialogActions, inId?: string): (dispatch: any) => Promise<IDialogResult>;
 export declare function closeDialog(id: string, actionKey?: string, input?: any): (dispatch: any) => void;
 export declare function triggerDialogLink(id: string, idx: number): void;

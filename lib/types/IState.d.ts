@@ -56,7 +56,7 @@ export interface INotificationState {
 }
 export interface IExtensionLoadFailure {
     id: string;
-    args: {
+    args?: {
         [key: string]: any;
     };
 }

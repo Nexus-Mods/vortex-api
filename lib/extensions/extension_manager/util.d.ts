@@ -19,4 +19,4 @@ export declare function downloadFromNexus(api: IExtensionApi, ext: IExtensionDow
 export declare function downloadGithubRelease(api: IExtensionApi, ext: IExtensionDownloadInfo): Promise<string[]>;
 export declare function downloadFile(url: string, outputPath: string): Promise<void>;
 export declare function downloadGithubRaw(api: IExtensionApi, ext: IExtensionDownloadInfo): Promise<string[]>;
-export declare function readExtensibleDir(extType: ExtensionType, bundledPath: string, customPath: string): any;
+export declare function readExtensibleDir(extType: ExtensionType, bundledPath: string, customPath: string): Promise<any[]>;

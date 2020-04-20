@@ -103,7 +103,7 @@ declare class ExtensionManager {
      * once.
      */
     doOnce(): Promise<void>;
-    renderStyle(): any;
+    renderStyle(): Promise<void>;
     getProtocolHandler(protocol: string): (url: string, install: boolean) => void;
     get numOnce(): number;
     onLoadingExtension(cb: (name: string, idx: number) => void): void;
