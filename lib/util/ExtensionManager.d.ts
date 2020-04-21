@@ -5,6 +5,7 @@ import { IExtensionApi, ThunkStore } from '../types/IExtensionContext';
 import { IState } from '../types/IState';
 import { i18n } from './i18n';
 import Promise from 'bluebird';
+import { WebContents } from 'electron';
 import * as Redux from 'redux';
 export interface IRegisteredExtension {
     name: string;
@@ -69,7 +70,7 @@ declare class ExtensionManager {
      *
      * @memberOf ExtensionManager
      */
-    setupApiMain<S>(store: Redux.Store<S>, ipc: Electron.WebContents): void;
+    setupApiMain<S>(store: Redux.Store<S>, ipc: WebContents): void;
     /**
      * gain acces to the extension api
      *
