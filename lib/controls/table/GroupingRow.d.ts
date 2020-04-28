@@ -1,8 +1,9 @@
+/// <reference types="react" />
 import { ComponentEx } from '../../util/ComponentEx';
-import i18next from 'i18next';
+import { TFunction } from '../../util/i18n';
 export declare const EMPTY_ID = "<Unspecified>";
 export interface IGroupingRowProps {
-    t: i18next.TFunction;
+    t: TFunction;
     groupName: string;
     count: number;
     expanded: boolean;

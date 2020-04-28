@@ -21,9 +21,9 @@ declare class ExtensionGate extends React.Component<{
 }, {}> {
     private mWrappers;
     private mValid;
-    componentWillMount(): void;
     componentWillUnmount(): void;
     render(): JSX.Element;
+    private initialize;
     private updateWrappers;
 }
 export default ExtensionGate;

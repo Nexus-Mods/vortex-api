@@ -1,4 +1,4 @@
-import { IExtensibleProps } from '../util/ExtensionProvider';
+import { IExtensibleProps } from '../types/IExtensionProvider';
 import { IActionControlProps } from './ActionControl';
 import { IContextMenuProps } from './ContextMenu';
 import * as React from 'react';

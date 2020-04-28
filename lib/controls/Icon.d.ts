@@ -1,4 +1,4 @@
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 import * as React from 'react';
 export interface IIconProps {
     id?: string;
@@ -15,16 +15,20 @@ export interface IIconProps {
     rotate?: number;
     rotateId?: string;
     svgStyle?: string;
+    onContextMenu?: React.MouseEventHandler<Icon>;
 }
-export declare function installIconSet(set: string, setPath: string): Promise<void>;
-declare class Icon extends React.Component<IIconProps, {}> {
-    private static sCache;
-    private mCurrentSize;
-    componentWillMount(): void;
-    componentWillReceiveProps(newProps: IIconProps): void;
+export declare function installIconSet(set: string, setPath: string): Promise<Set<string>>;
+declare class Icon extends React.Component<IIconProps, {
+    sets: {
+        [setId: string]: Set<string>;
+    };
+}> {
+    private mLoadPromise;
+    private mMounted;
+    constructor(props: IIconProps);
+    componentDidMount(): void;
+    componentWillUnmount(): void;
     render(): JSX.Element;
-    private setRef;
-    private setIcon;
     private loadSet;
 }
 export default Icon;

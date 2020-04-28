@@ -1,14 +1,13 @@
-import * as Promise from 'bluebird';
-import { IExtensionApi } from '../types/IExtensionContext'
-import { IGameStore, IGameStoreEntry } from '../types/api';
+import Promise from 'bluebird';
+import { IExtensionApi, IGameStore, IGameStoreEntry } from '../types/api';
 declare class GameStoreHelper {
     private mStores;
     getGameStore(storeId: string): IGameStore;
     isGameInstalled(id: string, storeId?: string): Promise<string>;
     findByName(name: string | string[], storeId?: string): Promise<IGameStoreEntry>;
     findByAppId(appId: string | string[], storeId?: string): Promise<IGameStoreEntry>;
-    launchGameStore(api: IExtensionApi, gameStoreId: string,
-        parameters?: string[], askConsent?: boolean): Promise<void>;
+    launchGameStore(api: IExtensionApi, gameStoreId: string, parameters?: string[], askConsent?: boolean): Promise<void>;
+    private isStoreRunning;
     private getstores;
     /**
      * Returns a store entry for a specified pattern.

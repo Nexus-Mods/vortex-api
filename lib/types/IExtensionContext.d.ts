@@ -5,6 +5,7 @@ import { IInstallResult, IInstruction } from '../extensions/mod_management/types
 import { InstallFunc, ProgressDelegate } from '../extensions/mod_management/types/InstallFunc';
 import { ISupportedResult, TestSupported } from '../extensions/mod_management/types/TestSupported';
 import { Archive } from '../util/archives';
+import { i18n, TFunction } from '../util/i18n';
 import ReduxProp from '../util/ReduxProp';
 import { SanityCheck } from '../util/reduxSanity';
 import { DialogActions, IDialogContent } from './api';
@@ -12,16 +13,17 @@ import { IActionOptions } from './IActionDefinition';
 import { IBannerOptions } from './IBannerOptions';
 import { DialogType, IDialogResult } from './IDialog';
 import { IGame } from './IGame';
+import { IGameStore } from './IGameStore';
 import { INotification } from './INotification';
-import { IDiscoveryResult } from './IState';
+import { IDiscoveryResult, IState } from './IState';
 import { ITableAttribute } from './ITableAttribute';
 import { ITestResult } from './ITestResult';
-import * as Promise from 'bluebird';
-import I18next from 'i18next';
+import Promise from 'bluebird';
 import { ILookupResult, IModInfo, IReference } from 'modmeta-db';
 import * as React from 'react';
 import * as Redux from 'redux';
 import { ThunkDispatch } from 'redux-thunk';
+import { IRegisteredExtension } from '../util/ExtensionManager';
 export { TestSupported, IInstallResult, IInstruction, IDeployedFile, IDeploymentMethod, IFileChange, ILookupResult, IModInfo, IReference, InstallFunc, ISupportedResult, ProgressDelegate };
 export interface ThunkStore<S> extends Redux.Store<S> {
     dispatch: ThunkDispatch<S, null, Redux.Action>;
@@ -74,7 +76,11 @@ export interface IDashletOptions {
     fixed?: boolean;
     closable?: boolean;
 }
-export declare type RegisterDashlet = (title: string, width: 1 | 2 | 3, height: 1 | 2 | 3 | 4 | 5, position: number, component: React.ComponentClass<any> | React.FunctionComponent<any>, isVisible: (state: any) => boolean, props: PropsCallback, options: IDashletOptions) => void;
+/**
+ * @param height Height of the dashlet in rows. Please note that 1 row is very slim, it's not
+ *               commonly used in practice
+ */
+export declare type RegisterDashlet = (title: string, width: 1 | 2 | 3, height: 1 | 2 | 3 | 4 | 5 | 6, position: number, component: React.ComponentClass<any> | React.FunctionComponent<any>, isVisible: (state: any) => boolean, props: PropsCallback, options: IDashletOptions) => void;
 export declare type RegisterDialog = (id: string, element: React.ComponentClass<any> | React.StatelessComponent<any>, props?: PropsCallback) => void;
 export declare type ToDoType = 'settings' | 'search' | 'workaround' | 'more';
 export interface IToDoButton {
@@ -82,7 +88,7 @@ export interface IToDoButton {
     icon: string;
     onClick: () => void;
 }
-export declare type RegisterToDo = (id: string, type: ToDoType, props: (state: any) => any, icon: ((props: any) => JSX.Element) | string, text: ((t: I18next.TFunction, props: any) => JSX.Element) | string, action: (props: any) => void, condition: (props: any) => boolean, value: ((t: I18next.TFunction, props: any) => JSX.Element) | string, priority: number) => void;
+export declare type RegisterToDo = (id: string, type: ToDoType, props: (state: any) => any, icon: ((props: any) => JSX.Element) | string, text: ((t: TFunction, props: any) => JSX.Element) | string, action: (props: any) => void, condition: (props: any) => boolean, value: ((t: TFunction, props: any) => JSX.Element) | string, priority: number) => void;
 export interface IRegisterProtocol {
     (protocol: string, def: boolean, callback: (url: string, install: boolean) => void): any;
 }
@@ -125,6 +131,10 @@ export interface IPersistor {
     setItem(key: PersistorKey, value: string): Promise<void>;
     removeItem(key: PersistorKey): Promise<void>;
     getAllKeys(): Promise<PersistorKey[]>;
+    getAllKVs?(prefix?: string): Promise<Array<{
+        key: PersistorKey;
+        value: string;
+    }>>;
 }
 /**
  * options that can be passed to archive handler on opening
@@ -171,6 +181,7 @@ export interface IErrorOptions {
     isBBCode?: boolean;
     isHTML?: boolean;
     allowReport?: boolean;
+    allowSuppress?: boolean;
     hideDetails?: boolean;
     replace?: {
         [key: string]: string;
@@ -190,15 +201,15 @@ export declare type GameInfoQuery = (game: any) => Promise<{
     [key: string]: IGameDetail;
 }>;
 export interface IMergeFilter {
-    baseFiles: () => Array<{
+    baseFiles: (deployedFiles: IDeployedFile[]) => Array<{
         in: string;
         out: string;
     }>;
     filter: (fileName: string) => boolean;
 }
 /**
- * callback to determine if a merge function applies to a game. If true, return an
- * object that describes what files to merge
+ * callback to determine if a merge function applies to a game. If so, return an
+ * object that describes what files to merge, otherwise return undefined
  */
 export declare type MergeTest = (game: IGame, gameDiscovery: IDiscoveryResult) => IMergeFilter;
 /**
@@ -272,6 +283,12 @@ export interface IExtensionApi {
      */
     dismissNotification?: (id: string) => void;
     /**
+     * hides a notification and don't show it again
+     * if this is called with the second parameter set to false, it re-enables the notification
+     * instead
+     */
+    suppressNotification?: (id: string, suppress?: boolean) => void;
+    /**
      * show a system dialog to open a single file
      *
      * @memberOf IExtensionApi
@@ -313,7 +330,7 @@ export interface IExtensionApi {
     /**
      * translation function
      */
-    translate: I18next.TFunction;
+    translate: TFunction;
     /**
      * active locale
      */
@@ -323,7 +340,7 @@ export interface IExtensionApi {
      * This is only needed to influence how localisation works in general,
      * to just translate a text, use "translate"
      */
-    getI18n: () => I18next.i18n;
+    getI18n: () => i18n;
     /**
      * retrieve path for a known directory location.
      *
@@ -400,6 +417,10 @@ export interface IExtensionApi {
      */
     openArchive: (archivePath: string, options?: IArchiveOptions, extension?: string) => Promise<Archive>;
     /**
+     * clear the stylesheet cache to ensure it gets rebuilt even if the list of files hasn't changed
+     */
+    clearStylesheet: () => void;
+    /**
      * insert or replace a sass-stylesheet. It gets integrated into the existing sheets based
      * on the key:
      * By default, the sheets "variables", "details" and "style" are intended to customize the
@@ -439,7 +460,7 @@ export interface IExtensionApi {
      * Note that listeners should report all errors themselves, it is considered a bug if the listener
      * returns a rejected promise.
      */
-    onAsync: (eventName: string, listener: (...args: any[]) => Promise<any>) => void;
+    onAsync: (eventName: string, listener: (...args: any[]) => PromiseLike<any>) => void;
     /**
      * returns true if the running version of Vortex is considered outdated. This is mostly used
      * to determine if feedback should be sent to Nexus Mods.
@@ -458,6 +479,14 @@ export interface IExtensionApi {
      * Specifically events can only be sent once this event has been triggered
      */
     awaitUI: () => Promise<void>;
+    /**
+     * wrapper for api.store.getState() with the benefit that it automatically assigns a type
+     */
+    getState: <T extends IState = IState>() => T;
+    /**
+     * get a list of extensions currently loaded into Vortex
+     */
+    getLoadedExtensions: () => IRegisteredExtension[];
 }
 export interface IStateVerifier {
     description: (input: any) => string;
@@ -504,6 +533,8 @@ export interface IReducerSpec {
 }
 export interface IModTypeOptions {
     mergeMods?: boolean;
+    deploymentEssential?: boolean;
+    name?: string;
 }
 /**
  * The extension context is an object passed into all extensions during initialisation.
@@ -712,6 +743,12 @@ export interface IExtensionContext {
      * @param {IGame} game
      */
     registerGame: (game: IGame) => void;
+    /**
+     * registers support for a game store.
+     *
+     * @param {IGameStore} gameStore
+     */
+    registerGameStore: (gameStore: IGameStore) => void;
     /**
      * registers a provider for general information about a game
      * @param {string} id unique id identifying the provider

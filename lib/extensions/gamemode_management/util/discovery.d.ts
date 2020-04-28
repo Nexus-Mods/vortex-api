@@ -2,7 +2,7 @@ import { IDiscoveredTool } from '../../../types/IDiscoveredTool';
 import { IGame } from '../../../types/IGame';
 import { IDiscoveryResult } from '../types/IDiscoveryResult';
 import { Normalize } from '../../../util/getNormalizeFunc';
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 export declare type DiscoveredCB = (gameId: string, result: IDiscoveryResult) => void;
 export declare type DiscoveredToolCB = (gameId: string, result: IDiscoveredTool) => void;
 /**

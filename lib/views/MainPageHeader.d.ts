@@ -5,5 +5,15 @@ export interface IComponentContext {
     headerPortal: () => HTMLElement;
     page: string;
 }
-declare const _default: React.ComponentClass<{}, any>;
+interface IConnectedProps {
+    mainPage: string;
+}
+declare type IProps = IConnectedProps;
+declare class MainPageHeader extends React.Component<IProps, {}> {
+    static contextTypes: React.ValidationMap<any>;
+    context: IComponentContext;
+    shouldComponentUpdate(): boolean;
+    render(): JSX.Element;
+}
+declare const _default: import("react-redux").ConnectedComponent<typeof MainPageHeader, Pick<IConnectedProps, never>>;
 export default _default;

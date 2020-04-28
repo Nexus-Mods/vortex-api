@@ -1,5 +1,5 @@
 import { Normalize } from './getNormalizeFunc';
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 /**
  * count the elements in an array for which the predicate matches
  *
@@ -23,7 +23,7 @@ export declare function sum(container: number[]): number;
  * returns the attribute "key" from "obj". If that attribute doesn't exist
  * on obj, it will be set to the default value and that is returned.
  */
-export declare function setdefault<T>(obj: any, key: PropertyKey, def: T): T;
+export declare function setdefault<T, K extends keyof T>(obj: T, key: K, def: T[K]): T[K];
 /**
  * An ellipsis ("this text is too lo...") function. Usually these
  * functions clip the text at the end but often (i.e. when
@@ -60,7 +60,7 @@ export declare function objDiff(lhs: any, rhs: any, skip?: string[]): any;
  * will be called only after everything before it in the queue is finished
  * and with the promise that nothing else in the queue is run in parallel.
  */
-export declare function makeQueue(): (func: () => Promise<any>, tryOnly: boolean) => Promise<{}>;
+export declare function makeQueue(): (func: () => Promise<any>, tryOnly: boolean) => Promise<unknown>;
 /**
  * spawn this application itself
  * @param args
@@ -124,3 +124,4 @@ export interface IFlattenParameters {
  * @param options parameters controlling the flattening process
  */
 export declare function flatten(obj: any, options?: IFlattenParameters): any;
+export declare function withTmpDir<T>(cb: (tmpPath: string) => Promise<T>): Promise<T>;

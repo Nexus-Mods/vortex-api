@@ -8,6 +8,7 @@ import { IDiscoveryResult } from '../extensions/gamemode_management/types/IDisco
 import { IGameStored } from '../extensions/gamemode_management/types/IGameStored';
 import { IMod } from '../extensions/mod_management/types/IMod';
 import { IProfile } from '../extensions/profile_management/types/IProfile';
+import { IParameters } from '../util/commandLine';
 export { IDownload, IDiscoveryResult, IGameStored, IMod, IProfile };
 /**
  * interface to represent a position on the screen
@@ -55,7 +56,7 @@ export interface INotificationState {
 }
 export interface IExtensionLoadFailure {
     id: string;
-    args: {
+    args?: {
         [key: string]: any;
     };
 }
@@ -106,6 +107,8 @@ export interface ISession {
     uiBlockers: {
         [id: string]: IUIBlocker;
     };
+    networkConnected: boolean;
+    commandLine: IParameters;
 }
 export interface IRowState {
     selected: boolean;
@@ -123,6 +126,7 @@ export interface IExtensionState {
     enabled: boolean | 'failed';
     version: string;
     remove: boolean;
+    endorsed: string;
 }
 /**
  * settings relating to the vortex application itself
@@ -218,9 +222,18 @@ export interface ISettingsMods {
     };
     showDropzone: boolean;
     confirmPurge: boolean;
+    cleanupOnDeploy: boolean;
+}
+export interface ISettingsNotification {
+    suppress: {
+        [notificationId: string]: boolean;
+    };
 }
 export interface ISettingsUpdate {
     channel: 'stable' | 'beta' | 'none';
+}
+export interface ISettingsWorkarounds {
+    userSymlinks: boolean;
 }
 export interface ISettings {
     interface: ISettingsInterface;
@@ -230,8 +243,10 @@ export interface ISettings {
     window: IWindow;
     downloads: ISettingsDownloads;
     mods: ISettingsMods;
+    notifications: ISettingsNotification;
     tables: ITableStates;
     update: ISettingsUpdate;
+    workarounds: ISettingsWorkarounds;
 }
 export interface IStateTransactions {
     transfer: {};

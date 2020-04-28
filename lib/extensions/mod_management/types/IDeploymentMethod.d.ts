@@ -1,7 +1,7 @@
 import { IExtensionApi } from '../../../types/IExtensionContext';
 import { Normalize } from '../../../util/getNormalizeFunc';
-import * as Promise from 'bluebird';
-import I18next from 'i18next';
+import { TFunction } from '../../../util/i18n';
+import Promise from 'bluebird';
 /**
  * details about a file change
  */
@@ -48,6 +48,13 @@ export interface IDeployedFile {
      */
     source: string;
     /**
+     * if this file was created by merging, this lists all mods which were the basis of
+     * the merge
+     * deployment methods don't have to set this, it will be filled in by the the core
+     * functionality
+     */
+    merged?: string[];
+    /**
      * the output directory for the file. This will be empty for games that put all mods
      * in the same directory (mergeMods is true).
      */
@@ -65,11 +72,11 @@ export interface IUnavailableReason {
     /**
      * description (english) why the deployment method is unavailable
      */
-    description: (t: I18next.TFunction) => string;
+    description: (t: TFunction) => string;
     /**
      * describes the solution to make this
      */
-    solution?: (t: I18next.TFunction) => string;
+    solution?: (t: TFunction) => string;
     /**
      * if the problem can be fixed automatically, this can be set to a function that takes care
      * of it
@@ -122,7 +129,7 @@ export interface IDeploymentMethod {
      * @type {string}
      * @memberOf IDeploymentMethod
      */
-    detailedDescription: (t: I18next.TFunction) => string;
+    detailedDescription: (t: TFunction) => string;
     /**
      * determine if this activator is supported in the current environment
      * If the activator is supported, returns undefined. Otherwise a string
@@ -200,8 +207,12 @@ export interface IDeploymentMethod {
      * deactivate the specified mod, removing all files it has deployed to the destination
      * @param {string} sourcePath source where the mod is installed
      * @param {string} dataPath relative path within the data path where mods are installed to
+     * @param {string} sourceName name of the source mod
+     *
+     * @todo sorry about the stupid parameter order, sourceName was added after release so to
+     *   remain backwards compatible we have to append it
      */
-    deactivate: (sourcePath: string, dataPath: string) => Promise<void>;
+    deactivate: (sourcePath: string, dataPath: string, sourceName: string) => Promise<void>;
     /**
      * called before mods are being purged. If multiple mod types are going to be purged,
      * this is only called once.
@@ -220,7 +231,7 @@ export interface IDeploymentMethod {
      *
      * @memberOf IDeploymentMethod
      */
-    purge: (installPath: string, dataPath: string) => Promise<void>;
+    purge: (installPath: string, dataPath: string, gameId?: string) => Promise<void>;
     /**
      * called after mods were purged. If multiple mod types wer purged, this is only called
      * after they are all done.

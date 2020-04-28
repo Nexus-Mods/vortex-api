@@ -13,7 +13,8 @@
         "jsx":"react",
         "emitDeclarationOnly": true,
         "declaration": true,
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "esModuleInterop": true
     },
     "files": [
         "../src/index.ts",

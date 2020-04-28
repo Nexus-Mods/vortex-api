@@ -1,6 +1,6 @@
 /// <reference types="node" />
 import * as fs from './fs';
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 export interface IWalkOptions {
     ignoreErrors?: string[] | true;
 }

@@ -1,9 +1,9 @@
 import { ITableAttribute } from '../../types/ITableAttribute';
+import { TFunction } from '../../util/i18n';
 import { ITableRowAction } from '../Table';
-import I18next from 'i18next';
 import * as React from 'react';
 export interface IRowProps {
-    t: I18next.TFunction;
+    t: TFunction;
     id: string;
     tableId: string;
     data: any;

@@ -1,4 +1,4 @@
-import { IExtensibleProps } from '../util/ExtensionProvider';
+import { IExtensibleProps } from '../types/IExtensionProvider';
 import * as React from 'react';
 export interface IBaseProps {
     group: string;

@@ -20,7 +20,7 @@ interface IProgressBarState {
  */
 declare class ProgressBar extends React.PureComponent<IBaseProps, IProgressBarState> {
     constructor(props: IBaseProps);
-    componentWillReceiveProps(newProps: IBaseProps): void;
+    UNSAFE_componentWillReceiveProps(newProps: IBaseProps): void;
     render(): JSX.Element;
     private renderLabels;
     private renderPercentage;

@@ -1,6 +1,6 @@
 import { DialogActions, DialogType, IDialogContent, IDialogResult } from '../types/IDialog';
 import { INotification, NotificationDismiss } from '../types/INotification';
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 import * as reduxAct from 'redux-act';
 export * from '../types/IDialog';
 /**
@@ -41,6 +41,7 @@ export declare const addDialog: reduxAct.ComplexActionCreator6<string, string, s
  */
 export declare const dismissDialog: reduxAct.ComplexActionCreator1<any, any, {}>;
 export declare function fireNotificationAction(notiId: string, notiProcess: string, action: number, dismiss: NotificationDismiss): void;
+export declare function setupNotificationSuppression(cb: (id: string) => boolean): void;
 /**
  * show a notification
  *

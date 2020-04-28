@@ -11,7 +11,9 @@ export declare class StateProxyHandler<T extends object> implements ProxyHandler
     private mBaseObject;
     private mParent;
     private mSubProxies;
-    constructor(component: ComponentEx<any, T> | PureComponentEx<any, T>, baseObject: T, parent: StateProxyHandler<T>, objPath: string[]);
+    private mDelayed;
+    private mDelayedTimer;
+    constructor(component: ComponentEx<any, T> | PureComponentEx<any, T>, baseObject: T, parent: StateProxyHandler<T>, objPath: string[], delayed: boolean);
     has(target: T, key: PropertyKey): boolean;
     get(target: T, key: PropertyKey): any;
     deleteProperty(target: T, key: PropertyKey): boolean;
@@ -37,11 +39,11 @@ export declare class ComponentEx<P, S extends object> extends React.Component<P 
     static contextTypes: React.ValidationMap<any>;
     context: IComponentContext;
     nextState: S;
-    protected initState(value: S): void;
+    protected initState(value: S, delayed?: boolean): void;
 }
 export declare class PureComponentEx<P, S extends object> extends React.PureComponent<P & Partial<WithTranslation>, S> {
     static contextTypes: React.ValidationMap<any>;
     context: IComponentContext;
     nextState: S;
-    protected initState(value: S): void;
+    protected initState(value: S, delayed?: boolean): void;
 }

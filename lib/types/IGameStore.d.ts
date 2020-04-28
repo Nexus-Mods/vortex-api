@@ -1,30 +1,22 @@
 import { IExecInfo } from './IExecInfo';
 import { IExtensionApi } from './IExtensionContext';
 import { IGameStoreEntry } from './IGameStoreEntry';
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 export declare type GameLaunchType = 'gamestore' | 'commandline';
 export declare class GameStoreNotFound extends Error {
     private mName;
     constructor(name: any);
-    readonly storeName: string;
+    get storeName(): string;
 }
 export declare class GameEntryNotFound extends Error {
     private mName;
     private mStore;
     private mExistingNames;
     constructor(name: string, store: string, existing?: string[]);
-    readonly gameName: string;
-    readonly storeName: string;
-    readonly existingGames: string[];
+    get gameName(): string;
+    get storeName(): string;
+    get existingGames(): string[];
 }
-
-// Allows game extensions to pass arguments and attempt to partially
-//  control how the game gets started. Please use the optional addInfo
-//  parameter when returning from IGame::requiresLauncher
-// requiresLauncher?: (gamePath: string) => Promise<{
-//   launcher: string;
-//   addInfo?: any; <- return a ICustomExecutionInfo object here.
-// }>;
 export interface ICustomExecutionInfo {
     appId: string;
     parameters: string[];

@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { IExtensionApi } from '../types/IExtensionContext';
 declare class ReduxProp<T> {
     private mInputs;

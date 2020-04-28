@@ -1,4 +1,4 @@
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 export declare type ProblemSeverity = 'warning' | 'error';
 export interface ITestResult {
     description: {
@@ -7,7 +7,9 @@ export interface ITestResult {
         replace?: {
             [key: string]: any;
         };
+        localize?: boolean;
     };
     severity: ProblemSeverity;
     automaticFix?: () => Promise<void>;
+    onRecheck?: () => Promise<void>;
 }
