@@ -8,10 +8,10 @@ export interface IProps {
     params: INotification & {
         process?: string;
     };
-    onExpand: (groupId: string) => void;
-    onTriggerAction: (notificationId: string, actionTitle: string) => void;
-    onDismiss: (id: string) => void;
-    onSuppress: (id: string) => void;
+    onExpand?: (groupId: string) => void;
+    onTriggerAction?: (notificationId: string, actionTitle: string) => void;
+    onDismiss?: (id: string) => void;
+    onSuppress?: (id: string) => void;
 }
 declare class Notification extends ComponentEx<IProps, {
     open: boolean;
