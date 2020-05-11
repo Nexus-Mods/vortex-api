@@ -1,6 +1,11 @@
 const fs = require('fs');
 const path = require('path');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+let ForkTsCheckerWebpackPlugin;
+try {
+  ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+} catch (err) {
+  // nop
+}
 
 function externalsDirect() {
   return [

@@ -56,3 +56,6 @@ export declare class MissingInterpreter extends Error {
 export declare class NotFound extends Error {
     constructor(what: string);
 }
+export declare class TimeoutError extends Error {
+    constructor();
+}
