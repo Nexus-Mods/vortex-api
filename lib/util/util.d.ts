@@ -99,10 +99,15 @@ export interface ITimeoutOptions {
  * set a timeout for a promise. When the timeout expires the promise returned by this
  * resolves with a value of undefined (or throws a TimeoutError).
  * @param prom the promise that should be wrapped
- * @param delay the time in milliseconds after which this should return
+ * @param delayMS the time in milliseconds after which this should return
  * @param options options detailing how this timeout acts
  */
-export declare function timeout<T>(prom: Promise<T>, delay: number, options?: ITimeoutOptions): Promise<T>;
+export declare function timeout<T>(prom: Promise<T>, delayMS: number, options?: ITimeoutOptions): Promise<T>;
+/**
+ * wait for the specified number of milliseconds before resolving the promise.
+ * Bluebird has this feature as Promise.delay but when using es6 default promises this can be used
+ */
+export declare function delay(timeoutMS: number): Promise<void>;
 /**
  * characters invalid in a file path
  */

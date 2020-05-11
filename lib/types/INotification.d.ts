@@ -73,6 +73,10 @@ export interface INotification {
      */
     createdTime?: number;
     /**
+     * time the notification was last updated
+     */
+    updatedTime?: number;
+    /**
      * replacement parameters for the localisation of title and message (the same
      * replacement dictionary will be used for both)
      */
