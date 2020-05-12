@@ -66,6 +66,7 @@ declare class StarterInfo implements IStarterInfo {
     defaultPrimary: boolean;
     extensionPath: string;
     logoName: string;
+    timestamp: number;
     constructor(game: IGameStored, gameDiscovery: IDiscoveryResult, tool?: IToolStored, toolDiscovery?: IDiscoveredTool);
     private initFromGame;
     private initFromTool;

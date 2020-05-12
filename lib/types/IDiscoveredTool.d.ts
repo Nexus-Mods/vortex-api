@@ -4,4 +4,5 @@ export interface IDiscoveredTool extends ITool {
     hidden: boolean;
     custom: boolean;
     workingDirectory?: string;
+    timestamp?: number;
 }

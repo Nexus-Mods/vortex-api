@@ -2,6 +2,7 @@ import { IExtensionApi } from '../../../types/IExtensionContext';
 import { IDeploymentManifest } from '../types/IDeploymentManifest';
 import { IDeployedFile, IDeploymentMethod } from '../types/IDeploymentMethod';
 import Promise from 'bluebird';
+export declare function purgeDeployedFiles(basePath: string, files: IDeployedFile[]): Promise<void>;
 /**
  * purge files using information from the manifest
  */

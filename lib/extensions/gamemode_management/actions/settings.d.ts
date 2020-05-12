@@ -18,10 +18,11 @@ export declare const setGamePath: reduxAct.ComplexActionCreator2<string, string,
 /**
  * add info about a discovered tool
  */
-export declare const addDiscoveredTool: reduxAct.ComplexActionCreator3<string, string, IDiscoveredTool, {
+export declare const addDiscoveredTool: reduxAct.ComplexActionCreator4<string, string, IDiscoveredTool, boolean, {
     gameId: string;
     toolId: string;
     result: IDiscoveredTool;
+    manual: boolean;
 }, {}>;
 /**
  * set visibility of a tool. Tools that have been added by the user will be removed entirely whereas

@@ -5,6 +5,7 @@ export interface IDeploymentManifest {
     deploymentMethod?: string;
     deploymentTime?: number;
     stagingPath?: string;
+    targetPath?: string;
     files: IDeployedFile[];
 }
 export declare type ManifestFormat = (input: any) => IDeploymentManifest;

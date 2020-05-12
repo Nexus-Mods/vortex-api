@@ -133,3 +133,4 @@ export interface IFlattenParameters {
  */
 export declare function flatten(obj: any, options?: IFlattenParameters): any;
 export declare function withTmpDir<T>(cb: (tmpPath: string) => Promise<T>): Promise<T>;
+export declare function toPromise<ResT>(func: (cb: any) => void): Promise<ResT>;
