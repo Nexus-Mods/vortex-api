@@ -6,6 +6,7 @@ export interface IRowProps {
     t: TFunction;
     id: string;
     tableId: string;
+    rowClass: string;
     data: any;
     rawData: any;
     attributes: ITableAttribute[];
