@@ -43,7 +43,7 @@ export { chmodAsync, closeAsync, fsyncAsync, lstatAsync, mkdirAsync, mkdirsAsync
 export declare function isDirectoryAsync(dirPath: string): PromiseBB<boolean>;
 export declare function ensureDirSync(dirPath: string): void;
 export declare function ensureFileAsync(filePath: string): PromiseBB<void>;
-export declare function ensureDirAsync(dirPath: string): PromiseBB<void>;
+export declare function ensureDirAsync(dirPath: string, onDirCreatedCB?: (created: string) => PromiseBB<void>): PromiseBB<void>;
 /**
  * copy file
  * The copy function from fs-extra doesn't (at the time of writing) correctly check that a file

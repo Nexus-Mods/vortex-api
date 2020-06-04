@@ -239,6 +239,16 @@ export interface IRunParameters {
     args: string[];
     options: IRunOptions;
 }
+export interface IPreviewFile {
+    /**
+     * label to display to the user if applicable
+     */
+    label: string;
+    /**
+     * full path to the file to preview
+     */
+    filePath: string;
+}
 /**
  * interface for convenience functions made available to extensions
  *
@@ -405,7 +415,7 @@ export interface IExtensionApi {
      *
      * @memberOf IExtensionApi
      */
-    lookupModMeta: (details: ILookupDetails) => Promise<ILookupResult[]>;
+    lookupModMeta: (details: ILookupDetails, ignoreCache?: boolean) => Promise<ILookupResult[]>;
     /**
      * save meta information about a mod
      *
@@ -892,6 +902,33 @@ export interface IExtensionContext {
      * state.persistent.profiles.<profile id>.features.<feature id>
      */
     registerProfileFeature?: (featureId: string, type: string, icon: string, label: string, description: string, supported: () => boolean) => void;
+    /**
+     * register a handler that can be used to preview or diff files.
+     * A handler can return a promise rejected with a "ProcessCanceled" exception to indicate
+     * it doesn't support the file type, in which case the next handler is tried.
+     * If no handler supports a file type, an error is displayed.
+     *
+     * Now at the lowest level a preview handler just has to be able to show a single file
+     * of the file type, in which case it should show the first file from the list passed in
+     * as a parameter, or offer the user a choice. More advanced handlers may show a diff between
+     * the files.
+     * If the "allowPick" option is specified the caller would like the user to be
+     * able to pick one of the files and that choice should then be returned but
+     * this is an optional feature the handler doesn't need to support.
+     *
+     * Handlers that support both diffing files and picking choices should have high
+     * priority (0-100), handlers that support diffing but not picking should be
+     * put into the range (100-200), handlers that only support showing a single
+     * file should be in the range (300-infinite).
+     * (Obviously the use case where the handler supports picking files but can only
+     * show a single file doesn't exist because duh.)
+     * This way the most feature rich handler supporting a file type will get picked.
+     *
+     * Note: If the viewer supports picking the Promise shall resolve after the
+     *   choice is made and include the selected entry, if it doesn't it can resolve
+     *   as soon as the handler knows whether it supports the file.
+     */
+    registerPreview?: (priority: number, handler: (files: IPreviewFile[], allowPick: boolean) => Promise<IPreviewFile>) => void;
     /**
      * specify that a certain range of versions of vortex is required
      * (see https://www.npmjs.com/package/semver for syntax documentation).

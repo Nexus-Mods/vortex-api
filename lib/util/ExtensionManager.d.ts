@@ -49,6 +49,7 @@ declare class ExtensionManager {
     private mOnUIStarted;
     private mUIStartedPromise;
     private mOutdated;
+    private mExtensionFormats;
     constructor(initStore?: Redux.Store<any>, eventEmitter?: NodeJS.EventEmitter);
     setTranslation(translator: i18n): void;
     get extensions(): IRegisteredExtension[];
@@ -109,6 +110,7 @@ declare class ExtensionManager {
     get numOnce(): number;
     onLoadingExtension(cb: (name: string, idx: number) => void): void;
     setUIReady(): void;
+    private registerFormats;
     private getModDB;
     private getMetaServerList;
     private connectMetaDB;
@@ -129,6 +131,7 @@ declare class ExtensionManager {
     private lookupModReference;
     private modLookupId;
     private lookupModMeta;
+    private makeSorter;
     private saveModMeta;
     private openArchive;
     private applyStartHooks;

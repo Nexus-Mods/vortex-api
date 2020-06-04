@@ -73,6 +73,7 @@ export interface IDialogContent {
         translated?: boolean;
         wrap?: boolean;
         hideMessage?: boolean;
+        bbcodeContext?: any;
     };
     condition?: Condition;
 }

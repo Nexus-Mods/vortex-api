@@ -30,4 +30,4 @@ import * as tooltip from './TooltipControls';
 import TriStateCheckbox from './TriStateCheckbox';
 import Usage from './Usage';
 import Webview from './Webview';
-export { ActionContextMenu, ActionDropdown, Advanced, Banner, ChangeDataHandler, ContextMenu, Dashlet, DraggableList, Dropdown, Dropzone, EmptyPlaceholder, FlexLayout, FormFeedback, FormInput, Icon, IconBar, ITableRowAction, Modal, More, OptionsFilter, Overlay, OverlayTrigger, Table, TableDateTimeFilter, TableNumericFilter, TableTextFilter, Spinner, Steps, makeGetSelection, Toggle, ToolbarIcon, tooltip, TriStateCheckbox, Usage, Webview };
+export { ActionContextMenu, ActionDropdown, Advanced, Banner, ChangeDataHandler, ContextMenu, Dashlet, DraggableList, Dropdown, Dropzone, EmptyPlaceholder, TriStateCheckbox, FlexLayout, FormFeedback, FormInput, Icon, IconBar, ITableRowAction, Modal, More, OptionsFilter, Overlay, OverlayTrigger, Table, TableDateTimeFilter, TableNumericFilter, TableTextFilter, Spinner, Steps, makeGetSelection, Toggle, ToolbarIcon, tooltip, Usage, Webview };

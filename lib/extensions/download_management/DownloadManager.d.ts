@@ -6,8 +6,11 @@ import Promise from 'bluebird';
 export declare type RedownloadMode = 'always' | 'never' | 'ask';
 export declare class AlreadyDownloaded extends Error {
     private mFileName;
+    private mId;
     constructor(fileName: string);
     get fileName(): string;
+    get downloadId(): string;
+    set downloadId(id: string);
 }
 export declare class DownloadIsHTML extends Error {
     private mUrl;
