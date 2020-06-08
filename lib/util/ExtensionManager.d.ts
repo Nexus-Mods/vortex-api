@@ -110,7 +110,6 @@ declare class ExtensionManager {
     get numOnce(): number;
     onLoadingExtension(cb: (name: string, idx: number) => void): void;
     setUIReady(): void;
-    private registerFormats;
     private getModDB;
     private getMetaServerList;
     private connectMetaDB;

@@ -14,6 +14,7 @@ function externalsDirect() {
     'exe-version',
     'ffi',
     'fs',
+    'fs-extra',
     'fs-extra-promise',
     'immutability-helper',
     'lodash',

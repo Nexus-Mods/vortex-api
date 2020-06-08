@@ -32,5 +32,6 @@ declare class StyleManager {
     setSheet(key: string, filePath: string): void;
     renderNow(): Promise<void>;
     private render;
+    private applyCSS;
 }
 export default StyleManager;
