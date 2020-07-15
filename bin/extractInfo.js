@@ -17,7 +17,7 @@ function extractExtensionInfo(extPath) {
   const pkgInfo = JSON.parse(fs.readFileSync(path.join(extPath, 'package.json')).toString());
 
   return {
-    id: pkgInfo.name,
+    id: (pkgInfo.config && pkgInfo.config.id) ? pkgInfo.config.id : undefined,
     name: (pkgInfo.config && pkgInfo.config.game) ? `Game: ${pkgInfo.config.game}` : transformName(pkgInfo.name),
     author: pkgInfo.author,
     version: pkgInfo.version,
