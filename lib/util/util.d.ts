@@ -67,6 +67,7 @@ export declare function makeQueue(): (func: () => Promise<any>, tryOnly: boolean
  */
 export declare function spawnSelf(args: string[]): void;
 export declare function bytesToString(bytes: number): string;
+export declare function largeNumToString(num: number): string;
 export declare function pad(value: number, padding: string, width: number): string;
 export declare function timeToString(seconds: number): string;
 export declare function encodeHTML(input: string): string;
@@ -94,6 +95,7 @@ export declare function escapeRE(input: string): string;
 export interface ITimeoutOptions {
     cancel?: boolean;
     throw?: boolean;
+    queryContinue?: () => Promise<boolean>;
 }
 /**
  * set a timeout for a promise. When the timeout expires the promise returned by this

@@ -1,7 +1,7 @@
 /// <reference types="node" />
 import { IExtension } from '../extensions/extension_manager/types';
 import { ExtensionInit } from '../types/Extension';
-import { IExtensionApi, ThunkStore } from '../types/IExtensionContext';
+import { IExtensionApi, IExtensionContext, ThunkStore } from '../types/IExtensionContext';
 import { IState } from '../types/IState';
 import { i18n } from './i18n';
 import Promise from 'bluebird';
@@ -9,9 +9,10 @@ import { WebContents } from 'electron';
 import * as Redux from 'redux';
 export interface IRegisteredExtension {
     name: string;
+    namespace: string;
     path: string;
     dynamic: boolean;
-    initFunc: ExtensionInit;
+    initFunc: () => ExtensionInit;
     info?: IExtension;
 }
 /**
@@ -22,7 +23,10 @@ export interface IRegisteredExtension {
  */
 declare class ExtensionManager {
     static registerUIAPI(name: string): void;
-    static getExtensionPaths(): string[];
+    static getExtensionPaths(): Array<{
+        path: string;
+        bundled: boolean;
+    }>;
     private static sUIAPIs;
     private mExtensions;
     private mApi;
@@ -43,6 +47,7 @@ declare class ExtensionManager {
     private mLoadFailures;
     private mInterpreters;
     private mStartHooks;
+    private mToolParameterCBs;
     private mLoadingCallbacks;
     private mProgrammaticMetaServers;
     private mForceDBReconnect;
@@ -99,7 +104,7 @@ declare class ExtensionManager {
      *
      * @memberOf ExtensionManager
      */
-    apply(funcName: string, func: (...args: any[]) => void): void;
+    apply(funcName: keyof IExtensionContext, func: (...args: any[]) => void): void;
     /**
      * call the "once" function for all extensions. This should really only be called
      * once.
@@ -110,6 +115,7 @@ declare class ExtensionManager {
     get numOnce(): number;
     onLoadingExtension(cb: (name: string, idx: number) => void): void;
     setUIReady(): void;
+    private queryLoadTimeout;
     private getModDB;
     private getMetaServerList;
     private connectMetaDB;
@@ -142,6 +148,7 @@ declare class ExtensionManager {
     private highlightControl;
     private addMetaServer;
     private startIPC;
+    private idify;
     private loadDynamicExtension;
     private loadDynamicExtensions;
     /**
@@ -151,6 +158,6 @@ declare class ExtensionManager {
      *
      * @returns {ExtensionInit[]}
      */
-    private loadExtensions;
+    private prepareExtensions;
 }
 export default ExtensionManager;

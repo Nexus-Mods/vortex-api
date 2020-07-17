@@ -124,6 +124,11 @@ export interface IDeploymentMethod {
      */
     readonly priority: number;
     /**
+     * if true, no redundancy check is made for this deployment.
+     * For cases where the redundancy check wouldn't work correctly
+     */
+    readonly noRedundancy?: boolean;
+    /**
      * returns more extensive description/explanation of the activator.
      *
      * @type {string}

@@ -15,5 +15,5 @@ declare class MainPageHeader extends React.Component<IProps, {}> {
     shouldComponentUpdate(): boolean;
     render(): JSX.Element;
 }
-declare const _default: import("react-redux").ConnectedComponent<typeof MainPageHeader, Pick<IConnectedProps, never>>;
+declare const _default: import("react-redux").ConnectedComponent<typeof MainPageHeader, Pick<React.ClassAttributes<MainPageHeader> & IConnectedProps, "ref" | "key">>;
 export default _default;

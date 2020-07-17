@@ -55,7 +55,7 @@ declare class GameModeManager {
      *
      * @memberOf GameModeManager
      */
-    startSearchDiscovery(): void;
+    startSearchDiscovery(searchPaths: string[]): void;
     /**
      * stop search discovery
      *

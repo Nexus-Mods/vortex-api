@@ -2,6 +2,7 @@ import { IExtensionLoadFailure, IExtensionState } from '../../types/IState';
 export declare type ExtensionType = 'game' | 'translation' | 'theme';
 export interface IExtension {
     id?: string;
+    namespace?: string;
     name: string;
     author: string;
     description: string;

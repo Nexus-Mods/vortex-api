@@ -1,4 +1,4 @@
-export declare type AppPath = 'base' | 'assets' | 'assets_unpacked' | 'modules' | 'modules_unpacked' | 'bundledPlugins' | 'locales' | 'package' | 'userData' | 'appData' | 'temp' | 'home' | 'documents';
+export declare type AppPath = 'base' | 'assets' | 'assets_unpacked' | 'modules' | 'modules_unpacked' | 'bundledPlugins' | 'locales' | 'package' | 'application' | 'userData' | 'appData' | 'temp' | 'home' | 'documents';
 /**
  * the electron getAppPath function and globals like __dirname
  * or process.resourcesPath don't do a great job of abstracting away

@@ -59,3 +59,9 @@ export declare class NotFound extends Error {
 export declare class TimeoutError extends Error {
     constructor();
 }
+/**
+ * these errors we report but don't allow to be reported to us
+ */
+export declare class ThirdPartyError extends Error {
+    constructor(message: string);
+}
