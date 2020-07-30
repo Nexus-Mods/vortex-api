@@ -18,6 +18,7 @@ function extractExtensionInfo(extPath) {
 
   return {
     name: (pkgInfo.config && pkgInfo.config.game) ? `Game: ${pkgInfo.config.game}` : transformName(pkgInfo.name),
+    namespace: (pkgInfo.config && pkgInfo.config.namespace) ? pkgInfo.config.namespace : undefined,
     author: pkgInfo.author,
     version: pkgInfo.version,
     description: pkgInfo.description,
