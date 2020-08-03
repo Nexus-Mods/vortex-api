@@ -115,7 +115,7 @@ export declare function removeValueIf<T extends object>(state: T, path: Array<(s
  * @returns {T}
  */
 export declare function merge<T extends object>(state: T, path: Array<(string | number)>, value: any): T;
-export declare function rehydrate<T extends object>(state: T, inbound: any, path: string[]): T;
+export declare function rehydrate<T extends object>(state: T, inbound: any, path: string[], replace: boolean): T;
 /**
  * return the stored static details about the currently selected game mode
  * or a fallback with the id '__placeholder'

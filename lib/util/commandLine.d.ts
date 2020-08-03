@@ -3,6 +3,7 @@ export interface IParameters {
     install?: string;
     report?: string;
     restore?: string;
+    startMinimized?: boolean;
     game?: string;
     get?: string;
     set?: string[];

@@ -10,6 +10,7 @@ export interface IInfoPanelProps {
 export interface ILoadOrderEntry {
     pos: number;
     enabled: boolean;
+    prefix?: string;
     locked?: boolean;
     external?: boolean;
 }
@@ -35,7 +36,7 @@ export interface ILoadOrderDisplayItem {
     invalid?: boolean;
     message?: string;
     contextMenuActions?: IActionDefinitionEx[];
-    condition?: (lhs: ILoadOrderDisplayItem, rhs: ILoadOrderDisplayItem) => IDnDConditionResult;
+    condition?: (lhs: ILoadOrderDisplayItem, rhs: ILoadOrderDisplayItem, predictedResult: ILoadOrderDisplayItem[]) => IDnDConditionResult;
 }
 export interface IGameLoadOrderEntry {
     gameId: string;
