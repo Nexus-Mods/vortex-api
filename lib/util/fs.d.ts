@@ -22,6 +22,7 @@ export interface ILinkFileOptions {
 export interface IRemoveFileOptions {
     showDialogCallback?: () => boolean;
 }
+export declare function genFSWrapperAsync<T extends (...args: any[]) => any>(func: T): T;
 declare const chmodAsync: (path: string, mode: string | number) => PromiseBB<void>;
 declare const closeAsync: (fd: number) => PromiseBB<void>;
 declare const fsyncAsync: (fd: number) => PromiseBB<void>;

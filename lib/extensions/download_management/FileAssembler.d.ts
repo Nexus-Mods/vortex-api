@@ -12,7 +12,7 @@ declare class FileAssembler {
     private mFD;
     private mFileName;
     private mTotalSize;
-    private mWork;
+    private mQueue;
     private mWritten;
     private mLastFlushedTime;
     private mLastFlushedSize;

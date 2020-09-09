@@ -1,3 +1,4 @@
+import { IBBCodeContext } from '../util/bbcode';
 export declare type DialogType = 'success' | 'info' | 'error' | 'question';
 export interface IDialogAction {
     label: string;
@@ -74,7 +75,7 @@ export interface IDialogContent {
         translated?: boolean;
         wrap?: boolean;
         hideMessage?: boolean;
-        bbcodeContext?: any;
+        bbcodeContext?: IBBCodeContext;
     };
     condition?: Condition;
 }

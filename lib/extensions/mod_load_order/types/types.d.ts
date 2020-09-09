@@ -4,6 +4,7 @@ import { types } from 'vortex-api';
 import { IActionDefinitionEx } from '../../../controls/ActionControl';
 export declare type SortType = 'ascending' | 'descending';
 export declare type ListViewType = 'compact' | 'full';
+export declare type UpdateType = 'drag-n-drop' | 'props-update' | 'refresh';
 export interface IInfoPanelProps {
     refresh: () => void;
 }
@@ -43,9 +44,9 @@ export interface IGameLoadOrderEntry {
     gameArtURL: string;
     displayCheckboxes?: boolean;
     createInfoPanel: (props: IInfoPanelProps) => string | React.Component;
-    preSort?: (items: ILoadOrderDisplayItem[], sortDir: SortType) => Promise<ILoadOrderDisplayItem[]>;
+    preSort?: (items: ILoadOrderDisplayItem[], sortDir: SortType, updateType?: UpdateType) => Promise<ILoadOrderDisplayItem[]>;
     filter?: (mods: types.IMod[]) => types.IMod[];
-    callback?: (loadOrder: ILoadOrder) => void;
+    callback?: (loadOrder: ILoadOrder, updateType?: UpdateType) => void;
     itemRenderer?: React.ComponentClass<{
         className?: string;
         item: ILoadOrderDisplayItem;

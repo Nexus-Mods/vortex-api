@@ -3,7 +3,7 @@ import { IDownloadResult } from './types/IDownloadResult';
 import { ProgressCallback } from './types/ProgressCallback';
 import { IProtocolHandlers } from './types/ProtocolHandlers';
 import Promise from 'bluebird';
-export declare type RedownloadMode = 'always' | 'never' | 'ask';
+export declare type RedownloadMode = 'always' | 'never' | 'ask' | 'replace';
 export declare class AlreadyDownloaded extends Error {
     private mFileName;
     private mId;

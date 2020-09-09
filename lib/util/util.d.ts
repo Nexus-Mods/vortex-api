@@ -1,5 +1,6 @@
 import { Normalize } from './getNormalizeFunc';
-import Promise from 'bluebird';
+import Bluebird from 'bluebird';
+import * as tmp from 'tmp';
 /**
  * count the elements in an array for which the predicate matches
  *
@@ -60,7 +61,7 @@ export declare function objDiff(lhs: any, rhs: any, skip?: string[]): any;
  * will be called only after everything before it in the queue is finished
  * and with the promise that nothing else in the queue is run in parallel.
  */
-export declare function makeQueue(): (func: () => Promise<any>, tryOnly: boolean) => Promise<unknown>;
+export declare function makeQueue<T>(): (func: () => Bluebird<T>, tryOnly: boolean) => Bluebird<T>;
 /**
  * spawn this application itself
  * @param args
@@ -95,7 +96,7 @@ export declare function escapeRE(input: string): string;
 export interface ITimeoutOptions {
     cancel?: boolean;
     throw?: boolean;
-    queryContinue?: () => Promise<boolean>;
+    queryContinue?: () => Bluebird<boolean>;
 }
 /**
  * set a timeout for a promise. When the timeout expires the promise returned by this
@@ -104,12 +105,12 @@ export interface ITimeoutOptions {
  * @param delayMS the time in milliseconds after which this should return
  * @param options options detailing how this timeout acts
  */
-export declare function timeout<T>(prom: Promise<T>, delayMS: number, options?: ITimeoutOptions): Promise<T>;
+export declare function timeout<T>(prom: Bluebird<T>, delayMS: number, options?: ITimeoutOptions): Bluebird<T>;
 /**
  * wait for the specified number of milliseconds before resolving the promise.
  * Bluebird has this feature as Promise.delay but when using es6 default promises this can be used
  */
-export declare function delay(timeoutMS: number): Promise<void>;
+export declare function delay(timeoutMS: number): Bluebird<void>;
 /**
  * characters invalid in a file path
  */
@@ -134,6 +135,14 @@ export interface IFlattenParameters {
  * @param options parameters controlling the flattening process
  */
 export declare function flatten(obj: any, options?: IFlattenParameters): any;
-export declare function withTmpDir<T>(cb: (tmpPath: string) => Promise<T>): Promise<T>;
-export declare function toPromise<ResT>(func: (cb: any) => void): Promise<ResT>;
+export declare function withTmpDirImpl<T>(cb: (tmpPath: string) => Bluebird<T>): Bluebird<T>;
+export interface ITmpOptions {
+    cleanup?: boolean;
+}
+declare function withTmpFileImpl<T>(cb: (fd: number, name: string) => Bluebird<T>, options?: ITmpOptions & tmp.FileOptions): Bluebird<T>;
+declare const withTmpDir: typeof withTmpDirImpl;
+declare const withTmpFile: typeof withTmpFileImpl;
+export { withTmpDir, withTmpFile, };
+export declare function toPromise<ResT>(func: (cb: any) => void): Bluebird<ResT>;
 export declare function unique<T, U>(input: T[], keyFunc?: (item: T) => U): T[];
+export declare function delayed(delayMS: number): Promise<void>;

@@ -3,6 +3,9 @@ import Promise from 'bluebird';
 export interface IDownloadJob extends IChunk {
     state: 'init' | 'running' | 'paused' | 'finished';
     workerId?: number;
+    confirmedReceived: number;
+    confirmedOffset: number;
+    confirmedSize: number;
     dataCB?: (offset: number, data: any) => Promise<boolean>;
     completionCB?: () => void;
     errorCB?: (err: any) => void;
