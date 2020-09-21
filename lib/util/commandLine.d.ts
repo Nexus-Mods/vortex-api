@@ -12,6 +12,7 @@ export interface IParameters {
     shared?: boolean;
     maxMemory?: string;
     disableGPU?: boolean;
+    userData?: string;
 }
 declare function parseCommandline(argv: string[], electronIsShitHack: boolean): IParameters;
 export declare function filterArgs(input: string[]): string[];

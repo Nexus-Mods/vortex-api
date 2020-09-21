@@ -80,6 +80,7 @@ export declare function getAllPropertyNames(obj: object): string[];
  * @param parent path of the presumed parent directory
  */
 export declare function isChildPath(child: string, parent: string, normalize?: Normalize): boolean;
+export declare function ciEqual(lhs: string, rhs: string, locale?: string): boolean;
 /**
  * take any input string and sanitize it into a valid css id
  */
@@ -146,3 +147,4 @@ export { withTmpDir, withTmpFile, };
 export declare function toPromise<ResT>(func: (cb: any) => void): Bluebird<ResT>;
 export declare function unique<T, U>(input: T[], keyFunc?: (item: T) => U): T[];
 export declare function delayed(delayMS: number): Promise<void>;
+export declare function toBlue<T>(func: (...args: any[]) => Promise<T>): (...args: any[]) => Bluebird<T>;

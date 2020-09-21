@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import { IRule } from './IMod';
 export declare type InstructionType = 'copy' | 'mkdir' | 'submodule' | 'generatefile' | 'iniedit' | 'unsupported' | 'attribute' | 'setmodtype' | 'error' | 'rule';
 export interface IInstruction {
@@ -9,7 +10,7 @@ export interface IInstruction {
     key?: string;
     value?: string;
     submoduleType?: string;
-    data?: string;
+    data?: string | Buffer;
     rule?: IRule;
 }
 export interface IInstallResult {

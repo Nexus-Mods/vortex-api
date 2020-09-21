@@ -528,6 +528,7 @@ export interface IStateVerifier {
     type?: 'map' | 'string' | 'boolean' | 'number' | 'object' | 'array';
     noUndefined?: boolean;
     noNull?: boolean;
+    noEmpty?: boolean;
     elements?: {
         [key: string]: IStateVerifier;
     };
