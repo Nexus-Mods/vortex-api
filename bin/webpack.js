@@ -66,7 +66,7 @@ function output(moduleName, basePath) {
 }
 
 function loaders(version) {
-  const transpileOnly = (ForkTsCheckerWebpackPlugin !== undefined)
+  const transpileOnly = (ForkTsCheckerWebpackPlugin === undefined)
                       || (process.env['BUILD_QUICK_AND_DIRTY'] !== undefined);
   const res = [
     {test: /\.tsx?$/, loader: 'ts-loader', exclude: /node_modules/, options: {
