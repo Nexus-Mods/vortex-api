@@ -14,6 +14,7 @@
 import { TFunction } from './i18n';
 import PromiseBB from 'bluebird';
 import * as fs from 'fs-extra';
+import * as tmp from 'tmp';
 export { constants, FSWatcher, Stats, WriteStream } from 'fs';
 export { accessSync, closeSync, createReadStream, createWriteStream, linkSync, openSync, readFileSync, statSync, symlinkSync, watch, writeFileSync, writeSync, } from 'fs';
 export interface ILinkFileOptions {
@@ -72,3 +73,11 @@ export declare function changeFileOwnership(filePath: string, stat: fs.Stats): P
 export declare function changeFileAttributes(filePath: string, wantedAttributes: number, stat: fs.Stats): PromiseBB<void>;
 export declare function makeFileWritableAsync(filePath: string): PromiseBB<void>;
 export declare function forcePerm<T>(t: TFunction, op: () => PromiseBB<T>, filePath?: string, maxTries?: number): PromiseBB<T>;
+export declare function withTmpDirImpl<T>(cb: (tmpPath: string) => PromiseBB<T>): PromiseBB<T>;
+export interface ITmpOptions {
+    cleanup?: boolean;
+}
+declare function withTmpFileImpl<T>(cb: (fd: number, name: string) => PromiseBB<T>, options?: ITmpOptions & tmp.FileOptions): PromiseBB<T>;
+declare const withTmpDir: typeof withTmpDirImpl;
+declare const withTmpFile: typeof withTmpFileImpl;
+export { withTmpDir, withTmpFile, };

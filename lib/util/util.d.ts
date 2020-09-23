@@ -1,6 +1,5 @@
 import { Normalize } from './getNormalizeFunc';
 import Bluebird from 'bluebird';
-import * as tmp from 'tmp';
 /**
  * count the elements in an array for which the predicate matches
  *
@@ -136,14 +135,6 @@ export interface IFlattenParameters {
  * @param options parameters controlling the flattening process
  */
 export declare function flatten(obj: any, options?: IFlattenParameters): any;
-export declare function withTmpDirImpl<T>(cb: (tmpPath: string) => Bluebird<T>): Bluebird<T>;
-export interface ITmpOptions {
-    cleanup?: boolean;
-}
-declare function withTmpFileImpl<T>(cb: (fd: number, name: string) => Bluebird<T>, options?: ITmpOptions & tmp.FileOptions): Bluebird<T>;
-declare const withTmpDir: typeof withTmpDirImpl;
-declare const withTmpFile: typeof withTmpFileImpl;
-export { withTmpDir, withTmpFile, };
 export declare function toPromise<ResT>(func: (cb: any) => void): Bluebird<ResT>;
 export declare function unique<T, U>(input: T[], keyFunc?: (item: T) => U): T[];
 export declare function delayed(delayMS: number): Promise<void>;
