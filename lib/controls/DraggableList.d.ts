@@ -3,6 +3,7 @@ export interface IDraggableListProps {
     id: string;
     itemTypeId: string;
     items: any[];
+    idFunc?: (item: any) => string;
     itemRenderer: React.ComponentClass<{
         item: any;
     }>;
