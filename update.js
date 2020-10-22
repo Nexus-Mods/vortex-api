@@ -72,7 +72,7 @@ async function main() {
   const articles = await req('https://api.github.com/repos/Nexus-Mods/vortex-api/issues?labels=Article', {
     labels: 'Article',
   });
-  await fs.writeFile(path.join('docs', 'articles.md'), makeTOC(articles));
+  await fs.writeFile(path.join('docs', 'index.md'), makeTOC(articles));
   await fs.writeFile(path.join('docs', '_includes/navigation.html'), makeNav(articles));
   for (const article of articles) {
     await fs.writeFile(path.join('docs', 'articles', article.title + '.md'), articleFrame(article));

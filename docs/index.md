@@ -4,8 +4,12 @@ title: Articles
 ---
 # Articles
 ## UI
-[UI](articles/UI.md) (WIP) by TanninOne (Last update: Thu Oct 22 2020 15:40:24 GMT+0200 (GMT+02:00))
+[UI](articles/UI.md) (WIP) by TanninOne (Last update: Thu, 22 Oct 2020 13:40:24 GMT)
+
+[API Reference](api.html)
 
 ## General
-[Introduction](articles/Introduction.md) (WIP) by TanninOne (Last update: Thu Oct 22 2020 15:40:31 GMT+0200 (GMT+02:00))
+[Introduction](articles/Introduction.md) (WIP) by TanninOne (Last update: Thu, 22 Oct 2020 13:40:31 GMT)
+
+[API Reference](api.html)
 
