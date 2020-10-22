@@ -24,7 +24,7 @@ function state(article) {
 }
 
 function time(article) {
-  return new Date(article['updated_at']).toString();
+  return new Date(article['updated_at']).toGMTString();
 }
 
 function makeTOC(articles) {
