@@ -3,7 +3,9 @@
   "version": "1.3.10",
   "description": "Library exporting nmm components extensions may use",
   "main": "lib/index.js",
-  "bin": { "extractInfo": "./bin/extractInfo.js" },
+  "bin": {
+    "extractInfo": "./bin/extractInfo.js"
+  },
   "scripts": {
     "doc": "typedoc.cmd ../src/index.ts",
     "build": "tsc -p . -d"
@@ -15,6 +17,9 @@
   ],
   "author": "Black Tree Gaming Ltd",
   "license": "GPL-3.0",
-  "peerDependencies": {
+  "peerDependencies": {},
+  "dependencies": {
+    "fs-extra": "^9.0.1",
+    "request": "^2.88.2"
   }
 }
