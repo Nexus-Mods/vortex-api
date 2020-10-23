@@ -3,8 +3,6 @@ layout: default
 title: Introduction
 tags: General
 ---
-ignore me, trying something
-
 # Introduction
 
 Extensions are a way for anyone who knows javascript to add features to Vortex. Extensions can add functions at many points throughout the application.
