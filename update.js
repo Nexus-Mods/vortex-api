@@ -45,7 +45,7 @@ function makeTOC(articles) {
     res += `## ${group}\n`
         + groups[group].map(article =>
           `[${article.title}](articles/${article.title}.md)${state(article)} by ${article.user.login} (Last update: ${time(article)})`)
-          .join('\n')
+          .join('\n\n')
         + '\n\n'
     ;
   });
