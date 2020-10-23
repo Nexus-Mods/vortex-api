@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Introduction
-tags: [object Object] [object Object]
+tags: General
 ---
 ignore me, trying something
 

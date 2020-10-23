@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Asynchronous Code
-tags: [object Object] [object Object]
+tags: Language
 ---
 # Introduction
 

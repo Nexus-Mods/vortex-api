@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Project Management
-tags: [object Object] [object Object]
+tags: General
 ---
 # Project Management
 

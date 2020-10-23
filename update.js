@@ -63,7 +63,8 @@ function makeNav(articles) {
 }
 
 function articleFrame(article) {
-  return `---\nlayout: default\ntitle: ${article.title}\ntags: ${article.labels.join(' ')}\n---\n`
+  const tags = article.labels.map(label => label.name).filter(label => label !== 'Article');
+  return `---\nlayout: default\ntitle: ${article.title}\ntags: ${tags.join(' ')}\n---\n`
     + article.body
     + '\n\n'
     + `[Discuss this article](${article.html_url})`;
