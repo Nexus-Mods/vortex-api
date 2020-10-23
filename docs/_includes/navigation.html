@@ -4,7 +4,7 @@
   <ul>
     {% for article in category[1] %}
     <li>
-      <a href="{{ article.url }}">
+      <a href="{{ site.baseurl }}{{ article.url }}">
         {{ article.title }}
       </a>
     </li>
