@@ -72,7 +72,7 @@ function articleFrame(article) {
 
 function articleFileName(article) {
   const date = new Date(article['created_at']);
-  return `${date.getFullYear()}-${date.getMonth()}-${date.getDay()}-${article.title}.md`;
+  return `${date.getFullYear()}-${date.getMonth()}-${date.getDay()}-${article.title}`;
 }
 
 async function main() {
