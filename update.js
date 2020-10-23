@@ -1,6 +1,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 const request = require('request');
+// const yaml = require('js-yaml');
 
 async function req(url, headers) {
   return new Promise((resolve, reject) => {
@@ -27,7 +28,7 @@ function time(article) {
   return new Date(article['updated_at']).toGMTString();
 }
 
-function makeTOC(articles) {
+function makeIndex(articles) {
   const groups = articles.reduce((prev, article) => {
     const categories = article.labels.filter(label => label.name !== 'Article');
     categories.forEach(cat => {
@@ -62,20 +63,25 @@ function makeNav(articles) {
 }
 
 function articleFrame(article) {
-  return `---\nlayout: default\ntitle: ${article.title}\n---\n`
+  return `---\nlayout: default\ntitle: ${article.title}\ntags: ${article.labels.join(' ')}\n---\n`
     + article.body
     + '\n\n'
     + `[Discuss this article](${article.html_url})`;
+}
+
+function articleFileName(article) {
+  const date = new Date(article['created_at']);
+  return `${date.getFullYear()}-${date.getMonth()}-${date.getDay()}-${article.title}.md`;
 }
 
 async function main() {
   const articles = await req('https://api.github.com/repos/Nexus-Mods/vortex-api/issues?labels=Article&state=all', {
     labels: 'Article',
   });
-  await fs.writeFile(path.join('docs', 'index.md'), makeTOC(articles));
-  await fs.writeFile(path.join('docs', '_includes/navigation.html'), makeNav(articles));
+  // await fs.writeFile(path.join('docs', 'index.md'), makeIndex(articles));
+  // await fs.writeFile(path.join('docs', '_includes/navigation.html'), makeNav(articles));
   for (const article of articles) {
-    await fs.writeFile(path.join('docs', 'articles', article.title + '.md'), articleFrame(article));
+    await fs.writeFile(path.join('docs', '_posts', articleFileName(article) + '.md'), articleFrame(article));
   }
   console.log(articles);
 }

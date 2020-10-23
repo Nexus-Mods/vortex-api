@@ -20,6 +20,7 @@
   "peerDependencies": {},
   "dependencies": {
     "fs-extra": "^9.0.1",
+    "js-yaml": "^3.14.0",
     "request": "^2.88.2"
   }
 }

@@ -1,1 +1,18 @@
-<nav><a href="articles/Asynchronous Code.md">Asynchronous Code</a><br/><a href="articles/Project Management.md">Project Management</a><br/><a href="articles/UI.md">UI</a><br/><a href="articles/Introduction.md">Introduction</a></nav>
+<nav>
+  {% for category in site.categories %}
+  <h3>{{ category[0] }}</h3>
+  <ul>
+    {% for article in category[1] %}
+    <li>
+      <a href="{{ article.url }}">
+        {{ article.title }}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+  <h3>Other</h3>
+  <ul>
+    <a href="{{ site.url }}/api/index.html">Api Reference</a>
+  </ul>
+</nav>

@@ -1,0 +1,15 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+#root {
+}
+
+#sidenav {
+    padding: 2em;
+}
+
+#content {
+    max-width: 60em;
+}
