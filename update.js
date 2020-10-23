@@ -47,10 +47,10 @@ function makeTOC(articles) {
           `[${article.title}](articles/${article.title}.md)${state(article)} by ${article.user.login} (Last update: ${time(article)})`)
           .join('\n')
         + '\n\n'
-        + '[API Reference](api.html)'
-        + '\n\n'
     ;
   });
+  res += '[API Reference](api.html)'
+       + '\n\n';
 
   return res;
 }
@@ -69,7 +69,7 @@ function articleFrame(article) {
 }
 
 async function main() {
-  const articles = await req('https://api.github.com/repos/Nexus-Mods/vortex-api/issues?labels=Article', {
+  const articles = await req('https://api.github.com/repos/Nexus-Mods/vortex-api/issues?labels=Article&state=all', {
     labels: 'Article',
   });
   await fs.writeFile(path.join('docs', 'index.md'), makeTOC(articles));
