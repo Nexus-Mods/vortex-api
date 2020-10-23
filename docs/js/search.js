@@ -1,7 +1,7 @@
 (function() {
-  function displaySearchResults(results, store) {
+  function displaySearchResults(term, results, store) {
     var searchTerm = document.getElementById('search_term');
-    searchTerm.innerHTML = result
+    searchTerm.innerHTML = term;
     var searchResults = document.getElementById('search_results');
 
     if (results.length) {
@@ -54,6 +54,6 @@
     });
 
     var results = idx.search(searchTerm);
-    displaySearchResults(results, window.store);
+    displaySearchResults(searchTerm, results, window.store);
   }
 })();
