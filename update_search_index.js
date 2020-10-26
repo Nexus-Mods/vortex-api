@@ -3,13 +3,17 @@ const fs = require('fs-extra');
 const path = require('path');
 const matter = require('gray-matter');
 
+function pad0(input) {
+  return ('0' + input).slice(-2);
+}
+
 // 2020/09/05/Project-Management.html
 // 2020-9-4-UI.md
 function postId(input) {
   const segs = input.split('-');
   let fileName = segs.slice(3).join('-');
   fileName = path.basename(fileName, path.extname(fileName));
-  return path.join(segs[0], segs[1], segs[2], fileName + '.html');
+  return path.join(segs[0], pad0(segs[1]), pad0(segs[2]), fileName + '.html');
 }
 
 async function addPosts(idx) {
@@ -18,7 +22,6 @@ async function addPosts(idx) {
   for (const post of posts) {
     const dat = await fs.readFile(path.join('docs', '_posts', post), { encoding: 'utf8' });
     const gm = matter(dat);
-    console.log(post, '=>', postId(post));
     res.push({
       id: postId(post),
       title: gm.data.title,
@@ -52,7 +55,6 @@ async function addReference(idx) {
       content: dat,
     });
   }
-  console.log(files[0], refId(files[0]));
   return res;
 }
 
