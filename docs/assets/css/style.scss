@@ -7,13 +7,18 @@
 }
 
 #sidenav {
-    padding: 2em;
+  padding: 2em;
 }
 
 #content {
-    max-width: 60em;
+  max-width: 60em;
+}
+
+#content img {
+  max-width: 100%;
 }
 
 #search_term {
-    display: inline;
+  display: inline;
 }
+
