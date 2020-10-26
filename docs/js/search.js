@@ -1,7 +1,7 @@
 (function() {
   function displaySearchResults(term, results, store) {
     var searchTerm = document.getElementById('search_term');
-    searchTerm.innerHTML = term;
+    searchTerm.innerHTML = `"${term}"`;
     var searchResults = document.getElementById('search_results');
 
     if (results.length) {
@@ -9,7 +9,7 @@
 
       for (var i = 0; i < results.length; i++) {
         var item = store[results[i].ref];
-        appendString += '<li><a href="' + item.url + '"><h3>' + item.title + '</h3></a>';
+        appendString += '<li><a href="/vortex-api' + item.url + '"><h3>' + item.title + '</h3></a>';
       }
 
       searchResults.innerHTML = appendString;
