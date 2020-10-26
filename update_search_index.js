@@ -3,20 +3,36 @@ const fs = require('fs-extra');
 const path = require('path');
 const matter = require('gray-matter');
 
+// 2020/09/05/Project-Management.html
+// 2020-9-4-UI.md
+function postId(input) {
+  const segs = input.split('-');
+  let fileName = segs.slice(3).join('-');
+  fileName = path.basename(fileName, path.extname(fileName));
+  return path.join(segs[0], segs[1], segs[2], fileName + '.html');
+}
+
 async function addPosts(idx) {
   const posts = await fs.readdir(path.join('docs', '_posts'));
   const res = [];
   for (const post of posts) {
     const dat = await fs.readFile(path.join('docs', '_posts', post), { encoding: 'utf8' });
     const gm = matter(dat);
+    console.log(post, '=>', postId(post));
     res.push({
-      id: post,
+      id: postId(post),
       title: gm.data.title,
       author: gm.data.author,
       content: gm.content,
     });
   }
   return res;
+}
+
+function refId(input)  {
+  const segs = input.split(path.sep);
+  segs[segs.length - 1] = path.basename(input, path.extname(input)) + '.html';
+  return path.join(...segs.slice(1));
 }
 
 async function addReference(idx) {
@@ -30,12 +46,13 @@ async function addReference(idx) {
   for (const file of files) {
     const dat = await fs.readFile(file, { encoding: 'utf8' });
     res.push({
-      id: file,
+      id: refId(file),
       title: path.basename(file, path.extname(file)),
       author: 'Reference',
       content: dat,
     });
   }
+  console.log(files[0], refId(files[0]));
   return res;
 }
 
