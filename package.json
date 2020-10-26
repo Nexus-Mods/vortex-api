@@ -8,6 +8,7 @@
   },
   "scripts": {
     "doc": "typedoc.cmd ../src/index.ts",
+    "kb": "node update.js",
     "build": "tsc -p . -d"
   },
   "typings": "lib/index.d.ts",
