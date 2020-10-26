@@ -6,7 +6,11 @@
 #root {
 }
 
-#sidenav {
+#sidenav > nav {
+  padding: 2em;
+}
+
+#apinav > nav {
   padding: 2em;
 }
 
@@ -22,3 +26,8 @@
   display: inline;
 }
 
+#search-box {
+  background-color: transparent;
+  color: white;
+  border: 1px solid gray;
+}

@@ -21,7 +21,9 @@
   "peerDependencies": {},
   "dependencies": {
     "fs-extra": "^9.0.1",
+    "gray-matter": "^4.0.2",
     "js-yaml": "^3.14.0",
+    "lunr": "^2.3.9",
     "request": "^2.88.2"
   }
 }
