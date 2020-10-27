@@ -8,10 +8,11 @@ export declare type UpdateType = 'drag-n-drop' | 'props-update' | 'refresh';
 export interface IInfoPanelProps {
     refresh: () => void;
 }
-export interface ILoadOrderEntry {
+export interface ILoadOrderEntry<T = any> {
     pos: number;
     enabled: boolean;
     prefix?: string;
+    data?: T;
     locked?: boolean;
     external?: boolean;
 }
@@ -26,11 +27,17 @@ export interface IDnDConditionResult {
     success: boolean;
     errMessage?: string;
 }
+/**
+ * describes an item in the load order control.
+ * This isn't just used for "display", the id is what gets stored to internally
+ * save the load order
+ */
 export interface ILoadOrderDisplayItem {
     id: string;
     name: string;
     imgUrl: string;
     prefix?: string;
+    data?: string;
     locked?: boolean;
     external?: boolean;
     official?: boolean;

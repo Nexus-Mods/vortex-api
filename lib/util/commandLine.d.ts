@@ -13,6 +13,7 @@ export interface IParameters {
     maxMemory?: string;
     disableGPU?: boolean;
     userData?: string;
+    inspector?: boolean;
 }
 declare function parseCommandline(argv: string[], electronIsShitHack: boolean): IParameters;
 export declare function filterArgs(input: string[]): string[];

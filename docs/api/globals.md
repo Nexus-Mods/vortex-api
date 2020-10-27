@@ -668,7 +668,6 @@
 * [removeProfile](globals.md#removeprofile)
 * [renameCategory](globals.md#renamecategory)
 * [resetSuppression](globals.md#resetsuppression)
-* [rimrafAsync](globals.md#rimrafasync)
 * [sampleDate1](globals.md#sampledate1)
 * [sampleDate2](globals.md#sampledate2)
 * [sanityChecks](globals.md#sanitychecks)
@@ -1082,9 +1081,11 @@
 * [renderError](globals.md#rendererror)
 * [repairManifest](globals.md#repairmanifest)
 * [replaceFuncName](globals.md#replacefuncname)
+* [replaceRecursive](globals.md#replacerecursive)
 * [resolveCategoryName](globals.md#resolvecategoryname)
 * [resolveCategoryPath](globals.md#resolvecategorypath)
 * [restackErr](globals.md#restackerr)
+* [rimrafAsync](globals.md#rimrafasync)
 * [rmdirAsync](globals.md#rmdirasync)
 * [rmdirInt](globals.md#rmdirint)
 * [roundToDay](globals.md#roundtoday)
@@ -2171,7 +2172,7 @@ ___
 
 • `Const` **HIDE\_ATTRIBUTES**: Set\<string> = new Set( ['message', 'error', 'context', 'errno', 'syscall', 'isOperational', 'attachLogOnReport'])
 
-*Defined in Work/vortex/src/util/message.ts:586*
+*Defined in Work/vortex/src/util/message.ts:587*
 
 ___
 
@@ -2542,17 +2543,15 @@ ___
 
 ### app
 
-• `Const` **app**: App = remote !== undefined ? remote.app : appIn
-
-*Defined in Work/vortex/src/extensions/download_management/util/getDownloadPath.ts:7*
+• `Let` **app**: App = appIn
 
 *Defined in Work/vortex/src/util/getVortexPath.ts:4*
 
+*Defined in Work/vortex/src/util/i18n.ts:16*
+
+*Defined in Work/vortex/src/extensions/download_management/util/getDownloadPath.ts:7*
+
 *Defined in Work/vortex/src/extensions/extension_manager/installExtension.ts:22*
-
-*Defined in Work/vortex/src/util/StyleManager.ts:14*
-
-*Defined in Work/vortex/src/util/ExtensionManager.ts:68*
 
 *Defined in Work/vortex/src/util/Steam.ts:17*
 
@@ -2560,7 +2559,9 @@ ___
 
 *Defined in Work/vortex/src/extensions/mod_management/util/getInstallPath.ts:7*
 
-*Defined in Work/vortex/src/util/i18n.ts:16*
+*Defined in Work/vortex/src/util/StyleManager.ts:14*
+
+*Defined in Work/vortex/src/util/ExtensionManager.ts:68*
 
 ___
 
@@ -2759,13 +2760,13 @@ ___
 
 ### dialog
 
-• `Const` **dialog**: Dialog = remote !== undefined ? remote.dialog : dialogIn
+• `Let` **dialog**: Dialog = dialogIn
+
+*Defined in Work/vortex/src/util/fs.ts:34*
 
 *Defined in Work/vortex/src/extensions/download_management/FileAssembler.ts:12*
 
 *Defined in Work/vortex/src/util/ExtensionManager.ts:69*
-
-*Defined in Work/vortex/src/util/fs.ts:34*
 
 ___
 
@@ -3340,22 +3341,6 @@ ___
 • `Const` **resetSuppression**: ComplexActionCreator1\<unknown, any, {}> = safeCreateAction('RESET\_SUPPRESSION', () => null)
 
 *Defined in Work/vortex/src/actions/notificationSettings.ts:9*
-
-___
-
-### rimrafAsync
-
-▸ `Const`**rimrafAsync**(`remPath`: string): PromiseBB\<void>
-
-*Defined in Work/vortex/src/util/fs.ts:743*
-
-#### Parameters:
-
-Name | Type |
------- | ------ |
-`remPath` | string |
-
-**Returns:** PromiseBB\<void>
 
 ___
 
@@ -5608,9 +5593,9 @@ ___
 
 ### default
 
-▸ **default**\<T>(`delayed`: () => T, `exportId?`: string): T
+▸ **default**\<T>(`load`: () => any): (Anonymous function)
 
-*Defined in Work/vortex/src/util/lazyRequire.ts:1*
+*Defined in Work/vortex/src/util/LazyComponent.tsx:2*
 
 #### Type parameters:
 
@@ -5622,10 +5607,9 @@ Name |
 
 Name | Type |
 ------ | ------ |
-`delayed` | () => T |
-`exportId?` | string |
+`load` | () => any |
 
-**Returns:** T
+**Returns:** (Anonymous function)
 
 ___
 
@@ -8547,7 +8531,7 @@ ___
 
 ▸ **prettifyHTTPError**(`err`: [HTTPError](classes/httperror.md)): any
 
-*Defined in Work/vortex/src/util/message.ts:554*
+*Defined in Work/vortex/src/util/message.ts:555*
 
 #### Parameters:
 
@@ -8563,7 +8547,7 @@ ___
 
 ▸ **prettifyNodeErrorMessage**(`err`: any): [IPrettifiedError](interfaces/iprettifiederror.md)
 
-*Defined in Work/vortex/src/util/message.ts:345*
+*Defined in Work/vortex/src/util/message.ts:346*
 
 #### Parameters:
 
@@ -9474,7 +9458,7 @@ ___
 
 ▸ **renderCustomError**(`err`: any): [ICustomErrorType](interfaces/icustomerrortype.md)
 
-*Defined in Work/vortex/src/util/message.ts:515*
+*Defined in Work/vortex/src/util/message.ts:516*
 
 #### Parameters:
 
@@ -9490,7 +9474,7 @@ ___
 
 ▸ **renderError**(`err`: string \| [Error](classes/notsupportederror.md#error) \| any): object
 
-*Defined in Work/vortex/src/util/message.ts:593*
+*Defined in Work/vortex/src/util/message.ts:594*
 
 render error message for display to the user
 
@@ -9547,6 +9531,24 @@ Name | Type |
 
 ___
 
+### replaceRecursive
+
+▸ **replaceRecursive**(`input`: any, `from`: any, `to`: any): any
+
+*Defined in Work/vortex/src/util/util.ts:572*
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`input` | any |
+`from` | any |
+`to` | any |
+
+**Returns:** any
+
+___
+
 ### resolveCategoryName
 
 ▸ **resolveCategoryName**(`category`: string, `state`: [IState](interfaces/istate.md)): string
@@ -9599,6 +9601,22 @@ Name | Type |
 `stackErr` | [Error](classes/notsupportederror.md#error) |
 
 **Returns:** [Error](classes/notsupportederror.md#error)
+
+___
+
+### rimrafAsync
+
+▸ `Const`**rimrafAsync**(`remPath`: string): PromiseBB\<void>
+
+*Defined in Work/vortex/src/util/fs.ts:743*
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`remPath` | string |
+
+**Returns:** PromiseBB\<void>
 
 ___
 

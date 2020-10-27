@@ -14,5 +14,5 @@ export interface IExtensionProps {
  * @param {(React.ComponentClass<P & IExtensionProps>)} ComponentToWrap the component to wrap
  * @returns {React.ComponentClass<P>} the wrapper component
  */
-export declare function extend(registerFunc: (...args: any[]) => void, groupProp?: string): <P extends IExtendedProps>(component: React.ComponentType<P>) => React.ComponentType<Omit<P, keyof IExtendedProps> & IExtensibleProps>;
+export declare function extend(registerFunc: (...args: any[]) => void, groupProp?: string, addExtInfo?: boolean): <P extends IExtendedProps>(component: React.ComponentType<P>) => React.ComponentType<Omit<P, keyof IExtendedProps> & IExtensibleProps>;
 export {};

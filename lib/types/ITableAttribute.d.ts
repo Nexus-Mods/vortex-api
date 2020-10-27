@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { TFunction } from '../util/i18n';
+import { ITString, TFunction } from '../util/i18n';
 export declare type AttributeRenderer = 'progress';
 export declare type Placement = 'table' | 'detail' | 'both' | 'inline';
 export declare type ValidationState = 'success' | 'warning' | 'error';
@@ -50,12 +50,12 @@ export interface ITableAttribute<T = any> {
     /**
      * user readable name for the attribute (appears in the header and potentially in tooltips)
      */
-    name?: string;
+    name?: string | ITString;
     /**
      * lengthier description of what the attribute represents
      * (currently unused but please provide one anyway)
      */
-    description?: string;
+    description?: string | ITString;
     /**
      * position of the attribute within the table (at some point we may allow users to override
      * this at which point this will be the default)
@@ -66,7 +66,7 @@ export interface ITableAttribute<T = any> {
      * is no custom renderer and only if a name is set (as otherwise the space for the help icon
      * doesn't exist)
      */
-    help?: string;
+    help?: string | ITString;
     /**
      * icon for the attribute. This is currently only used for the toggle button if the column is
      * toggleable

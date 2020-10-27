@@ -21,7 +21,7 @@
 
 • `Optional` **errMessage**: string
 
-*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:73*
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:76*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 •  **success**: boolean
 
-*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:69*
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:72*

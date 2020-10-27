@@ -19,7 +19,7 @@ declare class FileAssembler {
     constructor(fileName: string, size: number, fd: number);
     setTotalSize(size: number): void;
     isClosed(): boolean;
-    rename(newName: string | Promise<string>): void;
+    rename(newName: string | Promise<string>): Promise<any>;
     addChunk(offset: number, data: Buffer): Promise<boolean>;
     close(): Promise<void>;
     private writeAsync;

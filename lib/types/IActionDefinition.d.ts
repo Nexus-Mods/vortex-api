@@ -1,6 +1,7 @@
 import * as React from 'react';
 export interface IActionOptions {
     noCollapse?: boolean;
+    namespace?: string;
 }
 /**
  * interface of an action within one of the icon bars

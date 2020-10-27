@@ -63,6 +63,7 @@ declare class GameModeManager {
      */
     stopSearchDiscovery(): void;
     private ensureWritable;
+    private reloadStoreGames;
     private storeGame;
     private storeTool;
     private onDiscoveredTool;

@@ -1,6 +1,6 @@
 module.exports = {
   "mode": "file",
-  "out": "docs",
+  "out": "docs/api",
   "theme": "default",
   "ignoreCompilerErrors": "true",
   "experimentalDecorators": "true",
@@ -13,8 +13,6 @@ module.exports = {
   "suppressImplicitAnyIndexErrors": "true",
   "externalPattern": "**/node_modules/**",
   "exclude": "**/__tests__/**",
-  "_excludeExternals": "true",
-  "_excludePrivate": "true",
   "module": "commonjs",
   "readme": "./README.md",
   "tsconfig": "./tsconfig.json"

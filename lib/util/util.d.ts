@@ -139,3 +139,4 @@ export declare function toPromise<ResT>(func: (cb: any) => void): Bluebird<ResT>
 export declare function unique<T, U>(input: T[], keyFunc?: (item: T) => U): T[];
 export declare function delayed(delayMS: number): Promise<void>;
 export declare function toBlue<T>(func: (...args: any[]) => Promise<T>): (...args: any[]) => Bluebird<T>;
+export declare function replaceRecursive(input: any, from: any, to: any): any;

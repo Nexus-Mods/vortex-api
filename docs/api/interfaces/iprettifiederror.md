@@ -22,7 +22,7 @@
 
 • `Optional` **allowReport**: boolean
 
-*Defined in Work/vortex/src/util/message.ts:342*
+*Defined in Work/vortex/src/util/message.ts:343*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 •  **message**: string
 
-*Defined in Work/vortex/src/util/message.ts:340*
+*Defined in Work/vortex/src/util/message.ts:341*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • `Optional` **replace**: any
 
-*Defined in Work/vortex/src/util/message.ts:341*
+*Defined in Work/vortex/src/util/message.ts:342*

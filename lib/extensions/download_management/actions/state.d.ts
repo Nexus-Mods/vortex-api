@@ -36,6 +36,13 @@ export declare const startDownload: reduxAct.ComplexActionCreator1<string, {
     id: string;
 }, {}>;
 /**
+ * mark download as finalizing, meaning the file has been downloaded fully,
+ * during this phase checksums are calculated for example
+ */
+export declare const finalizingDownload: reduxAct.ComplexActionCreator1<string, {
+    id: string;
+}, {}>;
+/**
  * mark download as finished
  */
 export declare const finishDownload: reduxAct.ComplexActionCreator3<string, "finished" | "failed" | "redirect", any, {

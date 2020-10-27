@@ -2,7 +2,13 @@
 
 > [Globals](../globals.md) / ILoadOrderEntry
 
-# Interface: ILoadOrderEntry
+# Interface: ILoadOrderEntry\<T>
+
+## Type parameters
+
+Name | Default |
+------ | ------ |
+`T` | any |
 
 ## Hierarchy
 
@@ -12,6 +18,7 @@
 
 ### Properties
 
+* [data](iloadorderentry.md#data)
 * [enabled](iloadorderentry.md#enabled)
 * [external](iloadorderentry.md#external)
 * [locked](iloadorderentry.md#locked)
@@ -19,6 +26,14 @@
 * [prefix](iloadorderentry.md#prefix)
 
 ## Properties
+
+### data
+
+• `Optional` **data**: T
+
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:44*
+
+___
 
 ### enabled
 
@@ -32,7 +47,7 @@ ___
 
 • `Optional` **external**: boolean
 
-*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:48*
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:51*
 
 ___
 
@@ -40,7 +55,7 @@ ___
 
 • `Optional` **locked**: boolean
 
-*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:44*
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:47*
 
 ___
 

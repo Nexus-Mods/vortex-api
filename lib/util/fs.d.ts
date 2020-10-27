@@ -16,7 +16,7 @@ import PromiseBB from 'bluebird';
 import * as fs from 'fs-extra';
 import * as tmp from 'tmp';
 export { constants, FSWatcher, Stats, WriteStream } from 'fs';
-export { accessSync, closeSync, createReadStream, createWriteStream, linkSync, openSync, readFileSync, statSync, symlinkSync, watch, writeFileSync, writeSync, } from 'fs';
+export { accessSync, closeSync, createReadStream, createWriteStream, linkSync, openSync, readdirSync, readFileSync, statSync, symlinkSync, watch, writeFileSync, writeSync, } from 'fs';
 export interface ILinkFileOptions {
     showDialogCallback?: () => boolean;
 }
@@ -46,6 +46,11 @@ export declare function isDirectoryAsync(dirPath: string): PromiseBB<boolean>;
 export declare function ensureDirSync(dirPath: string): void;
 export declare function ensureFileAsync(filePath: string): PromiseBB<void>;
 export declare function ensureDirAsync(dirPath: string, onDirCreatedCB?: (created: string) => PromiseBB<void>): PromiseBB<void>;
+/**
+ * move a file. If the destination exists, will generate a new name with an
+ * increasing counter until an unused name is found
+ */
+export declare function moveRenameAsync(src: string, dest: string): PromiseBB<string>;
 /**
  * copy file
  * The copy function from fs-extra doesn't (at the time of writing) correctly check that a file

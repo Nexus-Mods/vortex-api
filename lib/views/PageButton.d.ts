@@ -4,6 +4,7 @@ import * as React from 'react';
 interface IPageButtonProps {
     t: TFunction;
     page: IMainPage;
+    namespace: string;
 }
 declare class PageButton extends React.Component<IPageButtonProps, {}> {
     componentDidMount(): void;

@@ -35,7 +35,7 @@ save the load order
 
 • `Optional` **condition**: (lhs: [ILoadOrderDisplayItem](iloadorderdisplayitem.md), rhs: [ILoadOrderDisplayItem](iloadorderdisplayitem.md), predictedResult: [ILoadOrderDisplayItem](iloadorderdisplayitem.md)[]) => [IDnDConditionResult](idndconditionresult.md)
 
-*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:123*
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:126*
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 • `Optional` **contextMenuActions**: [IActionDefinitionEx](iactiondefinitionex.md)[]
 
-*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:117*
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:120*
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 • `Optional` **data**: string
 
-*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:96*
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:99*
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 • `Optional` **external**: boolean
 
-*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:102*
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:105*
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 •  **id**: string
 
-*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:83*
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:86*
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 •  **imgUrl**: string
 
-*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:89*
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:92*
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 • `Optional` **invalid**: boolean
 
-*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:109*
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:112*
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 • `Optional` **locked**: boolean
 
-*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:99*
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:102*
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 • `Optional` **message**: string
 
-*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:113*
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:116*
 
 ___
 
@@ -107,7 +107,7 @@ ___
 
 •  **name**: string
 
-*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:86*
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:89*
 
 ___
 
@@ -115,7 +115,7 @@ ___
 
 • `Optional` **official**: boolean
 
-*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:105*
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:108*
 
 ___
 
@@ -123,4 +123,4 @@ ___
 
 • `Optional` **prefix**: string
 
-*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:93*
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:96*

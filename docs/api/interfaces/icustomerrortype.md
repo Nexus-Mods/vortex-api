@@ -24,7 +24,7 @@
 
 • `Optional` **allowReport**: boolean
 
-*Defined in Work/vortex/src/util/message.ts:511*
+*Defined in Work/vortex/src/util/message.ts:512*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 • `Optional` **message**: string
 
-*Defined in Work/vortex/src/util/message.ts:508*
+*Defined in Work/vortex/src/util/message.ts:509*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • `Optional` **parameters**: any
 
-*Defined in Work/vortex/src/util/message.ts:510*
+*Defined in Work/vortex/src/util/message.ts:511*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • `Optional` **text**: string
 
-*Defined in Work/vortex/src/util/message.ts:509*
+*Defined in Work/vortex/src/util/message.ts:510*
 
 ___
 
@@ -56,4 +56,4 @@ ___
 
 •  **wrap**: boolean
 
-*Defined in Work/vortex/src/util/message.ts:512*
+*Defined in Work/vortex/src/util/message.ts:513*

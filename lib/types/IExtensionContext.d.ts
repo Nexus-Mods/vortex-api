@@ -1,10 +1,12 @@
 /// <reference types="node" />
 import { IExtension } from '../extensions/extension_manager/types';
+import { IGameLoadOrderEntry } from '../extensions/mod_load_order/types/types';
 import { IDeployedFile, IDeploymentMethod, IFileChange } from '../extensions/mod_management/types/IDeploymentMethod';
 import { IInstallResult, IInstruction } from '../extensions/mod_management/types/IInstallResult';
 import { InstallFunc, ProgressDelegate } from '../extensions/mod_management/types/InstallFunc';
 import { ISupportedResult, TestSupported } from '../extensions/mod_management/types/TestSupported';
 import { Archive } from '../util/archives';
+import { IRegisteredExtension } from '../util/ExtensionManager';
 import { i18n, TFunction } from '../util/i18n';
 import ReduxProp from '../util/ReduxProp';
 import { SanityCheck } from '../util/reduxSanity';
@@ -23,7 +25,6 @@ import { ILookupResult, IModInfo, IReference } from 'modmeta-db';
 import * as React from 'react';
 import * as Redux from 'redux';
 import { ThunkDispatch } from 'redux-thunk';
-import { IRegisteredExtension } from '../util/ExtensionManager';
 export { TestSupported, IInstallResult, IInstruction, IDeployedFile, IDeploymentMethod, IFileChange, ILookupResult, IModInfo, IReference, InstallFunc, ISupportedResult, ProgressDelegate };
 export interface ThunkStore<S> extends Redux.Store<S> {
     dispatch: ThunkDispatch<S, null, Redux.Action>;
@@ -81,7 +82,7 @@ export interface IDashletOptions {
  *               commonly used in practice
  */
 export declare type RegisterDashlet = (title: string, width: 1 | 2 | 3, height: 1 | 2 | 3 | 4 | 5 | 6, position: number, component: React.ComponentClass<any> | React.FunctionComponent<any>, isVisible: (state: any) => boolean, props: PropsCallback, options: IDashletOptions) => void;
-export declare type RegisterDialog = (id: string, element: React.ComponentClass<any> | React.StatelessComponent<any>, props?: PropsCallback) => void;
+export declare type RegisterDialog = (id: string, element: React.ComponentType<any>, props?: PropsCallback) => void;
 export declare type ToDoType = 'settings' | 'search' | 'workaround' | 'more';
 export interface IToDoButton {
     text: string;
@@ -354,6 +355,10 @@ export interface IExtensionApi {
      */
     translate: TFunction;
     /**
+     * prepare a string to be translated further down the line.
+     */
+    laterT: TFunction;
+    /**
      * active locale
      */
     locale: () => string;
@@ -590,7 +595,8 @@ export interface IModTypeOptions {
  *    An extension can add new register functions by simply assigning to the context object.
  *    There is one limitation though: Due to the way those functions are called you can't have
  *    optional parameters in register functions, the caller always have to provide the exact number
- *    of arguments to get the function to be called correctly.
+ *    of arguments to get the function to be called correctly. Vortex will pass additional
+ *    parameters to the function that help identify the extension that called the function.
  *    These functions are then available to all other extensions, the order in which extensions
  *    are loaded is irrelevant (and can't be controlled).
  *    If an extension uses a register function from another extension it becomes implicitly
@@ -766,7 +772,9 @@ export interface IExtensionContext {
      * add an attribute to a table. An attribute can appear as a column inside the table or as a
      * detail field in the side panel.
      * The tableId identifies, obviously, the table to which the attribute should be added. Please
-     * find the right id in the documentation of the corresponding extension
+     * find the right id in the documentation of the corresponding extension.
+     * Please prefer specifying the attribute as a function returning the ITableAttribute instead of
+     * the attribute directly
      */
     registerTableAttribute: (tableId: string, attribute: ITableAttribute) => void;
     /**
@@ -868,9 +876,8 @@ export interface IExtensionContext {
     registerActionCheck: (actionType: string, check: SanityCheck) => void;
     /**
      * register a file merge that needs to happen during deployment.
-     * modType is the type with which the merged file(s) should be deployed. This needs to be an
-     * existing mod type (see registerModType), otherwise the merged file won't be used. Use an empty
-     * string for the default mod type
+     * modType is the mod type this applies to, so only mods from this mod type are merged
+     * and the output merge is of that type as well.
      *
      * This api is - complex - as it tries to cover multiple related use cases. Please
      * make sure you understand how it works becauses trial&error might drive you mad.
@@ -995,6 +1002,7 @@ export interface IExtensionContext {
      *                 you will probably not need this
      */
     registerToolVariables: (callback: ToolParameterCB) => void;
+    registerLoadOrderPage: (gameEntry: IGameLoadOrderEntry) => void;
     /**
      * add a function to the IExtensionApi object that is made available to all other extensions
      * in the api.ext object.

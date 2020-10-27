@@ -54,6 +54,7 @@ declare class ExtensionManager {
     private mOnUIStarted;
     private mUIStartedPromise;
     private mOutdated;
+    private mFailedWatchers;
     private mExtensionFormats;
     constructor(initStore?: Redux.Store<any>, eventEmitter?: NodeJS.EventEmitter);
     setTranslation(translator: i18n): void;
@@ -104,7 +105,7 @@ declare class ExtensionManager {
      *
      * @memberOf ExtensionManager
      */
-    apply(funcName: keyof IExtensionContext, func: (...args: any[]) => void): void;
+    apply(funcName: keyof IExtensionContext, func: (...args: any[]) => void, addExtInfo?: boolean): void;
     /**
      * call the "once" function for all extensions. This should really only be called
      * once.

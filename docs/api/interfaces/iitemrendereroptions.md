@@ -21,7 +21,7 @@
 
 •  **displayCheckboxes**: boolean
 
-*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:61*
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:64*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 •  **listViewType**: [ListViewType](../globals.md#listviewtype)
 
-*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:64*
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:67*

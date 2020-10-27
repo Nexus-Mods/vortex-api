@@ -7,6 +7,7 @@ declare class GameStoreHelper {
     findByName(name: string | string[], storeId?: string): Promise<IGameStoreEntry>;
     findByAppId(appId: string | string[], storeId?: string): Promise<IGameStoreEntry>;
     launchGameStore(api: IExtensionApi, gameStoreId: string, parameters?: string[], askConsent?: boolean): Promise<void>;
+    reloadGames(): Promise<void>;
     private isStoreRunning;
     private getstores;
     /**

@@ -34,7 +34,10 @@ export interface IGameStore {
     id: string;
     /**
      * Returns all recognized/installed games which are currently
-     *  installed with this game store/launcher.
+     *  installed with this game store/launcher. Please note that
+     *  the game entries should be cached to avoid running a potentially
+     *  resource intensive operation for each game the user attempts to
+     *  manage.
      */
     allGames: () => Promise<IGameStoreEntry[]>;
     /**
@@ -86,6 +89,15 @@ export interface IGameStore {
      * Returns the full path to the launcher's executable.
      */
     getGameStorePath?: () => Promise<string>;
+    /**
+     * Allows game stores to provide functionality to reload/refresh their
+     *  game entries. This is potentially a resource intensive operation and
+     *  should not be called unless it is vital to do so.
+     *
+     * The game store helper is configured to call this function for all known
+     *  game stores when a discovery scan is initiated.
+     */
+    reloadGames?: () => Promise<void>;
     /**
      * Launches the game using this game launcher.
      * @param appId whatever the game store uses to identify a game.

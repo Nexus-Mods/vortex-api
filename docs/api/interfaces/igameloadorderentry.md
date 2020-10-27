@@ -27,7 +27,7 @@
 
 • `Optional` **callback**: (loadOrder: [ILoadOrder](iloadorder.md), updateType?: [UpdateType](../globals.md#updatetype)) => void
 
-*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:158*
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:161*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 •  **createInfoPanel**: (props: [IInfoPanelProps](iinfopanelprops.md)) => string \| Component
 
-*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:144*
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:147*
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 • `Optional` **displayCheckboxes**: boolean
 
-*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:139*
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:142*
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 • `Optional` **filter**: (mods: IMod[]) => IMod[]
 
-*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:154*
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:157*
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 •  **gameArtURL**: string
 
-*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:133*
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:136*
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 •  **gameId**: string
 
-*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:130*
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:133*
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 • `Optional` **itemRenderer**: ComponentClass\<{ className?: string ; item: [ILoadOrderDisplayItem](iloadorderdisplayitem.md) ; onRef: (ref: any) => any  }>
 
-*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:162*
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:165*
 
 ___
 
@@ -83,4 +83,4 @@ ___
 
 • `Optional` **preSort**: (items: [ILoadOrderDisplayItem](iloadorderdisplayitem.md)[], sortDir: [SortType](../globals.md#sorttype), updateType?: [UpdateType](../globals.md#updatetype)) => Promise\<[ILoadOrderDisplayItem](iloadorderdisplayitem.md)[]>
 
-*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:148*
+*Defined in Work/vortex/src/extensions/mod_load_order/types/types.ts:151*
