@@ -38,7 +38,7 @@ context.api.onAsync('eventName', callback); // async
 To emit an event (or command) yourself use the following:
 
 ```
-context.api.events.emit('eventName', callback); // fire and forget
+context.api.events.emit('eventName', callback); // fire-and-forget
 
 context.api.emitAndAwait('eventName', callback); // async
 ```
@@ -51,7 +51,7 @@ context.api.emitAndAwait('eventName', callback); // async
 
 {% for event in site.data.events.events %}
 {% if event.type == "event" and event.internal != true %}
-### {{ event.name }}
+### {{ event.name }} {% if event.version %} <sup>(Requires Vortex {{ event.version }})</sup> {% endif %}
 
 {% if event.description %}
 {{ event.description }}
@@ -101,7 +101,7 @@ extension where you can't/don't want to rely on the other extension actually bei
 
 {% for event in site.data.events.events %}
 {% if event.type == "command" and event.internal != true %}
-### {{ event.name }}
+### {{ event.name }} {% if event.version %} <sup>(Requires Vortex {{ event.version }})</sup> {% endif %}
 
 {% if event.description %}
 Description: {{ event.description }}
