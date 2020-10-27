@@ -10,10 +10,10 @@ doing work every time Vortex deploys mod.
 
 ## Contributing
 
-This event lists below are generated from this data file:
+The event lists below are generated from this data file:
 https://github.com/Nexus-Mods/vortex-api/blob/master/docs/_data/events.yml
 
-Feel free to fork it and make a pull request with your improvements.
+If you want to improve the documentation, please fork this repo and make a pull request with your improvements.
 
 ## Interacting with events
 
