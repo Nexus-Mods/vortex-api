@@ -2,6 +2,8 @@
 
 > [Globals](globals.md)
 
+---
+---
 # Vortex API
 
 API used by Vortex extensions.
