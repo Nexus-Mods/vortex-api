@@ -10,17 +10,17 @@ This article is for those who have created an extension (or a translation or the
 The easiest way for users to find and install extensions is through the built-in dialog. For your extension to be listed there a couple of things have to be fulfilled:
 
 - it has to be packaged in the correct way (see below) 
-- it has to be uploaded to [https://www.nexusmods.com/site https://www.nexusmods.com/site] 
+- it has to be uploaded to https://www.nexusmods.com/site
 - it has to be added to the correct category 
 - it can only have a single file under "main files" (there are exceptions, see under "Advanced: Supporting multiple versions") 
-- it must use semantic versioning (3 numbers:&nbsp;major.minor.patch, see [https://semver.org/](https://semver.org/`)) 
+- it must use semantic versioning (3 numbers:&nbsp;major.minor.patch, see https://semver.org/)
 - it has to be manually reviewed by us 
 
 This last step means that after uploading your extension it may still take some time before it will be offered within Vortex.
 
 ### Translations
 
-Translations need to be packaged such that on the top level you have a directory with the two letter iso code for the language, optionally postfixed with the two letter country code. Directly inside that directory you include the translation files in json format.<br/> You can have additional files like readmes and license files in the base directory but we advice against including additional directories. Vortex will ignore any directory which&nbsp;isn't named like&nbsp;an iso language code&nbsp;and there has to be exactly one of those (two shalt thou not count, neither shalt thou count zero, excepting that thou then proceedeth to one. Three&nbsp;is right out.)
+Translations need to be packaged such that on the top level you have a directory with the two letter iso code for the language, optionally postfixed with the two letter country code. Directly inside that directory you include the translation files in json format.<br/> You can have additional files like readmes and license files in the base directory but we advice against including additional directories. Vortex will ignore any directory which isn't named like an iso language code and there has to be exactly one of those (two shalt thou not count, neither shalt thou count zero, excepting that thou then proceedeth to one. Three is right out.)
 
 So for german it could&nbsp;look like this:
 <pre>/
@@ -70,7 +70,8 @@ Example:
   |--> icon.svg
 </pre>
 
-On the topic of the info.json file: Please make sure you specify '''the exact same version number''' during upload that you have set in info.json and that the version is in semantic versioning format.<br/> Also: Please try to avoid changing the name of an extension (inside the info.json file) as much as possible, definitively don't put the version number into the extension name.
+On the topic of the info.json file: Please make sure you specify '''the exact same version number''' during upload that you have set in info.json and that the version is in semantic versioning format.
+Also: Please try to avoid changing the name of an extension (inside the info.json file) as much as possible, definitively don't put the version number into the extension name.
 
 Extensions have to be added to the Category "Vortex -> User Extensions"
 

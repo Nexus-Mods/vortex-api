@@ -75,12 +75,20 @@ function articleFileName(article) {
   return `${date.getFullYear()}-${date.getMonth()}-${date.getDay()}-${article.title}`;
 }
 
+// prepend frontmatter tag to the api index file
+async function updateApiIndex() {
+  const fm = '---\n---\n';
+  const dat = await fs.readFile(path.join('docs', 'api', 'README.md'), { encoding: 'utf8' });
+  await fs.writeFile(path.join('docs', 'api', 'README.md'), fm + dat, { encoding: 'utf8' });
+}
+
 async function main() {
   const articles = await req('https://api.github.com/repos/Nexus-Mods/vortex-api/issues?labels=Article&state=all', {
     labels: 'Article',
   });
   // await fs.writeFile(path.join('docs', 'index.md'), makeIndex(articles));
   // await fs.writeFile(path.join('docs', '_includes/navigation.html'), makeNav(articles));
+  await updateApiIndex();
   for (const article of articles) {
     await fs.writeFile(path.join('docs', '_posts', articleFileName(article) + '.md'), articleFrame(article));
   }

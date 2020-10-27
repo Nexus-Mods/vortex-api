@@ -1,5 +1,3 @@
----
----
 # Vortex API
 
 API used by Vortex extensions.

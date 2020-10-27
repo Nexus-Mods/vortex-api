@@ -41,7 +41,7 @@ If you follow the structure we use for all our extensions  you will always need 
 
 ### tsconfig.json
 
-```
+```json
 {
   "compilerOptions": {
     "target": "es6",
@@ -68,7 +68,7 @@ tsconfig.json is the configuration for the typescript compiler (also used by ts-
 
 ### webpack.config.js
 
-```
+```typescript
 const webpack = require('vortex-api/bin/webpack').default;
 
 module.exports = webpack('sample-extension', __dirname, 4);

@@ -7,7 +7,7 @@
     "extractInfo": "./bin/extractInfo.js"
   },
   "scripts": {
-    "doc": "typedoc.cmd --plugin typedoc-plugin-markdown ../src/index.ts",
+    "doc": "typedoc.cmd --plugin typedoc-plugin-markdown ../src/index.ts && yarn run kb",
     "dochtml": "typedoc.cmd ../src/index.ts",
     "kb": "node update.js",
     "build": "tsc -p . -d"

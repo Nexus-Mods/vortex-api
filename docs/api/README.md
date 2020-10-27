@@ -1,9 +1,9 @@
+---
+---
 **[vortex_devel](README.md)**
 
 > [Globals](globals.md)
 
----
----
 # Vortex API
 
 API used by Vortex extensions.
