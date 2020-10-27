@@ -1,0 +1,6 @@
+<div>
+  <p>Author: {{ page.author }}</p>
+  <p>Created: {{ page.created | date: '%Y-%m-%d' }}</p>
+  <p>Last update: {{ page.updated | date: '%Y-%m-%d' }}</p>
+  <p><a href="{{site.url}}/{{page.url}}">{{page.comments}} comments</a></p>
+</div>

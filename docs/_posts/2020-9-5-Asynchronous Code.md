@@ -1,7 +1,13 @@
 ---
 layout: default
+author: TanninOne
+created: Fri, 23 Oct 2020 07:09:22 GMT
+updated: Fri, 23 Oct 2020 07:09:29 GMT
+wip: false
 title: Asynchronous Code
 tags: Language
+comments: 0
+url: https://github.com/Nexus-Mods/vortex-api/issues/8
 ---
 # Introduction
 

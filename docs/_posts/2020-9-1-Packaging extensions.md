@@ -1,7 +1,13 @@
 ---
 layout: default
+author: TanninOne
+created: Mon, 26 Oct 2020 08:31:23 GMT
+updated: Mon, 26 Oct 2020 08:55:35 GMT
+wip: true
 title: Packaging extensions
 tags: General Tutorial
+comments: 0
+url: https://github.com/Nexus-Mods/vortex-api/issues/10
 ---
 # Overview
 

@@ -1,9 +1,9 @@
-<nav style="position: sticky; top: 0">
+<nav>
   {% for category in site.tags %}
   <h3>{{ category[0] }}</h3>
   <ul>
     {% for article in category[1] %}
-    <li>
+    <li {% if page.url == article.url %}class="current-page"{% endif %}>
       <a href="{{ site.baseurl }}{{ article.url }}">
         {{ article.title }}
       </a>
