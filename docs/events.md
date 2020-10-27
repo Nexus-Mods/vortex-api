@@ -30,7 +30,7 @@ that extensions are supposed to trigger and Vortex core or another extension rea
 
 In order to have your extension respond to an event you can use the following:
 ```
-context.api.events.on('eventName', callback); // fire-andtforget
+context.api.events.on('eventName', callback); // fire-and-forget
 
 context.api.onAsync('eventName', callback); // async
 ```
