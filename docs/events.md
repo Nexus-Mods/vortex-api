@@ -63,7 +63,11 @@ context.api.emitAndAwait('eventName', callback); // async
     {% endif %}
   </th>
   <td class="nowrap">
+    {% if arg.type contains ' ' or arg.type contains '[' or arg.type contains '(' or pod contains arg.type %}
     {{ arg.type | escape }}
+    {% else %}
+    <a href="{{ site.url }}/vortex-api/search.html?query={{arg.type}}">{{ arg.type | escape }}</a>
+    {% endif %}
   </td>
   <td>{{ arg.description }}</td>
 </tr>
