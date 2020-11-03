@@ -71,7 +71,7 @@ function articleFrame(article) {
     `updated: ${time(article.updated_at)}`,
     `wip: ${article.state === 'open'}`,
     `title: ${article.title}`,
-    `tags: ${tags.join(' ')}`,
+    `tags:\n${tags.map(tag => `  - ${tag}`).join('\n')}`,
     `comments: ${article.comments}`,
     `issue_url: ${article.html_url}`,
     '---',

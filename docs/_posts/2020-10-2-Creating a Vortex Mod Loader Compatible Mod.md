@@ -5,7 +5,9 @@ created: Tue, 03 Nov 2020 06:58:35 GMT
 updated: Tue, 03 Nov 2020 08:10:52 GMT
 wip: true
 title: Creating a Vortex Mod Loader Compatible Mod
-tags: Harmony Patcher Tutorial
+tags:
+  - Harmony Patcher
+  - Tutorial
 comments: 0
 issue_url: https://github.com/Nexus-Mods/vortex-api/issues/11
 ---

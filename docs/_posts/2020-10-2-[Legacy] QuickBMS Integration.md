@@ -5,7 +5,8 @@ created: Tue, 03 Nov 2020 07:16:38 GMT
 updated: Tue, 03 Nov 2020 07:19:38 GMT
 wip: true
 title: [Legacy] QuickBMS Integration
-tags: Feature
+tags:
+  - Feature
 comments: 0
 issue_url: https://github.com/Nexus-Mods/vortex-api/issues/17
 ---

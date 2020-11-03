@@ -5,7 +5,9 @@ created: Tue, 03 Nov 2020 07:05:32 GMT
 updated: Tue, 03 Nov 2020 07:05:32 GMT
 wip: true
 title: Game Extension Creation with Harmony
-tags: Harmony Patcher Tutorial
+tags:
+  - Harmony Patcher
+  - Tutorial
 comments: 0
 issue_url: https://github.com/Nexus-Mods/vortex-api/issues/12
 ---

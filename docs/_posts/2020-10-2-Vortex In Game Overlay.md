@@ -5,7 +5,9 @@ created: Tue, 03 Nov 2020 07:12:27 GMT
 updated: Tue, 03 Nov 2020 07:12:40 GMT
 wip: true
 title: Vortex In Game Overlay
-tags: Harmony Patcher UI
+tags:
+  - Harmony Patcher
+  - UI
 comments: 0
 issue_url: https://github.com/Nexus-Mods/vortex-api/issues/15
 ---

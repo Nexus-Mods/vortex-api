@@ -5,7 +5,9 @@ created: Tue, 03 Nov 2020 07:11:12 GMT
 updated: Tue, 03 Nov 2020 07:11:32 GMT
 wip: true
 title: Harmony Patcher Executable
-tags: General Harmony Patcher
+tags:
+  - General
+  - Harmony Patcher
 comments: 0
 issue_url: https://github.com/Nexus-Mods/vortex-api/issues/14
 ---

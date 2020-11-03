@@ -5,7 +5,9 @@ created: Tue, 03 Nov 2020 07:13:25 GMT
 updated: Tue, 03 Nov 2020 07:13:50 GMT
 wip: true
 title: Vortex Harmony Mod Loader
-tags: General Harmony Patcher
+tags:
+  - General
+  - Harmony Patcher
 comments: 0
 issue_url: https://github.com/Nexus-Mods/vortex-api/issues/16
 ---
