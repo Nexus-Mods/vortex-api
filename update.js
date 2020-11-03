@@ -73,7 +73,7 @@ function articleFrame(article) {
     `title: ${article.title}`,
     `tags: ${tags.join(' ')}`,
     `comments: ${article.comments}`,
-    `url: ${article.html_url}`,
+    `issue_url: ${article.html_url}`,
     '---',
   ];
   return frontMatter.join('\n') + '\n'
