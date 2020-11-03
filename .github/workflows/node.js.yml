@@ -20,6 +20,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: npm run kb
-    - run: git add _posts/*
+    - run: git add docs/_posts/*
     - run: git commit -m "updated knowledge base"
     - run: git push
