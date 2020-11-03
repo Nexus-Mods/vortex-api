@@ -5,6 +5,7 @@ created: Tue, 03 Nov 2020 07:05:32 GMT
 updated: Tue, 03 Nov 2020 07:05:32 GMT
 wip: true
 title: Game Extension Creation with Harmony
+order: 8
 tags:
   - Harmony Patcher
   - Tutorial

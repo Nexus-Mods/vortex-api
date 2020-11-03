@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 const request = require('request');
-// const yaml = require('js-yaml');
+const yaml = require('js-yaml');
 
 async function req(url, headers) {
   return new Promise((resolve, reject) => {
@@ -61,8 +61,13 @@ function makeNav(articles) {
     + '</nav>';
 }
 
-function articleFrame(article) {
+function articleFrame(article, order) {
   const tags = article.labels.map(label => label.name).filter(label => label !== 'Article');
+  let pos = order.indexOf(article.title);
+  if (pos === -1) {
+    pos = 1000;
+  }
+
   const frontMatter = [
     '---',
     'layout: article',
@@ -71,6 +76,7 @@ function articleFrame(article) {
     `updated: ${time(article.updated_at)}`,
     `wip: ${article.state === 'open'}`,
     `title: ${article.title}`,
+    `order: ${pos}`,
     `tags:\n${tags.map(tag => `  - ${tag}`).join('\n')}`,
     `comments: ${article.comments}`,
     `issue_url: ${article.html_url}`,
@@ -103,8 +109,9 @@ async function main() {
   // await fs.writeFile(path.join('docs', 'index.md'), makeIndex(articles));
   // await fs.writeFile(path.join('docs', '_includes/navigation.html'), makeNav(articles));
   await updateApiIndex();
+  const order = yaml.safeLoad(await fs.readFile(path.join('docs', 'postorder.yml'), { encoding: 'utf8' })).order;
   for (const article of articles) {
-    await fs.writeFile(path.join('docs', '_posts', articleFileName(article) + '.md'), articleFrame(article));
+    await fs.writeFile(path.join('docs', '_posts', articleFileName(article) + '.md'), articleFrame(article, order));
   }
   console.log(articles);
 }

@@ -1,8 +1,10 @@
 <nav>
+  {% assign tagssorted = site.tags | sort %}
   {% for category in site.tags %}
   <h3>{{ category[0] }}</h3>
   <ul>
-    {% for article in category[1] %}
+    {% assign sorted = category[1] | sort: 'order' %}
+    {% for article in sorted %}
     <li {% if page.url == article.url %}class="current-page"{% endif %}>
       <a href="{{ site.baseurl }}{{ article.url }}">
         {{ article.title }}
@@ -13,7 +15,7 @@
   {% endfor %}
   <h3>Other</h3>
   <ul>
-    <li><a href="{{ site.url }}/vortex-api/api/README.html">API Reference</a></li>
+    <li><a href="{{ site.url }}/vortex-api/api/index.html">API Reference</a></li>
     <li><a href="{{ site.url }}/vortex-api/events.html">API Events</a></li>
   </ul>
   <form action="/vortex-api/search.html" method="get">
