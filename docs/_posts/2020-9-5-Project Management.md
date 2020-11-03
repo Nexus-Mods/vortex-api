@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: article
 author: TanninOne
 created: Fri, 23 Oct 2020 07:08:08 GMT
 updated: Mon, 26 Oct 2020 09:16:26 GMT
@@ -7,7 +7,7 @@ wip: false
 title: Project Management
 tags: General
 comments: 0
-url: https://github.com/Nexus-Mods/vortex-api/issues/7
+issue_url: https://github.com/Nexus-Mods/vortex-api/issues/7
 ---
 # Project Management
 

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: article
 author: TanninOne
 created: Fri, 23 Oct 2020 11:18:11 GMT
 updated: Fri, 23 Oct 2020 11:18:11 GMT
@@ -7,7 +7,7 @@ wip: true
 title: Harmony Patcher
 tags: Feature
 comments: 0
-url: https://github.com/Nexus-Mods/vortex-api/issues/9
+issue_url: https://github.com/Nexus-Mods/vortex-api/issues/9
 ---
 ## Introduction
 
