@@ -65,7 +65,7 @@ function articleFrame(article) {
   const tags = article.labels.map(label => label.name).filter(label => label !== 'Article');
   const frontMatter = [
     '---',
-    'layout: default',
+    'layout: article',
     `author: ${article.user.login}`,
     `created: ${time(article.created_at)}`,
     `updated: ${time(article.updated_at)}`,
