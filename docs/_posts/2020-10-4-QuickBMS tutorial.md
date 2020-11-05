@@ -2,7 +2,7 @@
 layout: article
 author: IDCs
 created: Thu, 05 Nov 2020 08:33:06 GMT
-updated: Thu, 05 Nov 2020 08:43:04 GMT
+updated: Thu, 05 Nov 2020 09:41:13 GMT
 wip: true
 title: QuickBMS tutorial
 order: 1000
@@ -11,6 +11,8 @@ tags:
 comments: 0
 issue_url: https://github.com/Nexus-Mods/vortex-api/issues/18
 ---
+## **QuickBMS Tutorial** ##
+
 Please note: this tutorial uses components which have been introduced in Vortex 1.4.X; previous Vortex versions are using the deprecated [event based API](https://github.com/Nexus-Mods/vortex-api/issues/17) and therefore it’s highly advisable to update to the latest version before attempting to go through this tutorial.
 
 QuickBMS is an extractor engine created by Luigi Auriemma which can be used to extract, list, create or re-pack files through simple textual instructions. The extractor is capable of decompressing and decrypting files - for more information about this tool please see: url[quickbms introduction link here]
