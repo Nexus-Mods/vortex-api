@@ -2,13 +2,12 @@
 layout: article
 author: IDCs
 created: Tue, 03 Nov 2020 07:16:38 GMT
-updated: Tue, 03 Nov 2020 09:02:00 GMT
+updated: Thu, 05 Nov 2020 08:35:38 GMT
 wip: true
 title: QuickBMS Integration
 order: 12
 tags:
   - Feature
-  - Tutorial
 comments: 0
 issue_url: https://github.com/Nexus-Mods/vortex-api/issues/17
 ---
