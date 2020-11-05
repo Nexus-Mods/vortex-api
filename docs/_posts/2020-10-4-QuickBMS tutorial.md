@@ -2,7 +2,7 @@
 layout: article
 author: IDCs
 created: Thu, 05 Nov 2020 08:33:06 GMT
-updated: Thu, 05 Nov 2020 08:36:50 GMT
+updated: Thu, 05 Nov 2020 08:43:04 GMT
 wip: true
 title: QuickBMS tutorial
 order: 1000
@@ -183,6 +183,10 @@ context.registerAction('mod-icons', 500, 'savegame', {}, 'Test QBMS Reimport', (
 ```
 
 ![image](https://user-images.githubusercontent.com/8960252/98216590-28a26a00-1f41-11eb-850b-ff71e05815d2.png)
+
+We've attached the extension code to this article, so if interested please get it below:
+
+[QBMSTest.zip](https://github.com/Nexus-Mods/vortex-api/files/5493019/QBMSTest.zip)
 
 
 [Discuss this article](https://github.com/Nexus-Mods/vortex-api/issues/18)
