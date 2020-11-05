@@ -88,9 +88,15 @@ function articleFrame(article, order) {
     + `[Discuss this article](${article.html_url})`;
 }
 
+const INVALID_RE = new RegExp('[\\/?*:|"<>]', 'g');
+
+function sanitize(input) {
+  return input.replace(INVALID_RE, '_');
+}
+
 function articleFileName(article) {
   const date = new Date(article['created_at']);
-  return `${date.getFullYear()}-${date.getMonth()}-${date.getDay()}-${article.title}`;
+  return `${date.getFullYear()}-${date.getMonth()}-${date.getDay()}-${sanitize(article.title)}`;
 }
 
 // prepend frontmatter tag to the api index file
