@@ -79,6 +79,7 @@ export declare function getAllPropertyNames(obj: object): string[];
  * @param parent path of the presumed parent directory
  */
 export declare function isChildPath(child: string, parent: string, normalize?: Normalize): boolean;
+export declare function isReservedDirectory(dirPath: string, normalize?: Normalize): boolean;
 export declare function ciEqual(lhs: string, rhs: string, locale?: string): boolean;
 /**
  * take any input string and sanitize it into a valid css id
