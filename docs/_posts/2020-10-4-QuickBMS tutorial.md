@@ -2,7 +2,7 @@
 layout: article
 author: IDCs
 created: Thu, 05 Nov 2020 08:33:06 GMT
-updated: Thu, 05 Nov 2020 09:41:13 GMT
+updated: Thu, 05 Nov 2020 10:42:37 GMT
 wip: true
 title: QuickBMS tutorial
 order: 1000
@@ -15,7 +15,7 @@ issue_url: https://github.com/Nexus-Mods/vortex-api/issues/18
 
 Please note: this tutorial uses components which have been introduced in Vortex 1.4.X; previous Vortex versions are using the deprecated [event based API](https://github.com/Nexus-Mods/vortex-api/issues/17) and therefore it’s highly advisable to update to the latest version before attempting to go through this tutorial.
 
-QuickBMS is an extractor engine created by Luigi Auriemma which can be used to extract, list, create or re-pack files through simple textual instructions. The extractor is capable of decompressing and decrypting files - for more information about this tool please see: url[quickbms introduction link here]
+QuickBMS is an extractor engine created by Luigi Auriemma which can be used to extract, list, create or re-pack files through simple textual instructions. The extractor is capable of decompressing and decrypting files - for more information about this tool please see visit [QBMS's home page](https://aluigi.altervista.org/quickbms.htm) - for more information about what the Vortex QBMS integration offers and a full list of available operations please read [this article](https://github.com/Nexus-Mods/vortex-api/issues/19)
 
 The aim of this document is to present a simple use case where QBMS can be used to identify whether a .ZIP archive contains a specific image file and replace it with a different image (without extracting); this use case is intentionally simplistic and can obviously be done manually, but the same concept can be applied to game specific archives which do not have publicly available tools to extract or create them; additionally, in some cases these archives can be tens of GB in size - it seems a bit silly to manually extract large archives just to replace 1 file - this is where QBMS shines as it’s able to extract and replace specific files from archives without having to extract the entire archive beforehand.
 
