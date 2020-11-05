@@ -8,11 +8,22 @@
 
 #sidenav > nav {
   padding: 2em;
+  position: sticky;
+  top: 0;
 }
 
 #apinav > nav {
   padding: 2em;
+  position: sticky;
+  top: 0;
 }
+
+#details-panel > div {
+  padding: 2em;
+  position: sticky;
+  top: 0;
+}
+
 
 #content {
   max-width: 60em;
@@ -45,3 +56,10 @@
 .nowrap {
   white-space: nowrap;
 }
+
+.current-page {
+  &::before {
+    content: ">";
+  }
+}
+

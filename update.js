@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 const request = require('request');
-// const yaml = require('js-yaml');
+const yaml = require('js-yaml');
 
 async function req(url, headers) {
   return new Promise((resolve, reject) => {
@@ -9,7 +9,6 @@ async function req(url, headers) {
       url,
       { headers: { 'User-Agent': 'node-cli', ...(headers || {}) } },
       (err, response, body) => {
-        console.log('err', err, 'response', response);
         if (err !== null) {
           return reject(err);
         }
@@ -24,8 +23,8 @@ function state(article) {
     : '';
 }
 
-function time(article) {
-  return new Date(article['updated_at']).toGMTString();
+function time(datetime) {
+  return new Date(datetime).toGMTString();
 }
 
 function makeIndex(articles) {
@@ -45,7 +44,7 @@ function makeIndex(articles) {
   Object.keys(groups).forEach(group => {
     res += `## ${group}\n`
         + groups[group].map(article =>
-          `[${article.title}](articles/${article.title}.md)${state(article)} by ${article.user.login} (Last update: ${time(article)})`)
+          `[${article.title}](articles/${article.title}.md)${state(article)} by ${article.user.login} (Last update: ${time(article.updated_at)})`)
           .join('\n\n')
         + '\n\n'
     ;
@@ -62,9 +61,28 @@ function makeNav(articles) {
     + '</nav>';
 }
 
-function articleFrame(article) {
+function articleFrame(article, order) {
   const tags = article.labels.map(label => label.name).filter(label => label !== 'Article');
-  return `---\nlayout: default\ntitle: ${article.title}\ntags: ${tags.join(' ')}\n---\n`
+  let pos = order.indexOf(article.title);
+  if (pos === -1) {
+    pos = 1000;
+  }
+
+  const frontMatter = [
+    '---',
+    'layout: article',
+    `author: ${article.user.login}`,
+    `created: ${time(article.created_at)}`,
+    `updated: ${time(article.updated_at)}`,
+    `wip: ${article.state === 'open'}`,
+    `title: ${article.title}`,
+    `order: ${pos}`,
+    `tags:\n${tags.map(tag => `  - ${tag}`).join('\n')}`,
+    `comments: ${article.comments}`,
+    `issue_url: ${article.html_url}`,
+    '---',
+  ];
+  return frontMatter.join('\n') + '\n'
     + article.body
     + '\n\n'
     + `[Discuss this article](${article.html_url})`;
@@ -79,7 +97,9 @@ function articleFileName(article) {
 async function updateApiIndex() {
   const fm = '---\n---\n';
   const dat = await fs.readFile(path.join('docs', 'api', 'README.md'), { encoding: 'utf8' });
-  await fs.writeFile(path.join('docs', 'api', 'README.md'), fm + dat, { encoding: 'utf8' });
+  if (!dat.startsWith('---')) {
+    await fs.writeFile(path.join('docs', 'api', 'README.md'), fm + dat, { encoding: 'utf8' });
+  }
 }
 
 async function main() {
@@ -89,8 +109,9 @@ async function main() {
   // await fs.writeFile(path.join('docs', 'index.md'), makeIndex(articles));
   // await fs.writeFile(path.join('docs', '_includes/navigation.html'), makeNav(articles));
   await updateApiIndex();
+  const order = yaml.safeLoad(await fs.readFile(path.join('docs', 'postorder.yml'), { encoding: 'utf8' })).order;
   for (const article of articles) {
-    await fs.writeFile(path.join('docs', '_posts', articleFileName(article) + '.md'), articleFrame(article));
+    await fs.writeFile(path.join('docs', '_posts', articleFileName(article) + '.md'), articleFrame(article, order));
   }
   console.log(articles);
 }

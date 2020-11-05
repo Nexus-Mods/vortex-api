@@ -1,7 +1,15 @@
 ---
-layout: default
+layout: article
+author: TanninOne
+created: Fri, 23 Oct 2020 07:09:22 GMT
+updated: Tue, 03 Nov 2020 08:37:12 GMT
+wip: false
 title: Asynchronous Code
-tags: Language
+order: 5
+tags:
+  - Language
+comments: 0
+issue_url: https://github.com/Nexus-Mods/vortex-api/issues/8
 ---
 # Introduction
 
@@ -127,6 +135,6 @@ Finally, since the async/await code is translated to promises, stack traces prod
 # Conclusion
 
 This page is of course just a summary of the syntaxes. If you want further information the internet is full of it.
-The take-away is: Vortex uses Promises throughout and occasionally callbacks where "generic" APIs are involved (e.g. events), but extensions are welcome to use async/await internally.
+The take-away is: Vortex uses promises throughout and occasionally callbacks where "generic" APIs are involved (e.g. events), but extensions are welcome to use async/await internally.
 
 [Discuss this article](https://github.com/Nexus-Mods/vortex-api/issues/8)

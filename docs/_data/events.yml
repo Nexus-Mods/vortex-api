@@ -55,6 +55,26 @@ events:
       - name: newDeployment
         type: "{ [modType: string]: IDeployedFile[] }"
     trigger: after Vortex finishes a deployment
+  - name: will-remove-mod
+    type: event
+    async: true
+    arguments:
+      - name: gameId
+        type: string
+      - name: modId
+        type: string
+    trigger: before a mod is removed (irrespective of whether it was enabled in the active profile or not)
+    version: ">= 1.3.15"
+  - name: did-remove-mod
+    type: event
+    async: true
+    arguments:
+      - name: gameId
+        type: string
+      - name: modId
+        type: string
+    trigger: after a mod is removed (irrespective of whether it was enabled in the active profile or not)
+    version: ">= 1.3.15"
   - name: did-import-downloads
     type: event
     async: false

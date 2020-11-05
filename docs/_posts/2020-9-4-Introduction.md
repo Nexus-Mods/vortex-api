@@ -1,7 +1,15 @@
 ---
-layout: default
+layout: article
+author: TanninOne
+created: Thu, 22 Oct 2020 13:06:18 GMT
+updated: Fri, 23 Oct 2020 11:14:38 GMT
+wip: true
 title: Introduction
-tags: General
+order: 0
+tags:
+  - General
+comments: 0
+issue_url: https://github.com/Nexus-Mods/vortex-api/issues/5
 ---
 # Introduction
 
