@@ -2,7 +2,7 @@
 layout: article
 author: IDCs
 created: Thu, 05 Nov 2020 09:36:39 GMT
-updated: Thu, 05 Nov 2020 10:34:42 GMT
+updated: Thu, 05 Nov 2020 10:36:22 GMT
 wip: true
 title: QuickBMS Integration Overhaul
 order: 1000
@@ -13,7 +13,7 @@ issue_url: https://github.com/Nexus-Mods/vortex-api/issues/19
 ---
 ## **Introduction** ##
 
-This document pertains to Vortex versions 1.4 and above.
+The previous implementation of the QuickBMS integration was event based and needlessly complex - this document pertains to Vortex versions 1.4 and above which implement the QuickBMS overhauled integration.
 
 QuickBMS (QBMS) is an extractor engine written by Luigi Auriemma that can be programmed through some simple instructions contained in textual scripts. It is
 intended for extracting files and information from the archives of any software and, moreover, games.
