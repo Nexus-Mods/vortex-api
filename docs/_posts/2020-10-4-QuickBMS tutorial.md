@@ -2,7 +2,7 @@
 layout: article
 author: IDCs
 created: Thu, 05 Nov 2020 08:33:06 GMT
-updated: Thu, 05 Nov 2020 10:42:37 GMT
+updated: Thu, 05 Nov 2020 10:45:22 GMT
 wip: true
 title: QuickBMS tutorial
 order: 1000
@@ -139,7 +139,7 @@ context.api.ext.qbmsReimport({
 Very important note about the Reimport process - lets say you want to replace a 1MB low detail texture with a massively detailed 50MB texture - the API call above would fail as we're trying to fit an elephant in a wardrobe - to be able to fit the new texture in, we have to resize the archive so that the new texture doesn't overwrite other file entries - we do this by providing the allowResize qbms option in the Reimport call (as seen below); the downside to resizing is when we resize a game archive, the game may have trouble reading the new file and fail to load it - this is generally not a problem, but it's worth keeping it in mind.
 
 ```
-   context.api.ext.qbmsList({
+   context.api.ext.qbmsReimport({
      bmsScriptPath: path.join(__dirname, 'zip.bms'),
      archivePath: path.join(__dirname, 'tutorial.zip'),
      operationPath: path.join(__dirname, 'opPath'),
