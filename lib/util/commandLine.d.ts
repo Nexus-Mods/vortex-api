@@ -5,6 +5,7 @@ export interface IParameters {
     restore?: string;
     startMinimized?: boolean;
     game?: string;
+    profile?: string;
     get?: string;
     set?: string[];
     del?: string;

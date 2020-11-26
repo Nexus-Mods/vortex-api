@@ -1,5 +1,6 @@
 /// <reference types="node" />
 import { IExtension } from '../extensions/extension_manager/types';
+import { ILoadOrderGameInfo } from '../extensions/file_based_loadorder/types/types';
 import { IGameLoadOrderEntry } from '../extensions/mod_load_order/types/types';
 import { IDeployedFile, IDeploymentMethod, IFileChange } from '../extensions/mod_management/types/IDeploymentMethod';
 import { IInstallResult, IInstruction } from '../extensions/mod_management/types/IInstallResult';
@@ -1003,6 +1004,11 @@ export interface IExtensionContext {
      */
     registerToolVariables: (callback: ToolParameterCB) => void;
     registerLoadOrderPage: (gameEntry: IGameLoadOrderEntry) => void;
+    /**
+     * Add file based load ordering functionality to the specified game.
+     *  Please use this instead of registerLoadOrderPage
+     */
+    registerLoadOrder: (gameInfo: ILoadOrderGameInfo) => void;
     /**
      * add a function to the IExtensionApi object that is made available to all other extensions
      * in the api.ext object.
