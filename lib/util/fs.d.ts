@@ -1,7 +1,9 @@
 /**
- * wrapper for the fs / fs-extra-promise module
- * this allows us to customise the behaviour of fs function across the application.
- * The api should remain compatible with fs-extra-promise, but extensions can be made
+ * wrapper for the fs / fs-extra module
+ * this allows us to customise the behaviour of fs function across the application,
+ * In particular it handles certain user-interactions (file busy, permissions, ...) in a uniform
+ * way.
+ * The api should remain compatible with fs-extra, but extensions can be made
  * Notable behaviour changes:
  * - common async functions now retrieve a backtrace before calling, so that on error
  *   they can provide a useful backtrace to where the function was called
@@ -14,7 +16,6 @@
 import { TFunction } from './i18n';
 import PromiseBB from 'bluebird';
 import * as fs from 'fs-extra';
-import * as tmp from 'tmp';
 export { constants, FSWatcher, Stats, WriteStream } from 'fs';
 export { accessSync, closeSync, createReadStream, createWriteStream, linkSync, openSync, readdirSync, readFileSync, statSync, symlinkSync, watch, writeFileSync, writeSync, } from 'fs';
 export interface ILinkFileOptions {
@@ -23,7 +24,7 @@ export interface ILinkFileOptions {
 export interface IRemoveFileOptions {
     showDialogCallback?: () => boolean;
 }
-export declare function genFSWrapperAsync<T extends (...args: any[]) => any>(func: T): T;
+export declare function genFSWrapperAsync<T extends (...args: any[]) => any>(func: T): (...args: any[]) => any;
 declare const chmodAsync: (path: string, mode: string | number) => PromiseBB<void>;
 declare const closeAsync: (fd: number) => PromiseBB<void>;
 declare const fsyncAsync: (fd: number) => PromiseBB<void>;
@@ -38,8 +39,14 @@ declare const statAsync: (path: string) => PromiseBB<fs.Stats>;
 declare const statSilentAsync: (path: string) => PromiseBB<fs.Stats>;
 declare const symlinkAsync: (srcpath: string, dstpath: string, type?: string) => PromiseBB<void>;
 declare const utimesAsync: (path: string, atime: number, mtime: number) => PromiseBB<void>;
-declare const writeAsync: (...args: any[]) => PromiseBB<fs.WriteResult>;
-declare const readAsync: (...args: any[]) => PromiseBB<fs.ReadResult>;
+declare const writeAsync: <BufferT>(...args: any[]) => PromiseBB<{
+    bytesWritten: number;
+    buffer: BufferT;
+}>;
+declare const readAsync: <BufferT>(...args: any[]) => PromiseBB<{
+    bytesRead: number;
+    buffer: BufferT;
+}>;
 declare const writeFileAsync: (file: string, data: any, options?: fs.WriteFileOptions) => PromiseBB<void>;
 export { chmodAsync, closeAsync, fsyncAsync, lstatAsync, mkdirAsync, mkdirsAsync, moveAsync, openAsync, readdirAsync, readAsync, readFileAsync, statAsync, statSilentAsync, symlinkAsync, utimesAsync, writeAsync, writeFileAsync, };
 export declare function isDirectoryAsync(dirPath: string): PromiseBB<boolean>;
@@ -56,8 +63,8 @@ export declare function moveRenameAsync(src: string, dest: string): PromiseBB<st
  * The copy function from fs-extra doesn't (at the time of writing) correctly check that a file
  * isn't copied onto itself (it fails for links or potentially on case insensitive disks),
  * so this makes a check based on the ino number.
- * Unfortunately a bug in node.js (https://github.com/nodejs/node/issues/12115) prevents this
- * check from working reliably so it can currently be disabled.
+ * A bug in older versions of node.js made it necessary this check be optional but that is
+ * resolved now so the check should always be enabled.
  * @param src file to copy
  * @param dest destination path
  * @param options copy options (see documentation for fs)
@@ -82,7 +89,6 @@ export declare function withTmpDirImpl<T>(cb: (tmpPath: string) => PromiseBB<T>)
 export interface ITmpOptions {
     cleanup?: boolean;
 }
-declare function withTmpFileImpl<T>(cb: (fd: number, name: string) => PromiseBB<T>, options?: ITmpOptions & tmp.FileOptions): PromiseBB<T>;
-declare const withTmpDir: typeof withTmpDirImpl;
-declare const withTmpFile: typeof withTmpFileImpl;
+declare const withTmpDir: (...args: any[]) => any;
+declare const withTmpFile: (...args: any[]) => any;
 export { withTmpDir, withTmpFile, };

@@ -67,6 +67,7 @@ export declare function changeOrNop<T>(state: T, path: Array<(string | number)>,
  * @returns {T}
  */
 export declare function deleteOrNop<T>(state: T, path: Array<(string | number)>): T;
+export declare function setDefaultArray<T>(state: T, path: Array<(string | number)>, fallback: any[]): T;
 /**
  * push an item to an array inside state. This creates all intermediate
  * nodes and the array itself as necessary

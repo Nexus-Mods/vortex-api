@@ -41,7 +41,6 @@ export interface ILoadOrderDisplayItem {
     locked?: boolean;
     external?: boolean;
     official?: boolean;
-    invalid?: boolean;
     message?: string;
     contextMenuActions?: IActionDefinitionEx[];
     condition?: (lhs: ILoadOrderDisplayItem, rhs: ILoadOrderDisplayItem, predictedResult: ILoadOrderDisplayItem[]) => IDnDConditionResult;

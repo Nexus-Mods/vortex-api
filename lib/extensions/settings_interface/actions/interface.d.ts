@@ -21,3 +21,4 @@ export declare const showUsageInstruction: reduxAct.ComplexActionCreator2<string
     show: boolean;
 }, {}>;
 export declare const setRelativeTimes: reduxAct.ComplexActionCreator1<boolean, boolean, {}>;
+export declare const setForegroundDL: reduxAct.ComplexActionCreator1<boolean, boolean, {}>;

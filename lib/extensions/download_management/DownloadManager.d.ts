@@ -36,6 +36,7 @@ declare class DownloadManager {
     private mProtocolHandlers;
     private mResolveCache;
     private mFileExistsCB;
+    private mThrottle;
     /**
      * Creates an instance of DownloadManager.
      *
@@ -47,7 +48,7 @@ declare class DownloadManager {
      *
      * @memberOf DownloadManager
      */
-    constructor(downloadPath: string, maxWorkers: number, maxChunks: number, speedCB: (speed: number) => void, userAgent: string, protocolHandlers: IProtocolHandlers);
+    constructor(downloadPath: string, maxWorkers: number, maxChunks: number, speedCB: (speed: number) => void, userAgent: string, protocolHandlers: IProtocolHandlers, maxBandwidth: () => number);
     setFileExistsCB(cb: (fileName: string) => Promise<boolean>): void;
     setDownloadPath(downloadPath: string): void;
     setMaxConcurrentDownloads(maxConcurrent: number): void;

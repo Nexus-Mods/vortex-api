@@ -20,6 +20,7 @@ export interface IIconButtonExtraProps {
     spin?: boolean;
     pulse?: boolean;
     stroke?: boolean;
+    hollow?: boolean;
     border?: boolean;
     inverse?: boolean;
     flip?: 'horizontal' | 'vertical';

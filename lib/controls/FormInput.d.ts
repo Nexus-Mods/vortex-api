@@ -7,6 +7,7 @@ export interface IProps {
     onFocus?: (focused: boolean) => void;
     id?: string;
     label?: string;
+    type?: string;
     readOnly?: boolean;
     placeholder?: string;
     validate?: (value: any) => ValidationState;

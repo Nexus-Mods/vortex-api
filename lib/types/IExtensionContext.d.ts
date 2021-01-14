@@ -1,6 +1,7 @@
 /// <reference types="node" />
 import { IExtension } from '../extensions/extension_manager/types';
 import { ILoadOrderGameInfo } from '../extensions/file_based_loadorder/types/types';
+import { IHistoryStack } from '../extensions/history_management/types';
 import { IGameLoadOrderEntry } from '../extensions/mod_load_order/types/types';
 import { IDeployedFile, IDeploymentMethod, IFileChange } from '../extensions/mod_management/types/IDeploymentMethod';
 import { IInstallResult, IInstruction } from '../extensions/mod_management/types/IInstallResult';
@@ -26,6 +27,7 @@ import { ILookupResult, IModInfo, IReference } from 'modmeta-db';
 import * as React from 'react';
 import * as Redux from 'redux';
 import { ThunkDispatch } from 'redux-thunk';
+import { ComplexActionCreator } from 'redux-act';
 export { TestSupported, IInstallResult, IInstruction, IDeployedFile, IDeploymentMethod, IFileChange, ILookupResult, IModInfo, IReference, InstallFunc, ISupportedResult, ProgressDelegate };
 export interface ThunkStore<S> extends Redux.Store<S> {
     dispatch: ThunkDispatch<S, null, Redux.Action>;
@@ -40,9 +42,9 @@ export declare type PropsCallback = () => any;
 export declare type PersistingType = 'global' | 'game' | 'profile';
 export declare type CheckFunction = () => Promise<ITestResult>;
 export declare type RegisterSettings = (title: string, element: React.ComponentClass<any> | React.StatelessComponent<any>, props?: PropsCallback, visible?: () => boolean, priority?: number) => void;
-export declare type RegisterAction = (group: string, position: number, iconOrComponent: string | React.ComponentClass<any> | React.StatelessComponent<any>, options: IActionOptions, titleOrProps?: string | PropsCallback, actionOrCondition?: (instanceIds?: string[]) => void | boolean, condition?: (instanceIds?: string[]) => boolean | string) => void;
+export declare type RegisterAction = (group: string, position: number, iconOrComponent: string | React.ComponentType<any>, options: IActionOptions, titleOrProps?: string | PropsCallback, actionOrCondition?: (instanceIds?: string[]) => void | boolean, condition?: (instanceIds?: string[]) => boolean | string) => void;
 export declare type RegisterFooter = (id: string, element: React.ComponentClass<any>, props?: PropsCallback) => void;
-export declare type RegisterBanner = (group: string, component: React.ComponentClass<any> | React.StatelessComponent<any>, options: IBannerOptions) => void;
+export declare type RegisterBanner = (group: string, component: React.ComponentType<any>, options: IBannerOptions) => void;
 export interface IModSourceOptions {
     /**
      * condition for this source to show up. Please make sure this returns quickly, cache if
@@ -104,7 +106,7 @@ export interface IOpenOptions {
     filters?: IFileFilter[];
     create?: boolean;
 }
-export declare type StateChangeCallback = (previous: any, current: any) => void;
+export declare type StateChangeCallback<T = any> = (previous: T, current: T) => void;
 /**
  * additional detail to further narrow down which file is meant
  * in a lookup
@@ -394,7 +396,7 @@ export interface IExtensionApi {
      *
      * @memberOf IExtensionApi
      */
-    onStateChange?: (path: string[], callback: StateChangeCallback) => void;
+    onStateChange?: <T = any>(path: string[], callback: StateChangeCallback<T>) => void;
     /**
      * registers an uri protocol to be handled by this application. If the "def"ault parameter
      * is set to true, this application will also be inserted as the system wide default handler
@@ -485,6 +487,7 @@ export interface IExtensionApi {
     /**
      * emit an event and allow every receiver to return a Promise. This call will only return
      * after all these Promises are resolved.
+     * If the event handlers return a value, this returns an array of results
      */
     emitAndAwait: (eventName: string, ...args: any[]) => Promise<any>;
     /**
@@ -554,6 +557,10 @@ export declare class VerifierDrop extends Error {
 export declare class VerifierDropParent extends Error {
     constructor();
 }
+export declare type PayloadT<Type> = Type extends ComplexActionCreator<infer X> ? X : never;
+export declare function addReducer<ActionT, StateT>(action: ActionT, handler: (state: StateT, payload: PayloadT<ActionT>) => StateT): {
+    [x: number]: (state: StateT, payload: PayloadT<ActionT>) => StateT;
+};
 /**
  * specification a reducer registration has to follow.
  * defaults must be an object with the same keys as
@@ -562,13 +569,13 @@ export declare class VerifierDropParent extends Error {
  * @export
  * @interface IReducerSpec
  */
-export interface IReducerSpec {
+export interface IReducerSpec<T = {
+    [key: string]: any;
+}> {
     reducers: {
-        [key: string]: (state: any, payload: any) => any;
+        [key: string]: (state: T, payload: any) => T;
     };
-    defaults: {
-        [key: string]: any;
-    };
+    defaults: T;
     verifiers?: {
         [key: string]: IStateVerifier;
     };
@@ -1010,6 +1017,10 @@ export interface IExtensionContext {
      */
     registerLoadOrder: (gameInfo: ILoadOrderGameInfo) => void;
     /**
+     * Sets up a stack for a history of events that can be presented to the user
+     */
+    registerHistoryStack: (id: string, options: IHistoryStack) => void;
+    /**
      * add a function to the IExtensionApi object that is made available to all other extensions
      * in the api.ext object.
      */
@@ -1023,8 +1034,9 @@ export interface IExtensionContext {
     /**
      * register a dependency on a different extension
      * @param {string} extId id of the extension that this one depends on
+     * @param {string} version a semver version range that the mod is compatible with
      */
-    requireExtension: (extId: string) => void;
+    requireExtension: (extId: string, version?: string) => void;
     /**
      * called once after the store has been set up and after all extensions have been initialized
      * This means that if your extension registers its own extension function

@@ -1,6 +1,7 @@
 import { IMod } from '../types/IMod';
 export interface INameOptions {
-    version: boolean;
+    version?: boolean;
+    variant?: boolean;
 }
 export declare function modNameFromAttributes(mod: {
     [key: string]: any;
