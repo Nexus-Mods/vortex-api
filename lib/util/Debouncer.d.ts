@@ -1,4 +1,4 @@
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 /**
  * management function. Prevents a function from being called too often
  * and, for function returning a promise, it ensures that it's not run
@@ -16,6 +16,8 @@ declare class Debouncer {
     private mReschedule;
     private mArgs;
     private mResetting;
+    private mTriggerImmediately;
+    private mRetrigger;
     /**
      * constructor
      * @param func the function to call when the timer expired
@@ -24,8 +26,12 @@ declare class Debouncer {
      *              time schedule gets called. This means if the debouncer
      *              is triggered regularly in less than debounceMS it never
      *              gets run.
+     * @param triggerImmediately if true, the debouncer will trigger immediately
+     *                           when first called and then not be called again
+     *                           until the timer expires. Otherwise (the default)
+     *                           the initial call is delay.
      */
-    constructor(func: (...args: any[]) => Error | Promise<void>, debounceMS: number, reset?: boolean);
+    constructor(func: (...args: any[]) => Error | Promise<void>, debounceMS: number, reset?: boolean, triggerImmediately?: boolean);
     /**
      * schedule the function and invoke the callback once that is done
      * @param callback the callback to invoke upon completion
@@ -37,7 +43,7 @@ declare class Debouncer {
     /**
      * run the function immediately without waiting for the timer
      * to run out. (It does cancel the timer though and invokes all
-     * scheduled timeouts)
+     * scheduled callbacks)
      *
      * @param {(err: Error) => void} callback
      * @param {...any[]} args

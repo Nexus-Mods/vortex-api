@@ -4,7 +4,7 @@ export declare class NotSupportedError extends Error {
 export declare class CleanupFailedException extends Error {
     private mErrorObject;
     constructor(error: Error);
-    readonly errorObject: Error;
+    get errorObject(): Error;
 }
 export declare class ServiceTemporarilyUnavailable extends Error {
     constructor(service: string);
@@ -46,15 +46,24 @@ export declare class HTTPError extends Error {
     private mMessage;
     private mURL;
     constructor(statusCode: number, message: string, url: string);
-    readonly statusCode: number;
-    readonly statusMessage: string;
-    readonly url: string;
+    get statusCode(): number;
+    get statusMessage(): string;
+    get url(): string;
 }
 export declare class MissingInterpreter extends Error {
     private mURL;
     constructor(message: string, url?: string);
-    readonly url: string;
+    get url(): string;
 }
 export declare class NotFound extends Error {
     constructor(what: string);
+}
+export declare class TimeoutError extends Error {
+    constructor();
+}
+/**
+ * these errors we report but don't allow to be reported to us
+ */
+export declare class ThirdPartyError extends Error {
+    constructor(message: string);
 }

@@ -2,6 +2,7 @@ import { IExtensionLoadFailure, IExtensionState } from '../../types/IState';
 export declare type ExtensionType = 'game' | 'translation' | 'theme';
 export interface IExtension {
     id?: string;
+    namespace?: string;
     name: string;
     author: string;
     description: string;
@@ -16,8 +17,11 @@ export declare type IExtensionWithState = IExtension & IExtensionState & {
 };
 export interface IExtensionDownloadInfo {
     name: string;
-    modId: number;
-    fileId: number;
+    modId?: number;
+    fileId?: number;
+    github?: string;
+    githubRawPath?: string;
+    githubRelease?: string;
 }
 export interface IAvailableExtension extends IExtensionDownloadInfo {
     description: {
@@ -30,12 +34,22 @@ export interface IAvailableExtension extends IExtensionDownloadInfo {
     gameName?: string;
     image: string;
     author: string;
+    uploader: string;
     version: string;
     downloads: number;
     endorsements: number;
+    timestamp: number;
     tags: string[];
+    dependencies?: {
+        [key: string]: any;
+    };
 }
 export interface IExtensionManifest {
     last_updated: number;
     extensions: IAvailableExtension[];
+}
+export interface ISelector {
+    modId: number;
+    github: string;
+    githubRawPath: string;
 }

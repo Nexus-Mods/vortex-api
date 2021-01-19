@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+    <link rel="stylesheet" href="{{ '/assets/css/highlight.min.css' | relative_url }}" />
+  </head>
+  <body>
+    <div style="display: flex" id="root">
+      <div id="sidenav">
+        {% include navigation.html %}
+      </div>
+      <div style="flex: 1 1 0; display: flex; justify-content: center;">
+        <div id="content">
+          {{ content }}
+        </div>
+      </div>
+    </div>
+    <script src="/vortex-api/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+#root {
+}
+
+#sidenav > nav {
+  padding: 2em;
+  position: sticky;
+  top: 0;
+}
+
+#apinav > nav {
+  padding: 2em;
+  position: sticky;
+  top: 0;
+}
+
+#details-panel > div {
+  padding: 2em;
+  position: sticky;
+  top: 0;
+}
+
+
+#content {
+  max-width: 60em;
+}
+
+#content img {
+  max-width: 100%;
+}
+
+#search_term {
+  display: inline;
+}
+
+#search-box {
+  background-color: transparent;
+  color: white;
+  border: 1px solid gray;
+}
+
+.alert-info {
+  background-color: #31708f;
+}
+
+#event-list {
+  th {
+    width: 15em;
+  }
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.current-page {
+  &::before {
+    content: ">";
+  }
+}
+

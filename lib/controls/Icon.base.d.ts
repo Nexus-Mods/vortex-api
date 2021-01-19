@@ -1,4 +1,4 @@
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 import * as React from 'react';
 /**
  * icon props
@@ -38,6 +38,7 @@ export interface IIconProps {
      * on demand
      */
     getSet: (set: string) => Promise<Set<string>>;
+    onContextMenu?: React.MouseEventHandler<any>;
 }
 /**
  * renders a svg icon (as an instance/ref of a globally defined svg)
@@ -45,8 +46,8 @@ export interface IIconProps {
 declare class Icon extends React.Component<IIconProps, {}> {
     private static sCache;
     private mCurrentSize;
-    componentWillMount(): void;
-    componentWillReceiveProps(newProps: IIconProps): void;
+    componentDidMount(): void;
+    UNSAFE_componentWillReceiveProps(newProps: IIconProps): void;
     render(): JSX.Element;
     private setRef;
     private setIcon;

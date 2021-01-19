@@ -1,3 +1,4 @@
+import { IBBCodeContext } from '../util/bbcode';
 export declare type DialogType = 'success' | 'info' | 'error' | 'question';
 export interface IDialogAction {
     label: string;
@@ -26,9 +27,10 @@ export interface IControlBase {
 export interface ICheckbox extends IControlBase {
     text: string;
     value: boolean;
+    disabled?: boolean;
 }
 export interface IInput extends IControlBase {
-    type?: 'text' | 'password' | 'number' | 'date' | 'time' | 'email' | 'url' | 'textarea';
+    type?: 'text' | 'password' | 'number' | 'date' | 'time' | 'email' | 'url' | 'multiline';
     value?: string;
     label?: string;
     placeholder?: string;
@@ -73,6 +75,7 @@ export interface IDialogContent {
         translated?: boolean;
         wrap?: boolean;
         hideMessage?: boolean;
+        bbcodeContext?: IBBCodeContext;
     };
     condition?: Condition;
 }

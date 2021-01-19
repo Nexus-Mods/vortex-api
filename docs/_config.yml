@@ -1,0 +1,8 @@
+theme: jekyll-theme-midnight
+baseurl: /vortex-api
+defaults:
+  - scope:
+      path: "api"
+    values:
+      layout: "api"
+

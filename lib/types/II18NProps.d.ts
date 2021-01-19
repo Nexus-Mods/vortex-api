@@ -1,4 +1,4 @@
-import I18next from 'i18next';
+import { TFunction } from '../util/i18n';
 export interface II18NProps {
-    t?: I18next.TFunction;
+    t?: TFunction;
 }

@@ -10,7 +10,7 @@ export interface IInstruction {
     key?: string;
     value?: any;
     submoduleType?: string;
-    data?: Buffer;
+    data?: string | Buffer;
     rule?: IRule;
 }
 export interface IInstallResult {

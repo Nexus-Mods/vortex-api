@@ -36,6 +36,13 @@ export declare const startDownload: reduxAct.ComplexActionCreator1<string, {
     id: string;
 }, {}>;
 /**
+ * mark download as finalizing, meaning the file has been downloaded fully,
+ * during this phase checksums are calculated for example
+ */
+export declare const finalizingDownload: reduxAct.ComplexActionCreator1<string, {
+    id: string;
+}, {}>;
+/**
  * mark download as finished
  */
 export declare const finishDownload: reduxAct.ComplexActionCreator3<string, "finished" | "failed" | "redirect", any, {
@@ -73,10 +80,10 @@ export declare const removeDownload: reduxAct.ComplexActionCreator1<string, {
 /**
  * sets the current download speed in bytes/second
  */
-export declare const setDownloadSpeed: reduxAct.ComplexActionCreator1<{}, {}, {
+export declare const setDownloadSpeed: reduxAct.ComplexActionCreator1<unknown, unknown, {
     forward: boolean;
 }>;
-export declare const setDownloadSpeeds: reduxAct.ComplexActionCreator1<{}, {}, {}>;
+export declare const setDownloadSpeeds: reduxAct.ComplexActionCreator1<unknown, unknown, {}>;
 /**
  * add a file that has been found on disk but where we weren't involved
  * in the download.

@@ -1,6 +1,7 @@
+/// <reference types="react" />
 import { ITableAttribute } from '../../types/ITableAttribute';
 import { ComponentEx } from '../../util/ComponentEx';
-import I18next from 'i18next';
+import { TFunction } from '../../util/i18n';
 export interface IDetailProps {
     language: string;
     rowIds: string[];
@@ -11,7 +12,7 @@ export interface IDetailProps {
         [rowId: string]: any;
     };
     attributes: ITableAttribute[];
-    t: I18next.TFunction;
+    t: TFunction;
     show: boolean;
     title: string;
     onToggleShow: () => void;

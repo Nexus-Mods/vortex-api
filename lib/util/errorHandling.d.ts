@@ -1,7 +1,8 @@
 import { IErrorOptions, IExtensionApi } from '../types/api';
 import { IError } from '../types/IError';
-import * as Promise from 'bluebird';
-import { IFeedbackResponse } from 'nexus-api';
+import { IFeedbackResponse } from '@nexusmods/nexus-api';
+import Promise from 'bluebird';
+import { BrowserWindow } from 'electron';
 interface IErrorContext {
     [id: string]: string;
 }
@@ -13,9 +14,9 @@ export declare function didIgnoreError(): boolean;
 export declare function disableErrorReport(): void;
 export declare function sendReportFile(fileName: string): Promise<IFeedbackResponse>;
 export declare function sendReport(type: string, error: IError, context: IErrorContext, labels: string[], reporterId: string, reporterProcess: string, sourceProcess: string, attachment: string): Promise<IFeedbackResponse>;
-export declare function setWindow(window: Electron.BrowserWindow): void;
-export declare function getWindow(): Electron.BrowserWindow;
-export declare function getVisibleWindow(win?: Electron.BrowserWindow): Electron.BrowserWindow | null;
+export declare function setWindow(window: BrowserWindow): void;
+export declare function getWindow(): BrowserWindow;
+export declare function getVisibleWindow(win?: BrowserWindow): BrowserWindow | null;
 /**
  * display an error message and quit the application
  * on confirmation.

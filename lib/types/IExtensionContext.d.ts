@@ -1,10 +1,15 @@
 /// <reference types="node" />
 import { IExtension } from '../extensions/extension_manager/types';
+import { ILoadOrderGameInfo } from '../extensions/file_based_loadorder/types/types';
+import { IHistoryStack } from '../extensions/history_management/types';
+import { IGameLoadOrderEntry } from '../extensions/mod_load_order/types/types';
 import { IDeployedFile, IDeploymentMethod, IFileChange } from '../extensions/mod_management/types/IDeploymentMethod';
 import { IInstallResult, IInstruction, InstructionType } from '../extensions/mod_management/types/IInstallResult';
 import { InstallFunc, ProgressDelegate } from '../extensions/mod_management/types/InstallFunc';
 import { ISupportedResult, TestSupported } from '../extensions/mod_management/types/TestSupported';
 import { Archive } from '../util/archives';
+import { IRegisteredExtension } from '../util/ExtensionManager';
+import { i18n, TFunction } from '../util/i18n';
 import ReduxProp from '../util/ReduxProp';
 import { SanityCheck } from '../util/reduxSanity';
 import { DialogActions, IDialogContent, IModReference, IModRepoId } from './api';
@@ -14,17 +19,16 @@ import { DialogType, IDialogResult } from './IDialog';
 import { IGame } from './IGame';
 import { IGameStore } from './IGameStore';
 import { INotification } from './INotification';
-import { IDiscoveryResult } from './IState';
+import { IDiscoveryResult, IMod, IState } from './IState';
 import { ITableAttribute } from './ITableAttribute';
 import { ITestResult } from './ITestResult';
-import * as Promise from 'bluebird';
-import I18next from 'i18next';
+import Promise from 'bluebird';
 import { ILookupResult, IModInfo, IReference } from 'modmeta-db';
 import * as React from 'react';
 import * as Redux from 'redux';
 import { ThunkDispatch } from 'redux-thunk';
-import { IModLookupResult } from './IModLookupResult';
-export { TestSupported, IInstallResult, IInstruction, IDeployedFile, IDeploymentMethod, IFileChange, ILookupResult, IModInfo, InstructionType, IReference, InstallFunc, ISupportedResult, ProgressDelegate };
+import { ComplexActionCreator } from 'redux-act';
+export { TestSupported, IInstallResult, IInstruction, IDeployedFile, IDeploymentMethod, IFileChange, ILookupResult, IModInfo, IReference, InstallFunc, ISupportedResult, ProgressDelegate };
 export interface ThunkStore<S> extends Redux.Store<S> {
     dispatch: ThunkDispatch<S, null, Redux.Action>;
 }
@@ -38,9 +42,9 @@ export declare type PropsCallback = () => any;
 export declare type PersistingType = 'global' | 'game' | 'profile';
 export declare type CheckFunction = () => Promise<ITestResult>;
 export declare type RegisterSettings = (title: string, element: React.ComponentClass<any> | React.StatelessComponent<any>, props?: PropsCallback, visible?: () => boolean, priority?: number) => void;
-export declare type RegisterAction = (group: string, position: number, iconOrComponent: string | React.ComponentClass<any> | React.StatelessComponent<any>, options: IActionOptions, titleOrProps?: string | PropsCallback, actionOrCondition?: (instanceIds?: string[]) => void | boolean, condition?: (instanceIds?: string[]) => boolean | string) => void;
+export declare type RegisterAction = (group: string, position: number, iconOrComponent: string | React.ComponentType<any>, options: IActionOptions, titleOrProps?: string | PropsCallback, actionOrCondition?: (instanceIds?: string[]) => void | boolean, condition?: (instanceIds?: string[]) => boolean | string) => void;
 export declare type RegisterFooter = (id: string, element: React.ComponentClass<any>, props?: PropsCallback) => void;
-export declare type RegisterBanner = (group: string, component: React.ComponentClass<any> | React.StatelessComponent<any>, options: IBannerOptions) => void;
+export declare type RegisterBanner = (group: string, component: React.ComponentType<any>, options: IBannerOptions) => void;
 export interface IModSourceOptions {
     /**
      * condition for this source to show up. Please make sure this returns quickly, cache if
@@ -76,20 +80,21 @@ export interface IDashletOptions {
     fixed?: boolean;
     closable?: boolean;
 }
-export declare type RegisterDashlet = (title: string, width: 1 | 2 | 3, height: 1 | 2 | 3 | 4 | 5, position: number, component: React.ComponentClass<any> | React.FunctionComponent<any>, isVisible: (state: any) => boolean, props: PropsCallback, options: IDashletOptions) => void;
-export declare type RegisterDialog = (id: string, element: React.ComponentClass<any> | React.StatelessComponent<any>, props?: PropsCallback) => void;
+/**
+ * @param height Height of the dashlet in rows. Please note that 1 row is very slim, it's not
+ *               commonly used in practice
+ */
+export declare type RegisterDashlet = (title: string, width: 1 | 2 | 3, height: 1 | 2 | 3 | 4 | 5 | 6, position: number, component: React.ComponentClass<any> | React.FunctionComponent<any>, isVisible: (state: any) => boolean, props: PropsCallback, options: IDashletOptions) => void;
+export declare type RegisterDialog = (id: string, element: React.ComponentType<any>, props?: PropsCallback) => void;
 export declare type ToDoType = 'settings' | 'search' | 'workaround' | 'more';
 export interface IToDoButton {
     text: string;
     icon: string;
     onClick: () => void;
 }
-export declare type RegisterToDo = (id: string, type: ToDoType, props: (state: any) => any, icon: ((props: any) => JSX.Element) | string, text: ((t: I18next.TFunction, props: any) => JSX.Element) | string, action: (props: any) => void, condition: (props: any) => boolean, value: ((t: I18next.TFunction, props: any) => JSX.Element) | string, priority: number) => void;
+export declare type RegisterToDo = (id: string, type: ToDoType, props: (state: any) => any, icon: ((props: any) => JSX.Element) | string, text: ((t: TFunction, props: any) => JSX.Element) | string, action: (props: any) => void, condition: (props: any) => boolean, value: ((t: TFunction, props: any) => JSX.Element) | string, priority: number) => void;
 export interface IRegisterProtocol {
     (protocol: string, def: boolean, callback: (url: string, install: boolean) => void): any;
-}
-export interface IRegisterRepositoryLookup {
-    (repositoryId: string, preferOverMD5: boolean, callback: (id: IModRepoId) => Promise<IModLookupResult[]>): any;
 }
 export interface IFileFilter {
     name: string;
@@ -101,7 +106,7 @@ export interface IOpenOptions {
     filters?: IFileFilter[];
     create?: boolean;
 }
-export declare type StateChangeCallback = (previous: any, current: any) => void;
+export declare type StateChangeCallback<T = any> = (previous: T, current: T) => void;
 /**
  * additional detail to further narrow down which file is meant
  * in a lookup
@@ -187,6 +192,7 @@ export interface IErrorOptions {
     isBBCode?: boolean;
     isHTML?: boolean;
     allowReport?: boolean;
+    allowSuppress?: boolean;
     hideDetails?: boolean;
     replace?: {
         [key: string]: string;
@@ -206,21 +212,21 @@ export declare type GameInfoQuery = (game: any) => Promise<{
     [key: string]: IGameDetail;
 }>;
 export interface IMergeFilter {
-    baseFiles: () => Array<{
+    baseFiles: (deployedFiles: IDeployedFile[]) => Array<{
         in: string;
         out: string;
     }>;
     filter: (fileName: string) => boolean;
 }
 /**
- * callback to determine if a merge function applies to a game. If true, return an
- * object that describes what files to merge
+ * callback to determine if a merge function applies to a game. If so, return an
+ * object that describes what files to merge, otherwise return undefined
  */
 export declare type MergeTest = (game: IGame, gameDiscovery: IDiscoveryResult) => IMergeFilter;
 /**
  * callback to do the actual merging
  */
-export declare type MergeFunc = (filePath: string, mergeDir: string) => Promise<void>;
+export declare type MergeFunc = (filePath: string, mergePath: string) => Promise<void>;
 /**
  * options used when starting an external application through runExecutable
  */
@@ -243,6 +249,28 @@ export interface IRunParameters {
     executable: string;
     args: string[];
     options: IRunOptions;
+}
+/**
+ * callback to be used to determine list of variables for the tool command line
+ */
+export declare type ToolParameterCB = (options: IRunParameters) => {
+    [key: string]: string;
+};
+export interface IPreviewFile {
+    /**
+     * label to display to the user if applicable
+     */
+    label: string;
+    /**
+     * full path to the file to preview
+     */
+    filePath: string;
+}
+export interface IApiFuncOptions {
+    /**
+     * minimum number of arguments the caller has to pass to a api extension function
+     */
+    minArguments?: number;
 }
 /**
  * interface for convenience functions made available to extensions
@@ -288,6 +316,12 @@ export interface IExtensionApi {
      */
     dismissNotification?: (id: string) => void;
     /**
+     * hides a notification and don't show it again
+     * if this is called with the second parameter set to false, it re-enables the notification
+     * instead
+     */
+    suppressNotification?: (id: string, suppress?: boolean) => void;
+    /**
      * show a system dialog to open a single file
      *
      * @memberOf IExtensionApi
@@ -329,7 +363,11 @@ export interface IExtensionApi {
     /**
      * translation function
      */
-    translate: I18next.TFunction;
+    translate: TFunction;
+    /**
+     * prepare a string to be translated further down the line.
+     */
+    laterT: TFunction;
     /**
      * active locale
      */
@@ -339,7 +377,7 @@ export interface IExtensionApi {
      * This is only needed to influence how localisation works in general,
      * to just translate a text, use "translate"
      */
-    getI18n: () => I18next.i18n;
+    getI18n: () => i18n;
     /**
      * retrieve path for a known directory location.
      *
@@ -360,12 +398,12 @@ export interface IExtensionApi {
      * register a callback for changes to the state
      *
      * @param {string[]} path path in the state-tree to watch for changes,
-     *                   i.e. [ 'settings', 'interface', 'language' ] would call the callback
+     *                   i.e. ['settings', 'interface', 'language'] would call the callback
      *                   for all changes to the interface language
      *
      * @memberOf IExtensionApi
      */
-    onStateChange?: (path: string[], callback: StateChangeCallback) => void;
+    onStateChange?: <T = any>(path: string[], callback: StateChangeCallback<T>) => void;
     /**
      * registers an uri protocol to be handled by this application. If the "def"ault parameter
      * is set to true, this application will also be inserted as the system wide default handler
@@ -413,7 +451,7 @@ export interface IExtensionApi {
      *
      * @memberOf IExtensionApi
      */
-    lookupModMeta: (details: ILookupDetails) => Promise<IModLookupResult[]>;
+    lookupModMeta: (details: ILookupDetails, ignoreCache?: boolean) => Promise<ILookupResult[]>;
     /**
      * save meta information about a mod
      *
@@ -424,6 +462,10 @@ export interface IExtensionApi {
      * opens an archive
      */
     openArchive: (archivePath: string, options?: IArchiveOptions, extension?: string) => Promise<Archive>;
+    /**
+     * clear the stylesheet cache to ensure it gets rebuilt even if the list of files hasn't changed
+     */
+    clearStylesheet: () => void;
     /**
      * insert or replace a sass-stylesheet. It gets integrated into the existing sheets based
      * on the key:
@@ -437,6 +479,11 @@ export interface IExtensionApi {
      * If your extension sets a sheet that didn't exist before then that sheet will be inserted
      * before the "style" sheet but after everything else. This allows themes to affect extension
      * styles.
+     *
+     * @note Important: As usual with css, rules you add affect the entire application, without
+     *  severely restricting themes and extensions we can not automatically restrict your stylesheets
+     *  to the controls added by your extension. This means it's your responsibility to make sure
+     *  your stylesheet doesn't modify foreign controls.
      *
      * @param {string} key identify the key to set. If this is an existing sheet, that sheet will be
      *                     replaced
@@ -456,6 +503,7 @@ export interface IExtensionApi {
     /**
      * emit an event and allow every receiver to return a Promise. This call will only return
      * after all these Promises are resolved.
+     * If the event handlers return a value, this returns an array of results
      */
     emitAndAwait: (eventName: string, ...args: any[]) => Promise<any>;
     /**
@@ -464,7 +512,7 @@ export interface IExtensionApi {
      * Note that listeners should report all errors themselves, it is considered a bug if the listener
      * returns a rejected promise.
      */
-    onAsync: (eventName: string, listener: (...args: any[]) => Promise<any>) => void;
+    onAsync: (eventName: string, listener: (...args: any[]) => PromiseLike<any>) => void;
     /**
      * returns true if the running version of Vortex is considered outdated. This is mostly used
      * to determine if feedback should be sent to Nexus Mods.
@@ -483,12 +531,29 @@ export interface IExtensionApi {
      * Specifically events can only be sent once this event has been triggered
      */
     awaitUI: () => Promise<void>;
+    /**
+     * wrapper for api.store.getState() with the benefit that it automatically assigns a type
+     */
+    getState: <T extends IState = IState>() => T;
+    /**
+     * get a list of extensions currently loaded into Vortex
+     */
+    getLoadedExtensions: () => IRegisteredExtension[];
+    /**
+     * functions made available from extension to extension. Callers have to make
+     * sure they handle gracefully the case where a function doesn't exist
+     */
+    ext: {
+        [key: string]: (...args: any[]) => any;
+    };
+    NAMESPACE: string;
 }
 export interface IStateVerifier {
     description: (input: any) => string;
     type?: 'map' | 'string' | 'boolean' | 'number' | 'object' | 'array';
     noUndefined?: boolean;
     noNull?: boolean;
+    noEmpty?: boolean;
     elements?: {
         [key: string]: IStateVerifier;
     };
@@ -508,6 +573,10 @@ export declare class VerifierDrop extends Error {
 export declare class VerifierDropParent extends Error {
     constructor();
 }
+export declare type PayloadT<Type> = Type extends ComplexActionCreator<infer X> ? X : never;
+export declare function addReducer<ActionT, StateT>(action: ActionT, handler: (state: StateT, payload: PayloadT<ActionT>) => StateT): {
+    [x: number]: (state: StateT, payload: PayloadT<ActionT>) => StateT;
+};
 /**
  * specification a reducer registration has to follow.
  * defaults must be an object with the same keys as
@@ -516,19 +585,20 @@ export declare class VerifierDropParent extends Error {
  * @export
  * @interface IReducerSpec
  */
-export interface IReducerSpec {
+export interface IReducerSpec<T = {
+    [key: string]: any;
+}> {
     reducers: {
-        [key: string]: (state: any, payload: any) => any;
+        [key: string]: (state: T, payload: any) => T;
     };
-    defaults: {
-        [key: string]: any;
-    };
+    defaults: T;
     verifiers?: {
         [key: string]: IStateVerifier;
     };
 }
 export interface IModTypeOptions {
-    mergeMods?: boolean;
+    mergeMods?: boolean | ((mod: IMod) => string);
+    deploymentEssential?: boolean;
     name?: string;
 }
 /**
@@ -549,7 +619,8 @@ export interface IModTypeOptions {
  *    An extension can add new register functions by simply assigning to the context object.
  *    There is one limitation though: Due to the way those functions are called you can't have
  *    optional parameters in register functions, the caller always have to provide the exact number
- *    of arguments to get the function to be called correctly.
+ *    of arguments to get the function to be called correctly. Vortex will pass additional
+ *    parameters to the function that help identify the extension that called the function.
  *    These functions are then available to all other extensions, the order in which extensions
  *    are loaded is irrelevant (and can't be controlled).
  *    If an extension uses a register function from another extension it becomes implicitly
@@ -588,7 +659,14 @@ export interface IExtensionContext {
      * register an installer
      * @param {string} id id for the installer. currently only used for logging
      * @param {number} priority the priority of the installer. The supported installer with the
-     *                          highest priority gets to handle the mod
+     *                          highest priority (smallest number) gets to handle the mod.
+     *                          Note: scripted fomods are handled at prio 20 and there is a fallback
+     *                          installer that will handle practically any archive at prio 100 so
+     *                          you want to place your installer in the range 21-99.
+     *                          If your installer has priority > 100 it will probably never be
+     *                          considered, if it has priority < 20 it will disable fomod installers
+     *                          which only makes sense if you implement a scripted installer system
+     *                          as well that is superior to fomod.
      * @param {TestSupported} testSupported function called to determine if the handler can deal
      *                                      with a mod
      * @param {InstallFunc} install function called to actually install a mod
@@ -696,7 +774,11 @@ export interface IExtensionContext {
      */
     registerSettingsHive: (type: PersistingType, hive: string) => void;
     /**
-     * register a new persistor that will hook a data file into the application store.
+     * register a new persistor that will hook a data file into the application store,
+     * meaning any part of the application can access that data like any other data in the application
+     * state and the UI will automatically refresh if it's tied to that data.
+     * This way you can unify the access to foreign data files
+     *
      * @param {string} hive the top-level key inside the state that this persistor will add
      *                      it's data to. We can't add persistors inside an existing node (
      *                      technical reasons) but you can implement an aggregator-persistor
@@ -714,7 +796,9 @@ export interface IExtensionContext {
      * add an attribute to a table. An attribute can appear as a column inside the table or as a
      * detail field in the side panel.
      * The tableId identifies, obviously, the table to which the attribute should be added. Please
-     * find the right id in the documentation of the corresponding extension
+     * find the right id in the documentation of the corresponding extension.
+     * Please prefer specifying the attribute as a function returning the ITableAttribute instead of
+     * the attribute directly
      */
     registerTableAttribute: (tableId: string, attribute: ITableAttribute) => void;
     /**
@@ -748,7 +832,7 @@ export interface IExtensionContext {
      * registers a provider for general information about a game
      * @param {string} id unique id identifying the provider
      * @param {number} priority if two providers provide the same info (same key) the one with the
-     *                          higher priority ends up providing that piece of info
+     *                          higher priority (smaller number) ends up providing that piece of info
      * @param {number} expireMS the time (in milliseconds) before the info "expires". After expiry it
      *                          will be re-requested. You usually want this to be several days, not
      *                          seconds or milliseconds
@@ -767,8 +851,8 @@ export interface IExtensionContext {
      *
      * @param {number} priority determins the order in which the attributes are combined.
      *                          if two extractors produce the same attribute, the one with the higher
-     *                          priority wins. The default attributes retrieved from the meta database
-     *                          have priority 100.
+     *                          priority (smaller number) wins. The default attributes retrieved from
+     *                          the meta database have priority 100.
      * @param {AttributeExtractor} extractor the function producing mod attributes
      */
     registerAttributeExtractor: (priority: number, extractor: AttributeExtractor) => void;
@@ -776,8 +860,9 @@ export interface IExtensionContext {
      * register a mod type
      * @param {string} id internal identifier for this mod type. can't be the empty string ''!
      * @param {number} priority if there is difficulty differentiating between two mod types, the
-     *                          higher priority one wins. Otherwise please use 100 so there is
-     *                          room for other extensions with lower and higher priority
+     *                          higher priority (smaller number) one wins.
+     *                          Otherwise please use 100 so there is room for other extensions
+     *                          with lower and higher priority
      * @param {(gameId) => boolean} isSupported return true if the mod type is supported for this
      *                                          game
      * @param {(game: IGame) => string} getPath given the specified game, return the absolute path to
@@ -800,15 +885,41 @@ export interface IExtensionContext {
      * In extreme cases you could instead throw an exception from the check (which would bubble up
      * through the dispatch call) which will likely crash Vortex.
      * That might be preferrable to corrupting state
+     * Further: Most actions are processed twice, once in the UI process where they got triggered and
+     *   in the main process where they get persisted to disk. If you stop an action in the UI
+     *   process it will not get forwarded to the main process, so this check only runs once. If you
+     *   allow it through though, this check is done a second time in the main process and you *need*
+     *   to generate the same result, you can't allow an action in the UI process and then reject it
+     *   in the main process!
+     *   Due to checks being run twice, if you write a log message that also will happen twice. You
+     *   can check "process.type === 'browser') to log only in the main (aka browser) process but
+     *   again: The result of the check *has to has to has to* be the same between all processes.
      * @param {string} actionType type of the action (like STORE_WINDOW_SIZE)
      * @param {SanityCheck} check the check to run for the specified action
      */
     registerActionCheck: (actionType: string, check: SanityCheck) => void;
     /**
      * register a file merge that needs to happen during deployment.
-     * modType is the type with which the merged file(s) should be deployed. This needs to be an
-     * existing mod type (see registerModType), otherwise the merged file won't be used. Use an empty
-     * string for the default mod type
+     * modType is the mod type this applies to, so only mods from this mod type are merged
+     * and the output merge is of that type as well.
+     *
+     * This api is - complex - as it tries to cover multiple related use cases. Please
+     * make sure you understand how it works becauses trial&error might drive you mad.
+     *
+     * The way this works is that as part of deployment the "in" files get copied to a working
+     * directory. It's ok for these files to be non-existent. It's ok for these files to be from one
+     * of the deployed mods (see below) or a file generated by or shipped with the game itself.
+     * Then the "merge" function is called on each matching file from each mod so you get an
+     * opportunity to incorporate the modded content into the file in the working directory
+     * Finally, the merged file from the working directory is deployed, just like every other file,
+     * based on which mod type you specified.
+     * If the "in" file was from mone of the mods, the merge function will be called with that
+     * file again, so it's your own responsibility to not duplicate the content from that file.
+     * If the "in" file did not exist, you get an empty file as the basis to merge into, that is not
+     * an error.
+     * The "out" path specified by the baseFiles is the relative path of the "temporary" file
+     * in the working directory. Together with the mod type, this will control what the final output
+     * path is.
      */
     registerMerge: (test: MergeTest, merge: MergeFunc, modType: string) => void;
     /**
@@ -842,10 +953,13 @@ export interface IExtensionContext {
      * it can be done from there. The version that was previously run is being passed to the migration
      * function so the extension can determine if the upgrade is actually necessary and if so, which
      * (if there are multiple).
+     * IMPORTANT: Use the old version only to save time, your migration must not cause break anything
+     *   if this version is inaccurate. E.g. if state was manipulated/damaged, Vortex may send 0.0.0
+     *   for the old version even when the current version was run before.
      * If the extension was never loaded before, the version "0.0.0" is passed in.
      * Please note: Vortex will continue running, with the extension loaded, after migrate is called,
      *   it is not currently possible to delay loading an extension until the migration is complete.
-     *   This means one of these to be true:
+     *   This means one of these must be true:
      *     - the extension is functional without the migration, at least so much so that it doesn't
      *       cause "damage"
      *     - the extension disables/blocks itself until the migration is done
@@ -872,6 +986,62 @@ export interface IExtensionContext {
      */
     registerProfileFeature?: (featureId: string, type: string, icon: string, label: string, description: string, supported: () => boolean) => void;
     /**
+     * register a handler that can be used to preview or diff files.
+     * A handler can return a promise rejected with a "ProcessCanceled" exception to indicate
+     * it doesn't support the file type, in which case the next handler is tried.
+     * If no handler supports a file type, an error is displayed.
+     *
+     * Now at the lowest level a preview handler just has to be able to show a single file
+     * of the file type, in which case it should show the first file from the list passed in
+     * as a parameter, or offer the user a choice. More advanced handlers may show a diff between
+     * the files.
+     * If the "allowPick" option is specified the caller would like the user to be
+     * able to pick one of the files and that choice should then be returned but
+     * this is an optional feature the handler doesn't need to support.
+     *
+     * Handlers that support both diffing files and picking choices should have high
+     * priority (0-100), handlers that support diffing but not picking should be
+     * put into the range (100-200), handlers that only support showing a single
+     * file should be in the range (300-infinite).
+     * (Obviously the use case where the handler supports picking files but can only
+     * show a single file doesn't exist because duh.)
+     * This way the most feature rich handler supporting a file type will get picked.
+     *
+     * Note: If the viewer supports picking the Promise shall resolve after the
+     *   choice is made and include the selected entry, if it doesn't it can resolve
+     *   as soon as the handler knows whether it supports the file.
+     */
+    registerPreview?: (priority: number, handler: (files: IPreviewFile[], allowPick: boolean) => Promise<IPreviewFile>) => void;
+    /**
+     * register a callback that will introduce additional variables that can be used as part of
+     * tool command lines. The callback you provide here gets called every time a tool gets started
+     * from vortex, the returned object gets merged with all other parameter object and then used
+     * when resolving the final command line.
+     * Please use keys that are all upper case and consist only of latin characters and underscores.
+     * While this is not necessary from a technical standpoint it's more consistent and predictable
+     * for users.
+     * Also make sure the keys you return are sufficiently unique to avoid collisions
+     * @param callback the function that gets called to generate variables. the argument
+     *                 passed to this contains details about the tool being started, usually
+     *                 you will probably not need this
+     */
+    registerToolVariables: (callback: ToolParameterCB) => void;
+    registerLoadOrderPage: (gameEntry: IGameLoadOrderEntry) => void;
+    /**
+     * Add file based load ordering functionality to the specified game.
+     *  Please use this instead of registerLoadOrderPage
+     */
+    registerLoadOrder: (gameInfo: ILoadOrderGameInfo) => void;
+    /**
+     * Sets up a stack for a history of events that can be presented to the user
+     */
+    registerHistoryStack: (id: string, options: IHistoryStack) => void;
+    /**
+     * add a function to the IExtensionApi object that is made available to all other extensions
+     * in the api.ext object.
+     */
+    registerAPI: (name: string, func: (...args: any[]) => any, options: IApiFuncOptions) => void;
+    /**
      * specify that a certain range of versions of vortex is required
      * (see https://www.npmjs.com/package/semver for syntax documentation).
      * If you call this multiple times, all ranges have to match so that makes little sense
@@ -880,8 +1050,9 @@ export interface IExtensionContext {
     /**
      * register a dependency on a different extension
      * @param {string} extId id of the extension that this one depends on
+     * @param {string} version a semver version range that the mod is compatible with
      */
-    requireExtension: (extId: string) => void;
+    requireExtension: (extId: string, version?: string) => void;
     /**
      * called once after the store has been set up and after all extensions have been initialized
      * This means that if your extension registers its own extension function

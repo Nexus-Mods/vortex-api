@@ -3,10 +3,11 @@ import * as React from 'react';
 export interface IProps {
     className?: string;
     value: string;
-    onChange: (newValue: string) => void;
+    onChange: (newValue: string, id: string) => void;
     onFocus?: (focused: boolean) => void;
     id?: string;
     label?: string;
+    type?: string;
     readOnly?: boolean;
     placeholder?: string;
     validate?: (value: any) => ValidationState;

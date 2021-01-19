@@ -6,8 +6,10 @@ import { IDownload } from '../extensions/download_management/types/IDownload';
 import { IAvailableExtension, IExtension } from '../extensions/extension_manager/types';
 import { IDiscoveryResult } from '../extensions/gamemode_management/types/IDiscoveryResult';
 import { IGameStored } from '../extensions/gamemode_management/types/IGameStored';
+import { IHistoryPersistent, IHistoryState } from '../extensions/history_management/reducers';
 import { IMod } from '../extensions/mod_management/types/IMod';
 import { IProfile } from '../extensions/profile_management/types/IProfile';
+import { IParameters } from '../util/commandLine';
 export { IDownload, IDiscoveryResult, IGameStored, IMod, IProfile };
 /**
  * interface to represent a position on the screen
@@ -55,7 +57,7 @@ export interface INotificationState {
 }
 export interface IExtensionLoadFailure {
     id: string;
-    args: {
+    args?: {
         [key: string]: any;
     };
 }
@@ -106,6 +108,8 @@ export interface ISession {
     uiBlockers: {
         [id: string]: IUIBlocker;
     };
+    networkConnected: boolean;
+    commandLine: IParameters;
 }
 export interface IRowState {
     selected: boolean;
@@ -123,6 +127,7 @@ export interface IExtensionState {
     enabled: boolean | 'failed';
     version: string;
     remove: boolean;
+    endorsed: string;
 }
 /**
  * settings relating to the vortex application itself
@@ -168,6 +173,7 @@ export interface ISettingsInterface {
     hideTopLevelCategory: boolean;
     relativeTimes: boolean;
     dashboardLayout: string[];
+    foregroundDL: boolean;
     dashletSettings: {
         [dashletId: string]: IDashletSettings;
     };
@@ -177,7 +183,10 @@ export interface ISettingsInterface {
 }
 export interface ISettingsAutomation {
     deploy: boolean;
+    install: boolean;
     enable: boolean;
+    start: boolean;
+    minimized: boolean;
 }
 export interface ISettingsProfiles {
     activeProfileId: string;
@@ -197,9 +206,11 @@ export interface ISettingsDownloads {
     minChunkSize: number;
     maxChunks: number;
     maxParallelDownloads: number;
+    maxBandwidth: number;
     path: string;
     showDropzone: boolean;
     showGraph: boolean;
+    copyOnIFF: boolean;
 }
 export interface IStatePaths {
     base: string;
@@ -218,6 +229,12 @@ export interface ISettingsMods {
     };
     showDropzone: boolean;
     confirmPurge: boolean;
+    cleanupOnDeploy: boolean;
+}
+export interface ISettingsNotification {
+    suppress: {
+        [notificationId: string]: boolean;
+    };
 }
 export interface ISettingsUpdate {
     channel: 'stable' | 'beta' | 'none';
@@ -233,6 +250,7 @@ export interface ISettings {
     window: IWindow;
     downloads: ISettingsDownloads;
     mods: ISettingsMods;
+    notifications: ISettingsNotification;
     tables: ITableStates;
     update: ISettingsUpdate;
     workarounds: ISettingsWorkarounds;
@@ -287,6 +305,7 @@ export interface IState {
         discovery: IDiscoveryState;
         notifications: INotificationState;
         browser: IBrowserState;
+        history: IHistoryState;
         extensions: {
             available: IAvailableExtension[];
             installed: {
@@ -312,6 +331,7 @@ export interface IState {
             };
         };
         transactions: IStateTransactions;
+        history: IHistoryPersistent;
     };
 }
 export interface IDiscoveryPhase {

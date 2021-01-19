@@ -1,0 +1,610 @@
+events:
+  - name: mods-enabled
+    type: event
+    async: false
+    arguments:
+      - name: mods
+        type: string[]
+      - name: enabled
+        type: boolean
+      - name: gameId
+        type: string
+    trigger: whenever mods got enabled or disabled in the current profile
+  - name: gamemode-activated
+    type: event
+    async: false
+    arguments:
+      - name: gameId
+        type: string
+    trigger: whenever the active game was changed (also on start-up)
+  - name: profile-will-change
+    type: event
+    async: false
+    arguments:
+      - name: newProfileId
+        type: string
+      - name: enqueue
+        type: "(cb: () => Promise<void>) => void"
+    trigger: before Vortex changes profiles (potentially to a different game), usually triggered directly by the user
+    description: The enqueue function can be used to return a Promise which needs to be fulfilled before the profile may be changed. The change can not be canceled though because we can''t know if/how previous changes can be rolled back
+  - name: profile-did-change
+    async: false
+    arguments:
+      - name: newProfileId
+        type: string
+    trigger: after Vortex changed profiles
+  - name: startup
+    async: false
+    arguments:
+    trigger: when the application first starts (after the extensions are loaded by before the UI is displayed)
+  - name: will-deploy
+    type: event
+    async: true
+    arguments:
+      - name: profileId
+        type: string
+      - name: oldDeployment
+        type: "{ [modType: string]: IDeployedFile[] }"
+    trigger: before Vortex deploys mods
+  - name: did-deploy
+    type: event
+    async: true
+    arguments:
+      - name: profileId
+        type: string
+      - name: newDeployment
+        type: "{ [modType: string]: IDeployedFile[] }"
+    trigger: after Vortex finishes a deployment
+  - name: will-remove-mod
+    type: event
+    async: true
+    arguments:
+      - name: gameId
+        type: string
+      - name: modId
+        type: string
+    trigger: before a mod is removed (irrespective of whether it was enabled in the active profile or not)
+    version: ">= 1.3.15"
+  - name: did-remove-mod
+    type: event
+    async: true
+    arguments:
+      - name: gameId
+        type: string
+      - name: modId
+        type: string
+    trigger: after a mod is removed (irrespective of whether it was enabled in the active profile or not)
+    version: ">= 1.3.15"
+  - name: did-import-downloads
+    type: event
+    async: false
+    internal: true
+    arguments:
+      - name: dlIds
+        type: string[]
+    trigger: after the user manually added downloads to the download directory
+  - name: will-move-downloads
+    type: event
+    async: false
+    internal: true
+    arguments:
+    trigger: before the user relocates their Vortex download folder
+  - name: filehash-calculated
+    type: event
+    async: false
+    internal: true
+    arguments:
+      - name: filePath
+        type: string
+      - name: fileMD5
+        type: string
+      - name: fileSize
+        type: number
+    trigger: when vortex calculated the hash for a mod archive
+  - name: added-files
+    type: event
+    async: true
+    arguments:
+      - name: profileId
+        type: string
+      - name: newFiles
+        type: "Array<{ filePath: string, candidates: string[] }>"
+    trigger: |
+      when Vortex discovers new files were created in the games mod folder that may belong
+      to one of the mods managed by Vortex.
+      The "candidates" lists the ids of mods that _may_ be where the file belongs.
+  - name: mod-enabled
+    type: event
+    async: false
+    arguments:
+      - name: profileId
+        type: string
+      - name: modId
+        type: string
+    trigger: when a mod got enabled
+  - name: mod-disabled
+    type: event
+    async: false
+    arguments:
+      - name: profileId
+        type: string
+      - name: modId
+        type: string
+    trigger: when a mod got disabled
+  - name: mod-content-changed
+    type: event
+    async: false
+    arguments:
+      - name: gameId
+        type: string
+      - name: modId
+        type: string
+    trigger: Vortex determined that files it deployed were modified or removed
+  - name: will-purge
+    type: event
+    async: false
+  - name: did-purge
+    type: event
+    async: false
+  - name: start-download-url
+    type: command
+    async: false
+    arguments:
+      - name: url
+        type: string
+      - name: fileName
+        type: string
+  - name: show-balloon
+    type: command
+    async: false
+    arguments:
+      - name: title
+        type: string
+      - name: content
+        type: string
+  - name: deploy-mods
+    type: command
+    async: false
+    arguments:
+      - name: callback
+        type: "(err: Error) => void"
+      - name: profileId
+        type: string
+        optional: true
+      - name: progressCB
+        type: "(text: string, percent: number) => void"
+        optional: true
+  - name: deploy-single-mod
+    type: command
+    async: true
+    arguments:
+      - name: gameId
+        type: string
+      - name: modId
+        type: string
+      - name: enable
+        type: boolean
+        optional: true
+    description: |
+      You can not usually deploy a single mod safely because it would ignore conflicts and such
+      There are very few exceptional situations where this is possible
+  - name: purge-mods-in-path
+    type: command
+    async: true
+    arguments:
+      - name: gameId
+        type: string
+      - name: modType
+        type: string
+      - name: modPath
+        type: string
+    description: |
+      Purge a specific mod type# overriding the deployment target.
+      This is intended to be used to clean up when an upgrade to a game extension changed the way
+      mods get deployed such that the deployment target the new version would dynamically generate
+      doesn''t match where the old version deployed to'
+  - name: purge-mods
+    type: command
+    async: false
+    arguments:
+      - name: allowFallback
+        type: boolean
+      - name: callback
+        type: "(err: Error) => void"
+  - name: await-activation
+    type: command
+    async: false
+    internal: true
+    arguments:
+      - name: callback
+        type: "(err: Error) => void"
+    description:  trigger the callback once deployment has finished
+  - name: start-install
+    type: command
+    async: false
+    arguments:
+      - name: archivePath
+        type: string
+      - name: callback
+        type: "(err: Error, modId: string) => void"
+    description:  start installing an archive as a mod
+  - name: start-install-download
+    type: command
+    async: false
+    arguments:
+      - name: downloadId
+        type: string
+      - name: allowAutoEnable
+        type: boolean
+      - name: callback
+        type: "(err: Error, modId: string) => void"
+      - name: forceInstaller
+        type: string
+    description:  start installing a file downloaded through vortex as a mod
+  - name: remove-mod
+    type: command
+    async: false
+    arguments:
+      - name: gameMode
+        type: string
+      - name: modId
+        type: string
+      - name: callback
+        type: "(err: Error) => void"
+    description:  remove a mod
+  - name: create-mod
+    type: command
+    async: false
+    arguments:
+      - name: gameMode
+        type: string
+      - name: mod
+        type: IMod
+      - name: callback
+        type: "(err: Error) => void"
+    description: create an empty mod
+  - name: update-categories
+    type: command
+    async: false
+    arguments:
+      - name: gameId
+        type: string
+      - name: categories
+        type: "{ [id: string]: ICategory }"
+      - name: isUpdate
+        type: boolean
+  - name: activate-game
+    async: false
+    arguments:
+      - name: gameId
+        type: string
+  - name: check-mods-version
+    type: command
+    async: false
+    arguments:
+      - name: gameId
+        type: string
+      - name: mods
+        type: "{ [id: string]: IMod }"
+      - name: forceFull
+        type: boolean
+  - name: nexus-download
+    type: command
+    async: true
+    arguments:
+      - name: gameId
+        type: string
+      - name: nexusModId
+        type: number
+      - name: fileId
+        type: number
+    description: Download a file from Nexus Mods
+  - name: endorse-mod
+    type: command
+    async: true
+    arguments:
+      - name: gameId
+        type: string
+      - name: modId
+        type: string
+      - name: endorsedStatus
+        type: EndorsedStatus
+    description: Endorse a mod on Nexus Mod
+  - name: endorse-nexus-mod
+    type: command
+    async: true
+    arguments:
+      - name: gameId
+        type: string
+      - name: nexusModId
+        type: number
+      - name: version
+        type: string
+      - name: endorsedStatus
+        type: EndorsedStatus
+    description: |
+      Endorse a mod on Nexus Mods. Unlike with "endorse-mod", in this command
+      you specify the nexus mod id so technically the mod doesn't have to be
+      installed but obviously the site will refuse the endorsement if the user has
+      never downloaded the mod.
+  - name: submit-feedback
+    type: command
+    async: false
+    arguments:
+      - name: title
+        type: string
+      - name: message
+        type: string
+      - name: hash
+        type: string
+      - name: feedbackFiles
+        type: string
+      - name: anonymous
+        type: boolean
+      - name: callback
+        type: string
+  - name: mod-update
+    type: command
+    async: false
+    arguments:
+      - name: gameId
+        type: string
+      - name: modId
+        type: string
+      - name: fileId
+        type: string
+    description: Instruct Vortex to update a mod which is showing an update pending.
+  - name: open-mod-page
+    type: command
+    async: false
+    arguments:
+      - name: gameId
+        type: string
+      - name: modId
+        type: string
+      - name: source
+        type: string
+    description: |
+      Open the website for the mod. The "source" parameter specifies where
+      we got the mod from, which is required to figure out where the site is. Without extensions,
+      only "nexus" is supported as the sourc.
+  - name: request-nexus-login
+    type: command
+    async: false
+    internal: true
+    arguments: []
+  - name: request-own-issues
+    type: command
+    async: false
+    internal: true
+    arguments: []
+  - name: retrieve-category-list
+    type: command
+    async: false
+    internal: true
+    arguments: []
+  - name: enable-download-watch
+    type: command
+    async: false
+    internal: true
+    arguments: []
+  - name: refresh-downloads
+    type: command
+    async: false
+    internal: true
+    arguments: []
+  - name: import-downloads
+    type: command
+    async: false
+    arguments:
+      - name: filePaths
+        type: string[]
+    description: |
+      Instructs Vortex to copy the listed files into the Vortex downloads folder
+      (for the active game)
+  - name: remove-download
+    type: command
+    async: false
+    arguments:
+      - name: downloadId
+        type: string
+    description: Delete the specified download
+  - name: pause-download
+    type: command
+    async: false
+    arguments:
+      - name: downloadId
+        type: string
+    description: Pause a download
+  - name: resume-download
+    type: command
+    async: false
+    arguments:
+      - name: downloadId
+        type: string
+      - name: callback
+        type: "(err: Error, downloadId: string) => void"
+        optional: true
+    description: |
+      Resume the specified download. The callback will be called once the download finishes
+      or failed.
+  - name: start-download
+    type: command
+    async: false
+    arguments:
+      - name: urls
+        type: string[]
+        description: |
+          Multiple urls can be specified to download from multiple sources or
+          to have a fallback if one doesn't work, however as of Vortex 1.3 we only use the first.
+      - name: modInfo
+        type: any
+        description: Meta information to be stored with the archive
+      - name: fileName
+        type: string
+        optional: true
+        description: Initial file name to use for the file download. If unset, will be deduced from the url
+      - name: callback
+        type: "(err: Error, id: string) => void"
+        optional: true
+      - name: redownload
+        type: RedownloadMode
+        optional: true
+        description: |
+          Decides how Vortex acts if a file with the same name has already been downloaded.
+    description: |
+      Start a download.
+  - name: start-quick-discovery
+    type: command
+    async: false
+    internal: true
+    arguments: []
+  - name: start-discovery
+    type: command
+    internal: true
+    async: false
+    arguments: []
+  - name: cancel-discovery
+    type: command
+    internal: true
+    async: false
+    arguments: []
+  - name: refresh-game-info
+    type: command
+    async: false
+    internal: true
+    arguments: []
+  - name: manually-set-game-location
+    type: command
+    async: false
+    internal: true
+    arguments: []
+  - name: force-unblock-elevating
+    type: command
+    async: false
+    internal: true
+    arguments: []
+  - name: trigger-test-run
+    type: command
+    async: false
+    arguments:
+      - name: eventType
+        type: string
+      - name: delay
+        type: number
+        description: debouncer timeout to prevent the check from running too frequently, harming performance
+    description: |
+      Trigger validity checks that find problems with the setup of Vortex or the game.
+  - name: install-extension
+    type: command
+    async: true
+    arguments:
+      - name: extensionInfo
+        type: IExtensionDownloadInfo
+    description: Install a Voretx extension
+  - name: bake-settings
+    type: command
+    async: false
+    internal: true
+    arguments: []
+  - name: browse-for-download
+    type: command
+    async: true
+    arguments:
+      - name: url
+        type: string
+      - name: instructions
+        type: string
+    description: |
+      Opens an embedded browser to the specified url that closes as soon as the user selects a file download
+  - name: open-knowledge-base
+    type: command
+    async: false
+    arguments:
+      - name: wikiId
+        type: string
+    description: Open the Knowledge Base tab to a specified wiki page.
+  - name: report-feedback
+    type: command
+    async: false
+    internal: true
+    arguments: []
+  - name: report-log-error
+    type: command
+    internal: true
+    async: false
+    arguments: []
+  - name: apply-settings
+    type: command
+    async: false
+    internal: true
+    arguments: []
+  - name: restart-helpers
+    type: command
+    async: false
+    internal: true
+    arguments: []
+  - name: autosort-plugins
+    type: command
+    async: false
+    arguments:
+      - name: manual
+        type: boolean
+        description: Whether the user actively invoked the sort
+      - name: callback
+        type: "(err: Error) => void"
+    description: Run LOOT sort operation. Only has an effect if the active game is a gamebryo game.
+  - name: plugin-details
+    type: command
+    async: false
+    internal: true
+    arguments: []
+  - name: set-plugin-list
+    type: command
+    async: false
+    internal: true
+    arguments: []
+  - name: did-update-masterlist
+    type: command
+    async: false
+    internal: true
+    arguments: []
+  - name: edit-mod-cycle
+    type: command
+    async: false
+    internal: true
+    arguments: []
+  - name: quickbms-operation
+    type: command
+    internal: true
+    async: false
+    arguments: []
+  - name: select-theme
+    type: command
+    async: false
+    internal: true
+    arguments: []
+  - name: show-main-page
+    type: command
+    async: false
+    arguments:
+      - name: pageId
+        type: string
+    description: Change the main navigation page
+  - name: refresh-main-page
+    type: command
+    async: false
+    internal: true
+    arguments: []
+  - name: show-modal
+    type: command
+    async: false
+    internal: true
+    arguments:
+      - name: id
+        type: string
+  - name: quick-launch
+    type: command
+    async: false
+    arguments: []
+    description: Start the primary executable (game or tool) for the active game

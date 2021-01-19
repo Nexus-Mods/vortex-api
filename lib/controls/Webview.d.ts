@@ -18,6 +18,7 @@ export interface IWebView extends React.DetailedHTMLProps<React.WebViewHTMLAttri
 export interface IWebviewProps {
     onLoading?: (loading: boolean) => void;
     onNewWindow?: (url: string, disposition: string) => void;
+    onFullscreen?: (fullscreen: boolean) => void;
 }
 declare class Webview extends React.Component<IWebviewProps & IWebView, {}> {
     private mNode;
@@ -27,6 +28,8 @@ declare class Webview extends React.Component<IWebviewProps & IWebView, {}> {
     private startLoad;
     private stopLoad;
     private newWindow;
+    private enterFullscreen;
+    private leaveFullscreen;
     private logMessage;
 }
 export default Webview;

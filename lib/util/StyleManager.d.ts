@@ -1,10 +1,15 @@
 import { IExtensionApi } from '../types/IExtensionContext';
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 declare class StyleManager {
     private static RENDER_DELAY;
     private mPartials;
     private mRenderDebouncer;
+    private mExpectingResult;
+    private mAutoRefresh;
+    private mSetQueue;
     constructor(api: IExtensionApi);
+    startAutoUpdate(): void;
+    clearCache(): void;
     /**
      * insert or replace a sheet.
      * By default, the sheets "variables", "details" and "style" are intended to customize the
@@ -27,5 +32,6 @@ declare class StyleManager {
     setSheet(key: string, filePath: string): void;
     renderNow(): Promise<void>;
     private render;
+    private applyCSS;
 }
 export default StyleManager;

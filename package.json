@@ -1,11 +1,15 @@
 {
   "name": "vortex-api",
-  "version": "1.1.0-modpacks.r6",
+  "version": "1.4.0-rc2",
   "description": "Library exporting nmm components extensions may use",
   "main": "lib/index.js",
-  "bin": { "extractInfo": "./bin/extractInfo.js" },
+  "bin": {
+    "extractInfo": "./bin/extractInfo.js"
+  },
   "scripts": {
-    "doc": "typedoc.cmd ../src/index.ts",
+    "doc": "typedoc.cmd --plugin typedoc-plugin-markdown ../src/index.ts && yarn run kb",
+    "dochtml": "typedoc.cmd ../src/index.ts",
+    "kb": "node update.js",
     "build": "tsc -p . -d"
   },
   "typings": "lib/index.d.ts",
@@ -15,6 +19,13 @@
   ],
   "author": "Black Tree Gaming Ltd",
   "license": "GPL-3.0",
-  "peerDependencies": {
+  "peerDependencies": {},
+  "dependencies": {
+    "fs-extra": "^9.0.1",
+    "gray-matter": "^4.0.2",
+    "js-yaml": "^3.14.0",
+    "lunr": "^2.3.9",
+    "request": "^2.88.2",
+    "typedoc-plugin-markdown": "^3.0.11"
   }
 }

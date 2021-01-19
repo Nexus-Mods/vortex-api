@@ -1,7 +1,9 @@
+import { IActionDefinition } from '../types/IActionDefinition';
 import { ButtonType } from './IconBar';
+import { TFunction } from 'i18next';
 import * as React from 'react';
-import { IActionDefinition } from '../types/api';
 export interface IToolbarDropdownProps {
+    t: TFunction;
     id: string;
     instanceId: string[];
     icons: IActionDefinition[];

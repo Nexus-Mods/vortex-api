@@ -1,7 +1,7 @@
 import { IGame } from '../../types/IGame';
 import { IGameStore } from '../../types/IGameStore';
 import { IState } from '../../types/IState';
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 import * as Redux from 'redux';
 /**
  * discovers game modes
@@ -40,8 +40,8 @@ declare class GameModeManager {
      * @memberOf GameModeManager
      */
     setupGameMode(gameMode: string): Promise<void>;
-    readonly games: IGame[];
-    readonly gameStores: IGameStore[];
+    get games(): IGame[];
+    get gameStores(): IGameStore[];
     /**
      * starts game discovery, only using the search function from the game
      * extension
@@ -55,7 +55,7 @@ declare class GameModeManager {
      *
      * @memberOf GameModeManager
      */
-    startSearchDiscovery(): void;
+    startSearchDiscovery(searchPaths: string[]): void;
     /**
      * stop search discovery
      *
@@ -63,6 +63,7 @@ declare class GameModeManager {
      */
     stopSearchDiscovery(): void;
     private ensureWritable;
+    private reloadStoreGames;
     private storeGame;
     private storeTool;
     private onDiscoveredTool;

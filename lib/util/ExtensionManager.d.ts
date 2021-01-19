@@ -1,15 +1,18 @@
 /// <reference types="node" />
 import { IExtension } from '../extensions/extension_manager/types';
 import { ExtensionInit } from '../types/Extension';
-import { IExtensionApi, ThunkStore } from '../types/IExtensionContext';
-import * as Promise from 'bluebird';
-import I18next from 'i18next';
+import { IExtensionApi, IExtensionContext, ThunkStore } from '../types/IExtensionContext';
+import { IState } from '../types/IState';
+import { i18n } from './i18n';
+import Promise from 'bluebird';
+import { WebContents } from 'electron';
 import * as Redux from 'redux';
-interface IRegisteredExtension {
+export interface IRegisteredExtension {
     name: string;
+    namespace: string;
     path: string;
     dynamic: boolean;
-    initFunc: ExtensionInit;
+    initFunc: () => ExtensionInit;
     info?: IExtension;
 }
 /**
@@ -20,7 +23,10 @@ interface IRegisteredExtension {
  */
 declare class ExtensionManager {
     static registerUIAPI(name: string): void;
-    static getExtensionPaths(): string[];
+    static getExtensionPaths(): Array<{
+        path: string;
+        bundled: boolean;
+    }>;
     private static sUIAPIs;
     private mExtensions;
     private mApi;
@@ -42,14 +48,18 @@ declare class ExtensionManager {
     private mLoadFailures;
     private mInterpreters;
     private mStartHooks;
+    private mToolParameterCBs;
     private mLoadingCallbacks;
     private mProgrammaticMetaServers;
     private mForceDBReconnect;
     private mOnUIStarted;
     private mUIStartedPromise;
+    private mOutdated;
+    private mFailedWatchers;
+    private mExtensionFormats;
     constructor(initStore?: Redux.Store<any>, eventEmitter?: NodeJS.EventEmitter);
-    setTranslation(translator: I18next.i18n): void;
-    readonly extensions: IRegisteredExtension[];
+    setTranslation(translator: i18n): void;
+    get extensions(): IRegisteredExtension[];
     /**
      * sets up the extension manager to work with the specified store
      *
@@ -58,7 +68,7 @@ declare class ExtensionManager {
      *
      * @memberOf ExtensionManager
      */
-    setStore<S>(store: ThunkStore<S>): void;
+    setStore<S extends IState>(store: ThunkStore<S>): void;
     /**
      * set up the api for the main process.
      *
@@ -68,7 +78,7 @@ declare class ExtensionManager {
      *
      * @memberOf ExtensionManager
      */
-    setupApiMain<S>(store: Redux.Store<S>, ipc: Electron.WebContents): void;
+    setupApiMain<S>(store: Redux.Store<S>, ipc: WebContents): void;
     /**
      * gain acces to the extension api
      *
@@ -96,7 +106,7 @@ declare class ExtensionManager {
      *
      * @memberOf ExtensionManager
      */
-    apply(funcName: string, func: (...args: any[]) => void): void;
+    apply(funcName: keyof IExtensionContext, func: (...args: any[]) => void, addExtInfo?: boolean): void;
     /**
      * call the "once" function for all extensions. This should really only be called
      * once.
@@ -104,9 +114,11 @@ declare class ExtensionManager {
     doOnce(): Promise<void>;
     renderStyle(): Promise<void>;
     getProtocolHandler(protocol: string): (url: string, install: boolean) => void;
-    readonly numOnce: number;
+    get numOnce(): number;
     onLoadingExtension(cb: (name: string, idx: number) => void): void;
     setUIReady(): void;
+    private watcherError;
+    private queryLoadTimeout;
     private getModDB;
     private getMetaServerList;
     private connectMetaDB;
@@ -128,6 +140,7 @@ declare class ExtensionManager {
     private lookupModReference;
     private modLookupId;
     private lookupModMeta;
+    private makeSorter;
     private saveModMeta;
     private openArchive;
     private applyStartHooks;
@@ -139,6 +152,7 @@ declare class ExtensionManager {
     private highlightControl;
     private addMetaServer;
     private startIPC;
+    private idify;
     private loadDynamicExtension;
     private loadDynamicExtensions;
     /**
@@ -148,6 +162,6 @@ declare class ExtensionManager {
      *
      * @returns {ExtensionInit[]}
      */
-    private loadExtensions;
+    private prepareExtensions;
 }
 export default ExtensionManager;

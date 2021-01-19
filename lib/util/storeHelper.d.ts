@@ -2,7 +2,7 @@
  * Helper functions when working with immutable state (or immutable objects in general)
  */
 import { IGameStored } from '../extensions/gamemode_management/types/IGameStored';
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 import * as Redux from 'redux';
 /**
  * return an item from state or the fallback if the path doesn't lead
@@ -67,6 +67,7 @@ export declare function changeOrNop<T>(state: T, path: Array<(string | number)>,
  * @returns {T}
  */
 export declare function deleteOrNop<T>(state: T, path: Array<(string | number)>): T;
+export declare function setDefaultArray<T>(state: T, path: Array<(string | number)>, fallback: any[]): T;
 /**
  * push an item to an array inside state. This creates all intermediate
  * nodes and the array itself as necessary
@@ -115,7 +116,7 @@ export declare function removeValueIf<T extends object>(state: T, path: Array<(s
  * @returns {T}
  */
 export declare function merge<T extends object>(state: T, path: Array<(string | number)>, value: any): T;
-export declare function rehydrate<T extends object>(state: T, inbound: any, path: string[]): T;
+export declare function rehydrate<T extends object>(state: T, inbound: any, path: string[], replace: boolean): T;
 /**
  * return the stored static details about the currently selected game mode
  * or a fallback with the id '__placeholder'

@@ -1,5 +1,11 @@
 const fs = require('fs');
 const path = require('path');
+let ForkTsCheckerWebpackPlugin;
+try {
+  ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+} catch (err) {
+  // nop
+}
 
 function externalsDirect() {
   return [
@@ -8,6 +14,7 @@ function externalsDirect() {
     'exe-version',
     'ffi',
     'fs',
+    'fs-extra',
     'fs-extra-promise',
     'immutability-helper',
     'lodash',
@@ -60,8 +67,12 @@ function output(moduleName, basePath) {
 }
 
 function loaders(version) {
+  const transpileOnly = (ForkTsCheckerWebpackPlugin === undefined)
+                      || (process.env['BUILD_QUICK_AND_DIRTY'] !== undefined);
   const res = [
-    {test: /\.tsx?$/, loader: 'ts-loader' },
+    {test: /\.tsx?$/, loader: 'ts-loader', exclude: /node_modules/, options: {
+      transpileOnly
+    } },
   ];
   if (version < 4) {
     res.push({test: /\.json$/, loader: 'json-loader'});
@@ -86,10 +97,16 @@ function config(moduleName, basePath, version) {
     } : {
       rules: loaders(version),
     },
+    plugins: [],
     resolve: {extensions: ['.js', '.jsx', '.json', '.ts', '.tsx']},
     devtool: 'source-map',
     externals: externals(),
   };
+
+  if ((ForkTsCheckerWebpackPlugin !== undefined)
+      && (process.env['BUILD_QUICK_AND_DIRTY'] === undefined)) {
+    res.plugins.push(new ForkTsCheckerWebpackPlugin());
+  }
 
   if (version >= 4) {
     res['mode'] = process.env.TARGET_ENV || 'development';

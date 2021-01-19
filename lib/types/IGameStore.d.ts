@@ -1,20 +1,26 @@
 import { IExecInfo } from './IExecInfo';
 import { IExtensionApi } from './IExtensionContext';
 import { IGameStoreEntry } from './IGameStoreEntry';
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
+export declare type GameLaunchType = 'gamestore' | 'commandline';
 export declare class GameStoreNotFound extends Error {
     private mName;
     constructor(name: any);
-    readonly storeName: string;
+    get storeName(): string;
 }
 export declare class GameEntryNotFound extends Error {
     private mName;
     private mStore;
     private mExistingNames;
     constructor(name: string, store: string, existing?: string[]);
-    readonly gameName: string;
-    readonly storeName: string;
-    readonly existingGames: string[];
+    get gameName(): string;
+    get storeName(): string;
+    get existingGames(): string[];
+}
+export interface ICustomExecutionInfo {
+    appId: string;
+    parameters: string[];
+    launchType?: GameLaunchType;
 }
 /**
  * interface for game store launcher extensions
@@ -28,9 +34,24 @@ export interface IGameStore {
     id: string;
     /**
      * Returns all recognized/installed games which are currently
-     *  installed with this game store/launcher.
+     *  installed with this game store/launcher. Please note that
+     *  the game entries should be cached to avoid running a potentially
+     *  resource intensive operation for each game the user attempts to
+     *  manage.
      */
     allGames: () => Promise<IGameStoreEntry[]>;
+    /**
+     * Attempt to find a game entry using its game store Id/Ids.
+     *
+     * @param appId of the game entry. This is obviously game store specific.
+     */
+    findByAppId: (appId: string | string[]) => Promise<IGameStoreEntry>;
+    /**
+     * Attempt to find a game store entry using the game's name.
+     *
+     * @param appName the game name which the game store uses to identify this game.
+     */
+    findByName: (appName: string) => Promise<IGameStoreEntry>;
     /**
      * Determine whether the game has been installed by this game store launcher.
      *  returns true if the game store installed this game, false otherwise.
@@ -58,6 +79,25 @@ export interface IGameStore {
      * @param appId - Whatever the game store uses to identify a game.
      */
     getExecInfo?: (appId: any) => Promise<IExecInfo>;
+    /**
+     * Generally the game store helper should be able to launch games directly.
+     *  This functor allows game stores to define their own custom start up logic
+     *  if needed. e.g. gamestore-xbox
+     */
+    launchGameStore?: (api: IExtensionApi, parameters?: string[]) => Promise<void>;
+    /**
+     * Returns the full path to the launcher's executable.
+     */
+    getGameStorePath?: () => Promise<string>;
+    /**
+     * Allows game stores to provide functionality to reload/refresh their
+     *  game entries. This is potentially a resource intensive operation and
+     *  should not be called unless it is vital to do so.
+     *
+     * The game store helper is configured to call this function for all known
+     *  game stores when a discovery scan is initiated.
+     */
+    reloadGames?: () => Promise<void>;
     /**
      * Launches the game using this game launcher.
      * @param appId whatever the game store uses to identify a game.

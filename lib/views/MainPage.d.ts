@@ -1,3 +1,4 @@
+import { ComponentEx } from '../util/ComponentEx';
 import Body from './MainPageBody';
 import Header from './MainPageHeader';
 import * as React from 'react';
@@ -6,9 +7,14 @@ export interface IBaseProps {
     className?: string;
     domRef?: (ref: HTMLElement) => void;
 }
+declare type IProps = IBaseProps;
+declare class MainPage extends ComponentEx<IProps, {}> {
+    static Body: typeof Body;
+    static Header: any;
+    render(): JSX.Element;
+}
 export interface IMainPage extends React.ComponentClass<IBaseProps> {
     Body: typeof Body;
     Header: typeof Header;
 }
-declare const _default: IMainPage;
-export default _default;
+export default MainPage;

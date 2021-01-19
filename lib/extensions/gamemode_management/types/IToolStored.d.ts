@@ -10,6 +10,7 @@ export interface IToolStored {
     };
     shell?: boolean;
     detach?: boolean;
-    onStart?: 'hide' | 'close';
+    onStart?: 'hide' | 'hide_recover' | 'close';
     exclusive?: boolean;
+    defaultPrimary?: boolean;
 }

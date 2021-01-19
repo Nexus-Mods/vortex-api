@@ -1,5 +1,5 @@
 import { Normalize } from './getNormalizeFunc';
-import * as Promise from 'bluebird';
+import Bluebird from 'bluebird';
 /**
  * count the elements in an array for which the predicate matches
  *
@@ -23,7 +23,7 @@ export declare function sum(container: number[]): number;
  * returns the attribute "key" from "obj". If that attribute doesn't exist
  * on obj, it will be set to the default value and that is returned.
  */
-export declare function setdefault<T>(obj: any, key: PropertyKey, def: T): T;
+export declare function setdefault<T, K extends keyof T>(obj: T, key: K, def: T[K]): T[K];
 /**
  * An ellipsis ("this text is too lo...") function. Usually these
  * functions clip the text at the end but often (i.e. when
@@ -60,13 +60,14 @@ export declare function objDiff(lhs: any, rhs: any, skip?: string[]): any;
  * will be called only after everything before it in the queue is finished
  * and with the promise that nothing else in the queue is run in parallel.
  */
-export declare function makeQueue(): (func: () => Promise<any>, tryOnly: boolean) => Promise<{}>;
+export declare function makeQueue<T>(): (func: () => Bluebird<T>, tryOnly: boolean) => Bluebird<T>;
 /**
  * spawn this application itself
  * @param args
  */
 export declare function spawnSelf(args: string[]): void;
 export declare function bytesToString(bytes: number): string;
+export declare function largeNumToString(num: number): string;
 export declare function pad(value: number, padding: string, width: number): string;
 export declare function timeToString(seconds: number): string;
 export declare function encodeHTML(input: string): string;
@@ -78,6 +79,8 @@ export declare function getAllPropertyNames(obj: object): string[];
  * @param parent path of the presumed parent directory
  */
 export declare function isChildPath(child: string, parent: string, normalize?: Normalize): boolean;
+export declare function isReservedDirectory(dirPath: string, normalize?: Normalize): boolean;
+export declare function ciEqual(lhs: string, rhs: string, locale?: string): boolean;
 /**
  * take any input string and sanitize it into a valid css id
  */
@@ -91,15 +94,24 @@ export declare function deBOM(input: string): string;
  * @param string
  */
 export declare function escapeRE(input: string): string;
+export interface ITimeoutOptions {
+    cancel?: boolean;
+    throw?: boolean;
+    queryContinue?: () => Bluebird<boolean>;
+}
 /**
  * set a timeout for a promise. When the timeout expires the promise returned by this
- * resolves with a value of undefined.
+ * resolves with a value of undefined (or throws a TimeoutError).
  * @param prom the promise that should be wrapped
- * @param delay the time in milliseconds after which this should return
- * @param cancel if true, the input promise is canceled when the timeout expires. Otherwise
- *               it's allowed to continue and may finish after all.
+ * @param delayMS the time in milliseconds after which this should return
+ * @param options options detailing how this timeout acts
  */
-export declare function timeout<T>(prom: Promise<T>, delay: number, cancel?: boolean): Promise<T>;
+export declare function timeout<T>(prom: Bluebird<T>, delayMS: number, options?: ITimeoutOptions): Bluebird<T>;
+/**
+ * wait for the specified number of milliseconds before resolving the promise.
+ * Bluebird has this feature as Promise.delay but when using es6 default promises this can be used
+ */
+export declare function delay(timeoutMS: number): Bluebird<void>;
 /**
  * characters invalid in a file path
  */
@@ -124,4 +136,8 @@ export interface IFlattenParameters {
  * @param options parameters controlling the flattening process
  */
 export declare function flatten(obj: any, options?: IFlattenParameters): any;
-export declare function toPromise<ResT>(func: (cb: any) => void): Promise<ResT>;
+export declare function toPromise<ResT>(func: (cb: any) => void): Bluebird<ResT>;
+export declare function unique<T, U>(input: T[], keyFunc?: (item: T) => U): T[];
+export declare function delayed(delayMS: number): Promise<void>;
+export declare function toBlue<T>(func: (...args: any[]) => Promise<T>): (...args: any[]) => Bluebird<T>;
+export declare function replaceRecursive(input: any, from: any, to: any): any;

@@ -1,5 +1,6 @@
 import { IErrorOptions } from '../types/IExtensionContext';
 import { IState } from '../types/IState';
+import Promise from 'bluebird';
 import * as Redux from 'redux';
 import { ThunkDispatch } from 'redux-thunk';
 /**
@@ -40,6 +41,7 @@ export declare function showActivity<S>(dispatch: ThunkDispatch<IState, null, Re
  * @param {string} [id]
  */
 export declare function showInfo<S>(dispatch: ThunkDispatch<IState, null, Redux.Action>, message: string, id?: string): void;
+export declare function bundleAttachment(options?: IErrorOptions): Promise<string>;
 /**
  * show an error notification with an optional "more" button that displays further details
  * in a modal dialog.
@@ -57,12 +59,12 @@ export interface IPrettifiedError {
     replace?: any;
     allowReport?: boolean;
 }
-export declare function prettifyNodeErrorMessage(err: any): IPrettifiedError;
+export declare function prettifyNodeErrorMessage(err: any, options?: IErrorOptions): IPrettifiedError;
 /**
  * render error message for display to the user
  * @param err
  */
-export declare function renderError(err: string | Error | any): {
+export declare function renderError(err: string | Error | any, options?: IErrorOptions): {
     message?: string;
     text?: string;
     parameters?: any;

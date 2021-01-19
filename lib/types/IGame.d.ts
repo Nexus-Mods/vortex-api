@@ -1,8 +1,9 @@
 import { IModType } from '../extensions/gamemode_management/types/IModType';
 import { IDiscoveryResult, IMod } from './IState';
 import { ITool } from './ITool';
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 export { IModType };
+export declare type DirectoryCleaningMode = 'tag' | 'all';
 /**
  * interface for game extensions
  *
@@ -37,9 +38,41 @@ export interface IGame extends ITool {
         [typeId: string]: string;
     };
     /**
+     * intended to be used by game extensions to provide custom functionality
+     *  to resolve a game's version when the game executable's version attribute
+     *  is incorrect, which is often the case with games that are still in early
+     *  access - an example of this is Blade and Sorcery which uses a different
+     *  versioning system internally.
+     *
+     * @param gamePath path where the game is installed
+     *
+     * @returns the game's version - please note that the game extension must
+     *          provide a valid semantic version - non-semantic versions will
+     *          be ignored and Vortex will use the game executable's version
+     *          attribute instead as fallback.
+     *
+     * @memberof IGame
+     */
+    getGameVersion?: (gamePath: string) => Promise<string>;
+    /**
      * Determine whether the game needs to be executed via a launcher, like Steam or EpicGamesLauncher
      *
      * If this returns a value, Vortex will use appropriate code for that launcher
+     * "launcher" in the returned object is the id of the store to use to launch the game, whether
+     * addInfo is required and what it needs to contain depends on the store.
+     * For steam you can leave addInfo undefined, for the epic game store it has to be a string with
+     * the application id (same id used to discover the game)
+     *
+     * For the windows store it has to be an object with this structure:
+     * {
+     *   appId: <application id>,
+     *   parameters: [
+     *     { appExecName: <starter id> },
+     *   ],
+     * }
+     * The starter id can be found by looking at the appxmanifest.xml file found in
+     * the game directory. Look for the Id attribute in the <Application> tag.
+     * If there are multiple <Application> tags, pick the one you actually want Vortex to start.
      *
      * @param gamePath path where the game is installed.
      */
@@ -112,6 +145,18 @@ export interface IGame extends ITool {
         [key: string]: any;
     };
     /**
+     * declares this game compatible or incompatible with a certain feature. If not specified, a
+     * sensible default will be assumed for each game.
+     * So for example if you know the game won't support symbolic links but Vortex offers it by
+     * default, you can set "{ compatible: { symlinks: false } }" so Vortex won't offer the feature.
+     * You will have to investigate or ask for the possible ids though. Since we will be introducing
+     * new "gates" over time and so may extensions, it's not practical (at least at this time) to
+     * maintain a list.
+     */
+    compatible?: {
+        [key: string]: boolean;
+    };
+    /**
      * set to name of the contributor that added support for this game. For officialy supported
      * games this is undefined
      */
@@ -125,10 +170,22 @@ export interface IGame extends ITool {
      */
     version?: string;
     /**
-     * should be set to true only if the game in question needs its mod folders
-     *  cleaned up on each deploy event.
+     * if true, empty directories are cleaned up during deployment.
+     * Right now this defaults to false if mergeMods is true, this defaults to true if mergeMods
+     * is false or a function.
+     * The reason being that otherwise we would be leaving empty directories every time a mod gets
+     * disabled or the deployment name changes.
+     * Users can also manually force the cleanup for all games.
      */
     requiresCleanup?: boolean;
+    /**
+     * decides how Vortex decides which empty directories to clean.
+     * With 'tag' (default) we put a dummy file into each directory created by Vortex and only
+     *   those get removed during purge (or after deployment if requiresCleanup is enabled)
+     * With 'all' Vortex will simply clean up all empty directories, whether Vortex created them
+     *   or not. In some (unusual) cases this may break mods
+     */
+    directoryCleaning?: DirectoryCleaningMode;
     /**
      * if set this function is always called before automatic deployment and it will be delayed
      * until the promise resolves.

@@ -12,6 +12,8 @@ export interface IToolbarIconProps {
     spin?: boolean;
     disabled?: boolean;
     className?: string;
+    stroke?: boolean;
+    hollow?: boolean;
 }
 declare class ToolbarIcon extends React.PureComponent<IToolbarIconProps, {}> {
     render(): JSX.Element;

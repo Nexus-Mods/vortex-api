@@ -1,3 +1,3 @@
-import I18next from 'i18next';
-declare function getText(id: string, t: I18next.TFunction): string;
+import { TFunction } from '../../util/i18n';
+declare function getText(id: string, t: TFunction): string;
 export default getText;

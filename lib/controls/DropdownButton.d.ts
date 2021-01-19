@@ -22,7 +22,7 @@ declare class MyDropdownButton extends React.Component<IProps, {
     constructor(props: IProps);
     componentDidMount(): void;
     render(): JSX.Element;
-    private readonly bounds;
+    private get bounds();
     private onToggle;
 }
 export default MyDropdownButton;

@@ -1,4 +1,5 @@
-import I18next from 'i18next';
+/// <reference types="react" />
+import { ITString, TFunction } from '../util/i18n';
 export declare type AttributeRenderer = 'progress';
 export declare type Placement = 'table' | 'detail' | 'both' | 'inline';
 export declare type ValidationState = 'success' | 'warning' | 'error';
@@ -16,8 +17,9 @@ export interface IEditChoice {
 export interface IFilterProps {
     filter: any;
     attributeId: string;
-    t: I18next.TFunction;
+    t: TFunction;
     onSetFilter: (attributeId: string, value: any) => void;
+    domRef: (ref: HTMLElement) => void;
 }
 export interface ITableFilter {
     /**
@@ -30,7 +32,7 @@ export interface ITableFilter {
      */
     isEmpty?: (filter: any) => boolean;
     raw: string | boolean;
-    component: React.ComponentClass<IFilterProps>;
+    component: React.ComponentType<IFilterProps>;
     dataId?: string;
 }
 export interface ICustomProps {
@@ -50,12 +52,17 @@ export interface ITableAttribute<T = any> {
     /**
      * user readable name for the attribute (appears in the header and potentially in tooltips)
      */
-    name?: string;
+    name?: string | ITString;
     /**
      * lengthier description of what the attribute represents
      * (currently unused but please provide one anyway)
      */
-    description?: string;
+    description?: string | ITString;
+    /**
+     * position of the attribute within the table (at some point we may allow users to override
+     * this at which point this will be the default)
+     */
+    position?: number;
     /**
      * If set, determins the order in which attributes are displayed (the order of columns if
      * placement is 'table' or vertical order in details).
@@ -71,7 +78,7 @@ export interface ITableAttribute<T = any> {
      * is no custom renderer and only if a name is set (as otherwise the space for the help icon
      * doesn't exist)
      */
-    help?: string;
+    help?: string | ITString;
     /**
      * icon for the attribute. This is currently only used for the toggle button if the column is
      * toggleable
@@ -91,11 +98,18 @@ export interface ITableAttribute<T = any> {
      * grouping, otherwise the output of calc is used. This function must be fast, unlike calc
      * the result from this is not cached (at this time)
      */
-    isGroupable?: boolean | ((object: T, t: I18next.TFunction) => string);
+    isGroupable?: boolean | ((object: T, t: TFunction) => string);
     /**
      * if set, the table can be filtered by this attribute using the specified control
      */
     filter?: ITableFilter;
+    /**
+     * if set, this attribute will be the one that gets focused when pressing ctrl+f
+     * There can only be one of these and it should be a column that is visible by default.
+     * And of course it has to be filterable
+     * If more than one attribute has this flag the first one will be used.
+     */
+    isDefaultFilter?: boolean;
     /**
      * if true (default), the column is visible by default otherwise the user has to activate it
      * manually first
@@ -145,7 +159,7 @@ export interface ITableAttribute<T = any> {
      * Also note that table cells using customRenderer will do more unnecessary rerenders than a
      * calc-based field so please use customRenderer only when necessary.
      */
-    customRenderer?: (object: T | T[], detailCell: boolean, t: I18next.TFunction, props: ICustomProps) => JSX.Element;
+    customRenderer?: (object: T | T[], detailCell: boolean, t: TFunction, props: ICustomProps) => JSX.Element;
     /**
      * determine the display value for this attribute. This is used for display if customRenderer is
      * not specified. It's also used for sorting the table so unless isSortable is false and a
@@ -159,7 +173,7 @@ export interface ITableAttribute<T = any> {
      *        This means that if you bind a variable to your calc function which is not part of
      *        the Table props the Table may appear glitchy as it won't update as necessary.
      */
-    calc?: (object: T, t: I18next.TFunction) => any | Promise<any>;
+    calc?: (object: T, t: TFunction) => any | Promise<any>;
     /**
      * custom function for sorting by this attribute. The parameters passed in (lhs and rhs) are
      * the output of calc (cached). Return <0 if lhs is smaller than rhs, >0 if it's bigger and

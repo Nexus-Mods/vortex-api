@@ -1,9 +1,8 @@
 import { IExtensionApi } from '../types/IExtensionContext';
-import * as React from 'react';
 export interface IComponentContext {
     api: IExtensionApi;
     headerPortal: () => HTMLElement;
     page: string;
 }
-declare const _default: React.ComponentClass<{}, any>;
+declare const _default: any;
 export default _default;
