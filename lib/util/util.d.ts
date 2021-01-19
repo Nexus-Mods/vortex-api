@@ -137,6 +137,8 @@ export interface IFlattenParameters {
  */
 export declare function flatten(obj: any, options?: IFlattenParameters): any;
 export declare function toPromise<ResT>(func: (cb: any) => void): Bluebird<ResT>;
+export declare function makeUnique<T>(input: T[]): T[];
+export declare function withTmpDir<T>(cb: (tmpPath: string) => Promise<T>): Promise<T>;
 export declare function unique<T, U>(input: T[], keyFunc?: (item: T) => U): T[];
 export declare function delayed(delayMS: number): Promise<void>;
 export declare function toBlue<T>(func: (...args: any[]) => Promise<T>): (...args: any[]) => Bluebird<T>;

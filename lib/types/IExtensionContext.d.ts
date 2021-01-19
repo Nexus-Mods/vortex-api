@@ -18,6 +18,7 @@ import { IBannerOptions } from './IBannerOptions';
 import { DialogType, IDialogResult } from './IDialog';
 import { IGame } from './IGame';
 import { IGameStore } from './IGameStore';
+import { ILookupOptions, IModLookupResult } from './IModLookupResult';
 import { INotification } from './INotification';
 import { IDiscoveryResult, IMod, IState } from './IState';
 import { ITableAttribute } from './ITableAttribute';
@@ -26,9 +27,9 @@ import Promise from 'bluebird';
 import { ILookupResult, IModInfo, IReference } from 'modmeta-db';
 import * as React from 'react';
 import * as Redux from 'redux';
-import { ThunkDispatch } from 'redux-thunk';
 import { ComplexActionCreator } from 'redux-act';
-export { TestSupported, IInstallResult, IInstruction, IDeployedFile, IDeploymentMethod, IFileChange, ILookupResult, IModInfo, IReference, InstallFunc, ISupportedResult, ProgressDelegate };
+import { ThunkDispatch } from 'redux-thunk';
+export { TestSupported, IInstallResult, IInstruction, IDeployedFile, IDeploymentMethod, IFileChange, ILookupResult, IModInfo, InstructionType, IReference, InstallFunc, ISupportedResult, ProgressDelegate };
 export interface ThunkStore<S> extends Redux.Store<S> {
     dispatch: ThunkDispatch<S, null, Redux.Action>;
 }
@@ -95,6 +96,9 @@ export interface IToDoButton {
 export declare type RegisterToDo = (id: string, type: ToDoType, props: (state: any) => any, icon: ((props: any) => JSX.Element) | string, text: ((t: TFunction, props: any) => JSX.Element) | string, action: (props: any) => void, condition: (props: any) => boolean, value: ((t: TFunction, props: any) => JSX.Element) | string, priority: number) => void;
 export interface IRegisterProtocol {
     (protocol: string, def: boolean, callback: (url: string, install: boolean) => void): any;
+}
+export interface IRegisterRepositoryLookup {
+    (repositoryId: string, preferOverMD5: boolean, callback: (id: IModRepoId) => Promise<IModLookupResult[]>): any;
 }
 export interface IFileFilter {
     name: string;
@@ -434,7 +438,7 @@ export interface IExtensionApi {
      *
      * @memberOf IExtensionApi
      */
-    lookupModReference: (ref: IModReference) => Promise<IModLookupResult[]>;
+    lookupModReference: (ref: IModReference, options?: ILookupOptions) => Promise<IModLookupResult[]>;
     /**
      * add a meta server
      * Please note that setting a server with the same id again will replace the existing one
@@ -598,8 +602,9 @@ export interface IReducerSpec<T = {
 }
 export interface IModTypeOptions {
     mergeMods?: boolean | ((mod: IMod) => string);
-    deploymentEssential?: boolean;
     name?: string;
+    customDependencyManagement?: boolean;
+    deploymentEssential?: boolean;
 }
 /**
  * The extension context is an object passed into all extensions during initialisation.

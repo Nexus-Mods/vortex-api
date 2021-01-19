@@ -13,7 +13,7 @@ declare class SelectUpDown extends React.Component<IProps, ISelectUpDownState> {
     constructor(props: IProps);
     componentDidMount(): void;
     render(): JSX.Element;
-    private readonly bounds;
+    private get bounds();
     private onMenuOpen;
 }
 export default SelectUpDown;

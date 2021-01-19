@@ -18,7 +18,7 @@ export declare class InsufficientDiskSpace extends Error {
 export declare class ProcessCanceled extends Error {
     private mExtraInfo;
     constructor(message: string, extraInfo?: any);
-    readonly extraInfo: any;
+    get extraInfo(): any;
 }
 export declare class DataInvalid extends Error {
     constructor(message: string);
@@ -57,6 +57,9 @@ export declare class MissingInterpreter extends Error {
 }
 export declare class NotFound extends Error {
     constructor(what: string);
+}
+export declare class StalledError extends Error {
+    constructor();
 }
 export declare class TimeoutError extends Error {
     constructor();

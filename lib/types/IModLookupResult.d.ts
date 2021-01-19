@@ -1,4 +1,4 @@
-import { IRule } from "modmeta-db";
+import { IRule } from 'modmeta-db';
 export interface IModLookupData {
     fileName: string;
     fileSizeBytes: number;
@@ -22,4 +22,7 @@ export interface IModLookupData {
 export interface IModLookupResult {
     key: string;
     value: IModLookupData;
+}
+export interface ILookupOptions {
+    requireURL?: boolean;
 }

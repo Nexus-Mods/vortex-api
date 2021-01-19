@@ -1,4 +1,5 @@
 import { IChunk } from './types/IChunk';
+import { IDownloadOptions } from './types/IDownload';
 import { IDownloadResult } from './types/IDownloadResult';
 import { ProgressCallback } from './types/ProgressCallback';
 import { IProtocolHandlers } from './types/ProtocolHandlers';
@@ -62,8 +63,8 @@ declare class DownloadManager {
      *
      * @memberOf DownloadManager
      */
-    enqueue(id: string, urls: string[], fileName: string, progressCB: ProgressCallback, destinationPath?: string, redownload?: RedownloadMode): Promise<IDownloadResult>;
-    resume(id: string, filePath: string, urls: string[], received: number, size: number, started: number, chunks: IChunk[], progressCB: ProgressCallback): Promise<IDownloadResult>;
+    enqueue(id: string, urls: string[], fileName: string, progressCB: ProgressCallback, destinationPath?: string, options?: IDownloadOptions): Promise<IDownloadResult>;
+    resume(id: string, filePath: string, urls: string[], received: number, size: number, started: number, chunks: IChunk[], progressCB: ProgressCallback, options?: IDownloadOptions): Promise<IDownloadResult>;
     /**
      * cancel a download. This stops the download but doesn't remove the file
      *

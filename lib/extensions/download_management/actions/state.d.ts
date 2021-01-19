@@ -94,6 +94,10 @@ export declare const addLocalDownload: reduxAct.ComplexActionCreator4<string, st
     localPath: string;
     fileSize: number;
 }, {}>;
+export declare const mergeDownloadModInfo: reduxAct.ComplexActionCreator2<string, any, {
+    id: string;
+    value: any;
+}, {}>;
 export declare const setDownloadModInfo: reduxAct.ComplexActionCreator3<string, string, any, {
     id: string;
     key: string;

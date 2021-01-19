@@ -21,6 +21,7 @@ export interface IBaseProps {
     };
     dataId?: number;
     actions: ITableRowAction[];
+    columnBlacklist?: string[];
     detailsTitle?: string;
     multiSelect?: boolean;
     defaultSort?: string;

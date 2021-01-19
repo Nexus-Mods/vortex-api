@@ -4,6 +4,7 @@ import { TFunction } from '../../util/i18n';
 export declare const EMPTY_ID = "<Unspecified>";
 export interface IGroupingRowProps {
     t: TFunction;
+    groupId: string;
     groupName: string;
     count: number;
     expanded: boolean;

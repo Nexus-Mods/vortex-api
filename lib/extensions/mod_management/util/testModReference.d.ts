@@ -12,6 +12,7 @@ export interface IModLookupInfo {
     fileId?: string;
     modId?: string;
     source?: string;
+    referenceTag?: string;
 }
 export declare function referenceEqual(lhs: IModReference, rhs: IModReference): boolean;
 export declare function sanitizeExpression(fileName: string): string;
