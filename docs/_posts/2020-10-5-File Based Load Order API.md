@@ -2,12 +2,12 @@
 layout: article
 author: IDCs
 created: Fri, 20 Nov 2020 16:25:39 GMT
-updated: Tue, 26 Jan 2021 12:20:29 GMT
+updated: Tue, 26 Jan 2021 12:28:12 GMT
 wip: true
 title: File Based Load Order API
 order: 1000
 tags:
-
+  - Tutorial
 comments: 0
 issue_url: https://github.com/Nexus-Mods/vortex-api/issues/20
 ---
