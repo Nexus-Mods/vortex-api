@@ -2,7 +2,7 @@
 layout: article
 author: IDCs
 created: Fri, 20 Nov 2020 16:25:39 GMT
-updated: Mon, 23 Nov 2020 11:11:46 GMT
+updated: Tue, 26 Jan 2021 12:20:29 GMT
 wip: true
 title: File Based Load Order API
 order: 1000
@@ -11,8 +11,6 @@ tags:
 comments: 0
 issue_url: https://github.com/Nexus-Mods/vortex-api/issues/20
 ---
-(ignore me - still WIP)
-
 ## **Introduction** ##
 
 The concept of load ordering when modding games refers to the organization of a series of game modifications in a specific order for the game to load in sequence; this is particularly useful if for example mod A has functionality that depends on mod B - in order for mod A to function as intended, mod B must be loaded by the game before mod A.
