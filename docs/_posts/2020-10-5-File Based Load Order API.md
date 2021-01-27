@@ -2,7 +2,7 @@
 layout: article
 author: IDCs
 created: Fri, 20 Nov 2020 16:25:39 GMT
-updated: Wed, 27 Jan 2021 11:50:34 GMT
+updated: Wed, 27 Jan 2021 14:53:06 GMT
 wip: true
 title: File Based Load Order API
 order: 1000
@@ -155,7 +155,7 @@ Before jumping the gun and simply parsing the mod list, it may be wise to step b
 
 Reading the file in this case is not sufficient - we need to make sure we scan the game’s mods directory for all files with the .mod file extension, whether they are present inside the mods.cfg file or not as we want to give the user the ability to enable/disable mods that haven’t been installed through Vortex too.
 
-The use case in Kenshi is more complex than it has to be - we chose to edit the game’s load order file directly which limits the amount of data we can write to the file and makes it harder to deserialize correctly - but this.
+The use case in Kenshi is more complex than it has to be - we chose to edit the game’s load order file directly which limits the amount of data we can write to the file and makes it harder to deserialize correctly - but this will work just fine for the purpose of this tutorial.
 
 Again, we’re going to omit the main bulk of the deserialization logic but you can always read the source code here https://github.com/Nexus-Mods/vortex-games/blob/file_based_lo/game-kenshi/index.js
 
@@ -214,6 +214,60 @@ const newLO = deployedModFiles.reduce((accum, file) => {
 return Promise.resolve(newLO);
 ```
 
+**Please note:** depending on whether your game extension provides functionality to automatically sort the user's mods for him,  you may be tempted to sort the deserialized load order array at this stage and display a "ready-to-go" mod list to the user - this is not what the deserialization functor is designed for and will most definitely cause inconsistency between what the load order page is displaying to the user and what is actually present inside the game's load order file!
+
+For best user experience with automatic sorting algorithms we suggest adding a new button to the Load Order page by adding the below code snippet to your game extension's init function, right after we call the ```registerLoadOrder``` function e.g.:
+```
+context.registerAction('fb-load-order-icons', 200, 'loot-sort', {}, 'Sort and Save', async () => {
+    let currentLO = [];
+    try {
+      // Always keep the user in mind - he may have manually modified the file
+      //  before clicking the sort button, which is why it's a good idea to deserialize
+      //  the file here to get the current load order from the file.
+      currentLO = await deserializeLoadOrder(context.api);
+    } catch (err) {
+      context.api.showErrorNotification('Failed to read to LO file', err);
+
+      // No point in continuing if we can't determine the current load order.
+      return;
+    }
+
+    // This example uses a custom sorting algorithm for Morrowind.
+    //  It sorts the master files (ESM's) to the top of the array,
+    //  above any regular plugins (ESP's).
+    const newLO = [...currentLO].sort(sortMasters);
+    const validRes = await validate(context.api, currentLO, newLO);
+    if (validRes !== undefined) {
+      // The new load order array we sorted is reporting a validation error.
+      //  We could attempt to resolve this ourselves here. OR we can simply
+      //  tell the user we failed to automatically sort and that he needs to modify the order
+      //  manually - if the validation error persists while he is manually modifying
+      //  the order, the error box in the information panel will inform him of this fact
+      //  so we don't have to worry about.
+      context.api.showErrorNotification('Unable to sort automatically',
+        'Please sort your load order manually');
+
+      // Do not proceed beyond this point.
+      return;
+    }
+    
+    // If we reached this bit of code, the newLO array is valid - lets write it to file
+    try {
+      await serializeLoadOrder(context.api, newLO);
+      context.api.sendNotification({ 
+        type: 'success',
+        message: 'Load order sorted and saved successfully'
+      });
+    } catch (err) {
+      context.api.showErrorNotification('Failed to write to LO file', err);
+    }
+  }, () => {
+    const state = context.api.getState();
+    const activeGameId = selectors.activeGameId(state);
+    return (activeGameId === GAME_ID);
+  });
+```
+
 **Serialization**
 
 Serialization is technically the simplest to implement as this function will only be called if load order validation has passed successfully, and all that is required is to write the load order data to disk.
@@ -233,5 +287,6 @@ async function serialize(api, loadOrder) {
 
 ```
 
+Again - please avoid sorting the array before writing it to file, it's guaranteed to cause confusion or perhaps even inconsistencies between what is presented to the user in the Load Order page and what is saved to file.
 
 [Discuss this article](https://github.com/Nexus-Mods/vortex-api/issues/20)
