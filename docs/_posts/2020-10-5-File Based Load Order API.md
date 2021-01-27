@@ -2,7 +2,7 @@
 layout: article
 author: IDCs
 created: Fri, 20 Nov 2020 16:25:39 GMT
-updated: Tue, 26 Jan 2021 12:28:12 GMT
+updated: Wed, 27 Jan 2021 11:50:34 GMT
 wip: true
 title: File Based Load Order API
 order: 1000
@@ -133,13 +133,11 @@ function validate(api, prev, current) {
     return Promise.resolve(undefined);
   } else {
     // we found some invalid entries - we need to let the user know which mods have failed validation and why, so he can attempt to fix it.
-    const invalidEntries = {
-      invalid: invalid.map(entry => ({
+    const invalidEntries = invalid.map(entry => ({
         id: entry.id,
         reason: 'the mod file does not have the '.mod' file extension',
-      }),
-    };
-    return Promise.resolve(invalidEntries);
+      });
+    return Promise.resolve({ invalid: invalidEntries });
   }
 }
 
