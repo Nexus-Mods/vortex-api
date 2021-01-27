@@ -2,7 +2,7 @@
 layout: article
 author: IDCs
 created: Fri, 20 Nov 2020 16:25:39 GMT
-updated: Wed, 27 Jan 2021 14:56:06 GMT
+updated: Wed, 27 Jan 2021 15:05:02 GMT
 wip: true
 title: File Based Load Order API
 order: 1000
@@ -235,7 +235,8 @@ context.registerAction('fb-load-order-icons', 200, 'loot-sort', {}, 'Sort and Sa
 
     // This example uses a custom sorting algorithm for Morrowind.
     //  It sorts the master files (ESM's) to the top of the array,
-    //  above any regular plugins (ESP's).
+    //  above any regular plugins (ESP's). You can replace the 'sortMasters' sorting function
+    //  with your own custom sorting functionality.
     const newLO = [...currentLO].sort(sortMasters);
     const validRes = await validate(context.api, currentLO, newLO);
     if (validRes !== undefined) {
