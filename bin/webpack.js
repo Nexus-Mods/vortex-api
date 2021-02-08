@@ -32,6 +32,7 @@ function externalsDirect() {
     'react-i18next',
     'react-layout-pane',
     'react-redux',
+    'react-select',
     'redux-act',
     'ref',
     'request',

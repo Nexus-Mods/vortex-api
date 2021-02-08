@@ -30,6 +30,13 @@ export declare const setDownloadFilePath: reduxAct.ComplexActionCreator2<string,
     filePath: string;
 }, {}>;
 /**
+ * mark the download as pausable or not
+ */
+export declare const setDownloadPausable: reduxAct.ComplexActionCreator2<string, boolean, {
+    id: string;
+    pausable: boolean;
+}, {}>;
+/**
  * mark download as started
  */
 export declare const startDownload: reduxAct.ComplexActionCreator1<string, {
