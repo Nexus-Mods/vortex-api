@@ -2,7 +2,7 @@
 layout: article
 author: IDCs
 created: Thu, 05 Nov 2020 09:36:39 GMT
-updated: Thu, 05 Nov 2020 10:36:22 GMT
+updated: Tue, 23 Feb 2021 09:57:53 GMT
 wip: true
 title: QuickBMS Integration Overhaul
 order: 1000
@@ -90,7 +90,7 @@ All operations expect the following arguments to be provided in order for QBMS t
 - An operation folder which is used for input/output depending on which operation is called (absolute path again) the folder is primarily used when extracting or reimporting; but needs to be supplied for Write and List operations as well.
 
 Optional arguments:
-- QBMS options to define the tool’s behaviour as it runs its scripts, please see the implemented options above.
+- QBMS options to define the tool’s behaviour as it runs its scripts, please see the implemented options above. Note that if not provided, the qbmsOptions.wildCards property will always default to the "{}" wildCard, irrespective of the executed operation.
 - An error/data callback function which will allow the calling game extension to react to any errors reported by QBMS or retrieve list entries information when successfully executing the list operation.
 
 Before continuing, please make sure to read through our wiki guide on how to create game extensions in Vortex https://wiki.nexusmods.com/index.php/Creating_a_game_extension_for_Vortex
