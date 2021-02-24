@@ -22,6 +22,10 @@ export declare const downloadProgress: reduxAct.ComplexActionCreator5<string, nu
     chunks: IChunk[];
     urls: string[];
 }, {}>;
+export declare const finalizingProgress: reduxAct.ComplexActionCreator2<string, number, {
+    id: string;
+    progress: number;
+}, {}>;
 /**
  * set/change the file path
  */

@@ -1,4 +1,3 @@
-import Promise from 'bluebird';
 /**
  * management function. Prevents a function from being called too often
  * and, for function returning a promise, it ensures that it's not run
@@ -31,7 +30,7 @@ declare class Debouncer {
      *                           until the timer expires. Otherwise (the default)
      *                           the initial call is delay.
      */
-    constructor(func: (...args: any[]) => Error | Promise<void>, debounceMS: number, reset?: boolean, triggerImmediately?: boolean);
+    constructor(func: (...args: any[]) => Error | PromiseLike<void>, debounceMS: number, reset?: boolean, triggerImmediately?: boolean);
     /**
      * schedule the function and invoke the callback once that is done
      * @param callback the callback to invoke upon completion

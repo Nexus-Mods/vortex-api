@@ -3,7 +3,7 @@ import { IExtensionApi } from '../types/IExtensionContext';
 import { II18NProps } from '../types/II18NProps';
 import { IMainPage } from '../types/IMainPage';
 import { INotification } from '../types/INotification';
-import { IProgress, IUIBlocker } from '../types/IState';
+import { IProfile, IProgress, IUIBlocker } from '../types/IState';
 import { TFunction } from '../util/i18n';
 import * as React from 'react';
 export interface IBaseProps {
@@ -37,6 +37,9 @@ export interface IConnectedProps {
     APIKey: string;
     uiBlockers: {
         [id: string]: IUIBlocker;
+    };
+    profiles: {
+        [key: string]: IProfile;
     };
 }
 export interface IActionProps {

@@ -129,6 +129,7 @@ export interface IFlattenParameters {
     maxLength?: number;
     separator?: string;
     baseKey?: string[];
+    nonEnumerable?: boolean;
 }
 /**
  * turn an object into a flat one meaning all values are PODs, no nested objects/arrays

@@ -1,4 +1,3 @@
-import * as Promise from 'bluebird';
 export declare type LockedState = 'true' | 'false' | 'always' | 'never';
 export declare type LoadOrder = ILoadOrderEntry[];
 export interface IItemRendererProps {
