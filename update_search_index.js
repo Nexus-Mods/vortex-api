@@ -42,7 +42,7 @@ async function addReference(idx) {
   const files = [].concat(
     (await fs.readdir(path.join('docs', 'api', 'classes'))).map(name => path.join('docs', 'api', 'classes', name)),
     (await fs.readdir(path.join('docs', 'api', 'interfaces'))).map(name => path.join('docs', 'api', 'interfaces', name)),
-    path.join('docs', 'api', 'globals.md'),
+    path.join('docs', 'api', 'modules.md'),
   );
 
   const res = [];
