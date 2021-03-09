@@ -1,13 +1,13 @@
 {
   "name": "vortex-api",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Library exporting nmm components extensions may use",
   "main": "lib/index.js",
   "bin": {
     "extractInfo": "./bin/extractInfo.js"
   },
   "scripts": {
-    "doc": "typedoc.cmd --plugin typedoc-plugin-markdown ../src/index.ts && yarn run kb",
+    "doc": "typedoc.cmd --plugin typedoc-plugin-markdown && yarn run kb",
     "dochtml": "typedoc.cmd ../src/index.ts",
     "kb": "node update.js",
     "build": "tsc -p . -d"
@@ -26,6 +26,7 @@
     "js-yaml": "^3.14.0",
     "lunr": "^2.3.9",
     "request": "^2.88.2",
-    "typedoc-plugin-markdown": "^3.0.11"
+    "typedoc": "^0.20.30",
+    "typedoc-plugin-markdown": "^3.6.0"
   }
 }

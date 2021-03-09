@@ -2,7 +2,7 @@
 layout: article
 author: IDCs
 created: Thu, 05 Nov 2020 09:36:39 GMT
-updated: Tue, 23 Feb 2021 09:57:53 GMT
+updated: Mon, 01 Mar 2021 10:09:07 GMT
 wip: true
 title: QuickBMS Integration Overhaul
 order: 1000
@@ -92,6 +92,8 @@ All operations expect the following arguments to be provided in order for QBMS t
 Optional arguments:
 - QBMS options to define the tool’s behaviour as it runs its scripts, please see the implemented options above. Note that if not provided, the qbmsOptions.wildCards property will always default to the "{}" wildCard, irrespective of the executed operation.
 - An error/data callback function which will allow the calling game extension to react to any errors reported by QBMS or retrieve list entries information when successfully executing the list operation.
+- Whether Vortex should inform the user about a successful/failed QBMS operations, this refers to Vortex's own notification system and will not affect the verbosity of QBMS itself. Any operation errors will still be forwarded to the calling extension via the error/data callback function if defined.
+- A functor informing the QBMS extension to attach a file to the error in case the user chooses to report an error.
 
 Before continuing, please make sure to read through our wiki guide on how to create game extensions in Vortex https://wiki.nexusmods.com/index.php/Creating_a_game_extension_for_Vortex
 
@@ -112,12 +114,17 @@ context.api.ext.qbmsList({
       bmsScriptPath: path.join(__dirname, 'zip.bms'),
       archivePath: path.join(__dirname, 'tutorial.zip'),
       operationPath: path.join(__dirname, 'opPath'),
+      quiet: true, // Vortex will not raise any notifications on successful/failed QBMS operation.
       callback: (err, data) => {
         if (err !== undefined) {
           // Something went wrong.
         }
         // Operation successful, do something with the data.
       }
+      // If we want a file attached to the error report (if the user chooses to submit the error through the feedback system)
+      additionalAttachments: Promise.resolve([
+         { filePath: 'C:\file.txt', description: 'just a random file for demonstration purposes' },
+      ]),
     });
 ```
 

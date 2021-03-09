@@ -1,151 +1,185 @@
-**[vortex_devel](../README.md)**
-
-> [Globals](../globals.md) / ITableRowAction
+[vortex_devel](../README.md) / [Exports](../modules.md) / ITableRowAction
 
 # Interface: ITableRowAction
 
 ## Hierarchy
 
-* [IActionDefinition](iactiondefinition.md)
+* [*IActionDefinition*](types.iactiondefinition.md)
 
   ↳ **ITableRowAction**
 
-## Index
+## Table of contents
 
 ### Properties
 
-* [action](itablerowaction.md#action)
-* [component](itablerowaction.md#component)
-* [condition](itablerowaction.md#condition)
-* [default](itablerowaction.md#default)
-* [hotKey](itablerowaction.md#hotkey)
-* [icon](itablerowaction.md#icon)
-* [multiRowAction](itablerowaction.md#multirowaction)
-* [options](itablerowaction.md#options)
-* [position](itablerowaction.md#position)
-* [props](itablerowaction.md#props)
-* [singleRowAction](itablerowaction.md#singlerowaction)
-* [title](itablerowaction.md#title)
+- [action](itablerowaction.md#action)
+- [component](itablerowaction.md#component)
+- [condition](itablerowaction.md#condition)
+- [default](itablerowaction.md#default)
+- [hotKey](itablerowaction.md#hotkey)
+- [icon](itablerowaction.md#icon)
+- [multiRowAction](itablerowaction.md#multirowaction)
+- [options](itablerowaction.md#options)
+- [position](itablerowaction.md#position)
+- [props](itablerowaction.md#props)
+- [singleRowAction](itablerowaction.md#singlerowaction)
+- [title](itablerowaction.md#title)
 
 ## Properties
 
 ### action
 
-• `Optional` **action**: (instanceId: string \| string[]) => void
+• `Optional` **action**: (`instanceId`: *string* \| *string*[]) => *void*
 
-*Inherited from [IActionDefinition](iactiondefinition.md).[action](iactiondefinition.md#action)*
+#### Type declaration:
 
-*Defined in Work/vortex/src/types/IActionDefinition.ts:19*
+▸ (`instanceId`: *string* \| *string*[]): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`instanceId` | *string* \| *string*[] |
+
+**Returns:** *void*
+
+Defined in: src/types/IActionDefinition.ts:20
+
+Inherited from: [IActionDefinition](types.iactiondefinition.md).[action](types.iactiondefinition.md#action)
+
+Defined in: src/types/IActionDefinition.ts:20
 
 ___
 
 ### component
 
-• `Optional` **component**: ComponentClass\<any> \| React.StatelessComponent\<any>
+• `Optional` **component**: *ComponentType*<any\>
 
-*Inherited from [IActionDefinition](iactiondefinition.md).[component](iactiondefinition.md#component)*
+Inherited from: [IActionDefinition](types.iactiondefinition.md).[component](types.iactiondefinition.md#component)
 
-*Defined in Work/vortex/src/types/IActionDefinition.ts:17*
+Defined in: src/types/IActionDefinition.ts:18
 
 ___
 
 ### condition
 
-• `Optional` **condition**: (instanceId: string \| string[]) => boolean \| string
+• `Optional` **condition**: (`instanceId`: *string* \| *string*[]) => *string* \| *boolean*
 
-*Inherited from [IActionDefinition](iactiondefinition.md).[condition](iactiondefinition.md#condition)*
+#### Type declaration:
 
-*Defined in Work/vortex/src/types/IActionDefinition.ts:26*
+▸ (`instanceId`: *string* \| *string*[]): *string* \| *boolean*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`instanceId` | *string* \| *string*[] |
+
+**Returns:** *string* \| *boolean*
+
+Defined in: src/types/IActionDefinition.ts:27
+
+Inherited from: [IActionDefinition](types.iactiondefinition.md).[condition](types.iactiondefinition.md#condition)
+
+Defined in: src/types/IActionDefinition.ts:27
 
 ___
 
 ### default
 
-• `Optional` **default**: boolean
+• `Optional` **default**: *boolean*
 
-*Inherited from [IActionDefinition](iactiondefinition.md).[default](iactiondefinition.md#default)*
+Inherited from: [IActionDefinition](types.iactiondefinition.md).[default](types.iactiondefinition.md#default)
 
-*Defined in Work/vortex/src/types/IActionDefinition.ts:32*
+Defined in: src/types/IActionDefinition.ts:33
 
 ___
 
 ### hotKey
 
-• `Optional` **hotKey**: { alt?: boolean ; code: number ; ctrl?: boolean ; shift?: boolean  }
-
-*Defined in Work/vortex/src/controls/Table.tsx:41*
+• `Optional` **hotKey**: *object*
 
 #### Type declaration:
 
 Name | Type |
------- | ------ |
-`alt?` | boolean |
-`code` | number |
-`ctrl?` | boolean |
-`shift?` | boolean |
+:------ | :------ |
+`alt`? | *boolean* |
+`code` | *number* |
+`ctrl`? | *boolean* |
+`shift`? | *boolean* |
+
+Defined in: src/controls/Table.tsx:40
 
 ___
 
 ### icon
 
-• `Optional` **icon**: string
+• `Optional` **icon**: *string*
 
-*Inherited from [IActionDefinition](iactiondefinition.md).[icon](iactiondefinition.md#icon)*
+Inherited from: [IActionDefinition](types.iactiondefinition.md).[icon](types.iactiondefinition.md#icon)
 
-*Defined in Work/vortex/src/types/IActionDefinition.ts:15*
+Defined in: src/types/IActionDefinition.ts:16
 
 ___
 
 ### multiRowAction
 
-• `Optional` **multiRowAction**: boolean
+• `Optional` **multiRowAction**: *boolean*
 
-*Defined in Work/vortex/src/controls/Table.tsx:40*
+Defined in: src/controls/Table.tsx:39
 
 ___
 
 ### options
 
-• `Optional` **options**: [IActionOptions](iactionoptions.md)
+• `Optional` **options**: [*IActionOptions*](types.iactionoptions.md)
 
-*Inherited from [IActionDefinition](iactiondefinition.md).[options](iactiondefinition.md#options)*
+Inherited from: [IActionDefinition](types.iactiondefinition.md).[options](types.iactiondefinition.md#options)
 
-*Defined in Work/vortex/src/types/IActionDefinition.ts:28*
+Defined in: src/types/IActionDefinition.ts:29
 
 ___
 
 ### position
 
-• `Optional` **position**: number
+• `Optional` **position**: *number*
 
-*Inherited from [IActionDefinition](iactiondefinition.md).[position](iactiondefinition.md#position)*
+Inherited from: [IActionDefinition](types.iactiondefinition.md).[position](types.iactiondefinition.md#position)
 
-*Defined in Work/vortex/src/types/IActionDefinition.ts:27*
+Defined in: src/types/IActionDefinition.ts:28
 
 ___
 
 ### props
 
-• `Optional` **props**: () => any
+• `Optional` **props**: () => *any*
 
-*Inherited from [IActionDefinition](iactiondefinition.md).[props](iactiondefinition.md#props)*
+#### Type declaration:
 
-*Defined in Work/vortex/src/types/IActionDefinition.ts:18*
+▸ (): *any*
+
+**Returns:** *any*
+
+Defined in: src/types/IActionDefinition.ts:19
+
+Inherited from: [IActionDefinition](types.iactiondefinition.md).[props](types.iactiondefinition.md#props)
+
+Defined in: src/types/IActionDefinition.ts:19
 
 ___
 
 ### singleRowAction
 
-• `Optional` **singleRowAction**: boolean
+• `Optional` **singleRowAction**: *boolean*
 
-*Defined in Work/vortex/src/controls/Table.tsx:39*
+Defined in: src/controls/Table.tsx:38
 
 ___
 
 ### title
 
-• `Optional` **title**: string
+• `Optional` **title**: *string*
 
-*Inherited from [IActionDefinition](iactiondefinition.md).[title](iactiondefinition.md#title)*
+Inherited from: [IActionDefinition](types.iactiondefinition.md).[title](types.iactiondefinition.md#title)
 
-*Defined in Work/vortex/src/types/IActionDefinition.ts:16*
+Defined in: src/types/IActionDefinition.ts:17

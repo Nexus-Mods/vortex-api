@@ -261,6 +261,9 @@ export interface IStateTransactions {
 export interface ISessionGameMode {
     known: IGameStored[];
     addDialogVisible: boolean;
+    disabled: {
+        [gameId: string]: string;
+    };
 }
 export interface IGameInfoEntry {
     provider: string;
