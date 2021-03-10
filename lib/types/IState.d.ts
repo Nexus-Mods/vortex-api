@@ -286,6 +286,15 @@ export interface IModTable {
         [modId: string]: IMod;
     };
 }
+export interface IOverlay {
+    title: string;
+    text: string;
+}
+export interface IOverlaysState {
+    overlays: {
+        [key: string]: IOverlay;
+    };
+}
 /**
  * interface for the top-level state object
  * this should precisely mirror the reducer structure
@@ -306,6 +315,7 @@ export interface IState {
         notifications: INotificationState;
         browser: IBrowserState;
         history: IHistoryState;
+        overlays: IOverlaysState;
         extensions: {
             available: IAvailableExtension[];
             installed: {

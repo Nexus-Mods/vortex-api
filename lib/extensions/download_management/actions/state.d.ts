@@ -22,12 +22,23 @@ export declare const downloadProgress: reduxAct.ComplexActionCreator5<string, nu
     chunks: IChunk[];
     urls: string[];
 }, {}>;
+export declare const finalizingProgress: reduxAct.ComplexActionCreator2<string, number, {
+    id: string;
+    progress: number;
+}, {}>;
 /**
  * set/change the file path
  */
 export declare const setDownloadFilePath: reduxAct.ComplexActionCreator2<string, string, {
     id: string;
     filePath: string;
+}, {}>;
+/**
+ * mark the download as pausable or not
+ */
+export declare const setDownloadPausable: reduxAct.ComplexActionCreator2<string, boolean, {
+    id: string;
+    pausable: boolean;
 }, {}>;
 /**
  * mark download as started

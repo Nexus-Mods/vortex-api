@@ -1,5 +1,4 @@
 import { ComponentEx } from '../util/ComponentEx';
-import * as React from 'react';
 interface IConnectedProps {
     advancedMode: boolean;
 }
@@ -18,5 +17,5 @@ declare type IProps = IConnectedProps;
 declare class Advanced extends ComponentEx<IProps, {}> {
     render(): JSX.Element;
 }
-declare const _default: import("react-redux").ConnectedComponent<typeof Advanced, Pick<React.ClassAttributes<Advanced> & IConnectedProps & Partial<import("react-i18next").WithTranslation>, "ref" | "key" | "i18n" | "tReady" | "t">>;
+declare const _default;
 export default _default;

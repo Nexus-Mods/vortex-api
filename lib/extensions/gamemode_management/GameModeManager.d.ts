@@ -1,8 +1,13 @@
 import { IGame } from '../../types/IGame';
 import { IGameStore } from '../../types/IGameStore';
 import { IState } from '../../types/IState';
+import { IExtensionDownloadInfo } from '../extension_manager/types';
 import Promise from 'bluebird';
 import * as Redux from 'redux';
+export interface IGameStub {
+    ext: IExtensionDownloadInfo;
+    game: IGame;
+}
 /**
  * discovers game modes
  *
@@ -11,10 +16,11 @@ import * as Redux from 'redux';
 declare class GameModeManager {
     private mStore;
     private mKnownGames;
+    private mGameStubs;
     private mKnownGameStores;
     private mActiveSearch;
     private mOnGameModeActivated;
-    constructor(extensionGames: IGame[], gameStoreExtensions: IGameStore[], onGameModeActivated: (mode: string) => void);
+    constructor(extensionGames: IGame[], gameStubs: IGameStub[], gameStoreExtensions: IGameStore[], onGameModeActivated: (mode: string) => void);
     /**
      * attach this manager to the specified store
      *
@@ -41,6 +47,7 @@ declare class GameModeManager {
      */
     setupGameMode(gameMode: string): Promise<void>;
     get games(): IGame[];
+    get stubs(): IGameStub[];
     get gameStores(): IGameStore[];
     /**
      * starts game discovery, only using the search function from the game

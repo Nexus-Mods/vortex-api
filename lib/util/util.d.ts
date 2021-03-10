@@ -1,5 +1,6 @@
 import { Normalize } from './getNormalizeFunc';
 import Bluebird from 'bluebird';
+import * as semver from 'semver';
 /**
  * count the elements in an array for which the predicate matches
  *
@@ -122,6 +123,10 @@ declare const INVALID_FILEPATH_CHARACTERS: string[];
 declare const INVALID_FILENAME_CHARACTERS: any[];
 declare const INVALID_FILENAME_RE: RegExp;
 export declare function isFilenameValid(input: string): boolean;
+/**
+ * encodes a string so it can safely be used as a filename
+ */
+export declare function sanitizeFilename(input: string): string;
 export declare function isPathValid(input: string, allowRelative?: boolean): boolean;
 export { INVALID_FILEPATH_CHARACTERS, INVALID_FILENAME_RE, INVALID_FILENAME_CHARACTERS, };
 export declare function isMajorDowngrade(previous: string, current: string): boolean;
@@ -129,6 +134,7 @@ export interface IFlattenParameters {
     maxLength?: number;
     separator?: string;
     baseKey?: string[];
+    nonEnumerable?: boolean;
 }
 /**
  * turn an object into a flat one meaning all values are PODs, no nested objects/arrays
@@ -143,3 +149,4 @@ export declare function unique<T, U>(input: T[], keyFunc?: (item: T) => U): T[];
 export declare function delayed(delayMS: number): Promise<void>;
 export declare function toBlue<T>(func: (...args: any[]) => Promise<T>): (...args: any[]) => Bluebird<T>;
 export declare function replaceRecursive(input: any, from: any, to: any): any;
+export declare function semverCoerce(input: string): semver.SemVer;

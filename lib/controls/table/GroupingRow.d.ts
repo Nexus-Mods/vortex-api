@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { ComponentEx } from '../../util/ComponentEx';
 import { TFunction } from '../../util/i18n';
 export declare const EMPTY_ID = "<Unspecified>";

@@ -1,9 +1,9 @@
-import * as Promise from 'bluebird';
 export declare type LockedState = 'true' | 'false' | 'always' | 'never';
 export declare type LoadOrder = ILoadOrderEntry[];
 export interface IItemRendererProps {
     loEntry: ILoadOrderEntry;
     displayCheckboxes: boolean;
+    invalidEntries?: IInvalidResult[];
     setRef?: (ref: any) => void;
 }
 export interface ILoadOrderEntry<T = any> {
@@ -113,7 +113,8 @@ export declare class LoadOrderValidationError extends Error {
     private mLoadOrder;
     constructor(validationRes: IValidationResult, loadOrder: LoadOrder);
     get validationResult(): IValidationResult;
-    get loadOrder(): string;
+    get loadOrder(): LoadOrder;
+    get loadOrderEntryNames(): string;
 }
 export declare class LoadOrderSerializationError extends Error {
     private mLoadOrder;

@@ -30,7 +30,7 @@ export interface ICheckbox extends IControlBase {
     disabled?: boolean;
 }
 export interface IInput extends IControlBase {
-    type?: 'text' | 'password' | 'number' | 'date' | 'time' | 'email' | 'url' | 'textarea';
+    type?: 'text' | 'password' | 'number' | 'date' | 'time' | 'email' | 'url' | 'multiline';
     value?: string;
     label?: string;
     placeholder?: string;
@@ -63,6 +63,7 @@ export interface IDialogContent {
      */
     message?: string;
     bbcode?: string;
+    md?: string;
     checkboxes?: ICheckbox[];
     choices?: ICheckbox[];
     input?: IInput[];

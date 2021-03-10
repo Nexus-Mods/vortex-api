@@ -59,15 +59,18 @@ export interface IPrettifiedError {
     replace?: any;
     allowReport?: boolean;
 }
-export declare function prettifyNodeErrorMessage(err: any): IPrettifiedError;
-/**
- * render error message for display to the user
- * @param err
- */
-export declare function renderError(err: string | Error | any): {
+export declare function prettifyNodeErrorMessage(err: any, options?: IErrorOptions): IPrettifiedError;
+interface IErrorRendered {
     message?: string;
     text?: string;
     parameters?: any;
     allowReport?: boolean;
     wrap: boolean;
-};
+    translated?: boolean;
+}
+/**
+ * render error message for display to the user
+ * @param err
+ */
+export declare function renderError(err: string | Error | any, options?: IErrorOptions): IErrorRendered;
+export {};

@@ -26,11 +26,13 @@ export interface IModRepoId {
 }
 export interface IModReference extends IReference {
     id?: string;
+    archiveId?: string;
     repo?: {
         repository: string;
     } & IModRepoId;
     description?: string;
     tag?: string;
+    instructions?: string;
 }
 /**
  * a mod (requires/recommends) rule can provide a list of files to control how the referenced
@@ -42,7 +44,8 @@ export interface IModReference extends IReference {
  */
 export interface IFileListItem {
     path: string;
-    md5: string;
+    md5?: string;
+    xxh64?: string;
 }
 export interface IDownloadHint {
     mode: 'direct' | 'browse' | 'manual';

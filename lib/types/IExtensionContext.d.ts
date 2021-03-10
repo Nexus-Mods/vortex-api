@@ -1,5 +1,5 @@
 /// <reference types="node" />
-import { IExtension } from '../extensions/extension_manager/types';
+import { IExtension, IExtensionDownloadInfo } from '../extensions/extension_manager/types';
 import { ILoadOrderGameInfo } from '../extensions/file_based_loadorder/types/types';
 import { IHistoryStack } from '../extensions/history_management/types';
 import { IGameLoadOrderEntry } from '../extensions/mod_load_order/types/types';
@@ -76,7 +76,7 @@ export interface IMainPageOptions {
     badge?: ReduxProp<any>;
     activity?: ReduxProp<boolean>;
 }
-export declare type RegisterMainPage = (icon: string, title: string, element: React.ComponentClass<any> | React.StatelessComponent<any>, options: IMainPageOptions) => void;
+export declare type RegisterMainPage = (icon: string, title: string, element: React.ComponentType<any>, options: IMainPageOptions) => void;
 export interface IDashletOptions {
     fixed?: boolean;
     closable?: boolean;
@@ -87,6 +87,7 @@ export interface IDashletOptions {
  */
 export declare type RegisterDashlet = (title: string, width: 1 | 2 | 3, height: 1 | 2 | 3 | 4 | 5 | 6, position: number, component: React.ComponentClass<any> | React.FunctionComponent<any>, isVisible: (state: any) => boolean, props: PropsCallback, options: IDashletOptions) => void;
 export declare type RegisterDialog = (id: string, element: React.ComponentType<any>, props?: PropsCallback) => void;
+export declare type RegisterOverlay = (id: string, element: React.ComponentType<any>, props?: PropsCallback) => void;
 export declare type ToDoType = 'settings' | 'search' | 'workaround' | 'more';
 export interface IToDoButton {
     text: string;
@@ -501,7 +502,7 @@ export interface IExtensionApi {
      * extensions, like support interpreters and hooks.
      * It will also automatically ask the user to authorize elevation if the executable requires it
      * The returned promise is resolved when the started process has run to completion.
-     * IRunOptions.onSpawned can be used to react to react to when the process has been started.
+     * IRunOptions.onSpawned can be used to react to when the process has been started.
      */
     runExecutable: (executable: string, args: string[], options: IRunOptions) => Promise<void>;
     /**
@@ -605,6 +606,7 @@ export interface IModTypeOptions {
     name?: string;
     customDependencyManagement?: boolean;
     deploymentEssential?: boolean;
+    noConflicts?: boolean;
 }
 /**
  * The extension context is an object passed into all extensions during initialisation.
@@ -701,6 +703,11 @@ export interface IExtensionContext {
      * This dialog has to control its own visibility
      */
     registerDialog: RegisterDialog;
+    /**
+     * registers a component to be rendered very high in the DOM, overlaying the main window.
+     * Similar to registerDialogs, except that Vortex won't control whether the overlay gets rendered.
+     */
+    registerOverlay: RegisterOverlay;
     /**
      * registers a element to be displayed in the footer
      *
@@ -827,6 +834,11 @@ export interface IExtensionContext {
      * @param {IGame} game
      */
     registerGame: (game: IGame) => void;
+    /**
+     * register a game stub. This is to ease the transition for games that used to be bundled with
+     * Vortex and might already be in use but are now maintained by a third party.
+     */
+    registerGameStub: (game: IGame, ext: IExtensionDownloadInfo) => void;
     /**
      * registers support for a game store.
      *

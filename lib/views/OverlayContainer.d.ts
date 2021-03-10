@@ -1,16 +1,14 @@
 import { PropsCallback } from '../types/IExtensionContext';
 import * as React from 'react';
-interface IExtDialog {
+interface IExtOverlay {
     id: string;
     component: React.ComponentType<any>;
     props: PropsCallback;
 }
 export interface IBaseProps {
-    visibleDialog: string;
-    onHideDialog: () => void;
 }
 export interface IExtendedProps {
-    objects: IExtDialog[];
+    objects: IExtOverlay[];
 }
 declare const _default: React.ComponentClass<IBaseProps, any>;
 export default _default;

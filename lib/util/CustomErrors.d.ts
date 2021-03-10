@@ -26,9 +26,11 @@ export declare class DataInvalid extends Error {
 export declare class ArgumentInvalid extends Error {
     constructor(argument: string);
 }
-export declare class UserCanceled extends Error {
-    constructor();
+interface IUserCanceled extends Error {
 }
+declare type IUserCanceledConstructor = new () => IUserCanceled;
+declare const UserCanceled: IUserCanceledConstructor;
+export { UserCanceled };
 export declare class MissingDependency extends Error {
     constructor();
 }

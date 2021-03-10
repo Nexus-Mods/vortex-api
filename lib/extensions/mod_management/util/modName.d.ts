@@ -19,5 +19,5 @@ declare function modName(mod: IMod, options?: INameOptions): string;
 export interface IRenderOptions {
     version?: boolean;
 }
-export declare function renderModReference(ref: IModReference, mod: IMod, options?: IRenderOptions): string;
+export declare function renderModReference(ref: IModReference, mod?: IMod, options?: IRenderOptions): string;
 export default modName;

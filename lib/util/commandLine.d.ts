@@ -15,6 +15,7 @@ export interface IParameters {
     disableGPU?: boolean;
     userData?: string;
     inspector?: boolean;
+    storeVersion?: string;
 }
 declare function parseCommandline(argv: string[], electronIsShitHack: boolean): IParameters;
 export declare function filterArgs(input: string[]): string[];
