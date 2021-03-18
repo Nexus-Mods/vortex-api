@@ -1,6 +1,7 @@
 /**
  * wrapper for logging functionality
  */
+export declare function circularReplacer(): (key: string, value: any) => any;
 export declare type LogLevel = 'debug' | 'info' | 'warn' | 'error';
 export declare function setLogPath(basePath: string): void;
 /**
