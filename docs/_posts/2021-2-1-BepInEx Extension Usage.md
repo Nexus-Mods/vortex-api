@@ -2,7 +2,7 @@
 layout: article
 author: IDCs
 created: Mon, 22 Mar 2021 13:21:42 GMT
-updated: Mon, 22 Mar 2021 13:22:04 GMT
+updated: Mon, 22 Mar 2021 14:39:43 GMT
 wip: true
 title: BepInEx Extension Usage
 order: 1000
@@ -75,9 +75,10 @@ Optional Properties:
 
 The Unity Doorstop configuration object which can be provided as an optional property to the registration function can optionally re-configure the doorstopper’s ini file as defined by the game extension developer and can automatically rename the “winhttp.dll” to “version.dll” for Unity 3 games. Mandatory properties are:
 * doorstopType - the doorstop type will decide how the doorstopper hook assembly is called when it is deployed (if at all), the different types are: 
-`** “default” - will deploy the hook as “winhttp.dll”`
-`** “none” - will not deploy the hook at all - you will have to provide your own hook for the game.`
-`** “unity3” - will deploy the hook as “version.dll” - should only be used with older Unity 3 games if the default hook doesn’t appear to work properly.`
+     1. “default” - will deploy the hook as “winhttp.dll”
+     2. "none” - will not deploy the hook at all - you will have to provide your own hook for the game.
+     3. “unity3” - will deploy the hook as “version.dll” - should only be used with older Unity 3 games if the default hook doesn’t appear to work properly.
+
 Optional properties:
 * targetAssembly - a string that represents a relative/absolute path to the target assembly. By default this will be set to BepInEx’s preloader assembly.
 * ignoreDisableSwitch - a boolean which dictates whether the doorstopper should ignore the DOORSTOP_DISABLE environment variable.
