@@ -2,7 +2,7 @@
 layout: article
 author: IDCs
 created: Thu, 18 Mar 2021 06:44:22 GMT
-updated: Thu, 18 Mar 2021 07:12:18 GMT
+updated: Thu, 18 Mar 2021 07:12:40 GMT
 wip: true
 title: FBLO API Non-File Based Games Tutorial
 order: 1000
@@ -11,7 +11,7 @@ tags:
 comments: 0
 issue_url: https://github.com/Nexus-Mods/vortex-api/issues/22
 ---
-Using the File Based Load Order (FBLO) API to add load ordering to Non-File Based Games Tutorial
+### Using the File Based Load Order (FBLO) API to add load ordering to Non-File Based Games Tutorial
 
 This document expects the reader to have read through the primary FBLO documentation [here](https://nexus-mods.github.io/vortex-api/2020/10/05/File-Based-Load-Order-API.html) and to be familiar with its serialize/deserialize/validate concepts, as it will not cover these in much detail. Please use this document if you understand how to use the FBLO API but are unsure how to use it to add a load order page to your non-file based mods loading game. The full code used in this tutorial can be found [here](https://github.com/IDCs/game-destroyallhumans).
 
