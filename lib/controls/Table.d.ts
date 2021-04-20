@@ -28,6 +28,7 @@ export interface IBaseProps {
     showHeader?: boolean;
     showDetails?: boolean;
     hasActions?: boolean;
+    onChangeSelection?: (ids: string[]) => void;
 }
 export interface ILookupCalculated {
     [rowId: string]: {

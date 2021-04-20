@@ -18,6 +18,7 @@ export interface IContextMenuProps {
     onHide: () => void;
     instanceId: string;
     actions?: IActionDefinitionEx[];
+    className?: string;
 }
 declare const _default: React.ComponentClass<IContextMenuProps, any>;
 export default _default;

@@ -63,7 +63,7 @@ declare class DownloadManager {
      *
      * @memberOf DownloadManager
      */
-    enqueue(id: string, urls: string[], fileName: string, progressCB: ProgressCallback, destinationPath?: string, options?: IDownloadOptions): Promise<IDownloadResult>;
+    enqueue(id: string, urls: string[], fileName: string, progressCB: ProgressCallback, destinationPath?: string, options?: IDownloadOptions, redownload?: RedownloadMode): Promise<IDownloadResult>;
     resume(id: string, filePath: string, urls: string[], received: number, size: number, started: number, chunks: IChunk[], progressCB: ProgressCallback, options?: IDownloadOptions): Promise<IDownloadResult>;
     /**
      * cancels a download. This stops the download but doesn't remove the file

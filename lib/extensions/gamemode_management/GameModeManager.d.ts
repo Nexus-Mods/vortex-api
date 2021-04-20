@@ -69,6 +69,7 @@ declare class GameModeManager {
      * @memberOf GameModeManager
      */
     stopSearchDiscovery(): void;
+    private postDiscovery;
     private ensureWritable;
     private reloadStoreGames;
     private storeGame;

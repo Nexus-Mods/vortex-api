@@ -13,10 +13,11 @@ export interface IActionOptions {
 export interface IActionDefinition {
     icon?: string;
     title?: string;
+    data?: any;
     component?: React.ComponentType<any>;
     props?: () => any;
-    action?: (instanceId: string | string[]) => void;
-    condition?: (instanceId: string | string[]) => boolean | string;
+    action?: (instanceId: string | string[], data?: any) => void;
+    condition?: (instanceId: string | string[], data?: any) => boolean | string;
     position?: number;
     options?: IActionOptions;
     default?: boolean;

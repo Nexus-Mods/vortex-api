@@ -287,7 +287,7 @@ export interface IExtensionApi {
     /**
      * name of the extension to use this api with
      */
-    extension?: string;
+    extension?: IRegisteredExtension;
     /**
      * show a notification to the user.
      * This is not available in the call to registerReducer
