@@ -122,6 +122,10 @@ export interface ITableState {
     rows: {
         [id: string]: IRowState;
     };
+    groupBy?: string;
+    filter?: {
+        [id: string]: any;
+    };
 }
 export interface IExtensionState {
     enabled: boolean | 'failed';

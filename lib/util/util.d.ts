@@ -1,5 +1,6 @@
 import { Normalize } from './getNormalizeFunc';
 import Bluebird from 'bluebird';
+import * as Redux from 'redux';
 import * as semver from 'semver';
 /**
  * count the elements in an array for which the predicate matches
@@ -150,3 +151,4 @@ export declare function delayed(delayMS: number): Promise<void>;
 export declare function toBlue<T>(func: (...args: any[]) => Promise<T>): (...args: any[]) => Bluebird<T>;
 export declare function replaceRecursive(input: any, from: any, to: any): any;
 export declare function semverCoerce(input: string): semver.SemVer;
+export declare function batchDispatch(store: Redux.Store, actions: Redux.Action[]): void;
