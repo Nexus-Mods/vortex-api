@@ -36,6 +36,13 @@ export interface ILoadOrderGameInfo {
      */
     usageInstructions?: string;
     /**
+     * By default the FBLO extension will attempt to automatically generate the data
+     *  required when publishing/exporting a collection; the noCollectionGeneration
+     *  property allows game extensions to opt out of this functionality, which is useful
+     *  if/when the default generation logic is insufficient for a particular game.
+     */
+    noCollectionGeneration?: boolean;
+    /**
      * The load order page will call this functor whenever it is necessary
      *  to write a change to disk. It is up to the game extension developer to decide
      *  where/how to store this information,. Obviously - the data should be
@@ -107,6 +114,9 @@ export interface ILoadOrderGameInfo {
      *
      */
     validate: (prev: LoadOrder, current: LoadOrder) => Promise<IValidationResult>;
+}
+export interface ILoadOrderGameInfoExt extends ILoadOrderGameInfo {
+    isContributed: boolean;
 }
 export declare class LoadOrderValidationError extends Error {
     private mValidationRes;
