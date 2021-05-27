@@ -27,8 +27,9 @@ export declare class ArgumentInvalid extends Error {
     constructor(argument: string);
 }
 interface IUserCanceled extends Error {
+    skipped: boolean;
 }
-declare type IUserCanceledConstructor = new () => IUserCanceled;
+declare type IUserCanceledConstructor = new (skipped?: boolean) => IUserCanceled;
 declare const UserCanceled: IUserCanceledConstructor;
 export { UserCanceled };
 export declare class MissingDependency extends Error {

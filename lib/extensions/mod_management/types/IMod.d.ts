@@ -26,6 +26,7 @@ export interface IModRepoId {
 }
 export interface IModReference extends IReference {
     id?: string;
+    idHint?: string;
     archiveId?: string;
     repo?: {
         repository: string;

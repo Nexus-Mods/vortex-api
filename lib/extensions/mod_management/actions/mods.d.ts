@@ -1,4 +1,4 @@
-import { IMod, IModRule, ModState } from '../types/IMod';
+import { IMod, IModReference, IModRule, ModState } from '../types/IMod';
 import * as reduxAct from 'redux-act';
 export declare const addMod: reduxAct.ComplexActionCreator2<string, IMod, {
     gameId: string;
@@ -83,6 +83,16 @@ export declare const removeModRule: reduxAct.ComplexActionCreator3<string, strin
     gameId: string;
     modId: string;
     rule: IModRule;
+}, {}>;
+/**
+ * store the mod id for a resolved rule, so we can resolve it quicker and more
+ * reliably in the future
+ */
+export declare const cacheModReference: reduxAct.ComplexActionCreator4<string, string, IModReference, string, {
+    gameId: string;
+    modId: string;
+    reference: IModReference;
+    refModId: string;
 }, {}>;
 export declare const setINITweakEnabled: reduxAct.ComplexActionCreator4<string, string, string, boolean, {
     gameId: string;

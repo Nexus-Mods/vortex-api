@@ -17,13 +17,14 @@ import { TFunction } from './i18n';
 import PromiseBB from 'bluebird';
 import * as fs from 'fs-extra';
 export { constants, FSWatcher, Stats, WriteStream } from 'fs';
-export { accessSync, closeSync, createReadStream, createWriteStream, linkSync, openSync, readdirSync, readFileSync, statSync, symlinkSync, watch, writeFileSync, writeSync, } from 'fs';
+export { accessSync, appendFileSync, closeSync, createReadStream, createWriteStream, linkSync, openSync, readdirSync, readFileSync, statSync, symlinkSync, watch, writeFileSync, writeSync, } from 'fs';
 export interface ILinkFileOptions {
     showDialogCallback?: () => boolean;
 }
 export interface IRemoveFileOptions {
     showDialogCallback?: () => boolean;
 }
+export declare function setTFunction(tFunc: TFunction): void;
 export declare function genFSWrapperAsync<T extends (...args: any[]) => any>(func: T): (...args: any[]) => any;
 declare const chmodAsync: (path: string, mode: string | number) => PromiseBB<void>;
 declare const closeAsync: (fd: number) => PromiseBB<void>;
@@ -48,7 +49,8 @@ declare const readAsync: <BufferT>(...args: any[]) => PromiseBB<{
     buffer: BufferT;
 }>;
 declare const writeFileAsync: (file: string, data: any, options?: fs.WriteFileOptions) => PromiseBB<void>;
-export { chmodAsync, closeAsync, fsyncAsync, lstatAsync, mkdirAsync, mkdirsAsync, moveAsync, openAsync, readdirAsync, readAsync, readFileAsync, statAsync, statSilentAsync, symlinkAsync, utimesAsync, writeAsync, writeFileAsync, };
+declare const appendFileAsync: (file: string, data: any, options?: fs.WriteFileOptions) => PromiseBB<void>;
+export { appendFileAsync, chmodAsync, closeAsync, fsyncAsync, lstatAsync, mkdirAsync, mkdirsAsync, moveAsync, openAsync, readdirAsync, readAsync, readFileAsync, statAsync, statSilentAsync, symlinkAsync, utimesAsync, writeAsync, writeFileAsync, };
 export declare function isDirectoryAsync(dirPath: string): PromiseBB<boolean>;
 export declare function ensureDirSync(dirPath: string): void;
 export declare function ensureFileAsync(filePath: string): PromiseBB<void>;

@@ -1,5 +1,5 @@
 /// <reference types="node" />
-import { IExtension, IExtensionDownloadInfo } from '../extensions/extension_manager/types';
+import { IExtensionDownloadInfo } from '../extensions/extension_manager/types';
 import { ILoadOrderGameInfo } from '../extensions/file_based_loadorder/types/types';
 import { IHistoryStack } from '../extensions/history_management/types';
 import { IGameLoadOrderEntry } from '../extensions/mod_load_order/types/types';
@@ -12,6 +12,7 @@ import { IRegisteredExtension } from '../util/ExtensionManager';
 import { i18n, TFunction } from '../util/i18n';
 import ReduxProp from '../util/ReduxProp';
 import { SanityCheck } from '../util/reduxSanity';
+import { ICollectionsGameSupportEntry } from './collections/api';
 import { DialogActions, IDialogContent, IModReference, IModRepoId } from './api';
 import { IActionOptions } from './IActionDefinition';
 import { IBannerOptions } from './IBannerOptions';
@@ -75,6 +76,7 @@ export interface IMainPageOptions {
     props?: () => any;
     badge?: ReduxProp<any>;
     activity?: ReduxProp<boolean>;
+    onReset?: () => void;
 }
 export declare type RegisterMainPage = (icon: string, title: string, element: React.ComponentType<any>, options: IMainPageOptions) => void;
 export interface IDashletOptions {
@@ -203,7 +205,7 @@ export interface IErrorOptions {
         [key: string]: string;
     };
     attachments?: IAttachment[];
-    extension?: IExtension;
+    extensionName?: string;
 }
 /**
  * a query function that will be called to retrieve information about a game.
@@ -424,8 +426,8 @@ export interface IExtensionApi {
      * This will either work as a fallback or as a replacement to the md5 based lookup for
      * applicable mods.
      * The "repositoryId" should be the same as the "source" used.
-     * It's possible to return multiple results if the input data doesn't definitively identify a single
-     * item but this might be a bit of a mess to figure out later.
+     * It's possible to return multiple results if the input data doesn't definitively identify a
+     * single item but this might be a bit of a mess to figure out later.
      */
     registerRepositoryLookup: IRegisterRepositoryLookup;
     /**
@@ -737,7 +739,7 @@ export interface IExtensionContext {
      * actual features
      * The source can also be used to browse for further mods
      */
-    registerModSource: (id: string, name: string, onBrowse: () => void, options?: IModSourceOptions) => void;
+    registerModSource: (id: string, name: string, onBrowse?: () => void, options?: IModSourceOptions) => void;
     /**
      * register a reducer to introduce new set-operations on the application
      * state.
@@ -769,6 +771,10 @@ export interface IExtensionContext {
      *        for the newly introduced settings
      *
      * @memberOf IExtensionContext
+     * @note If you have registerReducer calls you should call them first thing in the init function.
+     *       Usually if your init call fails your extension shouldn't load at all but in case that
+     *       doesn't work, registering any functionality that depends on state that never got loaded
+     *       would load to further bug reports that are a lot harder to investigate
      */
     registerReducer: (path: string[], spec: IReducerSpec) => void;
     /**
@@ -1053,6 +1059,10 @@ export interface IExtensionContext {
      * Sets up a stack for a history of events that can be presented to the user
      */
     registerHistoryStack: (id: string, options: IHistoryStack) => void;
+    /**
+     * Allows extensions to define additional data to add to a collection
+     */
+    registerGameSpecificCollectionsData: (data: ICollectionsGameSupportEntry) => void;
     /**
      * add a function to the IExtensionApi object that is made available to all other extensions
      * in the api.ext object.

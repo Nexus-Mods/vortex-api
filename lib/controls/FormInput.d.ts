@@ -2,7 +2,9 @@ import { ValidationState } from '../types/ITableAttribute';
 import * as React from 'react';
 export interface IProps {
     className?: string;
-    value: string;
+    value: string | number;
+    min?: number;
+    max?: number;
     onChange: (newValue: string, id: string) => void;
     onFocus?: (focused: boolean) => void;
     id?: string;

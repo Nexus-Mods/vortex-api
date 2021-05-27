@@ -8,6 +8,7 @@ export interface IDownloadFailCause {
 export interface IDownloadOptions {
     referer?: string;
     redownload?: RedownloadMode;
+    nameHint?: string;
 }
 /**
  * download information

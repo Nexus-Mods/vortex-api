@@ -13,3 +13,10 @@ export declare const setCurrentProfile: reduxAct.ComplexActionCreator2<string, s
     gameId: string;
     profileId: string;
 }, {}>;
+/**
+ * clear the last known active profile for the specified game.
+ * this should also only be called by profile_management internally.
+ */
+export declare const clearLastActiveProfile: reduxAct.ComplexActionCreator1<string, {
+    gameId: string;
+}, {}>;
