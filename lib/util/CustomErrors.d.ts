@@ -28,6 +28,7 @@ export declare class ArgumentInvalid extends Error {
 }
 interface IUserCanceled extends Error {
     skipped: boolean;
+    timed: number;
 }
 declare type IUserCanceledConstructor = new (skipped?: boolean) => IUserCanceled;
 declare const UserCanceled: IUserCanceledConstructor;

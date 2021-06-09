@@ -27,12 +27,12 @@ export interface IModRepoId {
 export interface IModReference extends IReference {
     id?: string;
     idHint?: string;
+    tag?: string;
     archiveId?: string;
     repo?: {
         repository: string;
     } & IModRepoId;
     description?: string;
-    tag?: string;
     instructions?: string;
 }
 /**

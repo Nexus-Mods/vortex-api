@@ -6,6 +6,8 @@ declare class ConcurrencyLimiter {
     private mNext;
     private mEndOfQueue;
     private mRepeatTest;
+    private mDebug;
+    private mQueuedCount;
     /**
      * Constructor
      * @param limit number of operations enqueued with do() that will happen concurrently
@@ -17,7 +19,7 @@ declare class ConcurrencyLimiter {
      *                   exactly can happen in parallel so you will usually still want to
      *                   handle errors that indicate the resource running out separately
      */
-    constructor(limit: number, repeatTest?: (err: Error) => boolean);
+    constructor(limit: number, repeatTest?: (err: Error) => boolean, debug?: string);
     do<T>(cb: () => PromiseLike<T>): Promise<T>;
     private doImpl;
     private process;
