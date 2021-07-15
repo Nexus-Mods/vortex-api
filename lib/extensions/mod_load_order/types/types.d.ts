@@ -1,7 +1,7 @@
 /// <reference types="react" />
 import * as Promise from 'bluebird';
-import { types } from 'vortex-api';
 import { IActionDefinitionEx } from '../../../controls/ActionControl';
+import { IMod } from '../../../types/IState';
 export declare type SortType = 'ascending' | 'descending';
 export declare type ListViewType = 'compact' | 'full';
 export declare type UpdateType = 'drag-n-drop' | 'props-update' | 'refresh';
@@ -51,7 +51,7 @@ export interface IGameLoadOrderEntry {
     displayCheckboxes?: boolean;
     createInfoPanel: (props: IInfoPanelProps) => string | React.Component;
     preSort?: (items: ILoadOrderDisplayItem[], sortDir: SortType, updateType?: UpdateType) => Promise<ILoadOrderDisplayItem[]>;
-    filter?: (mods: types.IMod[]) => types.IMod[];
+    filter?: (mods: IMod[]) => IMod[];
     callback?: (loadOrder: ILoadOrder, updateType?: UpdateType) => void;
     itemRenderer?: React.ComponentClass<{
         className?: string;

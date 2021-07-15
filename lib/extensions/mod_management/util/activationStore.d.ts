@@ -3,6 +3,7 @@ import { IDeploymentManifest } from '../types/IDeploymentManifest';
 import { IDeployedFile, IDeploymentMethod } from '../types/IDeploymentMethod';
 import Promise from 'bluebird';
 export declare function purgeDeployedFiles(basePath: string, files: IDeployedFile[]): Promise<void>;
+export declare function fallbackPurgeType(api: IExtensionApi, activator: IDeploymentMethod, gameId: string, modType: string, deployPath: string, stagingPath: string): Promise<void>;
 /**
  * purge files using information from the manifest
  */

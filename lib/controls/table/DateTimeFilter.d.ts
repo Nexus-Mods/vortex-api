@@ -6,6 +6,7 @@ export declare class DateTimeFilterComponent extends ComponentEx<IFilterProps, {
     private comparisons;
     constructor(props: IFilterProps);
     render(): JSX.Element;
+    private hasValidComparison;
     private changeFilter;
     private toggleDirection;
 }

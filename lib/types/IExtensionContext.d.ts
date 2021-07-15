@@ -1,5 +1,5 @@
 /// <reference types="node" />
-import { IExtension, IExtensionDownloadInfo } from '../extensions/extension_manager/types';
+import { IExtensionDownloadInfo } from '../extensions/extension_manager/types';
 import { ILoadOrderGameInfo } from '../extensions/file_based_loadorder/types/types';
 import { IHistoryStack } from '../extensions/history_management/types';
 import { IGameLoadOrderEntry } from '../extensions/mod_load_order/types/types';
@@ -191,7 +191,7 @@ export interface IErrorOptions {
         [key: string]: string;
     };
     attachments?: IAttachment[];
-    extension?: IExtension;
+    extensionName?: string;
 }
 /**
  * a query function that will be called to retrieve information about a game.
@@ -741,6 +741,10 @@ export interface IExtensionContext {
      *        for the newly introduced settings
      *
      * @memberOf IExtensionContext
+     * @note If you have registerReducer calls you should call them first thing in the init function.
+     *       Usually if your init call fails your extension shouldn't load at all but in case that
+     *       doesn't work, registering any functionality that depends on state that never got loaded
+     *       would load to further bug reports that are a lot harder to investigate
      */
     registerReducer: (path: string[], spec: IReducerSpec) => void;
     /**

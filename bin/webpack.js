@@ -56,14 +56,19 @@ function externals() {
   );
 }
 
-function output(moduleName, basePath) {
-  return {
+function output(moduleName, basePath, version) {
+  const res = {
     libraryTarget: 'commonjs2',
-    library: moduleName,
     filename: 'index.js',
     sourceMapFilename: `${moduleName}.js.map`,
     path: path.resolve(basePath, 'dist'),
   };
+
+  if (version < 5) {
+    res['library'] = moduleName;
+  }
+
+  return res;
 }
 
 function loaders(version) {
@@ -91,7 +96,7 @@ function config(moduleName, basePath, version) {
     entry: tsx ? './src/index.tsx' : './src/index.ts',
     target: 'electron-renderer',
     node: {__filename: false, __dirname: false},
-    output: output(moduleName, basePath),
+    output: output(moduleName, basePath, version),
     module: (version === undefined) || (version < 4) ? {
       loaders: loaders(version),
     } : {

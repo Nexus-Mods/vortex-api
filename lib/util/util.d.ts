@@ -142,3 +142,24 @@ export declare function unique<T, U>(input: T[], keyFunc?: (item: T) => U): T[];
 export declare function delayed(delayMS: number): Promise<void>;
 export declare function toBlue<T>(func: (...args: any[]) => Promise<T>): (...args: any[]) => Bluebird<T>;
 export declare function replaceRecursive(input: any, from: any, to: any): any;
+export declare function isFunction(functionToCheck: any): boolean;
+/**
+ * wrap a callback provided by an extension such that we don't allow reports
+ * for that extension and display the extension name if possible
+ * @param cb the callback to wrap
+ * @param ext name of the extension that provided the callback
+ * @returns a new callback with an identical call signature
+ *
+ * @note As a side-effect this also ensures promises returned from the extension
+ *       are bluebird extensions.
+ *       This should allow extension authors to use native extension without
+ *       causing surprising bugs
+ */
+export declare function wrapExtCBAsync<ArgT extends any[], ResT>(cb: (...args: ArgT) => PromiseLike<ResT>, extInfo?: {
+    name: string;
+    official: boolean;
+}): (...args: ArgT) => Bluebird<ResT>;
+export declare function wrapExtCBSync<ArgT extends any[], ResT>(cb: (...args: ArgT) => ResT, extInfo?: {
+    name: string;
+    official: boolean;
+}): (...args: ArgT) => ResT;
