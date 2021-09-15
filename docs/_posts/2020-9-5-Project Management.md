@@ -2,7 +2,7 @@
 layout: article
 author: TanninOne
 created: Fri, 23 Oct 2020 07:08:08 GMT
-updated: Mon, 26 Oct 2020 09:16:26 GMT
+updated: Wed, 15 Sep 2021 07:15:38 GMT
 wip: false
 title: Project Management
 order: 3
@@ -16,6 +16,9 @@ issue_url: https://github.com/Nexus-Mods/vortex-api/issues/7
 So far we have always edited two files, info.json and index.js but the moment you want to use foreign libraries or use a language that transpiles to javascript instead of js itself (e.g. typescript) you will want to set up a project.
 
 The following describes a sample extension that can be found at https://github.com/Nexus-Mods/Vortex/tree/master/samples/sample-extension
+
+Instead of copy&pasting these files you can create a scaffolding for an extension by creating an empty directory and running `npm init vortex-extension`.
+This will automatically create a minimal project similar to the one described below. (Thanks to [agc93](https://github.com/agc93) for this)
 
 ## Files
 
@@ -152,5 +155,9 @@ This tells npm/yarn that any native module that is compiled during _yarn install
 
 Usually electron versions are binary compatible between minor releases so all 8.x.x should be able to load the same modules.
 Vortex will not update to a different major version of electron with a patch release, so for example all Vortex 1.2.x releases will build on electron 8.x.x.
+
+# Further Reading
+
+Once you have a working extension you may want to read on how to package it for release: https://nexus-mods.github.io/vortex-api/2020/09/01/Packaging-extensions.html
 
 [Discuss this article](https://github.com/Nexus-Mods/vortex-api/issues/7)
