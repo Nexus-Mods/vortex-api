@@ -7,8 +7,8 @@ wip: true
 title: Vortex In Game Overlay
 order: 11
 tags:
-  - Harmony Patcher
   - UI
+  - Harmony Patcher
 comments: 0
 issue_url: https://github.com/Nexus-Mods/vortex-api/issues/15
 ---

@@ -2,7 +2,7 @@
 layout: article
 author: TanninOne
 created: Thu, 22 Oct 2020 13:06:18 GMT
-updated: Fri, 23 Oct 2020 11:14:38 GMT
+updated: Wed, 15 Sep 2021 07:10:07 GMT
 wip: true
 title: Introduction
 order: 0
@@ -51,6 +51,9 @@ This function is passed a single parameter "context" which we will look at in mo
 Context defines a bunch of functions that you can use to interact with the main application (Vortex).
 In this case all it does is register an action which will appear as a button (labeled "Greet" and with an eye icon "show") in the top-right menu. When clicked it opens an alert dialog Greeting the user. Nice.
 
+If you prefer, you can write your extension in any programming language that gets translated to JavaScript, most of ours are written in TypeScript.
+These require a bit more setup but there is documentation and samples to help you with that: https://nexus-mods.github.io/vortex-api/2020/09/05/Project-Management.html
+
 ## Installation
 
 To install an extension, simply create a directory with arbitrary name in `C:\Users\<your windowsuser name>\AppData\Roaming\vortex\plugins` and place those two files there.
@@ -62,7 +65,7 @@ Usually you do not have to care about this, just don't try to be smart with the 
 
 ## The _context_ object
 
-Reference: https://nexus-mods.github.io/vortex-api/interfaces/iextensioncontext.html
+Reference: https://nexus-mods.github.io/vortex-api/api/interfaces/types.iextensioncontext.html
 
 The context object is your window into Vortex and you will be using it a lot.
 During the init call however it is a bit magical and you should know about this:
@@ -100,8 +103,12 @@ This function is called once Vortex is fully started and only if your extension 
 
 ### api
 
-Reference: https://nexus-mods.github.io/vortex-api/interfaces/iextensionapi.html
+Reference: https://nexus-mods.github.io/vortex-api/api/interfaces/types.iextensioncontext.html
 
 This object contains functions you can use to get or change data in vortex and to connect with other parts of it (including extensions). You will probably be using this _a lot_ and it's the part of _context_ you care about after the init call. It's safe to pass api around as a function parameter, save a reference, bind it to a function, ...
+
+# Further reading:
+
+We suggest reading about [Packaging Extensions](https://nexus-mods.github.io/vortex-api/2020/09/01/Packaging-extensions.html) or [Project Management](https://nexus-mods.github.io/vortex-api/2020/09/05/Project-Management.html) next.
 
 [Discuss this article](https://github.com/Nexus-Mods/vortex-api/issues/5)

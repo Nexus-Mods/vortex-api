@@ -7,8 +7,8 @@ wip: true
 title: QuickBMS Legacy Integration
 order: 1000
 tags:
-  - Deprecated
   - Feature
+  - Deprecated
 comments: 0
 issue_url: https://github.com/Nexus-Mods/vortex-api/issues/17
 ---

@@ -7,8 +7,8 @@ wip: true
 title: Game Extension Creation with Harmony
 order: 8
 tags:
-  - Harmony Patcher
   - Tutorial
+  - Harmony Patcher
 comments: 0
 issue_url: https://github.com/Nexus-Mods/vortex-api/issues/12
 ---
