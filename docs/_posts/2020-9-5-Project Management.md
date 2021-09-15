@@ -2,7 +2,7 @@
 layout: article
 author: TanninOne
 created: Fri, 23 Oct 2020 07:08:08 GMT
-updated: Wed, 15 Sep 2021 07:15:38 GMT
+updated: Wed, 15 Sep 2021 07:18:19 GMT
 wip: false
 title: Project Management
 order: 3
@@ -158,6 +158,6 @@ Vortex will not update to a different major version of electron with a patch rel
 
 # Further Reading
 
-Once you have a working extension you may want to read on how to package it for release: https://nexus-mods.github.io/vortex-api/2020/09/01/Packaging-extensions.html
+Once you have a working extension you may want to read up on [Packaging Extensions](https://nexus-mods.github.io/vortex-api/2020/09/01/Packaging-extensions.html)
 
 [Discuss this article](https://github.com/Nexus-Mods/vortex-api/issues/7)
