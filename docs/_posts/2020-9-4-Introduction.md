@@ -2,7 +2,7 @@
 layout: article
 author: TanninOne
 created: Thu, 22 Oct 2020 13:06:18 GMT
-updated: Wed, 15 Sep 2021 07:10:07 GMT
+updated: Wed, 15 Sep 2021 07:17:19 GMT
 wip: true
 title: Introduction
 order: 0
@@ -52,7 +52,7 @@ Context defines a bunch of functions that you can use to interact with the main 
 In this case all it does is register an action which will appear as a button (labeled "Greet" and with an eye icon "show") in the top-right menu. When clicked it opens an alert dialog Greeting the user. Nice.
 
 If you prefer, you can write your extension in any programming language that gets translated to JavaScript, most of ours are written in TypeScript.
-These require a bit more setup but there is documentation and samples to help you with that: https://nexus-mods.github.io/vortex-api/2020/09/05/Project-Management.html
+These require a bit more setup but there is documentation and samples to help you with that: [Project Management](https://nexus-mods.github.io/vortex-api/2020/09/05/Project-Management.html)
 
 ## Installation
 
