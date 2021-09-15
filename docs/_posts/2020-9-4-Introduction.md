@@ -2,7 +2,7 @@
 layout: article
 author: TanninOne
 created: Thu, 22 Oct 2020 13:06:18 GMT
-updated: Wed, 15 Sep 2021 07:17:19 GMT
+updated: Wed, 15 Sep 2021 07:21:30 GMT
 wip: true
 title: Introduction
 order: 0
@@ -65,7 +65,7 @@ Usually you do not have to care about this, just don't try to be smart with the 
 
 ## The _context_ object
 
-Reference: https://nexus-mods.github.io/vortex-api/api/interfaces/types.iextensioncontext.html
+Reference: [IExtensionContext](https://nexus-mods.github.io/vortex-api/api/interfaces/types.iextensioncontext.html)
 
 The context object is your window into Vortex and you will be using it a lot.
 During the init call however it is a bit magical and you should know about this:
@@ -103,7 +103,7 @@ This function is called once Vortex is fully started and only if your extension 
 
 ### api
 
-Reference: https://nexus-mods.github.io/vortex-api/api/interfaces/types.iextensioncontext.html
+Reference: [IExtensionApi](https://nexus-mods.github.io/vortex-api/api/interfaces/types.iextensionapi.html)
 
 This object contains functions you can use to get or change data in vortex and to connect with other parts of it (including extensions). You will probably be using this _a lot_ and it's the part of _context_ you care about after the init call. It's safe to pass api around as a function parameter, save a reference, bind it to a function, ...
 
