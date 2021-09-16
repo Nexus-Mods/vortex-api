@@ -4,12 +4,14 @@ import { IDependency } from '../types/IDependency';
 import { IMod, IModReference, IModRule } from '../types/IMod';
 import Promise from 'bluebird';
 import { IReference } from 'modmeta-db';
+import { IModLookupInfo } from './testModReference';
 export declare function findModByRef(reference: IModReference, mods: {
     [modId: string]: IMod;
 }, source?: {
     gameId: string;
     modId: string;
 }): IMod;
+export declare function lookupFromDownload(download: IDownload): IModLookupInfo;
 export declare function findDownloadByRef(reference: IReference, downloads: {
     [dlId: string]: IDownload;
 }): string;

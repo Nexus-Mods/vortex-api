@@ -51,6 +51,11 @@ export interface ITableFilter {
      */
     raw: string | boolean;
     component: React.ComponentType<IFilterProps>;
+    /**
+     * specifies which property of the object to filter on, meaning that obj[dataId] will be passed
+     * to the "matches" function as the value to filter by.
+     * This can be $ (a single dollar sign) to get the object itself
+     */
     dataId?: string;
 }
 export interface ICustomProps {
@@ -154,6 +159,11 @@ export interface ITableAttribute<T = any> {
      * may want to use a custom renderer with some manner of caching and debouncing.
      */
     isVolatile?: boolean;
+    /**
+     * if true, the rendered control will be extensible with wrappers (see registerControlWrapper),
+     * with a name that is generated from <tableid>-<columnid>
+     */
+    isExtensible?: boolean;
     /**
      * Never shrink the column while scrolling, it can still grow though
      */

@@ -4,6 +4,10 @@ export declare const addHistoryEvent: import("redux-act").ComplexActionCreator3<
     event: IHistoryEvent;
     limit: number;
 }, {}>;
+export declare const setHistoryEvent: import("redux-act").ComplexActionCreator2<string, IHistoryEvent, {
+    stack: string;
+    event: IHistoryEvent;
+}, {}>;
 export declare const markHistoryReverted: import("redux-act").ComplexActionCreator2<string, IHistoryEvent, {
     stack: string;
     event: IHistoryEvent;

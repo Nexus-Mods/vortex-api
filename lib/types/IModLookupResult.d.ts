@@ -10,6 +10,7 @@ export interface IModLookupData {
     sourceURI: any;
     source?: string;
     rules?: IRule[];
+    archived?: boolean;
     details?: {
         homepage?: string;
         category?: string;

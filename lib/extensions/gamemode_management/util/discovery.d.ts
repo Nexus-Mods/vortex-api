@@ -1,10 +1,12 @@
 import { IDiscoveredTool } from '../../../types/IDiscoveredTool';
 import { IGame } from '../../../types/IGame';
+import { ITool } from '../../../types/ITool';
 import { IDiscoveryResult } from '../types/IDiscoveryResult';
 import { Normalize } from '../../../util/getNormalizeFunc';
 import Promise from 'bluebird';
 export declare type DiscoveredCB = (gameId: string, result: IDiscoveryResult) => void;
 export declare type DiscoveredToolCB = (gameId: string, result: IDiscoveredTool) => void;
+export declare function quickDiscoveryTools(gameId: string, tools: ITool[], onDiscoveredTool: DiscoveredToolCB): Promise<void>;
 /**
  * run the "quick" discovery using functions provided by the game extension
  *

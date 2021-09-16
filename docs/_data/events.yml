@@ -64,6 +64,10 @@ events:
       - name: modId
         type: string
     trigger: before a mod is removed (irrespective of whether it was enabled in the active profile or not)
+    description: |
+      If multiple mods are removed in a single operation, this gets triggered for each mod individually.
+      Consider triggering on will-remove-mods instead if you're doing something expensive that can
+      be batched for multiple mods.
     version: ">= 1.3.15"
   - name: did-remove-mod
     type: event
@@ -75,6 +79,30 @@ events:
         type: string
     trigger: after a mod is removed (irrespective of whether it was enabled in the active profile or not)
     version: ">= 1.3.15"
+    description: |
+      If multiple mods are removed in a single operation, this gets triggered for each mod individually.
+      Consider triggering on will-remove-mods instead if you're doing something expensive that can
+      be batched for multiple mods.
+  - name: will-remove-mods
+    type: event
+    async: true
+    arguments:
+      - name: gameId
+        type: string
+      - name: modIds
+        type: string[]
+    trigger: before mods are removed (irrespective of whether it was enabled in the active profile or not)
+    version: "> 1.4.15"
+  - name: did-remove-mods
+    type: event
+    async: true
+    arguments:
+      - name: gameId
+        type: string
+      - name: modIds
+        type: string[]
+    trigger: after mods are removed (irrespective of whether it was enabled in the active profile or not)
+    version: "> 1.4.15"
   - name: did-import-downloads
     type: event
     async: false

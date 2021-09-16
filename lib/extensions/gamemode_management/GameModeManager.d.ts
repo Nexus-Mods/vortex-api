@@ -56,6 +56,7 @@ declare class GameModeManager {
      * @memberOf GameModeManager
      */
     startQuickDiscovery(): Promise<string[]>;
+    startToolDiscovery(gameId: string): Promise<void>;
     isSearching(): boolean;
     /**
      * start game discovery using known files

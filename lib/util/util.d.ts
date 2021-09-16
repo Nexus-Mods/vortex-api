@@ -145,6 +145,14 @@ export interface IFlattenParameters {
 export declare function flatten(obj: any, options?: IFlattenParameters): any;
 export declare function toPromise<ResT>(func: (cb: any) => void): Bluebird<ResT>;
 export declare function makeUnique<T>(input: T[]): T[];
+/**
+ * create a list with only "unique" items, using a key function to determine uniqueness.
+ * in case of collisions the last item with a key is kept
+ * @param input the input list of items
+ * @param key key function
+ * @returns a list with duplicates removed
+ */
+export declare function makeUniqueByKey<T>(input: T[], key: (item: T) => string): T[];
 export declare function withTmpDir<T>(cb: (tmpPath: string) => Promise<T>): Promise<T>;
 export declare function unique<T, U>(input: T[], keyFunc?: (item: T) => U): T[];
 export declare function delayed(delayMS: number): Promise<void>;
@@ -173,3 +181,20 @@ export declare function wrapExtCBSync<ArgT extends any[], ResT>(cb: (...args: Ar
     name: string;
     official: boolean;
 }): (...args: ArgT) => ResT;
+export declare enum Section {
+    Mods = 0,
+    Collections = 1,
+    Users = 2
+}
+export declare enum Campaign {
+    ViewCollection = "ViewCollection",
+    Collections = "Collections",
+    DownloadsAd = "Downloads-Ad",
+    DashboardAd = "Dashboard-Ad"
+}
+export interface INexusURLOptions {
+    section?: Section;
+    campaign?: Campaign;
+    parameters?: string[];
+}
+export declare function nexusModsURL(reqPath: string[], options?: INexusURLOptions): string;

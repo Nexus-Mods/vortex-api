@@ -61,6 +61,7 @@ export declare class MainWindow extends React.Component<IProps, IMainWindowState
     private menuObserver;
     private sidebarRef;
     private sidebarTimer;
+    private mutexQueue;
     constructor(props: IProps);
     getChildContext(): IComponentContext;
     componentDidMount(): void;

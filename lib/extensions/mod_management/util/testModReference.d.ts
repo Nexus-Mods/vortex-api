@@ -24,5 +24,5 @@ export declare function setResolvedCB(cb: (gameId: string, sourceModId: string, 
 export declare function testModReference(mod: IMod | IModLookupInfo, reference: IModReference, source?: {
     gameId: string;
     modId: string;
-}): boolean;
+}, fuzzyVersion?: boolean): boolean;
 export default testModReference;

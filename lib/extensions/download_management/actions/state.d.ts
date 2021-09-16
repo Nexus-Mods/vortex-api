@@ -93,6 +93,7 @@ export declare const removeDownload: reduxAct.ComplexActionCreator1<string, {
  */
 export declare const setDownloadSpeed: reduxAct.ComplexActionCreator1<unknown, unknown, {
     forward: boolean;
+    scope: string;
 }>;
 export declare const setDownloadSpeeds: reduxAct.ComplexActionCreator1<unknown, unknown, {}>;
 /**

@@ -71,10 +71,12 @@ declare class DownloadManager {
      * sends the signal to stop it
      *
      * @param {string} id
+     * @returns true if the download was stopped, false if something went wrong. In this case
+     *               the caller should not expect a callback about the download being terminated
      *
      * @memberOf DownloadManager
      */
-    stop(id: string): void;
+    stop(id: string): boolean;
     pause(id: string): IChunk[];
     private resolveUrl;
     private resolveUrls;

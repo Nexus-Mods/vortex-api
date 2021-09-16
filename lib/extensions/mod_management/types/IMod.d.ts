@@ -27,10 +27,12 @@ export interface IModRepoId {
 export interface IModReference extends IReference {
     id?: string;
     idHint?: string;
+    md5Hint?: string;
     tag?: string;
     archiveId?: string;
     repo?: {
         repository: string;
+        campaign?: string;
     } & IModRepoId;
     description?: string;
     instructions?: string;
@@ -61,4 +63,5 @@ export interface IModRule extends IRule {
     extra?: {
         [key: string]: any;
     };
+    ignored?: boolean;
 }

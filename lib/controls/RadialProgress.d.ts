@@ -7,6 +7,7 @@ export interface IBar {
 }
 export interface IBaseProps {
     data: IBar[];
+    className?: string;
     gap?: number;
     totalRadius: number;
     offset?: number;

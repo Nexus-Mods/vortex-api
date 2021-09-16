@@ -77,6 +77,7 @@ export interface IDialogContent {
         wrap?: boolean;
         hideMessage?: boolean;
         bbcodeContext?: IBBCodeContext;
+        linksAsButtons?: boolean;
     };
     condition?: Condition;
 }
