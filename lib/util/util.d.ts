@@ -194,7 +194,7 @@ export declare enum Campaign {
 }
 export interface INexusURLOptions {
     section?: Section;
-    campaign?: Campaign;
+    campaign?: Campaign | string;
     parameters?: string[];
 }
 export declare function nexusModsURL(reqPath: string[], options?: INexusURLOptions): string;
