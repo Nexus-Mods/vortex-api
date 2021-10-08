@@ -13,6 +13,7 @@ export interface ITableRowAction extends IActionDefinition {
         alt?: boolean;
         ctrl?: boolean;
     };
+    subMenus?: ITableRowAction[];
 }
 export interface IBaseProps {
     tableId: string;

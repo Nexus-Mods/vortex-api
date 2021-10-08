@@ -1,5 +1,6 @@
 import { TFunction } from 'i18next';
 import * as React from 'react';
+import { ComponentEx } from '../util/ComponentEx';
 export interface IFormItemProps {
     t: TFunction;
     controlId: string;
@@ -26,7 +27,7 @@ export interface IFormPathProps extends IFormItemProps {
     directory: boolean;
     extensions?: string[];
 }
-export declare class FormPathItem extends React.Component<IFormPathProps, {}> {
+export declare class FormPathItem extends ComponentEx<IFormPathProps, {}> {
     render(): JSX.Element;
     private validationState;
     private handleTypePath;

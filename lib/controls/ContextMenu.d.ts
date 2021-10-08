@@ -1,11 +1,11 @@
+import { TFunction } from '../util/i18n';
 import { IActionDefinitionEx } from './ActionControl';
 import * as React from 'react';
-import { TFunction } from '../util/i18n';
 export interface IMenuActionProps {
     t: TFunction;
     id: string;
     action: IActionDefinitionEx;
-    instanceId: string | string[];
+    instanceId: string;
 }
 export interface IContextPosition {
     x: number;
@@ -14,6 +14,7 @@ export interface IContextPosition {
 export interface IContextMenuProps {
     t?: TFunction;
     position?: IContextPosition;
+    anchor?: HTMLElement;
     visible: boolean;
     onHide: () => void;
     instanceId: string;

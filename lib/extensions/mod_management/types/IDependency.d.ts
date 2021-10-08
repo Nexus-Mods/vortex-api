@@ -18,6 +18,7 @@ export interface IDependency {
     extra?: {
         [key: string]: any;
     };
+    phase?: number;
 }
 export interface IDependencyError {
     error: string;

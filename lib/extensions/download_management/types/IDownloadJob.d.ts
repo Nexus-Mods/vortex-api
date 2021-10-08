@@ -8,6 +8,7 @@ export interface IDownloadJob extends IChunk {
     confirmedReceived: number;
     confirmedOffset: number;
     confirmedSize: number;
+    extraCookies: string[];
     dataCB?: (offset: number, data: any) => Promise<boolean>;
     completionCB?: () => void;
     errorCB?: (err: any) => void;
