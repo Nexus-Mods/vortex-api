@@ -20,8 +20,8 @@ export interface IBBCodeContext {
      */
     allowLocal?: boolean;
 }
-declare function renderBBCode(input: string, context?: any): React.ReactChild[];
 export declare function preProcess(input: string): string;
+declare function renderBBCode(input: string, context?: any): React.ReactChild[];
 export declare function stripBBCode(input: string): string;
 export declare function bbcodeToHTML(input: string): string;
 export default renderBBCode;

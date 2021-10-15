@@ -91,6 +91,7 @@ declare class DownloadManager {
     private updateDownload;
     private toStoredChunk;
     private toJob;
+    private useExistingFile;
     /**
      * gets called whenever a chunk runs to the end or is interrupted
      */

@@ -1,6 +1,6 @@
 {
   "name": "vortex-api",
-  "version": "1.4.0-modpacks.r11",
+  "version": "1.4.0-modpacks.r12",
   "description": "Library exporting nmm components extensions may use",
   "main": "lib/index.js",
   "bin": {
