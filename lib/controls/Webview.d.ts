@@ -32,9 +32,17 @@ export interface IWebviewProps {
     onLoading?: (loading: boolean) => void;
     onNewWindow?: (url: string, disposition: string) => void;
     onFullscreen?: (fullscreen: boolean) => void;
+    events?: {
+        [evtId: string]: (...args: any[]) => void;
+    };
 }
-export declare class WebviewOverlay extends React.Component<IWebviewProps & IWebView, {}> {
+export declare class WebviewOverlay extends React.Component<IWebviewProps & IWebView, {
+    src: string;
+}> {
+    constructor(props: IWebviewProps & IWebView);
+    UNSAFE_componentWillReceiveProps(newProps: IWebviewProps & IWebView): void;
     render(): JSX.Element;
+    loadURL(newUrl: string): void;
     private startLoad;
     private stopLoad;
     private newWindow;
@@ -47,6 +55,7 @@ export declare class WebviewEmbed extends React.Component<IWebviewProps & IWebVi
     componentDidMount(): void;
     componentWillUnmount(): void;
     render(): JSX.Element;
+    loadURL(newUrl: string): void;
     private startLoad;
     private stopLoad;
     private newWindow;

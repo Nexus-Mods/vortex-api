@@ -49,7 +49,7 @@ export interface IActionProps {
     onUnblockUI: (id: string) => void;
 }
 export declare type IProps = IBaseProps & IConnectedProps & IExtendedProps & IActionProps & II18NProps;
-export declare const MainContext: React.Context<{}>;
+export declare const MainContext: React.Context<IComponentContext>;
 export declare class MainWindow extends React.Component<IProps, IMainWindowState> {
     static childContextTypes: React.ValidationMap<any>;
     private applicationButtons;
