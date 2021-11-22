@@ -20,7 +20,7 @@ import { DialogType, IDialogResult } from './IDialog';
 import { IGame } from './IGame';
 import { IGameStore } from './IGameStore';
 import { ILookupOptions, IModLookupResult } from './IModLookupResult';
-import { INotification } from './INotification';
+import { INotification, INotificationAction } from './INotification';
 import { IDiscoveryResult, IMod, IState } from './IState';
 import { ITableAttribute } from './ITableAttribute';
 import { ITestResult } from './ITestResult';
@@ -208,6 +208,7 @@ export interface IErrorOptions {
     };
     attachments?: IAttachment[];
     extensionName?: string;
+    actions?: INotificationAction[];
 }
 /**
  * a query function that will be called to retrieve information about a game.

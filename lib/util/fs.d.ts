@@ -17,7 +17,7 @@ import { TFunction } from './i18n';
 import PromiseBB from 'bluebird';
 import * as fs from 'fs-extra';
 export { constants, FSWatcher, Stats, WriteStream } from 'fs';
-export { accessSync, appendFileSync, closeSync, createReadStream, createWriteStream, linkSync, openSync, readdirSync, readFileSync, statSync, symlinkSync, watch, writeFileSync, writeSync, } from 'fs';
+export { accessSync, appendFileSync, closeSync, createReadStream, createWriteStream, linkSync, openSync, readdirSync, readFileSync, statSync, symlinkSync, watch, writeFileSync, writeSync, } from 'original-fs';
 export interface ILinkFileOptions {
     showDialogCallback?: () => boolean;
 }
