@@ -149,6 +149,7 @@ declare class ExtensionManager {
     private runElevated;
     private emitAndAwait;
     private onAsync;
+    private withPrePost;
     private highlightCSS;
     private highlightControl;
     private addMetaServer;
