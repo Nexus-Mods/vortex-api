@@ -6,9 +6,11 @@ declare class MyModal extends React.PureComponent<typeof Modal.prototype.props, 
     static Body: typeof ModalBody;
     static Footer: typeof ModalFooter;
     static childContextTypes: React.ValidationMap<any>;
+    private getContainer;
     private mMenuLayer;
     getChildContext(): any;
     render(): JSX.Element;
+    private getContainerImpl;
     private setMenuLayer;
 }
 export default MyModal;

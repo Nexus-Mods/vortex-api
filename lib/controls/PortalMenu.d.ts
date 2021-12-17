@@ -11,6 +11,7 @@ interface IPortalMenuProps {
         y: number;
     };
     bsRole?: string;
+    placement?: 'top' | 'bottom' | 'left' | 'right';
 }
 declare class PortalMenu extends React.Component<IPortalMenuProps, {
     x: number;
