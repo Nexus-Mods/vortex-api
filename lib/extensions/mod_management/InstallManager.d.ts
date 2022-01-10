@@ -65,6 +65,7 @@ declare class InstallManager {
     installDependencies(api: IExtensionApi, profile: IProfile, modId: string, silent: boolean): Promise<void>;
     installRecommendations(api: IExtensionApi, profile: IProfile, modId: string): Promise<void>;
     private hasFuzzyReference;
+    private setModSize;
     /**
      * when installing a mod from a dependency rule we store the id of the installed mod
      * in the rule for quicker and consistent matching but if - at a later time - we

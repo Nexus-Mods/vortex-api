@@ -59,7 +59,7 @@ export interface IPrettifiedError {
     replace?: any;
     allowReport?: boolean;
 }
-export declare function prettifyNodeErrorMessage(err: any, options?: IErrorOptions): IPrettifiedError;
+export declare function prettifyNodeErrorMessage(err: any, options?: IErrorOptions, fileName?: string): IPrettifiedError;
 export interface IErrorRendered {
     message?: string;
     text?: string;

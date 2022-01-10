@@ -21,6 +21,7 @@ export interface IActionDefinition {
     subMenus?: IActionDefinition[] | ActionFunc;
     condition?: (instanceId: string | string[], data?: any) => boolean | string;
     position?: number;
+    group?: string;
     options?: IActionOptions;
     default?: boolean;
 }
