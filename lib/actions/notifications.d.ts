@@ -14,6 +14,7 @@ export declare const updateNotification: reduxAct.ComplexActionCreator3<string, 
     message: string;
 }, {
     forward: boolean;
+    scope: string;
 }>;
 /**
  * dismiss a notification. Takes the id of the notification

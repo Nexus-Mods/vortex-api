@@ -1,7 +1,7 @@
 import * as React from 'react';
 interface IExtraImageProps<T> extends React.ImgHTMLAttributes<T> {
     srcs: string[];
-    circle: boolean;
+    circle?: boolean;
 }
 export declare type IImageProps = React.DetailedHTMLProps<IExtraImageProps<HTMLImageElement>, HTMLImageElement>;
 /**

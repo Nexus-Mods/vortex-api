@@ -122,6 +122,10 @@ export interface ITableState {
     rows: {
         [id: string]: IRowState;
     };
+    groupBy?: string;
+    filter?: {
+        [id: string]: any;
+    };
 }
 export interface IExtensionState {
     enabled: boolean | 'failed';
@@ -266,7 +270,9 @@ export interface ISessionGameMode {
     };
 }
 export interface IGameInfoEntry {
+    key: string;
     provider: string;
+    priority: number;
     expires: number;
     title: string;
     value: any;
@@ -283,10 +289,21 @@ export interface IBrowserState {
     url: string;
     instructions: string;
     subscriber: string;
+    skippable: boolean;
 }
 export interface IModTable {
     [gameId: string]: {
         [modId: string]: IMod;
+    };
+}
+export interface IOverlay {
+    title: string;
+    text: string;
+    position: IPosition;
+}
+export interface IOverlaysState {
+    overlays: {
+        [key: string]: IOverlay;
     };
 }
 /**
@@ -309,6 +326,7 @@ export interface IState {
         notifications: INotificationState;
         browser: IBrowserState;
         history: IHistoryState;
+        overlays: IOverlaysState;
         extensions: {
             available: IAvailableExtension[];
             installed: {

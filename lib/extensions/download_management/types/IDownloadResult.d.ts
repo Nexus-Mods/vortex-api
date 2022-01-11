@@ -5,4 +5,5 @@ export interface IDownloadResult {
     unfinishedChunks: IChunk[];
     hadErrors: boolean;
     size: number;
+    metaInfo: any;
 }

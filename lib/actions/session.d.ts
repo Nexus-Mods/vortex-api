@@ -21,11 +21,17 @@ export declare const setOpenMainPage: reduxAct.ComplexActionCreator2<string, boo
 export declare const startActivity: reduxAct.ComplexActionCreator2<string, string, {
     group: string;
     activityId: string;
-}, {}>;
+}, {
+    forward: boolean;
+    scope: string;
+}>;
 export declare const stopActivity: reduxAct.ComplexActionCreator2<string, string, {
     group: string;
     activityId: string;
-}, {}>;
+}, {
+    forward: boolean;
+    scope: string;
+}>;
 export declare const setProgress: reduxAct.ComplexActionCreator4<string, string, string, number, {
     group: string;
     progressId: string;

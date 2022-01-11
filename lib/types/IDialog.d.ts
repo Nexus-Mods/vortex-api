@@ -25,7 +25,8 @@ export interface IControlBase {
     id: string;
 }
 export interface ICheckbox extends IControlBase {
-    text: string;
+    text?: string;
+    bbcode?: string;
     value: boolean;
     disabled?: boolean;
 }
@@ -63,6 +64,7 @@ export interface IDialogContent {
      */
     message?: string;
     bbcode?: string;
+    md?: string;
     checkboxes?: ICheckbox[];
     choices?: ICheckbox[];
     input?: IInput[];
@@ -76,6 +78,7 @@ export interface IDialogContent {
         wrap?: boolean;
         hideMessage?: boolean;
         bbcodeContext?: IBBCodeContext;
+        linksAsButtons?: boolean;
     };
     condition?: Condition;
 }

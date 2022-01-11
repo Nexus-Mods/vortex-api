@@ -4,7 +4,7 @@ import { ILoadOrderGameInfo } from '../extensions/file_based_loadorder/types/typ
 import { IHistoryStack } from '../extensions/history_management/types';
 import { IGameLoadOrderEntry } from '../extensions/mod_load_order/types/types';
 import { IDeployedFile, IDeploymentMethod, IFileChange } from '../extensions/mod_management/types/IDeploymentMethod';
-import { IInstallResult, IInstruction } from '../extensions/mod_management/types/IInstallResult';
+import { IInstallResult, IInstruction, InstructionType } from '../extensions/mod_management/types/IInstallResult';
 import { InstallFunc, ProgressDelegate } from '../extensions/mod_management/types/InstallFunc';
 import { ISupportedResult, TestSupported } from '../extensions/mod_management/types/TestSupported';
 import { Archive } from '../util/archives';
@@ -12,13 +12,15 @@ import { IRegisteredExtension } from '../util/ExtensionManager';
 import { i18n, TFunction } from '../util/i18n';
 import ReduxProp from '../util/ReduxProp';
 import { SanityCheck } from '../util/reduxSanity';
-import { DialogActions, IDialogContent } from './api';
+import { ICollectionsGameSupportEntry } from './collections/api';
+import { DialogActions, IDialogContent, IModReference, IModRepoId } from './api';
 import { IActionOptions } from './IActionDefinition';
 import { IBannerOptions } from './IBannerOptions';
 import { DialogType, IDialogResult } from './IDialog';
 import { IGame } from './IGame';
 import { IGameStore } from './IGameStore';
-import { INotification } from './INotification';
+import { ILookupOptions, IModLookupResult } from './IModLookupResult';
+import { INotification, INotificationAction } from './INotification';
 import { IDiscoveryResult, IMod, IState } from './IState';
 import { ITableAttribute } from './ITableAttribute';
 import { ITestResult } from './ITestResult';
@@ -28,7 +30,7 @@ import * as React from 'react';
 import * as Redux from 'redux';
 import { ComplexActionCreator } from 'redux-act';
 import { ThunkDispatch } from 'redux-thunk';
-export { TestSupported, IInstallResult, IInstruction, IDeployedFile, IDeploymentMethod, IFileChange, ILookupResult, IModInfo, IReference, InstallFunc, ISupportedResult, ProgressDelegate };
+export { TestSupported, IInstallResult, IInstruction, IDeployedFile, IDeploymentMethod, IFileChange, ILookupResult, IModInfo, InstructionType, IReference, InstallFunc, ISupportedResult, ProgressDelegate };
 export interface ThunkStore<S> extends Redux.Store<S> {
     dispatch: ThunkDispatch<S, null, Redux.Action>;
 }
@@ -43,6 +45,7 @@ export declare type PersistingType = 'global' | 'game' | 'profile';
 export declare type CheckFunction = () => Promise<ITestResult>;
 export declare type RegisterSettings = (title: string, element: React.ComponentClass<any> | React.StatelessComponent<any>, props?: PropsCallback, visible?: () => boolean, priority?: number) => void;
 export declare type RegisterAction = (group: string, position: number, iconOrComponent: string | React.ComponentType<any>, options: IActionOptions, titleOrProps?: string | PropsCallback, actionOrCondition?: (instanceIds?: string[]) => void | boolean, condition?: (instanceIds?: string[]) => boolean | string) => void;
+export declare type RegisterControlWrapper = (group: string, priority: number, wrapper: React.ComponentType<any>) => void;
 export declare type RegisterFooter = (id: string, element: React.ComponentClass<any>, props?: PropsCallback) => void;
 export declare type RegisterBanner = (group: string, component: React.ComponentType<any>, options: IBannerOptions) => void;
 export interface IModSourceOptions {
@@ -52,6 +55,7 @@ export interface IModSourceOptions {
      */
     condition?: () => boolean;
     icon?: string;
+    supportsModId?: boolean;
 }
 export interface IMainPageOptions {
     /**
@@ -74,8 +78,9 @@ export interface IMainPageOptions {
     props?: () => any;
     badge?: ReduxProp<any>;
     activity?: ReduxProp<boolean>;
+    onReset?: () => void;
 }
-export declare type RegisterMainPage = (icon: string, title: string, element: React.ComponentClass<any> | React.StatelessComponent<any>, options: IMainPageOptions) => void;
+export declare type RegisterMainPage = (icon: string, title: string, element: React.ComponentType<any>, options: IMainPageOptions) => void;
 export interface IDashletOptions {
     fixed?: boolean;
     closable?: boolean;
@@ -86,6 +91,7 @@ export interface IDashletOptions {
  */
 export declare type RegisterDashlet = (title: string, width: 1 | 2 | 3, height: 1 | 2 | 3 | 4 | 5 | 6, position: number, component: React.ComponentClass<any> | React.FunctionComponent<any>, isVisible: (state: any) => boolean, props: PropsCallback, options: IDashletOptions) => void;
 export declare type RegisterDialog = (id: string, element: React.ComponentType<any>, props?: PropsCallback) => void;
+export declare type RegisterOverlay = (id: string, element: React.ComponentType<any>, props?: PropsCallback) => void;
 export declare type ToDoType = 'settings' | 'search' | 'workaround' | 'more';
 export interface IToDoButton {
     text: string;
@@ -95,6 +101,9 @@ export interface IToDoButton {
 export declare type RegisterToDo = (id: string, type: ToDoType, props: (state: any) => any, icon: ((props: any) => JSX.Element) | string, text: ((t: TFunction, props: any) => JSX.Element) | string, action: (props: any) => void, condition: (props: any) => boolean, value: ((t: TFunction, props: any) => JSX.Element) | string, priority: number) => void;
 export interface IRegisterProtocol {
     (protocol: string, def: boolean, callback: (url: string, install: boolean) => void): any;
+}
+export interface IRegisterRepositoryLookup {
+    (repositoryId: string, preferOverMD5: boolean, callback: (id: IModRepoId) => Promise<IModLookupResult[]>): any;
 }
 export interface IFileFilter {
     name: string;
@@ -116,6 +125,7 @@ export declare type StateChangeCallback<T = any> = (previous: T, current: T) => 
  */
 export interface ILookupDetails {
     filePath?: string;
+    fileName?: string;
     fileMD5?: string;
     fileSize?: number;
     gameId?: string;
@@ -165,6 +175,12 @@ export interface IArchiveHandler {
     write?(): Promise<void>;
 }
 export declare type ArchiveHandlerCreator = (fileName: string, options: IArchiveOptions) => Promise<IArchiveHandler>;
+/**
+ * callback used to extract download information into mod info.
+ * This also gets called a lot when displaying uninstalled mods in the mod list
+ * (the modPath is going to be undefined) so when that flag is set, the extractor should
+ * not be accessing the disk or network or do any complex coomputation
+ */
 export declare type AttributeExtractor = (modInfo: any, modPath: string) => Promise<{
     [key: string]: any;
 }>;
@@ -192,6 +208,7 @@ export interface IErrorOptions {
     };
     attachments?: IAttachment[];
     extensionName?: string;
+    actions?: INotificationAction[];
 }
 /**
  * a query function that will be called to retrieve information about a game.
@@ -408,6 +425,15 @@ export interface IExtensionApi {
      */
     registerProtocol: IRegisterProtocol;
     /**
+     * registers a lookup mechanism that can be used to look up information about a mod based on ids.
+     * This will either work as a fallback or as a replacement to the md5 based lookup for
+     * applicable mods.
+     * The "repositoryId" should be the same as the "source" used.
+     * It's possible to return multiple results if the input data doesn't definitively identify a
+     * single item but this might be a bit of a mess to figure out later.
+     */
+    registerRepositoryLookup: IRegisterRepositoryLookup;
+    /**
      * deregister an uri protocol currently being handled by us
      *
      * @memberOf IExtensionApi
@@ -418,7 +444,7 @@ export interface IExtensionApi {
      *
      * @memberOf IExtensionApi
      */
-    lookupModReference: (ref: IReference) => Promise<ILookupResult[]>;
+    lookupModReference: (ref: IModReference, options?: ILookupOptions) => Promise<IModLookupResult[]>;
     /**
      * add a meta server
      * Please note that setting a server with the same id again will replace the existing one
@@ -495,8 +521,17 @@ export interface IExtensionApi {
      * will only return after all promises from handlers are returned.
      * Note that listeners should report all errors themselves, it is considered a bug if the listener
      * returns a rejected promise.
+     * If errors do need to be reported they have to be part of the resolved valued
      */
     onAsync: (eventName: string, listener: (...args: any[]) => PromiseLike<any>) => void;
+    /**
+     * wraps a function such that it will emitAndAwait will-eventName and did-eventName events
+     * before and after invoking the actual callback.
+     * both these events receive the arguments passed to the callback, the did-event also receives
+     * the result of the callback if any (the result is the first argument because the number
+     * of arguments may be variable)
+     */
+    withPrePost: <T>(eventName: string, callback: (...args: any[]) => Promise<T>) => ((...args: any[]) => Promise<T>);
     /**
      * returns true if the running version of Vortex is considered outdated. This is mostly used
      * to determine if feedback should be sent to Nexus Mods.
@@ -506,8 +541,14 @@ export interface IExtensionApi {
      * highlight a control for a short time to direct the users attention to it.
      * The control (or controls) is identified by a css selector.
      * A text can be added, but no promise that it actually looks good in practice
+     *
+     * Usually the css style used to draw the outline contains a bit of hackery to offset the
+     * padding and border width it adds so that the contents doesn't get moved around.
+     * If altStyle is set we use absolute positioning to get the same effect. This requires
+     * us to make the target item "position: relative" though which is more intrusive and can
+     * break the styling of the contents more severely.
      */
-    highlightControl: (selector: string, durationMS: number, text?: string) => void;
+    highlightControl: (selector: string, durationMS: number, text?: string, altStyle?: boolean) => void;
     /**
      * returns a promise that resolves once the ui has been displayed.
      * This is useful if you have a callback that may be triggered before the ui is
@@ -582,8 +623,10 @@ export interface IReducerSpec<T = {
 }
 export interface IModTypeOptions {
     mergeMods?: boolean | ((mod: IMod) => string);
-    deploymentEssential?: boolean;
     name?: string;
+    customDependencyManagement?: boolean;
+    deploymentEssential?: boolean;
+    noConflicts?: boolean;
 }
 /**
  * The extension context is an object passed into all extensions during initialisation.
@@ -664,6 +707,11 @@ export interface IExtensionContext {
      */
     registerAction: RegisterAction;
     /**
+     * register a wrapper for an existing control. Only controls designed for extension can
+     * be used.
+     */
+    registerControlWrapper: RegisterControlWrapper;
+    /**
      * registers a page for the main content area
      *
      * @type {IRegisterMainPage}
@@ -680,6 +728,11 @@ export interface IExtensionContext {
      * This dialog has to control its own visibility
      */
     registerDialog: RegisterDialog;
+    /**
+     * registers a component to be rendered very high in the DOM, overlaying the main window.
+     * Similar to registerDialogs, except that Vortex won't control whether the overlay gets rendered.
+     */
+    registerOverlay: RegisterOverlay;
     /**
      * registers a element to be displayed in the footer
      *
@@ -709,7 +762,7 @@ export interface IExtensionContext {
      * actual features
      * The source can also be used to browse for further mods
      */
-    registerModSource: (id: string, name: string, onBrowse: () => void, options?: IModSourceOptions) => void;
+    registerModSource: (id: string, name: string, onBrowse?: () => void, options?: IModSourceOptions) => void;
     /**
      * register a reducer to introduce new set-operations on the application
      * state.
@@ -1029,6 +1082,10 @@ export interface IExtensionContext {
      * Sets up a stack for a history of events that can be presented to the user
      */
     registerHistoryStack: (id: string, options: IHistoryStack) => void;
+    /**
+     * Allows extensions to define additional data to add to a collection
+     */
+    registerGameSpecificCollectionsData: (data: ICollectionsGameSupportEntry) => void;
     /**
      * add a function to the IExtensionApi object that is made available to all other extensions
      * in the api.ext object.

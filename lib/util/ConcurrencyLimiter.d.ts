@@ -18,7 +18,7 @@ declare class ConcurrencyLimiter {
      *                   handle errors that indicate the resource running out separately
      */
     constructor(limit: number, repeatTest?: (err: Error) => boolean);
-    do<T>(cb: () => Promise<T>): Promise<T>;
+    do<T>(cb: () => PromiseLike<T>): Promise<T>;
     private doImpl;
     private process;
     private enqueue;

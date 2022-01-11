@@ -2,7 +2,7 @@ import { PropsCallback } from '../types/IExtensionContext';
 import * as React from 'react';
 interface IExtDialog {
     id: string;
-    component: React.ComponentClass<any>;
+    component: React.ComponentType<any>;
     props: PropsCallback;
 }
 export interface IBaseProps {

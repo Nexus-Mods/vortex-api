@@ -1,4 +1,5 @@
-export declare type LockedState = 'true' | 'false' | 'always' | 'never';
+/// <reference types="react" />
+export declare type LockedState = true | false | 'true' | 'false' | 'always' | 'never';
 export declare type LoadOrder = ILoadOrderEntry[];
 export interface IItemRendererProps {
     loEntry: ILoadOrderEntry;
@@ -34,7 +35,14 @@ export interface ILoadOrderGameInfo {
      *  in the load order page alongside the load order panel.
      *  Default instructions will be provided if custom instructions aren't provided.
      */
-    usageInstructions?: string;
+    usageInstructions?: string | React.ComponentType<{}>;
+    /**
+     * By default the FBLO extension will attempt to automatically generate the data
+     *  required when publishing/exporting a collection; the noCollectionGeneration
+     *  property allows game extensions to opt out of this functionality, which is useful
+     *  if/when the default generation logic is insufficient for a particular game.
+     */
+    noCollectionGeneration?: boolean;
     /**
      * The load order page will call this functor whenever it is necessary
      *  to write a change to disk. It is up to the game extension developer to decide
@@ -107,6 +115,9 @@ export interface ILoadOrderGameInfo {
      *
      */
     validate: (prev: LoadOrder, current: LoadOrder) => Promise<IValidationResult>;
+}
+export interface ILoadOrderGameInfoExt extends ILoadOrderGameInfo {
+    isContributed: boolean;
 }
 export declare class LoadOrderValidationError extends Error {
     private mValidationRes;

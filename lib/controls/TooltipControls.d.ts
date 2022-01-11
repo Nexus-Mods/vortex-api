@@ -17,6 +17,7 @@ export declare class Button extends React.PureComponent<ButtonProps, {}> {
 }
 export interface IIconButtonExtraProps {
     icon: string;
+    set?: string;
     spin?: boolean;
     pulse?: boolean;
     stroke?: boolean;

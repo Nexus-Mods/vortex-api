@@ -93,6 +93,7 @@ export declare const removeDownload: reduxAct.ComplexActionCreator1<string, {
  */
 export declare const setDownloadSpeed: reduxAct.ComplexActionCreator1<unknown, unknown, {
     forward: boolean;
+    scope: string;
 }>;
 export declare const setDownloadSpeeds: reduxAct.ComplexActionCreator1<unknown, unknown, {}>;
 /**
@@ -104,6 +105,10 @@ export declare const addLocalDownload: reduxAct.ComplexActionCreator4<string, st
     game: string;
     localPath: string;
     fileSize: number;
+}, {}>;
+export declare const mergeDownloadModInfo: reduxAct.ComplexActionCreator2<string, any, {
+    id: string;
+    value: any;
 }, {}>;
 export declare const setDownloadModInfo: reduxAct.ComplexActionCreator3<string, string, any, {
     id: string;

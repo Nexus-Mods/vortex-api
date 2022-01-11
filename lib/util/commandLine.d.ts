@@ -9,6 +9,7 @@ export interface IParameters {
     get?: string;
     set?: string[];
     del?: string;
+    merge?: string;
     run?: string;
     shared?: boolean;
     maxMemory?: string;

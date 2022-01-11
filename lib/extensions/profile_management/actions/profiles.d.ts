@@ -1,4 +1,6 @@
+import Bluebird from 'bluebird';
 import * as reduxAct from 'redux-act';
+import { IExtensionApi } from '../../../types/IExtensionContext';
 /**
  * add or edit a profile
  */
@@ -23,3 +25,9 @@ export declare const setFeature: reduxAct.ComplexActionCreator3<string, string, 
     value: any;
 }, {}>;
 export declare const setProfileActivated: reduxAct.ComplexActionCreator1<string, string, {}>;
+export interface IEnableOptions {
+    silent?: boolean;
+    installed?: boolean;
+}
+declare const setModsEnabled: (api: IExtensionApi, profileIdIn: string, modIdsIn: string[], enableIn: boolean, optionsIn?: IEnableOptions) => Bluebird<void>;
+export { setModsEnabled, };

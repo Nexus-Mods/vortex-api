@@ -1,6 +1,6 @@
 import * as React from 'react';
 export interface IProps {
-    container?: HTMLElement;
+    container: HTMLElement;
     placeholder: () => React.ReactNode;
     content: () => React.ReactNode;
     visible: boolean;

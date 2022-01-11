@@ -9,6 +9,7 @@ export declare type PluginType = 'Required' | 'Optional' | 'Recommended' | 'NotU
 export interface IPlugin {
     id: number;
     selected: boolean;
+    preset: boolean;
     name: string;
     description: string;
     image: string;

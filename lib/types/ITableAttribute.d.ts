@@ -5,7 +5,8 @@ export declare type Placement = 'table' | 'detail' | 'both' | 'inline';
 export declare type ValidationState = 'success' | 'warning' | 'error';
 export interface IEditChoice {
     key: string;
-    text: string;
+    text?: string;
+    bool?: boolean;
     icon?: string;
     /**
      * select if this choice is visible (default) to the user.
@@ -50,6 +51,11 @@ export interface ITableFilter {
      */
     raw: string | boolean;
     component: React.ComponentType<IFilterProps>;
+    /**
+     * specifies which property of the object to filter on, meaning that obj[dataId] will be passed
+     * to the "matches" function as the value to filter by.
+     * This can be $ (a single dollar sign) to get the object itself
+     */
     dataId?: string;
 }
 export interface ICustomProps {
@@ -76,8 +82,13 @@ export interface ITableAttribute<T = any> {
      */
     description?: string | ITString;
     /**
-     * position of the attribute within the table (at some point we may allow users to override
-     * this at which point this will be the default)
+     * If set, determins the order in which attributes are displayed (the order of columns if
+     * placement is 'table' or vertical order in details).
+     * Lower number means further left/further up respectively.
+     * In the futuer users may be able to customize the column order at which point this
+     * should be considered a default.
+     * All attributes where this isn't set will default to 100 and be ordered according to how
+     * attributes appear in code
      */
     position?: number;
     /**
@@ -106,6 +117,12 @@ export interface ITableAttribute<T = any> {
      * the result from this is not cached (at this time)
      */
     isGroupable?: boolean | ((object: T, t: TFunction) => string);
+    /**
+     * if set, the group name is going to be translated using this function before being displayed to
+     * the user (this affects only the group headers, not filters)
+     * You probably want to use this if you have a customRenderer on a column that is groupable
+     */
+    groupName?: (value: any) => string;
     /**
      * if set, the table can be filtered by this attribute using the specified control
      */
@@ -142,6 +159,11 @@ export interface ITableAttribute<T = any> {
      * may want to use a custom renderer with some manner of caching and debouncing.
      */
     isVolatile?: boolean;
+    /**
+     * if true, the rendered control will be extensible with wrappers (see registerControlWrapper),
+     * with a name that is generated from <tableid>-<columnid>
+     */
+    isExtensible?: boolean;
     /**
      * Never shrink the column while scrolling, it can still grow though
      */
@@ -181,6 +203,10 @@ export interface ITableAttribute<T = any> {
      *        the Table props the Table may appear glitchy as it won't update as necessary.
      */
     calc?: (object: T, t: TFunction) => any | Promise<any>;
+    /**
+     * allows the attribute to add a css class to the table row.
+     */
+    cssClass?: (object: T, enabled: boolean) => string;
     /**
      * custom function for sorting by this attribute. The parameters passed in (lhs and rhs) are
      * the output of calc (cached). Return <0 if lhs is smaller than rhs, >0 if it's bigger and
@@ -223,10 +249,16 @@ export interface ITableAttribute<T = any> {
          * if set, this function determines if the attribute is editable. If "edit" is an empty
          * object, the attribute is readonly. If "edit" is non-empty and "readonly" is
          * undefined, the attribute is editable.
+         *
+         * @note: This currently only affects controls in the sidebar, not the ones in the table
          */
         readOnly?: (object: any) => boolean;
         /**
-         * allow inline editing of this cell
+         * allow inline editing of this cell for attribute with "choices".
+         *
+         * @note This does not work as described if choices is undefined, boolean attributes for example
+         *       become read-only if this attribute is set and strings and dates don't get rendered
+         *       properly any more.
          */
         inline?: boolean;
         /**
@@ -235,6 +267,14 @@ export interface ITableAttribute<T = any> {
          * an action. If false, render a selection box
          */
         actions?: boolean;
+        /**
+         * minimum value, minus infinity by default
+         */
+        min?: number;
+        /**
+         * maximum value, infinity by default
+         */
+        max?: number;
         /**
          * if set, this is called to determine the placeholder to be displayed when the input box is
          * empty. Has no effect if this edit config doesn't generate an input box
@@ -245,7 +285,7 @@ export interface ITableAttribute<T = any> {
          * Please note: the value returned by calc has to appear in the text-field of one of these
          *   choices
          */
-        choices?: () => IEditChoice[];
+        choices?: (object: T) => IEditChoice[];
         /**
          * if set, this field is a text field that validates its input
          */

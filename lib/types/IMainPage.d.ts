@@ -20,4 +20,5 @@ export interface IMainPage {
     badge?: ReduxProp<any>;
     activity?: ReduxProp<boolean>;
     namespace?: string;
+    onReset?: () => void;
 }

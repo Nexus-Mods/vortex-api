@@ -9,6 +9,7 @@ export interface IErrorBoundaryProps extends WithTranslation {
     visible?: boolean;
     onHide?: () => void;
     className?: string;
+    canDisplayError?: boolean;
 }
 declare const _default: any;
 export default _default;

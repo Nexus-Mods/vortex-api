@@ -1,4 +1,5 @@
 import { IChunk } from './types/IChunk';
+import { IDownloadOptions } from './types/IDownload';
 import { IDownloadResult } from './types/IDownloadResult';
 import { ProgressCallback } from './types/ProgressCallback';
 import { IProtocolHandlers } from './types/ProtocolHandlers';
@@ -7,7 +8,7 @@ export declare type RedownloadMode = 'always' | 'never' | 'ask' | 'replace';
 export declare class AlreadyDownloaded extends Error {
     private mFileName;
     private mId;
-    constructor(fileName: string);
+    constructor(fileName: string, id?: string);
     get fileName(): string;
     get downloadId(): string;
     set downloadId(id: string);
@@ -62,18 +63,20 @@ declare class DownloadManager {
      *
      * @memberOf DownloadManager
      */
-    enqueue(id: string, urls: string[], fileName: string, progressCB: ProgressCallback, destinationPath?: string, redownload?: RedownloadMode): Promise<IDownloadResult>;
-    resume(id: string, filePath: string, urls: string[], received: number, size: number, started: number, chunks: IChunk[], progressCB: ProgressCallback): Promise<IDownloadResult>;
+    enqueue(id: string, urls: string[], fileName: string, progressCB: ProgressCallback, destinationPath?: string, options?: IDownloadOptions): Promise<IDownloadResult>;
+    resume(id: string, filePath: string, urls: string[], received: number, size: number, started: number, chunks: IChunk[], progressCB: ProgressCallback, options?: IDownloadOptions): Promise<IDownloadResult>;
     /**
      * cancels a download. This stops the download but doesn't remove the file
      * This call does not wait for the download to actually be stopped, it merely
      * sends the signal to stop it
      *
      * @param {string} id
+     * @returns true if the download was stopped, false if something went wrong. In this case
+     *               the caller should not expect a callback about the download being terminated
      *
      * @memberOf DownloadManager
      */
-    stop(id: string): void;
+    stop(id: string): boolean;
     pause(id: string): IChunk[];
     private resolveUrl;
     private resolveUrls;
@@ -88,6 +91,7 @@ declare class DownloadManager {
     private updateDownload;
     private toStoredChunk;
     private toJob;
+    private useExistingFile;
     /**
      * gets called whenever a chunk runs to the end or is interrupted
      */

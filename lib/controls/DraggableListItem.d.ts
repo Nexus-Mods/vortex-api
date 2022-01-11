@@ -2,6 +2,7 @@ import * as React from 'react';
 export interface IDraggableListItemProps {
     index: number;
     item: any;
+    isLocked: boolean;
     itemRenderer: React.ComponentClass<{
         className?: string;
         item: any;

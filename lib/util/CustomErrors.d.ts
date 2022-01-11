@@ -16,7 +16,9 @@ export declare class InsufficientDiskSpace extends Error {
     constructor(mountPoint: string);
 }
 export declare class ProcessCanceled extends Error {
-    constructor(message: string);
+    private mExtraInfo;
+    constructor(message: string, extraInfo?: any);
+    get extraInfo(): any;
 }
 export declare class DataInvalid extends Error {
     constructor(message: string);
@@ -25,8 +27,10 @@ export declare class ArgumentInvalid extends Error {
     constructor(argument: string);
 }
 interface IUserCanceled extends Error {
+    skipped: boolean;
+    timed: number;
 }
-declare type IUserCanceledConstructor = new () => IUserCanceled;
+declare type IUserCanceledConstructor = new (skipped?: boolean) => IUserCanceled;
 declare const UserCanceled: IUserCanceledConstructor;
 export { UserCanceled };
 export declare class MissingDependency extends Error {
@@ -57,6 +61,9 @@ export declare class MissingInterpreter extends Error {
 }
 export declare class NotFound extends Error {
     constructor(what: string);
+}
+export declare class StalledError extends Error {
+    constructor();
 }
 export declare class TimeoutError extends Error {
     constructor();

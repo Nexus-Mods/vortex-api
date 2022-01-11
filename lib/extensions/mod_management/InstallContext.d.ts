@@ -1,0 +1,44 @@
+import { IExtensionApi } from '../../types/IExtensionContext';
+import { IInstallContext, InstallOutcome } from './types/IInstallContext';
+import { IMod } from './types/IMod';
+declare class InstallContext implements IInstallContext {
+    private mAddMod;
+    private mRemoveMod;
+    private mAddNotification;
+    private mUpdateNotification;
+    private mDismissNotification;
+    private mShowError;
+    private mSetModState;
+    private mSetModAttributes;
+    private mSetModInstallationPath;
+    private mSetModType;
+    private mEnableMod;
+    private mSetDownloadInstalled;
+    private mStartActivity;
+    private mStopActivity;
+    private mAddedId;
+    private mIndicatorId;
+    private mGameId;
+    private mArchiveId;
+    private mInstallOutcome;
+    private mFailReason;
+    private mIsEnabled;
+    private mIsDownload;
+    private mSilent;
+    private mDidReportError;
+    private mLastProgress;
+    constructor(gameMode: string, api: IExtensionApi, silent: boolean);
+    startIndicator(id: string): void;
+    stopIndicator(mod: IMod): void;
+    setProgress(phase: string, percent?: number): void;
+    startInstallCB(id: string, gameId: string, archiveId: string): void;
+    finishInstallCB(outcome: InstallOutcome, info?: any, reason?: string): void;
+    setInstallPathCB(id: string, installPath: string): void;
+    setModType(id: string, modType: string): void;
+    reportError(message: string, details?: string | Error, allowReport?: boolean, replace?: {
+        [key: string]: string;
+    }): void;
+    progressCB(percent: number, file: string): void;
+    private outcomeNotification;
+}
+export default InstallContext;

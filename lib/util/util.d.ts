@@ -1,5 +1,7 @@
 import { Normalize } from './getNormalizeFunc';
 import Bluebird from 'bluebird';
+import * as Redux from 'redux';
+import * as semver from 'semver';
 /**
  * count the elements in an array for which the predicate matches
  *
@@ -122,6 +124,10 @@ declare const INVALID_FILEPATH_CHARACTERS: string[];
 declare const INVALID_FILENAME_CHARACTERS: any[];
 declare const INVALID_FILENAME_RE: RegExp;
 export declare function isFilenameValid(input: string): boolean;
+/**
+ * encodes a string so it can safely be used as a filename
+ */
+export declare function sanitizeFilename(input: string): string;
 export declare function isPathValid(input: string, allowRelative?: boolean): boolean;
 export { INVALID_FILEPATH_CHARACTERS, INVALID_FILENAME_RE, INVALID_FILENAME_CHARACTERS, };
 export declare function isMajorDowngrade(previous: string, current: string): boolean;
@@ -138,10 +144,22 @@ export interface IFlattenParameters {
  */
 export declare function flatten(obj: any, options?: IFlattenParameters): any;
 export declare function toPromise<ResT>(func: (cb: any) => void): Bluebird<ResT>;
+export declare function makeUnique<T>(input: T[]): T[];
+/**
+ * create a list with only "unique" items, using a key function to determine uniqueness.
+ * in case of collisions the last item with a key is kept
+ * @param input the input list of items
+ * @param key key function
+ * @returns a list with duplicates removed
+ */
+export declare function makeUniqueByKey<T>(input: T[], key: (item: T) => string): T[];
+export declare function withTmpDir<T>(cb: (tmpPath: string) => Promise<T>): Promise<T>;
 export declare function unique<T, U>(input: T[], keyFunc?: (item: T) => U): T[];
 export declare function delayed(delayMS: number): Promise<void>;
 export declare function toBlue<T>(func: (...args: any[]) => Promise<T>): (...args: any[]) => Bluebird<T>;
 export declare function replaceRecursive(input: any, from: any, to: any): any;
+export declare function semverCoerce(input: string): semver.SemVer;
+export declare function batchDispatch(store: Redux.Dispatch | Redux.Store, actions: Redux.Action[]): void;
 export declare function isFunction(functionToCheck: any): boolean;
 /**
  * wrap a callback provided by an extension such that we don't allow reports
@@ -163,3 +181,20 @@ export declare function wrapExtCBSync<ArgT extends any[], ResT>(cb: (...args: Ar
     name: string;
     official: boolean;
 }): (...args: ArgT) => ResT;
+export declare enum Section {
+    Mods = 0,
+    Collections = 1,
+    Users = 2
+}
+export declare enum Campaign {
+    ViewCollection = "ViewCollection",
+    Collections = "Collections",
+    DownloadsAd = "Downloads-Ad",
+    DashboardAd = "Dashboard-Ad"
+}
+export interface INexusURLOptions {
+    section?: Section;
+    campaign?: Campaign | string;
+    parameters?: string[];
+}
+export declare function nexusModsURL(reqPath: string[], options?: INexusURLOptions): string;

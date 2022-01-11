@@ -36,6 +36,7 @@ declare class ExtensionManager {
     private mReduxWatcher;
     private mWatches;
     private mProtocolHandlers;
+    private mRepositoryLookup;
     private mArchiveHandlers;
     private mModDB;
     private mModDBPromise;
@@ -134,6 +135,7 @@ declare class ExtensionManager {
     private selectExecutable;
     private selectDir;
     private registerProtocol;
+    private registerRepositoryLookup;
     private registerArchiveHandler;
     private deregisterProtocol;
     private lookupModReference;
@@ -147,6 +149,7 @@ declare class ExtensionManager {
     private runElevated;
     private emitAndAwait;
     private onAsync;
+    private withPrePost;
     private highlightCSS;
     private highlightControl;
     private addMetaServer;
