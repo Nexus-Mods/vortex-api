@@ -1,4 +1,5 @@
 export declare type AppPath = 'base' | 'assets' | 'assets_unpacked' | 'modules' | 'modules_unpacked' | 'bundledPlugins' | 'locales' | 'package' | 'package_unpacked' | 'application' | 'userData' | 'appData' | 'localAppData' | 'temp' | 'home' | 'documents' | 'exe' | 'desktop';
+export declare function setVortexPath(id: AppPath, value: string | (() => string)): void;
 /**
  * the electron getAppPath function and globals like __dirname
  * or process.resourcesPath don't do a great job of abstracting away

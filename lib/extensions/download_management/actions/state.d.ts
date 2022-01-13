@@ -6,11 +6,11 @@ export interface IDictionary {
 /**
  * initialize a download (it may not be started immediately)
  */
-export declare const initDownload: reduxAct.ComplexActionCreator4<string, string[], IDictionary, string, {
+export declare const initDownload: reduxAct.ComplexActionCreator4<string, string[], IDictionary, string[], {
     id: string;
     urls: string[];
     modInfo: IDictionary;
-    game: string;
+    games: string[];
 }, {}>;
 /**
  * set download progress (in percent)
