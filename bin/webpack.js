@@ -23,6 +23,7 @@ function externalsDirect() {
     'nbind',
     'net',
     'node',
+    'node-7z',
     'path',
     'react',
     'react-bootstrap',
@@ -42,6 +43,7 @@ function externalsDirect() {
     'util',
     'vortex-api',
     'vortex-parse-ini',
+    'vortexmt',
     'winapi-bindings',
     'winston',
   ].reduce((prev, key) => {
