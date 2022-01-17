@@ -6,51 +6,47 @@
 
 ## Table of contents
 
-### Properties
+### Methods
 
-- [baseFiles](types.imergefilter.md#basefiles)
-- [filter](types.imergefilter.md#filter)
+- [baseFiles](types.IMergeFilter.md#basefiles)
+- [filter](types.IMergeFilter.md#filter)
 
-## Properties
+## Methods
 
 ### baseFiles
 
-• **baseFiles**: (`deployedFiles`: [*IDeployedFile*](types.ideployedfile.md)[]) => { `in`: *string* ; `out`: *string*  }[]
+▸ **baseFiles**(`deployedFiles`): { `in`: `string` ; `out`: `string`  }[]
 
-#### Type declaration:
+#### Parameters
 
-▸ (`deployedFiles`: [*IDeployedFile*](types.ideployedfile.md)[]): { `in`: *string* ; `out`: *string*  }[]
+| Name | Type |
+| :------ | :------ |
+| `deployedFiles` | [`IDeployedFile`](types.IDeployedFile.md)[] |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`deployedFiles` | [*IDeployedFile*](types.ideployedfile.md)[] |
+{ `in`: `string` ; `out`: `string`  }[]
 
-**Returns:** { `in`: *string* ; `out`: *string*  }[]
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:294
-
-Defined in: src/types/IExtensionContext.ts:294
+../src/types/IExtensionContext.ts:324
 
 ___
 
 ### filter
 
-• **filter**: (`fileName`: *string*) => *boolean*
+▸ **filter**(`fileName`): `boolean`
 
-#### Type declaration:
+#### Parameters
 
-▸ (`fileName`: *string*): *boolean*
+| Name | Type |
+| :------ | :------ |
+| `fileName` | `string` |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`fileName` | *string* |
+`boolean`
 
-**Returns:** *boolean*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:297
-
-Defined in: src/types/IExtensionContext.ts:297
+../src/types/IExtensionContext.ts:327

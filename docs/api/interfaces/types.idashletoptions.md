@@ -8,21 +8,25 @@
 
 ### Properties
 
-- [closable](types.idashletoptions.md#closable)
-- [fixed](types.idashletoptions.md#fixed)
+- [closable](types.IDashletOptions.md#closable)
+- [fixed](types.IDashletOptions.md#fixed)
 
 ## Properties
 
 ### closable
 
-• `Optional` **closable**: *boolean*
+• `Optional` **closable**: `boolean`
 
-Defined in: src/types/IExtensionContext.ts:128
+#### Defined in
+
+../src/types/IExtensionContext.ts:137
 
 ___
 
 ### fixed
 
-• `Optional` **fixed**: *boolean*
+• `Optional` **fixed**: `boolean`
 
-Defined in: src/types/IExtensionContext.ts:127
+#### Defined in
+
+../src/types/IExtensionContext.ts:136

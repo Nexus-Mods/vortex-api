@@ -8,93 +8,113 @@
 
 ### Properties
 
-- [author](types.iextension.md#author)
-- [bundled](types.iextension.md#bundled)
-- [description](types.iextension.md#description)
-- [id](types.iextension.md#id)
-- [modId](types.iextension.md#modid)
-- [name](types.iextension.md#name)
-- [namespace](types.iextension.md#namespace)
-- [path](types.iextension.md#path)
-- [type](types.iextension.md#type)
-- [version](types.iextension.md#version)
+- [author](types.IExtension.md#author)
+- [bundled](types.IExtension.md#bundled)
+- [description](types.IExtension.md#description)
+- [id](types.IExtension.md#id)
+- [modId](types.IExtension.md#modid)
+- [name](types.IExtension.md#name)
+- [namespace](types.IExtension.md#namespace)
+- [path](types.IExtension.md#path)
+- [type](types.IExtension.md#type)
+- [version](types.IExtension.md#version)
 
 ## Properties
 
 ### author
 
-• **author**: *string*
+• **author**: `string`
 
-Defined in: src/extensions/extension_manager/types.ts:18
+#### Defined in
+
+../src/extensions/extension_manager/types.ts:18
 
 ___
 
 ### bundled
 
-• `Optional` **bundled**: *boolean*
+• `Optional` **bundled**: `boolean`
 
-Defined in: src/extensions/extension_manager/types.ts:22
+#### Defined in
+
+../src/extensions/extension_manager/types.ts:22
 
 ___
 
 ### description
 
-• **description**: *string*
+• **description**: `string`
 
-Defined in: src/extensions/extension_manager/types.ts:19
+#### Defined in
+
+../src/extensions/extension_manager/types.ts:19
 
 ___
 
 ### id
 
-• `Optional` **id**: *string*
+• `Optional` **id**: `string`
 
-Defined in: src/extensions/extension_manager/types.ts:10
+#### Defined in
+
+../src/extensions/extension_manager/types.ts:10
 
 ___
 
 ### modId
 
-• `Optional` **modId**: *number*
+• `Optional` **modId**: `number`
 
-Defined in: src/extensions/extension_manager/types.ts:24
+#### Defined in
+
+../src/extensions/extension_manager/types.ts:24
 
 ___
 
 ### name
 
-• **name**: *string*
+• **name**: `string`
 
-Defined in: src/extensions/extension_manager/types.ts:17
+#### Defined in
+
+../src/extensions/extension_manager/types.ts:17
 
 ___
 
 ### namespace
 
-• `Optional` **namespace**: *string*
+• `Optional` **namespace**: `string`
 
-Defined in: src/extensions/extension_manager/types.ts:16
+#### Defined in
+
+../src/extensions/extension_manager/types.ts:16
 
 ___
 
 ### path
 
-• `Optional` **path**: *string*
+• `Optional` **path**: `string`
 
-Defined in: src/extensions/extension_manager/types.ts:23
+#### Defined in
+
+../src/extensions/extension_manager/types.ts:23
 
 ___
 
 ### type
 
-• `Optional` **type**: ExtensionType
+• `Optional` **type**: `ExtensionType`
 
-Defined in: src/extensions/extension_manager/types.ts:21
+#### Defined in
+
+../src/extensions/extension_manager/types.ts:21
 
 ___
 
 ### version
 
-• **version**: *string*
+• **version**: `string`
 
-Defined in: src/extensions/extension_manager/types.ts:20
+#### Defined in
+
+../src/extensions/extension_manager/types.ts:20

@@ -6,77 +6,101 @@
 
 ## Hierarchy
 
-* [*IGameStoreEntry*](types.igamestoreentry.md)
+- [`IGameStoreEntry`](types.IGameStoreEntry.md)
 
-  ↳ **ISteamEntry**
+  ↳ **`ISteamEntry`**
 
 ## Table of contents
 
 ### Properties
 
-- [appid](util.isteamentry.md#appid)
-- [gamePath](util.isteamentry.md#gamepath)
-- [gameStoreId](util.isteamentry.md#gamestoreid)
-- [lastUpdated](util.isteamentry.md#lastupdated)
-- [lastUser](util.isteamentry.md#lastuser)
-- [name](util.isteamentry.md#name)
+- [appid](util.ISteamEntry.md#appid)
+- [gamePath](util.ISteamEntry.md#gamepath)
+- [gameStoreId](util.ISteamEntry.md#gamestoreid)
+- [lastUpdated](util.ISteamEntry.md#lastupdated)
+- [lastUser](util.ISteamEntry.md#lastuser)
+- [name](util.ISteamEntry.md#name)
 
 ## Properties
 
 ### appid
 
-• **appid**: *string*
+• **appid**: `string`
 
-Inherited from: [IGameStoreEntry](types.igamestoreentry.md).[appid](types.igamestoreentry.md#appid)
+#### Inherited from
 
-Defined in: src/types/IGameStoreEntry.ts:3
+[IGameStoreEntry](types.IGameStoreEntry.md).[appid](types.IGameStoreEntry.md#appid)
+
+#### Defined in
+
+../src/types/IGameStoreEntry.ts:3
 
 ___
 
 ### gamePath
 
-• **gamePath**: *string*
+• **gamePath**: `string`
 
-Inherited from: [IGameStoreEntry](types.igamestoreentry.md).[gamePath](types.igamestoreentry.md#gamepath)
+#### Inherited from
 
-Defined in: src/types/IGameStoreEntry.ts:5
+[IGameStoreEntry](types.IGameStoreEntry.md).[gamePath](types.IGameStoreEntry.md#gamepath)
+
+#### Defined in
+
+../src/types/IGameStoreEntry.ts:5
 
 ___
 
 ### gameStoreId
 
-• **gameStoreId**: *string*
+• **gameStoreId**: `string`
 
-Inherited from: [IGameStoreEntry](types.igamestoreentry.md).[gameStoreId](types.igamestoreentry.md#gamestoreid)
+#### Inherited from
 
-Defined in: src/types/IGameStoreEntry.ts:6
+[IGameStoreEntry](types.IGameStoreEntry.md).[gameStoreId](types.IGameStoreEntry.md#gamestoreid)
+
+#### Defined in
+
+../src/types/IGameStoreEntry.ts:6
 
 ___
 
 ### lastUpdated
 
-• `Optional` **lastUpdated**: Date
+• `Optional` **lastUpdated**: `Date`
 
-Inherited from: [IGameStoreEntry](types.igamestoreentry.md).[lastUpdated](types.igamestoreentry.md#lastupdated)
+#### Inherited from
 
-Defined in: src/types/IGameStoreEntry.ts:7
+[IGameStoreEntry](types.IGameStoreEntry.md).[lastUpdated](types.IGameStoreEntry.md#lastupdated)
+
+#### Defined in
+
+../src/types/IGameStoreEntry.ts:7
 
 ___
 
 ### lastUser
 
-• `Optional` **lastUser**: *string*
+• `Optional` **lastUser**: `string`
 
-Inherited from: [IGameStoreEntry](types.igamestoreentry.md).[lastUser](types.igamestoreentry.md#lastuser)
+#### Inherited from
 
-Defined in: src/types/IGameStoreEntry.ts:8
+[IGameStoreEntry](types.IGameStoreEntry.md).[lastUser](types.IGameStoreEntry.md#lastuser)
+
+#### Defined in
+
+../src/types/IGameStoreEntry.ts:8
 
 ___
 
 ### name
 
-• **name**: *string*
+• **name**: `string`
 
-Inherited from: [IGameStoreEntry](types.igamestoreentry.md).[name](types.igamestoreentry.md#name)
+#### Inherited from
 
-Defined in: src/types/IGameStoreEntry.ts:4
+[IGameStoreEntry](types.IGameStoreEntry.md).[name](types.IGameStoreEntry.md#name)
+
+#### Defined in
+
+../src/types/IGameStoreEntry.ts:4

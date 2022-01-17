@@ -8,12 +8,14 @@
 
 ### Properties
 
-- [id](types.icontrolbase.md#id)
+- [id](types.IControlBase.md#id)
 
 ## Properties
 
 ### id
 
-• **id**: *string*
+• **id**: `string`
 
-Defined in: src/types/IDialog.ts:42
+#### Defined in
+
+../src/types/IDialog.ts:46

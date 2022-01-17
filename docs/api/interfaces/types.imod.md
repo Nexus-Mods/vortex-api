@@ -12,86 +12,106 @@ represents a mod in all states (being downloaded, downloaded, installed)
 
 ### Properties
 
-- [archiveId](types.imod.md#archiveid)
-- [attributes](types.imod.md#attributes)
-- [enabledINITweaks](types.imod.md#enabledinitweaks)
-- [fileOverrides](types.imod.md#fileoverrides)
-- [id](types.imod.md#id)
-- [installationPath](types.imod.md#installationpath)
-- [rules](types.imod.md#rules)
-- [state](types.imod.md#state)
-- [type](types.imod.md#type)
+- [archiveId](types.IMod.md#archiveid)
+- [attributes](types.IMod.md#attributes)
+- [enabledINITweaks](types.IMod.md#enabledinitweaks)
+- [fileOverrides](types.IMod.md#fileoverrides)
+- [id](types.IMod.md#id)
+- [installationPath](types.IMod.md#installationpath)
+- [rules](types.IMod.md#rules)
+- [state](types.IMod.md#state)
+- [type](types.IMod.md#type)
 
 ## Properties
 
 ### archiveId
 
-• `Optional` **archiveId**: *string*
+• `Optional` **archiveId**: `string`
 
-Defined in: src/extensions/mod_management/types/IMod.ts:23
+#### Defined in
+
+../src/extensions/mod_management/types/IMod.ts:23
 
 ___
 
 ### attributes
 
-• `Optional` **attributes**: *object*
+• `Optional` **attributes**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/extensions/mod_management/types/IMod.ts:27
+▪ [id: `string`]: `any`
+
+#### Defined in
+
+../src/extensions/mod_management/types/IMod.ts:27
 
 ___
 
 ### enabledINITweaks
 
-• `Optional` **enabledINITweaks**: *string*[]
+• `Optional` **enabledINITweaks**: `string`[]
 
-Defined in: src/extensions/mod_management/types/IMod.ts:31
+#### Defined in
+
+../src/extensions/mod_management/types/IMod.ts:31
 
 ___
 
 ### fileOverrides
 
-• `Optional` **fileOverrides**: *string*[]
+• `Optional` **fileOverrides**: `string`[]
 
-Defined in: src/extensions/mod_management/types/IMod.ts:33
+#### Defined in
+
+../src/extensions/mod_management/types/IMod.ts:33
 
 ___
 
 ### id
 
-• **id**: *string*
+• **id**: `string`
 
-Defined in: src/extensions/mod_management/types/IMod.ts:14
+#### Defined in
+
+../src/extensions/mod_management/types/IMod.ts:14
 
 ___
 
 ### installationPath
 
-• **installationPath**: *string*
+• **installationPath**: `string`
 
-Defined in: src/extensions/mod_management/types/IMod.ts:25
+#### Defined in
+
+../src/extensions/mod_management/types/IMod.ts:25
 
 ___
 
 ### rules
 
-• `Optional` **rules**: IRule[]
+• `Optional` **rules**: [`IModRule`](types.IModRule.md)[]
 
-Defined in: src/extensions/mod_management/types/IMod.ts:29
+#### Defined in
+
+../src/extensions/mod_management/types/IMod.ts:29
 
 ___
 
 ### state
 
-• **state**: ModState
+• **state**: `ModState`
 
-Defined in: src/extensions/mod_management/types/IMod.ts:16
+#### Defined in
+
+../src/extensions/mod_management/types/IMod.ts:16
 
 ___
 
 ### type
 
-• **type**: *string*
+• **type**: `string`
 
-Defined in: src/extensions/mod_management/types/IMod.ts:21
+#### Defined in
+
+../src/extensions/mod_management/types/IMod.ts:21

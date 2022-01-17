@@ -1,125 +1,167 @@
-[vortex_devel](../README.md) / [Exports](../modules.md) / [Promise](../modules/promise.md) / TimeoutError
+[vortex_devel](../README.md) / [Exports](../modules.md) / [Promise](../modules/Promise.md) / TimeoutError
 
 # Class: TimeoutError
 
-[Promise](../modules/promise.md).TimeoutError
+[Promise](../modules/Promise.md).TimeoutError
 
 Signals that an operation has timed out. Used as a custom cancellation reason in `.timeout`.
 
 ## Hierarchy
 
-* *Error*
+- `Error`
 
-  ↳ **TimeoutError**
+  ↳ **`TimeoutError`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](promise.timeouterror.md#constructor)
+- [constructor](Promise.TimeoutError.md#constructor)
 
 ### Properties
 
-- [message](promise.timeouterror.md#message)
-- [name](promise.timeouterror.md#name)
-- [prepareStackTrace](promise.timeouterror.md#preparestacktrace)
-- [stack](promise.timeouterror.md#stack)
-- [stackTraceLimit](promise.timeouterror.md#stacktracelimit)
+- [message](Promise.TimeoutError.md#message)
+- [name](Promise.TimeoutError.md#name)
+- [stack](Promise.TimeoutError.md#stack)
+- [prepareStackTrace](Promise.TimeoutError.md#preparestacktrace)
+- [stackTraceLimit](Promise.TimeoutError.md#stacktracelimit)
 
 ### Methods
 
-- [captureStackTrace](promise.timeouterror.md#capturestacktrace)
+- [captureStackTrace](Promise.TimeoutError.md#capturestacktrace)
 
 ## Constructors
 
 ### constructor
 
-\+ **new TimeoutError**(`message?`: *string*): [*TimeoutError*](promise.timeouterror.md)
+• **new TimeoutError**(`message?`)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`message?` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `message?` | `string` |
 
-**Returns:** [*TimeoutError*](promise.timeouterror.md)
+#### Inherited from
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:978
+Error.constructor
+
+#### Defined in
+
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1028
 
 ## Properties
 
 ### message
 
-• **message**: *string*
+• **message**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:974
+#### Inherited from
+
+Error.message
+
+#### Defined in
+
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1023
 
 ___
 
 ### name
 
-• **name**: *string*
+• **name**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:973
+#### Inherited from
 
-___
+Error.name
 
-### prepareStackTrace
+#### Defined in
 
-• `Optional` **prepareStackTrace**: (`err`: Error, `stackTraces`: CallSite[]) => *any*
-
-Optional override for formatting stack traces
-
-**`see`** https://github.com/v8/v8/wiki/Stack%20Trace%20API#customizing-stack-traces
-
-#### Type declaration:
-
-▸ (`err`: Error, `stackTraces`: CallSite[]): *any*
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`err` | Error |
-`stackTraces` | CallSite[] |
-
-**Returns:** *any*
-
-Defined in: node_modules/@types/node/globals.d.ts:140
-
-Defined in: node_modules/@types/node/globals.d.ts:140
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1022
 
 ___
 
 ### stack
 
-• `Optional` **stack**: *string*
+• `Optional` **stack**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:975
+#### Inherited from
+
+Error.stack
+
+#### Defined in
+
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1024
+
+___
+
+### prepareStackTrace
+
+▪ `Static` `Optional` **prepareStackTrace**: (`err`: `Error`, `stackTraces`: `CallSite`[]) => `any`
+
+#### Type declaration
+
+▸ (`err`, `stackTraces`): `any`
+
+Optional override for formatting stack traces
+
+**`see`** https://v8.dev/docs/stack-trace-api#customizing-stack-traces
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `err` | `Error` |
+| `stackTraces` | `CallSite`[] |
+
+##### Returns
+
+`any`
+
+#### Inherited from
+
+Error.prepareStackTrace
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:11
 
 ___
 
 ### stackTraceLimit
 
-• **stackTraceLimit**: *number*
+▪ `Static` **stackTraceLimit**: `number`
 
-Defined in: node_modules/@types/node/globals.d.ts:142
+#### Inherited from
+
+Error.stackTraceLimit
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:13
 
 ## Methods
 
 ### captureStackTrace
 
-▸ **captureStackTrace**(`targetObject`: Object, `constructorOpt?`: Function): *void*
+▸ `Static` **captureStackTrace**(`targetObject`, `constructorOpt?`): `void`
 
 Create .stack property on a target object
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`targetObject` | Object |
-`constructorOpt?` | Function |
+| Name | Type |
+| :------ | :------ |
+| `targetObject` | `object` |
+| `constructorOpt?` | `Function` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/node/globals.d.ts:133
+`void`
+
+#### Inherited from
+
+Error.captureStackTrace
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:4

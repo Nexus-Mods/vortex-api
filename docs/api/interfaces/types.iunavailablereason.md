@@ -10,92 +10,91 @@ Indicates why a deployment method is unavailable an if it can be made to work
 
 ### Properties
 
-- [description](types.iunavailablereason.md#description)
-- [fixCallback](types.iunavailablereason.md#fixcallback)
-- [order](types.iunavailablereason.md#order)
-- [solution](types.iunavailablereason.md#solution)
+- [order](types.IUnavailableReason.md#order)
+
+### Methods
+
+- [description](types.IUnavailableReason.md#description)
+- [fixCallback](types.IUnavailableReason.md#fixcallback)
+- [solution](types.IUnavailableReason.md#solution)
 
 ## Properties
 
-### description
-
-• **description**: (`t`: TFunction) => *string*
-
-description (english) why the deployment method is unavailable
-
-#### Type declaration:
-
-▸ (`t`: TFunction): *string*
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`t` | TFunction |
-
-**Returns:** *string*
-
-Defined in: src/extensions/mod_management/types/IDeploymentMethod.ts:81
-
-Defined in: src/extensions/mod_management/types/IDeploymentMethod.ts:81
-
-___
-
-### fixCallback
-
-• `Optional` **fixCallback**: (`api`: [*IExtensionApi*](types.iextensionapi.md)) => [*Promise*](../classes/promise.md)<void\>
-
-if the problem can be fixed automatically, this can be set to a function that takes care
-of it
-
-#### Type declaration:
-
-▸ (`api`: [*IExtensionApi*](types.iextensionapi.md)): [*Promise*](../classes/promise.md)<void\>
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`api` | [*IExtensionApi*](types.iextensionapi.md) |
-
-**Returns:** [*Promise*](../classes/promise.md)<void\>
-
-Defined in: src/extensions/mod_management/types/IDeploymentMethod.ts:90
-
-Defined in: src/extensions/mod_management/types/IDeploymentMethod.ts:90
-
-___
-
 ### order
 
-• `Optional` **order**: *number*
+• `Optional` **order**: `number`
 
 When no method is supported, Vortex will offer possible solutions in this order.
 It should indicate both how much effort the solution is and also a general preference for
 this deployment methods so that the preferred method has a lower order number than others.
 
-Defined in: src/extensions/mod_management/types/IDeploymentMethod.ts:96
+#### Defined in
+
+../src/extensions/mod_management/types/IDeploymentMethod.ts:96
+
+## Methods
+
+### description
+
+▸ **description**(`t`): `string`
+
+description (english) why the deployment method is unavailable
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `t` | `TFunction` |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+../src/extensions/mod_management/types/IDeploymentMethod.ts:81
+
+___
+
+### fixCallback
+
+▸ `Optional` **fixCallback**(`api`): [`Promise`](../classes/Promise.md)<`void`\>
+
+if the problem can be fixed automatically, this can be set to a function that takes care
+of it
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `api` | [`IExtensionApi`](types.IExtensionApi.md) |
+
+#### Returns
+
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/extensions/mod_management/types/IDeploymentMethod.ts:90
 
 ___
 
 ### solution
 
-• `Optional` **solution**: (`t`: TFunction) => *string*
+▸ `Optional` **solution**(`t`): `string`
 
 describes the solution to make this
 
-#### Type declaration:
+#### Parameters
 
-▸ (`t`: TFunction): *string*
+| Name | Type |
+| :------ | :------ |
+| `t` | `TFunction` |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`t` | TFunction |
+`string`
 
-**Returns:** *string*
+#### Defined in
 
-Defined in: src/extensions/mod_management/types/IDeploymentMethod.ts:85
-
-Defined in: src/extensions/mod_management/types/IDeploymentMethod.ts:85
+../src/extensions/mod_management/types/IDeploymentMethod.ts:85

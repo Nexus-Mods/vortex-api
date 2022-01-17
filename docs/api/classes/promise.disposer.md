@@ -1,33 +1,31 @@
-[vortex_devel](../README.md) / [Exports](../modules.md) / [Promise](../modules/promise.md) / Disposer
+[vortex_devel](../README.md) / [Exports](../modules.md) / [Promise](../modules/Promise.md) / Disposer
 
 # Class: Disposer<R\>
 
-[Promise](../modules/promise.md).Disposer
+[Promise](../modules/Promise.md).Disposer
 
 returned by `Bluebird.disposer()`.
 
 ## Type parameters
 
-Name |
-:------ |
-`R` |
+| Name |
+| :------ |
+| `R` |
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](promise.disposer.md#constructor)
+- [constructor](Promise.Disposer.md#constructor)
 
 ## Constructors
 
 ### constructor
 
-\+ **new Disposer**<R\>(): [*Disposer*](promise.disposer.md)<R\>
+• **new Disposer**<`R`\>()
 
-#### Type parameters:
+#### Type parameters
 
-Name |
-:------ |
-`R` |
-
-**Returns:** [*Disposer*](promise.disposer.md)<R\>
+| Name |
+| :------ |
+| `R` |

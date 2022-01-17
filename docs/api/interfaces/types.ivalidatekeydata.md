@@ -6,7 +6,7 @@
 
 Data retrieved with a correct API Key
 
-**`export`** 
+**`export`**
 
 **`interface`** IValidateKeyData
 
@@ -14,57 +14,69 @@ Data retrieved with a correct API Key
 
 ### Properties
 
-- [email](types.ivalidatekeydata.md#email)
-- [isPremium](types.ivalidatekeydata.md#ispremium)
-- [isSupporter](types.ivalidatekeydata.md#issupporter)
-- [name](types.ivalidatekeydata.md#name)
-- [profileUrl](types.ivalidatekeydata.md#profileurl)
-- [userId](types.ivalidatekeydata.md#userid)
+- [email](types.IValidateKeyData.md#email)
+- [isPremium](types.IValidateKeyData.md#ispremium)
+- [isSupporter](types.IValidateKeyData.md#issupporter)
+- [name](types.IValidateKeyData.md#name)
+- [profileUrl](types.IValidateKeyData.md#profileurl)
+- [userId](types.IValidateKeyData.md#userid)
 
 ## Properties
 
 ### email
 
-• **email**: *string*
+• **email**: `string`
 
-Defined in: src/extensions/nexus_integration/types/IValidateKeyData.ts:8
+#### Defined in
+
+../src/extensions/nexus_integration/types/IValidateKeyData.ts:8
 
 ___
 
 ### isPremium
 
-• **isPremium**: *boolean*
+• **isPremium**: `boolean`
 
-Defined in: src/extensions/nexus_integration/types/IValidateKeyData.ts:9
+#### Defined in
+
+../src/extensions/nexus_integration/types/IValidateKeyData.ts:9
 
 ___
 
 ### isSupporter
 
-• **isSupporter**: *boolean*
+• **isSupporter**: `boolean`
 
-Defined in: src/extensions/nexus_integration/types/IValidateKeyData.ts:10
+#### Defined in
+
+../src/extensions/nexus_integration/types/IValidateKeyData.ts:10
 
 ___
 
 ### name
 
-• **name**: *string*
+• **name**: `string`
 
-Defined in: src/extensions/nexus_integration/types/IValidateKeyData.ts:11
+#### Defined in
+
+../src/extensions/nexus_integration/types/IValidateKeyData.ts:11
 
 ___
 
 ### profileUrl
 
-• **profileUrl**: *string*
+• **profileUrl**: `string`
 
-Defined in: src/extensions/nexus_integration/types/IValidateKeyData.ts:12
+#### Defined in
+
+../src/extensions/nexus_integration/types/IValidateKeyData.ts:12
 
 ___
 
 ### userId
 
-• **userId**: *number*
+• **userId**: `number`
 
-Defined in: src/extensions/nexus_integration/types/IValidateKeyData.ts:13
+#### Defined in
+
+../src/extensions/nexus_integration/types/IValidateKeyData.ts:13

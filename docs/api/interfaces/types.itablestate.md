@@ -8,25 +8,59 @@
 
 ### Properties
 
-- [attributes](types.itablestate.md#attributes)
-- [rows](types.itablestate.md#rows)
+- [attributes](types.ITableState.md#attributes)
+- [filter](types.ITableState.md#filter)
+- [groupBy](types.ITableState.md#groupby)
+- [rows](types.ITableState.md#rows)
 
 ## Properties
 
 ### attributes
 
-• **attributes**: *object*
+• **attributes**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IState.ts:117
+▪ [id: `string`]: [`IAttributeState`](types.IAttributeState.md)
+
+#### Defined in
+
+../src/types/IState.ts:117
+
+___
+
+### filter
+
+• `Optional` **filter**: `Object`
+
+#### Index signature
+
+▪ [id: `string`]: `any`
+
+#### Defined in
+
+../src/types/IState.ts:120
+
+___
+
+### groupBy
+
+• `Optional` **groupBy**: `string`
+
+#### Defined in
+
+../src/types/IState.ts:119
 
 ___
 
 ### rows
 
-• **rows**: *object*
+• **rows**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IState.ts:118
+▪ [id: `string`]: [`IRowState`](types.IRowState.md)
+
+#### Defined in
+
+../src/types/IState.ts:118

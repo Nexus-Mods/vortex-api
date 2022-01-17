@@ -6,118 +6,190 @@
 
 ## Hierarchy
 
-* *Error*
+- `Error`
 
-  ↳ **ProcessCanceled**
+  ↳ **`ProcessCanceled`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](util.processcanceled.md#constructor)
+- [constructor](util.ProcessCanceled.md#constructor)
 
 ### Properties
 
-- [message](util.processcanceled.md#message)
-- [name](util.processcanceled.md#name)
-- [prepareStackTrace](util.processcanceled.md#preparestacktrace)
-- [stack](util.processcanceled.md#stack)
-- [stackTraceLimit](util.processcanceled.md#stacktracelimit)
+- [mExtraInfo](util.ProcessCanceled.md#mextrainfo)
+- [message](util.ProcessCanceled.md#message)
+- [name](util.ProcessCanceled.md#name)
+- [stack](util.ProcessCanceled.md#stack)
+- [prepareStackTrace](util.ProcessCanceled.md#preparestacktrace)
+- [stackTraceLimit](util.ProcessCanceled.md#stacktracelimit)
+
+### Accessors
+
+- [extraInfo](util.ProcessCanceled.md#extrainfo)
 
 ### Methods
 
-- [captureStackTrace](util.processcanceled.md#capturestacktrace)
+- [captureStackTrace](util.ProcessCanceled.md#capturestacktrace)
 
 ## Constructors
 
 ### constructor
 
-\+ **new ProcessCanceled**(`message`: *string*): [*ProcessCanceled*](util.processcanceled.md)
+• **new ProcessCanceled**(`message`, `extraInfo?`)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`message` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `message` | `string` |
+| `extraInfo?` | `any` |
 
-**Returns:** [*ProcessCanceled*](util.processcanceled.md)
+#### Overrides
 
-Defined in: src/util/CustomErrors.ts:46
+Error.constructor
+
+#### Defined in
+
+../src/util/CustomErrors.ts:48
 
 ## Properties
 
+### mExtraInfo
+
+• `Private` **mExtraInfo**: `any`
+
+#### Defined in
+
+../src/util/CustomErrors.ts:47
+
+___
+
 ### message
 
-• **message**: *string*
+• **message**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:974
+#### Inherited from
+
+Error.message
+
+#### Defined in
+
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1023
 
 ___
 
 ### name
 
-• **name**: *string*
+• **name**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:973
+#### Inherited from
 
-___
+Error.name
 
-### prepareStackTrace
+#### Defined in
 
-• `Optional` **prepareStackTrace**: (`err`: Error, `stackTraces`: CallSite[]) => *any*
-
-Optional override for formatting stack traces
-
-**`see`** https://github.com/v8/v8/wiki/Stack%20Trace%20API#customizing-stack-traces
-
-#### Type declaration:
-
-▸ (`err`: Error, `stackTraces`: CallSite[]): *any*
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`err` | Error |
-`stackTraces` | CallSite[] |
-
-**Returns:** *any*
-
-Defined in: node_modules/@types/node/globals.d.ts:140
-
-Defined in: node_modules/@types/node/globals.d.ts:140
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1022
 
 ___
 
 ### stack
 
-• `Optional` **stack**: *string*
+• `Optional` **stack**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:975
+#### Inherited from
+
+Error.stack
+
+#### Defined in
+
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1024
+
+___
+
+### prepareStackTrace
+
+▪ `Static` `Optional` **prepareStackTrace**: (`err`: `Error`, `stackTraces`: `CallSite`[]) => `any`
+
+#### Type declaration
+
+▸ (`err`, `stackTraces`): `any`
+
+Optional override for formatting stack traces
+
+**`see`** https://v8.dev/docs/stack-trace-api#customizing-stack-traces
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `err` | `Error` |
+| `stackTraces` | `CallSite`[] |
+
+##### Returns
+
+`any`
+
+#### Inherited from
+
+Error.prepareStackTrace
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:11
 
 ___
 
 ### stackTraceLimit
 
-• **stackTraceLimit**: *number*
+▪ `Static` **stackTraceLimit**: `number`
 
-Defined in: node_modules/@types/node/globals.d.ts:142
+#### Inherited from
+
+Error.stackTraceLimit
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:13
+
+## Accessors
+
+### extraInfo
+
+• `get` **extraInfo**(): `any`
+
+#### Returns
+
+`any`
+
+#### Defined in
+
+../src/util/CustomErrors.ts:54
 
 ## Methods
 
 ### captureStackTrace
 
-▸ **captureStackTrace**(`targetObject`: Object, `constructorOpt?`: Function): *void*
+▸ `Static` **captureStackTrace**(`targetObject`, `constructorOpt?`): `void`
 
 Create .stack property on a target object
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`targetObject` | Object |
-`constructorOpt?` | Function |
+| Name | Type |
+| :------ | :------ |
+| `targetObject` | `object` |
+| `constructorOpt?` | `Function` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/node/globals.d.ts:133
+`void`
+
+#### Inherited from
+
+Error.captureStackTrace
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:4

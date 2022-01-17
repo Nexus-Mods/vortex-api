@@ -8,35 +8,38 @@
 
 ### Properties
 
-- [action](types.inotificationaction.md#action)
-- [title](types.inotificationaction.md#title)
+- [title](types.INotificationAction.md#title)
+
+### Methods
+
+- [action](types.INotificationAction.md#action)
 
 ## Properties
 
-### action
-
-• **action**: (`dismiss`: [*NotificationDismiss*](../modules/types.md#notificationdismiss)) => *void*
-
-#### Type declaration:
-
-▸ (`dismiss`: [*NotificationDismiss*](../modules/types.md#notificationdismiss)): *void*
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`dismiss` | [*NotificationDismiss*](../modules/types.md#notificationdismiss) |
-
-**Returns:** *void*
-
-Defined in: src/types/INotification.ts:5
-
-Defined in: src/types/INotification.ts:5
-
-___
-
 ### title
 
-• **title**: *string*
+• **title**: `string`
 
-Defined in: src/types/INotification.ts:4
+#### Defined in
+
+../src/types/INotification.ts:4
+
+## Methods
+
+### action
+
+▸ **action**(`dismiss`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `dismiss` | [`NotificationDismiss`](../modules/types.md#notificationdismiss) |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+../src/types/INotification.ts:5

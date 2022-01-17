@@ -12,208 +12,246 @@ again (through this Debouncer) before the promise is resolved.
 
 ### Constructors
 
-- [constructor](util.debouncer.md#constructor)
+- [constructor](util.Debouncer.md#constructor)
 
 ### Properties
 
-- [mAddCallbacks](util.debouncer.md#maddcallbacks)
-- [mArgs](util.debouncer.md#margs)
-- [mCallbacks](util.debouncer.md#mcallbacks)
-- [mDebounceMS](util.debouncer.md#mdebouncems)
-- [mFunc](util.debouncer.md#mfunc)
-- [mReschedule](util.debouncer.md#mreschedule)
-- [mResetting](util.debouncer.md#mresetting)
-- [mRetrigger](util.debouncer.md#mretrigger)
-- [mRunning](util.debouncer.md#mrunning)
-- [mTimer](util.debouncer.md#mtimer)
-- [mTriggerImmediately](util.debouncer.md#mtriggerimmediately)
+- [mAddCallbacks](util.Debouncer.md#maddcallbacks)
+- [mArgs](util.Debouncer.md#margs)
+- [mCallbacks](util.Debouncer.md#mcallbacks)
+- [mDebounceMS](util.Debouncer.md#mdebouncems)
+- [mFunc](util.Debouncer.md#mfunc)
+- [mReschedule](util.Debouncer.md#mreschedule)
+- [mResetting](util.Debouncer.md#mresetting)
+- [mRetrigger](util.Debouncer.md#mretrigger)
+- [mRunning](util.Debouncer.md#mrunning)
+- [mTimer](util.Debouncer.md#mtimer)
+- [mTriggerImmediately](util.Debouncer.md#mtriggerimmediately)
 
 ### Methods
 
-- [clear](util.debouncer.md#clear)
-- [invokeCallbacks](util.debouncer.md#invokecallbacks)
-- [reschedule](util.debouncer.md#reschedule)
-- [run](util.debouncer.md#run)
-- [runNow](util.debouncer.md#runnow)
-- [schedule](util.debouncer.md#schedule)
-- [startTimer](util.debouncer.md#starttimer)
-- [wait](util.debouncer.md#wait)
+- [clear](util.Debouncer.md#clear)
+- [invokeCallbacks](util.Debouncer.md#invokecallbacks)
+- [reschedule](util.Debouncer.md#reschedule)
+- [run](util.Debouncer.md#run)
+- [runNow](util.Debouncer.md#runnow)
+- [schedule](util.Debouncer.md#schedule)
+- [startTimer](util.Debouncer.md#starttimer)
+- [wait](util.Debouncer.md#wait)
 
 ## Constructors
 
 ### constructor
 
-\+ **new Debouncer**(`func`: (...`args`: *any*[]) => *PromiseLike*<void\> \| Error, `debounceMS`: *number*, `reset?`: *boolean*, `triggerImmediately?`: *boolean*): [*Debouncer*](util.debouncer.md)
+• **new Debouncer**(`func`, `debounceMS`, `reset?`, `triggerImmediately?`)
 
 constructor
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Default value | Description |
-:------ | :------ | :------ | :------ |
-`func` | (...`args`: *any*[]) => *PromiseLike*<void\> \| Error | - | the function to call when the timer expired   |
-`debounceMS` | *number* | - | the (minimum) time between two calls   |
-`reset?` | *boolean* | - | if true (the default) the time is reset with every              time schedule gets called. This means if the debouncer              is triggered regularly in less than debounceMS it never              gets run.   |
-`triggerImmediately` | *boolean* | false | if true, the debouncer will trigger immediately                           when first called and then not be called again                           until the timer expires. Otherwise (the default)                           the initial call is delay.    |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `func` | (...`args`: `any`[]) => `PromiseLike`<`void`\> \| `Error` | `undefined` | the function to call when the timer expired |
+| `debounceMS` | `number` | `undefined` | the (minimum) time between two calls |
+| `reset?` | `boolean` | `undefined` | if true (the default) the time is reset with every              time schedule gets called. This means if the debouncer              is triggered regularly in less than debounceMS it never              gets run. |
+| `triggerImmediately` | `boolean` | `false` | if true, the debouncer will trigger immediately                           when first called and then not be called again                           until the timer expires. Otherwise (the default)                           the initial call is delay. |
 
-**Returns:** [*Debouncer*](util.debouncer.md)
+#### Defined in
 
-Defined in: src/util/Debouncer.ts:25
+../src/util/Debouncer.ts:40
 
 ## Properties
 
 ### mAddCallbacks
 
-• `Private` **mAddCallbacks**: Callback[]
+• `Private` **mAddCallbacks**: `Callback`[] = `[]`
 
-Defined in: src/util/Debouncer.ts:18
+#### Defined in
+
+../src/util/Debouncer.ts:18
 
 ___
 
 ### mArgs
 
-• `Private` **mArgs**: *any*[]
+• `Private` **mArgs**: `any`[] = `[]`
 
-Defined in: src/util/Debouncer.ts:21
+#### Defined in
+
+../src/util/Debouncer.ts:21
 
 ___
 
 ### mCallbacks
 
-• `Private` **mCallbacks**: Callback[]
+• `Private` **mCallbacks**: `Callback`[] = `[]`
 
-Defined in: src/util/Debouncer.ts:17
+#### Defined in
+
+../src/util/Debouncer.ts:17
 
 ___
 
 ### mDebounceMS
 
-• `Private` **mDebounceMS**: *number*
+• `Private` **mDebounceMS**: `number`
 
-Defined in: src/util/Debouncer.ts:13
+#### Defined in
+
+../src/util/Debouncer.ts:13
 
 ___
 
 ### mFunc
 
-• `Private` **mFunc**: (...`args`: *any*[]) => *PromiseLike*<void\> \| Error
+• `Private` **mFunc**: (...`args`: `any`[]) => `PromiseLike`<`void`\> \| `Error`
 
-#### Type declaration:
+#### Type declaration
 
-▸ (...`args`: *any*[]): *PromiseLike*<void\> \| Error
+▸ (...`args`): `PromiseLike`<`void`\> \| `Error`
 
-#### Parameters:
+##### Parameters
 
-Name | Type |
-:------ | :------ |
-`...args` | *any*[] |
+| Name | Type |
+| :------ | :------ |
+| `...args` | `any`[] |
 
-**Returns:** *PromiseLike*<void\> \| Error
+##### Returns
 
-Defined in: src/util/Debouncer.ts:14
+`PromiseLike`<`void`\> \| `Error`
 
-Defined in: src/util/Debouncer.ts:14
+#### Defined in
+
+../src/util/Debouncer.ts:14
 
 ___
 
 ### mReschedule
 
-• `Private` **mReschedule**: *yes* \| *no* \| *immediately*= 'no'
+• `Private` **mReschedule**: ``"yes"`` \| ``"no"`` \| ``"immediately"`` = `'no'`
 
-Defined in: src/util/Debouncer.ts:20
+#### Defined in
+
+../src/util/Debouncer.ts:20
 
 ___
 
 ### mResetting
 
-• `Private` **mResetting**: *boolean*
+• `Private` **mResetting**: `boolean`
 
-Defined in: src/util/Debouncer.ts:22
+#### Defined in
+
+../src/util/Debouncer.ts:22
 
 ___
 
 ### mRetrigger
 
-• `Private` **mRetrigger**: *boolean*= false
+• `Private` **mRetrigger**: `boolean` = `false`
 
-Defined in: src/util/Debouncer.ts:25
+#### Defined in
+
+../src/util/Debouncer.ts:25
 
 ___
 
 ### mRunning
 
-• `Private` **mRunning**: *boolean*= false
+• `Private` **mRunning**: `boolean` = `false`
 
-Defined in: src/util/Debouncer.ts:19
+#### Defined in
+
+../src/util/Debouncer.ts:19
 
 ___
 
 ### mTimer
 
-• `Private` **mTimer**: *Timer*
+• `Private` **mTimer**: `Timer`
 
-Defined in: src/util/Debouncer.ts:15
+#### Defined in
+
+../src/util/Debouncer.ts:15
 
 ___
 
 ### mTriggerImmediately
 
-• `Private` **mTriggerImmediately**: *boolean*
+• `Private` **mTriggerImmediately**: `boolean`
 
-Defined in: src/util/Debouncer.ts:23
+#### Defined in
+
+../src/util/Debouncer.ts:23
 
 ## Methods
 
 ### clear
 
-▸ **clear**(): *void*
+▸ **clear**(): `void`
 
-**Returns:** *void*
+#### Returns
 
-Defined in: src/util/Debouncer.ts:140
+`void`
+
+#### Defined in
+
+../src/util/Debouncer.ts:140
 
 ___
 
 ### invokeCallbacks
 
-▸ `Private`**invokeCallbacks**(`localCallbacks`: Callback[], `err`: Error): *void*
+▸ `Private` **invokeCallbacks**(`localCallbacks`, `err`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`localCallbacks` | Callback[] |
-`err` | Error |
+| Name | Type |
+| :------ | :------ |
+| `localCallbacks` | `Callback`[] |
+| `err` | `Error` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: src/util/Debouncer.ts:193
+`void`
+
+#### Defined in
+
+../src/util/Debouncer.ts:193
 
 ___
 
 ### reschedule
 
-▸ `Private`**reschedule**(): *void*
+▸ `Private` **reschedule**(): `void`
 
-**Returns:** *void*
+#### Returns
 
-Defined in: src/util/Debouncer.ts:183
+`void`
+
+#### Defined in
+
+../src/util/Debouncer.ts:183
 
 ___
 
 ### run
 
-▸ `Private`**run**(): *void*
+▸ `Private` **run**(): `void`
 
-**Returns:** *void*
+#### Returns
 
-Defined in: src/util/Debouncer.ts:145
+`void`
+
+#### Defined in
+
+../src/util/Debouncer.ts:145
 
 ___
 
 ### runNow
 
-▸ **runNow**(`callback`: (`err`: Error) => *void*, ...`args`: *any*[]): *void*
+▸ **runNow**(`callback`, ...`args`): `void`
 
 run the function immediately without waiting for the timer
 to run out. (It does cancel the timer though and invokes all
@@ -221,51 +259,63 @@ scheduled callbacks)
 
 **`memberof`** Debouncer
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`callback` | (`err`: Error) => *void* |
-`...args` | *any*[] |
+| Name | Type |
+| :------ | :------ |
+| `callback` | (`err`: `Error`) => `void` |
+| `...args` | `any`[] |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: src/util/Debouncer.ts:95
+`void`
+
+#### Defined in
+
+../src/util/Debouncer.ts:95
 
 ___
 
 ### schedule
 
-▸ **schedule**(`callback?`: (`err`: Error) => *void*, ...`args`: *any*[]): *void*
+▸ **schedule**(`callback?`, ...`args`): `void`
 
 schedule the function and invoke the callback once that is done
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`callback?` | (`err`: Error) => *void* | the callback to invoke upon completion   |
-`...args` | *any*[] | the arguments to pass to the function. When the timer expires             and the function actually gets invoked, only the last set of             parameters will be used    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback?` | (`err`: `Error`) => `void` | the callback to invoke upon completion |
+| `...args` | `any`[] | the arguments to pass to the function. When the timer expires             and the function actually gets invoked, only the last set of             parameters will be used |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: src/util/Debouncer.ts:57
+`void`
+
+#### Defined in
+
+../src/util/Debouncer.ts:57
 
 ___
 
 ### startTimer
 
-▸ `Private`**startTimer**(): *void*
+▸ `Private` **startTimer**(): `void`
 
-**Returns:** *void*
+#### Returns
 
-Defined in: src/util/Debouncer.ts:199
+`void`
+
+#### Defined in
+
+../src/util/Debouncer.ts:199
 
 ___
 
 ### wait
 
-▸ **wait**(`callback`: (`err`: Error) => *void*, `immediately?`: *boolean*): *void*
+▸ **wait**(`callback`, `immediately?`): `void`
 
 wait for the completion of the current timer without scheduling it.
 if the function is not scheduled currently the callback will be
@@ -274,13 +324,17 @@ This does not reset the timer
 
 **`memberof`** Debouncer
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Default value | Description |
-:------ | :------ | :------ | :------ |
-`callback` | (`err`: Error) => *void* | - |  |
-`immediately` | *boolean* | false | if set (default is false) the function gets called                              immediately instead of awaiting the timer    |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `callback` | (`err`: `Error`) => `void` | `undefined` |  |
+| `immediately` | `boolean` | `false` | if set (default is false) the function gets called                              immediately instead of awaiting the timer |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: src/util/Debouncer.ts:125
+`void`
+
+#### Defined in
+
+../src/util/Debouncer.ts:125

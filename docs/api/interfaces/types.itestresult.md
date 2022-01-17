@@ -8,65 +8,68 @@
 
 ### Properties
 
-- [automaticFix](types.itestresult.md#automaticfix)
-- [description](types.itestresult.md#description)
-- [onRecheck](types.itestresult.md#onrecheck)
-- [severity](types.itestresult.md#severity)
+- [description](types.ITestResult.md#description)
+- [severity](types.ITestResult.md#severity)
+
+### Methods
+
+- [automaticFix](types.ITestResult.md#automaticfix)
+- [onRecheck](types.ITestResult.md#onrecheck)
 
 ## Properties
 
-### automaticFix
-
-• `Optional` **automaticFix**: () => [*Promise*](../classes/promise.md)<void\>
-
-#### Type declaration:
-
-▸ (): [*Promise*](../classes/promise.md)<void\>
-
-**Returns:** [*Promise*](../classes/promise.md)<void\>
-
-Defined in: src/types/ITestResult.ts:14
-
-Defined in: src/types/ITestResult.ts:14
-
-___
-
 ### description
 
-• **description**: *object*
+• **description**: `Object`
 
-#### Type declaration:
+#### Type declaration
 
-Name | Type |
-:------ | :------ |
-`context`? | *any* |
-`localize`? | *boolean* |
-`long`? | *string* |
-`replace`? | *object* |
-`short` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `context?` | `any` |
+| `localize?` | `boolean` |
+| `long?` | `string` |
+| `replace?` | `Object` |
+| `short` | `string` |
 
-Defined in: src/types/ITestResult.ts:6
+#### Defined in
 
-___
-
-### onRecheck
-
-• `Optional` **onRecheck**: () => [*Promise*](../classes/promise.md)<void\>
-
-#### Type declaration:
-
-▸ (): [*Promise*](../classes/promise.md)<void\>
-
-**Returns:** [*Promise*](../classes/promise.md)<void\>
-
-Defined in: src/types/ITestResult.ts:15
-
-Defined in: src/types/ITestResult.ts:15
+../src/types/ITestResult.ts:6
 
 ___
 
 ### severity
 
-• **severity**: [*ProblemSeverity*](../modules/types.md#problemseverity)
+• **severity**: [`ProblemSeverity`](../modules/types.md#problemseverity)
 
-Defined in: src/types/ITestResult.ts:13
+#### Defined in
+
+../src/types/ITestResult.ts:13
+
+## Methods
+
+### automaticFix
+
+▸ `Optional` **automaticFix**(): [`Promise`](../classes/Promise.md)<`void`\>
+
+#### Returns
+
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/types/ITestResult.ts:14
+
+___
+
+### onRecheck
+
+▸ `Optional` **onRecheck**(): [`Promise`](../classes/Promise.md)<`void`\>
+
+#### Returns
+
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/types/ITestResult.ts:15

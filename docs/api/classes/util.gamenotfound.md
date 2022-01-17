@@ -6,141 +6,189 @@
 
 ## Hierarchy
 
-* *Error*
+- `Error`
 
-  ↳ **GameNotFound**
+  ↳ **`GameNotFound`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](util.gamenotfound.md#constructor)
+- [constructor](util.GameNotFound.md#constructor)
 
 ### Properties
 
-- [mSearch](util.gamenotfound.md#msearch)
-- [message](util.gamenotfound.md#message)
-- [name](util.gamenotfound.md#name)
-- [prepareStackTrace](util.gamenotfound.md#preparestacktrace)
-- [stack](util.gamenotfound.md#stack)
-- [stackTraceLimit](util.gamenotfound.md#stacktracelimit)
+- [mSearch](util.GameNotFound.md#msearch)
+- [message](util.GameNotFound.md#message)
+- [name](util.GameNotFound.md#name)
+- [stack](util.GameNotFound.md#stack)
+- [prepareStackTrace](util.GameNotFound.md#preparestacktrace)
+- [stackTraceLimit](util.GameNotFound.md#stacktracelimit)
 
 ### Accessors
 
-- [search](util.gamenotfound.md#search)
+- [search](util.GameNotFound.md#search)
 
 ### Methods
 
-- [captureStackTrace](util.gamenotfound.md#capturestacktrace)
+- [captureStackTrace](util.GameNotFound.md#capturestacktrace)
 
 ## Constructors
 
 ### constructor
 
-\+ **new GameNotFound**(`search`: *string*): [*GameNotFound*](util.gamenotfound.md)
+• **new GameNotFound**(`search`)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`search` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `search` | `string` |
 
-**Returns:** [*GameNotFound*](util.gamenotfound.md)
+#### Overrides
 
-Defined in: src/util/Steam.ts:25
+Error.constructor
+
+#### Defined in
+
+../src/util/Steam.ts:24
 
 ## Properties
 
 ### mSearch
 
-• `Private` **mSearch**: *any*
+• `Private` **mSearch**: `any`
 
-Defined in: src/util/Steam.ts:25
+#### Defined in
+
+../src/util/Steam.ts:23
 
 ___
 
 ### message
 
-• **message**: *string*
+• **message**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:974
+#### Inherited from
+
+Error.message
+
+#### Defined in
+
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1023
 
 ___
 
 ### name
 
-• **name**: *string*
+• **name**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:973
+#### Inherited from
 
-___
+Error.name
 
-### prepareStackTrace
+#### Defined in
 
-• `Optional` **prepareStackTrace**: (`err`: Error, `stackTraces`: CallSite[]) => *any*
-
-Optional override for formatting stack traces
-
-**`see`** https://github.com/v8/v8/wiki/Stack%20Trace%20API#customizing-stack-traces
-
-#### Type declaration:
-
-▸ (`err`: Error, `stackTraces`: CallSite[]): *any*
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`err` | Error |
-`stackTraces` | CallSite[] |
-
-**Returns:** *any*
-
-Defined in: node_modules/@types/node/globals.d.ts:140
-
-Defined in: node_modules/@types/node/globals.d.ts:140
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1022
 
 ___
 
 ### stack
 
-• `Optional` **stack**: *string*
+• `Optional` **stack**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:975
+#### Inherited from
+
+Error.stack
+
+#### Defined in
+
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1024
+
+___
+
+### prepareStackTrace
+
+▪ `Static` `Optional` **prepareStackTrace**: (`err`: `Error`, `stackTraces`: `CallSite`[]) => `any`
+
+#### Type declaration
+
+▸ (`err`, `stackTraces`): `any`
+
+Optional override for formatting stack traces
+
+**`see`** https://v8.dev/docs/stack-trace-api#customizing-stack-traces
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `err` | `Error` |
+| `stackTraces` | `CallSite`[] |
+
+##### Returns
+
+`any`
+
+#### Inherited from
+
+Error.prepareStackTrace
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:11
 
 ___
 
 ### stackTraceLimit
 
-• **stackTraceLimit**: *number*
+▪ `Static` **stackTraceLimit**: `number`
 
-Defined in: node_modules/@types/node/globals.d.ts:142
+#### Inherited from
+
+Error.stackTraceLimit
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:13
 
 ## Accessors
 
 ### search
 
-• get **search**(): *any*
+• `get` **search**(): `any`
 
-**Returns:** *any*
+#### Returns
 
-Defined in: src/util/Steam.ts:33
+`any`
+
+#### Defined in
+
+../src/util/Steam.ts:31
 
 ## Methods
 
 ### captureStackTrace
 
-▸ **captureStackTrace**(`targetObject`: Object, `constructorOpt?`: Function): *void*
+▸ `Static` **captureStackTrace**(`targetObject`, `constructorOpt?`): `void`
 
 Create .stack property on a target object
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`targetObject` | Object |
-`constructorOpt?` | Function |
+| Name | Type |
+| :------ | :------ |
+| `targetObject` | `object` |
+| `constructorOpt?` | `Function` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/node/globals.d.ts:133
+`void`
+
+#### Inherited from
+
+Error.captureStackTrace
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:4

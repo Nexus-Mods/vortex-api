@@ -8,14 +8,14 @@
 
 ### Properties
 
-- [transfer](types.istatetransactions.md#transfer)
+- [transfer](types.IStateTransactions.md#transfer)
 
 ## Properties
 
 ### transfer
 
-• **transfer**: *object*
+• **transfer**: `Object`
 
-#### Type declaration:
+#### Defined in
 
-Defined in: src/types/IState.ts:251
+../src/types/IState.ts:253

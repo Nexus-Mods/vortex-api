@@ -8,23 +8,29 @@
 
 ### Properties
 
-- [args](types.iextensionloadfailure.md#args)
-- [id](types.iextensionloadfailure.md#id)
+- [args](types.IExtensionLoadFailure.md#args)
+- [id](types.IExtensionLoadFailure.md#id)
 
 ## Properties
 
 ### args
 
-• `Optional` **args**: *object*
+• `Optional` **args**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IState.ts:68
+▪ [key: `string`]: `any`
+
+#### Defined in
+
+../src/types/IState.ts:68
 
 ___
 
 ### id
 
-• **id**: *string*
+• **id**: `string`
 
-Defined in: src/types/IState.ts:67
+#### Defined in
+
+../src/types/IState.ts:67

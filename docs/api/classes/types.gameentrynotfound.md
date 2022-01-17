@@ -6,183 +6,243 @@
 
 ## Hierarchy
 
-* *Error*
+- `Error`
 
-  ↳ **GameEntryNotFound**
+  ↳ **`GameEntryNotFound`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](types.gameentrynotfound.md#constructor)
+- [constructor](types.GameEntryNotFound.md#constructor)
 
 ### Properties
 
-- [mExistingNames](types.gameentrynotfound.md#mexistingnames)
-- [mName](types.gameentrynotfound.md#mname)
-- [mStore](types.gameentrynotfound.md#mstore)
-- [message](types.gameentrynotfound.md#message)
-- [name](types.gameentrynotfound.md#name)
-- [prepareStackTrace](types.gameentrynotfound.md#preparestacktrace)
-- [stack](types.gameentrynotfound.md#stack)
-- [stackTraceLimit](types.gameentrynotfound.md#stacktracelimit)
+- [mExistingNames](types.GameEntryNotFound.md#mexistingnames)
+- [mName](types.GameEntryNotFound.md#mname)
+- [mStore](types.GameEntryNotFound.md#mstore)
+- [message](types.GameEntryNotFound.md#message)
+- [name](types.GameEntryNotFound.md#name)
+- [stack](types.GameEntryNotFound.md#stack)
+- [prepareStackTrace](types.GameEntryNotFound.md#preparestacktrace)
+- [stackTraceLimit](types.GameEntryNotFound.md#stacktracelimit)
 
 ### Accessors
 
-- [existingGames](types.gameentrynotfound.md#existinggames)
-- [gameName](types.gameentrynotfound.md#gamename)
-- [storeName](types.gameentrynotfound.md#storename)
+- [existingGames](types.GameEntryNotFound.md#existinggames)
+- [gameName](types.GameEntryNotFound.md#gamename)
+- [storeName](types.GameEntryNotFound.md#storename)
 
 ### Methods
 
-- [captureStackTrace](types.gameentrynotfound.md#capturestacktrace)
+- [captureStackTrace](types.GameEntryNotFound.md#capturestacktrace)
 
 ## Constructors
 
 ### constructor
 
-\+ **new GameEntryNotFound**(`name`: *string*, `store`: *string*, `existing?`: *string*[]): [*GameEntryNotFound*](types.gameentrynotfound.md)
+• **new GameEntryNotFound**(`name`, `store`, `existing?`)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`name` | *string* |
-`store` | *string* |
-`existing?` | *string*[] |
+| Name | Type |
+| :------ | :------ |
+| `name` | `string` |
+| `store` | `string` |
+| `existing?` | `string`[] |
 
-**Returns:** [*GameEntryNotFound*](types.gameentrynotfound.md)
+#### Overrides
 
-Defined in: src/types/IGameStore.ts:26
+Error.constructor
+
+#### Defined in
+
+../src/types/IGameStore.ts:27
 
 ## Properties
 
 ### mExistingNames
 
-• `Private` **mExistingNames**: *string*[]
+• `Private` **mExistingNames**: `string`[]
 
-Defined in: src/types/IGameStore.ts:26
+#### Defined in
+
+../src/types/IGameStore.ts:26
 
 ___
 
 ### mName
 
-• `Private` **mName**: *string*
+• `Private` **mName**: `string`
 
-Defined in: src/types/IGameStore.ts:24
+#### Defined in
+
+../src/types/IGameStore.ts:24
 
 ___
 
 ### mStore
 
-• `Private` **mStore**: *string*
+• `Private` **mStore**: `string`
 
-Defined in: src/types/IGameStore.ts:25
+#### Defined in
+
+../src/types/IGameStore.ts:25
 
 ___
 
 ### message
 
-• **message**: *string*
+• **message**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:974
+#### Inherited from
+
+Error.message
+
+#### Defined in
+
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1023
 
 ___
 
 ### name
 
-• **name**: *string*
+• **name**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:973
+#### Inherited from
 
-___
+Error.name
 
-### prepareStackTrace
+#### Defined in
 
-• `Optional` **prepareStackTrace**: (`err`: Error, `stackTraces`: CallSite[]) => *any*
-
-Optional override for formatting stack traces
-
-**`see`** https://github.com/v8/v8/wiki/Stack%20Trace%20API#customizing-stack-traces
-
-#### Type declaration:
-
-▸ (`err`: Error, `stackTraces`: CallSite[]): *any*
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`err` | Error |
-`stackTraces` | CallSite[] |
-
-**Returns:** *any*
-
-Defined in: node_modules/@types/node/globals.d.ts:140
-
-Defined in: node_modules/@types/node/globals.d.ts:140
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1022
 
 ___
 
 ### stack
 
-• `Optional` **stack**: *string*
+• `Optional` **stack**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:975
+#### Inherited from
+
+Error.stack
+
+#### Defined in
+
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1024
+
+___
+
+### prepareStackTrace
+
+▪ `Static` `Optional` **prepareStackTrace**: (`err`: `Error`, `stackTraces`: `CallSite`[]) => `any`
+
+#### Type declaration
+
+▸ (`err`, `stackTraces`): `any`
+
+Optional override for formatting stack traces
+
+**`see`** https://v8.dev/docs/stack-trace-api#customizing-stack-traces
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `err` | `Error` |
+| `stackTraces` | `CallSite`[] |
+
+##### Returns
+
+`any`
+
+#### Inherited from
+
+Error.prepareStackTrace
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:11
 
 ___
 
 ### stackTraceLimit
 
-• **stackTraceLimit**: *number*
+▪ `Static` **stackTraceLimit**: `number`
 
-Defined in: node_modules/@types/node/globals.d.ts:142
+#### Inherited from
+
+Error.stackTraceLimit
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:13
 
 ## Accessors
 
 ### existingGames
 
-• get **existingGames**(): *string*[]
+• `get` **existingGames**(): `string`[]
 
-**Returns:** *string*[]
+#### Returns
 
-Defined in: src/types/IGameStore.ts:48
+`string`[]
+
+#### Defined in
+
+../src/types/IGameStore.ts:48
 
 ___
 
 ### gameName
 
-• get **gameName**(): *string*
+• `get` **gameName**(): `string`
 
-**Returns:** *string*
+#### Returns
 
-Defined in: src/types/IGameStore.ts:37
+`string`
+
+#### Defined in
+
+../src/types/IGameStore.ts:37
 
 ___
 
 ### storeName
 
-• get **storeName**(): *string*
+• `get` **storeName**(): `string`
 
-**Returns:** *string*
+#### Returns
 
-Defined in: src/types/IGameStore.ts:42
+`string`
+
+#### Defined in
+
+../src/types/IGameStore.ts:42
 
 ## Methods
 
 ### captureStackTrace
 
-▸ **captureStackTrace**(`targetObject`: Object, `constructorOpt?`: Function): *void*
+▸ `Static` **captureStackTrace**(`targetObject`, `constructorOpt?`): `void`
 
 Create .stack property on a target object
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`targetObject` | Object |
-`constructorOpt?` | Function |
+| Name | Type |
+| :------ | :------ |
+| `targetObject` | `object` |
+| `constructorOpt?` | `Function` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/node/globals.d.ts:133
+`void`
+
+#### Inherited from
+
+Error.captureStackTrace
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:4

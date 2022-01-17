@@ -6,72 +6,94 @@
 
 ## Type parameters
 
-Name |
-:------ |
-`S` |
+| Name |
+| :------ |
+| `S` |
 
 ## Hierarchy
 
-* *Store*<S\>
+- `Store`<`S`\>
 
-  ↳ **ThunkStore**
+  ↳ **`ThunkStore`**
 
 ## Table of contents
 
 ### Properties
 
-- [dispatch](types.thunkstore.md#dispatch)
+- [dispatch](types.ThunkStore.md#dispatch)
 
 ### Methods
 
-- [[Symbol.observable]](types.thunkstore.md#[symbol.observable])
-- [getState](types.thunkstore.md#getstate)
-- [replaceReducer](types.thunkstore.md#replacereducer)
-- [subscribe](types.thunkstore.md#subscribe)
+- [[observable]](types.ThunkStore.md#[observable])
+- [getState](types.ThunkStore.md#getstate)
+- [replaceReducer](types.ThunkStore.md#replacereducer)
+- [subscribe](types.ThunkStore.md#subscribe)
 
 ## Properties
 
 ### dispatch
 
-• **dispatch**: *ThunkDispatch*<S, *null*, Action<any\>\>
+• **dispatch**: `ThunkDispatch`<`S`, ``null``, `Action`<`any`\>\>
 
-Defined in: src/types/IExtensionContext.ts:53
+#### Overrides
+
+Redux.Store.dispatch
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:57
 
 ## Methods
 
-### [Symbol.observable]
+### [observable]
 
-▸ **[Symbol.observable]**(): *Observable*<S\>
+▸ **[observable]**(): `Observable`<`S`\>
 
 Interoperability point for observable/reactive libraries.
 
-**Returns:** *Observable*<S\>
+#### Returns
+
+`Observable`<`S`\>
 
 A minimal observable of state changes.
 For more information, see the observable proposal:
 https://github.com/tc39/proposal-observable
 
-Defined in: node_modules/redux/index.d.ts:337
+#### Inherited from
+
+Redux.Store.\_\_@observable@43099
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/redux/index.d.ts:344
 
 ___
 
 ### getState
 
-▸ **getState**(): S
+▸ **getState**(): `S`
 
 Reads the state tree managed by the store.
 
-**Returns:** S
+#### Returns
+
+`S`
 
 The current state tree of your application.
 
-Defined in: node_modules/redux/index.d.ts:292
+#### Inherited from
+
+Redux.Store.getState
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/redux/index.d.ts:299
 
 ___
 
 ### replaceReducer
 
-▸ **replaceReducer**(`nextReducer`: *Reducer*<S, AnyAction\>): *void*
+▸ **replaceReducer**(`nextReducer`): `void`
 
 Replaces the reducer currently used by the store to calculate the state.
 
@@ -79,21 +101,29 @@ You might need this if your app implements code splitting and you want to
 load some of the reducers dynamically. You might also need this if you
 implement a hot reloading mechanism for Redux.
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`nextReducer` | *Reducer*<S, AnyAction\> | The reducer for the store to use instead.    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `nextReducer` | `Reducer`<`S`, `AnyAction`\> | The reducer for the store to use instead. |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/redux/index.d.ts:329
+`void`
+
+#### Inherited from
+
+Redux.Store.replaceReducer
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/redux/index.d.ts:336
 
 ___
 
 ### subscribe
 
-▸ **subscribe**(`listener`: () => *void*): Unsubscribe
+▸ **subscribe**(`listener`): `Unsubscribe`
 
 Adds a change listener. It will be called any time an action is
 dispatched, and some part of the state tree may potentially have changed.
@@ -115,14 +145,22 @@ the listener is called. It is, however, guaranteed that all subscribers
 registered before the `dispatch()` started will be called with the latest
 state by the time it exits.
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`listener` | () => *void* | A callback to be invoked on every dispatch.   |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `listener` | () => `void` | A callback to be invoked on every dispatch. |
 
-**Returns:** Unsubscribe
+#### Returns
+
+`Unsubscribe`
 
 A function to remove this change listener.
 
-Defined in: node_modules/redux/index.d.ts:318
+#### Inherited from
+
+Redux.Store.subscribe
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/redux/index.d.ts:325

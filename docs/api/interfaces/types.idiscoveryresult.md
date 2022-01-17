@@ -12,7 +12,7 @@ the other to override defaults as provided by the
 game extension. This is particularly relevant for
 games added by the user.
 
-**`export`** 
+**`export`**
 
 **`interface`** IDiscoveryResult
 
@@ -20,133 +20,165 @@ games added by the user.
 
 ### Properties
 
-- [environment](types.idiscoveryresult.md#environment)
-- [executable](types.idiscoveryresult.md#executable)
-- [extensionPath](types.idiscoveryresult.md#extensionpath)
-- [hidden](types.idiscoveryresult.md#hidden)
-- [id](types.idiscoveryresult.md#id)
-- [logo](types.idiscoveryresult.md#logo)
-- [mergeMods](types.idiscoveryresult.md#mergemods)
-- [name](types.idiscoveryresult.md#name)
-- [parameters](types.idiscoveryresult.md#parameters)
-- [path](types.idiscoveryresult.md#path)
-- [pathSetManually](types.idiscoveryresult.md#pathsetmanually)
-- [shell](types.idiscoveryresult.md#shell)
-- [shortName](types.idiscoveryresult.md#shortname)
-- [tools](types.idiscoveryresult.md#tools)
+- [environment](types.IDiscoveryResult.md#environment)
+- [executable](types.IDiscoveryResult.md#executable)
+- [extensionPath](types.IDiscoveryResult.md#extensionpath)
+- [hidden](types.IDiscoveryResult.md#hidden)
+- [id](types.IDiscoveryResult.md#id)
+- [logo](types.IDiscoveryResult.md#logo)
+- [mergeMods](types.IDiscoveryResult.md#mergemods)
+- [name](types.IDiscoveryResult.md#name)
+- [parameters](types.IDiscoveryResult.md#parameters)
+- [path](types.IDiscoveryResult.md#path)
+- [pathSetManually](types.IDiscoveryResult.md#pathsetmanually)
+- [shell](types.IDiscoveryResult.md#shell)
+- [shortName](types.IDiscoveryResult.md#shortname)
+- [tools](types.IDiscoveryResult.md#tools)
 
 ## Properties
 
 ### environment
 
-• `Optional` **environment**: *object*
+• `Optional` **environment**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/extensions/gamemode_management/types/IDiscoveryResult.ts:22
+▪ [key: `string`]: `string`
+
+#### Defined in
+
+../src/extensions/gamemode_management/types/IDiscoveryResult.ts:22
 
 ___
 
 ### executable
 
-• `Optional` **executable**: *string*
+• `Optional` **executable**: `string`
 
-Defined in: src/extensions/gamemode_management/types/IDiscoveryResult.ts:29
+#### Defined in
+
+../src/extensions/gamemode_management/types/IDiscoveryResult.ts:29
 
 ___
 
 ### extensionPath
 
-• `Optional` **extensionPath**: *string*
+• `Optional` **extensionPath**: `string`
 
-Defined in: src/extensions/gamemode_management/types/IDiscoveryResult.ts:32
+#### Defined in
+
+../src/extensions/gamemode_management/types/IDiscoveryResult.ts:32
 
 ___
 
 ### hidden
 
-• `Optional` **hidden**: *boolean*
+• `Optional` **hidden**: `boolean`
 
-Defined in: src/extensions/gamemode_management/types/IDiscoveryResult.ts:24
+#### Defined in
+
+../src/extensions/gamemode_management/types/IDiscoveryResult.ts:24
 
 ___
 
 ### id
 
-• `Optional` **id**: *string*
+• `Optional` **id**: `string`
 
-Defined in: src/extensions/gamemode_management/types/IDiscoveryResult.ts:26
+#### Defined in
+
+../src/extensions/gamemode_management/types/IDiscoveryResult.ts:26
 
 ___
 
 ### logo
 
-• `Optional` **logo**: *string*
+• `Optional` **logo**: `string`
 
-Defined in: src/extensions/gamemode_management/types/IDiscoveryResult.ts:31
+#### Defined in
+
+../src/extensions/gamemode_management/types/IDiscoveryResult.ts:31
 
 ___
 
 ### mergeMods
 
-• `Optional` **mergeMods**: *boolean*
+• `Optional` **mergeMods**: `boolean`
 
-Defined in: src/extensions/gamemode_management/types/IDiscoveryResult.ts:33
+#### Defined in
+
+../src/extensions/gamemode_management/types/IDiscoveryResult.ts:33
 
 ___
 
 ### name
 
-• `Optional` **name**: *string*
+• `Optional` **name**: `string`
 
-Defined in: src/extensions/gamemode_management/types/IDiscoveryResult.ts:27
+#### Defined in
+
+../src/extensions/gamemode_management/types/IDiscoveryResult.ts:27
 
 ___
 
 ### parameters
 
-• `Optional` **parameters**: *string*[]
+• `Optional` **parameters**: `string`[]
 
-Defined in: src/extensions/gamemode_management/types/IDiscoveryResult.ts:30
+#### Defined in
+
+../src/extensions/gamemode_management/types/IDiscoveryResult.ts:30
 
 ___
 
 ### path
 
-• `Optional` **path**: *string*
+• `Optional` **path**: `string`
 
-Defined in: src/extensions/gamemode_management/types/IDiscoveryResult.ts:17
+#### Defined in
+
+../src/extensions/gamemode_management/types/IDiscoveryResult.ts:17
 
 ___
 
 ### pathSetManually
 
-• `Optional` **pathSetManually**: *boolean*
+• `Optional` **pathSetManually**: `boolean`
 
-Defined in: src/extensions/gamemode_management/types/IDiscoveryResult.ts:18
+#### Defined in
+
+../src/extensions/gamemode_management/types/IDiscoveryResult.ts:18
 
 ___
 
 ### shell
 
-• `Optional` **shell**: *boolean*
+• `Optional` **shell**: `boolean`
 
-Defined in: src/extensions/gamemode_management/types/IDiscoveryResult.ts:34
+#### Defined in
+
+../src/extensions/gamemode_management/types/IDiscoveryResult.ts:34
 
 ___
 
 ### shortName
 
-• `Optional` **shortName**: *string*
+• `Optional` **shortName**: `string`
 
-Defined in: src/extensions/gamemode_management/types/IDiscoveryResult.ts:28
+#### Defined in
+
+../src/extensions/gamemode_management/types/IDiscoveryResult.ts:28
 
 ___
 
 ### tools
 
-• `Optional` **tools**: *object*
+• `Optional` **tools**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/extensions/gamemode_management/types/IDiscoveryResult.ts:19
+▪ [id: `string`]: [`IDiscoveredTool`](types.IDiscoveredTool.md)
+
+#### Defined in
+
+../src/extensions/gamemode_management/types/IDiscoveryResult.ts:19

@@ -4,69 +4,83 @@
 
 ## Implements
 
-* [*ITableFilter*](../interfaces/types.itablefilter.md)
+- [`ITableFilter`](../interfaces/types.ITableFilter.md)
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](tablenumericfilter.md#constructor)
+- [constructor](TableNumericFilter.md#constructor)
 
 ### Properties
 
-- [component](tablenumericfilter.md#component)
-- [raw](tablenumericfilter.md#raw)
+- [component](TableNumericFilter.md#component)
+- [raw](TableNumericFilter.md#raw)
 
 ### Methods
 
-- [matches](tablenumericfilter.md#matches)
+- [matches](TableNumericFilter.md#matches)
 
 ## Constructors
 
 ### constructor
 
-\+ **new TableNumericFilter**(): [*TableNumericFilter*](tablenumericfilter.md)
-
-**Returns:** [*TableNumericFilter*](tablenumericfilter.md)
+• **new TableNumericFilter**()
 
 ## Properties
 
 ### component
 
-• **component**: *typeof* NumericFilterComponent
+• **component**: typeof `NumericFilterComponent` = `NumericFilterComponent`
 
-Implementation of: [ITableFilter](../interfaces/types.itablefilter.md).[component](../interfaces/types.itablefilter.md#component)
+#### Implementation of
 
-Defined in: src/controls/table/NumericFilter.tsx:87
+[ITableFilter](../interfaces/types.ITableFilter.md).[component](../interfaces/types.ITableFilter.md#component)
+
+#### Defined in
+
+../src/controls/table/NumericFilter.tsx:87
 
 ___
 
 ### raw
 
-• **raw**: *boolean*= false
+• **raw**: `boolean` = `false`
 
 this controls what value gets passed into the matches function, see the documentation there
 for possible values
 
-Implementation of: [ITableFilter](../interfaces/types.itablefilter.md).[raw](../interfaces/types.itablefilter.md#raw)
+#### Implementation of
 
-Defined in: src/controls/table/NumericFilter.tsx:88
+[ITableFilter](../interfaces/types.ITableFilter.md).[raw](../interfaces/types.ITableFilter.md#raw)
+
+#### Defined in
+
+../src/controls/table/NumericFilter.tsx:88
 
 ## Methods
 
 ### matches
 
-▸ **matches**(`filter`: *any*, `input`: *number*): *boolean*
+▸ **matches**(`filter`, `input`): `boolean`
 
 return true if value matches the filter
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`filter` | *any* |
-`input` | *number* |
+| Name | Type |
+| :------ | :------ |
+| `filter` | `any` |
+| `input` | `number` |
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: src/controls/table/NumericFilter.tsx:90
+`boolean`
+
+#### Implementation of
+
+[ITableFilter](../interfaces/types.ITableFilter.md).[matches](../interfaces/types.ITableFilter.md#matches)
+
+#### Defined in
+
+../src/controls/table/NumericFilter.tsx:90

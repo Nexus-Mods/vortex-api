@@ -8,21 +8,25 @@
 
 ### Properties
 
-- [highlighted](types.irowstate.md#highlighted)
-- [selected](types.irowstate.md#selected)
+- [highlighted](types.IRowState.md#highlighted)
+- [selected](types.IRowState.md#selected)
 
 ## Properties
 
 ### highlighted
 
-• **highlighted**: *boolean*
+• **highlighted**: `boolean`
 
-Defined in: src/types/IState.ts:113
+#### Defined in
+
+../src/types/IState.ts:113
 
 ___
 
 ### selected
 
-• **selected**: *boolean*
+• **selected**: `boolean`
 
-Defined in: src/types/IState.ts:112
+#### Defined in
+
+../src/types/IState.ts:112

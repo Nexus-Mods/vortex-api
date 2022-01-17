@@ -6,7 +6,7 @@
 
 a notification message
 
-**`export`** 
+**`export`**
 
 **`interface`** INotification
 
@@ -14,28 +14,28 @@ a notification message
 
 ### Properties
 
-- [actions](types.inotification.md#actions)
-- [allowSuppress](types.inotification.md#allowsuppress)
-- [createdTime](types.inotification.md#createdtime)
-- [displayMS](types.inotification.md#displayms)
-- [group](types.inotification.md#group)
-- [icon](types.inotification.md#icon)
-- [id](types.inotification.md#id)
-- [localize](types.inotification.md#localize)
-- [message](types.inotification.md#message)
-- [noDismiss](types.inotification.md#nodismiss)
-- [process](types.inotification.md#process)
-- [progress](types.inotification.md#progress)
-- [replace](types.inotification.md#replace)
-- [title](types.inotification.md#title)
-- [type](types.inotification.md#type)
-- [updatedTime](types.inotification.md#updatedtime)
+- [actions](types.INotification.md#actions)
+- [allowSuppress](types.INotification.md#allowsuppress)
+- [createdTime](types.INotification.md#createdtime)
+- [displayMS](types.INotification.md#displayms)
+- [group](types.INotification.md#group)
+- [icon](types.INotification.md#icon)
+- [id](types.INotification.md#id)
+- [localize](types.INotification.md#localize)
+- [message](types.INotification.md#message)
+- [noDismiss](types.INotification.md#nodismiss)
+- [process](types.INotification.md#process)
+- [progress](types.INotification.md#progress)
+- [replace](types.INotification.md#replace)
+- [title](types.INotification.md#title)
+- [type](types.INotification.md#type)
+- [updatedTime](types.INotification.md#updatedtime)
 
 ## Properties
 
 ### actions
 
-• `Optional` **actions**: [*INotificationAction*](types.inotificationaction.md)[]
+• `Optional` **actions**: [`INotificationAction`](types.INotificationAction.md)[]
 
 actions to offer with the notification. These will be presented as buttons.
 Due to limited space you should not have more than one or two actions and
@@ -44,33 +44,39 @@ require the user to act in a limited time.
 
 **`memberof`** INotification
 
-Defined in: src/types/INotification.ts:148
+#### Defined in
+
+../src/types/INotification.ts:148
 
 ___
 
 ### allowSuppress
 
-• `Optional` **allowSuppress**: *boolean*
+• `Optional` **allowSuppress**: `boolean`
 
 if set, the user may suppress the notification in the future
 
-Defined in: src/types/INotification.ts:137
+#### Defined in
+
+../src/types/INotification.ts:137
 
 ___
 
 ### createdTime
 
-• `Optional` **createdTime**: *number*
+• `Optional` **createdTime**: `number`
 
 time the notification was created
 
-Defined in: src/types/INotification.ts:83
+#### Defined in
+
+../src/types/INotification.ts:83
 
 ___
 
 ### displayMS
 
-• `Optional` **displayMS**: *number*
+• `Optional` **displayMS**: `number`
 
 the duration to display the message. If this is undefined, the
 message has to be dismissed by the user.
@@ -87,24 +93,28 @@ Therefore: Absolutely never display an important message with a timer!
 
 **`memberof`** INotification
 
-Defined in: src/types/INotification.ts:121
+#### Defined in
+
+../src/types/INotification.ts:121
 
 ___
 
 ### group
 
-• `Optional` **group**: *string*
+• `Optional` **group**: `string`
 
 if set, notifications with the same group will be grouped together and shown as
 one entry that can be expanded.
 
-Defined in: src/types/INotification.ts:127
+#### Defined in
+
+../src/types/INotification.ts:127
 
 ___
 
 ### icon
 
-• `Optional` **icon**: *string*
+• `Optional` **icon**: `string`
 
 path to an icon/image to display in the notification.
 'global' notifications displayed outside the window will always display an
@@ -113,13 +123,15 @@ If no icon is specified this will fall back to the application icon.
 
 **`memberof`** INotification
 
-Defined in: src/types/INotification.ts:62
+#### Defined in
+
+../src/types/INotification.ts:62
 
 ___
 
 ### id
 
-• `Optional` **id**: *string*
+• `Optional` **id**: `string`
 
 unique id of the notification. can be left out as
 the notification system generates its own.
@@ -128,97 +140,115 @@ the notification
 
 **`memberof`** INotification
 
-Defined in: src/types/INotification.ts:27
+#### Defined in
+
+../src/types/INotification.ts:27
 
 ___
 
 ### localize
 
-• `Optional` **localize**: *object*
+• `Optional` **localize**: `Object`
 
 control which part of the notification gets localized. default is true for both
 
-#### Type declaration:
+#### Type declaration
 
-Name | Type |
-:------ | :------ |
-`message`? | *boolean* |
-`title`? | *boolean* |
+| Name | Type |
+| :------ | :------ |
+| `message?` | `boolean` |
+| `title?` | `boolean` |
 
-Defined in: src/types/INotification.ts:99
+#### Defined in
+
+../src/types/INotification.ts:99
 
 ___
 
 ### message
 
-• **message**: *string*
+• **message**: `string`
 
 the message to display. This shouldn't be long
 
 **`memberof`** INotification
 
-Defined in: src/types/INotification.ts:78
+#### Defined in
+
+../src/types/INotification.ts:78
 
 ___
 
 ### noDismiss
 
-• `Optional` **noDismiss**: *boolean*
+• `Optional` **noDismiss**: `boolean`
 
 if set, no Dismiss button is provided automatically
 
-Defined in: src/types/INotification.ts:132
+#### Defined in
+
+../src/types/INotification.ts:132
 
 ___
 
 ### process
 
-• `Optional` **process**: *string*
+• `Optional` **process**: `string`
 
 id of the process that triggered this action
 
-Defined in: src/types/INotification.ts:153
+#### Defined in
+
+../src/types/INotification.ts:153
 
 ___
 
 ### progress
 
-• `Optional` **progress**: *number*
+• `Optional` **progress**: `number`
 
 progress in percent (0-100). If set, the notification is a progress indicator
 
-Defined in: src/types/INotification.ts:51
+#### Defined in
+
+../src/types/INotification.ts:51
 
 ___
 
 ### replace
 
-• `Optional` **replace**: *object*
+• `Optional` **replace**: `Object`
 
 replacement parameters for the localisation of title and message (the same
 replacement dictionary will be used for both)
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/INotification.ts:94
+▪ [key: `string`]: `any`
+
+#### Defined in
+
+../src/types/INotification.ts:94
 
 ___
 
 ### title
 
-• `Optional` **title**: *string*
+• `Optional` **title**: `string`
 
 optional title. Should only be one or two words
 
 **`memberof`** INotification
 
-Defined in: src/types/INotification.ts:70
+#### Defined in
+
+../src/types/INotification.ts:70
 
 ___
 
 ### type
 
-• **type**: [*NotificationType*](../modules/types.md#notificationtype)
+• **type**: [`NotificationType`](../modules/types.md#notificationtype)
 
 the kind of notification to display. This mostly determines
 its look but also features to a degree.
@@ -236,14 +266,18 @@ Possible values:
 
 **`memberof`** INotification
 
-Defined in: src/types/INotification.ts:46
+#### Defined in
+
+../src/types/INotification.ts:46
 
 ___
 
 ### updatedTime
 
-• `Optional` **updatedTime**: *number*
+• `Optional` **updatedTime**: `number`
 
 time the notification was last updated
 
-Defined in: src/types/INotification.ts:88
+#### Defined in
+
+../src/types/INotification.ts:88

@@ -6,65 +6,77 @@
 
 ## Hierarchy
 
-* **IGameStoreEntry**
+- **`IGameStoreEntry`**
 
-  ↳ [*ISteamEntry*](util.isteamentry.md)
+  ↳ [`ISteamEntry`](util.ISteamEntry.md)
 
 ## Table of contents
 
 ### Properties
 
-- [appid](types.igamestoreentry.md#appid)
-- [gamePath](types.igamestoreentry.md#gamepath)
-- [gameStoreId](types.igamestoreentry.md#gamestoreid)
-- [lastUpdated](types.igamestoreentry.md#lastupdated)
-- [lastUser](types.igamestoreentry.md#lastuser)
-- [name](types.igamestoreentry.md#name)
+- [appid](types.IGameStoreEntry.md#appid)
+- [gamePath](types.IGameStoreEntry.md#gamepath)
+- [gameStoreId](types.IGameStoreEntry.md#gamestoreid)
+- [lastUpdated](types.IGameStoreEntry.md#lastupdated)
+- [lastUser](types.IGameStoreEntry.md#lastuser)
+- [name](types.IGameStoreEntry.md#name)
 
 ## Properties
 
 ### appid
 
-• **appid**: *string*
+• **appid**: `string`
 
-Defined in: src/types/IGameStoreEntry.ts:3
+#### Defined in
+
+../src/types/IGameStoreEntry.ts:3
 
 ___
 
 ### gamePath
 
-• **gamePath**: *string*
+• **gamePath**: `string`
 
-Defined in: src/types/IGameStoreEntry.ts:5
+#### Defined in
+
+../src/types/IGameStoreEntry.ts:5
 
 ___
 
 ### gameStoreId
 
-• **gameStoreId**: *string*
+• **gameStoreId**: `string`
 
-Defined in: src/types/IGameStoreEntry.ts:6
+#### Defined in
+
+../src/types/IGameStoreEntry.ts:6
 
 ___
 
 ### lastUpdated
 
-• `Optional` **lastUpdated**: Date
+• `Optional` **lastUpdated**: `Date`
 
-Defined in: src/types/IGameStoreEntry.ts:7
+#### Defined in
+
+../src/types/IGameStoreEntry.ts:7
 
 ___
 
 ### lastUser
 
-• `Optional` **lastUser**: *string*
+• `Optional` **lastUser**: `string`
 
-Defined in: src/types/IGameStoreEntry.ts:8
+#### Defined in
+
+../src/types/IGameStoreEntry.ts:8
 
 ___
 
 ### name
 
-• **name**: *string*
+• **name**: `string`
 
-Defined in: src/types/IGameStoreEntry.ts:4
+#### Defined in
+
+../src/types/IGameStoreEntry.ts:4

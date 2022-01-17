@@ -4,81 +4,89 @@
 
 ## Hierarchy
 
-* *PureComponent*<IToolbarIconProps, {}\>
+- `PureComponent`<`IToolbarIconProps`, {}\>
 
-  ↳ **ToolbarIcon**
+  ↳ **`ToolbarIcon`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](toolbaricon.md#constructor)
+- [constructor](ToolbarIcon.md#constructor)
 
 ### Properties
 
-- [context](toolbaricon.md#context)
-- [props](toolbaricon.md#props)
-- [refs](toolbaricon.md#refs)
-- [state](toolbaricon.md#state)
-- [contextType](toolbaricon.md#contexttype)
+- [context](ToolbarIcon.md#context)
+- [props](ToolbarIcon.md#props)
+- [refs](ToolbarIcon.md#refs)
+- [state](ToolbarIcon.md#state)
+- [contextType](ToolbarIcon.md#contexttype)
 
 ### Methods
 
-- [UNSAFE\_componentWillMount](toolbaricon.md#unsafe_componentwillmount)
-- [UNSAFE\_componentWillReceiveProps](toolbaricon.md#unsafe_componentwillreceiveprops)
-- [UNSAFE\_componentWillUpdate](toolbaricon.md#unsafe_componentwillupdate)
-- [componentDidCatch](toolbaricon.md#componentdidcatch)
-- [componentDidMount](toolbaricon.md#componentdidmount)
-- [componentDidUpdate](toolbaricon.md#componentdidupdate)
-- [componentWillMount](toolbaricon.md#componentwillmount)
-- [componentWillReceiveProps](toolbaricon.md#componentwillreceiveprops)
-- [componentWillUnmount](toolbaricon.md#componentwillunmount)
-- [componentWillUpdate](toolbaricon.md#componentwillupdate)
-- [forceUpdate](toolbaricon.md#forceupdate)
-- [getSnapshotBeforeUpdate](toolbaricon.md#getsnapshotbeforeupdate)
-- [invokeAction](toolbaricon.md#invokeaction)
-- [render](toolbaricon.md#render)
-- [setState](toolbaricon.md#setstate)
-- [shouldComponentUpdate](toolbaricon.md#shouldcomponentupdate)
+- [UNSAFE\_componentWillMount](ToolbarIcon.md#unsafe_componentwillmount)
+- [UNSAFE\_componentWillReceiveProps](ToolbarIcon.md#unsafe_componentwillreceiveprops)
+- [UNSAFE\_componentWillUpdate](ToolbarIcon.md#unsafe_componentwillupdate)
+- [componentDidCatch](ToolbarIcon.md#componentdidcatch)
+- [componentDidMount](ToolbarIcon.md#componentdidmount)
+- [componentDidUpdate](ToolbarIcon.md#componentdidupdate)
+- [componentWillMount](ToolbarIcon.md#componentwillmount)
+- [componentWillReceiveProps](ToolbarIcon.md#componentwillreceiveprops)
+- [componentWillUnmount](ToolbarIcon.md#componentwillunmount)
+- [componentWillUpdate](ToolbarIcon.md#componentwillupdate)
+- [forceUpdate](ToolbarIcon.md#forceupdate)
+- [getSnapshotBeforeUpdate](ToolbarIcon.md#getsnapshotbeforeupdate)
+- [invokeAction](ToolbarIcon.md#invokeaction)
+- [render](ToolbarIcon.md#render)
+- [setState](ToolbarIcon.md#setstate)
+- [shouldComponentUpdate](ToolbarIcon.md#shouldcomponentupdate)
 
 ## Constructors
 
 ### constructor
 
-\+ **new ToolbarIcon**(`props`: IToolbarIconProps \| *Readonly*<IToolbarIconProps\>): [*ToolbarIcon*](toolbaricon.md)
+• **new ToolbarIcon**(`props`)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`props` | IToolbarIconProps \| *Readonly*<IToolbarIconProps\> |
+| Name | Type |
+| :------ | :------ |
+| `props` | `IToolbarIconProps` \| `Readonly`<`IToolbarIconProps`\> |
 
-**Returns:** [*ToolbarIcon*](toolbaricon.md)
+#### Inherited from
 
-Defined in: node_modules/@types/react/index.d.ts:472
+React.PureComponent<IToolbarIconProps, {}\>.constructor
 
-\+ **new ToolbarIcon**(`props`: IToolbarIconProps, `context`: *any*): [*ToolbarIcon*](toolbaricon.md)
+#### Defined in
 
-**`deprecated`** 
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:474
+
+• **new ToolbarIcon**(`props`, `context`)
+
+**`deprecated`**
 
 **`see`** https://reactjs.org/docs/legacy-context.html
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`props` | IToolbarIconProps |
-`context` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `props` | `IToolbarIconProps` |
+| `context` | `any` |
 
-**Returns:** [*ToolbarIcon*](toolbaricon.md)
+#### Inherited from
 
-Defined in: node_modules/@types/react/index.d.ts:474
+React.PureComponent<IToolbarIconProps, {}\>.constructor
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:479
 
 ## Properties
 
 ### context
 
-• **context**: *any*
+• **context**: `any`
 
 If using the new style context, re-declare this in your class to be the
 `React.ContextType` of your `static contextType`.
@@ -94,42 +102,68 @@ declare context: React.ContextType<typeof MyContext>
 
 **`see`** https://reactjs.org/docs/context.html
 
-Defined in: node_modules/@types/react/index.d.ts:472
+#### Inherited from
+
+React.PureComponent.context
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:472
 
 ___
 
 ### props
 
-• `Readonly` **props**: *Readonly*<IToolbarIconProps\> & *Readonly*<{ `children?`: ReactNode  }\>
+• `Readonly` **props**: `Readonly`<`IToolbarIconProps`\> & `Readonly`<{ `children?`: `ReactNode`  }\>
 
-Defined in: node_modules/@types/react/index.d.ts:497
+#### Inherited from
+
+React.PureComponent.props
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:497
 
 ___
 
 ### refs
 
-• **refs**: *object*
+• **refs**: `Object`
 
-**`deprecated`** 
+**`deprecated`**
 https://reactjs.org/docs/refs-and-the-dom.html#legacy-api-string-refs
 
-#### Type declaration:
+#### Index signature
 
-Defined in: node_modules/@types/react/index.d.ts:503
+▪ [key: `string`]: `ReactInstance`
+
+#### Inherited from
+
+React.PureComponent.refs
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:503
 
 ___
 
 ### state
 
-• **state**: *Readonly*<{}\>
+• **state**: `Readonly`<{}\>
 
-Defined in: node_modules/@types/react/index.d.ts:498
+#### Inherited from
+
+React.PureComponent.state
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:498
 
 ___
 
 ### contextType
 
-▪ `Optional` `Static` **contextType**: *Context*<any\>
+▪ `Static` `Optional` **contextType**: `Context`<`any`\>
 
 If set, `this.context` will be set at runtime to the current value of the given Context.
 
@@ -150,13 +184,19 @@ class Foo extends React.Component {
 
 **`see`** https://reactjs.org/docs/context.html#classcontexttype
 
-Defined in: node_modules/@types/react/index.d.ts:454
+#### Inherited from
+
+React.PureComponent.contextType
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:454
 
 ## Methods
 
 ### UNSAFE\_componentWillMount
 
-▸ `Optional`**UNSAFE_componentWillMount**(): *void*
+▸ `Optional` **UNSAFE_componentWillMount**(): `void`
 
 Called immediately before mounting occurs, and before `Component#render`.
 Avoid introducing any side-effects or subscriptions in this method.
@@ -172,15 +212,23 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:708
+`void`
+
+#### Inherited from
+
+React.PureComponent.UNSAFE\_componentWillMount
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:708
 
 ___
 
 ### UNSAFE\_componentWillReceiveProps
 
-▸ `Optional`**UNSAFE_componentWillReceiveProps**(`nextProps`: *Readonly*<IToolbarIconProps\>, `nextContext`: *any*): *void*
+▸ `Optional` **UNSAFE_componentWillReceiveProps**(`nextProps`, `nextContext`): `void`
 
 Called when the component may be receiving new props.
 React may call this even if props have not changed, so be sure to compare new and existing
@@ -199,22 +247,30 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<IToolbarIconProps\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<`IToolbarIconProps`\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:740
+`void`
+
+#### Inherited from
+
+React.PureComponent.UNSAFE\_componentWillReceiveProps
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:740
 
 ___
 
 ### UNSAFE\_componentWillUpdate
 
-▸ `Optional`**UNSAFE_componentWillUpdate**(`nextProps`: *Readonly*<IToolbarIconProps\>, `nextState`: *Readonly*<{}\>, `nextContext`: *any*): *void*
+▸ `Optional` **UNSAFE_componentWillUpdate**(`nextProps`, `nextState`, `nextContext`): `void`
 
 Called immediately before rendering when new props or state is received. Not called for the initial render.
 
@@ -231,77 +287,109 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<IToolbarIconProps\> |
-`nextState` | *Readonly*<{}\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<`IToolbarIconProps`\> |
+| `nextState` | `Readonly`<{}\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:768
+`void`
+
+#### Inherited from
+
+React.PureComponent.UNSAFE\_componentWillUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:768
 
 ___
 
 ### componentDidCatch
 
-▸ `Optional`**componentDidCatch**(`error`: Error, `errorInfo`: ErrorInfo): *void*
+▸ `Optional` **componentDidCatch**(`error`, `errorInfo`): `void`
 
 Catches exceptions generated in descendant components. Unhandled exceptions will cause
 the entire component tree to unmount.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`error` | Error |
-`errorInfo` | ErrorInfo |
+| Name | Type |
+| :------ | :------ |
+| `error` | `Error` |
+| `errorInfo` | `ErrorInfo` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:637
+`void`
+
+#### Inherited from
+
+React.PureComponent.componentDidCatch
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:637
 
 ___
 
 ### componentDidMount
 
-▸ `Optional`**componentDidMount**(): *void*
+▸ `Optional` **componentDidMount**(): `void`
 
 Called immediately after a component is mounted. Setting state here will trigger re-rendering.
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:616
+`void`
+
+#### Inherited from
+
+React.PureComponent.componentDidMount
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:616
 
 ___
 
 ### componentDidUpdate
 
-▸ `Optional`**componentDidUpdate**(`prevProps`: *Readonly*<IToolbarIconProps\>, `prevState`: *Readonly*<{}\>, `snapshot?`: *any*): *void*
+▸ `Optional` **componentDidUpdate**(`prevProps`, `prevState`, `snapshot?`): `void`
 
 Called immediately after updating occurs. Not called for the initial render.
 
 The snapshot is only present if getSnapshotBeforeUpdate is present and returns non-null.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`prevProps` | *Readonly*<IToolbarIconProps\> |
-`prevState` | *Readonly*<{}\> |
-`snapshot?` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `prevProps` | `Readonly`<`IToolbarIconProps`\> |
+| `prevState` | `Readonly`<{}\> |
+| `snapshot?` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:679
+`void`
+
+#### Inherited from
+
+React.PureComponent.componentDidUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:679
 
 ___
 
 ### componentWillMount
 
-▸ `Optional`**componentWillMount**(): *void*
+▸ `Optional` **componentWillMount**(): `void`
 
 Called immediately before mounting occurs, and before `Component#render`.
 Avoid introducing any side-effects or subscriptions in this method.
@@ -315,15 +403,23 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:694
+`void`
+
+#### Inherited from
+
+React.PureComponent.componentWillMount
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:694
 
 ___
 
 ### componentWillReceiveProps
 
-▸ `Optional`**componentWillReceiveProps**(`nextProps`: *Readonly*<IToolbarIconProps\>, `nextContext`: *any*): *void*
+▸ `Optional` **componentWillReceiveProps**(`nextProps`, `nextContext`): `void`
 
 Called when the component may be receiving new props.
 React may call this even if props have not changed, so be sure to compare new and existing
@@ -340,35 +436,51 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<IToolbarIconProps\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<`IToolbarIconProps`\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:723
+`void`
+
+#### Inherited from
+
+React.PureComponent.componentWillReceiveProps
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:723
 
 ___
 
 ### componentWillUnmount
 
-▸ `Optional`**componentWillUnmount**(): *void*
+▸ `Optional` **componentWillUnmount**(): `void`
 
 Called immediately before a component is destroyed. Perform any necessary cleanup in this method, such as
 cancelled network requests, or cleaning up any DOM elements created in `componentDidMount`.
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:632
+`void`
+
+#### Inherited from
+
+React.PureComponent.componentWillUnmount
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:632
 
 ___
 
 ### componentWillUpdate
 
-▸ `Optional`**componentWillUpdate**(`nextProps`: *Readonly*<IToolbarIconProps\>, `nextState`: *Readonly*<{}\>, `nextContext`: *any*): *void*
+▸ `Optional` **componentWillUpdate**(`nextProps`, `nextState`, `nextContext`): `void`
 
 Called immediately before rendering when new props or state is received. Not called for the initial render.
 
@@ -383,39 +495,55 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<IToolbarIconProps\> |
-`nextState` | *Readonly*<{}\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<`IToolbarIconProps`\> |
+| `nextState` | `Readonly`<{}\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:753
+`void`
+
+#### Inherited from
+
+React.PureComponent.componentWillUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:753
 
 ___
 
 ### forceUpdate
 
-▸ **forceUpdate**(`callback?`: () => *void*): *void*
+▸ **forceUpdate**(`callback?`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`callback?` | () => *void* |
+| Name | Type |
+| :------ | :------ |
+| `callback?` | () => `void` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:489
+`void`
+
+#### Inherited from
+
+React.PureComponent.forceUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:489
 
 ___
 
 ### getSnapshotBeforeUpdate
 
-▸ `Optional`**getSnapshotBeforeUpdate**(`prevProps`: *Readonly*<IToolbarIconProps\>, `prevState`: *Readonly*<{}\>): *any*
+▸ `Optional` **getSnapshotBeforeUpdate**(`prevProps`, `prevState`): `any`
 
 Runs before React applies the result of `render` to the document, and
 returns an object to be given to componentDidUpdate. Useful for saving
@@ -424,71 +552,99 @@ things such as scroll position before `render` causes changes to it.
 Note: the presence of getSnapshotBeforeUpdate prevents any of the deprecated
 lifecycle events from running.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`prevProps` | *Readonly*<IToolbarIconProps\> |
-`prevState` | *Readonly*<{}\> |
+| Name | Type |
+| :------ | :------ |
+| `prevProps` | `Readonly`<`IToolbarIconProps`\> |
+| `prevState` | `Readonly`<{}\> |
 
-**Returns:** *any*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:673
+`any`
+
+#### Inherited from
+
+React.PureComponent.getSnapshotBeforeUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:673
 
 ___
 
 ### invokeAction
 
-▸ `Private`**invokeAction**(`evt`: *MouseEvent*<[*Button*](tooltip.button.md), MouseEvent\>): *void*
+▸ `Private` **invokeAction**(`evt`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`evt` | *MouseEvent*<[*Button*](tooltip.button.md), MouseEvent\> |
+| Name | Type |
+| :------ | :------ |
+| `evt` | `MouseEvent`<[`Button`](tooltip.Button.md), `MouseEvent`\> |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: src/controls/ToolbarIcon.tsx:53
+`void`
+
+#### Defined in
+
+../src/controls/ToolbarIcon.tsx:53
 
 ___
 
 ### render
 
-▸ **render**(): *Element*
+▸ **render**(): `Element`
 
-**Returns:** *Element*
+#### Returns
 
-Defined in: src/controls/ToolbarIcon.tsx:24
+`Element`
+
+#### Overrides
+
+React.PureComponent.render
+
+#### Defined in
+
+../src/controls/ToolbarIcon.tsx:24
 
 ___
 
 ### setState
 
-▸ **setState**<K\>(`state`: {} \| (`prevState`: *Readonly*<{}\>, `props`: *Readonly*<IToolbarIconProps\>) => {} \| *Pick*<{}, K\> \| *Pick*<{}, K\>, `callback?`: () => *void*): *void*
+▸ **setState**<`K`\>(`state`, `callback?`): `void`
 
-#### Type parameters:
+#### Type parameters
 
-Name | Type |
-:------ | :------ |
-`K` | *never* |
+| Name | Type |
+| :------ | :------ |
+| `K` | extends `never` |
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`state` | {} \| (`prevState`: *Readonly*<{}\>, `props`: *Readonly*<IToolbarIconProps\>) => {} \| *Pick*<{}, K\> \| *Pick*<{}, K\> |
-`callback?` | () => *void* |
+| Name | Type |
+| :------ | :------ |
+| `state` | {} \| (`prevState`: `Readonly`<{}\>, `props`: `Readonly`<`IToolbarIconProps`\>) => {} \| `Pick`<{}, `K`\> \| `Pick`<{}, `K`\> |
+| `callback?` | () => `void` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:484
+`void`
+
+#### Inherited from
+
+React.PureComponent.setState
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:484
 
 ___
 
 ### shouldComponentUpdate
 
-▸ `Optional`**shouldComponentUpdate**(`nextProps`: *Readonly*<IToolbarIconProps\>, `nextState`: *Readonly*<{}\>, `nextContext`: *any*): *boolean*
+▸ `Optional` **shouldComponentUpdate**(`nextProps`, `nextState`, `nextContext`): `boolean`
 
 Called to determine whether the change in props and state should trigger a re-render.
 
@@ -499,14 +655,22 @@ props or states have changed.
 If false is returned, `Component#render`, `componentWillUpdate`
 and `componentDidUpdate` will not be called.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<IToolbarIconProps\> |
-`nextState` | *Readonly*<{}\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<`IToolbarIconProps`\> |
+| `nextState` | `Readonly`<{}\> |
+| `nextContext` | `any` |
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:627
+`boolean`
+
+#### Inherited from
+
+React.PureComponent.shouldComponentUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:627

@@ -8,32 +8,40 @@
 
 ### Properties
 
-- [discovered](types.isettingsgamemode.md#discovered)
-- [pickerLayout](types.isettingsgamemode.md#pickerlayout)
-- [searchPaths](types.isettingsgamemode.md#searchpaths)
+- [discovered](types.ISettingsGameMode.md#discovered)
+- [pickerLayout](types.ISettingsGameMode.md#pickerlayout)
+- [searchPaths](types.ISettingsGameMode.md#searchpaths)
 
 ## Properties
 
 ### discovered
 
-• **discovered**: *object*
+• **discovered**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IState.ts:193
+▪ [id: `string`]: [`IDiscoveryResult`](types.IDiscoveryResult.md)
+
+#### Defined in
+
+../src/types/IState.ts:195
 
 ___
 
 ### pickerLayout
 
-• **pickerLayout**: *list* \| *small* \| *large*
+• **pickerLayout**: ``"list"`` \| ``"small"`` \| ``"large"``
 
-Defined in: src/types/IState.ts:195
+#### Defined in
+
+../src/types/IState.ts:197
 
 ___
 
 ### searchPaths
 
-• **searchPaths**: *string*[]
+• **searchPaths**: `string`[]
 
-Defined in: src/types/IState.ts:194
+#### Defined in
+
+../src/types/IState.ts:196

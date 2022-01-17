@@ -8,32 +8,40 @@
 
 ### Properties
 
-- [activeProfileId](types.isettingsprofiles.md#activeprofileid)
-- [lastActiveProfile](types.isettingsprofiles.md#lastactiveprofile)
-- [nextProfileId](types.isettingsprofiles.md#nextprofileid)
+- [activeProfileId](types.ISettingsProfiles.md#activeprofileid)
+- [lastActiveProfile](types.ISettingsProfiles.md#lastactiveprofile)
+- [nextProfileId](types.ISettingsProfiles.md#nextprofileid)
 
 ## Properties
 
 ### activeProfileId
 
-• **activeProfileId**: *string*
+• **activeProfileId**: `string`
 
-Defined in: src/types/IState.ts:187
+#### Defined in
+
+../src/types/IState.ts:189
 
 ___
 
 ### lastActiveProfile
 
-• **lastActiveProfile**: *object*
+• **lastActiveProfile**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IState.ts:189
+▪ [gameId: `string`]: `string`
+
+#### Defined in
+
+../src/types/IState.ts:191
 
 ___
 
 ### nextProfileId
 
-• **nextProfileId**: *string*
+• **nextProfileId**: `string`
 
-Defined in: src/types/IState.ts:188
+#### Defined in
+
+../src/types/IState.ts:190

@@ -8,142 +8,176 @@
 
 ### Properties
 
-- [contributed](types.igamestored.md#contributed)
-- [details](types.igamestored.md#details)
-- [environment](types.igamestored.md#environment)
-- [executable](types.igamestored.md#executable)
-- [extensionPath](types.igamestored.md#extensionpath)
-- [final](types.igamestored.md#final)
-- [id](types.igamestored.md#id)
-- [imageURL](types.igamestored.md#imageurl)
-- [logo](types.igamestored.md#logo)
-- [name](types.igamestored.md#name)
-- [parameters](types.igamestored.md#parameters)
-- [requiredFiles](types.igamestored.md#requiredfiles)
-- [shell](types.igamestored.md#shell)
-- [shortName](types.igamestored.md#shortname)
-- [supportedTools](types.igamestored.md#supportedtools)
+- [contributed](types.IGameStored.md#contributed)
+- [details](types.IGameStored.md#details)
+- [environment](types.IGameStored.md#environment)
+- [executable](types.IGameStored.md#executable)
+- [extensionPath](types.IGameStored.md#extensionpath)
+- [final](types.IGameStored.md#final)
+- [id](types.IGameStored.md#id)
+- [imageURL](types.IGameStored.md#imageurl)
+- [logo](types.IGameStored.md#logo)
+- [name](types.IGameStored.md#name)
+- [parameters](types.IGameStored.md#parameters)
+- [requiredFiles](types.IGameStored.md#requiredfiles)
+- [shell](types.IGameStored.md#shell)
+- [shortName](types.IGameStored.md#shortname)
+- [supportedTools](types.IGameStored.md#supportedtools)
 
 ## Properties
 
 ### contributed
 
-• `Optional` **contributed**: *string*
+• `Optional` **contributed**: `string`
 
-Defined in: src/extensions/gamemode_management/types/IGameStored.ts:17
+#### Defined in
+
+../src/extensions/gamemode_management/types/IGameStored.ts:17
 
 ___
 
 ### details
 
-• `Optional` **details**: *object*
+• `Optional` **details**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/extensions/gamemode_management/types/IGameStored.ts:15
+▪ [key: `string`]: `any`
+
+#### Defined in
+
+../src/extensions/gamemode_management/types/IGameStored.ts:15
 
 ___
 
 ### environment
 
-• `Optional` **environment**: *object*
+• `Optional` **environment**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/extensions/gamemode_management/types/IGameStored.ts:14
+▪ [key: `string`]: `string`
+
+#### Defined in
+
+../src/extensions/gamemode_management/types/IGameStored.ts:14
 
 ___
 
 ### executable
 
-• **executable**: *string*
+• **executable**: `string`
 
-Defined in: src/extensions/gamemode_management/types/IGameStored.ts:11
+#### Defined in
+
+../src/extensions/gamemode_management/types/IGameStored.ts:11
 
 ___
 
 ### extensionPath
 
-• `Optional` **extensionPath**: *string*
+• `Optional` **extensionPath**: `string`
 
-Defined in: src/extensions/gamemode_management/types/IGameStored.ts:8
+#### Defined in
+
+../src/extensions/gamemode_management/types/IGameStored.ts:8
 
 ___
 
 ### final
 
-• `Optional` **final**: *boolean*
+• `Optional` **final**: `boolean`
 
-Defined in: src/extensions/gamemode_management/types/IGameStored.ts:18
+#### Defined in
+
+../src/extensions/gamemode_management/types/IGameStored.ts:18
 
 ___
 
 ### id
 
-• **id**: *string*
+• **id**: `string`
 
-Defined in: src/extensions/gamemode_management/types/IGameStored.ts:4
+#### Defined in
+
+../src/extensions/gamemode_management/types/IGameStored.ts:4
 
 ___
 
 ### imageURL
 
-• `Optional` **imageURL**: *string*
+• `Optional` **imageURL**: `string`
 
-Defined in: src/extensions/gamemode_management/types/IGameStored.ts:9
+#### Defined in
+
+../src/extensions/gamemode_management/types/IGameStored.ts:9
 
 ___
 
 ### logo
 
-• `Optional` **logo**: *string*
+• `Optional` **logo**: `string`
 
-Defined in: src/extensions/gamemode_management/types/IGameStored.ts:7
+#### Defined in
+
+../src/extensions/gamemode_management/types/IGameStored.ts:7
 
 ___
 
 ### name
 
-• **name**: *string*
+• **name**: `string`
 
-Defined in: src/extensions/gamemode_management/types/IGameStored.ts:5
+#### Defined in
+
+../src/extensions/gamemode_management/types/IGameStored.ts:5
 
 ___
 
 ### parameters
 
-• `Optional` **parameters**: *string*[]
+• `Optional` **parameters**: `string`[]
 
-Defined in: src/extensions/gamemode_management/types/IGameStored.ts:12
+#### Defined in
+
+../src/extensions/gamemode_management/types/IGameStored.ts:12
 
 ___
 
 ### requiredFiles
 
-• **requiredFiles**: *string*[]
+• **requiredFiles**: `string`[]
 
-Defined in: src/extensions/gamemode_management/types/IGameStored.ts:10
+#### Defined in
+
+../src/extensions/gamemode_management/types/IGameStored.ts:10
 
 ___
 
 ### shell
 
-• `Optional` **shell**: *boolean*
+• `Optional` **shell**: `boolean`
 
-Defined in: src/extensions/gamemode_management/types/IGameStored.ts:16
+#### Defined in
+
+../src/extensions/gamemode_management/types/IGameStored.ts:16
 
 ___
 
 ### shortName
 
-• `Optional` **shortName**: *string*
+• `Optional` **shortName**: `string`
 
-Defined in: src/extensions/gamemode_management/types/IGameStored.ts:6
+#### Defined in
+
+../src/extensions/gamemode_management/types/IGameStored.ts:6
 
 ___
 
 ### supportedTools
 
-• `Optional` **supportedTools**: [*IToolStored*](types.itoolstored.md)[]
+• `Optional` **supportedTools**: [`IToolStored`](types.IToolStored.md)[]
 
-Defined in: src/extensions/gamemode_management/types/IGameStored.ts:13
+#### Defined in
+
+../src/extensions/gamemode_management/types/IGameStored.ts:13

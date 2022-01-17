@@ -6,6 +6,6 @@
 
 gamemode-related application settings
 
-**`export`** 
+**`export`**
 
 **`interface`** ISettings

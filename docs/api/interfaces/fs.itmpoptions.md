@@ -8,12 +8,14 @@
 
 ### Properties
 
-- [cleanup](fs.itmpoptions.md#cleanup)
+- [cleanup](fs.ITmpOptions.md#cleanup)
 
 ## Properties
 
 ### cleanup
 
-• `Optional` **cleanup**: *boolean*
+• `Optional` **cleanup**: `boolean`
 
-Defined in: src/util/fs.ts:1136
+#### Defined in
+
+../src/util/fs.ts:1082

@@ -4,86 +4,104 @@
 
 ## Implements
 
-* [*ITableFilter*](../interfaces/types.itablefilter.md)
+- [`ITableFilter`](../interfaces/types.ITableFilter.md)
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](tabletextfilter.md#constructor)
+- [constructor](TableTextFilter.md#constructor)
 
 ### Properties
 
-- [component](tabletextfilter.md#component)
-- [mCaseInsensitive](tabletextfilter.md#mcaseinsensitive)
-- [raw](tabletextfilter.md#raw)
+- [component](TableTextFilter.md#component)
+- [mCaseInsensitive](TableTextFilter.md#mcaseinsensitive)
+- [raw](TableTextFilter.md#raw)
 
 ### Methods
 
-- [matches](tabletextfilter.md#matches)
+- [matches](TableTextFilter.md#matches)
 
 ## Constructors
 
 ### constructor
 
-\+ **new TableTextFilter**(`ignoreCase`: *boolean*): [*TableTextFilter*](tabletextfilter.md)
+• **new TableTextFilter**(`ignoreCase`)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`ignoreCase` | *boolean* |
+| Name | Type |
+| :------ | :------ |
+| `ignoreCase` | `boolean` |
 
-**Returns:** [*TableTextFilter*](tabletextfilter.md)
+#### Defined in
 
-Defined in: src/controls/table/TextFilter.tsx:33
+../src/controls/table/TextFilter.tsx:35
 
 ## Properties
 
 ### component
 
-• **component**: *typeof* TextFilterComponent
+• **component**: typeof `TextFilterComponent` = `TextFilterComponent`
 
-Implementation of: [ITableFilter](../interfaces/types.itablefilter.md).[component](../interfaces/types.itablefilter.md#component)
+#### Implementation of
 
-Defined in: src/controls/table/TextFilter.tsx:30
+[ITableFilter](../interfaces/types.ITableFilter.md).[component](../interfaces/types.ITableFilter.md#component)
+
+#### Defined in
+
+../src/controls/table/TextFilter.tsx:30
 
 ___
 
 ### mCaseInsensitive
 
-• `Private` **mCaseInsensitive**: *boolean*
+• `Private` **mCaseInsensitive**: `boolean`
 
-Defined in: src/controls/table/TextFilter.tsx:33
+#### Defined in
+
+../src/controls/table/TextFilter.tsx:33
 
 ___
 
 ### raw
 
-• **raw**: *boolean*= false
+• **raw**: `boolean` = `false`
 
 this controls what value gets passed into the matches function, see the documentation there
 for possible values
 
-Implementation of: [ITableFilter](../interfaces/types.itablefilter.md).[raw](../interfaces/types.itablefilter.md#raw)
+#### Implementation of
 
-Defined in: src/controls/table/TextFilter.tsx:31
+[ITableFilter](../interfaces/types.ITableFilter.md).[raw](../interfaces/types.ITableFilter.md#raw)
+
+#### Defined in
+
+../src/controls/table/TextFilter.tsx:31
 
 ## Methods
 
 ### matches
 
-▸ **matches**(`filter`: *any*, `value`: *any*): *boolean*
+▸ **matches**(`filter`, `value`): `boolean`
 
 return true if value matches the filter
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`filter` | *any* |
-`value` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `filter` | `any` |
+| `value` | `any` |
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: src/controls/table/TextFilter.tsx:39
+`boolean`
+
+#### Implementation of
+
+[ITableFilter](../interfaces/types.ITableFilter.md).[matches](../interfaces/types.ITableFilter.md#matches)
+
+#### Defined in
+
+../src/controls/table/TextFilter.tsx:39

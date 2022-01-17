@@ -6,7 +6,7 @@
 
 interface for window state
 
-**`export`** 
+**`export`**
 
 **`interface`** IWindow
 
@@ -14,57 +14,69 @@ interface for window state
 
 ### Properties
 
-- [customTitlebar](types.iwindow.md#customtitlebar)
-- [maximized](types.iwindow.md#maximized)
-- [minimizeToTray](types.iwindow.md#minimizetotray)
-- [position](types.iwindow.md#position)
-- [size](types.iwindow.md#size)
-- [tabsMinimized](types.iwindow.md#tabsminimized)
+- [customTitlebar](types.IWindow.md#customtitlebar)
+- [maximized](types.IWindow.md#maximized)
+- [minimizeToTray](types.IWindow.md#minimizetotray)
+- [position](types.IWindow.md#position)
+- [size](types.IWindow.md#size)
+- [tabsMinimized](types.IWindow.md#tabsminimized)
 
 ## Properties
 
 ### customTitlebar
 
-• **customTitlebar**: *boolean*
+• **customTitlebar**: `boolean`
 
-Defined in: src/types/IState.ts:51
+#### Defined in
+
+../src/types/IState.ts:51
 
 ___
 
 ### maximized
 
-• **maximized**: *boolean*
+• **maximized**: `boolean`
 
-Defined in: src/types/IState.ts:47
+#### Defined in
+
+../src/types/IState.ts:47
 
 ___
 
 ### minimizeToTray
 
-• **minimizeToTray**: *boolean*
+• **minimizeToTray**: `boolean`
 
-Defined in: src/types/IState.ts:52
+#### Defined in
+
+../src/types/IState.ts:52
 
 ___
 
 ### position
 
-• `Optional` **position**: [*IPosition*](types.iposition.md)
+• `Optional` **position**: [`IPosition`](types.IPosition.md)
 
-Defined in: src/types/IState.ts:48
+#### Defined in
+
+../src/types/IState.ts:48
 
 ___
 
 ### size
 
-• **size**: [*IDimensions*](types.idimensions.md)
+• **size**: [`IDimensions`](types.IDimensions.md)
 
-Defined in: src/types/IState.ts:49
+#### Defined in
+
+../src/types/IState.ts:49
 
 ___
 
 ### tabsMinimized
 
-• **tabsMinimized**: *boolean*
+• **tabsMinimized**: `boolean`
 
-Defined in: src/types/IState.ts:50
+#### Defined in
+
+../src/types/IState.ts:50

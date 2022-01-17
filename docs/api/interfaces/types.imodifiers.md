@@ -8,30 +8,36 @@
 
 ### Properties
 
-- [alt](types.imodifiers.md#alt)
-- [ctrl](types.imodifiers.md#ctrl)
-- [shift](types.imodifiers.md#shift)
+- [alt](types.IModifiers.md#alt)
+- [ctrl](types.IModifiers.md#ctrl)
+- [shift](types.IModifiers.md#shift)
 
 ## Properties
 
 ### alt
 
-• **alt**: *boolean*
+• **alt**: `boolean`
 
-Defined in: src/types/IModifiers.ts:2
+#### Defined in
+
+../src/types/IModifiers.ts:2
 
 ___
 
 ### ctrl
 
-• **ctrl**: *boolean*
+• **ctrl**: `boolean`
 
-Defined in: src/types/IModifiers.ts:3
+#### Defined in
+
+../src/types/IModifiers.ts:3
 
 ___
 
 ### shift
 
-• **shift**: *boolean*
+• **shift**: `boolean`
 
-Defined in: src/types/IModifiers.ts:4
+#### Defined in
+
+../src/types/IModifiers.ts:4

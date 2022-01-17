@@ -4,924 +4,2717 @@
 
 [fs](../modules/fs.md).WriteStream
 
+* Extends `stream.Writable`
+
+Instances of `fs.WriteStream` are created and returned using the [createWriteStream](../modules/fs.md#createwritestream) function.
+
+**`since`** v0.1.93
+
 ## Hierarchy
 
-* *Writable*
+- `Writable`
 
-  ↳ **WriteStream**
+  ↳ **`WriteStream`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](fs.writestream.md#constructor)
+- [constructor](fs.WriteStream.md#constructor)
 
 ### Properties
 
-- [bytesWritten](fs.writestream.md#byteswritten)
-- [destroyed](fs.writestream.md#destroyed)
-- [path](fs.writestream.md#path)
-- [writable](fs.writestream.md#writable)
-- [writableEnded](fs.writestream.md#writableended)
-- [writableFinished](fs.writestream.md#writablefinished)
-- [writableHighWaterMark](fs.writestream.md#writablehighwatermark)
-- [writableLength](fs.writestream.md#writablelength)
-- [writableObjectMode](fs.writestream.md#writableobjectmode)
-- [defaultMaxListeners](fs.writestream.md#defaultmaxlisteners)
+- [bytesWritten](fs.WriteStream.md#byteswritten)
+- [destroyed](fs.WriteStream.md#destroyed)
+- [path](fs.WriteStream.md#path)
+- [pending](fs.WriteStream.md#pending)
+- [writable](fs.WriteStream.md#writable)
+- [writableCorked](fs.WriteStream.md#writablecorked)
+- [writableEnded](fs.WriteStream.md#writableended)
+- [writableFinished](fs.WriteStream.md#writablefinished)
+- [writableHighWaterMark](fs.WriteStream.md#writablehighwatermark)
+- [writableLength](fs.WriteStream.md#writablelength)
+- [writableObjectMode](fs.WriteStream.md#writableobjectmode)
+- [captureRejectionSymbol](fs.WriteStream.md#capturerejectionsymbol)
+- [captureRejections](fs.WriteStream.md#capturerejections)
+- [defaultMaxListeners](fs.WriteStream.md#defaultmaxlisteners)
+- [errorMonitor](fs.WriteStream.md#errormonitor)
 
 ### Methods
 
-- [\_destroy](fs.writestream.md#_destroy)
-- [\_final](fs.writestream.md#_final)
-- [\_write](fs.writestream.md#_write)
-- [\_writev](fs.writestream.md#_writev)
-- [addListener](fs.writestream.md#addlistener)
-- [close](fs.writestream.md#close)
-- [cork](fs.writestream.md#cork)
-- [destroy](fs.writestream.md#destroy)
-- [emit](fs.writestream.md#emit)
-- [end](fs.writestream.md#end)
-- [eventNames](fs.writestream.md#eventnames)
-- [getMaxListeners](fs.writestream.md#getmaxlisteners)
-- [listenerCount](fs.writestream.md#listenercount)
-- [listeners](fs.writestream.md#listeners)
-- [off](fs.writestream.md#off)
-- [on](fs.writestream.md#on)
-- [once](fs.writestream.md#once)
-- [pipe](fs.writestream.md#pipe)
-- [prependListener](fs.writestream.md#prependlistener)
-- [prependOnceListener](fs.writestream.md#prependoncelistener)
-- [rawListeners](fs.writestream.md#rawlisteners)
-- [removeAllListeners](fs.writestream.md#removealllisteners)
-- [removeListener](fs.writestream.md#removelistener)
-- [setDefaultEncoding](fs.writestream.md#setdefaultencoding)
-- [setMaxListeners](fs.writestream.md#setmaxlisteners)
-- [uncork](fs.writestream.md#uncork)
-- [write](fs.writestream.md#write)
-- [listenerCount](fs.writestream.md#listenercount)
+- [\_construct](fs.WriteStream.md#_construct)
+- [\_destroy](fs.WriteStream.md#_destroy)
+- [\_final](fs.WriteStream.md#_final)
+- [\_write](fs.WriteStream.md#_write)
+- [\_writev](fs.WriteStream.md#_writev)
+- [addListener](fs.WriteStream.md#addlistener)
+- [close](fs.WriteStream.md#close)
+- [cork](fs.WriteStream.md#cork)
+- [destroy](fs.WriteStream.md#destroy)
+- [emit](fs.WriteStream.md#emit)
+- [end](fs.WriteStream.md#end)
+- [eventNames](fs.WriteStream.md#eventnames)
+- [getMaxListeners](fs.WriteStream.md#getmaxlisteners)
+- [listenerCount](fs.WriteStream.md#listenercount)
+- [listeners](fs.WriteStream.md#listeners)
+- [off](fs.WriteStream.md#off)
+- [on](fs.WriteStream.md#on)
+- [once](fs.WriteStream.md#once)
+- [pipe](fs.WriteStream.md#pipe)
+- [prependListener](fs.WriteStream.md#prependlistener)
+- [prependOnceListener](fs.WriteStream.md#prependoncelistener)
+- [rawListeners](fs.WriteStream.md#rawlisteners)
+- [removeAllListeners](fs.WriteStream.md#removealllisteners)
+- [removeListener](fs.WriteStream.md#removelistener)
+- [setDefaultEncoding](fs.WriteStream.md#setdefaultencoding)
+- [setMaxListeners](fs.WriteStream.md#setmaxlisteners)
+- [uncork](fs.WriteStream.md#uncork)
+- [write](fs.WriteStream.md#write)
+- [getEventListeners](fs.WriteStream.md#geteventlisteners)
+- [listenerCount](fs.WriteStream.md#listenercount)
+- [on](fs.WriteStream.md#on)
+- [once](fs.WriteStream.md#once)
 
 ## Constructors
 
 ### constructor
 
-\+ **new WriteStream**(`opts?`: WritableOptions): [*WriteStream*](fs.writestream.md)
+• **new WriteStream**(`opts?`)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`opts?` | WritableOptions |
+| Name | Type |
+| :------ | :------ |
+| `opts?` | `WritableOptions` |
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+#### Inherited from
 
-Defined in: node_modules/@types/node/stream.d.ts:126
+stream.Writable.constructor
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:544
 
 ## Properties
 
 ### bytesWritten
 
-• **bytesWritten**: *number*
+• **bytesWritten**: `number`
 
-Defined in: node_modules/@types/node/fs.d.ts:166
+The number of bytes written so far. Does not include data that is still queued
+for writing.
+
+**`since`** v0.4.7
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:417
 
 ___
 
 ### destroyed
 
-• **destroyed**: *boolean*
+• **destroyed**: `boolean`
 
-Defined in: node_modules/@types/node/stream.d.ts:126
+Is `true` after `writable.destroy()` has been called.
+
+**`since`** v8.0.0
+
+#### Inherited from
+
+stream.Writable.destroyed
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:543
 
 ___
 
 ### path
 
-• **path**: *string* \| *Buffer*
+• **path**: `string` \| `Buffer`
 
-Defined in: node_modules/@types/node/fs.d.ts:167
+The path to the file the stream is writing to as specified in the first
+argument to [createWriteStream](../modules/fs.md#createwritestream). If `path` is passed as a string, then`writeStream.path` will be a string. If `path` is passed as a `Buffer`, then`writeStream.path` will be a
+`Buffer`.
+
+**`since`** v0.1.93
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:424
+
+___
+
+### pending
+
+• **pending**: `boolean`
+
+This property is `true` if the underlying file has not been opened yet,
+i.e. before the `'ready'` event is emitted.
+
+**`since`** v11.2.0
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:430
 
 ___
 
 ### writable
 
-• `Readonly` **writable**: *boolean*
+• `Readonly` **writable**: `boolean`
 
-Defined in: node_modules/@types/node/stream.d.ts:120
+Is `true` if it is safe to call `writable.write()`, which means
+the stream has not been destroyed, errored or ended.
+
+**`since`** v11.4.0
+
+#### Inherited from
+
+stream.Writable.writable
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:504
+
+___
+
+### writableCorked
+
+• `Readonly` **writableCorked**: `number`
+
+Number of times `writable.uncork()` needs to be
+called in order to fully uncork the stream.
+
+**`since`** v13.2.0, v12.16.0
+
+#### Inherited from
+
+stream.Writable.writableCorked
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:538
 
 ___
 
 ### writableEnded
 
-• `Readonly` **writableEnded**: *boolean*
+• `Readonly` **writableEnded**: `boolean`
 
-Defined in: node_modules/@types/node/stream.d.ts:121
+Is `true` after `writable.end()` has been called. This property
+does not indicate whether the data has been flushed, for this use `writable.writableFinished` instead.
+
+**`since`** v12.9.0
+
+#### Inherited from
+
+stream.Writable.writableEnded
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:510
 
 ___
 
 ### writableFinished
 
-• `Readonly` **writableFinished**: *boolean*
+• `Readonly` **writableFinished**: `boolean`
 
-Defined in: node_modules/@types/node/stream.d.ts:122
+Is set to `true` immediately before the `'finish'` event is emitted.
+
+**`since`** v12.6.0
+
+#### Inherited from
+
+stream.Writable.writableFinished
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:515
 
 ___
 
 ### writableHighWaterMark
 
-• `Readonly` **writableHighWaterMark**: *number*
+• `Readonly` **writableHighWaterMark**: `number`
 
-Defined in: node_modules/@types/node/stream.d.ts:123
+Return the value of `highWaterMark` passed when creating this `Writable`.
+
+**`since`** v9.3.0
+
+#### Inherited from
+
+stream.Writable.writableHighWaterMark
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:520
 
 ___
 
 ### writableLength
 
-• `Readonly` **writableLength**: *number*
+• `Readonly` **writableLength**: `number`
 
-Defined in: node_modules/@types/node/stream.d.ts:124
+This property contains the number of bytes (or objects) in the queue
+ready to be written. The value provides introspection data regarding
+the status of the `highWaterMark`.
+
+**`since`** v9.4.0
+
+#### Inherited from
+
+stream.Writable.writableLength
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:527
 
 ___
 
 ### writableObjectMode
 
-• `Readonly` **writableObjectMode**: *boolean*
+• `Readonly` **writableObjectMode**: `boolean`
 
-Defined in: node_modules/@types/node/stream.d.ts:125
+Getter for the property `objectMode` of a given `Writable` stream.
+
+**`since`** v12.3.0
+
+#### Inherited from
+
+stream.Writable.writableObjectMode
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:532
+
+___
+
+### captureRejectionSymbol
+
+▪ `Static` `Readonly` **captureRejectionSymbol**: typeof [`captureRejectionSymbol`](fs.WriteStream.md#capturerejectionsymbol)
+
+#### Inherited from
+
+stream.Writable.captureRejectionSymbol
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/events.d.ts:273
+
+___
+
+### captureRejections
+
+▪ `Static` **captureRejections**: `boolean`
+
+Sets or gets the default captureRejection value for all emitters.
+
+#### Inherited from
+
+stream.Writable.captureRejections
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/events.d.ts:278
 
 ___
 
 ### defaultMaxListeners
 
-▪ `Static` **defaultMaxListeners**: *number*
+▪ `Static` **defaultMaxListeners**: `number`
 
-Defined in: node_modules/@types/node/events.d.ts:18
+#### Inherited from
+
+stream.Writable.defaultMaxListeners
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/events.d.ts:279
+
+___
+
+### errorMonitor
+
+▪ `Static` `Readonly` **errorMonitor**: typeof [`errorMonitor`](fs.WriteStream.md#errormonitor)
+
+This symbol shall be used to install a listener for only monitoring `'error'`
+events. Listeners installed using this symbol are called before the regular
+`'error'` listeners are called.
+
+Installing a listener using this symbol does not change the behavior once an
+`'error'` event is emitted, therefore the process will still crash if no
+regular `'error'` listener is installed.
+
+#### Inherited from
+
+stream.Writable.errorMonitor
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/events.d.ts:272
 
 ## Methods
 
+### \_construct
+
+▸ `Optional` **_construct**(`callback`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `callback` | (`error?`: `Error`) => `void` |
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+stream.Writable.\_construct
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:553
+
+___
+
 ### \_destroy
 
-▸ **_destroy**(`error`: Error, `callback`: (`error?`: Error) => *void*): *void*
+▸ **_destroy**(`error`, `callback`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`error` | Error |
-`callback` | (`error?`: Error) => *void* |
+| Name | Type |
+| :------ | :------ |
+| `error` | `Error` |
+| `callback` | (`error?`: `Error`) => `void` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/node/stream.d.ts:130
+`void`
+
+#### Inherited from
+
+stream.Writable.\_destroy
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:554
 
 ___
 
 ### \_final
 
-▸ **_final**(`callback`: (`error?`: Error) => *void*): *void*
+▸ **_final**(`callback`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`callback` | (`error?`: Error) => *void* |
+| Name | Type |
+| :------ | :------ |
+| `callback` | (`error?`: `Error`) => `void` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/node/stream.d.ts:131
+`void`
+
+#### Inherited from
+
+stream.Writable.\_final
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:555
 
 ___
 
 ### \_write
 
-▸ **_write**(`chunk`: *any*, `encoding`: *string*, `callback`: (`error?`: Error) => *void*): *void*
+▸ **_write**(`chunk`, `encoding`, `callback`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`chunk` | *any* |
-`encoding` | *string* |
-`callback` | (`error?`: Error) => *void* |
+| Name | Type |
+| :------ | :------ |
+| `chunk` | `any` |
+| `encoding` | `BufferEncoding` |
+| `callback` | (`error?`: `Error`) => `void` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/node/stream.d.ts:128
+`void`
+
+#### Inherited from
+
+stream.Writable.\_write
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:545
 
 ___
 
 ### \_writev
 
-▸ `Optional`**_writev**(`chunks`: { `chunk`: *any* ; `encoding`: *string*  }[], `callback`: (`error?`: Error) => *void*): *void*
+▸ `Optional` **_writev**(`chunks`, `callback`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`chunks` | { `chunk`: *any* ; `encoding`: *string*  }[] |
-`callback` | (`error?`: Error) => *void* |
+| Name | Type |
+| :------ | :------ |
+| `chunks` | { `chunk`: `any` ; `encoding`: `BufferEncoding`  }[] |
+| `callback` | (`error?`: `Error`) => `void` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/node/stream.d.ts:129
+`void`
+
+#### Inherited from
+
+stream.Writable.\_writev
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:546
 
 ___
 
 ### addListener
 
-▸ **addListener**(`event`: *string*, `listener`: (...`args`: *any*[]) => *void*): [*WriteStream*](fs.writestream.md)
+▸ **addListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
 
 events.EventEmitter
   1. open
   2. close
+  3. ready
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`event` | *string* |
-`listener` | (...`args`: *any*[]) => *void* |
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"close"`` |
+| `listener` | () => `void` |
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+#### Returns
 
-Defined in: node_modules/@types/node/fs.d.ts:174
+[`WriteStream`](fs.WriteStream.md)
 
-▸ **addListener**(`event`: *open*, `listener`: (`fd`: *number*) => *void*): [*WriteStream*](fs.writestream.md)
+#### Overrides
 
-#### Parameters:
+stream.Writable.addListener
 
-Name | Type |
-:------ | :------ |
-`event` | *open* |
-`listener` | (`fd`: *number*) => *void* |
+#### Defined in
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:437
 
-Defined in: node_modules/@types/node/fs.d.ts:175
+▸ **addListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
 
-▸ **addListener**(`event`: *close*, `listener`: () => *void*): [*WriteStream*](fs.writestream.md)
+#### Parameters
 
-#### Parameters:
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"drain"`` |
+| `listener` | () => `void` |
 
-Name | Type |
-:------ | :------ |
-`event` | *close* |
-`listener` | () => *void* |
+#### Returns
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+[`WriteStream`](fs.WriteStream.md)
 
-Defined in: node_modules/@types/node/fs.d.ts:176
+#### Overrides
+
+stream.Writable.addListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:438
+
+▸ **addListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"error"`` |
+| `listener` | (`err`: `Error`) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.addListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:439
+
+▸ **addListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"finish"`` |
+| `listener` | () => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.addListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:440
+
+▸ **addListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"open"`` |
+| `listener` | (`fd`: `number`) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.addListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:441
+
+▸ **addListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"pipe"`` |
+| `listener` | (`src`: `Readable`) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.addListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:442
+
+▸ **addListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"ready"`` |
+| `listener` | () => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.addListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:443
+
+▸ **addListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"unpipe"`` |
+| `listener` | (`src`: `Readable`) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.addListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:444
+
+▸ **addListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | `string` \| `symbol` |
+| `listener` | (...`args`: `any`[]) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.addListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:445
 
 ___
 
 ### close
 
-▸ **close**(): *void*
+▸ **close**(`callback?`): `void`
 
-**Returns:** *void*
+Closes `writeStream`. Optionally accepts a
+callback that will be executed once the `writeStream`is closed.
 
-Defined in: node_modules/@types/node/fs.d.ts:165
+**`since`** v0.9.4
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `callback?` | (`err?`: `ErrnoException`) => `void` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:411
 
 ___
 
 ### cork
 
-▸ **cork**(): *void*
+▸ **cork**(): `void`
 
-**Returns:** *void*
+The `writable.cork()` method forces all written data to be buffered in memory.
+The buffered data will be flushed when either the [uncork](fs.WriteStream.md#uncork) or [end](fs.WriteStream.md#end) methods are called.
 
-Defined in: node_modules/@types/node/stream.d.ts:138
+The primary intent of `writable.cork()` is to accommodate a situation in which
+several small chunks are written to the stream in rapid succession. Instead of
+immediately forwarding them to the underlying destination, `writable.cork()`buffers all the chunks until `writable.uncork()` is called, which will pass them
+all to `writable._writev()`, if present. This prevents a head-of-line blocking
+situation where data is being buffered while waiting for the first small chunk
+to be processed. However, use of `writable.cork()` without implementing`writable._writev()` may have an adverse effect on throughput.
+
+See also: `writable.uncork()`, `writable._writev()`.
+
+**`since`** v0.11.2
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+stream.Writable.cork
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:659
 
 ___
 
 ### destroy
 
-▸ **destroy**(`error?`: Error): *void*
+▸ **destroy**(`error?`): `void`
 
-#### Parameters:
+Destroy the stream. Optionally emit an `'error'` event, and emit a `'close'`event (unless `emitClose` is set to `false`). After this call, the writable
+stream has ended and subsequent calls to `write()` or `end()` will result in
+an `ERR_STREAM_DESTROYED` error.
+This is a destructive and immediate way to destroy a stream. Previous calls to`write()` may not have drained, and may trigger an `ERR_STREAM_DESTROYED` error.
+Use `end()` instead of destroy if data should flush before close, or wait for
+the `'drain'` event before destroying the stream.
 
-Name | Type |
-:------ | :------ |
-`error?` | Error |
+Once `destroy()` has been called any further calls will be a no-op and no
+further errors except from `_destroy()` may be emitted as `'error'`.
 
-**Returns:** *void*
+Implementors should not override this method,
+but instead implement `writable._destroy()`.
 
-Defined in: node_modules/@types/node/stream.d.ts:140
+**`since`** v8.0.0
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `error?` | `Error` | Optional, an error to emit with `'error'` event. |
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+stream.Writable.destroy
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:710
 
 ___
 
 ### emit
 
-▸ **emit**(`event`: *close*): *boolean*
+▸ **emit**(`event`): `boolean`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`event` | *close* |
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"close"`` |
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: node_modules/@types/node/stream.d.ts:160
+`boolean`
 
-▸ **emit**(`event`: *drain*): *boolean*
+#### Inherited from
 
-#### Parameters:
+stream.Writable.emit
 
-Name | Type |
-:------ | :------ |
-`event` | *drain* |
+#### Defined in
 
-**Returns:** *boolean*
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:728
 
-Defined in: node_modules/@types/node/stream.d.ts:161
+▸ **emit**(`event`): `boolean`
 
-▸ **emit**(`event`: *error*, `err`: Error): *boolean*
+#### Parameters
 
-#### Parameters:
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"drain"`` |
 
-Name | Type |
-:------ | :------ |
-`event` | *error* |
-`err` | Error |
+#### Returns
 
-**Returns:** *boolean*
+`boolean`
 
-Defined in: node_modules/@types/node/stream.d.ts:162
+#### Inherited from
 
-▸ **emit**(`event`: *finish*): *boolean*
+stream.Writable.emit
 
-#### Parameters:
+#### Defined in
 
-Name | Type |
-:------ | :------ |
-`event` | *finish* |
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:729
 
-**Returns:** *boolean*
+▸ **emit**(`event`, `err`): `boolean`
 
-Defined in: node_modules/@types/node/stream.d.ts:163
+#### Parameters
 
-▸ **emit**(`event`: *pipe*, `src`: *Readable*): *boolean*
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"error"`` |
+| `err` | `Error` |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`event` | *pipe* |
-`src` | *Readable* |
+`boolean`
 
-**Returns:** *boolean*
+#### Inherited from
 
-Defined in: node_modules/@types/node/stream.d.ts:164
+stream.Writable.emit
 
-▸ **emit**(`event`: *unpipe*, `src`: *Readable*): *boolean*
+#### Defined in
 
-#### Parameters:
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:730
 
-Name | Type |
-:------ | :------ |
-`event` | *unpipe* |
-`src` | *Readable* |
+▸ **emit**(`event`): `boolean`
 
-**Returns:** *boolean*
+#### Parameters
 
-Defined in: node_modules/@types/node/stream.d.ts:165
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"finish"`` |
 
-▸ **emit**(`event`: *string* \| *symbol*, ...`args`: *any*[]): *boolean*
+#### Returns
 
-#### Parameters:
+`boolean`
 
-Name | Type |
-:------ | :------ |
-`event` | *string* \| *symbol* |
-`...args` | *any*[] |
+#### Inherited from
 
-**Returns:** *boolean*
+stream.Writable.emit
 
-Defined in: node_modules/@types/node/stream.d.ts:166
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:731
+
+▸ **emit**(`event`, `src`): `boolean`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"pipe"`` |
+| `src` | `Readable` |
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+stream.Writable.emit
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:732
+
+▸ **emit**(`event`, `src`): `boolean`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"unpipe"`` |
+| `src` | `Readable` |
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+stream.Writable.emit
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:733
+
+▸ **emit**(`event`, ...`args`): `boolean`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | `string` \| `symbol` |
+| `...args` | `any`[] |
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+stream.Writable.emit
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:734
 
 ___
 
 ### end
 
-▸ **end**(`cb?`: () => *void*): *void*
+▸ **end**(`cb?`): `void`
 
-#### Parameters:
+Calling the `writable.end()` method signals that no more data will be written
+to the `Writable`. The optional `chunk` and `encoding` arguments allow one
+final additional chunk of data to be written immediately before closing the
+stream.
 
-Name | Type |
-:------ | :------ |
-`cb?` | () => *void* |
+Calling the [write](fs.WriteStream.md#write) method after calling [end](fs.WriteStream.md#end) will raise an error.
 
-**Returns:** *void*
+```js
+// Write 'hello, ' and then end with 'world!'.
+const fs = require('fs');
+const file = fs.createWriteStream('example.txt');
+file.write('hello, ');
+file.end('world!');
+// Writing more now is not allowed!
+```
 
-Defined in: node_modules/@types/node/stream.d.ts:135
+**`since`** v0.9.4
 
-▸ **end**(`chunk`: *any*, `cb?`: () => *void*): *void*
+#### Parameters
 
-#### Parameters:
+| Name | Type |
+| :------ | :------ |
+| `cb?` | () => `void` |
 
-Name | Type |
-:------ | :------ |
-`chunk` | *any* |
-`cb?` | () => *void* |
+#### Returns
 
-**Returns:** *void*
+`void`
 
-Defined in: node_modules/@types/node/stream.d.ts:136
+#### Inherited from
 
-▸ **end**(`chunk`: *any*, `encoding`: *string*, `cb?`: () => *void*): *void*
+stream.Writable.end
 
-#### Parameters:
+#### Defined in
 
-Name | Type |
-:------ | :------ |
-`chunk` | *any* |
-`encoding` | *string* |
-`cb?` | () => *void* |
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:642
 
-**Returns:** *void*
+▸ **end**(`chunk`, `cb?`): `void`
 
-Defined in: node_modules/@types/node/stream.d.ts:137
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `chunk` | `any` |
+| `cb?` | () => `void` |
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+stream.Writable.end
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:643
+
+▸ **end**(`chunk`, `encoding`, `cb?`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `chunk` | `any` |
+| `encoding` | `BufferEncoding` |
+| `cb?` | () => `void` |
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+stream.Writable.end
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:644
 
 ___
 
 ### eventNames
 
-▸ **eventNames**(): (*string* \| *symbol*)[]
+▸ **eventNames**(): (`string` \| `symbol`)[]
 
-**Returns:** (*string* \| *symbol*)[]
+Returns an array listing the events for which the emitter has registered
+listeners. The values in the array are strings or `Symbol`s.
 
-Defined in: node_modules/@types/node/events.d.ts:33
+```js
+const EventEmitter = require('events');
+const myEE = new EventEmitter();
+myEE.on('foo', () => {});
+myEE.on('bar', () => {});
+
+const sym = Symbol('symbol');
+myEE.on(sym, () => {});
+
+console.log(myEE.eventNames());
+// Prints: [ 'foo', 'bar', Symbol(symbol) ]
+```
+
+**`since`** v6.0.0
+
+#### Returns
+
+(`string` \| `symbol`)[]
+
+#### Inherited from
+
+stream.Writable.eventNames
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/events.d.ts:614
 
 ___
 
 ### getMaxListeners
 
-▸ **getMaxListeners**(): *number*
+▸ **getMaxListeners**(): `number`
 
-**Returns:** *number*
+Returns the current max listener value for the `EventEmitter` which is either
+set by `emitter.setMaxListeners(n)` or defaults to [defaultMaxListeners](fs.WriteStream.md#defaultmaxlisteners).
 
-Defined in: node_modules/@types/node/events.d.ts:29
+**`since`** v1.0.0
+
+#### Returns
+
+`number`
+
+#### Inherited from
+
+stream.Writable.getMaxListeners
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/events.d.ts:471
 
 ___
 
 ### listenerCount
 
-▸ **listenerCount**(`type`: *string* \| *symbol*): *number*
+▸ **listenerCount**(`eventName`): `number`
 
-#### Parameters:
+Returns the number of listeners listening to the event named `eventName`.
 
-Name | Type |
-:------ | :------ |
-`type` | *string* \| *symbol* |
+**`since`** v3.2.0
 
-**Returns:** *number*
+#### Parameters
 
-Defined in: node_modules/@types/node/events.d.ts:34
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `eventName` | `string` \| `symbol` | The name of the event being listened for |
+
+#### Returns
+
+`number`
+
+#### Inherited from
+
+stream.Writable.listenerCount
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/events.d.ts:561
 
 ___
 
 ### listeners
 
-▸ **listeners**(`event`: *string* \| *symbol*): Function[]
+▸ **listeners**(`eventName`): `Function`[]
 
-#### Parameters:
+Returns a copy of the array of listeners for the event named `eventName`.
 
-Name | Type |
-:------ | :------ |
-`event` | *string* \| *symbol* |
+```js
+server.on('connection', (stream) => {
+  console.log('someone connected!');
+});
+console.log(util.inspect(server.listeners('connection')));
+// Prints: [ [Function] ]
+```
 
-**Returns:** Function[]
+**`since`** v0.1.26
 
-Defined in: node_modules/@types/node/events.d.ts:30
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `eventName` | `string` \| `symbol` |
+
+#### Returns
+
+`Function`[]
+
+#### Inherited from
+
+stream.Writable.listeners
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/events.d.ts:484
 
 ___
 
 ### off
 
-▸ **off**(`event`: *string* \| *symbol*, `listener`: (...`args`: *any*[]) => *void*): [*WriteStream*](fs.writestream.md)
+▸ **off**(`eventName`, `listener`): [`WriteStream`](fs.WriteStream.md)
 
-#### Parameters:
+Alias for `emitter.removeListener()`.
 
-Name | Type |
-:------ | :------ |
-`event` | *string* \| *symbol* |
-`listener` | (...`args`: *any*[]) => *void* |
+**`since`** v10.0.0
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+#### Parameters
 
-Defined in: node_modules/@types/node/events.d.ts:26
+| Name | Type |
+| :------ | :------ |
+| `eventName` | `string` \| `symbol` |
+| `listener` | (...`args`: `any`[]) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Inherited from
+
+stream.Writable.off
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/events.d.ts:444
 
 ___
 
 ### on
 
-▸ **on**(`event`: *string*, `listener`: (...`args`: *any*[]) => *void*): [*WriteStream*](fs.writestream.md)
+▸ **on**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`event` | *string* |
-`listener` | (...`args`: *any*[]) => *void* |
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"close"`` |
+| `listener` | () => `void` |
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+#### Returns
 
-Defined in: node_modules/@types/node/fs.d.ts:178
+[`WriteStream`](fs.WriteStream.md)
 
-▸ **on**(`event`: *open*, `listener`: (`fd`: *number*) => *void*): [*WriteStream*](fs.writestream.md)
+#### Overrides
 
-#### Parameters:
+stream.Writable.on
 
-Name | Type |
-:------ | :------ |
-`event` | *open* |
-`listener` | (`fd`: *number*) => *void* |
+#### Defined in
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:446
 
-Defined in: node_modules/@types/node/fs.d.ts:179
+▸ **on**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
 
-▸ **on**(`event`: *close*, `listener`: () => *void*): [*WriteStream*](fs.writestream.md)
+#### Parameters
 
-#### Parameters:
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"drain"`` |
+| `listener` | () => `void` |
 
-Name | Type |
-:------ | :------ |
-`event` | *close* |
-`listener` | () => *void* |
+#### Returns
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+[`WriteStream`](fs.WriteStream.md)
 
-Defined in: node_modules/@types/node/fs.d.ts:180
+#### Overrides
+
+stream.Writable.on
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:447
+
+▸ **on**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"error"`` |
+| `listener` | (`err`: `Error`) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.on
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:448
+
+▸ **on**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"finish"`` |
+| `listener` | () => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.on
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:449
+
+▸ **on**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"open"`` |
+| `listener` | (`fd`: `number`) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.on
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:450
+
+▸ **on**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"pipe"`` |
+| `listener` | (`src`: `Readable`) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.on
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:451
+
+▸ **on**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"ready"`` |
+| `listener` | () => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.on
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:452
+
+▸ **on**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"unpipe"`` |
+| `listener` | (`src`: `Readable`) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.on
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:453
+
+▸ **on**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | `string` \| `symbol` |
+| `listener` | (...`args`: `any`[]) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.on
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:454
 
 ___
 
 ### once
 
-▸ **once**(`event`: *string*, `listener`: (...`args`: *any*[]) => *void*): [*WriteStream*](fs.writestream.md)
+▸ **once**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`event` | *string* |
-`listener` | (...`args`: *any*[]) => *void* |
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"close"`` |
+| `listener` | () => `void` |
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+#### Returns
 
-Defined in: node_modules/@types/node/fs.d.ts:182
+[`WriteStream`](fs.WriteStream.md)
 
-▸ **once**(`event`: *open*, `listener`: (`fd`: *number*) => *void*): [*WriteStream*](fs.writestream.md)
+#### Overrides
 
-#### Parameters:
+stream.Writable.once
 
-Name | Type |
-:------ | :------ |
-`event` | *open* |
-`listener` | (`fd`: *number*) => *void* |
+#### Defined in
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:455
 
-Defined in: node_modules/@types/node/fs.d.ts:183
+▸ **once**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
 
-▸ **once**(`event`: *close*, `listener`: () => *void*): [*WriteStream*](fs.writestream.md)
+#### Parameters
 
-#### Parameters:
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"drain"`` |
+| `listener` | () => `void` |
 
-Name | Type |
-:------ | :------ |
-`event` | *close* |
-`listener` | () => *void* |
+#### Returns
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+[`WriteStream`](fs.WriteStream.md)
 
-Defined in: node_modules/@types/node/fs.d.ts:184
+#### Overrides
+
+stream.Writable.once
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:456
+
+▸ **once**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"error"`` |
+| `listener` | (`err`: `Error`) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.once
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:457
+
+▸ **once**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"finish"`` |
+| `listener` | () => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.once
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:458
+
+▸ **once**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"open"`` |
+| `listener` | (`fd`: `number`) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.once
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:459
+
+▸ **once**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"pipe"`` |
+| `listener` | (`src`: `Readable`) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.once
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:460
+
+▸ **once**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"ready"`` |
+| `listener` | () => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.once
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:461
+
+▸ **once**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"unpipe"`` |
+| `listener` | (`src`: `Readable`) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.once
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:462
+
+▸ **once**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | `string` \| `symbol` |
+| `listener` | (...`args`: `any`[]) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.once
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:463
 
 ___
 
 ### pipe
 
-▸ **pipe**<T\>(`destination`: T, `options?`: { `end?`: *boolean*  }): T
+▸ **pipe**<`T`\>(`destination`, `options?`): `T`
 
-#### Type parameters:
+#### Type parameters
 
-Name | Type |
-:------ | :------ |
-`T` | *WritableStream*<T\> |
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `WritableStream`<`T`\> |
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`destination` | T |
-`options?` | *object* |
-`options.end?` | *boolean* |
+| Name | Type |
+| :------ | :------ |
+| `destination` | `T` |
+| `options?` | `Object` |
+| `options.end?` | `boolean` |
 
-**Returns:** T
+#### Returns
 
-Defined in: node_modules/@types/node/stream.d.ts:5
+`T`
+
+#### Inherited from
+
+stream.Writable.pipe
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:24
 
 ___
 
 ### prependListener
 
-▸ **prependListener**(`event`: *string*, `listener`: (...`args`: *any*[]) => *void*): [*WriteStream*](fs.writestream.md)
+▸ **prependListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`event` | *string* |
-`listener` | (...`args`: *any*[]) => *void* |
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"close"`` |
+| `listener` | () => `void` |
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+#### Returns
 
-Defined in: node_modules/@types/node/fs.d.ts:186
+[`WriteStream`](fs.WriteStream.md)
 
-▸ **prependListener**(`event`: *open*, `listener`: (`fd`: *number*) => *void*): [*WriteStream*](fs.writestream.md)
+#### Overrides
 
-#### Parameters:
+stream.Writable.prependListener
 
-Name | Type |
-:------ | :------ |
-`event` | *open* |
-`listener` | (`fd`: *number*) => *void* |
+#### Defined in
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:464
 
-Defined in: node_modules/@types/node/fs.d.ts:187
+▸ **prependListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
 
-▸ **prependListener**(`event`: *close*, `listener`: () => *void*): [*WriteStream*](fs.writestream.md)
+#### Parameters
 
-#### Parameters:
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"drain"`` |
+| `listener` | () => `void` |
 
-Name | Type |
-:------ | :------ |
-`event` | *close* |
-`listener` | () => *void* |
+#### Returns
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+[`WriteStream`](fs.WriteStream.md)
 
-Defined in: node_modules/@types/node/fs.d.ts:188
+#### Overrides
+
+stream.Writable.prependListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:465
+
+▸ **prependListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"error"`` |
+| `listener` | (`err`: `Error`) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.prependListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:466
+
+▸ **prependListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"finish"`` |
+| `listener` | () => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.prependListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:467
+
+▸ **prependListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"open"`` |
+| `listener` | (`fd`: `number`) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.prependListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:468
+
+▸ **prependListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"pipe"`` |
+| `listener` | (`src`: `Readable`) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.prependListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:469
+
+▸ **prependListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"ready"`` |
+| `listener` | () => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.prependListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:470
+
+▸ **prependListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"unpipe"`` |
+| `listener` | (`src`: `Readable`) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.prependListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:471
+
+▸ **prependListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | `string` \| `symbol` |
+| `listener` | (...`args`: `any`[]) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.prependListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:472
 
 ___
 
 ### prependOnceListener
 
-▸ **prependOnceListener**(`event`: *string*, `listener`: (...`args`: *any*[]) => *void*): [*WriteStream*](fs.writestream.md)
+▸ **prependOnceListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`event` | *string* |
-`listener` | (...`args`: *any*[]) => *void* |
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"close"`` |
+| `listener` | () => `void` |
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+#### Returns
 
-Defined in: node_modules/@types/node/fs.d.ts:190
+[`WriteStream`](fs.WriteStream.md)
 
-▸ **prependOnceListener**(`event`: *open*, `listener`: (`fd`: *number*) => *void*): [*WriteStream*](fs.writestream.md)
+#### Overrides
 
-#### Parameters:
+stream.Writable.prependOnceListener
 
-Name | Type |
-:------ | :------ |
-`event` | *open* |
-`listener` | (`fd`: *number*) => *void* |
+#### Defined in
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:473
 
-Defined in: node_modules/@types/node/fs.d.ts:191
+▸ **prependOnceListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
 
-▸ **prependOnceListener**(`event`: *close*, `listener`: () => *void*): [*WriteStream*](fs.writestream.md)
+#### Parameters
 
-#### Parameters:
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"drain"`` |
+| `listener` | () => `void` |
 
-Name | Type |
-:------ | :------ |
-`event` | *close* |
-`listener` | () => *void* |
+#### Returns
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+[`WriteStream`](fs.WriteStream.md)
 
-Defined in: node_modules/@types/node/fs.d.ts:192
+#### Overrides
+
+stream.Writable.prependOnceListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:474
+
+▸ **prependOnceListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"error"`` |
+| `listener` | (`err`: `Error`) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.prependOnceListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:475
+
+▸ **prependOnceListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"finish"`` |
+| `listener` | () => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.prependOnceListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:476
+
+▸ **prependOnceListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"open"`` |
+| `listener` | (`fd`: `number`) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.prependOnceListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:477
+
+▸ **prependOnceListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"pipe"`` |
+| `listener` | (`src`: `Readable`) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.prependOnceListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:478
+
+▸ **prependOnceListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"ready"`` |
+| `listener` | () => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.prependOnceListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:479
+
+▸ **prependOnceListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"unpipe"`` |
+| `listener` | (`src`: `Readable`) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.prependOnceListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:480
+
+▸ **prependOnceListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | `string` \| `symbol` |
+| `listener` | (...`args`: `any`[]) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Overrides
+
+stream.Writable.prependOnceListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:481
 
 ___
 
 ### rawListeners
 
-▸ **rawListeners**(`event`: *string* \| *symbol*): Function[]
+▸ **rawListeners**(`eventName`): `Function`[]
 
-#### Parameters:
+Returns a copy of the array of listeners for the event named `eventName`,
+including any wrappers (such as those created by `.once()`).
 
-Name | Type |
-:------ | :------ |
-`event` | *string* \| *symbol* |
+```js
+const emitter = new EventEmitter();
+emitter.once('log', () => console.log('log once'));
 
-**Returns:** Function[]
+// Returns a new Array with a function `onceWrapper` which has a property
+// `listener` which contains the original listener bound above
+const listeners = emitter.rawListeners('log');
+const logFnWrapper = listeners[0];
 
-Defined in: node_modules/@types/node/events.d.ts:31
+// Logs "log once" to the console and does not unbind the `once` event
+logFnWrapper.listener();
+
+// Logs "log once" to the console and removes the listener
+logFnWrapper();
+
+emitter.on('log', () => console.log('log persistently'));
+// Will return a new Array with a single function bound by `.on()` above
+const newListeners = emitter.rawListeners('log');
+
+// Logs "log persistently" twice
+newListeners[0]();
+emitter.emit('log');
+```
+
+**`since`** v9.4.0
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `eventName` | `string` \| `symbol` |
+
+#### Returns
+
+`Function`[]
+
+#### Inherited from
+
+stream.Writable.rawListeners
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/events.d.ts:514
 
 ___
 
 ### removeAllListeners
 
-▸ **removeAllListeners**(`event?`: *string* \| *symbol*): [*WriteStream*](fs.writestream.md)
+▸ **removeAllListeners**(`event?`): [`WriteStream`](fs.WriteStream.md)
 
-#### Parameters:
+Removes all listeners, or those of the specified `eventName`.
 
-Name | Type |
-:------ | :------ |
-`event?` | *string* \| *symbol* |
+It is bad practice to remove listeners added elsewhere in the code,
+particularly when the `EventEmitter` instance was created by some other
+component or module (e.g. sockets or file streams).
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+Returns a reference to the `EventEmitter`, so that calls can be chained.
 
-Defined in: node_modules/@types/node/events.d.ts:27
+**`since`** v0.1.26
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event?` | `string` \| `symbol` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Inherited from
+
+stream.Writable.removeAllListeners
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/events.d.ts:455
 
 ___
 
 ### removeListener
 
-▸ **removeListener**(`event`: *close*, `listener`: () => *void*): [*WriteStream*](fs.writestream.md)
+▸ **removeListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`event` | *close* |
-`listener` | () => *void* |
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"close"`` |
+| `listener` | () => `void` |
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+#### Returns
 
-Defined in: node_modules/@types/node/stream.d.ts:200
+[`WriteStream`](fs.WriteStream.md)
 
-▸ **removeListener**(`event`: *drain*, `listener`: () => *void*): [*WriteStream*](fs.writestream.md)
+#### Inherited from
 
-#### Parameters:
+stream.Writable.removeListener
 
-Name | Type |
-:------ | :------ |
-`event` | *drain* |
-`listener` | () => *void* |
+#### Defined in
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:763
 
-Defined in: node_modules/@types/node/stream.d.ts:201
+▸ **removeListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
 
-▸ **removeListener**(`event`: *error*, `listener`: (`err`: Error) => *void*): [*WriteStream*](fs.writestream.md)
+#### Parameters
 
-#### Parameters:
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"drain"`` |
+| `listener` | () => `void` |
 
-Name | Type |
-:------ | :------ |
-`event` | *error* |
-`listener` | (`err`: Error) => *void* |
+#### Returns
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+[`WriteStream`](fs.WriteStream.md)
 
-Defined in: node_modules/@types/node/stream.d.ts:202
+#### Inherited from
 
-▸ **removeListener**(`event`: *finish*, `listener`: () => *void*): [*WriteStream*](fs.writestream.md)
+stream.Writable.removeListener
 
-#### Parameters:
+#### Defined in
 
-Name | Type |
-:------ | :------ |
-`event` | *finish* |
-`listener` | () => *void* |
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:764
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+▸ **removeListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
 
-Defined in: node_modules/@types/node/stream.d.ts:203
+#### Parameters
 
-▸ **removeListener**(`event`: *pipe*, `listener`: (`src`: *Readable*) => *void*): [*WriteStream*](fs.writestream.md)
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"error"`` |
+| `listener` | (`err`: `Error`) => `void` |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`event` | *pipe* |
-`listener` | (`src`: *Readable*) => *void* |
+[`WriteStream`](fs.WriteStream.md)
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+#### Inherited from
 
-Defined in: node_modules/@types/node/stream.d.ts:204
+stream.Writable.removeListener
 
-▸ **removeListener**(`event`: *unpipe*, `listener`: (`src`: *Readable*) => *void*): [*WriteStream*](fs.writestream.md)
+#### Defined in
 
-#### Parameters:
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:765
 
-Name | Type |
-:------ | :------ |
-`event` | *unpipe* |
-`listener` | (`src`: *Readable*) => *void* |
+▸ **removeListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+#### Parameters
 
-Defined in: node_modules/@types/node/stream.d.ts:205
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"finish"`` |
+| `listener` | () => `void` |
 
-▸ **removeListener**(`event`: *string* \| *symbol*, `listener`: (...`args`: *any*[]) => *void*): [*WriteStream*](fs.writestream.md)
+#### Returns
 
-#### Parameters:
+[`WriteStream`](fs.WriteStream.md)
 
-Name | Type |
-:------ | :------ |
-`event` | *string* \| *symbol* |
-`listener` | (...`args`: *any*[]) => *void* |
+#### Inherited from
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+stream.Writable.removeListener
 
-Defined in: node_modules/@types/node/stream.d.ts:206
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:766
+
+▸ **removeListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"pipe"`` |
+| `listener` | (`src`: `Readable`) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Inherited from
+
+stream.Writable.removeListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:767
+
+▸ **removeListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | ``"unpipe"`` |
+| `listener` | (`src`: `Readable`) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Inherited from
+
+stream.Writable.removeListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:768
+
+▸ **removeListener**(`event`, `listener`): [`WriteStream`](fs.WriteStream.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | `string` \| `symbol` |
+| `listener` | (...`args`: `any`[]) => `void` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Inherited from
+
+stream.Writable.removeListener
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:769
 
 ___
 
 ### setDefaultEncoding
 
-▸ **setDefaultEncoding**(`encoding`: *string*): [*WriteStream*](fs.writestream.md)
+▸ **setDefaultEncoding**(`encoding`): [`WriteStream`](fs.WriteStream.md)
 
-#### Parameters:
+The `writable.setDefaultEncoding()` method sets the default `encoding` for a `Writable` stream.
 
-Name | Type |
-:------ | :------ |
-`encoding` | *string* |
+**`since`** v0.11.15
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+#### Parameters
 
-Defined in: node_modules/@types/node/stream.d.ts:134
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `encoding` | `BufferEncoding` | The new default encoding |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Inherited from
+
+stream.Writable.setDefaultEncoding
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:619
 
 ___
 
 ### setMaxListeners
 
-▸ **setMaxListeners**(`n`: *number*): [*WriteStream*](fs.writestream.md)
+▸ **setMaxListeners**(`n`): [`WriteStream`](fs.WriteStream.md)
 
-#### Parameters:
+By default `EventEmitter`s will print a warning if more than `10` listeners are
+added for a particular event. This is a useful default that helps finding
+memory leaks. The `emitter.setMaxListeners()` method allows the limit to be
+modified for this specific `EventEmitter` instance. The value can be set to`Infinity` (or `0`) to indicate an unlimited number of listeners.
 
-Name | Type |
-:------ | :------ |
-`n` | *number* |
+Returns a reference to the `EventEmitter`, so that calls can be chained.
 
-**Returns:** [*WriteStream*](fs.writestream.md)
+**`since`** v0.3.5
 
-Defined in: node_modules/@types/node/events.d.ts:28
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `n` | `number` |
+
+#### Returns
+
+[`WriteStream`](fs.WriteStream.md)
+
+#### Inherited from
+
+stream.Writable.setMaxListeners
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/events.d.ts:465
 
 ___
 
 ### uncork
 
-▸ **uncork**(): *void*
+▸ **uncork**(): `void`
 
-**Returns:** *void*
+The `writable.uncork()` method flushes all data buffered since [cork](fs.WriteStream.md#cork) was called.
 
-Defined in: node_modules/@types/node/stream.d.ts:139
+When using `writable.cork()` and `writable.uncork()` to manage the buffering
+of writes to a stream, it is recommended that calls to `writable.uncork()` be
+deferred using `process.nextTick()`. Doing so allows batching of all`writable.write()` calls that occur within a given Node.js event loop phase.
+
+```js
+stream.cork();
+stream.write('some ');
+stream.write('data ');
+process.nextTick(() => stream.uncork());
+```
+
+If the `writable.cork()` method is called multiple times on a stream, the
+same number of calls to `writable.uncork()` must be called to flush the buffered
+data.
+
+```js
+stream.cork();
+stream.write('some ');
+stream.cork();
+stream.write('data ');
+process.nextTick(() => {
+  stream.uncork();
+  // The data will not be flushed until uncork() is called a second time.
+  stream.uncork();
+});
+```
+
+See also: `writable.cork()`.
+
+**`since`** v0.11.2
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+stream.Writable.uncork
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:693
 
 ___
 
 ### write
 
-▸ **write**(`chunk`: *any*, `cb?`: (`error`: Error) => *void*): *boolean*
+▸ **write**(`chunk`, `callback?`): `boolean`
 
-#### Parameters:
+The `writable.write()` method writes some data to the stream, and calls the
+supplied `callback` once the data has been fully handled. If an error
+occurs, the `callback` will be called with the error as its
+first argument. The `callback` is called asynchronously and before `'error'` is
+emitted.
 
-Name | Type |
-:------ | :------ |
-`chunk` | *any* |
-`cb?` | (`error`: Error) => *void* |
+The return value is `true` if the internal buffer is less than the`highWaterMark` configured when the stream was created after admitting `chunk`.
+If `false` is returned, further attempts to write data to the stream should
+stop until the `'drain'` event is emitted.
 
-**Returns:** *boolean*
+While a stream is not draining, calls to `write()` will buffer `chunk`, and
+return false. Once all currently buffered chunks are drained (accepted for
+delivery by the operating system), the `'drain'` event will be emitted.
+It is recommended that once `write()` returns false, no more chunks be written
+until the `'drain'` event is emitted. While calling `write()` on a stream that
+is not draining is allowed, Node.js will buffer all written chunks until
+maximum memory usage occurs, at which point it will abort unconditionally.
+Even before it aborts, high memory usage will cause poor garbage collector
+performance and high RSS (which is not typically released back to the system,
+even after the memory is no longer required). Since TCP sockets may never
+drain if the remote peer does not read the data, writing a socket that is
+not draining may lead to a remotely exploitable vulnerability.
 
-Defined in: node_modules/@types/node/stream.d.ts:132
+Writing data while the stream is not draining is particularly
+problematic for a `Transform`, because the `Transform` streams are paused
+by default until they are piped or a `'data'` or `'readable'` event handler
+is added.
 
-▸ **write**(`chunk`: *any*, `encoding`: *string*, `cb?`: (`error`: Error) => *void*): *boolean*
+If the data to be written can be generated or fetched on demand, it is
+recommended to encapsulate the logic into a `Readable` and use [pipe](fs.WriteStream.md#pipe). However, if calling `write()` is preferred, it is
+possible to respect backpressure and avoid memory issues using the `'drain'` event:
 
-#### Parameters:
+```js
+function write(data, cb) {
+  if (!stream.write(data)) {
+    stream.once('drain', cb);
+  } else {
+    process.nextTick(cb);
+  }
+}
 
-Name | Type |
-:------ | :------ |
-`chunk` | *any* |
-`encoding` | *string* |
-`cb?` | (`error`: Error) => *void* |
+// Wait for cb to be called before doing any other write.
+write('hello', () => {
+  console.log('Write completed, do more writes now.');
+});
+```
 
-**Returns:** *boolean*
+A `Writable` stream in object mode will always ignore the `encoding` argument.
 
-Defined in: node_modules/@types/node/stream.d.ts:133
+**`since`** v0.9.4
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `chunk` | `any` | Optional data to write. For streams not operating in object mode, `chunk` must be a string, `Buffer` or `Uint8Array`. For object mode streams, `chunk` may be any JavaScript value other than `null`. |
+| `callback?` | (`error`: `Error`) => `void` | Callback for when this chunk of data is flushed. |
+
+#### Returns
+
+`boolean`
+
+`false` if the stream wishes for the calling code to wait for the `'drain'` event to be emitted before continuing to write additional data; otherwise `true`.
+
+#### Inherited from
+
+stream.Writable.write
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:612
+
+▸ **write**(`chunk`, `encoding`, `callback?`): `boolean`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `chunk` | `any` |
+| `encoding` | `BufferEncoding` |
+| `callback?` | (`error`: `Error`) => `void` |
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+stream.Writable.write
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/stream.d.ts:613
+
+___
+
+### getEventListeners
+
+▸ `Static` **getEventListeners**(`emitter`, `name`): `Function`[]
+
+Returns a copy of the array of listeners for the event named `eventName`.
+
+For `EventEmitter`s this behaves exactly the same as calling `.listeners` on
+the emitter.
+
+For `EventTarget`s this is the only way to get the event listeners for the
+event target. This is useful for debugging and diagnostic purposes.
+
+```js
+const { getEventListeners, EventEmitter } = require('events');
+
+{
+  const ee = new EventEmitter();
+  const listener = () => console.log('Events are fun');
+  ee.on('foo', listener);
+  getEventListeners(ee, 'foo'); // [listener]
+}
+{
+  const et = new EventTarget();
+  const listener = () => console.log('Events are fun');
+  et.addEventListener('foo', listener);
+  getEventListeners(et, 'foo'); // [listener]
+}
+```
+
+**`since`** v15.2.0
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `emitter` | `EventEmitter` \| `DOMEventTarget` |
+| `name` | `string` \| `symbol` |
+
+#### Returns
+
+`Function`[]
+
+#### Inherited from
+
+stream.Writable.getEventListeners
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/events.d.ts:262
 
 ___
 
 ### listenerCount
 
-▸ `Static`**listenerCount**(`emitter`: *EventEmitter*, `event`: *string* \| *symbol*): *number*
+▸ `Static` **listenerCount**(`emitter`, `eventName`): `number`
 
-**`deprecated`** since v4.0.0
+A class method that returns the number of listeners for the given `eventName`registered on the given `emitter`.
 
-#### Parameters:
+```js
+const { EventEmitter, listenerCount } = require('events');
+const myEmitter = new EventEmitter();
+myEmitter.on('event', () => {});
+myEmitter.on('event', () => {});
+console.log(listenerCount(myEmitter, 'event'));
+// Prints: 2
+```
 
-Name | Type |
-:------ | :------ |
-`emitter` | *EventEmitter* |
-`event` | *string* \| *symbol* |
+**`since`** v0.9.12
 
-**Returns:** *number*
+**`deprecated`** Since v3.2.0 - Use `listenerCount` instead.
 
-Defined in: node_modules/@types/node/events.d.ts:17
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `emitter` | `EventEmitter` | The emitter to query |
+| `eventName` | `string` \| `symbol` | The event name |
+
+#### Returns
+
+`number`
+
+#### Inherited from
+
+stream.Writable.listenerCount
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/events.d.ts:234
+
+___
+
+### on
+
+▸ `Static` **on**(`emitter`, `eventName`, `options?`): `AsyncIterableIterator`<`any`\>
+
+```js
+const { on, EventEmitter } = require('events');
+
+(async () => {
+  const ee = new EventEmitter();
+
+  // Emit later on
+  process.nextTick(() => {
+    ee.emit('foo', 'bar');
+    ee.emit('foo', 42);
+  });
+
+  for await (const event of on(ee, 'foo')) {
+    // The execution of this inner block is synchronous and it
+    // processes one event at a time (even with await). Do not use
+    // if concurrent execution is required.
+    console.log(event); // prints ['bar'] [42]
+  }
+  // Unreachable here
+})();
+```
+
+Returns an `AsyncIterator` that iterates `eventName` events. It will throw
+if the `EventEmitter` emits `'error'`. It removes all listeners when
+exiting the loop. The `value` returned by each iteration is an array
+composed of the emitted event arguments.
+
+An `AbortSignal` can be used to cancel waiting on events:
+
+```js
+const { on, EventEmitter } = require('events');
+const ac = new AbortController();
+
+(async () => {
+  const ee = new EventEmitter();
+
+  // Emit later on
+  process.nextTick(() => {
+    ee.emit('foo', 'bar');
+    ee.emit('foo', 42);
+  });
+
+  for await (const event of on(ee, 'foo', { signal: ac.signal })) {
+    // The execution of this inner block is synchronous and it
+    // processes one event at a time (even with await). Do not use
+    // if concurrent execution is required.
+    console.log(event); // prints ['bar'] [42]
+  }
+  // Unreachable here
+})();
+
+process.nextTick(() => ac.abort());
+```
+
+**`since`** v13.6.0, v12.16.0
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `emitter` | `EventEmitter` | - |
+| `eventName` | `string` | The name of the event being listened for |
+| `options?` | `StaticEventEmitterOptions` | - |
+
+#### Returns
+
+`AsyncIterableIterator`<`any`\>
+
+that iterates `eventName` events emitted by the `emitter`
+
+#### Inherited from
+
+stream.Writable.on
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/events.d.ts:217
+
+___
+
+### once
+
+▸ `Static` **once**(`emitter`, `eventName`, `options?`): `Promise`<`any`[]\>
+
+Creates a `Promise` that is fulfilled when the `EventEmitter` emits the given
+event or that is rejected if the `EventEmitter` emits `'error'` while waiting.
+The `Promise` will resolve with an array of all the arguments emitted to the
+given event.
+
+This method is intentionally generic and works with the web platform [EventTarget](https://dom.spec.whatwg.org/#interface-eventtarget) interface, which has no special`'error'` event
+semantics and does not listen to the `'error'` event.
+
+```js
+const { once, EventEmitter } = require('events');
+
+async function run() {
+  const ee = new EventEmitter();
+
+  process.nextTick(() => {
+    ee.emit('myevent', 42);
+  });
+
+  const [value] = await once(ee, 'myevent');
+  console.log(value);
+
+  const err = new Error('kaboom');
+  process.nextTick(() => {
+    ee.emit('error', err);
+  });
+
+  try {
+    await once(ee, 'myevent');
+  } catch (err) {
+    console.log('error happened', err);
+  }
+}
+
+run();
+```
+
+The special handling of the `'error'` event is only used when `events.once()`is used to wait for another event. If `events.once()` is used to wait for the
+'`error'` event itself, then it is treated as any other kind of event without
+special handling:
+
+```js
+const { EventEmitter, once } = require('events');
+
+const ee = new EventEmitter();
+
+once(ee, 'error')
+  .then(([err]) => console.log('ok', err.message))
+  .catch((err) => console.log('error', err.message));
+
+ee.emit('error', new Error('boom'));
+
+// Prints: ok boom
+```
+
+An `AbortSignal` can be used to cancel waiting for the event:
+
+```js
+const { EventEmitter, once } = require('events');
+
+const ee = new EventEmitter();
+const ac = new AbortController();
+
+async function foo(emitter, event, signal) {
+  try {
+    await once(emitter, event, { signal });
+    console.log('event emitted!');
+  } catch (error) {
+    if (error.name === 'AbortError') {
+      console.error('Waiting for the event was canceled!');
+    } else {
+      console.error('There was an error', error.message);
+    }
+  }
+}
+
+foo(ee, 'foo', ac.signal);
+ac.abort(); // Abort waiting for the event
+ee.emit('foo'); // Prints: Waiting for the event was canceled!
+```
+
+**`since`** v11.13.0, v10.16.0
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `emitter` | `NodeEventTarget` |
+| `eventName` | `string` \| `symbol` |
+| `options?` | `StaticEventEmitterOptions` |
+
+#### Returns
+
+`Promise`<`any`[]\>
+
+#### Inherited from
+
+stream.Writable.once
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/events.d.ts:157
+
+▸ `Static` **once**(`emitter`, `eventName`, `options?`): `Promise`<`any`[]\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `emitter` | `DOMEventTarget` |
+| `eventName` | `string` |
+| `options?` | `StaticEventEmitterOptions` |
+
+#### Returns
+
+`Promise`<`any`[]\>
+
+#### Inherited from
+
+stream.Writable.once
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/events.d.ts:158

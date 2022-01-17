@@ -8,75 +8,91 @@
 
 ### Properties
 
-- [copyOnIFF](types.isettingsdownloads.md#copyoniff)
-- [maxBandwidth](types.isettingsdownloads.md#maxbandwidth)
-- [maxChunks](types.isettingsdownloads.md#maxchunks)
-- [maxParallelDownloads](types.isettingsdownloads.md#maxparalleldownloads)
-- [minChunkSize](types.isettingsdownloads.md#minchunksize)
-- [path](types.isettingsdownloads.md#path)
-- [showDropzone](types.isettingsdownloads.md#showdropzone)
-- [showGraph](types.isettingsdownloads.md#showgraph)
+- [copyOnIFF](types.ISettingsDownloads.md#copyoniff)
+- [maxBandwidth](types.ISettingsDownloads.md#maxbandwidth)
+- [maxChunks](types.ISettingsDownloads.md#maxchunks)
+- [maxParallelDownloads](types.ISettingsDownloads.md#maxparalleldownloads)
+- [minChunkSize](types.ISettingsDownloads.md#minchunksize)
+- [path](types.ISettingsDownloads.md#path)
+- [showDropzone](types.ISettingsDownloads.md#showdropzone)
+- [showGraph](types.ISettingsDownloads.md#showgraph)
 
 ## Properties
 
 ### copyOnIFF
 
-• **copyOnIFF**: *boolean*
+• **copyOnIFF**: `boolean`
 
-Defined in: src/types/IState.ts:206
+#### Defined in
+
+../src/types/IState.ts:208
 
 ___
 
 ### maxBandwidth
 
-• **maxBandwidth**: *number*
+• **maxBandwidth**: `number`
 
-Defined in: src/types/IState.ts:202
+#### Defined in
+
+../src/types/IState.ts:204
 
 ___
 
 ### maxChunks
 
-• **maxChunks**: *number*
+• **maxChunks**: `number`
 
-Defined in: src/types/IState.ts:200
+#### Defined in
+
+../src/types/IState.ts:202
 
 ___
 
 ### maxParallelDownloads
 
-• **maxParallelDownloads**: *number*
+• **maxParallelDownloads**: `number`
 
-Defined in: src/types/IState.ts:201
+#### Defined in
+
+../src/types/IState.ts:203
 
 ___
 
 ### minChunkSize
 
-• **minChunkSize**: *number*
+• **minChunkSize**: `number`
 
-Defined in: src/types/IState.ts:199
+#### Defined in
+
+../src/types/IState.ts:201
 
 ___
 
 ### path
 
-• **path**: *string*
+• **path**: `string`
 
-Defined in: src/types/IState.ts:203
+#### Defined in
+
+../src/types/IState.ts:205
 
 ___
 
 ### showDropzone
 
-• **showDropzone**: *boolean*
+• **showDropzone**: `boolean`
 
-Defined in: src/types/IState.ts:204
+#### Defined in
+
+../src/types/IState.ts:206
 
 ___
 
 ### showGraph
 
-• **showGraph**: *boolean*
+• **showGraph**: `boolean`
 
-Defined in: src/types/IState.ts:205
+#### Defined in
+
+../src/types/IState.ts:207

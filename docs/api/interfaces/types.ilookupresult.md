@@ -8,21 +8,25 @@
 
 ### Properties
 
-- [key](types.ilookupresult.md#key)
-- [value](types.ilookupresult.md#value)
+- [key](types.ILookupResult.md#key)
+- [value](types.ILookupResult.md#value)
 
 ## Properties
 
 ### key
 
-• **key**: *string*
+• **key**: `string`
 
-Defined in: node_modules/modmeta-db/lib/types.d.ts:38
+#### Defined in
+
+E:/WorkC/vortex/node_modules/modmeta-db/lib/types.d.ts:41
 
 ___
 
 ### value
 
-• **value**: [*IModInfo*](types.imodinfo.md)
+• **value**: [`IModInfo`](types.IModInfo.md)
 
-Defined in: node_modules/modmeta-db/lib/types.d.ts:39
+#### Defined in
+
+E:/WorkC/vortex/node_modules/modmeta-db/lib/types.d.ts:42

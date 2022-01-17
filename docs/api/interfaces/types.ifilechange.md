@@ -10,17 +10,17 @@ details about a file change
 
 ### Properties
 
-- [changeType](types.ifilechange.md#changetype)
-- [destTime](types.ifilechange.md#desttime)
-- [filePath](types.ifilechange.md#filepath)
-- [source](types.ifilechange.md#source)
-- [sourceTime](types.ifilechange.md#sourcetime)
+- [changeType](types.IFileChange.md#changetype)
+- [destTime](types.IFileChange.md#desttime)
+- [filePath](types.IFileChange.md#filepath)
+- [source](types.IFileChange.md#source)
+- [sourceTime](types.IFileChange.md#sourcetime)
 
 ## Properties
 
 ### changeType
 
-• **changeType**: *refchange* \| *valchange* \| *deleted* \| *srcdeleted*
+• **changeType**: ``"refchange"`` \| ``"valchange"`` \| ``"deleted"`` \| ``"srcdeleted"``
 
 type of change.
 refchange means that the installed file
@@ -35,44 +35,54 @@ valchange means that the content of the file was changed
 deleted means that the file was deleted in the destination directory
 srcdeleted means that the file was deleted in the source directory
 
-Defined in: src/extensions/mod_management/types/IDeploymentMethod.ts:33
+#### Defined in
+
+../src/extensions/mod_management/types/IDeploymentMethod.ts:33
 
 ___
 
 ### destTime
 
-• `Optional` **destTime**: Date
+• `Optional` **destTime**: `Date`
 
 time the deployed file was last changed
 
-Defined in: src/extensions/mod_management/types/IDeploymentMethod.ts:37
+#### Defined in
+
+../src/extensions/mod_management/types/IDeploymentMethod.ts:37
 
 ___
 
 ### filePath
 
-• **filePath**: *string*
+• **filePath**: `string`
 
 relative path to the changed file
 
-Defined in: src/extensions/mod_management/types/IDeploymentMethod.ts:14
+#### Defined in
+
+../src/extensions/mod_management/types/IDeploymentMethod.ts:14
 
 ___
 
 ### source
 
-• **source**: *string*
+• **source**: `string`
 
 the source mod
 
-Defined in: src/extensions/mod_management/types/IDeploymentMethod.ts:18
+#### Defined in
+
+../src/extensions/mod_management/types/IDeploymentMethod.ts:18
 
 ___
 
 ### sourceTime
 
-• `Optional` **sourceTime**: Date
+• `Optional` **sourceTime**: `Date`
 
 time the staging file was last changed
 
-Defined in: src/extensions/mod_management/types/IDeploymentMethod.ts:41
+#### Defined in
+
+../src/extensions/mod_management/types/IDeploymentMethod.ts:41

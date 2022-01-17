@@ -6,22 +6,20 @@
 
 ## Table of contents
 
-### Properties
+### Methods
 
-- [showDialogCallback](fs.iremovefileoptions.md#showdialogcallback)
+- [showDialogCallback](fs.IRemoveFileOptions.md#showdialogcallback)
 
-## Properties
+## Methods
 
 ### showDialogCallback
 
-• `Optional` **showDialogCallback**: () => *boolean*
+▸ `Optional` **showDialogCallback**(): `boolean`
 
-#### Type declaration:
+#### Returns
 
-▸ (): *boolean*
+`boolean`
 
-**Returns:** *boolean*
+#### Defined in
 
-Defined in: src/util/fs.ts:66
-
-Defined in: src/util/fs.ts:66
+../src/util/fs.ts:71

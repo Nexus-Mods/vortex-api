@@ -8,39 +8,47 @@
 
 ### Properties
 
-- [create](types.iopenoptions.md#create)
-- [defaultPath](types.iopenoptions.md#defaultpath)
-- [filters](types.iopenoptions.md#filters)
-- [title](types.iopenoptions.md#title)
+- [create](types.IOpenOptions.md#create)
+- [defaultPath](types.IOpenOptions.md#defaultpath)
+- [filters](types.IOpenOptions.md#filters)
+- [title](types.IOpenOptions.md#title)
 
 ## Properties
 
 ### create
 
-• `Optional` **create**: *boolean*
+• `Optional` **create**: `boolean`
 
-Defined in: src/types/IExtensionContext.ts:178
+#### Defined in
+
+../src/types/IExtensionContext.ts:198
 
 ___
 
 ### defaultPath
 
-• `Optional` **defaultPath**: *string*
+• `Optional` **defaultPath**: `string`
 
-Defined in: src/types/IExtensionContext.ts:176
+#### Defined in
+
+../src/types/IExtensionContext.ts:196
 
 ___
 
 ### filters
 
-• `Optional` **filters**: [*IFileFilter*](types.ifilefilter.md)[]
+• `Optional` **filters**: [`IFileFilter`](types.IFileFilter.md)[]
 
-Defined in: src/types/IExtensionContext.ts:177
+#### Defined in
+
+../src/types/IExtensionContext.ts:197
 
 ___
 
 ### title
 
-• `Optional` **title**: *string*
+• `Optional` **title**: `string`
 
-Defined in: src/types/IExtensionContext.ts:175
+#### Defined in
+
+../src/types/IExtensionContext.ts:195

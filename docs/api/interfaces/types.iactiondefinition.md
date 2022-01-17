@@ -6,134 +6,178 @@
 
 interface of an action within one of the icon bars
 
-**`export`** 
+**`export`**
 
 **`interface`** IActionDefinition
 
 ## Hierarchy
 
-* **IActionDefinition**
+- **`IActionDefinition`**
 
-  ↳ [*ITableRowAction*](itablerowaction.md)
+  ↳ [`ITableRowAction`](ITableRowAction.md)
 
 ## Table of contents
 
 ### Properties
 
-- [action](types.iactiondefinition.md#action)
-- [component](types.iactiondefinition.md#component)
-- [condition](types.iactiondefinition.md#condition)
-- [default](types.iactiondefinition.md#default)
-- [icon](types.iactiondefinition.md#icon)
-- [options](types.iactiondefinition.md#options)
-- [position](types.iactiondefinition.md#position)
-- [props](types.iactiondefinition.md#props)
-- [title](types.iactiondefinition.md#title)
+- [component](types.IActionDefinition.md#component)
+- [data](types.IActionDefinition.md#data)
+- [default](types.IActionDefinition.md#default)
+- [group](types.IActionDefinition.md#group)
+- [icon](types.IActionDefinition.md#icon)
+- [options](types.IActionDefinition.md#options)
+- [position](types.IActionDefinition.md#position)
+- [subMenus](types.IActionDefinition.md#submenus)
+- [title](types.IActionDefinition.md#title)
+
+### Methods
+
+- [action](types.IActionDefinition.md#action)
+- [condition](types.IActionDefinition.md#condition)
+- [props](types.IActionDefinition.md#props)
 
 ## Properties
 
-### action
-
-• `Optional` **action**: (`instanceId`: *string* \| *string*[]) => *void*
-
-#### Type declaration:
-
-▸ (`instanceId`: *string* \| *string*[]): *void*
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`instanceId` | *string* \| *string*[] |
-
-**Returns:** *void*
-
-Defined in: src/types/IActionDefinition.ts:20
-
-Defined in: src/types/IActionDefinition.ts:20
-
-___
-
 ### component
 
-• `Optional` **component**: *ComponentType*<any\>
+• `Optional` **component**: `ComponentType`<`any`\>
 
-Defined in: src/types/IActionDefinition.ts:18
+#### Defined in
+
+../src/types/IActionDefinition.ts:21
 
 ___
 
-### condition
+### data
 
-• `Optional` **condition**: (`instanceId`: *string* \| *string*[]) => *string* \| *boolean*
+• `Optional` **data**: `any`
 
-#### Type declaration:
+#### Defined in
 
-▸ (`instanceId`: *string* \| *string*[]): *string* \| *boolean*
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`instanceId` | *string* \| *string*[] |
-
-**Returns:** *string* \| *boolean*
-
-Defined in: src/types/IActionDefinition.ts:27
-
-Defined in: src/types/IActionDefinition.ts:27
+../src/types/IActionDefinition.ts:20
 
 ___
 
 ### default
 
-• `Optional` **default**: *boolean*
+• `Optional` **default**: `boolean`
 
-Defined in: src/types/IActionDefinition.ts:33
+#### Defined in
+
+../src/types/IActionDefinition.ts:44
+
+___
+
+### group
+
+• `Optional` **group**: `string`
+
+#### Defined in
+
+../src/types/IActionDefinition.ts:39
 
 ___
 
 ### icon
 
-• `Optional` **icon**: *string*
+• `Optional` **icon**: `string`
 
-Defined in: src/types/IActionDefinition.ts:16
+#### Defined in
+
+../src/types/IActionDefinition.ts:18
 
 ___
 
 ### options
 
-• `Optional` **options**: [*IActionOptions*](types.iactionoptions.md)
+• `Optional` **options**: [`IActionOptions`](types.IActionOptions.md)
 
-Defined in: src/types/IActionDefinition.ts:29
+#### Defined in
+
+../src/types/IActionDefinition.ts:40
 
 ___
 
 ### position
 
-• `Optional` **position**: *number*
+• `Optional` **position**: `number`
 
-Defined in: src/types/IActionDefinition.ts:28
+#### Defined in
+
+../src/types/IActionDefinition.ts:32
 
 ___
 
-### props
+### subMenus
 
-• `Optional` **props**: () => *any*
+• `Optional` **subMenus**: [`ActionFunc`](../modules/types.md#actionfunc) \| [`IActionDefinition`](types.IActionDefinition.md)[]
 
-#### Type declaration:
+#### Defined in
 
-▸ (): *any*
-
-**Returns:** *any*
-
-Defined in: src/types/IActionDefinition.ts:19
-
-Defined in: src/types/IActionDefinition.ts:19
+../src/types/IActionDefinition.ts:24
 
 ___
 
 ### title
 
-• `Optional` **title**: *string*
+• `Optional` **title**: `string`
 
-Defined in: src/types/IActionDefinition.ts:17
+#### Defined in
+
+../src/types/IActionDefinition.ts:19
+
+## Methods
+
+### action
+
+▸ `Optional` **action**(`instanceId`, `data?`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `instanceId` | `string` \| `string`[] |
+| `data?` | `any` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+../src/types/IActionDefinition.ts:23
+
+___
+
+### condition
+
+▸ `Optional` **condition**(`instanceId`, `data?`): `string` \| `boolean`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `instanceId` | `string` \| `string`[] |
+| `data?` | `any` |
+
+#### Returns
+
+`string` \| `boolean`
+
+#### Defined in
+
+../src/types/IActionDefinition.ts:31
+
+___
+
+### props
+
+▸ `Optional` **props**(): `any`
+
+#### Returns
+
+`any`
+
+#### Defined in
+
+../src/types/IActionDefinition.ts:22

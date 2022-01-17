@@ -6,141 +6,189 @@
 
 ## Hierarchy
 
-* *Error*
+- `Error`
 
-  ↳ **CycleError**
+  ↳ **`CycleError`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](util.cycleerror.md#constructor)
+- [constructor](util.CycleError.md#constructor)
 
 ### Properties
 
-- [mCycles](util.cycleerror.md#mcycles)
-- [message](util.cycleerror.md#message)
-- [name](util.cycleerror.md#name)
-- [prepareStackTrace](util.cycleerror.md#preparestacktrace)
-- [stack](util.cycleerror.md#stack)
-- [stackTraceLimit](util.cycleerror.md#stacktracelimit)
+- [mCycles](util.CycleError.md#mcycles)
+- [message](util.CycleError.md#message)
+- [name](util.CycleError.md#name)
+- [stack](util.CycleError.md#stack)
+- [prepareStackTrace](util.CycleError.md#preparestacktrace)
+- [stackTraceLimit](util.CycleError.md#stacktracelimit)
 
 ### Accessors
 
-- [cycles](util.cycleerror.md#cycles)
+- [cycles](util.CycleError.md#cycles)
 
 ### Methods
 
-- [captureStackTrace](util.cycleerror.md#capturestacktrace)
+- [captureStackTrace](util.CycleError.md#capturestacktrace)
 
 ## Constructors
 
 ### constructor
 
-\+ **new CycleError**(`cycles`: *string*[][]): [*CycleError*](util.cycleerror.md)
+• **new CycleError**(`cycles`)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`cycles` | *string*[][] |
+| Name | Type |
+| :------ | :------ |
+| `cycles` | `string`[][] |
 
-**Returns:** [*CycleError*](util.cycleerror.md)
+#### Overrides
 
-Defined in: src/extensions/mod_management/util/sort.ts:15
+Error.constructor
+
+#### Defined in
+
+../src/extensions/mod_management/util/sort.ts:20
 
 ## Properties
 
 ### mCycles
 
-• `Private` **mCycles**: *string*[][]
+• `Private` **mCycles**: `string`[][]
 
-Defined in: src/extensions/mod_management/util/sort.ts:15
+#### Defined in
+
+../src/extensions/mod_management/util/sort.ts:19
 
 ___
 
 ### message
 
-• **message**: *string*
+• **message**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:974
+#### Inherited from
+
+Error.message
+
+#### Defined in
+
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1023
 
 ___
 
 ### name
 
-• **name**: *string*
+• **name**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:973
+#### Inherited from
 
-___
+Error.name
 
-### prepareStackTrace
+#### Defined in
 
-• `Optional` **prepareStackTrace**: (`err`: Error, `stackTraces`: CallSite[]) => *any*
-
-Optional override for formatting stack traces
-
-**`see`** https://github.com/v8/v8/wiki/Stack%20Trace%20API#customizing-stack-traces
-
-#### Type declaration:
-
-▸ (`err`: Error, `stackTraces`: CallSite[]): *any*
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`err` | Error |
-`stackTraces` | CallSite[] |
-
-**Returns:** *any*
-
-Defined in: node_modules/@types/node/globals.d.ts:140
-
-Defined in: node_modules/@types/node/globals.d.ts:140
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1022
 
 ___
 
 ### stack
 
-• `Optional` **stack**: *string*
+• `Optional` **stack**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:975
+#### Inherited from
+
+Error.stack
+
+#### Defined in
+
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1024
+
+___
+
+### prepareStackTrace
+
+▪ `Static` `Optional` **prepareStackTrace**: (`err`: `Error`, `stackTraces`: `CallSite`[]) => `any`
+
+#### Type declaration
+
+▸ (`err`, `stackTraces`): `any`
+
+Optional override for formatting stack traces
+
+**`see`** https://v8.dev/docs/stack-trace-api#customizing-stack-traces
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `err` | `Error` |
+| `stackTraces` | `CallSite`[] |
+
+##### Returns
+
+`any`
+
+#### Inherited from
+
+Error.prepareStackTrace
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:11
 
 ___
 
 ### stackTraceLimit
 
-• **stackTraceLimit**: *number*
+▪ `Static` **stackTraceLimit**: `number`
 
-Defined in: node_modules/@types/node/globals.d.ts:142
+#### Inherited from
+
+Error.stackTraceLimit
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:13
 
 ## Accessors
 
 ### cycles
 
-• get **cycles**(): *string*[][]
+• `get` **cycles**(): `string`[][]
 
-**Returns:** *string*[][]
+#### Returns
 
-Defined in: src/extensions/mod_management/util/sort.ts:21
+`string`[][]
+
+#### Defined in
+
+../src/extensions/mod_management/util/sort.ts:25
 
 ## Methods
 
 ### captureStackTrace
 
-▸ **captureStackTrace**(`targetObject`: Object, `constructorOpt?`: Function): *void*
+▸ `Static` **captureStackTrace**(`targetObject`, `constructorOpt?`): `void`
 
 Create .stack property on a target object
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`targetObject` | Object |
-`constructorOpt?` | Function |
+| Name | Type |
+| :------ | :------ |
+| `targetObject` | `object` |
+| `constructorOpt?` | `Function` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/node/globals.d.ts:133
+`void`
+
+#### Inherited from
+
+Error.captureStackTrace
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:4

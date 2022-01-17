@@ -1,19 +1,21 @@
-[vortex_devel](../README.md) / [Exports](../modules.md) / [Promise](../modules/promise.md) / SpreadOption
+[vortex_devel](../README.md) / [Exports](../modules.md) / [Promise](../modules/Promise.md) / SpreadOption
 
 # Interface: SpreadOption
 
-[Promise](../modules/promise.md).SpreadOption
+[Promise](../modules/Promise.md).SpreadOption
 
 ## Table of contents
 
 ### Properties
 
-- [spread](promise.spreadoption.md#spread)
+- [spread](Promise.SpreadOption.md#spread)
 
 ## Properties
 
 ### spread
 
-• **spread**: *boolean*
+• **spread**: `boolean`
 
-Defined in: node_modules/@types/bluebird/index.d.ts:958
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:958

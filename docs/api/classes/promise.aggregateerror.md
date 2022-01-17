@@ -1,8 +1,8 @@
-[vortex_devel](../README.md) / [Exports](../modules.md) / [Promise](../modules/promise.md) / AggregateError
+[vortex_devel](../README.md) / [Exports](../modules.md) / [Promise](../modules/Promise.md) / AggregateError
 
 # Class: AggregateError
 
-[Promise](../modules/promise.md).AggregateError
+[Promise](../modules/Promise.md).AggregateError
 
 A collection of errors. `AggregateError` is an array-like object, with numeric indices and a `.length` property.
  It supports all generic array methods such as `.forEach` directly.
@@ -13,423 +13,532 @@ A collection of errors. `AggregateError` is an array-like object, with numeric i
 
 ## Hierarchy
 
-* *Error*
+- `Error`
 
-  ↳ **AggregateError**
+  ↳ **`AggregateError`**
 
 ## Implements
 
-* *ArrayLike*<Error\>
+- `ArrayLike`<`Error`\>
 
 ## Indexable
 
-▪ [index: *number*]: Error
-
-A collection of errors. `AggregateError` is an array-like object, with numeric indices and a `.length` property.
- It supports all generic array methods such as `.forEach` directly.
-
-`AggregateError`s are caught in `.error` handlers, even if the contained errors are not operational.
-
-`Promise.some` and `Promise.any` use `AggregateError` as rejection reason when they fail.
+▪ [index: `number`]: `Error`
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](promise.aggregateerror.md#constructor)
+- [constructor](Promise.AggregateError.md#constructor)
 
 ### Properties
 
-- [length](promise.aggregateerror.md#length)
-- [message](promise.aggregateerror.md#message)
-- [name](promise.aggregateerror.md#name)
-- [prepareStackTrace](promise.aggregateerror.md#preparestacktrace)
-- [stack](promise.aggregateerror.md#stack)
-- [stackTraceLimit](promise.aggregateerror.md#stacktracelimit)
+- [length](Promise.AggregateError.md#length)
+- [message](Promise.AggregateError.md#message)
+- [name](Promise.AggregateError.md#name)
+- [stack](Promise.AggregateError.md#stack)
+- [prepareStackTrace](Promise.AggregateError.md#preparestacktrace)
+- [stackTraceLimit](Promise.AggregateError.md#stacktracelimit)
 
 ### Methods
 
-- [captureStackTrace](promise.aggregateerror.md#capturestacktrace)
-- [every](promise.aggregateerror.md#every)
-- [filter](promise.aggregateerror.md#filter)
-- [forEach](promise.aggregateerror.md#foreach)
-- [indexOf](promise.aggregateerror.md#indexof)
-- [join](promise.aggregateerror.md#join)
-- [lastIndexOf](promise.aggregateerror.md#lastindexof)
-- [map](promise.aggregateerror.md#map)
-- [pop](promise.aggregateerror.md#pop)
-- [push](promise.aggregateerror.md#push)
-- [reduce](promise.aggregateerror.md#reduce)
-- [reduceRight](promise.aggregateerror.md#reduceright)
-- [reverse](promise.aggregateerror.md#reverse)
-- [shift](promise.aggregateerror.md#shift)
-- [slice](promise.aggregateerror.md#slice)
-- [some](promise.aggregateerror.md#some)
-- [sort](promise.aggregateerror.md#sort)
-- [unshift](promise.aggregateerror.md#unshift)
+- [every](Promise.AggregateError.md#every)
+- [filter](Promise.AggregateError.md#filter)
+- [forEach](Promise.AggregateError.md#foreach)
+- [indexOf](Promise.AggregateError.md#indexof)
+- [join](Promise.AggregateError.md#join)
+- [lastIndexOf](Promise.AggregateError.md#lastindexof)
+- [map](Promise.AggregateError.md#map)
+- [pop](Promise.AggregateError.md#pop)
+- [push](Promise.AggregateError.md#push)
+- [reduce](Promise.AggregateError.md#reduce)
+- [reduceRight](Promise.AggregateError.md#reduceright)
+- [reverse](Promise.AggregateError.md#reverse)
+- [shift](Promise.AggregateError.md#shift)
+- [slice](Promise.AggregateError.md#slice)
+- [some](Promise.AggregateError.md#some)
+- [sort](Promise.AggregateError.md#sort)
+- [unshift](Promise.AggregateError.md#unshift)
+- [captureStackTrace](Promise.AggregateError.md#capturestacktrace)
 
 ## Constructors
 
 ### constructor
 
-\+ **new AggregateError**(`message?`: *string*): [*AggregateError*](promise.aggregateerror.md)
+• **new AggregateError**(`message?`)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`message?` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `message?` | `string` |
 
-**Returns:** [*AggregateError*](promise.aggregateerror.md)
+#### Inherited from
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:978
+Error.constructor
+
+#### Defined in
+
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1028
 
 ## Properties
 
 ### length
 
-• **length**: *number*
+• **length**: `number`
 
-Defined in: node_modules/@types/bluebird/index.d.ts:1006
+#### Implementation of
+
+ArrayLike.length
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:1006
 
 ___
 
 ### message
 
-• **message**: *string*
+• **message**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:974
+#### Inherited from
+
+Error.message
+
+#### Defined in
+
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1023
 
 ___
 
 ### name
 
-• **name**: *string*
+• **name**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:973
+#### Inherited from
 
-___
+Error.name
 
-### prepareStackTrace
+#### Defined in
 
-• `Optional` **prepareStackTrace**: (`err`: Error, `stackTraces`: CallSite[]) => *any*
-
-Optional override for formatting stack traces
-
-**`see`** https://github.com/v8/v8/wiki/Stack%20Trace%20API#customizing-stack-traces
-
-#### Type declaration:
-
-▸ (`err`: Error, `stackTraces`: CallSite[]): *any*
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`err` | Error |
-`stackTraces` | CallSite[] |
-
-**Returns:** *any*
-
-Defined in: node_modules/@types/node/globals.d.ts:140
-
-Defined in: node_modules/@types/node/globals.d.ts:140
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1022
 
 ___
 
 ### stack
 
-• `Optional` **stack**: *string*
+• `Optional` **stack**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:975
+#### Inherited from
+
+Error.stack
+
+#### Defined in
+
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1024
+
+___
+
+### prepareStackTrace
+
+▪ `Static` `Optional` **prepareStackTrace**: (`err`: `Error`, `stackTraces`: `CallSite`[]) => `any`
+
+#### Type declaration
+
+▸ (`err`, `stackTraces`): `any`
+
+Optional override for formatting stack traces
+
+**`see`** https://v8.dev/docs/stack-trace-api#customizing-stack-traces
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `err` | `Error` |
+| `stackTraces` | `CallSite`[] |
+
+##### Returns
+
+`any`
+
+#### Inherited from
+
+Error.prepareStackTrace
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:11
 
 ___
 
 ### stackTraceLimit
 
-• **stackTraceLimit**: *number*
+▪ `Static` **stackTraceLimit**: `number`
 
-Defined in: node_modules/@types/node/globals.d.ts:142
+#### Inherited from
+
+Error.stackTraceLimit
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:13
 
 ## Methods
 
-### captureStackTrace
-
-▸ **captureStackTrace**(`targetObject`: Object, `constructorOpt?`: Function): *void*
-
-Create .stack property on a target object
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`targetObject` | Object |
-`constructorOpt?` | Function |
-
-**Returns:** *void*
-
-Defined in: node_modules/@types/node/globals.d.ts:133
-
-___
-
 ### every
 
-▸ **every**(`callback`: (`element`: Error, `index`: *number*, `array`: [*AggregateError*](promise.aggregateerror.md)) => *boolean*, `thisArg?`: *any*): *boolean*
+▸ **every**(`callback`, `thisArg?`): `boolean`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`callback` | (`element`: Error, `index`: *number*, `array`: [*AggregateError*](promise.aggregateerror.md)) => *boolean* |
-`thisArg?` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `callback` | (`element`: `Error`, `index`: `number`, `array`: [`AggregateError`](Promise.AggregateError.md)) => `boolean` |
+| `thisArg?` | `any` |
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: node_modules/@types/bluebird/index.d.ts:1017
+`boolean`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:1017
 
 ___
 
 ### filter
 
-▸ **filter**(`callback`: (`element`: Error, `index`: *number*, `array`: [*AggregateError*](promise.aggregateerror.md)) => *boolean*, `thisArg?`: *any*): [*AggregateError*](promise.aggregateerror.md)
+▸ **filter**(`callback`, `thisArg?`): [`AggregateError`](Promise.AggregateError.md)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`callback` | (`element`: Error, `index`: *number*, `array`: [*AggregateError*](promise.aggregateerror.md)) => *boolean* |
-`thisArg?` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `callback` | (`element`: `Error`, `index`: `number`, `array`: [`AggregateError`](Promise.AggregateError.md)) => `boolean` |
+| `thisArg?` | `any` |
 
-**Returns:** [*AggregateError*](promise.aggregateerror.md)
+#### Returns
 
-Defined in: node_modules/@types/bluebird/index.d.ts:1014
+[`AggregateError`](Promise.AggregateError.md)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:1014
 
 ___
 
 ### forEach
 
-▸ **forEach**(`callback`: (`element`: Error, `index`: *number*, `array`: [*AggregateError*](promise.aggregateerror.md)) => *void*, `thisArg?`: *any*): *undefined*
+▸ **forEach**(`callback`, `thisArg?`): `undefined`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`callback` | (`element`: Error, `index`: *number*, `array`: [*AggregateError*](promise.aggregateerror.md)) => *void* |
-`thisArg?` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `callback` | (`element`: `Error`, `index`: `number`, `array`: [`AggregateError`](Promise.AggregateError.md)) => `void` |
+| `thisArg?` | `any` |
 
-**Returns:** *undefined*
+#### Returns
 
-Defined in: node_modules/@types/bluebird/index.d.ts:1015
+`undefined`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:1015
 
 ___
 
 ### indexOf
 
-▸ **indexOf**(`searchElement`: Error, `fromIndex?`: *number*): *number*
+▸ **indexOf**(`searchElement`, `fromIndex?`): `number`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`searchElement` | Error |
-`fromIndex?` | *number* |
+| Name | Type |
+| :------ | :------ |
+| `searchElement` | `Error` |
+| `fromIndex?` | `number` |
 
-**Returns:** *number*
+#### Returns
 
-Defined in: node_modules/@types/bluebird/index.d.ts:1019
+`number`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:1019
 
 ___
 
 ### join
 
-▸ **join**(`separator?`: *string*): *string*
+▸ **join**(`separator?`): `string`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`separator?` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `separator?` | `string` |
 
-**Returns:** *string*
+#### Returns
 
-Defined in: node_modules/@types/bluebird/index.d.ts:1008
+`string`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:1008
 
 ___
 
 ### lastIndexOf
 
-▸ **lastIndexOf**(`searchElement`: Error, `fromIndex?`: *number*): *number*
+▸ **lastIndexOf**(`searchElement`, `fromIndex?`): `number`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`searchElement` | Error |
-`fromIndex?` | *number* |
+| Name | Type |
+| :------ | :------ |
+| `searchElement` | `Error` |
+| `fromIndex?` | `number` |
 
-**Returns:** *number*
+#### Returns
 
-Defined in: node_modules/@types/bluebird/index.d.ts:1020
+`number`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:1020
 
 ___
 
 ### map
 
-▸ **map**(`callback`: (`element`: Error, `index`: *number*, `array`: [*AggregateError*](promise.aggregateerror.md)) => *boolean*, `thisArg?`: *any*): [*AggregateError*](promise.aggregateerror.md)
+▸ **map**(`callback`, `thisArg?`): [`AggregateError`](Promise.AggregateError.md)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`callback` | (`element`: Error, `index`: *number*, `array`: [*AggregateError*](promise.aggregateerror.md)) => *boolean* |
-`thisArg?` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `callback` | (`element`: `Error`, `index`: `number`, `array`: [`AggregateError`](Promise.AggregateError.md)) => `boolean` |
+| `thisArg?` | `any` |
 
-**Returns:** [*AggregateError*](promise.aggregateerror.md)
+#### Returns
 
-Defined in: node_modules/@types/bluebird/index.d.ts:1018
+[`AggregateError`](Promise.AggregateError.md)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:1018
 
 ___
 
 ### pop
 
-▸ **pop**(): Error
+▸ **pop**(): `Error`
 
-**Returns:** Error
+#### Returns
 
-Defined in: node_modules/@types/bluebird/index.d.ts:1009
+`Error`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:1009
 
 ___
 
 ### push
 
-▸ **push**(...`errors`: Error[]): *number*
+▸ **push**(...`errors`): `number`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`...errors` | Error[] |
+| Name | Type |
+| :------ | :------ |
+| `...errors` | `Error`[] |
 
-**Returns:** *number*
+#### Returns
 
-Defined in: node_modules/@types/bluebird/index.d.ts:1010
+`number`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:1010
 
 ___
 
 ### reduce
 
-▸ **reduce**(`callback`: (`accumulator`: *any*, `element`: Error, `index`: *number*, `array`: [*AggregateError*](promise.aggregateerror.md)) => *any*, `initialValue?`: *any*): *any*
+▸ **reduce**(`callback`, `initialValue?`): `any`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`callback` | (`accumulator`: *any*, `element`: Error, `index`: *number*, `array`: [*AggregateError*](promise.aggregateerror.md)) => *any* |
-`initialValue?` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `callback` | (`accumulator`: `any`, `element`: `Error`, `index`: `number`, `array`: [`AggregateError`](Promise.AggregateError.md)) => `any` |
+| `initialValue?` | `any` |
 
-**Returns:** *any*
+#### Returns
 
-Defined in: node_modules/@types/bluebird/index.d.ts:1021
+`any`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:1021
 
 ___
 
 ### reduceRight
 
-▸ **reduceRight**(`callback`: (`previousValue`: *any*, `element`: Error, `index`: *number*, `array`: [*AggregateError*](promise.aggregateerror.md)) => *any*, `initialValue?`: *any*): *any*
+▸ **reduceRight**(`callback`, `initialValue?`): `any`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`callback` | (`previousValue`: *any*, `element`: Error, `index`: *number*, `array`: [*AggregateError*](promise.aggregateerror.md)) => *any* |
-`initialValue?` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `callback` | (`previousValue`: `any`, `element`: `Error`, `index`: `number`, `array`: [`AggregateError`](Promise.AggregateError.md)) => `any` |
+| `initialValue?` | `any` |
 
-**Returns:** *any*
+#### Returns
 
-Defined in: node_modules/@types/bluebird/index.d.ts:1022
+`any`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:1022
 
 ___
 
 ### reverse
 
-▸ **reverse**(): [*AggregateError*](promise.aggregateerror.md)
+▸ **reverse**(): [`AggregateError`](Promise.AggregateError.md)
 
-**Returns:** [*AggregateError*](promise.aggregateerror.md)
+#### Returns
 
-Defined in: node_modules/@types/bluebird/index.d.ts:1024
+[`AggregateError`](Promise.AggregateError.md)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:1024
 
 ___
 
 ### shift
 
-▸ **shift**(): Error
+▸ **shift**(): `Error`
 
-**Returns:** Error
+#### Returns
 
-Defined in: node_modules/@types/bluebird/index.d.ts:1011
+`Error`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:1011
 
 ___
 
 ### slice
 
-▸ **slice**(`begin?`: *number*, `end?`: *number*): [*AggregateError*](promise.aggregateerror.md)
+▸ **slice**(`begin?`, `end?`): [`AggregateError`](Promise.AggregateError.md)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`begin?` | *number* |
-`end?` | *number* |
+| Name | Type |
+| :------ | :------ |
+| `begin?` | `number` |
+| `end?` | `number` |
 
-**Returns:** [*AggregateError*](promise.aggregateerror.md)
+#### Returns
 
-Defined in: node_modules/@types/bluebird/index.d.ts:1013
+[`AggregateError`](Promise.AggregateError.md)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:1013
 
 ___
 
 ### some
 
-▸ **some**(`callback`: (`element`: Error, `index`: *number*, `array`: [*AggregateError*](promise.aggregateerror.md)) => *boolean*, `thisArg?`: *any*): *boolean*
+▸ **some**(`callback`, `thisArg?`): `boolean`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`callback` | (`element`: Error, `index`: *number*, `array`: [*AggregateError*](promise.aggregateerror.md)) => *boolean* |
-`thisArg?` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `callback` | (`element`: `Error`, `index`: `number`, `array`: [`AggregateError`](Promise.AggregateError.md)) => `boolean` |
+| `thisArg?` | `any` |
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: node_modules/@types/bluebird/index.d.ts:1016
+`boolean`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:1016
 
 ___
 
 ### sort
 
-▸ **sort**(`compareFunction?`: (`errLeft`: Error, `errRight`: Error) => *number*): [*AggregateError*](promise.aggregateerror.md)
+▸ **sort**(`compareFunction?`): [`AggregateError`](Promise.AggregateError.md)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`compareFunction?` | (`errLeft`: Error, `errRight`: Error) => *number* |
+| Name | Type |
+| :------ | :------ |
+| `compareFunction?` | (`errLeft`: `Error`, `errRight`: `Error`) => `number` |
 
-**Returns:** [*AggregateError*](promise.aggregateerror.md)
+#### Returns
 
-Defined in: node_modules/@types/bluebird/index.d.ts:1023
+[`AggregateError`](Promise.AggregateError.md)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:1023
 
 ___
 
 ### unshift
 
-▸ **unshift**(...`errors`: Error[]): *number*
+▸ **unshift**(...`errors`): `number`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`...errors` | Error[] |
+| Name | Type |
+| :------ | :------ |
+| `...errors` | `Error`[] |
 
-**Returns:** *number*
+#### Returns
 
-Defined in: node_modules/@types/bluebird/index.d.ts:1012
+`number`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:1012
+
+___
+
+### captureStackTrace
+
+▸ `Static` **captureStackTrace**(`targetObject`, `constructorOpt?`): `void`
+
+Create .stack property on a target object
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `targetObject` | `object` |
+| `constructorOpt?` | `Function` |
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+Error.captureStackTrace
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:4

@@ -6,19 +6,19 @@
 
 ### Classes
 
-- [Button](../classes/tooltip.button.md)
-- [ClickPopover](../classes/tooltip.clickpopover.md)
-- [Icon](../classes/tooltip.icon.md)
-- [IconButton](../classes/tooltip.iconbutton.md)
-- [NavItem](../classes/tooltip.navitem.md)
-- [ToggleButton](../classes/tooltip.togglebutton.md)
+- [Button](../classes/tooltip.Button.md)
+- [ClickPopover](../classes/tooltip.ClickPopover.md)
+- [Icon](../classes/tooltip.Icon.md)
+- [IconButton](../classes/tooltip.IconButton.md)
+- [NavItem](../classes/tooltip.NavItem.md)
+- [ToggleButton](../classes/tooltip.ToggleButton.md)
 
 ### Interfaces
 
-- [IIconButtonExtraProps](../interfaces/tooltip.iiconbuttonextraprops.md)
-- [IToggleButtonExtraProps](../interfaces/tooltip.itogglebuttonextraprops.md)
-- [ITooltipIconProps](../interfaces/tooltip.itooltipiconprops.md)
-- [ITooltipProps](../interfaces/tooltip.itooltipprops.md)
+- [IIconButtonExtraProps](../interfaces/tooltip.IIconButtonExtraProps.md)
+- [IToggleButtonExtraProps](../interfaces/tooltip.IToggleButtonExtraProps.md)
+- [ITooltipIconProps](../interfaces/tooltip.ITooltipIconProps.md)
+- [ITooltipProps](../interfaces/tooltip.ITooltipProps.md)
 
 ### Type aliases
 
@@ -33,46 +33,58 @@
 
 ### ButtonProps
 
-Ƭ **ButtonProps**: [*ITooltipProps*](../interfaces/tooltip.itooltipprops.md) & *typeof* BootstrapButton.prototype.props
+Ƭ **ButtonProps**: [`ITooltipProps`](../interfaces/tooltip.ITooltipProps.md) & typeof `BootstrapButton.prototype.props`
 
-Defined in: src/controls/TooltipControls.tsx:19
+#### Defined in
+
+../src/controls/TooltipControls.tsx:19
 
 ___
 
 ### ClickPopoverProps
 
-Ƭ **ClickPopoverProps**: [*ButtonProps*](tooltip.md#buttonprops) & [*IIconButtonExtraProps*](../interfaces/tooltip.iiconbuttonextraprops.md) & {}
+Ƭ **ClickPopoverProps**: [`ButtonProps`](tooltip.md#buttonprops) & [`IIconButtonExtraProps`](../interfaces/tooltip.IIconButtonExtraProps.md) & {}
 
-Defined in: src/controls/TooltipControls.tsx:287
+#### Defined in
+
+../src/controls/TooltipControls.tsx:288
 
 ___
 
 ### IconButtonProps
 
-Ƭ **IconButtonProps**: [*ButtonProps*](tooltip.md#buttonprops) & [*IIconButtonExtraProps*](../interfaces/tooltip.iiconbuttonextraprops.md)
+Ƭ **IconButtonProps**: [`ButtonProps`](tooltip.md#buttonprops) & [`IIconButtonExtraProps`](../interfaces/tooltip.IIconButtonExtraProps.md)
 
-Defined in: src/controls/TooltipControls.tsx:71
+#### Defined in
+
+../src/controls/TooltipControls.tsx:72
 
 ___
 
 ### IconProps
 
-Ƭ **IconProps**: [*ITooltipProps*](../interfaces/tooltip.itooltipprops.md) & [*ITooltipIconProps*](../interfaces/tooltip.itooltipiconprops.md)
+Ƭ **IconProps**: [`ITooltipProps`](../interfaces/tooltip.ITooltipProps.md) & [`ITooltipIconProps`](../interfaces/tooltip.ITooltipIconProps.md)
 
-Defined in: src/controls/TooltipControls.tsx:251
+#### Defined in
+
+../src/controls/TooltipControls.tsx:252
 
 ___
 
 ### NavItemProps
 
-Ƭ **NavItemProps**: [*ITooltipProps*](../interfaces/tooltip.itooltipprops.md) & *typeof* BootstrapNavItem.prototype.props
+Ƭ **NavItemProps**: [`ITooltipProps`](../interfaces/tooltip.ITooltipProps.md) & typeof `BootstrapNavItem.prototype.props`
 
-Defined in: src/controls/TooltipControls.tsx:196
+#### Defined in
+
+../src/controls/TooltipControls.tsx:197
 
 ___
 
 ### ToggleButtonProps
 
-Ƭ **ToggleButtonProps**: [*ButtonProps*](tooltip.md#buttonprops) & [*IToggleButtonExtraProps*](../interfaces/tooltip.itogglebuttonextraprops.md)
+Ƭ **ToggleButtonProps**: [`ButtonProps`](tooltip.md#buttonprops) & [`IToggleButtonExtraProps`](../interfaces/tooltip.IToggleButtonExtraProps.md)
 
-Defined in: src/controls/TooltipControls.tsx:144
+#### Defined in
+
+../src/controls/TooltipControls.tsx:145

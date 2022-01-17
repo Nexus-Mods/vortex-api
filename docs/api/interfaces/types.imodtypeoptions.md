@@ -8,30 +8,58 @@
 
 ### Properties
 
-- [deploymentEssential](types.imodtypeoptions.md#deploymentessential)
-- [mergeMods](types.imodtypeoptions.md#mergemods)
-- [name](types.imodtypeoptions.md#name)
+- [customDependencyManagement](types.IModTypeOptions.md#customdependencymanagement)
+- [deploymentEssential](types.IModTypeOptions.md#deploymentessential)
+- [mergeMods](types.IModTypeOptions.md#mergemods)
+- [name](types.IModTypeOptions.md#name)
+- [noConflicts](types.IModTypeOptions.md#noconflicts)
 
 ## Properties
 
+### customDependencyManagement
+
+• `Optional` **customDependencyManagement**: `boolean`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:799
+
+___
+
 ### deploymentEssential
 
-• `Optional` **deploymentEssential**: *boolean*
+• `Optional` **deploymentEssential**: `boolean`
 
-Defined in: src/types/IExtensionContext.ts:735
+#### Defined in
+
+../src/types/IExtensionContext.ts:803
 
 ___
 
 ### mergeMods
 
-• `Optional` **mergeMods**: *boolean* \| (`mod`: [*IMod*](types.imod.md)) => *string*
+• `Optional` **mergeMods**: `boolean` \| (`mod`: [`IMod`](types.IMod.md)) => `string`
 
-Defined in: src/types/IExtensionContext.ts:734
+#### Defined in
+
+../src/types/IExtensionContext.ts:792
 
 ___
 
 ### name
 
-• `Optional` **name**: *string*
+• `Optional` **name**: `string`
 
-Defined in: src/types/IExtensionContext.ts:736
+#### Defined in
+
+../src/types/IExtensionContext.ts:794
+
+___
+
+### noConflicts
+
+• `Optional` **noConflicts**: `boolean`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:804

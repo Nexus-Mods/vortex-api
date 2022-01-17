@@ -7,7 +7,7 @@
 additional detail to further narrow down which file is meant
 in a lookup
 
-**`export`** 
+**`export`**
 
 **`interface`** ILookupDetails
 
@@ -15,39 +15,58 @@ in a lookup
 
 ### Properties
 
-- [fileMD5](types.ilookupdetails.md#filemd5)
-- [filePath](types.ilookupdetails.md#filepath)
-- [fileSize](types.ilookupdetails.md#filesize)
-- [gameId](types.ilookupdetails.md#gameid)
+- [fileMD5](types.ILookupDetails.md#filemd5)
+- [fileName](types.ILookupDetails.md#filename)
+- [filePath](types.ILookupDetails.md#filepath)
+- [fileSize](types.ILookupDetails.md#filesize)
+- [gameId](types.ILookupDetails.md#gameid)
 
 ## Properties
 
 ### fileMD5
 
-• `Optional` **fileMD5**: *string*
+• `Optional` **fileMD5**: `string`
 
-Defined in: src/types/IExtensionContext.ts:193
+#### Defined in
+
+../src/types/IExtensionContext.ts:215
+
+___
+
+### fileName
+
+• `Optional` **fileName**: `string`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:214
 
 ___
 
 ### filePath
 
-• `Optional` **filePath**: *string*
+• `Optional` **filePath**: `string`
 
-Defined in: src/types/IExtensionContext.ts:192
+#### Defined in
+
+../src/types/IExtensionContext.ts:212
 
 ___
 
 ### fileSize
 
-• `Optional` **fileSize**: *number*
+• `Optional` **fileSize**: `number`
 
-Defined in: src/types/IExtensionContext.ts:194
+#### Defined in
+
+../src/types/IExtensionContext.ts:216
 
 ___
 
 ### gameId
 
-• `Optional` **gameId**: *string*
+• `Optional` **gameId**: `string`
 
-Defined in: src/types/IExtensionContext.ts:195
+#### Defined in
+
+../src/types/IExtensionContext.ts:217

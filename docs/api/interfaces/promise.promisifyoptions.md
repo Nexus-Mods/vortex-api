@@ -1,34 +1,38 @@
-[vortex_devel](../README.md) / [Exports](../modules.md) / [Promise](../modules/promise.md) / PromisifyOptions
+[vortex_devel](../README.md) / [Exports](../modules.md) / [Promise](../modules/Promise.md) / PromisifyOptions
 
 # Interface: PromisifyOptions
 
-[Promise](../modules/promise.md).PromisifyOptions
+[Promise](../modules/Promise.md).PromisifyOptions
 
 ## Hierarchy
 
-* **PromisifyOptions**
+- **`PromisifyOptions`**
 
-  ↳ [*PromisifyAllOptions*](promise.promisifyalloptions.md)
+  ↳ [`PromisifyAllOptions`](Promise.PromisifyAllOptions.md)
 
 ## Table of contents
 
 ### Properties
 
-- [context](promise.promisifyoptions.md#context)
-- [multiArgs](promise.promisifyoptions.md#multiargs)
+- [context](Promise.PromisifyOptions.md#context)
+- [multiArgs](Promise.PromisifyOptions.md#multiargs)
 
 ## Properties
 
 ### context
 
-• `Optional` **context**: *any*
+• `Optional` **context**: `any`
 
-Defined in: node_modules/@types/bluebird/index.d.ts:964
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:964
 
 ___
 
 ### multiArgs
 
-• `Optional` **multiArgs**: *boolean*
+• `Optional` **multiArgs**: `boolean`
 
-Defined in: node_modules/@types/bluebird/index.d.ts:965
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:965

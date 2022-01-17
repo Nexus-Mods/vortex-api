@@ -8,21 +8,25 @@
 
 ### Properties
 
-- [enabled](types.iprofilemod.md#enabled)
-- [enabledTime](types.iprofilemod.md#enabledtime)
+- [enabled](types.IProfileMod.md#enabled)
+- [enabledTime](types.IProfileMod.md#enabledtime)
 
 ## Properties
 
 ### enabled
 
-• **enabled**: *boolean*
+• **enabled**: `boolean`
 
-Defined in: src/extensions/profile_management/types/IProfile.ts:2
+#### Defined in
+
+../src/extensions/profile_management/types/IProfile.ts:2
 
 ___
 
 ### enabledTime
 
-• **enabledTime**: *number*
+• **enabledTime**: `number`
 
-Defined in: src/extensions/profile_management/types/IProfile.ts:3
+#### Defined in
+
+../src/extensions/profile_management/types/IProfile.ts:3

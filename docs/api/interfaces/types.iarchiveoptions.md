@@ -10,39 +10,47 @@ options that can be passed to archive handler on opening
 
 ### Properties
 
-- [create](types.iarchiveoptions.md#create)
-- [gameId](types.iarchiveoptions.md#gameid)
-- [verify](types.iarchiveoptions.md#verify)
-- [version](types.iarchiveoptions.md#version)
+- [create](types.IArchiveOptions.md#create)
+- [gameId](types.IArchiveOptions.md#gameid)
+- [verify](types.IArchiveOptions.md#verify)
+- [version](types.IArchiveOptions.md#version)
 
 ## Properties
 
 ### create
 
-• `Optional` **create**: *boolean*
+• `Optional` **create**: `boolean`
 
-Defined in: src/types/IExtensionContext.ts:231
+#### Defined in
+
+../src/types/IExtensionContext.ts:253
 
 ___
 
 ### gameId
 
-• `Optional` **gameId**: *string*
+• `Optional` **gameId**: `string`
 
-Defined in: src/types/IExtensionContext.ts:226
+#### Defined in
+
+../src/types/IExtensionContext.ts:248
 
 ___
 
 ### verify
 
-• `Optional` **verify**: *boolean*
+• `Optional` **verify**: `boolean`
 
-Defined in: src/types/IExtensionContext.ts:223
+#### Defined in
+
+../src/types/IExtensionContext.ts:245
 
 ___
 
 ### version
 
-• `Optional` **version**: *string*
+• `Optional` **version**: `string`
 
-Defined in: src/types/IExtensionContext.ts:229
+#### Defined in
+
+../src/types/IExtensionContext.ts:251

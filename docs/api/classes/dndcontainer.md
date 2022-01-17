@@ -8,81 +8,89 @@ up to the parent, but I'll have to admit I don't understand 100% how "context" a
 
 ## Hierarchy
 
-* *Component*<{ `style?`: React.CSSProperties  }, {}\>
+- `Component`<{ `style?`: `React.CSSProperties`  }, {}\>
 
-  ↳ **DNDContainer**
+  ↳ **`DNDContainer`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](dndcontainer.md#constructor)
+- [constructor](DNDContainer.md#constructor)
 
 ### Properties
 
-- [context](dndcontainer.md#context)
-- [props](dndcontainer.md#props)
-- [refs](dndcontainer.md#refs)
-- [state](dndcontainer.md#state)
-- [contextType](dndcontainer.md#contexttype)
+- [context](DNDContainer.md#context)
+- [props](DNDContainer.md#props)
+- [refs](DNDContainer.md#refs)
+- [state](DNDContainer.md#state)
+- [contextType](DNDContainer.md#contexttype)
 
 ### Methods
 
-- [UNSAFE\_componentWillMount](dndcontainer.md#unsafe_componentwillmount)
-- [UNSAFE\_componentWillReceiveProps](dndcontainer.md#unsafe_componentwillreceiveprops)
-- [UNSAFE\_componentWillUpdate](dndcontainer.md#unsafe_componentwillupdate)
-- [componentDidCatch](dndcontainer.md#componentdidcatch)
-- [componentDidMount](dndcontainer.md#componentdidmount)
-- [componentDidUpdate](dndcontainer.md#componentdidupdate)
-- [componentWillMount](dndcontainer.md#componentwillmount)
-- [componentWillReceiveProps](dndcontainer.md#componentwillreceiveprops)
-- [componentWillUnmount](dndcontainer.md#componentwillunmount)
-- [componentWillUpdate](dndcontainer.md#componentwillupdate)
-- [forceUpdate](dndcontainer.md#forceupdate)
-- [getSnapshotBeforeUpdate](dndcontainer.md#getsnapshotbeforeupdate)
-- [render](dndcontainer.md#render)
-- [setState](dndcontainer.md#setstate)
-- [shouldComponentUpdate](dndcontainer.md#shouldcomponentupdate)
+- [UNSAFE\_componentWillMount](DNDContainer.md#unsafe_componentwillmount)
+- [UNSAFE\_componentWillReceiveProps](DNDContainer.md#unsafe_componentwillreceiveprops)
+- [UNSAFE\_componentWillUpdate](DNDContainer.md#unsafe_componentwillupdate)
+- [componentDidCatch](DNDContainer.md#componentdidcatch)
+- [componentDidMount](DNDContainer.md#componentdidmount)
+- [componentDidUpdate](DNDContainer.md#componentdidupdate)
+- [componentWillMount](DNDContainer.md#componentwillmount)
+- [componentWillReceiveProps](DNDContainer.md#componentwillreceiveprops)
+- [componentWillUnmount](DNDContainer.md#componentwillunmount)
+- [componentWillUpdate](DNDContainer.md#componentwillupdate)
+- [forceUpdate](DNDContainer.md#forceupdate)
+- [getSnapshotBeforeUpdate](DNDContainer.md#getsnapshotbeforeupdate)
+- [render](DNDContainer.md#render)
+- [setState](DNDContainer.md#setstate)
+- [shouldComponentUpdate](DNDContainer.md#shouldcomponentupdate)
 
 ## Constructors
 
 ### constructor
 
-\+ **new DNDContainer**(`props`: { `style?`: *CSSProperties*  } \| *Readonly*<{ `style?`: *CSSProperties*  }\>): [*DNDContainer*](dndcontainer.md)
+• **new DNDContainer**(`props`)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`props` | { `style?`: *CSSProperties*  } \| *Readonly*<{ `style?`: *CSSProperties*  }\> |
+| Name | Type |
+| :------ | :------ |
+| `props` | { `style?`: `CSSProperties`  } \| `Readonly`<{ `style?`: `CSSProperties`  }\> |
 
-**Returns:** [*DNDContainer*](dndcontainer.md)
+#### Inherited from
 
-Defined in: node_modules/@types/react/index.d.ts:472
+React.Component<{ style?: React.CSSProperties }, {}\>.constructor
 
-\+ **new DNDContainer**(`props`: { `style?`: *CSSProperties*  }, `context`: *any*): [*DNDContainer*](dndcontainer.md)
+#### Defined in
 
-**`deprecated`** 
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:474
+
+• **new DNDContainer**(`props`, `context`)
+
+**`deprecated`**
 
 **`see`** https://reactjs.org/docs/legacy-context.html
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`props` | *object* |
-`props.style?` | *CSSProperties* |
-`context` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `props` | `Object` |
+| `props.style?` | `CSSProperties` |
+| `context` | `any` |
 
-**Returns:** [*DNDContainer*](dndcontainer.md)
+#### Inherited from
 
-Defined in: node_modules/@types/react/index.d.ts:474
+React.Component<{ style?: React.CSSProperties }, {}\>.constructor
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:479
 
 ## Properties
 
 ### context
 
-• **context**: *any*
+• **context**: `any`
 
 If using the new style context, re-declare this in your class to be the
 `React.ContextType` of your `static contextType`.
@@ -98,42 +106,68 @@ declare context: React.ContextType<typeof MyContext>
 
 **`see`** https://reactjs.org/docs/context.html
 
-Defined in: node_modules/@types/react/index.d.ts:472
+#### Inherited from
+
+React.Component.context
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:472
 
 ___
 
 ### props
 
-• `Readonly` **props**: *Readonly*<{ `style?`: *CSSProperties*  }\> & *Readonly*<{ `children?`: ReactNode  }\>
+• `Readonly` **props**: `Readonly`<{ `style?`: `CSSProperties`  }\> & `Readonly`<{ `children?`: `ReactNode`  }\>
 
-Defined in: node_modules/@types/react/index.d.ts:497
+#### Inherited from
+
+React.Component.props
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:497
 
 ___
 
 ### refs
 
-• **refs**: *object*
+• **refs**: `Object`
 
-**`deprecated`** 
+**`deprecated`**
 https://reactjs.org/docs/refs-and-the-dom.html#legacy-api-string-refs
 
-#### Type declaration:
+#### Index signature
 
-Defined in: node_modules/@types/react/index.d.ts:503
+▪ [key: `string`]: `ReactInstance`
+
+#### Inherited from
+
+React.Component.refs
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:503
 
 ___
 
 ### state
 
-• **state**: *Readonly*<{}\>
+• **state**: `Readonly`<{}\>
 
-Defined in: node_modules/@types/react/index.d.ts:498
+#### Inherited from
+
+React.Component.state
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:498
 
 ___
 
 ### contextType
 
-▪ `Optional` `Static` **contextType**: *Context*<any\>
+▪ `Static` `Optional` **contextType**: `Context`<`any`\>
 
 If set, `this.context` will be set at runtime to the current value of the given Context.
 
@@ -154,13 +188,19 @@ class Foo extends React.Component {
 
 **`see`** https://reactjs.org/docs/context.html#classcontexttype
 
-Defined in: node_modules/@types/react/index.d.ts:454
+#### Inherited from
+
+React.Component.contextType
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:454
 
 ## Methods
 
 ### UNSAFE\_componentWillMount
 
-▸ `Optional`**UNSAFE_componentWillMount**(): *void*
+▸ `Optional` **UNSAFE_componentWillMount**(): `void`
 
 Called immediately before mounting occurs, and before `Component#render`.
 Avoid introducing any side-effects or subscriptions in this method.
@@ -176,15 +216,23 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:708
+`void`
+
+#### Inherited from
+
+React.Component.UNSAFE\_componentWillMount
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:708
 
 ___
 
 ### UNSAFE\_componentWillReceiveProps
 
-▸ `Optional`**UNSAFE_componentWillReceiveProps**(`nextProps`: *Readonly*<{ `style?`: *CSSProperties*  }\>, `nextContext`: *any*): *void*
+▸ `Optional` **UNSAFE_componentWillReceiveProps**(`nextProps`, `nextContext`): `void`
 
 Called when the component may be receiving new props.
 React may call this even if props have not changed, so be sure to compare new and existing
@@ -203,22 +251,30 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<{ `style?`: *CSSProperties*  }\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<{ `style?`: `CSSProperties`  }\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:740
+`void`
+
+#### Inherited from
+
+React.Component.UNSAFE\_componentWillReceiveProps
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:740
 
 ___
 
 ### UNSAFE\_componentWillUpdate
 
-▸ `Optional`**UNSAFE_componentWillUpdate**(`nextProps`: *Readonly*<{ `style?`: *CSSProperties*  }\>, `nextState`: *Readonly*<{}\>, `nextContext`: *any*): *void*
+▸ `Optional` **UNSAFE_componentWillUpdate**(`nextProps`, `nextState`, `nextContext`): `void`
 
 Called immediately before rendering when new props or state is received. Not called for the initial render.
 
@@ -235,77 +291,109 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<{ `style?`: *CSSProperties*  }\> |
-`nextState` | *Readonly*<{}\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<{ `style?`: `CSSProperties`  }\> |
+| `nextState` | `Readonly`<{}\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:768
+`void`
+
+#### Inherited from
+
+React.Component.UNSAFE\_componentWillUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:768
 
 ___
 
 ### componentDidCatch
 
-▸ `Optional`**componentDidCatch**(`error`: Error, `errorInfo`: ErrorInfo): *void*
+▸ `Optional` **componentDidCatch**(`error`, `errorInfo`): `void`
 
 Catches exceptions generated in descendant components. Unhandled exceptions will cause
 the entire component tree to unmount.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`error` | Error |
-`errorInfo` | ErrorInfo |
+| Name | Type |
+| :------ | :------ |
+| `error` | `Error` |
+| `errorInfo` | `ErrorInfo` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:637
+`void`
+
+#### Inherited from
+
+React.Component.componentDidCatch
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:637
 
 ___
 
 ### componentDidMount
 
-▸ `Optional`**componentDidMount**(): *void*
+▸ `Optional` **componentDidMount**(): `void`
 
 Called immediately after a component is mounted. Setting state here will trigger re-rendering.
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:616
+`void`
+
+#### Inherited from
+
+React.Component.componentDidMount
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:616
 
 ___
 
 ### componentDidUpdate
 
-▸ `Optional`**componentDidUpdate**(`prevProps`: *Readonly*<{ `style?`: *CSSProperties*  }\>, `prevState`: *Readonly*<{}\>, `snapshot?`: *any*): *void*
+▸ `Optional` **componentDidUpdate**(`prevProps`, `prevState`, `snapshot?`): `void`
 
 Called immediately after updating occurs. Not called for the initial render.
 
 The snapshot is only present if getSnapshotBeforeUpdate is present and returns non-null.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`prevProps` | *Readonly*<{ `style?`: *CSSProperties*  }\> |
-`prevState` | *Readonly*<{}\> |
-`snapshot?` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `prevProps` | `Readonly`<{ `style?`: `CSSProperties`  }\> |
+| `prevState` | `Readonly`<{}\> |
+| `snapshot?` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:679
+`void`
+
+#### Inherited from
+
+React.Component.componentDidUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:679
 
 ___
 
 ### componentWillMount
 
-▸ `Optional`**componentWillMount**(): *void*
+▸ `Optional` **componentWillMount**(): `void`
 
 Called immediately before mounting occurs, and before `Component#render`.
 Avoid introducing any side-effects or subscriptions in this method.
@@ -319,15 +407,23 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:694
+`void`
+
+#### Inherited from
+
+React.Component.componentWillMount
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:694
 
 ___
 
 ### componentWillReceiveProps
 
-▸ `Optional`**componentWillReceiveProps**(`nextProps`: *Readonly*<{ `style?`: *CSSProperties*  }\>, `nextContext`: *any*): *void*
+▸ `Optional` **componentWillReceiveProps**(`nextProps`, `nextContext`): `void`
 
 Called when the component may be receiving new props.
 React may call this even if props have not changed, so be sure to compare new and existing
@@ -344,35 +440,51 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<{ `style?`: *CSSProperties*  }\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<{ `style?`: `CSSProperties`  }\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:723
+`void`
+
+#### Inherited from
+
+React.Component.componentWillReceiveProps
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:723
 
 ___
 
 ### componentWillUnmount
 
-▸ `Optional`**componentWillUnmount**(): *void*
+▸ `Optional` **componentWillUnmount**(): `void`
 
 Called immediately before a component is destroyed. Perform any necessary cleanup in this method, such as
 cancelled network requests, or cleaning up any DOM elements created in `componentDidMount`.
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:632
+`void`
+
+#### Inherited from
+
+React.Component.componentWillUnmount
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:632
 
 ___
 
 ### componentWillUpdate
 
-▸ `Optional`**componentWillUpdate**(`nextProps`: *Readonly*<{ `style?`: *CSSProperties*  }\>, `nextState`: *Readonly*<{}\>, `nextContext`: *any*): *void*
+▸ `Optional` **componentWillUpdate**(`nextProps`, `nextState`, `nextContext`): `void`
 
 Called immediately before rendering when new props or state is received. Not called for the initial render.
 
@@ -387,39 +499,55 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<{ `style?`: *CSSProperties*  }\> |
-`nextState` | *Readonly*<{}\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<{ `style?`: `CSSProperties`  }\> |
+| `nextState` | `Readonly`<{}\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:753
+`void`
+
+#### Inherited from
+
+React.Component.componentWillUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:753
 
 ___
 
 ### forceUpdate
 
-▸ **forceUpdate**(`callback?`: () => *void*): *void*
+▸ **forceUpdate**(`callback?`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`callback?` | () => *void* |
+| Name | Type |
+| :------ | :------ |
+| `callback?` | () => `void` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:489
+`void`
+
+#### Inherited from
+
+React.Component.forceUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:489
 
 ___
 
 ### getSnapshotBeforeUpdate
 
-▸ `Optional`**getSnapshotBeforeUpdate**(`prevProps`: *Readonly*<{ `style?`: *CSSProperties*  }\>, `prevState`: *Readonly*<{}\>): *any*
+▸ `Optional` **getSnapshotBeforeUpdate**(`prevProps`, `prevState`): `any`
 
 Runs before React applies the result of `render` to the document, and
 returns an object to be given to componentDidUpdate. Useful for saving
@@ -428,55 +556,79 @@ things such as scroll position before `render` causes changes to it.
 Note: the presence of getSnapshotBeforeUpdate prevents any of the deprecated
 lifecycle events from running.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`prevProps` | *Readonly*<{ `style?`: *CSSProperties*  }\> |
-`prevState` | *Readonly*<{}\> |
+| Name | Type |
+| :------ | :------ |
+| `prevProps` | `Readonly`<{ `style?`: `CSSProperties`  }\> |
+| `prevState` | `Readonly`<{}\> |
 
-**Returns:** *any*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:673
+`any`
+
+#### Inherited from
+
+React.Component.getSnapshotBeforeUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:673
 
 ___
 
 ### render
 
-▸ **render**(): *Element*
+▸ **render**(): `Element`
 
-**Returns:** *Element*
+#### Returns
 
-Defined in: src/views/DNDContainer.tsx:10
+`Element`
+
+#### Overrides
+
+React.Component.render
+
+#### Defined in
+
+../src/views/DNDContainer.tsx:10
 
 ___
 
 ### setState
 
-▸ **setState**<K\>(`state`: {} \| (`prevState`: *Readonly*<{}\>, `props`: *Readonly*<{ `style?`: *CSSProperties*  }\>) => {} \| *Pick*<{}, K\> \| *Pick*<{}, K\>, `callback?`: () => *void*): *void*
+▸ **setState**<`K`\>(`state`, `callback?`): `void`
 
-#### Type parameters:
+#### Type parameters
 
-Name | Type |
-:------ | :------ |
-`K` | *never* |
+| Name | Type |
+| :------ | :------ |
+| `K` | extends `never` |
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`state` | {} \| (`prevState`: *Readonly*<{}\>, `props`: *Readonly*<{ `style?`: *CSSProperties*  }\>) => {} \| *Pick*<{}, K\> \| *Pick*<{}, K\> |
-`callback?` | () => *void* |
+| Name | Type |
+| :------ | :------ |
+| `state` | {} \| (`prevState`: `Readonly`<{}\>, `props`: `Readonly`<{ `style?`: `CSSProperties`  }\>) => {} \| `Pick`<{}, `K`\> \| `Pick`<{}, `K`\> |
+| `callback?` | () => `void` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:484
+`void`
+
+#### Inherited from
+
+React.Component.setState
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:484
 
 ___
 
 ### shouldComponentUpdate
 
-▸ `Optional`**shouldComponentUpdate**(`nextProps`: *Readonly*<{ `style?`: *CSSProperties*  }\>, `nextState`: *Readonly*<{}\>, `nextContext`: *any*): *boolean*
+▸ `Optional` **shouldComponentUpdate**(`nextProps`, `nextState`, `nextContext`): `boolean`
 
 Called to determine whether the change in props and state should trigger a re-render.
 
@@ -487,14 +639,22 @@ props or states have changed.
 If false is returned, `Component#render`, `componentWillUpdate`
 and `componentDidUpdate` will not be called.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<{ `style?`: *CSSProperties*  }\> |
-`nextState` | *Readonly*<{}\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<{ `style?`: `CSSProperties`  }\> |
+| `nextState` | `Readonly`<{}\> |
+| `nextContext` | `any` |
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:627
+`boolean`
+
+#### Inherited from
+
+React.Component.shouldComponentUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:627

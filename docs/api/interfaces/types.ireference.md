@@ -6,65 +6,77 @@
 
 ## Hierarchy
 
-* **IReference**
+- **`IReference`**
 
-  ↳ [*IModReference*](types.imodreference.md)
+  ↳ [`IModReference`](types.IModReference.md)
 
 ## Table of contents
 
 ### Properties
 
-- [fileExpression](types.ireference.md#fileexpression)
-- [fileMD5](types.ireference.md#filemd5)
-- [fileSize](types.ireference.md#filesize)
-- [gameId](types.ireference.md#gameid)
-- [logicalFileName](types.ireference.md#logicalfilename)
-- [versionMatch](types.ireference.md#versionmatch)
+- [fileExpression](types.IReference.md#fileexpression)
+- [fileMD5](types.IReference.md#filemd5)
+- [fileSize](types.IReference.md#filesize)
+- [gameId](types.IReference.md#gameid)
+- [logicalFileName](types.IReference.md#logicalfilename)
+- [versionMatch](types.IReference.md#versionmatch)
 
 ## Properties
 
 ### fileExpression
 
-• `Optional` **fileExpression**: *string*
+• `Optional` **fileExpression**: `string`
 
-Defined in: node_modules/modmeta-db/lib/types.d.ts:8
+#### Defined in
+
+E:/WorkC/vortex/node_modules/modmeta-db/lib/types.d.ts:8
 
 ___
 
 ### fileMD5
 
-• `Optional` **fileMD5**: *string*
+• `Optional` **fileMD5**: `string`
 
-Defined in: node_modules/modmeta-db/lib/types.d.ts:3
+#### Defined in
+
+E:/WorkC/vortex/node_modules/modmeta-db/lib/types.d.ts:3
 
 ___
 
 ### fileSize
 
-• `Optional` **fileSize**: *number*
+• `Optional` **fileSize**: `number`
 
-Defined in: node_modules/modmeta-db/lib/types.d.ts:4
+#### Defined in
+
+E:/WorkC/vortex/node_modules/modmeta-db/lib/types.d.ts:4
 
 ___
 
 ### gameId
 
-• `Optional` **gameId**: *string*
+• `Optional` **gameId**: `string`
 
-Defined in: node_modules/modmeta-db/lib/types.d.ts:5
+#### Defined in
+
+E:/WorkC/vortex/node_modules/modmeta-db/lib/types.d.ts:5
 
 ___
 
 ### logicalFileName
 
-• `Optional` **logicalFileName**: *string*
+• `Optional` **logicalFileName**: `string`
 
-Defined in: node_modules/modmeta-db/lib/types.d.ts:7
+#### Defined in
+
+E:/WorkC/vortex/node_modules/modmeta-db/lib/types.d.ts:7
 
 ___
 
 ### versionMatch
 
-• `Optional` **versionMatch**: *string*
+• `Optional` **versionMatch**: `string`
 
-Defined in: node_modules/modmeta-db/lib/types.d.ts:6
+#### Defined in
+
+E:/WorkC/vortex/node_modules/modmeta-db/lib/types.d.ts:6

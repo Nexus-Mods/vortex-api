@@ -8,57 +8,69 @@
 
 ### Properties
 
-- [actions](types.idialog.md#actions)
-- [content](types.idialog.md#content)
-- [defaultAction](types.idialog.md#defaultaction)
-- [id](types.idialog.md#id)
-- [title](types.idialog.md#title)
-- [type](types.idialog.md#type)
+- [actions](types.IDialog.md#actions)
+- [content](types.IDialog.md#content)
+- [defaultAction](types.IDialog.md#defaultaction)
+- [id](types.IDialog.md#id)
+- [title](types.IDialog.md#title)
+- [type](types.IDialog.md#type)
 
 ## Properties
 
 ### actions
 
-• **actions**: *string*[]
+• **actions**: `string`[]
 
-Defined in: src/types/IDialog.ts:38
+#### Defined in
+
+../src/types/IDialog.ts:42
 
 ___
 
 ### content
 
-• **content**: [*IDialogContent*](actions.idialogcontent.md)
+• **content**: [`IDialogContent`](actions.IDialogContent.md)
 
-Defined in: src/types/IDialog.ts:36
+#### Defined in
+
+../src/types/IDialog.ts:40
 
 ___
 
 ### defaultAction
 
-• **defaultAction**: *string*
+• **defaultAction**: `string`
 
-Defined in: src/types/IDialog.ts:37
+#### Defined in
+
+../src/types/IDialog.ts:41
 
 ___
 
 ### id
 
-• **id**: *string*
+• **id**: `string`
 
-Defined in: src/types/IDialog.ts:33
+#### Defined in
+
+../src/types/IDialog.ts:37
 
 ___
 
 ### title
 
-• **title**: *string*
+• **title**: `string`
 
-Defined in: src/types/IDialog.ts:35
+#### Defined in
+
+../src/types/IDialog.ts:39
 
 ___
 
 ### type
 
-• **type**: [*DialogType*](../modules/actions.md#dialogtype)
+• **type**: [`DialogType`](../modules/actions.md#dialogtype)
 
-Defined in: src/types/IDialog.ts:34
+#### Defined in
+
+../src/types/IDialog.ts:38

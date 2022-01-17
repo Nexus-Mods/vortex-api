@@ -6,7 +6,7 @@
 
 user-configuration for mod attributes
 
-**`export`** 
+**`export`**
 
 **`interface`** IAttributeState
 
@@ -14,21 +14,25 @@ user-configuration for mod attributes
 
 ### Properties
 
-- [enabled](types.iattributestate.md#enabled)
-- [sortDirection](types.iattributestate.md#sortdirection)
+- [enabled](types.IAttributeState.md#enabled)
+- [sortDirection](types.IAttributeState.md#sortdirection)
 
 ## Properties
 
 ### enabled
 
-• **enabled**: *boolean*
+• **enabled**: `boolean`
 
-Defined in: src/types/IAttributeState.ts:10
+#### Defined in
+
+../src/types/IAttributeState.ts:10
 
 ___
 
 ### sortDirection
 
-• **sortDirection**: [*SortDirection*](../modules/types.md#sortdirection)
+• **sortDirection**: [`SortDirection`](../modules/types.md#sortdirection)
 
-Defined in: src/types/IAttributeState.ts:11
+#### Defined in
+
+../src/types/IAttributeState.ts:11

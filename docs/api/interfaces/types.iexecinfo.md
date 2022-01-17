@@ -8,21 +8,25 @@
 
 ### Properties
 
-- [arguments](types.iexecinfo.md#arguments)
-- [execPath](types.iexecinfo.md#execpath)
+- [arguments](types.IExecInfo.md#arguments)
+- [execPath](types.IExecInfo.md#execpath)
 
 ## Properties
 
 ### arguments
 
-• **arguments**: *string*[]
+• **arguments**: `string`[]
 
-Defined in: src/types/IExecInfo.ts:3
+#### Defined in
+
+../src/types/IExecInfo.ts:3
 
 ___
 
 ### execPath
 
-• **execPath**: *string*
+• **execPath**: `string`
 
-Defined in: src/types/IExecInfo.ts:2
+#### Defined in
+
+../src/types/IExecInfo.ts:2

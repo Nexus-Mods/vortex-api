@@ -4,267 +4,493 @@
 
 [fs](../modules/fs.md).Stats
 
+A `fs.Stats` object provides information about a file.
+
+Objects returned from {@link stat}, {@link lstat} and {@link fstat} and
+their synchronous counterparts are of this type.
+If `bigint` in the `options` passed to those methods is true, the numeric values
+will be `bigint` instead of `number`, and the object will contain additional
+nanosecond-precision properties suffixed with `Ns`.
+
+```console
+Stats {
+  dev: 2114,
+  ino: 48064969,
+  mode: 33188,
+  nlink: 1,
+  uid: 85,
+  gid: 100,
+  rdev: 0,
+  size: 527,
+  blksize: 4096,
+  blocks: 8,
+  atimeMs: 1318289051000.1,
+  mtimeMs: 1318289051000.1,
+  ctimeMs: 1318289051000.1,
+  birthtimeMs: 1318289051000.1,
+  atime: Mon, 10 Oct 2011 23:24:11 GMT,
+  mtime: Mon, 10 Oct 2011 23:24:11 GMT,
+  ctime: Mon, 10 Oct 2011 23:24:11 GMT,
+  birthtime: Mon, 10 Oct 2011 23:24:11 GMT }
+```
+
+`bigint` version:
+
+```console
+BigIntStats {
+  dev: 2114n,
+  ino: 48064969n,
+  mode: 33188n,
+  nlink: 1n,
+  uid: 85n,
+  gid: 100n,
+  rdev: 0n,
+  size: 527n,
+  blksize: 4096n,
+  blocks: 8n,
+  atimeMs: 1318289051000n,
+  mtimeMs: 1318289051000n,
+  ctimeMs: 1318289051000n,
+  birthtimeMs: 1318289051000n,
+  atimeNs: 1318289051000000000n,
+  mtimeNs: 1318289051000000000n,
+  ctimeNs: 1318289051000000000n,
+  birthtimeNs: 1318289051000000000n,
+  atime: Mon, 10 Oct 2011 23:24:11 GMT,
+  mtime: Mon, 10 Oct 2011 23:24:11 GMT,
+  ctime: Mon, 10 Oct 2011 23:24:11 GMT,
+  birthtime: Mon, 10 Oct 2011 23:24:11 GMT }
+```
+
+**`since`** v0.1.21
+
 ## Hierarchy
 
-* *StatsBase*<number\>
+- `StatsBase`<`number`\>
 
-  ↳ **Stats**
+  ↳ **`Stats`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](fs.stats.md#constructor)
+- [constructor](fs.Stats.md#constructor)
 
 ### Properties
 
-- [atime](fs.stats.md#atime)
-- [atimeMs](fs.stats.md#atimems)
-- [birthtime](fs.stats.md#birthtime)
-- [birthtimeMs](fs.stats.md#birthtimems)
-- [blksize](fs.stats.md#blksize)
-- [blocks](fs.stats.md#blocks)
-- [ctime](fs.stats.md#ctime)
-- [ctimeMs](fs.stats.md#ctimems)
-- [dev](fs.stats.md#dev)
-- [gid](fs.stats.md#gid)
-- [ino](fs.stats.md#ino)
-- [mode](fs.stats.md#mode)
-- [mtime](fs.stats.md#mtime)
-- [mtimeMs](fs.stats.md#mtimems)
-- [nlink](fs.stats.md#nlink)
-- [rdev](fs.stats.md#rdev)
-- [size](fs.stats.md#size)
-- [uid](fs.stats.md#uid)
+- [atime](fs.Stats.md#atime)
+- [atimeMs](fs.Stats.md#atimems)
+- [birthtime](fs.Stats.md#birthtime)
+- [birthtimeMs](fs.Stats.md#birthtimems)
+- [blksize](fs.Stats.md#blksize)
+- [blocks](fs.Stats.md#blocks)
+- [ctime](fs.Stats.md#ctime)
+- [ctimeMs](fs.Stats.md#ctimems)
+- [dev](fs.Stats.md#dev)
+- [gid](fs.Stats.md#gid)
+- [ino](fs.Stats.md#ino)
+- [mode](fs.Stats.md#mode)
+- [mtime](fs.Stats.md#mtime)
+- [mtimeMs](fs.Stats.md#mtimems)
+- [nlink](fs.Stats.md#nlink)
+- [rdev](fs.Stats.md#rdev)
+- [size](fs.Stats.md#size)
+- [uid](fs.Stats.md#uid)
 
 ### Methods
 
-- [isBlockDevice](fs.stats.md#isblockdevice)
-- [isCharacterDevice](fs.stats.md#ischaracterdevice)
-- [isDirectory](fs.stats.md#isdirectory)
-- [isFIFO](fs.stats.md#isfifo)
-- [isFile](fs.stats.md#isfile)
-- [isSocket](fs.stats.md#issocket)
-- [isSymbolicLink](fs.stats.md#issymboliclink)
+- [isBlockDevice](fs.Stats.md#isblockdevice)
+- [isCharacterDevice](fs.Stats.md#ischaracterdevice)
+- [isDirectory](fs.Stats.md#isdirectory)
+- [isFIFO](fs.Stats.md#isfifo)
+- [isFile](fs.Stats.md#isfile)
+- [isSocket](fs.Stats.md#issocket)
+- [isSymbolicLink](fs.Stats.md#issymboliclink)
 
 ## Constructors
 
 ### constructor
 
-\+ **new Stats**(): [*Stats*](fs.stats.md)
+• **new Stats**()
 
-**Returns:** [*Stats*](fs.stats.md)
+#### Inherited from
+
+StatsBase<number\>.constructor
 
 ## Properties
 
 ### atime
 
-• **atime**: Date
+• **atime**: `Date`
 
-Defined in: node_modules/@types/node/fs.d.ts:36
+#### Inherited from
+
+StatsBase.atime
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:67
 
 ___
 
 ### atimeMs
 
-• **atimeMs**: *number*
+• **atimeMs**: `number`
 
-Defined in: node_modules/@types/node/fs.d.ts:32
+#### Inherited from
+
+StatsBase.atimeMs
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:63
 
 ___
 
 ### birthtime
 
-• **birthtime**: Date
+• **birthtime**: `Date`
 
-Defined in: node_modules/@types/node/fs.d.ts:39
+#### Inherited from
+
+StatsBase.birthtime
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:70
 
 ___
 
 ### birthtimeMs
 
-• **birthtimeMs**: *number*
+• **birthtimeMs**: `number`
 
-Defined in: node_modules/@types/node/fs.d.ts:35
+#### Inherited from
+
+StatsBase.birthtimeMs
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:66
 
 ___
 
 ### blksize
 
-• **blksize**: *number*
+• **blksize**: `number`
 
-Defined in: node_modules/@types/node/fs.d.ts:30
+#### Inherited from
+
+StatsBase.blksize
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:61
 
 ___
 
 ### blocks
 
-• **blocks**: *number*
+• **blocks**: `number`
 
-Defined in: node_modules/@types/node/fs.d.ts:31
+#### Inherited from
+
+StatsBase.blocks
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:62
 
 ___
 
 ### ctime
 
-• **ctime**: Date
+• **ctime**: `Date`
 
-Defined in: node_modules/@types/node/fs.d.ts:38
+#### Inherited from
+
+StatsBase.ctime
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:69
 
 ___
 
 ### ctimeMs
 
-• **ctimeMs**: *number*
+• **ctimeMs**: `number`
 
-Defined in: node_modules/@types/node/fs.d.ts:34
+#### Inherited from
+
+StatsBase.ctimeMs
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:65
 
 ___
 
 ### dev
 
-• **dev**: *number*
+• **dev**: `number`
 
-Defined in: node_modules/@types/node/fs.d.ts:22
+#### Inherited from
+
+StatsBase.dev
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:53
 
 ___
 
 ### gid
 
-• **gid**: *number*
+• **gid**: `number`
 
-Defined in: node_modules/@types/node/fs.d.ts:27
+#### Inherited from
+
+StatsBase.gid
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:58
 
 ___
 
 ### ino
 
-• **ino**: *number*
+• **ino**: `number`
 
-Defined in: node_modules/@types/node/fs.d.ts:23
+#### Inherited from
+
+StatsBase.ino
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:54
 
 ___
 
 ### mode
 
-• **mode**: *number*
+• **mode**: `number`
 
-Defined in: node_modules/@types/node/fs.d.ts:24
+#### Inherited from
+
+StatsBase.mode
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:55
 
 ___
 
 ### mtime
 
-• **mtime**: Date
+• **mtime**: `Date`
 
-Defined in: node_modules/@types/node/fs.d.ts:37
+#### Inherited from
+
+StatsBase.mtime
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:68
 
 ___
 
 ### mtimeMs
 
-• **mtimeMs**: *number*
+• **mtimeMs**: `number`
 
-Defined in: node_modules/@types/node/fs.d.ts:33
+#### Inherited from
+
+StatsBase.mtimeMs
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:64
 
 ___
 
 ### nlink
 
-• **nlink**: *number*
+• **nlink**: `number`
 
-Defined in: node_modules/@types/node/fs.d.ts:25
+#### Inherited from
+
+StatsBase.nlink
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:56
 
 ___
 
 ### rdev
 
-• **rdev**: *number*
+• **rdev**: `number`
 
-Defined in: node_modules/@types/node/fs.d.ts:28
+#### Inherited from
+
+StatsBase.rdev
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:59
 
 ___
 
 ### size
 
-• **size**: *number*
+• **size**: `number`
 
-Defined in: node_modules/@types/node/fs.d.ts:29
+#### Inherited from
+
+StatsBase.size
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:60
 
 ___
 
 ### uid
 
-• **uid**: *number*
+• **uid**: `number`
 
-Defined in: node_modules/@types/node/fs.d.ts:26
+#### Inherited from
+
+StatsBase.uid
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:57
 
 ## Methods
 
 ### isBlockDevice
 
-▸ **isBlockDevice**(): *boolean*
+▸ **isBlockDevice**(): `boolean`
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: node_modules/@types/node/fs.d.ts:16
+`boolean`
+
+#### Inherited from
+
+StatsBase.isBlockDevice
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:48
 
 ___
 
 ### isCharacterDevice
 
-▸ **isCharacterDevice**(): *boolean*
+▸ **isCharacterDevice**(): `boolean`
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: node_modules/@types/node/fs.d.ts:17
+`boolean`
+
+#### Inherited from
+
+StatsBase.isCharacterDevice
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:49
 
 ___
 
 ### isDirectory
 
-▸ **isDirectory**(): *boolean*
+▸ **isDirectory**(): `boolean`
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: node_modules/@types/node/fs.d.ts:15
+`boolean`
+
+#### Inherited from
+
+StatsBase.isDirectory
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:47
 
 ___
 
 ### isFIFO
 
-▸ **isFIFO**(): *boolean*
+▸ **isFIFO**(): `boolean`
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: node_modules/@types/node/fs.d.ts:19
+`boolean`
+
+#### Inherited from
+
+StatsBase.isFIFO
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:51
 
 ___
 
 ### isFile
 
-▸ **isFile**(): *boolean*
+▸ **isFile**(): `boolean`
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: node_modules/@types/node/fs.d.ts:14
+`boolean`
+
+#### Inherited from
+
+StatsBase.isFile
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:46
 
 ___
 
 ### isSocket
 
-▸ **isSocket**(): *boolean*
+▸ **isSocket**(): `boolean`
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: node_modules/@types/node/fs.d.ts:20
+`boolean`
+
+#### Inherited from
+
+StatsBase.isSocket
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:52
 
 ___
 
 ### isSymbolicLink
 
-▸ **isSymbolicLink**(): *boolean*
+▸ **isSymbolicLink**(): `boolean`
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: node_modules/@types/node/fs.d.ts:18
+`boolean`
+
+#### Inherited from
+
+StatsBase.isSymbolicLink
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:50

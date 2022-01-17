@@ -6,49 +6,70 @@
 
 ## Hierarchy
 
-* [*IControlBase*](actions.icontrolbase.md)
+- [`IControlBase`](actions.IControlBase.md)
 
-  ↳ **ICheckbox**
+  ↳ **`ICheckbox`**
 
 ## Table of contents
 
 ### Properties
 
-- [disabled](actions.icheckbox.md#disabled)
-- [id](actions.icheckbox.md#id)
-- [text](actions.icheckbox.md#text)
-- [value](actions.icheckbox.md#value)
+- [bbcode](actions.ICheckbox.md#bbcode)
+- [disabled](actions.ICheckbox.md#disabled)
+- [id](actions.ICheckbox.md#id)
+- [text](actions.ICheckbox.md#text)
+- [value](actions.ICheckbox.md#value)
 
 ## Properties
 
+### bbcode
+
+• `Optional` **bbcode**: `string`
+
+#### Defined in
+
+../src/types/IDialog.ts:51
+
+___
+
 ### disabled
 
-• `Optional` **disabled**: *boolean*
+• `Optional` **disabled**: `boolean`
 
-Defined in: src/types/IDialog.ts:48
+#### Defined in
+
+../src/types/IDialog.ts:53
 
 ___
 
 ### id
 
-• **id**: *string*
+• **id**: `string`
 
-Inherited from: [IControlBase](actions.icontrolbase.md).[id](actions.icontrolbase.md#id)
+#### Inherited from
 
-Defined in: src/types/IDialog.ts:42
+[IControlBase](actions.IControlBase.md).[id](actions.IControlBase.md#id)
+
+#### Defined in
+
+../src/types/IDialog.ts:46
 
 ___
 
 ### text
 
-• **text**: *string*
+• `Optional` **text**: `string`
 
-Defined in: src/types/IDialog.ts:46
+#### Defined in
+
+../src/types/IDialog.ts:50
 
 ___
 
 ### value
 
-• **value**: *boolean*
+• **value**: `boolean`
 
-Defined in: src/types/IDialog.ts:47
+#### Defined in
+
+../src/types/IDialog.ts:52

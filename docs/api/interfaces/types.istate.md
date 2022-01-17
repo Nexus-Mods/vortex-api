@@ -7,7 +7,7 @@
 interface for the top-level state object
 this should precisely mirror the reducer structure
 
-**`export`** 
+**`export`**
 
 **`interface`** IState
 
@@ -15,92 +15,105 @@ this should precisely mirror the reducer structure
 
 ### Properties
 
-- [app](types.istate.md#app)
-- [confidential](types.istate.md#confidential)
-- [persistent](types.istate.md#persistent)
-- [session](types.istate.md#session)
-- [settings](types.istate.md#settings)
-- [user](types.istate.md#user)
+- [app](types.IState.md#app)
+- [confidential](types.IState.md#confidential)
+- [persistent](types.IState.md#persistent)
+- [session](types.IState.md#session)
+- [settings](types.IState.md#settings)
+- [user](types.IState.md#user)
 
 ## Properties
 
 ### app
 
-• **app**: [*IApp*](types.iapp.md)
+• **app**: [`IApp`](types.IApp.md)
 
-Defined in: src/types/IState.ts:296
+#### Defined in
+
+../src/types/IState.ts:311
 
 ___
 
 ### confidential
 
-• **confidential**: *object*
+• **confidential**: `Object`
 
-#### Type declaration:
+#### Type declaration
 
-Name | Type |
-:------ | :------ |
-`account` | *object* |
+| Name | Type |
+| :------ | :------ |
+| `account` | `Object` |
 
-Defined in: src/types/IState.ts:298
+#### Defined in
+
+../src/types/IState.ts:313
 
 ___
 
 ### persistent
 
-• **persistent**: *object*
+• **persistent**: `Object`
 
-#### Type declaration:
+#### Type declaration
 
-Name | Type |
-:------ | :------ |
-`categories` | *object* |
-`deployment` | *object* |
-`deployment.needToDeploy` | *object* |
-`downloads` | [*IStateDownloads*](types.istatedownloads.md) |
-`gameMode` | [*IStateGameMode*](types.istategamemode.md) |
-`history` | IHistoryPersistent |
-`mods` | [*IModTable*](types.imodtable.md) |
-`profiles` | *object* |
-`transactions` | [*IStateTransactions*](types.istatetransactions.md) |
+| Name | Type |
+| :------ | :------ |
+| `categories` | `Object` |
+| `deployment` | `Object` |
+| `deployment.needToDeploy` | `Object` |
+| `downloads` | [`IStateDownloads`](types.IStateDownloads.md) |
+| `gameMode` | [`IStateGameMode`](types.IStateGameMode.md) |
+| `history` | `IHistoryPersistent` |
+| `mods` | [`IModTable`](types.IModTable.md) |
+| `profiles` | `Object` |
+| `transactions` | [`IStateTransactions`](types.IStateTransactions.md) |
 
-Defined in: src/types/IState.ts:315
+#### Defined in
+
+../src/types/IState.ts:331
 
 ___
 
 ### session
 
-• **session**: *object*
+• **session**: `Object`
 
-#### Type declaration:
+#### Type declaration
 
-Name | Type |
-:------ | :------ |
-`base` | [*ISession*](types.isession.md) |
-`browser` | [*IBrowserState*](types.ibrowserstate.md) |
-`discovery` | [*IDiscoveryState*](types.idiscoverystate.md) |
-`extensions` | *object* |
-`extensions.available` | [*IAvailableExtension*](types.iavailableextension.md)[] |
-`extensions.installed` | *object* |
-`extensions.updateTime` | *number* |
-`gameMode` | [*ISessionGameMode*](types.isessiongamemode.md) |
-`history` | IHistoryState |
-`notifications` | [*INotificationState*](types.inotificationstate.md) |
+| Name | Type |
+| :------ | :------ |
+| `base` | [`ISession`](types.ISession.md) |
+| `browser` | [`IBrowserState`](types.IBrowserState.md) |
+| `discovery` | [`IDiscoveryState`](types.IDiscoveryState.md) |
+| `extensions` | `Object` |
+| `extensions.available` | [`IAvailableExtension`](types.IAvailableExtension.md)[] |
+| `extensions.installed` | `Object` |
+| `extensions.updateTime` | `number` |
+| `gameMode` | [`ISessionGameMode`](types.ISessionGameMode.md) |
+| `history` | `IHistoryState` |
+| `notifications` | [`INotificationState`](types.INotificationState.md) |
+| `overlays` | [`IOverlaysState`](types.IOverlaysState.md) |
 
-Defined in: src/types/IState.ts:301
+#### Defined in
+
+../src/types/IState.ts:316
 
 ___
 
 ### settings
 
-• **settings**: [*ISettings*](types.isettings.md)
+• **settings**: [`ISettings`](types.ISettings.md)
 
-Defined in: src/types/IState.ts:314
+#### Defined in
+
+../src/types/IState.ts:330
 
 ___
 
 ### user
 
-• **user**: [*IUser*](types.iuser.md)
+• **user**: [`IUser`](types.IUser.md)
 
-Defined in: src/types/IState.ts:297
+#### Defined in
+
+../src/types/IState.ts:312

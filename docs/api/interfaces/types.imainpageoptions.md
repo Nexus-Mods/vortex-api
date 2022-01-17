@@ -8,108 +8,136 @@
 
 ### Properties
 
-- [activity](types.imainpageoptions.md#activity)
-- [badge](types.imainpageoptions.md#badge)
-- [group](types.imainpageoptions.md#group)
-- [hotkey](types.imainpageoptions.md#hotkey)
-- [hotkeyRaw](types.imainpageoptions.md#hotkeyraw)
-- [id](types.imainpageoptions.md#id)
-- [priority](types.imainpageoptions.md#priority)
-- [props](types.imainpageoptions.md#props)
-- [visible](types.imainpageoptions.md#visible)
+- [activity](types.IMainPageOptions.md#activity)
+- [badge](types.IMainPageOptions.md#badge)
+- [group](types.IMainPageOptions.md#group)
+- [hotkey](types.IMainPageOptions.md#hotkey)
+- [hotkeyRaw](types.IMainPageOptions.md#hotkeyraw)
+- [id](types.IMainPageOptions.md#id)
+- [priority](types.IMainPageOptions.md#priority)
+
+### Methods
+
+- [onReset](types.IMainPageOptions.md#onreset)
+- [props](types.IMainPageOptions.md#props)
+- [visible](types.IMainPageOptions.md#visible)
 
 ## Properties
 
 ### activity
 
-• `Optional` **activity**: [*ReduxProp*](../classes/util.reduxprop.md)<boolean\>
+• `Optional` **activity**: [`ReduxProp`](../classes/util.ReduxProp.md)<`boolean`\>
 
-Defined in: src/types/IExtensionContext.ts:119
+#### Defined in
+
+../src/types/IExtensionContext.ts:127
 
 ___
 
 ### badge
 
-• `Optional` **badge**: [*ReduxProp*](../classes/util.reduxprop.md)<any\>
+• `Optional` **badge**: [`ReduxProp`](../classes/util.ReduxProp.md)<`any`\>
 
-Defined in: src/types/IExtensionContext.ts:118
+#### Defined in
+
+../src/types/IExtensionContext.ts:126
 
 ___
 
 ### group
 
-• **group**: *dashboard* \| *global* \| *per-game* \| *support* \| *hidden*
+• **group**: ``"hidden"`` \| ``"dashboard"`` \| ``"global"`` \| ``"per-game"`` \| ``"support"``
 
-Defined in: src/types/IExtensionContext.ts:115
+#### Defined in
+
+../src/types/IExtensionContext.ts:123
 
 ___
 
 ### hotkey
 
-• `Optional` **hotkey**: *string*
+• `Optional` **hotkey**: `string`
 
 A hotkey to be pressed together with Ctrl+Shift to open that page
 
-Defined in: src/types/IExtensionContext.ts:108
+#### Defined in
+
+../src/types/IExtensionContext.ts:116
 
 ___
 
 ### hotkeyRaw
 
-• `Optional` **hotkeyRaw**: *string*
+• `Optional` **hotkeyRaw**: `string`
 
 A hotkey to be pressed to open that page. In this case the caller has to specify any modifiers
 in the format required by electron
 
-Defined in: src/types/IExtensionContext.ts:113
+#### Defined in
+
+../src/types/IExtensionContext.ts:121
 
 ___
 
 ### id
 
-• `Optional` **id**: *string*
+• `Optional` **id**: `string`
 
 id for this page. If none is specified the page title is used. Use the id to avoid
 name collisions if another extension is already using the same title.
 
-Defined in: src/types/IExtensionContext.ts:104
+#### Defined in
+
+../src/types/IExtensionContext.ts:112
 
 ___
 
 ### priority
 
-• `Optional` **priority**: *number*
+• `Optional` **priority**: `number`
 
-Defined in: src/types/IExtensionContext.ts:116
+#### Defined in
+
+../src/types/IExtensionContext.ts:124
+
+## Methods
+
+### onReset
+
+▸ `Optional` **onReset**(): `void`
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:128
 
 ___
 
 ### props
 
-• `Optional` **props**: () => *any*
+▸ `Optional` **props**(): `any`
 
-#### Type declaration:
+#### Returns
 
-▸ (): *any*
+`any`
 
-**Returns:** *any*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:117
-
-Defined in: src/types/IExtensionContext.ts:117
+../src/types/IExtensionContext.ts:125
 
 ___
 
 ### visible
 
-• `Optional` **visible**: () => *boolean*
+▸ `Optional` **visible**(): `boolean`
 
-#### Type declaration:
+#### Returns
 
-▸ (): *boolean*
+`boolean`
 
-**Returns:** *boolean*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:114
-
-Defined in: src/types/IExtensionContext.ts:114
+../src/types/IExtensionContext.ts:122

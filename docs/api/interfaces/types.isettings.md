@@ -8,102 +8,124 @@
 
 ### Properties
 
-- [automation](types.isettings.md#automation)
-- [downloads](types.isettings.md#downloads)
-- [gameMode](types.isettings.md#gamemode)
-- [interface](types.isettings.md#interface)
-- [mods](types.isettings.md#mods)
-- [notifications](types.isettings.md#notifications)
-- [profiles](types.isettings.md#profiles)
-- [tables](types.isettings.md#tables)
-- [update](types.isettings.md#update)
-- [window](types.isettings.md#window)
-- [workarounds](types.isettings.md#workarounds)
+- [automation](types.ISettings.md#automation)
+- [downloads](types.ISettings.md#downloads)
+- [gameMode](types.ISettings.md#gamemode)
+- [interface](types.ISettings.md#interface)
+- [mods](types.ISettings.md#mods)
+- [notifications](types.ISettings.md#notifications)
+- [profiles](types.ISettings.md#profiles)
+- [tables](types.ISettings.md#tables)
+- [update](types.ISettings.md#update)
+- [window](types.ISettings.md#window)
+- [workarounds](types.ISettings.md#workarounds)
 
 ## Properties
 
 ### automation
 
-• **automation**: [*ISettingsAutomation*](types.isettingsautomation.md)
+• **automation**: [`ISettingsAutomation`](types.ISettingsAutomation.md)
 
-Defined in: src/types/IState.ts:238
+#### Defined in
+
+../src/types/IState.ts:240
 
 ___
 
 ### downloads
 
-• **downloads**: [*ISettingsDownloads*](types.isettingsdownloads.md)
+• **downloads**: [`ISettingsDownloads`](types.ISettingsDownloads.md)
 
-Defined in: src/types/IState.ts:242
+#### Defined in
+
+../src/types/IState.ts:244
 
 ___
 
 ### gameMode
 
-• **gameMode**: [*ISettingsGameMode*](types.isettingsgamemode.md)
+• **gameMode**: [`ISettingsGameMode`](types.ISettingsGameMode.md)
 
-Defined in: src/types/IState.ts:239
+#### Defined in
+
+../src/types/IState.ts:241
 
 ___
 
 ### interface
 
-• **interface**: [*ISettingsInterface*](types.isettingsinterface.md)
+• **interface**: [`ISettingsInterface`](types.ISettingsInterface.md)
 
-Defined in: src/types/IState.ts:237
+#### Defined in
+
+../src/types/IState.ts:239
 
 ___
 
 ### mods
 
-• **mods**: [*ISettingsMods*](types.isettingsmods.md)
+• **mods**: [`ISettingsMods`](types.ISettingsMods.md)
 
-Defined in: src/types/IState.ts:243
+#### Defined in
+
+../src/types/IState.ts:245
 
 ___
 
 ### notifications
 
-• **notifications**: [*ISettingsNotification*](types.isettingsnotification.md)
+• **notifications**: [`ISettingsNotification`](types.ISettingsNotification.md)
 
-Defined in: src/types/IState.ts:244
+#### Defined in
+
+../src/types/IState.ts:246
 
 ___
 
 ### profiles
 
-• **profiles**: [*ISettingsProfiles*](types.isettingsprofiles.md)
+• **profiles**: [`ISettingsProfiles`](types.ISettingsProfiles.md)
 
-Defined in: src/types/IState.ts:240
+#### Defined in
+
+../src/types/IState.ts:242
 
 ___
 
 ### tables
 
-• **tables**: [*ITableStates*](types.itablestates.md)
+• **tables**: [`ITableStates`](types.ITableStates.md)
 
-Defined in: src/types/IState.ts:245
+#### Defined in
+
+../src/types/IState.ts:247
 
 ___
 
 ### update
 
-• **update**: [*ISettingsUpdate*](types.isettingsupdate.md)
+• **update**: [`ISettingsUpdate`](types.ISettingsUpdate.md)
 
-Defined in: src/types/IState.ts:246
+#### Defined in
+
+../src/types/IState.ts:248
 
 ___
 
 ### window
 
-• **window**: [*IWindow*](types.iwindow.md)
+• **window**: [`IWindow`](types.IWindow.md)
 
-Defined in: src/types/IState.ts:241
+#### Defined in
+
+../src/types/IState.ts:243
 
 ___
 
 ### workarounds
 
-• **workarounds**: [*ISettingsWorkarounds*](types.isettingsworkarounds.md)
+• **workarounds**: [`ISettingsWorkarounds`](types.ISettingsWorkarounds.md)
 
-Defined in: src/types/IState.ts:247
+#### Defined in
+
+../src/types/IState.ts:249

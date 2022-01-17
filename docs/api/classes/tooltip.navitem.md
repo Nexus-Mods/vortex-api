@@ -6,80 +6,88 @@
 
 ## Hierarchy
 
-* *Component*<[*NavItemProps*](../modules/tooltip.md#navitemprops), {}\>
+- `Component`<[`NavItemProps`](../modules/tooltip.md#navitemprops), {}\>
 
-  ↳ **NavItem**
+  ↳ **`NavItem`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](tooltip.navitem.md#constructor)
+- [constructor](tooltip.NavItem.md#constructor)
 
 ### Properties
 
-- [context](tooltip.navitem.md#context)
-- [props](tooltip.navitem.md#props)
-- [refs](tooltip.navitem.md#refs)
-- [state](tooltip.navitem.md#state)
-- [contextType](tooltip.navitem.md#contexttype)
+- [context](tooltip.NavItem.md#context)
+- [props](tooltip.NavItem.md#props)
+- [refs](tooltip.NavItem.md#refs)
+- [state](tooltip.NavItem.md#state)
+- [contextType](tooltip.NavItem.md#contexttype)
 
 ### Methods
 
-- [UNSAFE\_componentWillMount](tooltip.navitem.md#unsafe_componentwillmount)
-- [UNSAFE\_componentWillReceiveProps](tooltip.navitem.md#unsafe_componentwillreceiveprops)
-- [UNSAFE\_componentWillUpdate](tooltip.navitem.md#unsafe_componentwillupdate)
-- [componentDidCatch](tooltip.navitem.md#componentdidcatch)
-- [componentDidMount](tooltip.navitem.md#componentdidmount)
-- [componentDidUpdate](tooltip.navitem.md#componentdidupdate)
-- [componentWillMount](tooltip.navitem.md#componentwillmount)
-- [componentWillReceiveProps](tooltip.navitem.md#componentwillreceiveprops)
-- [componentWillUnmount](tooltip.navitem.md#componentwillunmount)
-- [componentWillUpdate](tooltip.navitem.md#componentwillupdate)
-- [forceUpdate](tooltip.navitem.md#forceupdate)
-- [getSnapshotBeforeUpdate](tooltip.navitem.md#getsnapshotbeforeupdate)
-- [render](tooltip.navitem.md#render)
-- [setState](tooltip.navitem.md#setstate)
-- [shouldComponentUpdate](tooltip.navitem.md#shouldcomponentupdate)
+- [UNSAFE\_componentWillMount](tooltip.NavItem.md#unsafe_componentwillmount)
+- [UNSAFE\_componentWillReceiveProps](tooltip.NavItem.md#unsafe_componentwillreceiveprops)
+- [UNSAFE\_componentWillUpdate](tooltip.NavItem.md#unsafe_componentwillupdate)
+- [componentDidCatch](tooltip.NavItem.md#componentdidcatch)
+- [componentDidMount](tooltip.NavItem.md#componentdidmount)
+- [componentDidUpdate](tooltip.NavItem.md#componentdidupdate)
+- [componentWillMount](tooltip.NavItem.md#componentwillmount)
+- [componentWillReceiveProps](tooltip.NavItem.md#componentwillreceiveprops)
+- [componentWillUnmount](tooltip.NavItem.md#componentwillunmount)
+- [componentWillUpdate](tooltip.NavItem.md#componentwillupdate)
+- [forceUpdate](tooltip.NavItem.md#forceupdate)
+- [getSnapshotBeforeUpdate](tooltip.NavItem.md#getsnapshotbeforeupdate)
+- [render](tooltip.NavItem.md#render)
+- [setState](tooltip.NavItem.md#setstate)
+- [shouldComponentUpdate](tooltip.NavItem.md#shouldcomponentupdate)
 
 ## Constructors
 
 ### constructor
 
-\+ **new NavItem**(`props`: [*NavItemProps*](../modules/tooltip.md#navitemprops) \| *Readonly*<[*NavItemProps*](../modules/tooltip.md#navitemprops)\>): [*NavItem*](tooltip.navitem.md)
+• **new NavItem**(`props`)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`props` | [*NavItemProps*](../modules/tooltip.md#navitemprops) \| *Readonly*<[*NavItemProps*](../modules/tooltip.md#navitemprops)\> |
+| Name | Type |
+| :------ | :------ |
+| `props` | [`NavItemProps`](../modules/tooltip.md#navitemprops) \| `Readonly`<[`NavItemProps`](../modules/tooltip.md#navitemprops)\> |
 
-**Returns:** [*NavItem*](tooltip.navitem.md)
+#### Inherited from
 
-Defined in: node_modules/@types/react/index.d.ts:472
+React.Component<NavItemProps, {}\>.constructor
 
-\+ **new NavItem**(`props`: [*NavItemProps*](../modules/tooltip.md#navitemprops), `context`: *any*): [*NavItem*](tooltip.navitem.md)
+#### Defined in
 
-**`deprecated`** 
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:474
+
+• **new NavItem**(`props`, `context`)
+
+**`deprecated`**
 
 **`see`** https://reactjs.org/docs/legacy-context.html
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`props` | [*NavItemProps*](../modules/tooltip.md#navitemprops) |
-`context` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `props` | [`NavItemProps`](../modules/tooltip.md#navitemprops) |
+| `context` | `any` |
 
-**Returns:** [*NavItem*](tooltip.navitem.md)
+#### Inherited from
 
-Defined in: node_modules/@types/react/index.d.ts:474
+React.Component<NavItemProps, {}\>.constructor
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:479
 
 ## Properties
 
 ### context
 
-• **context**: *any*
+• **context**: `any`
 
 If using the new style context, re-declare this in your class to be the
 `React.ContextType` of your `static contextType`.
@@ -95,42 +103,68 @@ declare context: React.ContextType<typeof MyContext>
 
 **`see`** https://reactjs.org/docs/context.html
 
-Defined in: node_modules/@types/react/index.d.ts:472
+#### Inherited from
+
+React.Component.context
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:472
 
 ___
 
 ### props
 
-• `Readonly` **props**: *Readonly*<[*NavItemProps*](../modules/tooltip.md#navitemprops)\> & *Readonly*<{ `children?`: ReactNode  }\>
+• `Readonly` **props**: `Readonly`<[`NavItemProps`](../modules/tooltip.md#navitemprops)\> & `Readonly`<{ `children?`: `ReactNode`  }\>
 
-Defined in: node_modules/@types/react/index.d.ts:497
+#### Inherited from
+
+React.Component.props
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:497
 
 ___
 
 ### refs
 
-• **refs**: *object*
+• **refs**: `Object`
 
-**`deprecated`** 
+**`deprecated`**
 https://reactjs.org/docs/refs-and-the-dom.html#legacy-api-string-refs
 
-#### Type declaration:
+#### Index signature
 
-Defined in: node_modules/@types/react/index.d.ts:503
+▪ [key: `string`]: `ReactInstance`
+
+#### Inherited from
+
+React.Component.refs
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:503
 
 ___
 
 ### state
 
-• **state**: *Readonly*<{}\>
+• **state**: `Readonly`<{}\>
 
-Defined in: node_modules/@types/react/index.d.ts:498
+#### Inherited from
+
+React.Component.state
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:498
 
 ___
 
 ### contextType
 
-▪ `Optional` `Static` **contextType**: *Context*<any\>
+▪ `Static` `Optional` **contextType**: `Context`<`any`\>
 
 If set, `this.context` will be set at runtime to the current value of the given Context.
 
@@ -151,13 +185,19 @@ class Foo extends React.Component {
 
 **`see`** https://reactjs.org/docs/context.html#classcontexttype
 
-Defined in: node_modules/@types/react/index.d.ts:454
+#### Inherited from
+
+React.Component.contextType
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:454
 
 ## Methods
 
 ### UNSAFE\_componentWillMount
 
-▸ `Optional`**UNSAFE_componentWillMount**(): *void*
+▸ `Optional` **UNSAFE_componentWillMount**(): `void`
 
 Called immediately before mounting occurs, and before `Component#render`.
 Avoid introducing any side-effects or subscriptions in this method.
@@ -173,15 +213,23 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:708
+`void`
+
+#### Inherited from
+
+React.Component.UNSAFE\_componentWillMount
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:708
 
 ___
 
 ### UNSAFE\_componentWillReceiveProps
 
-▸ `Optional`**UNSAFE_componentWillReceiveProps**(`nextProps`: *Readonly*<[*NavItemProps*](../modules/tooltip.md#navitemprops)\>, `nextContext`: *any*): *void*
+▸ `Optional` **UNSAFE_componentWillReceiveProps**(`nextProps`, `nextContext`): `void`
 
 Called when the component may be receiving new props.
 React may call this even if props have not changed, so be sure to compare new and existing
@@ -200,22 +248,30 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<[*NavItemProps*](../modules/tooltip.md#navitemprops)\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<[`NavItemProps`](../modules/tooltip.md#navitemprops)\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:740
+`void`
+
+#### Inherited from
+
+React.Component.UNSAFE\_componentWillReceiveProps
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:740
 
 ___
 
 ### UNSAFE\_componentWillUpdate
 
-▸ `Optional`**UNSAFE_componentWillUpdate**(`nextProps`: *Readonly*<[*NavItemProps*](../modules/tooltip.md#navitemprops)\>, `nextState`: *Readonly*<{}\>, `nextContext`: *any*): *void*
+▸ `Optional` **UNSAFE_componentWillUpdate**(`nextProps`, `nextState`, `nextContext`): `void`
 
 Called immediately before rendering when new props or state is received. Not called for the initial render.
 
@@ -232,77 +288,109 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<[*NavItemProps*](../modules/tooltip.md#navitemprops)\> |
-`nextState` | *Readonly*<{}\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<[`NavItemProps`](../modules/tooltip.md#navitemprops)\> |
+| `nextState` | `Readonly`<{}\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:768
+`void`
+
+#### Inherited from
+
+React.Component.UNSAFE\_componentWillUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:768
 
 ___
 
 ### componentDidCatch
 
-▸ `Optional`**componentDidCatch**(`error`: Error, `errorInfo`: ErrorInfo): *void*
+▸ `Optional` **componentDidCatch**(`error`, `errorInfo`): `void`
 
 Catches exceptions generated in descendant components. Unhandled exceptions will cause
 the entire component tree to unmount.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`error` | Error |
-`errorInfo` | ErrorInfo |
+| Name | Type |
+| :------ | :------ |
+| `error` | `Error` |
+| `errorInfo` | `ErrorInfo` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:637
+`void`
+
+#### Inherited from
+
+React.Component.componentDidCatch
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:637
 
 ___
 
 ### componentDidMount
 
-▸ `Optional`**componentDidMount**(): *void*
+▸ `Optional` **componentDidMount**(): `void`
 
 Called immediately after a component is mounted. Setting state here will trigger re-rendering.
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:616
+`void`
+
+#### Inherited from
+
+React.Component.componentDidMount
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:616
 
 ___
 
 ### componentDidUpdate
 
-▸ `Optional`**componentDidUpdate**(`prevProps`: *Readonly*<[*NavItemProps*](../modules/tooltip.md#navitemprops)\>, `prevState`: *Readonly*<{}\>, `snapshot?`: *any*): *void*
+▸ `Optional` **componentDidUpdate**(`prevProps`, `prevState`, `snapshot?`): `void`
 
 Called immediately after updating occurs. Not called for the initial render.
 
 The snapshot is only present if getSnapshotBeforeUpdate is present and returns non-null.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`prevProps` | *Readonly*<[*NavItemProps*](../modules/tooltip.md#navitemprops)\> |
-`prevState` | *Readonly*<{}\> |
-`snapshot?` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `prevProps` | `Readonly`<[`NavItemProps`](../modules/tooltip.md#navitemprops)\> |
+| `prevState` | `Readonly`<{}\> |
+| `snapshot?` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:679
+`void`
+
+#### Inherited from
+
+React.Component.componentDidUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:679
 
 ___
 
 ### componentWillMount
 
-▸ `Optional`**componentWillMount**(): *void*
+▸ `Optional` **componentWillMount**(): `void`
 
 Called immediately before mounting occurs, and before `Component#render`.
 Avoid introducing any side-effects or subscriptions in this method.
@@ -316,15 +404,23 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:694
+`void`
+
+#### Inherited from
+
+React.Component.componentWillMount
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:694
 
 ___
 
 ### componentWillReceiveProps
 
-▸ `Optional`**componentWillReceiveProps**(`nextProps`: *Readonly*<[*NavItemProps*](../modules/tooltip.md#navitemprops)\>, `nextContext`: *any*): *void*
+▸ `Optional` **componentWillReceiveProps**(`nextProps`, `nextContext`): `void`
 
 Called when the component may be receiving new props.
 React may call this even if props have not changed, so be sure to compare new and existing
@@ -341,35 +437,51 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<[*NavItemProps*](../modules/tooltip.md#navitemprops)\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<[`NavItemProps`](../modules/tooltip.md#navitemprops)\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:723
+`void`
+
+#### Inherited from
+
+React.Component.componentWillReceiveProps
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:723
 
 ___
 
 ### componentWillUnmount
 
-▸ `Optional`**componentWillUnmount**(): *void*
+▸ `Optional` **componentWillUnmount**(): `void`
 
 Called immediately before a component is destroyed. Perform any necessary cleanup in this method, such as
 cancelled network requests, or cleaning up any DOM elements created in `componentDidMount`.
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:632
+`void`
+
+#### Inherited from
+
+React.Component.componentWillUnmount
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:632
 
 ___
 
 ### componentWillUpdate
 
-▸ `Optional`**componentWillUpdate**(`nextProps`: *Readonly*<[*NavItemProps*](../modules/tooltip.md#navitemprops)\>, `nextState`: *Readonly*<{}\>, `nextContext`: *any*): *void*
+▸ `Optional` **componentWillUpdate**(`nextProps`, `nextState`, `nextContext`): `void`
 
 Called immediately before rendering when new props or state is received. Not called for the initial render.
 
@@ -384,39 +496,55 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<[*NavItemProps*](../modules/tooltip.md#navitemprops)\> |
-`nextState` | *Readonly*<{}\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<[`NavItemProps`](../modules/tooltip.md#navitemprops)\> |
+| `nextState` | `Readonly`<{}\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:753
+`void`
+
+#### Inherited from
+
+React.Component.componentWillUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:753
 
 ___
 
 ### forceUpdate
 
-▸ **forceUpdate**(`callback?`: () => *void*): *void*
+▸ **forceUpdate**(`callback?`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`callback?` | () => *void* |
+| Name | Type |
+| :------ | :------ |
+| `callback?` | () => `void` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:489
+`void`
+
+#### Inherited from
+
+React.Component.forceUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:489
 
 ___
 
 ### getSnapshotBeforeUpdate
 
-▸ `Optional`**getSnapshotBeforeUpdate**(`prevProps`: *Readonly*<[*NavItemProps*](../modules/tooltip.md#navitemprops)\>, `prevState`: *Readonly*<{}\>): *any*
+▸ `Optional` **getSnapshotBeforeUpdate**(`prevProps`, `prevState`): `any`
 
 Runs before React applies the result of `render` to the document, and
 returns an object to be given to componentDidUpdate. Useful for saving
@@ -425,55 +553,79 @@ things such as scroll position before `render` causes changes to it.
 Note: the presence of getSnapshotBeforeUpdate prevents any of the deprecated
 lifecycle events from running.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`prevProps` | *Readonly*<[*NavItemProps*](../modules/tooltip.md#navitemprops)\> |
-`prevState` | *Readonly*<{}\> |
+| Name | Type |
+| :------ | :------ |
+| `prevProps` | `Readonly`<[`NavItemProps`](../modules/tooltip.md#navitemprops)\> |
+| `prevState` | `Readonly`<{}\> |
 
-**Returns:** *any*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:673
+`any`
+
+#### Inherited from
+
+React.Component.getSnapshotBeforeUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:673
 
 ___
 
 ### render
 
-▸ **render**(): *Element*
+▸ **render**(): `Element`
 
-**Returns:** *Element*
+#### Returns
 
-Defined in: src/controls/TooltipControls.tsx:199
+`Element`
+
+#### Overrides
+
+React.Component.render
+
+#### Defined in
+
+../src/controls/TooltipControls.tsx:200
 
 ___
 
 ### setState
 
-▸ **setState**<K\>(`state`: {} \| (`prevState`: *Readonly*<{}\>, `props`: *Readonly*<[*NavItemProps*](../modules/tooltip.md#navitemprops)\>) => {} \| *Pick*<{}, K\> \| *Pick*<{}, K\>, `callback?`: () => *void*): *void*
+▸ **setState**<`K`\>(`state`, `callback?`): `void`
 
-#### Type parameters:
+#### Type parameters
 
-Name | Type |
-:------ | :------ |
-`K` | *never* |
+| Name | Type |
+| :------ | :------ |
+| `K` | extends `never` |
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`state` | {} \| (`prevState`: *Readonly*<{}\>, `props`: *Readonly*<[*NavItemProps*](../modules/tooltip.md#navitemprops)\>) => {} \| *Pick*<{}, K\> \| *Pick*<{}, K\> |
-`callback?` | () => *void* |
+| Name | Type |
+| :------ | :------ |
+| `state` | {} \| (`prevState`: `Readonly`<{}\>, `props`: `Readonly`<[`NavItemProps`](../modules/tooltip.md#navitemprops)\>) => {} \| `Pick`<{}, `K`\> \| `Pick`<{}, `K`\> |
+| `callback?` | () => `void` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:484
+`void`
+
+#### Inherited from
+
+React.Component.setState
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:484
 
 ___
 
 ### shouldComponentUpdate
 
-▸ `Optional`**shouldComponentUpdate**(`nextProps`: *Readonly*<[*NavItemProps*](../modules/tooltip.md#navitemprops)\>, `nextState`: *Readonly*<{}\>, `nextContext`: *any*): *boolean*
+▸ `Optional` **shouldComponentUpdate**(`nextProps`, `nextState`, `nextContext`): `boolean`
 
 Called to determine whether the change in props and state should trigger a re-render.
 
@@ -484,14 +636,22 @@ props or states have changed.
 If false is returned, `Component#render`, `componentWillUpdate`
 and `componentDidUpdate` will not be called.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<[*NavItemProps*](../modules/tooltip.md#navitemprops)\> |
-`nextState` | *Readonly*<{}\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<[`NavItemProps`](../modules/tooltip.md#navitemprops)\> |
+| `nextState` | `Readonly`<{}\> |
+| `nextContext` | `any` |
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:627
+`boolean`
+
+#### Inherited from
+
+React.Component.shouldComponentUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:627

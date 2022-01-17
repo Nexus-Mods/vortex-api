@@ -8,39 +8,47 @@
 
 ### Properties
 
-- [enabled](types.iextensionstate.md#enabled)
-- [endorsed](types.iextensionstate.md#endorsed)
-- [remove](types.iextensionstate.md#remove)
-- [version](types.iextensionstate.md#version)
+- [enabled](types.IExtensionState.md#enabled)
+- [endorsed](types.IExtensionState.md#endorsed)
+- [remove](types.IExtensionState.md#remove)
+- [version](types.IExtensionState.md#version)
 
 ## Properties
 
 ### enabled
 
-• **enabled**: *boolean* \| *failed*
+• **enabled**: `boolean` \| ``"failed"``
 
-Defined in: src/types/IState.ts:122
+#### Defined in
+
+../src/types/IState.ts:124
 
 ___
 
 ### endorsed
 
-• **endorsed**: *string*
+• **endorsed**: `string`
 
-Defined in: src/types/IState.ts:125
+#### Defined in
+
+../src/types/IState.ts:127
 
 ___
 
 ### remove
 
-• **remove**: *boolean*
+• **remove**: `boolean`
 
-Defined in: src/types/IState.ts:124
+#### Defined in
+
+../src/types/IState.ts:126
 
 ___
 
 ### version
 
-• **version**: *string*
+• **version**: `string`
 
-Defined in: src/types/IState.ts:123
+#### Defined in
+
+../src/types/IState.ts:125

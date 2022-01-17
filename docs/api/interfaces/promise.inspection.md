@@ -1,102 +1,126 @@
-[vortex_devel](../README.md) / [Exports](../modules.md) / [Promise](../modules/promise.md) / Inspection
+[vortex_devel](../README.md) / [Exports](../modules.md) / [Promise](../modules/Promise.md) / Inspection
 
 # Interface: Inspection<R\>
 
-[Promise](../modules/promise.md).Inspection
+[Promise](../modules/Promise.md).Inspection
 
 ## Type parameters
 
-Name |
-:------ |
-`R` |
+| Name |
+| :------ |
+| `R` |
 
 ## Implemented by
 
-* [*Promise*](../classes/promise.md)
+- [`Promise`](../classes/Promise.md)
 
 ## Table of contents
 
 ### Methods
 
-- [isCancelled](promise.inspection.md#iscancelled)
-- [isFulfilled](promise.inspection.md#isfulfilled)
-- [isPending](promise.inspection.md#ispending)
-- [isRejected](promise.inspection.md#isrejected)
-- [reason](promise.inspection.md#reason)
-- [value](promise.inspection.md#value)
+- [isCancelled](Promise.Inspection.md#iscancelled)
+- [isFulfilled](Promise.Inspection.md#isfulfilled)
+- [isPending](Promise.Inspection.md#ispending)
+- [isRejected](Promise.Inspection.md#isrejected)
+- [reason](Promise.Inspection.md#reason)
+- [value](Promise.Inspection.md#value)
 
 ## Methods
 
 ### isCancelled
 
-▸ **isCancelled**(): *boolean*
+▸ **isCancelled**(): `boolean`
 
 See if the underlying promise was cancelled at the creation time of this inspection object.
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: node_modules/@types/bluebird/index.d.ts:1078
+`boolean`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:1078
 
 ___
 
 ### isFulfilled
 
-▸ **isFulfilled**(): *boolean*
+▸ **isFulfilled**(): `boolean`
 
 See if the underlying promise was fulfilled at the creation time of this inspection object.
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: node_modules/@types/bluebird/index.d.ts:1068
+`boolean`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:1068
 
 ___
 
 ### isPending
 
-▸ **isPending**(): *boolean*
+▸ **isPending**(): `boolean`
 
 See if the underlying promise was defer at the creation time of this inspection object.
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: node_modules/@types/bluebird/index.d.ts:1083
+`boolean`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:1083
 
 ___
 
 ### isRejected
 
-▸ **isRejected**(): *boolean*
+▸ **isRejected**(): `boolean`
 
 See if the underlying promise was rejected at the creation time of this inspection object.
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: node_modules/@types/bluebird/index.d.ts:1073
+`boolean`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:1073
 
 ___
 
 ### reason
 
-▸ **reason**(): *any*
+▸ **reason**(): `any`
 
 Get the rejection reason for the underlying promise. Throws if the promise wasn't rejected at the creation time of this inspection object.
 
 throws `TypeError`
 
-**Returns:** *any*
+#### Returns
 
-Defined in: node_modules/@types/bluebird/index.d.ts:1097
+`any`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:1097
 
 ___
 
 ### value
 
-▸ **value**(): R
+▸ **value**(): `R`
 
 Get the fulfillment value of the underlying promise. Throws if the promise wasn't fulfilled at the creation time of this inspection object.
 
 throws `TypeError`
 
-**Returns:** R
+#### Returns
 
-Defined in: node_modules/@types/bluebird/index.d.ts:1090
+`R`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:1090

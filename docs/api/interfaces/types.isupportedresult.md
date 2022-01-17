@@ -8,21 +8,25 @@
 
 ### Properties
 
-- [requiredFiles](types.isupportedresult.md#requiredfiles)
-- [supported](types.isupportedresult.md#supported)
+- [requiredFiles](types.ISupportedResult.md#requiredfiles)
+- [supported](types.ISupportedResult.md#supported)
 
 ## Properties
 
 ### requiredFiles
 
-• **requiredFiles**: *string*[]
+• **requiredFiles**: `string`[]
 
-Defined in: src/extensions/mod_management/types/TestSupported.ts:5
+#### Defined in
+
+../src/extensions/mod_management/types/TestSupported.ts:5
 
 ___
 
 ### supported
 
-• **supported**: *boolean*
+• **supported**: `boolean`
 
-Defined in: src/extensions/mod_management/types/TestSupported.ts:4
+#### Defined in
+
+../src/extensions/mod_management/types/TestSupported.ts:4

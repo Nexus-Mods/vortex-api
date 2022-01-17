@@ -1,27 +1,31 @@
-[vortex_devel](../README.md) / [Exports](../modules.md) / [Promise](../modules/promise.md) / CoroutineOptions
+[vortex_devel](../README.md) / [Exports](../modules.md) / [Promise](../modules/Promise.md) / CoroutineOptions
 
 # Interface: CoroutineOptions
 
-[Promise](../modules/promise.md).CoroutineOptions
+[Promise](../modules/Promise.md).CoroutineOptions
 
 ## Table of contents
 
 ### Methods
 
-- [yieldHandler](promise.coroutineoptions.md#yieldhandler)
+- [yieldHandler](Promise.CoroutineOptions.md#yieldhandler)
 
 ## Methods
 
 ### yieldHandler
 
-▸ **yieldHandler**(`value`: *any*): *any*
+▸ **yieldHandler**(`value`): `any`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`value` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `value` | `any` |
 
-**Returns:** *any*
+#### Returns
 
-Defined in: node_modules/@types/bluebird/index.d.ts:974
+`any`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:974

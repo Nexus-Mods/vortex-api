@@ -7,7 +7,7 @@
 "ephemeral" session state.
 This state is generated at startup and forgotten at application exit
 
-**`export`** 
+**`export`**
 
 **`interface`** ISession
 
@@ -15,132 +15,170 @@ This state is generated at startup and forgotten at application exit
 
 ### Properties
 
-- [activity](types.isession.md#activity)
-- [commandLine](types.isession.md#commandline)
-- [displayGroups](types.isession.md#displaygroups)
-- [extLoadFailures](types.isession.md#extloadfailures)
-- [mainPage](types.isession.md#mainpage)
-- [networkConnected](types.isession.md#networkconnected)
-- [overlayOpen](types.isession.md#overlayopen)
-- [progress](types.isession.md#progress)
-- [secondaryPage](types.isession.md#secondarypage)
-- [settingsPage](types.isession.md#settingspage)
-- [toolsRunning](types.isession.md#toolsrunning)
-- [uiBlockers](types.isession.md#uiblockers)
-- [visibleDialog](types.isession.md#visibledialog)
+- [activity](types.ISession.md#activity)
+- [commandLine](types.ISession.md#commandline)
+- [displayGroups](types.ISession.md#displaygroups)
+- [extLoadFailures](types.ISession.md#extloadfailures)
+- [mainPage](types.ISession.md#mainpage)
+- [networkConnected](types.ISession.md#networkconnected)
+- [overlayOpen](types.ISession.md#overlayopen)
+- [progress](types.ISession.md#progress)
+- [secondaryPage](types.ISession.md#secondarypage)
+- [settingsPage](types.ISession.md#settingspage)
+- [toolsRunning](types.ISession.md#toolsrunning)
+- [uiBlockers](types.ISession.md#uiblockers)
+- [visibleDialog](types.ISession.md#visibledialog)
 
 ## Properties
 
 ### activity
 
-• **activity**: *object*
+• **activity**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IState.ts:101
+▪ [id: `string`]: `string`
+
+#### Defined in
+
+../src/types/IState.ts:101
 
 ___
 
 ### commandLine
 
-• **commandLine**: IParameters
+• **commandLine**: `IParameters`
 
-Defined in: src/types/IState.ts:108
+#### Defined in
+
+../src/types/IState.ts:108
 
 ___
 
 ### displayGroups
 
-• **displayGroups**: *object*
+• **displayGroups**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IState.ts:96
+▪ [id: `string`]: `string`
+
+#### Defined in
+
+../src/types/IState.ts:96
 
 ___
 
 ### extLoadFailures
 
-• **extLoadFailures**: *object*
+• **extLoadFailures**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IState.ts:104
+▪ [extId: `string`]: [`IExtensionLoadFailure`](types.IExtensionLoadFailure.md)[]
+
+#### Defined in
+
+../src/types/IState.ts:104
 
 ___
 
 ### mainPage
 
-• **mainPage**: *string*
+• **mainPage**: `string`
 
-Defined in: src/types/IState.ts:99
+#### Defined in
+
+../src/types/IState.ts:99
 
 ___
 
 ### networkConnected
 
-• **networkConnected**: *boolean*
+• **networkConnected**: `boolean`
 
-Defined in: src/types/IState.ts:107
+#### Defined in
+
+../src/types/IState.ts:107
 
 ___
 
 ### overlayOpen
 
-• **overlayOpen**: *boolean*
+• **overlayOpen**: `boolean`
 
-Defined in: src/types/IState.ts:97
+#### Defined in
+
+../src/types/IState.ts:97
 
 ___
 
 ### progress
 
-• **progress**: *object*
+• **progress**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IState.ts:102
+▪ [group: `string`]: { [id: string]: [`IProgress`](types.IProgress.md);  }
+
+#### Defined in
+
+../src/types/IState.ts:102
 
 ___
 
 ### secondaryPage
 
-• **secondaryPage**: *string*
+• **secondaryPage**: `string`
 
-Defined in: src/types/IState.ts:100
+#### Defined in
+
+../src/types/IState.ts:100
 
 ___
 
 ### settingsPage
 
-• **settingsPage**: *string*
+• **settingsPage**: `string`
 
-Defined in: src/types/IState.ts:103
+#### Defined in
+
+../src/types/IState.ts:103
 
 ___
 
 ### toolsRunning
 
-• **toolsRunning**: *object*
+• **toolsRunning**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IState.ts:105
+▪ [exeId: `string`]: [`IRunningTool`](types.IRunningTool.md)
+
+#### Defined in
+
+../src/types/IState.ts:105
 
 ___
 
 ### uiBlockers
 
-• **uiBlockers**: *object*
+• **uiBlockers**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IState.ts:106
+▪ [id: `string`]: [`IUIBlocker`](types.IUIBlocker.md)
+
+#### Defined in
+
+../src/types/IState.ts:106
 
 ___
 
 ### visibleDialog
 
-• **visibleDialog**: *string*
+• **visibleDialog**: `string`
 
-Defined in: src/types/IState.ts:98
+#### Defined in
+
+../src/types/IState.ts:98

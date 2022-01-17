@@ -8,75 +8,91 @@
 
 ### Properties
 
-- [deploymentMethod](types.ideploymentmanifest.md#deploymentmethod)
-- [deploymentTime](types.ideploymentmanifest.md#deploymenttime)
-- [files](types.ideploymentmanifest.md#files)
-- [gameId](types.ideploymentmanifest.md#gameid)
-- [instance](types.ideploymentmanifest.md#instance)
-- [stagingPath](types.ideploymentmanifest.md#stagingpath)
-- [targetPath](types.ideploymentmanifest.md#targetpath)
-- [version](types.ideploymentmanifest.md#version)
+- [deploymentMethod](types.IDeploymentManifest.md#deploymentmethod)
+- [deploymentTime](types.IDeploymentManifest.md#deploymenttime)
+- [files](types.IDeploymentManifest.md#files)
+- [gameId](types.IDeploymentManifest.md#gameid)
+- [instance](types.IDeploymentManifest.md#instance)
+- [stagingPath](types.IDeploymentManifest.md#stagingpath)
+- [targetPath](types.IDeploymentManifest.md#targetpath)
+- [version](types.IDeploymentManifest.md#version)
 
 ## Properties
 
 ### deploymentMethod
 
-• `Optional` **deploymentMethod**: *string*
+• `Optional` **deploymentMethod**: `string`
 
-Defined in: src/extensions/mod_management/types/IDeploymentManifest.ts:6
+#### Defined in
+
+../src/extensions/mod_management/types/IDeploymentManifest.ts:6
 
 ___
 
 ### deploymentTime
 
-• `Optional` **deploymentTime**: *number*
+• `Optional` **deploymentTime**: `number`
 
-Defined in: src/extensions/mod_management/types/IDeploymentManifest.ts:7
+#### Defined in
+
+../src/extensions/mod_management/types/IDeploymentManifest.ts:7
 
 ___
 
 ### files
 
-• **files**: [*IDeployedFile*](types.ideployedfile.md)[]
+• **files**: [`IDeployedFile`](types.IDeployedFile.md)[]
 
-Defined in: src/extensions/mod_management/types/IDeploymentManifest.ts:11
+#### Defined in
+
+../src/extensions/mod_management/types/IDeploymentManifest.ts:11
 
 ___
 
 ### gameId
 
-• `Optional` **gameId**: *string*
+• `Optional` **gameId**: `string`
 
-Defined in: src/extensions/mod_management/types/IDeploymentManifest.ts:9
+#### Defined in
+
+../src/extensions/mod_management/types/IDeploymentManifest.ts:9
 
 ___
 
 ### instance
 
-• **instance**: *string*
+• **instance**: `string`
 
-Defined in: src/extensions/mod_management/types/IDeploymentManifest.ts:5
+#### Defined in
+
+../src/extensions/mod_management/types/IDeploymentManifest.ts:5
 
 ___
 
 ### stagingPath
 
-• `Optional` **stagingPath**: *string*
+• `Optional` **stagingPath**: `string`
 
-Defined in: src/extensions/mod_management/types/IDeploymentManifest.ts:8
+#### Defined in
+
+../src/extensions/mod_management/types/IDeploymentManifest.ts:8
 
 ___
 
 ### targetPath
 
-• `Optional` **targetPath**: *string*
+• `Optional` **targetPath**: `string`
 
-Defined in: src/extensions/mod_management/types/IDeploymentManifest.ts:10
+#### Defined in
+
+../src/extensions/mod_management/types/IDeploymentManifest.ts:10
 
 ___
 
 ### version
 
-• **version**: *number*
+• **version**: `number`
 
-Defined in: src/extensions/mod_management/types/IDeploymentManifest.ts:4
+#### Defined in
+
+../src/extensions/mod_management/types/IDeploymentManifest.ts:4

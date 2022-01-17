@@ -6,58 +6,70 @@
 
 ## Hierarchy
 
-* [*IControlBase*](actions.icontrolbase.md)
+- [`IControlBase`](actions.IControlBase.md)
 
-  ↳ **IInput**
+  ↳ **`IInput`**
 
 ## Table of contents
 
 ### Properties
 
-- [id](actions.iinput.md#id)
-- [label](actions.iinput.md#label)
-- [placeholder](actions.iinput.md#placeholder)
-- [type](actions.iinput.md#type)
-- [value](actions.iinput.md#value)
+- [id](actions.IInput.md#id)
+- [label](actions.IInput.md#label)
+- [placeholder](actions.IInput.md#placeholder)
+- [type](actions.IInput.md#type)
+- [value](actions.IInput.md#value)
 
 ## Properties
 
 ### id
 
-• **id**: *string*
+• **id**: `string`
 
-Inherited from: [IControlBase](actions.icontrolbase.md).[id](actions.icontrolbase.md#id)
+#### Inherited from
 
-Defined in: src/types/IDialog.ts:42
+[IControlBase](actions.IControlBase.md).[id](actions.IControlBase.md#id)
+
+#### Defined in
+
+../src/types/IDialog.ts:46
 
 ___
 
 ### label
 
-• `Optional` **label**: *string*
+• `Optional` **label**: `string`
 
-Defined in: src/types/IDialog.ts:54
+#### Defined in
+
+../src/types/IDialog.ts:59
 
 ___
 
 ### placeholder
 
-• `Optional` **placeholder**: *string*
+• `Optional` **placeholder**: `string`
 
-Defined in: src/types/IDialog.ts:55
+#### Defined in
+
+../src/types/IDialog.ts:60
 
 ___
 
 ### type
 
-• `Optional` **type**: *number* \| *text* \| *password* \| *date* \| *time* \| *email* \| *url* \| *multiline*
+• `Optional` **type**: ``"number"`` \| ``"text"`` \| ``"password"`` \| ``"date"`` \| ``"time"`` \| ``"email"`` \| ``"url"`` \| ``"multiline"``
 
-Defined in: src/types/IDialog.ts:52
+#### Defined in
+
+../src/types/IDialog.ts:57
 
 ___
 
 ### value
 
-• `Optional` **value**: *string*
+• `Optional` **value**: `string`
 
-Defined in: src/types/IDialog.ts:53
+#### Defined in
+
+../src/types/IDialog.ts:58

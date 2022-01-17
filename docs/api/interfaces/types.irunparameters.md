@@ -11,30 +11,36 @@ changing the parameters
 
 ### Properties
 
-- [args](types.irunparameters.md#args)
-- [executable](types.irunparameters.md#executable)
-- [options](types.irunparameters.md#options)
+- [args](types.IRunParameters.md#args)
+- [executable](types.IRunParameters.md#executable)
+- [options](types.IRunParameters.md#options)
 
 ## Properties
 
 ### args
 
-• **args**: *string*[]
+• **args**: `string`[]
 
-Defined in: src/types/IExtensionContext.ts:334
+#### Defined in
+
+../src/types/IExtensionContext.ts:364
 
 ___
 
 ### executable
 
-• **executable**: *string*
+• **executable**: `string`
 
-Defined in: src/types/IExtensionContext.ts:333
+#### Defined in
+
+../src/types/IExtensionContext.ts:363
 
 ___
 
 ### options
 
-• **options**: [*IRunOptions*](types.irunoptions.md)
+• **options**: [`IRunOptions`](types.IRunOptions.md)
 
-Defined in: src/types/IExtensionContext.ts:335
+#### Defined in
+
+../src/types/IExtensionContext.ts:365

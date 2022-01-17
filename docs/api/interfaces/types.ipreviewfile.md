@@ -8,25 +8,29 @@
 
 ### Properties
 
-- [filePath](types.ipreviewfile.md#filepath)
-- [label](types.ipreviewfile.md#label)
+- [filePath](types.IPreviewFile.md#filepath)
+- [label](types.IPreviewFile.md#label)
 
 ## Properties
 
 ### filePath
 
-• **filePath**: *string*
+• **filePath**: `string`
 
 full path to the file to preview
 
-Defined in: src/types/IExtensionContext.ts:351
+#### Defined in
+
+../src/types/IExtensionContext.ts:381
 
 ___
 
 ### label
 
-• **label**: *string*
+• **label**: `string`
 
 label to display to the user if applicable
 
-Defined in: src/types/IExtensionContext.ts:347
+#### Defined in
+
+../src/types/IExtensionContext.ts:377

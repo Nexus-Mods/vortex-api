@@ -4,134 +4,171 @@
 
 ## Hierarchy
 
-* *Component*<IFormPathProps, {}\>
+- [`ComponentEx`](ComponentEx.md)<`IFormPathProps`, {}\>
 
-  ↳ **FormPathItem**
+  ↳ **`FormPathItem`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](formpathitem.md#constructor)
+- [constructor](FormPathItem.md#constructor)
 
 ### Properties
 
-- [context](formpathitem.md#context)
-- [props](formpathitem.md#props)
-- [refs](formpathitem.md#refs)
-- [state](formpathitem.md#state)
-- [contextType](formpathitem.md#contexttype)
+- [context](FormPathItem.md#context)
+- [nextState](FormPathItem.md#nextstate)
+- [props](FormPathItem.md#props)
+- [refs](FormPathItem.md#refs)
+- [state](FormPathItem.md#state)
+- [contextType](FormPathItem.md#contexttype)
+- [contextTypes](FormPathItem.md#contexttypes)
 
 ### Methods
 
-- [UNSAFE\_componentWillMount](formpathitem.md#unsafe_componentwillmount)
-- [UNSAFE\_componentWillReceiveProps](formpathitem.md#unsafe_componentwillreceiveprops)
-- [UNSAFE\_componentWillUpdate](formpathitem.md#unsafe_componentwillupdate)
-- [componentDidCatch](formpathitem.md#componentdidcatch)
-- [componentDidMount](formpathitem.md#componentdidmount)
-- [componentDidUpdate](formpathitem.md#componentdidupdate)
-- [componentWillMount](formpathitem.md#componentwillmount)
-- [componentWillReceiveProps](formpathitem.md#componentwillreceiveprops)
-- [componentWillUnmount](formpathitem.md#componentwillunmount)
-- [componentWillUpdate](formpathitem.md#componentwillupdate)
-- [forceUpdate](formpathitem.md#forceupdate)
-- [getSnapshotBeforeUpdate](formpathitem.md#getsnapshotbeforeupdate)
-- [handleChangePath](formpathitem.md#handlechangepath)
-- [handleTypePath](formpathitem.md#handletypepath)
-- [render](formpathitem.md#render)
-- [setState](formpathitem.md#setstate)
-- [shouldComponentUpdate](formpathitem.md#shouldcomponentupdate)
-- [validationState](formpathitem.md#validationstate)
+- [UNSAFE\_componentWillMount](FormPathItem.md#unsafe_componentwillmount)
+- [UNSAFE\_componentWillReceiveProps](FormPathItem.md#unsafe_componentwillreceiveprops)
+- [UNSAFE\_componentWillUpdate](FormPathItem.md#unsafe_componentwillupdate)
+- [componentDidCatch](FormPathItem.md#componentdidcatch)
+- [componentDidMount](FormPathItem.md#componentdidmount)
+- [componentDidUpdate](FormPathItem.md#componentdidupdate)
+- [componentWillMount](FormPathItem.md#componentwillmount)
+- [componentWillReceiveProps](FormPathItem.md#componentwillreceiveprops)
+- [componentWillUnmount](FormPathItem.md#componentwillunmount)
+- [componentWillUpdate](FormPathItem.md#componentwillupdate)
+- [forceUpdate](FormPathItem.md#forceupdate)
+- [getSnapshotBeforeUpdate](FormPathItem.md#getsnapshotbeforeupdate)
+- [handleChangePath](FormPathItem.md#handlechangepath)
+- [handleTypePath](FormPathItem.md#handletypepath)
+- [initState](FormPathItem.md#initstate)
+- [render](FormPathItem.md#render)
+- [setState](FormPathItem.md#setstate)
+- [shouldComponentUpdate](FormPathItem.md#shouldcomponentupdate)
+- [validationState](FormPathItem.md#validationstate)
 
 ## Constructors
 
 ### constructor
 
-\+ **new FormPathItem**(`props`: IFormPathProps \| *Readonly*<IFormPathProps\>): [*FormPathItem*](formpathitem.md)
+• **new FormPathItem**(`props`)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`props` | IFormPathProps \| *Readonly*<IFormPathProps\> |
+| Name | Type |
+| :------ | :------ |
+| `props` | `IFormPathProps` & `Partial`<`WithTranslation`<``"translation"``\>\> \| `Readonly`<`IFormPathProps` & `Partial`<`WithTranslation`<``"translation"``\>\>\> |
 
-**Returns:** [*FormPathItem*](formpathitem.md)
+#### Inherited from
 
-Defined in: node_modules/@types/react/index.d.ts:472
+[ComponentEx](ComponentEx.md).[constructor](ComponentEx.md#constructor)
 
-\+ **new FormPathItem**(`props`: IFormPathProps, `context`: *any*): [*FormPathItem*](formpathitem.md)
+#### Defined in
 
-**`deprecated`** 
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:474
+
+• **new FormPathItem**(`props`, `context`)
+
+**`deprecated`**
 
 **`see`** https://reactjs.org/docs/legacy-context.html
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`props` | IFormPathProps |
-`context` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `props` | `IFormPathProps` & `Partial`<`WithTranslation`<``"translation"``\>\> |
+| `context` | `any` |
 
-**Returns:** [*FormPathItem*](formpathitem.md)
+#### Inherited from
 
-Defined in: node_modules/@types/react/index.d.ts:474
+[ComponentEx](ComponentEx.md).[constructor](ComponentEx.md#constructor)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:479
 
 ## Properties
 
 ### context
 
-• **context**: *any*
+• **context**: [`IComponentContext`](../interfaces/types.IComponentContext.md)
 
-If using the new style context, re-declare this in your class to be the
-`React.ContextType` of your `static contextType`.
-Should be used with type annotation or static contextType.
+#### Inherited from
 
-```ts
-static contextType = MyContext
-// For TS pre-3.7:
-context!: React.ContextType<typeof MyContext>
-// For TS 3.7 and above:
-declare context: React.ContextType<typeof MyContext>
-```
+[ComponentEx](ComponentEx.md).[context](ComponentEx.md#context)
 
-**`see`** https://reactjs.org/docs/context.html
+#### Defined in
 
-Defined in: node_modules/@types/react/index.d.ts:472
+../src/util/ComponentEx.ts:133
+
+___
+
+### nextState
+
+• **nextState**: `Object`
+
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[nextState](ComponentEx.md#nextstate)
+
+#### Defined in
+
+../src/util/ComponentEx.ts:135
 
 ___
 
 ### props
 
-• `Readonly` **props**: *Readonly*<IFormPathProps\> & *Readonly*<{ `children?`: ReactNode  }\>
+• `Readonly` **props**: `Readonly`<`IFormPathProps` & `Partial`<`WithTranslation`<``"translation"``\>\>\> & `Readonly`<{ `children?`: `ReactNode`  }\>
 
-Defined in: node_modules/@types/react/index.d.ts:497
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[props](ComponentEx.md#props)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:497
 
 ___
 
 ### refs
 
-• **refs**: *object*
+• **refs**: `Object`
 
-**`deprecated`** 
+**`deprecated`**
 https://reactjs.org/docs/refs-and-the-dom.html#legacy-api-string-refs
 
-#### Type declaration:
+#### Index signature
 
-Defined in: node_modules/@types/react/index.d.ts:503
+▪ [key: `string`]: `ReactInstance`
+
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[refs](ComponentEx.md#refs)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:503
 
 ___
 
 ### state
 
-• **state**: *Readonly*<{}\>
+• **state**: `Readonly`<{}\>
 
-Defined in: node_modules/@types/react/index.d.ts:498
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[state](ComponentEx.md#state)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:498
 
 ___
 
 ### contextType
 
-▪ `Optional` `Static` **contextType**: *Context*<any\>
+▪ `Static` `Optional` **contextType**: `Context`<`any`\>
 
 If set, `this.context` will be set at runtime to the current value of the given Context.
 
@@ -152,13 +189,33 @@ class Foo extends React.Component {
 
 **`see`** https://reactjs.org/docs/context.html#classcontexttype
 
-Defined in: node_modules/@types/react/index.d.ts:454
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[contextType](ComponentEx.md#contexttype)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:454
+
+___
+
+### contextTypes
+
+▪ `Static` **contextTypes**: `ValidationMap`<`any`\>
+
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[contextTypes](ComponentEx.md#contexttypes)
+
+#### Defined in
+
+../src/util/ComponentEx.ts:127
 
 ## Methods
 
 ### UNSAFE\_componentWillMount
 
-▸ `Optional`**UNSAFE_componentWillMount**(): *void*
+▸ `Optional` **UNSAFE_componentWillMount**(): `void`
 
 Called immediately before mounting occurs, and before `Component#render`.
 Avoid introducing any side-effects or subscriptions in this method.
@@ -174,15 +231,23 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:708
+`void`
+
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[UNSAFE_componentWillMount](ComponentEx.md#unsafe_componentwillmount)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:708
 
 ___
 
 ### UNSAFE\_componentWillReceiveProps
 
-▸ `Optional`**UNSAFE_componentWillReceiveProps**(`nextProps`: *Readonly*<IFormPathProps\>, `nextContext`: *any*): *void*
+▸ `Optional` **UNSAFE_componentWillReceiveProps**(`nextProps`, `nextContext`): `void`
 
 Called when the component may be receiving new props.
 React may call this even if props have not changed, so be sure to compare new and existing
@@ -201,22 +266,30 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<IFormPathProps\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<`IFormPathProps` & `Partial`<`WithTranslation`<``"translation"``\>\>\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:740
+`void`
+
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[UNSAFE_componentWillReceiveProps](ComponentEx.md#unsafe_componentwillreceiveprops)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:740
 
 ___
 
 ### UNSAFE\_componentWillUpdate
 
-▸ `Optional`**UNSAFE_componentWillUpdate**(`nextProps`: *Readonly*<IFormPathProps\>, `nextState`: *Readonly*<{}\>, `nextContext`: *any*): *void*
+▸ `Optional` **UNSAFE_componentWillUpdate**(`nextProps`, `nextState`, `nextContext`): `void`
 
 Called immediately before rendering when new props or state is received. Not called for the initial render.
 
@@ -233,77 +306,109 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<IFormPathProps\> |
-`nextState` | *Readonly*<{}\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<`IFormPathProps` & `Partial`<`WithTranslation`<``"translation"``\>\>\> |
+| `nextState` | `Readonly`<{}\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:768
+`void`
+
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[UNSAFE_componentWillUpdate](ComponentEx.md#unsafe_componentwillupdate)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:768
 
 ___
 
 ### componentDidCatch
 
-▸ `Optional`**componentDidCatch**(`error`: Error, `errorInfo`: ErrorInfo): *void*
+▸ `Optional` **componentDidCatch**(`error`, `errorInfo`): `void`
 
 Catches exceptions generated in descendant components. Unhandled exceptions will cause
 the entire component tree to unmount.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`error` | Error |
-`errorInfo` | ErrorInfo |
+| Name | Type |
+| :------ | :------ |
+| `error` | `Error` |
+| `errorInfo` | `ErrorInfo` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:637
+`void`
+
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[componentDidCatch](ComponentEx.md#componentdidcatch)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:637
 
 ___
 
 ### componentDidMount
 
-▸ `Optional`**componentDidMount**(): *void*
+▸ `Optional` **componentDidMount**(): `void`
 
 Called immediately after a component is mounted. Setting state here will trigger re-rendering.
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:616
+`void`
+
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[componentDidMount](ComponentEx.md#componentdidmount)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:616
 
 ___
 
 ### componentDidUpdate
 
-▸ `Optional`**componentDidUpdate**(`prevProps`: *Readonly*<IFormPathProps\>, `prevState`: *Readonly*<{}\>, `snapshot?`: *any*): *void*
+▸ `Optional` **componentDidUpdate**(`prevProps`, `prevState`, `snapshot?`): `void`
 
 Called immediately after updating occurs. Not called for the initial render.
 
 The snapshot is only present if getSnapshotBeforeUpdate is present and returns non-null.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`prevProps` | *Readonly*<IFormPathProps\> |
-`prevState` | *Readonly*<{}\> |
-`snapshot?` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `prevProps` | `Readonly`<`IFormPathProps` & `Partial`<`WithTranslation`<``"translation"``\>\>\> |
+| `prevState` | `Readonly`<{}\> |
+| `snapshot?` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:679
+`void`
+
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[componentDidUpdate](ComponentEx.md#componentdidupdate)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:679
 
 ___
 
 ### componentWillMount
 
-▸ `Optional`**componentWillMount**(): *void*
+▸ `Optional` **componentWillMount**(): `void`
 
 Called immediately before mounting occurs, and before `Component#render`.
 Avoid introducing any side-effects or subscriptions in this method.
@@ -317,15 +422,23 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:694
+`void`
+
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[componentWillMount](ComponentEx.md#componentwillmount)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:694
 
 ___
 
 ### componentWillReceiveProps
 
-▸ `Optional`**componentWillReceiveProps**(`nextProps`: *Readonly*<IFormPathProps\>, `nextContext`: *any*): *void*
+▸ `Optional` **componentWillReceiveProps**(`nextProps`, `nextContext`): `void`
 
 Called when the component may be receiving new props.
 React may call this even if props have not changed, so be sure to compare new and existing
@@ -342,35 +455,51 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<IFormPathProps\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<`IFormPathProps` & `Partial`<`WithTranslation`<``"translation"``\>\>\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:723
+`void`
+
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[componentWillReceiveProps](ComponentEx.md#componentwillreceiveprops)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:723
 
 ___
 
 ### componentWillUnmount
 
-▸ `Optional`**componentWillUnmount**(): *void*
+▸ `Optional` **componentWillUnmount**(): `void`
 
 Called immediately before a component is destroyed. Perform any necessary cleanup in this method, such as
 cancelled network requests, or cleaning up any DOM elements created in `componentDidMount`.
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:632
+`void`
+
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[componentWillUnmount](ComponentEx.md#componentwillunmount)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:632
 
 ___
 
 ### componentWillUpdate
 
-▸ `Optional`**componentWillUpdate**(`nextProps`: *Readonly*<IFormPathProps\>, `nextState`: *Readonly*<{}\>, `nextContext`: *any*): *void*
+▸ `Optional` **componentWillUpdate**(`nextProps`, `nextState`, `nextContext`): `void`
 
 Called immediately before rendering when new props or state is received. Not called for the initial render.
 
@@ -385,39 +514,55 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<IFormPathProps\> |
-`nextState` | *Readonly*<{}\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<`IFormPathProps` & `Partial`<`WithTranslation`<``"translation"``\>\>\> |
+| `nextState` | `Readonly`<{}\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:753
+`void`
+
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[componentWillUpdate](ComponentEx.md#componentwillupdate)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:753
 
 ___
 
 ### forceUpdate
 
-▸ **forceUpdate**(`callback?`: () => *void*): *void*
+▸ **forceUpdate**(`callback?`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`callback?` | () => *void* |
+| Name | Type |
+| :------ | :------ |
+| `callback?` | () => `void` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:489
+`void`
+
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[forceUpdate](ComponentEx.md#forceupdate)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:489
 
 ___
 
 ### getSnapshotBeforeUpdate
 
-▸ `Optional`**getSnapshotBeforeUpdate**(`prevProps`: *Readonly*<IFormPathProps\>, `prevState`: *Readonly*<{}\>): *any*
+▸ `Optional` **getSnapshotBeforeUpdate**(`prevProps`, `prevState`): `any`
 
 Runs before React applies the result of `render` to the document, and
 returns an object to be given to componentDidUpdate. Useful for saving
@@ -426,81 +571,138 @@ things such as scroll position before `render` causes changes to it.
 Note: the presence of getSnapshotBeforeUpdate prevents any of the deprecated
 lifecycle events from running.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`prevProps` | *Readonly*<IFormPathProps\> |
-`prevState` | *Readonly*<{}\> |
+| Name | Type |
+| :------ | :------ |
+| `prevProps` | `Readonly`<`IFormPathProps` & `Partial`<`WithTranslation`<``"translation"``\>\>\> |
+| `prevState` | `Readonly`<{}\> |
 
-**Returns:** *any*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:673
+`any`
+
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[getSnapshotBeforeUpdate](ComponentEx.md#getsnapshotbeforeupdate)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:673
 
 ___
 
 ### handleChangePath
 
-▸ `Private`**handleChangePath**(): *void*
+▸ `Private` **handleChangePath**(): `void`
 
-**Returns:** *void*
+#### Returns
 
-Defined in: src/controls/FormFields.tsx:150
+`void`
+
+#### Defined in
+
+../src/controls/FormFields.tsx:150
 
 ___
 
 ### handleTypePath
 
-▸ `Private`**handleTypePath**(`evt`: *any*): *void*
+▸ `Private` **handleTypePath**(`evt`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`evt` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `evt` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: src/controls/FormFields.tsx:145
+`void`
+
+#### Defined in
+
+../src/controls/FormFields.tsx:145
+
+___
+
+### initState
+
+▸ `Protected` **initState**(`value`, `delayed?`): `void`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value` | `Object` | `undefined` |
+| `delayed` | `boolean` | `false` |
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[initState](ComponentEx.md#initstate)
+
+#### Defined in
+
+../src/util/ComponentEx.ts:137
 
 ___
 
 ### render
 
-▸ **render**(): *Element*
+▸ **render**(): `Element`
 
-**Returns:** *Element*
+#### Returns
 
-Defined in: src/controls/FormFields.tsx:97
+`Element`
+
+#### Overrides
+
+[ComponentEx](ComponentEx.md).[render](ComponentEx.md#render)
+
+#### Defined in
+
+../src/controls/FormFields.tsx:97
 
 ___
 
 ### setState
 
-▸ **setState**<K\>(`state`: {} \| (`prevState`: *Readonly*<{}\>, `props`: *Readonly*<IFormPathProps\>) => {} \| *Pick*<{}, K\> \| *Pick*<{}, K\>, `callback?`: () => *void*): *void*
+▸ **setState**<`K`\>(`state`, `callback?`): `void`
 
-#### Type parameters:
+#### Type parameters
 
-Name | Type |
-:------ | :------ |
-`K` | *never* |
+| Name | Type |
+| :------ | :------ |
+| `K` | extends `never` |
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`state` | {} \| (`prevState`: *Readonly*<{}\>, `props`: *Readonly*<IFormPathProps\>) => {} \| *Pick*<{}, K\> \| *Pick*<{}, K\> |
-`callback?` | () => *void* |
+| Name | Type |
+| :------ | :------ |
+| `state` | {} \| (`prevState`: `Readonly`<{}\>, `props`: `Readonly`<`IFormPathProps` & `Partial`<`WithTranslation`<``"translation"``\>\>\>) => {} \| `Pick`<{}, `K`\> \| `Pick`<{}, `K`\> |
+| `callback?` | () => `void` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:484
+`void`
+
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[setState](ComponentEx.md#setstate)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:484
 
 ___
 
 ### shouldComponentUpdate
 
-▸ `Optional`**shouldComponentUpdate**(`nextProps`: *Readonly*<IFormPathProps\>, `nextState`: *Readonly*<{}\>, `nextContext`: *any*): *boolean*
+▸ `Optional` **shouldComponentUpdate**(`nextProps`, `nextState`, `nextContext`): `boolean`
 
 Called to determine whether the change in props and state should trigger a re-render.
 
@@ -511,24 +713,36 @@ props or states have changed.
 If false is returned, `Component#render`, `componentWillUpdate`
 and `componentDidUpdate` will not be called.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<IFormPathProps\> |
-`nextState` | *Readonly*<{}\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<`IFormPathProps` & `Partial`<`WithTranslation`<``"translation"``\>\>\> |
+| `nextState` | `Readonly`<{}\> |
+| `nextContext` | `any` |
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:627
+`boolean`
+
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[shouldComponentUpdate](ComponentEx.md#shouldcomponentupdate)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:627
 
 ___
 
 ### validationState
 
-▸ `Private`**validationState**(): *string*
+▸ `Private` **validationState**(): `string`
 
-**Returns:** *string*
+#### Returns
 
-Defined in: src/controls/FormFields.tsx:137
+`string`
+
+#### Defined in
+
+../src/controls/FormFields.tsx:137

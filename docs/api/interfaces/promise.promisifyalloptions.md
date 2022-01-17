@@ -1,94 +1,118 @@
-[vortex_devel](../README.md) / [Exports](../modules.md) / [Promise](../modules/promise.md) / PromisifyAllOptions
+[vortex_devel](../README.md) / [Exports](../modules.md) / [Promise](../modules/Promise.md) / PromisifyAllOptions
 
 # Interface: PromisifyAllOptions<T\>
 
-[Promise](../modules/promise.md).PromisifyAllOptions
+[Promise](../modules/Promise.md).PromisifyAllOptions
 
 ## Type parameters
 
-Name |
-:------ |
-`T` |
+| Name |
+| :------ |
+| `T` |
 
 ## Hierarchy
 
-* [*PromisifyOptions*](promise.promisifyoptions.md)
+- [`PromisifyOptions`](Promise.PromisifyOptions.md)
 
-  ↳ **PromisifyAllOptions**
+  ↳ **`PromisifyAllOptions`**
 
 ## Table of contents
 
 ### Properties
 
-- [context](promise.promisifyalloptions.md#context)
-- [multiArgs](promise.promisifyalloptions.md#multiargs)
-- [suffix](promise.promisifyalloptions.md#suffix)
+- [context](Promise.PromisifyAllOptions.md#context)
+- [multiArgs](Promise.PromisifyAllOptions.md#multiargs)
+- [suffix](Promise.PromisifyAllOptions.md#suffix)
 
 ### Methods
 
-- [filter](promise.promisifyalloptions.md#filter)
-- [promisifier](promise.promisifyalloptions.md#promisifier)
+- [filter](Promise.PromisifyAllOptions.md#filter)
+- [promisifier](Promise.PromisifyAllOptions.md#promisifier)
 
 ## Properties
 
 ### context
 
-• `Optional` **context**: *any*
+• `Optional` **context**: `any`
 
-Inherited from: [PromisifyOptions](promise.promisifyoptions.md).[context](promise.promisifyoptions.md#context)
+#### Inherited from
 
-Defined in: node_modules/@types/bluebird/index.d.ts:964
+[PromisifyOptions](Promise.PromisifyOptions.md).[context](Promise.PromisifyOptions.md#context)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:964
 
 ___
 
 ### multiArgs
 
-• `Optional` **multiArgs**: *boolean*
+• `Optional` **multiArgs**: `boolean`
 
-Inherited from: [PromisifyOptions](promise.promisifyoptions.md).[multiArgs](promise.promisifyoptions.md#multiargs)
+#### Inherited from
 
-Defined in: node_modules/@types/bluebird/index.d.ts:965
+[PromisifyOptions](Promise.PromisifyOptions.md).[multiArgs](Promise.PromisifyOptions.md#multiargs)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:965
 
 ___
 
 ### suffix
 
-• `Optional` **suffix**: *string*
+• `Optional` **suffix**: `string`
 
-Defined in: node_modules/@types/bluebird/index.d.ts:968
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:968
 
 ## Methods
 
 ### filter
 
-▸ `Optional`**filter**(`name`: *string*, `func`: (...`args`: *any*[]) => *any*, `target?`: *any*, `passesDefaultFilter?`: *boolean*): *boolean*
+▸ `Optional` **filter**(`name`, `func`, `target?`, `passesDefaultFilter?`): `boolean`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`name` | *string* |
-`func` | (...`args`: *any*[]) => *any* |
-`target?` | *any* |
-`passesDefaultFilter?` | *boolean* |
+| Name | Type |
+| :------ | :------ |
+| `name` | `string` |
+| `func` | (...`args`: `any`[]) => `any` |
+| `target?` | `any` |
+| `passesDefaultFilter?` | `boolean` |
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: node_modules/@types/bluebird/index.d.ts:969
+`boolean`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:969
 
 ___
 
 ### promisifier
 
-▸ `Optional`**promisifier**(`originalMethod`: (...`args`: *any*[]) => *any*, `defaultPromisifer`: (...`args`: *any*[]) => (...`args`: *any*[]) => [*Promise*](../classes/promise.md)<any\>): *function*
+▸ `Optional` **promisifier**(`originalMethod`, `defaultPromisifer`): () => `PromiseLike`<`any`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`originalMethod` | (...`args`: *any*[]) => *any* |
-`defaultPromisifer` | (...`args`: *any*[]) => (...`args`: *any*[]) => [*Promise*](../classes/promise.md)<any\> |
+| Name | Type |
+| :------ | :------ |
+| `originalMethod` | (...`args`: `any`[]) => `any` |
+| `defaultPromisifer` | (...`args`: `any`[]) => (...`args`: `any`[]) => [`Promise`](../classes/Promise.md)<`any`\> |
 
-**Returns:** () => *PromiseLike*<any\>
+#### Returns
 
-Defined in: node_modules/@types/bluebird/index.d.ts:971
+`fn`
+
+▸ (): `PromiseLike`<`any`\>
+
+##### Returns
+
+`PromiseLike`<`any`\>
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:971

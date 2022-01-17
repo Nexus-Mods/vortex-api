@@ -6,4 +6,4 @@
 
 ## Indexable
 
-▪ [gameId: *string*]: { [modId: string]: [*IMod*](types.imod.md);  }
+▪ [gameId: `string`]: { [modId: string]: [`IMod`](types.IMod.md);  }

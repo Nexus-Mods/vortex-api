@@ -8,115 +8,112 @@
 
 ### Properties
 
-- [canRevert](types.ihistorystack.md#canrevert)
-- [describe](types.ihistorystack.md#describe)
-- [describeRevert](types.ihistorystack.md#describerevert)
-- [revert](types.ihistorystack.md#revert)
-- [size](types.ihistorystack.md#size)
+- [size](types.IHistoryStack.md#size)
+
+### Methods
+
+- [canRevert](types.IHistoryStack.md#canrevert)
+- [describe](types.IHistoryStack.md#describe)
+- [describeRevert](types.IHistoryStack.md#describerevert)
+- [revert](types.IHistoryStack.md#revert)
 
 ## Properties
 
+### size
+
+• **size**: `number`
+
+number of items to remember on the stack
+
+#### Defined in
+
+../src/extensions/history_management/types.ts:24
+
+## Methods
+
 ### canRevert
 
-• **canRevert**: (`event`: [*IHistoryEvent*](types.ihistoryevent.md)) => [*Revertability*](../modules/types.md#revertability)
+▸ **canRevert**(`event`): [`Revertability`](../modules/types.md#revertability)
 
 determine if the event can be reverted
 
-#### Type declaration:
+#### Parameters
 
-▸ (`event`: [*IHistoryEvent*](types.ihistoryevent.md)): [*Revertability*](../modules/types.md#revertability)
+| Name | Type |
+| :------ | :------ |
+| `event` | [`IHistoryEvent`](types.IHistoryEvent.md) |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`event` | [*IHistoryEvent*](types.ihistoryevent.md) |
+[`Revertability`](../modules/types.md#revertability)
 
-**Returns:** [*Revertability*](../modules/types.md#revertability)
+#### Defined in
 
-Defined in: src/extensions/history_management/types.ts:37
-
-Defined in: src/extensions/history_management/types.ts:37
+../src/extensions/history_management/types.ts:37
 
 ___
 
 ### describe
 
-• **describe**: (`event`: [*IHistoryEvent*](types.ihistoryevent.md)) => *string*
+▸ **describe**(`event`): `string`
 
 generate a (translated!) description for the entry
 
-#### Type declaration:
+#### Parameters
 
-▸ (`event`: [*IHistoryEvent*](types.ihistoryevent.md)): *string*
+| Name | Type |
+| :------ | :------ |
+| `event` | [`IHistoryEvent`](types.IHistoryEvent.md) |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`event` | [*IHistoryEvent*](types.ihistoryevent.md) |
+`string`
 
-**Returns:** *string*
+#### Defined in
 
-Defined in: src/extensions/history_management/types.ts:28
-
-Defined in: src/extensions/history_management/types.ts:28
+../src/extensions/history_management/types.ts:28
 
 ___
 
 ### describeRevert
 
-• **describeRevert**: (`event`: [*IHistoryEvent*](types.ihistoryevent.md)) => *string*
+▸ **describeRevert**(`event`): `string`
 
 generate a (translated!) description for the revert action.
 Please be specific and concise on what exactly this does
 
-#### Type declaration:
+#### Parameters
 
-▸ (`event`: [*IHistoryEvent*](types.ihistoryevent.md)): *string*
+| Name | Type |
+| :------ | :------ |
+| `event` | [`IHistoryEvent`](types.IHistoryEvent.md) |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`event` | [*IHistoryEvent*](types.ihistoryevent.md) |
+`string`
 
-**Returns:** *string*
+#### Defined in
 
-Defined in: src/extensions/history_management/types.ts:33
-
-Defined in: src/extensions/history_management/types.ts:33
+../src/extensions/history_management/types.ts:33
 
 ___
 
 ### revert
 
-• **revert**: (`event`: [*IHistoryEvent*](types.ihistoryevent.md)) => *Promise*<void\>
+▸ **revert**(`event`): `Promise`<`void`\>
 
 do revert the specified event
 
-#### Type declaration:
+#### Parameters
 
-▸ (`event`: [*IHistoryEvent*](types.ihistoryevent.md)): *Promise*<void\>
+| Name | Type |
+| :------ | :------ |
+| `event` | [`IHistoryEvent`](types.IHistoryEvent.md) |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`event` | [*IHistoryEvent*](types.ihistoryevent.md) |
+`Promise`<`void`\>
 
-**Returns:** *Promise*<void\>
+#### Defined in
 
-Defined in: src/extensions/history_management/types.ts:41
-
-Defined in: src/extensions/history_management/types.ts:41
-
-___
-
-### size
-
-• **size**: *number*
-
-number of items to remember on the stack
-
-Defined in: src/extensions/history_management/types.ts:24
+../src/extensions/history_management/types.ts:41

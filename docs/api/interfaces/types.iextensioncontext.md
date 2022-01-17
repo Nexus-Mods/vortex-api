@@ -47,67 +47,226 @@ c) once-callback. This is a callback that will be run after all extensions have 
 
 ### Properties
 
-- [api](types.iextensioncontext.md#api)
-- [once](types.iextensioncontext.md#once)
-- [onceMain](types.iextensioncontext.md#oncemain)
-- [optional](types.iextensioncontext.md#optional)
-- [registerAPI](types.iextensioncontext.md#registerapi)
-- [registerAction](types.iextensioncontext.md#registeraction)
-- [registerActionCheck](types.iextensioncontext.md#registeractioncheck)
-- [registerArchiveType](types.iextensioncontext.md#registerarchivetype)
-- [registerAttributeExtractor](types.iextensioncontext.md#registerattributeextractor)
-- [registerBanner](types.iextensioncontext.md#registerbanner)
-- [registerDashlet](types.iextensioncontext.md#registerdashlet)
-- [registerDeploymentMethod](types.iextensioncontext.md#registerdeploymentmethod)
-- [registerDialog](types.iextensioncontext.md#registerdialog)
-- [registerFooter](types.iextensioncontext.md#registerfooter)
-- [registerGame](types.iextensioncontext.md#registergame)
-- [registerGameInfoProvider](types.iextensioncontext.md#registergameinfoprovider)
-- [registerGameStore](types.iextensioncontext.md#registergamestore)
-- [registerGameStub](types.iextensioncontext.md#registergamestub)
-- [registerHistoryStack](types.iextensioncontext.md#registerhistorystack)
-- [registerInstaller](types.iextensioncontext.md#registerinstaller)
-- [registerInterpreter](types.iextensioncontext.md#registerinterpreter)
-- [registerLoadOrder](types.iextensioncontext.md#registerloadorder)
-- [registerLoadOrderPage](types.iextensioncontext.md#registerloadorderpage)
-- [registerMainPage](types.iextensioncontext.md#registermainpage)
-- [registerMerge](types.iextensioncontext.md#registermerge)
-- [registerMigration](types.iextensioncontext.md#registermigration)
-- [registerModSource](types.iextensioncontext.md#registermodsource)
-- [registerModType](types.iextensioncontext.md#registermodtype)
-- [registerPersistor](types.iextensioncontext.md#registerpersistor)
-- [registerPreview](types.iextensioncontext.md#registerpreview)
-- [registerProfileFeature](types.iextensioncontext.md#registerprofilefeature)
-- [registerProfileFile](types.iextensioncontext.md#registerprofilefile)
-- [registerReducer](types.iextensioncontext.md#registerreducer)
-- [registerSettings](types.iextensioncontext.md#registersettings)
-- [registerSettingsHive](types.iextensioncontext.md#registersettingshive)
-- [registerStartHook](types.iextensioncontext.md#registerstarthook)
-- [registerTableAttribute](types.iextensioncontext.md#registertableattribute)
-- [registerTest](types.iextensioncontext.md#registertest)
-- [registerToDo](types.iextensioncontext.md#registertodo)
-- [registerToolVariables](types.iextensioncontext.md#registertoolvariables)
-- [requireExtension](types.iextensioncontext.md#requireextension)
-- [requireVersion](types.iextensioncontext.md#requireversion)
+- [api](types.IExtensionContext.md#api)
+- [optional](types.IExtensionContext.md#optional)
+- [registerAction](types.IExtensionContext.md#registeraction)
+- [registerBanner](types.IExtensionContext.md#registerbanner)
+- [registerControlWrapper](types.IExtensionContext.md#registercontrolwrapper)
+- [registerDashlet](types.IExtensionContext.md#registerdashlet)
+- [registerDialog](types.IExtensionContext.md#registerdialog)
+- [registerFooter](types.IExtensionContext.md#registerfooter)
+- [registerMainPage](types.IExtensionContext.md#registermainpage)
+- [registerOverlay](types.IExtensionContext.md#registeroverlay)
+- [registerSettings](types.IExtensionContext.md#registersettings)
+- [registerToDo](types.IExtensionContext.md#registertodo)
+
+### Methods
+
+- [once](types.IExtensionContext.md#once)
+- [onceMain](types.IExtensionContext.md#oncemain)
+- [registerAPI](types.IExtensionContext.md#registerapi)
+- [registerActionCheck](types.IExtensionContext.md#registeractioncheck)
+- [registerArchiveType](types.IExtensionContext.md#registerarchivetype)
+- [registerAttributeExtractor](types.IExtensionContext.md#registerattributeextractor)
+- [registerDeploymentMethod](types.IExtensionContext.md#registerdeploymentmethod)
+- [registerGame](types.IExtensionContext.md#registergame)
+- [registerGameInfoProvider](types.IExtensionContext.md#registergameinfoprovider)
+- [registerGameSpecificCollectionsData](types.IExtensionContext.md#registergamespecificcollectionsdata)
+- [registerGameStore](types.IExtensionContext.md#registergamestore)
+- [registerGameStub](types.IExtensionContext.md#registergamestub)
+- [registerHistoryStack](types.IExtensionContext.md#registerhistorystack)
+- [registerInstaller](types.IExtensionContext.md#registerinstaller)
+- [registerInterpreter](types.IExtensionContext.md#registerinterpreter)
+- [registerLoadOrder](types.IExtensionContext.md#registerloadorder)
+- [registerLoadOrderPage](types.IExtensionContext.md#registerloadorderpage)
+- [registerMerge](types.IExtensionContext.md#registermerge)
+- [registerMigration](types.IExtensionContext.md#registermigration)
+- [registerModSource](types.IExtensionContext.md#registermodsource)
+- [registerModType](types.IExtensionContext.md#registermodtype)
+- [registerPersistor](types.IExtensionContext.md#registerpersistor)
+- [registerPreview](types.IExtensionContext.md#registerpreview)
+- [registerProfileFeature](types.IExtensionContext.md#registerprofilefeature)
+- [registerProfileFile](types.IExtensionContext.md#registerprofilefile)
+- [registerReducer](types.IExtensionContext.md#registerreducer)
+- [registerSettingsHive](types.IExtensionContext.md#registersettingshive)
+- [registerStartHook](types.IExtensionContext.md#registerstarthook)
+- [registerTableAttribute](types.IExtensionContext.md#registertableattribute)
+- [registerTest](types.IExtensionContext.md#registertest)
+- [registerToolVariables](types.IExtensionContext.md#registertoolvariables)
+- [requireExtension](types.IExtensionContext.md#requireextension)
+- [requireVersion](types.IExtensionContext.md#requireversion)
 
 ## Properties
 
 ### api
 
-• **api**: [*IExtensionApi*](types.iextensionapi.md)
+• **api**: [`IExtensionApi`](types.IExtensionApi.md)
 
 contains various utility functions. It's valid to store this object inside
 the extension for later use.
 
 **`memberof`** IExtensionContext
 
-Defined in: src/types/IExtensionContext.ts:1283
+#### Defined in
+
+../src/types/IExtensionContext.ts:1372
 
 ___
 
+### optional
+
+• **optional**: `any`
+
+proxy to make optional register calls (if such calls are invalid in the api the extension
+will not be unloaded)
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:1378
+
+___
+
+### registerAction
+
+• **registerAction**: [`RegisterAction`](../modules/types.md#registeraction)
+
+register an action (can be a button or a menu item)
+
+**`memberof`** IExtensionContext
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:888
+
+___
+
+### registerBanner
+
+• **registerBanner**: [`RegisterBanner`](../modules/types.md#registerbanner)
+
+registers a banner, which is a control that will show in a fixed location with fixed
+size (determined by the group). If there are multiple banners in the same spot,
+they will cycle.
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:944
+
+___
+
+### registerControlWrapper
+
+• **registerControlWrapper**: [`RegisterControlWrapper`](../modules/types.md#registercontrolwrapper)
+
+register a wrapper for an existing control. Only controls designed for extension can
+be used.
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:894
+
+___
+
+### registerDashlet
+
+• **registerDashlet**: [`RegisterDashlet`](../modules/types.md#registerdashlet)
+
+register a dashlet to be displayed on the welcome screen
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:907
+
+___
+
+### registerDialog
+
+• **registerDialog**: [`RegisterDialog`](../modules/types.md#registerdialog)
+
+register a dialog (or any control that is rendered independent of the main content area
+really)
+This dialog has to control its own visibility
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:914
+
+___
+
+### registerFooter
+
+• **registerFooter**: [`RegisterFooter`](../modules/types.md#registerfooter)
+
+registers a element to be displayed in the footer
+
+**`memberof`** IExtensionContext
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:928
+
+___
+
+### registerMainPage
+
+• **registerMainPage**: [`RegisterMainPage`](../modules/types.md#registermainpage)
+
+registers a page for the main content area
+
+**`memberof`** IExtensionContext
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:902
+
+___
+
+### registerOverlay
+
+• **registerOverlay**: [`RegisterOverlay`](../modules/types.md#registeroverlay)
+
+registers a component to be rendered very high in the DOM, overlaying the main window.
+Similar to registerDialogs, except that Vortex won't control whether the overlay gets rendered.
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:920
+
+___
+
+### registerSettings
+
+• **registerSettings**: [`RegisterSettings`](../modules/types.md#registersettings)
+
+register a settings page
+
+**`memberof`** IExtensionContext
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:854
+
+___
+
+### registerToDo
+
+• **registerToDo**: [`RegisterToDo`](../modules/types.md#registertodo)
+
+register an todo message that will be shown to new users until they
+dismiss it. You can provide a condition under which it will appear.
+Please don't overuse this as to not intimidate the user. Also keep in mind that the
+user can dismiss any todo message without taking action and it will never appear
+again.
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:937
+
+## Methods
+
 ### once
 
-• **once**: (`callback`: () => *void* \| [*Promise*](../classes/promise.md)<void\>) => *void*
+▸ **once**(`callback`): `void`
 
 called once after the store has been set up and after all extensions have been initialized
 This means that if your extension registers its own extension function
@@ -121,27 +280,25 @@ a state change)
 
 **`memberof`** IExtensionContext
 
-#### Type declaration:
+#### Parameters
 
-▸ (`callback`: () => *void* \| [*Promise*](../classes/promise.md)<void\>): *void*
+| Name | Type |
+| :------ | :------ |
+| `callback` | () => `void` \| [`Promise`](../classes/Promise.md)<`void`\> |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`callback` | () => *void* \| [*Promise*](../classes/promise.md)<void\> |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:1265
-
-Defined in: src/types/IExtensionContext.ts:1265
+../src/types/IExtensionContext.ts:1354
 
 ___
 
 ### onceMain
 
-• **onceMain**: (`callback`: () => *void*) => *void*
+▸ **onceMain**(`callback`): `void`
 
 similar to once but this callback will be run (only) on the electron "main" process.
 Use this only if you absolutely must (if you don't know what electron main process means, it's
@@ -149,77 +306,50 @@ almost certain you don't want this).
 While almost all program logic of Vortex runs in the renderer process, some libraries will not
 work correctly on that process so you have to run on the main process.
 
-#### Type declaration:
+#### Parameters
 
-▸ (`callback`: () => *void*): *void*
+| Name | Type |
+| :------ | :------ |
+| `callback` | () => `void` |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`callback` | () => *void* |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:1274
-
-Defined in: src/types/IExtensionContext.ts:1274
-
-___
-
-### optional
-
-• **optional**: *any*
-
-proxy to make optional register calls (if such calls are invalid in the api the extension
-will not be unloaded)
-
-Defined in: src/types/IExtensionContext.ts:1289
+../src/types/IExtensionContext.ts:1363
 
 ___
 
 ### registerAPI
 
-• **registerAPI**: (`name`: *string*, `func`: (...`args`: *any*[]) => *any*, `options`: [*IApiFuncOptions*](types.iapifuncoptions.md)) => *void*
+▸ **registerAPI**(`name`, `func`, `options`): `void`
 
 add a function to the IExtensionApi object that is made available to all other extensions
 in the api.ext object.
 
-#### Type declaration:
+#### Parameters
 
-▸ (`name`: *string*, `func`: (...`args`: *any*[]) => *any*, `options`: [*IApiFuncOptions*](types.iapifuncoptions.md)): *void*
+| Name | Type |
+| :------ | :------ |
+| `name` | `string` |
+| `func` | (...`args`: `any`[]) => `any` |
+| `options` | [`IApiFuncOptions`](types.IApiFuncOptions.md) |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`name` | *string* |
-`func` | (...`args`: *any*[]) => *any* |
-`options` | [*IApiFuncOptions*](types.iapifuncoptions.md) |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:1236
-
-Defined in: src/types/IExtensionContext.ts:1236
-
-___
-
-### registerAction
-
-• **registerAction**: [*RegisterAction*](../modules/types.md#registeraction)
-
-register an action (can be a button or a menu item)
-
-**`memberof`** IExtensionContext
-
-Defined in: src/types/IExtensionContext.ts:820
+../src/types/IExtensionContext.ts:1325
 
 ___
 
 ### registerActionCheck
 
-• **registerActionCheck**: (`actionType`: *string*, `check`: SanityCheck) => *void*
+▸ **registerActionCheck**(`actionType`, `check`): `void`
 
 register an action sanity check
 a sanity check like this is called before any redux-action of the specified type and gets
@@ -243,451 +373,332 @@ Further: Most actions are processed twice, once in the UI process where they got
   can check "process.type === 'browser') to log only in the main (aka browser) process but
   again: The result of the check *has to has to has to* be the same between all processes.
 
-**`param`** type of the action (like STORE_WINDOW_SIZE)
+#### Parameters
 
-**`param`** the check to run for the specified action
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `actionType` | `string` | type of the action (like STORE_WINDOW_SIZE) |
+| `check` | `SanityCheck` | the check to run for the specified action |
 
-#### Type declaration:
+#### Returns
 
-▸ (`actionType`: *string*, `check`: SanityCheck): *void*
+`void`
 
-#### Parameters:
+#### Defined in
 
-Name | Type |
-:------ | :------ |
-`actionType` | *string* |
-`check` | SanityCheck |
-
-**Returns:** *void*
-
-Defined in: src/types/IExtensionContext.ts:1073
-
-Defined in: src/types/IExtensionContext.ts:1073
+../src/types/IExtensionContext.ts:1157
 
 ___
 
 ### registerArchiveType
 
-• **registerArchiveType**: (`extension`: *string*, `handler`: [*ArchiveHandlerCreator*](../modules/types.md#archivehandlercreator)) => *void*
+▸ **registerArchiveType**(`extension`, `handler`): `void`
 
 register a handler for archive types so the content of such archives is exposed to
 the application (especially other extensions)
 
 **`memberof`** IExtensionContext
 
-#### Type declaration:
+#### Parameters
 
-▸ (`extension`: *string*, `handler`: [*ArchiveHandlerCreator*](../modules/types.md#archivehandlercreator)): *void*
+| Name | Type |
+| :------ | :------ |
+| `extension` | `string` |
+| `handler` | [`ArchiveHandlerCreator`](../modules/types.md#archivehandlercreator) |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`extension` | *string* |
-`handler` | [*ArchiveHandlerCreator*](../modules/types.md#archivehandlercreator) |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:973
-
-Defined in: src/types/IExtensionContext.ts:973
+../src/types/IExtensionContext.ts:1057
 
 ___
 
 ### registerAttributeExtractor
 
-• **registerAttributeExtractor**: (`priority`: *number*, `extractor`: [*AttributeExtractor*](../modules/types.md#attributeextractor)) => *void*
+▸ **registerAttributeExtractor**(`priority`, `extractor`): `void`
 
 register an extractor that can access all information known about a downloaded archive and
 tranfer them into the modInfo data structure so it can be accessed when rendering/managing
 the mod
 
-**`param`** determins the order in which the attributes are combined.
-                         if two extractors produce the same attribute, the one with the higher
-                         priority (smaller number) wins. The default attributes retrieved from
-                         the meta database have priority 100.
+#### Parameters
 
-**`param`** the function producing mod attributes
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `priority` | `number` | determins the order in which the attributes are combined.                          if two extractors produce the same attribute, the one with the higher                          priority (smaller number) wins. The default attributes retrieved from                          the meta database have priority 100. |
+| `extractor` | [`AttributeExtractor`](../modules/types.md#attributeextractor) | the function producing mod attributes |
 
-#### Type declaration:
+#### Returns
 
-▸ (`priority`: *number*, `extractor`: [*AttributeExtractor*](../modules/types.md#attributeextractor)): *void*
+`void`
 
-#### Parameters:
+#### Defined in
 
-Name | Type |
-:------ | :------ |
-`priority` | *number* |
-`extractor` | [*AttributeExtractor*](../modules/types.md#attributeextractor) |
-
-**Returns:** *void*
-
-Defined in: src/types/IExtensionContext.ts:1024
-
-Defined in: src/types/IExtensionContext.ts:1024
-
-___
-
-### registerBanner
-
-• **registerBanner**: [*RegisterBanner*](../modules/types.md#registerbanner)
-
-registers a banner, which is a control that will show in a fixed location with fixed
-size (determined by the group). If there are multiple banners in the same spot,
-they will cycle.
-
-Defined in: src/types/IExtensionContext.ts:864
-
-___
-
-### registerDashlet
-
-• **registerDashlet**: [*RegisterDashlet*](../modules/types.md#registerdashlet)
-
-register a dashlet to be displayed on the welcome screen
-
-Defined in: src/types/IExtensionContext.ts:833
+../src/types/IExtensionContext.ts:1108
 
 ___
 
 ### registerDeploymentMethod
 
-• **registerDeploymentMethod**: (`method`: [*IDeploymentMethod*](types.ideploymentmethod.md)) => *void*
+▸ **registerDeploymentMethod**(`method`): `void`
 
 register a mod deployment method
 
 **`memberof`** IExtensionContext
 
-#### Type declaration:
+#### Parameters
 
-▸ (`method`: [*IDeploymentMethod*](types.ideploymentmethod.md)): *void*
+| Name | Type |
+| :------ | :------ |
+| `method` | [`IDeploymentMethod`](types.IDeploymentMethod.md) |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`method` | [*IDeploymentMethod*](types.ideploymentmethod.md) |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:793
-
-Defined in: src/types/IExtensionContext.ts:793
-
-___
-
-### registerDialog
-
-• **registerDialog**: [*RegisterDialog*](../modules/types.md#registerdialog)
-
-register a dialog (or any control that is rendered independent of the main content area
-really)
-This dialog has to control its own visibility
-
-Defined in: src/types/IExtensionContext.ts:840
-
-___
-
-### registerFooter
-
-• **registerFooter**: [*RegisterFooter*](../modules/types.md#registerfooter)
-
-registers a element to be displayed in the footer
-
-**`memberof`** IExtensionContext
-
-Defined in: src/types/IExtensionContext.ts:848
+../src/types/IExtensionContext.ts:861
 
 ___
 
 ### registerGame
 
-• **registerGame**: (`game`: [*IGame*](types.igame.md)) => *void*
+▸ **registerGame**(`game`): `void`
 
 registers support for a game
 
-**`param`** 
+#### Parameters
 
-#### Type declaration:
+| Name | Type |
+| :------ | :------ |
+| `game` | [`IGame`](types.IGame.md) |
 
-▸ (`game`: [*IGame*](types.igame.md)): *void*
+#### Returns
 
-#### Parameters:
+`void`
 
-Name | Type |
-:------ | :------ |
-`game` | [*IGame*](types.igame.md) |
+#### Defined in
 
-**Returns:** *void*
-
-Defined in: src/types/IExtensionContext.ts:980
-
-Defined in: src/types/IExtensionContext.ts:980
+../src/types/IExtensionContext.ts:1064
 
 ___
 
 ### registerGameInfoProvider
 
-• **registerGameInfoProvider**: (`id`: *string*, `priority`: *number*, `expireMS`: *number*, `keys`: *string*[], `query`: [*GameInfoQuery*](../modules/types.md#gameinfoquery)) => *void*
+▸ **registerGameInfoProvider**(`id`, `priority`, `expireMS`, `keys`, `query`): `void`
 
 registers a provider for general information about a game
 
-**`param`** unique id identifying the provider
+#### Parameters
 
-**`param`** if two providers provide the same info (same key) the one with the
-                         higher priority (smaller number) ends up providing that piece of info
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | unique id identifying the provider |
+| `priority` | `number` | if two providers provide the same info (same key) the one with the                          higher priority (smaller number) ends up providing that piece of info |
+| `expireMS` | `number` | the time (in milliseconds) before the info "expires". After expiry it                          will be re-requested. You usually want this to be several days, not                          seconds or milliseconds |
+| `keys` | `string`[] | the keys this provider will provide. If the query function doesn't                        return a value for one of these keys, a null is stored. If the query                        returns keys that aren't listed here they will still be stored, but                        the query will only be run if a listed key is missing or the expiry time                        runs out |
+| `query` | [`GameInfoQuery`](../modules/types.md#gameinfoquery) | the query function |
 
-**`param`** the time (in milliseconds) before the info "expires". After expiry it
-                         will be re-requested. You usually want this to be several days, not
-                         seconds or milliseconds
+#### Returns
 
-**`param`** the keys this provider will provide. If the query function doesn't
-                       return a value for one of these keys, a null is stored. If the query
-                       returns keys that aren't listed here they will still be stored, but
-                       the query will only be run if a listed key is missing or the expiry time
-                       runs out
+`void`
 
-**`param`** the query function
+#### Defined in
 
-#### Type declaration:
+../src/types/IExtensionContext.ts:1094
 
-▸ (`id`: *string*, `priority`: *number*, `expireMS`: *number*, `keys`: *string*[], `query`: [*GameInfoQuery*](../modules/types.md#gameinfoquery)): *void*
+___
 
-#### Parameters:
+### registerGameSpecificCollectionsData
 
-Name | Type |
-:------ | :------ |
-`id` | *string* |
-`priority` | *number* |
-`expireMS` | *number* |
-`keys` | *string*[] |
-`query` | [*GameInfoQuery*](../modules/types.md#gameinfoquery) |
+▸ **registerGameSpecificCollectionsData**(`data`): `void`
 
-**Returns:** *void*
+Allows extensions to define additional data to add to a collection
 
-Defined in: src/types/IExtensionContext.ts:1010
+#### Parameters
 
-Defined in: src/types/IExtensionContext.ts:1010
+| Name | Type |
+| :------ | :------ |
+| `data` | `ICollectionsGameSupportEntry` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:1319
 
 ___
 
 ### registerGameStore
 
-• **registerGameStore**: (`gameStore`: [*IGameStore*](types.igamestore.md)) => *void*
+▸ **registerGameStore**(`gameStore`): `void`
 
 registers support for a game store.
 
-**`param`** 
+#### Parameters
 
-#### Type declaration:
+| Name | Type |
+| :------ | :------ |
+| `gameStore` | [`IGameStore`](types.IGameStore.md) |
 
-▸ (`gameStore`: [*IGameStore*](types.igamestore.md)): *void*
+#### Returns
 
-#### Parameters:
+`void`
 
-Name | Type |
-:------ | :------ |
-`gameStore` | [*IGameStore*](types.igamestore.md) |
+#### Defined in
 
-**Returns:** *void*
-
-Defined in: src/types/IExtensionContext.ts:993
-
-Defined in: src/types/IExtensionContext.ts:993
+../src/types/IExtensionContext.ts:1077
 
 ___
 
 ### registerGameStub
 
-• **registerGameStub**: (`game`: [*IGame*](types.igame.md), `ext`: IExtensionDownloadInfo) => *void*
+▸ **registerGameStub**(`game`, `ext`): `void`
 
 register a game stub. This is to ease the transition for games that used to be bundled with
 Vortex and might already be in use but are now maintained by a third party.
 
-#### Type declaration:
+#### Parameters
 
-▸ (`game`: [*IGame*](types.igame.md), `ext`: IExtensionDownloadInfo): *void*
+| Name | Type |
+| :------ | :------ |
+| `game` | [`IGame`](types.IGame.md) |
+| `ext` | `IExtensionDownloadInfo` |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`game` | [*IGame*](types.igame.md) |
-`ext` | IExtensionDownloadInfo |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:986
-
-Defined in: src/types/IExtensionContext.ts:986
+../src/types/IExtensionContext.ts:1070
 
 ___
 
 ### registerHistoryStack
 
-• **registerHistoryStack**: (`id`: *string*, `options`: [*IHistoryStack*](types.ihistorystack.md)) => *void*
+▸ **registerHistoryStack**(`id`, `options`): `void`
 
 Sets up a stack for a history of events that can be presented to the user
 
-#### Type declaration:
+#### Parameters
 
-▸ (`id`: *string*, `options`: [*IHistoryStack*](types.ihistorystack.md)): *void*
+| Name | Type |
+| :------ | :------ |
+| `id` | `string` |
+| `options` | [`IHistoryStack`](types.IHistoryStack.md) |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`id` | *string* |
-`options` | [*IHistoryStack*](types.ihistorystack.md) |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:1230
-
-Defined in: src/types/IExtensionContext.ts:1230
+../src/types/IExtensionContext.ts:1314
 
 ___
 
 ### registerInstaller
 
-• **registerInstaller**: (`id`: *string*, `priority`: *number*, `testSupported`: [*TestSupported*](../modules/types.md#testsupported), `install`: [*InstallFunc*](../modules/types.md#installfunc)) => *void*
+▸ **registerInstaller**(`id`, `priority`, `testSupported`, `install`): `void`
 
 register an installer
 
-**`param`** id for the installer. currently only used for logging
+#### Parameters
 
-**`param`** the priority of the installer. The supported installer with the
-                         highest priority (smallest number) gets to handle the mod.
-                         Note: scripted fomods are handled at prio 20 and there is a fallback
-                         installer that will handle practically any archive at prio 100 so
-                         you want to place your installer in the range 21-99.
-                         If your installer has priority > 100 it will probably never be
-                         considered, if it has priority < 20 it will disable fomod installers
-                         which only makes sense if you implement a scripted installer system
-                         as well that is superior to fomod.
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | id for the installer. currently only used for logging |
+| `priority` | `number` | the priority of the installer. The supported installer with the                          highest priority (smallest number) gets to handle the mod.                          Note: scripted fomods are handled at prio 20 and there is a fallback                          installer that will handle practically any archive at prio 100 so                          you want to place your installer in the range 21-99.                          If your installer has priority > 100 it will probably never be                          considered, if it has priority < 20 it will disable fomod installers                          which only makes sense if you implement a scripted installer system                          as well that is superior to fomod. |
+| `testSupported` | [`TestSupported`](../modules/types.md#testsupported) | function called to determine if the handler can deal                                      with a mod |
+| `install` | [`InstallFunc`](../modules/types.md#installfunc) | function called to actually install a mod |
 
-**`param`** function called to determine if the handler can deal
-                                     with a mod
+#### Returns
 
-**`param`** function called to actually install a mod
+`void`
 
-#### Type declaration:
+#### Defined in
 
-▸ (`id`: *string*, `priority`: *number*, `testSupported`: [*TestSupported*](../modules/types.md#testsupported), `install`: [*InstallFunc*](../modules/types.md#installfunc)): *void*
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`id` | *string* |
-`priority` | *number* |
-`testSupported` | [*TestSupported*](../modules/types.md#testsupported) |
-`install` | [*InstallFunc*](../modules/types.md#installfunc) |
-
-**Returns:** *void*
-
-Defined in: src/types/IExtensionContext.ts:811
-
-Defined in: src/types/IExtensionContext.ts:811
+../src/types/IExtensionContext.ts:879
 
 ___
 
 ### registerInterpreter
 
-• **registerInterpreter**: (`extension`: *string*, `apply`: (`call`: [*IRunParameters*](types.irunparameters.md)) => [*IRunParameters*](types.irunparameters.md)) => *void*
+▸ **registerInterpreter**(`extension`, `apply`): `void`
 
 register an interpreter to be used to run files of the specified type when starting with
 IExtensionApi.runExecutable
 
-**`param`** File extension to handle
+#### Parameters
 
-**`param`** A filter function that will receive the run parameters as provided by
-                      the user (with the script as the executable) and should return adjusted
-                      parameters that will actually invoke the right interpreter.
-                      If the interpreter is not installed/found, please throw a
-                      "MissingInterpreter" exception so Vortex can show a nicer error message
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `extension` | `string` | File extension to handle |
+| `apply` | (`call`: [`IRunParameters`](types.IRunParameters.md)) => [`IRunParameters`](types.IRunParameters.md) | A filter function that will receive the run parameters as provided by                       the user (with the script as the executable) and should return adjusted                       parameters that will actually invoke the right interpreter.                       If the interpreter is not installed/found, please throw a                       "MissingInterpreter" exception so Vortex can show a nicer error message |
 
-#### Type declaration:
+#### Returns
 
-▸ (`extension`: *string*, `apply`: (`call`: [*IRunParameters*](types.irunparameters.md)) => [*IRunParameters*](types.irunparameters.md)): *void*
+`void`
 
-#### Parameters:
+#### Defined in
 
-Name | Type |
-:------ | :------ |
-`extension` | *string* |
-`apply` | (`call`: [*IRunParameters*](types.irunparameters.md)) => [*IRunParameters*](types.irunparameters.md) |
-
-**Returns:** *void*
-
-Defined in: src/types/IExtensionContext.ts:1110
-
-Defined in: src/types/IExtensionContext.ts:1110
+../src/types/IExtensionContext.ts:1195
 
 ___
 
 ### registerLoadOrder
 
-• **registerLoadOrder**: (`gameInfo`: ILoadOrderGameInfo) => *void*
+▸ **registerLoadOrder**(`gameInfo`): `void`
 
 Add file based load ordering functionality to the specified game.
  Please use this instead of registerLoadOrderPage
 
-#### Type declaration:
+#### Parameters
 
-▸ (`gameInfo`: ILoadOrderGameInfo): *void*
+| Name | Type |
+| :------ | :------ |
+| `gameInfo` | [`ILoadOrderGameInfo`](types.ILoadOrderGameInfo.md) |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`gameInfo` | ILoadOrderGameInfo |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:1225
-
-Defined in: src/types/IExtensionContext.ts:1225
+../src/types/IExtensionContext.ts:1309
 
 ___
 
 ### registerLoadOrderPage
 
-• **registerLoadOrderPage**: (`gameEntry`: IGameLoadOrderEntry) => *void*
+▸ **registerLoadOrderPage**(`gameEntry`): `void`
 
-#### Type declaration:
+#### Parameters
 
-▸ (`gameEntry`: IGameLoadOrderEntry): *void*
+| Name | Type |
+| :------ | :------ |
+| `gameEntry` | `IGameLoadOrderEntry` |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`gameEntry` | IGameLoadOrderEntry |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:1219
-
-Defined in: src/types/IExtensionContext.ts:1219
-
-___
-
-### registerMainPage
-
-• **registerMainPage**: [*RegisterMainPage*](../modules/types.md#registermainpage)
-
-registers a page for the main content area
-
-**`memberof`** IExtensionContext
-
-Defined in: src/types/IExtensionContext.ts:828
+../src/types/IExtensionContext.ts:1303
 
 ___
 
 ### registerMerge
 
-• **registerMerge**: (`test`: [*MergeTest*](../modules/types.md#mergetest), `merge`: [*MergeFunc*](../modules/types.md#mergefunc), `modType`: *string*) => *void*
+▸ **registerMerge**(`test`, `merge`, `modType`): `void`
 
 register a file merge that needs to happen during deployment.
 modType is the mod type this applies to, so only mods from this mod type are merged
@@ -711,29 +722,27 @@ The "out" path specified by the baseFiles is the relative path of the "temporary
 in the working directory. Together with the mod type, this will control what the final output
 path is.
 
-#### Type declaration:
+#### Parameters
 
-▸ (`test`: [*MergeTest*](../modules/types.md#mergetest), `merge`: [*MergeFunc*](../modules/types.md#mergefunc), `modType`: *string*): *void*
+| Name | Type |
+| :------ | :------ |
+| `test` | [`MergeTest`](../modules/types.md#mergetest) |
+| `merge` | [`MergeFunc`](../modules/types.md#mergefunc) |
+| `modType` | `string` |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`test` | [*MergeTest*](../modules/types.md#mergetest) |
-`merge` | [*MergeFunc*](../modules/types.md#mergefunc) |
-`modType` | *string* |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:1098
-
-Defined in: src/types/IExtensionContext.ts:1098
+../src/types/IExtensionContext.ts:1182
 
 ___
 
 ### registerMigration
 
-• **registerMigration**: (`migrate`: (`oldVersion`: *string*) => [*Promise*](../classes/promise.md)<void\>) => *void*
+▸ **registerMigration**(`migrate`): `void`
 
 register a migration step. This migration is always called when the loaded extension has
 a different version from the one that was used last.
@@ -754,31 +763,25 @@ Please note: Vortex will continue running, with the extension loaded, after migr
     - the migration is synchronous so that the migrate function doesn't return until it's done.
 Important: Migration happens in the *main process*, not in the renderer process.
 
-**`param`** called if the running extension version differs from the old one.
-                          As soon as the promise returned from this is resolved, the stored
-                          version number is updated.
+#### Parameters
 
-#### Type declaration:
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `migrate` | (`oldVersion`: `string`) => [`Promise`](../classes/Promise.md)<`void`\> | called if the running extension version differs from the old one.                           As soon as the promise returned from this is resolved, the stored                           version number is updated. |
 
-▸ (`migrate`: (`oldVersion`: *string*) => [*Promise*](../classes/promise.md)<void\>): *void*
+#### Returns
 
-#### Parameters:
+`void`
 
-Name | Type |
-:------ | :------ |
-`migrate` | (`oldVersion`: *string*) => [*Promise*](../classes/promise.md)<void\> |
+#### Defined in
 
-**Returns:** *void*
-
-Defined in: src/types/IExtensionContext.ts:1151
-
-Defined in: src/types/IExtensionContext.ts:1151
+../src/types/IExtensionContext.ts:1235
 
 ___
 
 ### registerModSource
 
-• **registerModSource**: (`id`: *string*, `name`: *string*, `onBrowse`: () => *void*, `options?`: [*IModSourceOptions*](types.imodsourceoptions.md)) => *void*
+▸ **registerModSource**(`id`, `name`, `onBrowse?`, `options?`): `void`
 
 register a source (usually a website) that the mod was retrieved from and that will
 be used as the reference for features like checking for updates and such.
@@ -787,120 +790,84 @@ to the selection of mod sources, the corresponding extension has to implement
 actual features
 The source can also be used to browse for further mods
 
-#### Type declaration:
+#### Parameters
 
-▸ (`id`: *string*, `name`: *string*, `onBrowse`: () => *void*, `options?`: [*IModSourceOptions*](types.imodsourceoptions.md)): *void*
+| Name | Type |
+| :------ | :------ |
+| `id` | `string` |
+| `name` | `string` |
+| `onBrowse?` | () => `void` |
+| `options?` | [`IModSourceOptions`](types.IModSourceOptions.md) |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`id` | *string* |
-`name` | *string* |
-`onBrowse` | () => *void* |
-`options?` | [*IModSourceOptions*](types.imodsourceoptions.md) |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:874
-
-Defined in: src/types/IExtensionContext.ts:874
+../src/types/IExtensionContext.ts:954
 
 ___
 
 ### registerModType
 
-• **registerModType**: (`id`: *string*, `priority`: *number*, `isSupported`: (`gameId`: *string*) => *boolean*, `getPath`: (`game`: [*IGame*](types.igame.md)) => *string*, `test`: (`installInstructions`: [*IInstruction*](types.iinstruction.md)[]) => [*Promise*](../classes/promise.md)<boolean\>, `options?`: [*IModTypeOptions*](types.imodtypeoptions.md)) => *void*
+▸ **registerModType**(`id`, `priority`, `isSupported`, `getPath`, `test`, `options?`): `void`
 
 register a mod type
 
-**`param`** internal identifier for this mod type. can't be the empty string ''!
+#### Parameters
 
-**`param`** if there is difficulty differentiating between two mod types, the
-                         higher priority (smaller number) one wins.
-                         Otherwise please use 100 so there is room for other extensions
-                         with lower and higher priority
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | internal identifier for this mod type. can't be the empty string ''! |
+| `priority` | `number` | if there is difficulty differentiating between two mod types, the                          higher priority (smaller number) one wins.                          Otherwise please use 100 so there is room for other extensions                          with lower and higher priority |
+| `isSupported` | (`gameId`: `string`) => `boolean` | return true if the mod type is supported for this                                          game |
+| `getPath` | (`game`: [`IGame`](types.IGame.md)) => `string` | given the specified game, return the absolute path to                                          where games of this type should be installed. |
+| `test` | (`installInstructions`: [`IInstruction`](types.IInstruction.md)[]) => [`Promise`](../classes/Promise.md)<`boolean`\> | given the list of install instructions,                                                  determine if the installed mod is of this type |
+| `options?` | [`IModTypeOptions`](types.IModTypeOptions.md) | options controlling the mod type |
 
-**`param`** return true if the mod type is supported for this
-                                         game
+#### Returns
 
-**`param`** given the specified game, return the absolute path to
-                                         where games of this type should be installed.
+`void`
 
-**`param`** given the list of install instructions,
-                                                 determine if the installed mod is of this type
+#### Defined in
 
-**`param`** options controlling the mod type
-
-#### Type declaration:
-
-▸ (`id`: *string*, `priority`: *number*, `isSupported`: (`gameId`: *string*) => *boolean*, `getPath`: (`game`: [*IGame*](types.igame.md)) => *string*, `test`: (`installInstructions`: [*IInstruction*](types.iinstruction.md)[]) => [*Promise*](../classes/promise.md)<boolean\>, `options?`: [*IModTypeOptions*](types.imodtypeoptions.md)): *void*
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`id` | *string* |
-`priority` | *number* |
-`isSupported` | (`gameId`: *string*) => *boolean* |
-`getPath` | (`game`: [*IGame*](types.igame.md)) => *string* |
-`test` | (`installInstructions`: [*IInstruction*](types.iinstruction.md)[]) => [*Promise*](../classes/promise.md)<boolean\> |
-`options?` | [*IModTypeOptions*](types.imodtypeoptions.md) |
-
-**Returns:** *void*
-
-Defined in: src/types/IExtensionContext.ts:1041
-
-Defined in: src/types/IExtensionContext.ts:1041
+../src/types/IExtensionContext.ts:1125
 
 ___
 
 ### registerPersistor
 
-• **registerPersistor**: (`hive`: *string*, `persistor`: [*IPersistor*](types.ipersistor.md), `debounce?`: *number*) => *void*
+▸ **registerPersistor**(`hive`, `persistor`, `debounce?`): `void`
 
 register a new persistor that will hook a data file into the application store,
 meaning any part of the application can access that data like any other data in the application
 state and the UI will automatically refresh if it's tied to that data.
 This way you can unify the access to foreign data files
 
-**`param`** the top-level key inside the state that this persistor will add
-                     it's data to. We can't add persistors inside an existing node (
-                     technical reasons) but you can implement an aggregator-persistor
-                     that syncs sub-nodes with different files
-
-**`param`** the persistor. Adhere to the interface and it should be fine
-
-**`param`** this value (in milliseconds) determins how frequent the file will
-                         be updated on disk. Higher values reduce load and disk activity
-                         but more data could be lost in case of an application crash.
-                         Defaults to 200 ms
-
 **`memberof`** IExtensionContext
 
-#### Type declaration:
+#### Parameters
 
-▸ (`hive`: *string*, `persistor`: [*IPersistor*](types.ipersistor.md), `debounce?`: *number*): *void*
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `hive` | `string` | the top-level key inside the state that this persistor will add                      it's data to. We can't add persistors inside an existing node (                      technical reasons) but you can implement an aggregator-persistor                      that syncs sub-nodes with different files |
+| `persistor` | [`IPersistor`](types.IPersistor.md) | the persistor. Adhere to the interface and it should be fine |
+| `debounce?` | `number` | this value (in milliseconds) determins how frequent the file will                          be updated on disk. Higher values reduce load and disk activity                          but more data could be lost in case of an application crash.                          Defaults to 200 ms |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`hive` | *string* |
-`persistor` | [*IPersistor*](types.ipersistor.md) |
-`debounce?` | *number* |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:946
-
-Defined in: src/types/IExtensionContext.ts:946
+../src/types/IExtensionContext.ts:1030
 
 ___
 
 ### registerPreview
 
-• `Optional` **registerPreview**: (`priority`: *number*, `handler`: (`files`: [*IPreviewFile*](types.ipreviewfile.md)[], `allowPick`: *boolean*) => [*Promise*](../classes/promise.md)<[*IPreviewFile*](types.ipreviewfile.md)\>) => *void*
+▸ `Optional` **registerPreview**(`priority`, `handler`): `void`
 
 register a handler that can be used to preview or diff files.
 A handler can return a promise rejected with a "ProcessCanceled" exception to indicate
@@ -927,59 +894,55 @@ Note: If the viewer supports picking the Promise shall resolve after the
   choice is made and include the selected entry, if it doesn't it can resolve
   as soon as the handler knows whether it supports the file.
 
-#### Type declaration:
+#### Parameters
 
-▸ (`priority`: *number*, `handler`: (`files`: [*IPreviewFile*](types.ipreviewfile.md)[], `allowPick`: *boolean*) => [*Promise*](../classes/promise.md)<[*IPreviewFile*](types.ipreviewfile.md)\>): *void*
+| Name | Type |
+| :------ | :------ |
+| `priority` | `number` |
+| `handler` | (`files`: [`IPreviewFile`](types.IPreviewFile.md)[], `allowPick`: `boolean`) => [`Promise`](../classes/Promise.md)<[`IPreviewFile`](types.IPreviewFile.md)\> |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`priority` | *number* |
-`handler` | (`files`: [*IPreviewFile*](types.ipreviewfile.md)[], `allowPick`: *boolean*) => [*Promise*](../classes/promise.md)<[*IPreviewFile*](types.ipreviewfile.md)\> |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:1197
-
-Defined in: src/types/IExtensionContext.ts:1197
+../src/types/IExtensionContext.ts:1281
 
 ___
 
 ### registerProfileFeature
 
-• `Optional` **registerProfileFeature**: (`featureId`: *string*, `type`: *string*, `icon`: *string*, `label`: *string*, `description`: *string*, `supported`: () => *boolean*) => *void*
+▸ `Optional` **registerProfileFeature**(`featureId`, `type`, `icon`, `label`, `description`, `supported`): `void`
 
 register a profile feature that can be toggled/configured on the profiles screen.
 The configured value can be queried at
 state.persistent.profiles.<profile id>.features.<feature id>
 
-#### Type declaration:
+#### Parameters
 
-▸ (`featureId`: *string*, `type`: *string*, `icon`: *string*, `label`: *string*, `description`: *string*, `supported`: () => *boolean*): *void*
+| Name | Type |
+| :------ | :------ |
+| `featureId` | `string` |
+| `type` | `string` |
+| `icon` | `string` |
+| `label` | `string` |
+| `description` | `string` |
+| `supported` | () => `boolean` |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`featureId` | *string* |
-`type` | *string* |
-`icon` | *string* |
-`label` | *string* |
-`description` | *string* |
-`supported` | () => *boolean* |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:1168
-
-Defined in: src/types/IExtensionContext.ts:1168
+../src/types/IExtensionContext.ts:1252
 
 ___
 
 ### registerProfileFile
 
-• `Optional` **registerProfileFile**: (`gameId`: *string*, `filePath`: *string*) => *void*
+▸ `Optional` **registerProfileFile**(`gameId`, `filePath`): `void`
 
 register a file to be stored with the profile. It will always be synchronised with the current
 profile, so when users switch to a different profile, this file will be copied to the
@@ -988,28 +951,26 @@ switching to is copied to filePath.
 Right now this only supports static file paths, no patterns (glob or regular expressions) and
 no way to dynamically find the file to synchronize
 
-#### Type declaration:
+#### Parameters
 
-▸ (`gameId`: *string*, `filePath`: *string*): *void*
+| Name | Type |
+| :------ | :------ |
+| `gameId` | `string` |
+| `filePath` | `string` |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`gameId` | *string* |
-`filePath` | *string* |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:1161
-
-Defined in: src/types/IExtensionContext.ts:1161
+../src/types/IExtensionContext.ts:1245
 
 ___
 
 ### registerReducer
 
-• **registerReducer**: (`path`: *string*[], `spec`: [*IReducerSpec*](types.ireducerspec.md)<{ [key: string]: *any*;  }\>) => *void*
+▸ **registerReducer**(`path`, `spec`): `void`
 
 register a reducer to introduce new set-operations on the application
 state.
@@ -1036,47 +997,33 @@ And one more thing about the spec: All things you store inside the store need to
   a "registry" or factory and store just an id that allows you to retrieve or generate
   the function on demand.
 
-**`param`** The path within the settings store
-
-**`param`** a IReducerSpec object that contains reducer functions and defaults
-       for the newly introduced settings
-
 **`memberof`** IExtensionContext
 
-#### Type declaration:
+**`note`** If you have registerReducer calls you should call them first thing in the init function.
+      Usually if your init call fails your extension shouldn't load at all but in case that
+      doesn't work, registering any functionality that depends on state that never got loaded
+      would load to further bug reports that are a lot harder to investigate
 
-▸ (`path`: *string*[], `spec`: [*IReducerSpec*](types.ireducerspec.md)<{ [key: string]: *any*;  }\>): *void*
+#### Parameters
 
-#### Parameters:
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `path` | `string`[] | The path within the settings store |
+| `spec` | [`IReducerSpec`](types.IReducerSpec.md)<{ [key: string]: `any`;  }\> | a IReducerSpec object that contains reducer functions and defaults        for the newly introduced settings |
 
-Name | Type |
-:------ | :------ |
-`path` | *string*[] |
-`spec` | [*IReducerSpec*](types.ireducerspec.md)<{ [key: string]: *any*;  }\> |
+#### Returns
 
-**Returns:** *void*
+`void`
 
-Defined in: src/types/IExtensionContext.ts:911
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:911
-
-___
-
-### registerSettings
-
-• **registerSettings**: [*RegisterSettings*](../modules/types.md#registersettings)
-
-register a settings page
-
-**`memberof`** IExtensionContext
-
-Defined in: src/types/IExtensionContext.ts:786
+../src/types/IExtensionContext.ts:995
 
 ___
 
 ### registerSettingsHive
 
-• **registerSettingsHive**: (`type`: [*PersistingType*](../modules/types.md#persistingtype), `hive`: *string*) => *void*
+▸ **registerSettingsHive**(`type`, `hive`): `void`
 
 register a hive in the store to be persisted. A hive is a top-level branch in the state,
 like "settings", "state", ...
@@ -1085,72 +1032,55 @@ Do not use this on a hive that is registered with "registerPersistor". With this
 Vortex takes care of storing/restoring the data, with registerPersistor you can customize the
 file format.
 
-**`param`** controls where the state is stored and when it is loaded
-
-**`param`** the top-level key inside the state.
-
 **`memberof`** IExtensionContext
 
-#### Type declaration:
+#### Parameters
 
-▸ (`type`: [*PersistingType*](../modules/types.md#persistingtype), `hive`: *string*): *void*
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `type` | [`PersistingType`](../modules/types.md#persistingtype) | controls where the state is stored and when it is loaded |
+| `hive` | `string` | the top-level key inside the state. |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`type` | [*PersistingType*](../modules/types.md#persistingtype) |
-`hive` | *string* |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:926
-
-Defined in: src/types/IExtensionContext.ts:926
+../src/types/IExtensionContext.ts:1010
 
 ___
 
 ### registerStartHook
 
-• **registerStartHook**: (`priority`: *number*, `id`: *string*, `hook`: (`call`: [*IRunParameters*](types.irunparameters.md)) => [*Promise*](../classes/promise.md)<[*IRunParameters*](types.irunparameters.md)\>) => *void*
+▸ **registerStartHook**(`priority`, `id`, `hook`): `void`
 
 register a hook to be called before Vortex starts any tool and is allowed to replace parameter
 or cancel the start by rejecting with ProcessCanceled or UserCanceled.
 This could be used as a more powerful replacement for registerInterpreter.
 Interpreters registered with registerInterpreter will be processed before any hooks are applied
 
-**`param`** Hooks are applied in ascending priority order. Please choose
-                         priorities with a bit of space between hooks you know about so that
-                         other extension developers can insert their own hooks between.
-                         Non-extension hooks will be applied in steps of 100
+#### Parameters
 
-**`param`** identifier for the hook. This will only be used for logging
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `priority` | `number` | Hooks are applied in ascending priority order. Please choose                          priorities with a bit of space between hooks you know about so that                          other extension developers can insert their own hooks between.                          Non-extension hooks will be applied in steps of 100 |
+| `id` | `string` | identifier for the hook. This will only be used for logging |
+| `hook` | (`call`: [`IRunParameters`](types.IRunParameters.md)) => [`Promise`](../classes/Promise.md)<[`IRunParameters`](types.IRunParameters.md)\> | the hook to be called |
 
-**`param`** the hook to be called
+#### Returns
 
-#### Type declaration:
+`void`
 
-▸ (`priority`: *number*, `id`: *string*, `hook`: (`call`: [*IRunParameters*](types.irunparameters.md)) => [*Promise*](../classes/promise.md)<[*IRunParameters*](types.irunparameters.md)\>): *void*
+#### Defined in
 
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`priority` | *number* |
-`id` | *string* |
-`hook` | (`call`: [*IRunParameters*](types.irunparameters.md)) => [*Promise*](../classes/promise.md)<[*IRunParameters*](types.irunparameters.md)\> |
-
-**Returns:** *void*
-
-Defined in: src/types/IExtensionContext.ts:1125
-
-Defined in: src/types/IExtensionContext.ts:1125
+../src/types/IExtensionContext.ts:1209
 
 ___
 
 ### registerTableAttribute
 
-• **registerTableAttribute**: (`tableId`: *string*, `attribute`: [*ITableAttribute*](types.itableattribute.md)<any\>) => *void*
+▸ **registerTableAttribute**(`tableId`, `attribute`): `void`
 
 add an attribute to a table. An attribute can appear as a column inside the table or as a
 detail field in the side panel.
@@ -1159,28 +1089,26 @@ find the right id in the documentation of the corresponding extension.
 Please prefer specifying the attribute as a function returning the ITableAttribute instead of
 the attribute directly
 
-#### Type declaration:
+#### Parameters
 
-▸ (`tableId`: *string*, `attribute`: [*ITableAttribute*](types.itableattribute.md)<any\>): *void*
+| Name | Type |
+| :------ | :------ |
+| `tableId` | `string` |
+| `attribute` | [`ITableAttribute`](types.ITableAttribute.md)<`any`\> |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`tableId` | *string* |
-`attribute` | [*ITableAttribute*](types.itableattribute.md)<any\> |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:956
-
-Defined in: src/types/IExtensionContext.ts:956
+../src/types/IExtensionContext.ts:1040
 
 ___
 
 ### registerTest
 
-• **registerTest**: (`id`: *string*, `event`: *string*, `check`: [*CheckFunction*](../modules/types.md#checkfunction)) => *void*
+▸ **registerTest**(`id`, `event`, `check`): `void`
 
 add a check that will automatically be run on the specified event.
 Such checks can be used by extensions to check the integrity of their own data, of the
@@ -1188,43 +1116,27 @@ application setup or that of the game and present them to the user in a common w
 
 **`memberof`** IExtensionContext
 
-#### Type declaration:
+#### Parameters
 
-▸ (`id`: *string*, `event`: *string*, `check`: [*CheckFunction*](../modules/types.md#checkfunction)): *void*
+| Name | Type |
+| :------ | :------ |
+| `id` | `string` |
+| `event` | `string` |
+| `check` | [`CheckFunction`](../modules/types.md#checkfunction) |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`id` | *string* |
-`event` | *string* |
-`check` | [*CheckFunction*](../modules/types.md#checkfunction) |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:965
-
-Defined in: src/types/IExtensionContext.ts:965
-
-___
-
-### registerToDo
-
-• **registerToDo**: [*RegisterToDo*](../modules/types.md#registertodo)
-
-register an todo message that will be shown to new users until they
-dismiss it. You can provide a condition under which it will appear.
-Please don't overuse this as to not intimidate the user. Also keep in mind that the
-user can dismiss any todo message without taking action and it will never appear
-again.
-
-Defined in: src/types/IExtensionContext.ts:857
+../src/types/IExtensionContext.ts:1049
 
 ___
 
 ### registerToolVariables
 
-• **registerToolVariables**: (`callback`: [*ToolParameterCB*](../modules/types.md#toolparametercb)) => *void*
+▸ **registerToolVariables**(`callback`): `void`
 
 register a callback that will introduce additional variables that can be used as part of
 tool command lines. The callback you provide here gets called every time a tool gets started
@@ -1235,77 +1147,63 @@ While this is not necessary from a technical standpoint it's more consistent and
 for users.
 Also make sure the keys you return are sufficiently unique to avoid collisions
 
-**`param`** the function that gets called to generate variables. the argument
-                passed to this contains details about the tool being started, usually
-                you will probably not need this
+#### Parameters
 
-#### Type declaration:
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | [`ToolParameterCB`](../modules/types.md#toolparametercb) | the function that gets called to generate variables. the argument                 passed to this contains details about the tool being started, usually                 you will probably not need this |
 
-▸ (`callback`: [*ToolParameterCB*](../modules/types.md#toolparametercb)): *void*
+#### Returns
 
-#### Parameters:
+`void`
 
-Name | Type |
-:------ | :------ |
-`callback` | [*ToolParameterCB*](../modules/types.md#toolparametercb) |
+#### Defined in
 
-**Returns:** *void*
-
-Defined in: src/types/IExtensionContext.ts:1215
-
-Defined in: src/types/IExtensionContext.ts:1215
+../src/types/IExtensionContext.ts:1299
 
 ___
 
 ### requireExtension
 
-• **requireExtension**: (`extId`: *string*, `version?`: *string*) => *void*
+▸ **requireExtension**(`extId`, `version?`): `void`
 
 register a dependency on a different extension
 
-**`param`** id of the extension that this one depends on
+#### Parameters
 
-**`param`** a semver version range that the mod is compatible with
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `extId` | `string` | id of the extension that this one depends on |
+| `version?` | `string` | a semver version range that the mod is compatible with |
 
-#### Type declaration:
+#### Returns
 
-▸ (`extId`: *string*, `version?`: *string*): *void*
+`void`
 
-#### Parameters:
+#### Defined in
 
-Name | Type |
-:------ | :------ |
-`extId` | *string* |
-`version?` | *string* |
-
-**Returns:** *void*
-
-Defined in: src/types/IExtensionContext.ts:1250
-
-Defined in: src/types/IExtensionContext.ts:1250
+../src/types/IExtensionContext.ts:1339
 
 ___
 
 ### requireVersion
 
-• **requireVersion**: (`versionRange`: *string*) => *void*
+▸ **requireVersion**(`versionRange`): `void`
 
 specify that a certain range of versions of vortex is required
 (see https://www.npmjs.com/package/semver for syntax documentation).
 If you call this multiple times, all ranges have to match so that makes little sense
 
-#### Type declaration:
+#### Parameters
 
-▸ (`versionRange`: *string*): *void*
+| Name | Type |
+| :------ | :------ |
+| `versionRange` | `string` |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`versionRange` | *string* |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:1243
-
-Defined in: src/types/IExtensionContext.ts:1243
+../src/types/IExtensionContext.ts:1332

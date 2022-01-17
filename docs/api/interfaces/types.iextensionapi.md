@@ -6,7 +6,7 @@
 
 interface for convenience functions made available to extensions
 
-**`export`** 
+**`export`**
 
 **`interface`** IExtensionApi
 
@@ -14,301 +14,377 @@ interface for convenience functions made available to extensions
 
 ### Properties
 
-- [NAMESPACE](types.iextensionapi.md#namespace)
-- [addMetaServer](types.iextensionapi.md#addmetaserver)
-- [awaitUI](types.iextensionapi.md#awaitui)
-- [clearStylesheet](types.iextensionapi.md#clearstylesheet)
-- [closeDialog](types.iextensionapi.md#closedialog)
-- [deregisterProtocol](types.iextensionapi.md#deregisterprotocol)
-- [dismissNotification](types.iextensionapi.md#dismissnotification)
-- [emitAndAwait](types.iextensionapi.md#emitandawait)
-- [events](types.iextensionapi.md#events)
-- [ext](types.iextensionapi.md#ext)
-- [extension](types.iextensionapi.md#extension)
-- [getI18n](types.iextensionapi.md#geti18n)
-- [getLoadedExtensions](types.iextensionapi.md#getloadedextensions)
-- [getPath](types.iextensionapi.md#getpath)
-- [getState](types.iextensionapi.md#getstate)
-- [highlightControl](types.iextensionapi.md#highlightcontrol)
-- [isOutdated](types.iextensionapi.md#isoutdated)
-- [laterT](types.iextensionapi.md#latert)
-- [locale](types.iextensionapi.md#locale)
-- [lookupModMeta](types.iextensionapi.md#lookupmodmeta)
-- [lookupModReference](types.iextensionapi.md#lookupmodreference)
-- [onAsync](types.iextensionapi.md#onasync)
-- [onStateChange](types.iextensionapi.md#onstatechange)
-- [openArchive](types.iextensionapi.md#openarchive)
-- [registerProtocol](types.iextensionapi.md#registerprotocol)
-- [runExecutable](types.iextensionapi.md#runexecutable)
-- [saveModMeta](types.iextensionapi.md#savemodmeta)
-- [selectDir](types.iextensionapi.md#selectdir)
-- [selectExecutable](types.iextensionapi.md#selectexecutable)
-- [selectFile](types.iextensionapi.md#selectfile)
-- [sendNotification](types.iextensionapi.md#sendnotification)
-- [setStylesheet](types.iextensionapi.md#setstylesheet)
-- [showDialog](types.iextensionapi.md#showdialog)
-- [showErrorNotification](types.iextensionapi.md#showerrornotification)
-- [store](types.iextensionapi.md#store)
-- [suppressNotification](types.iextensionapi.md#suppressnotification)
-- [translate](types.iextensionapi.md#translate)
+- [NAMESPACE](types.IExtensionApi.md#namespace)
+- [events](types.IExtensionApi.md#events)
+- [ext](types.IExtensionApi.md#ext)
+- [extension](types.IExtensionApi.md#extension)
+- [laterT](types.IExtensionApi.md#latert)
+- [registerProtocol](types.IExtensionApi.md#registerprotocol)
+- [registerRepositoryLookup](types.IExtensionApi.md#registerrepositorylookup)
+- [store](types.IExtensionApi.md#store)
+- [translate](types.IExtensionApi.md#translate)
+
+### Methods
+
+- [addMetaServer](types.IExtensionApi.md#addmetaserver)
+- [awaitUI](types.IExtensionApi.md#awaitui)
+- [clearStylesheet](types.IExtensionApi.md#clearstylesheet)
+- [closeDialog](types.IExtensionApi.md#closedialog)
+- [deregisterProtocol](types.IExtensionApi.md#deregisterprotocol)
+- [dismissNotification](types.IExtensionApi.md#dismissnotification)
+- [emitAndAwait](types.IExtensionApi.md#emitandawait)
+- [getI18n](types.IExtensionApi.md#geti18n)
+- [getLoadedExtensions](types.IExtensionApi.md#getloadedextensions)
+- [getPath](types.IExtensionApi.md#getpath)
+- [getState](types.IExtensionApi.md#getstate)
+- [highlightControl](types.IExtensionApi.md#highlightcontrol)
+- [isOutdated](types.IExtensionApi.md#isoutdated)
+- [locale](types.IExtensionApi.md#locale)
+- [lookupModMeta](types.IExtensionApi.md#lookupmodmeta)
+- [lookupModReference](types.IExtensionApi.md#lookupmodreference)
+- [onAsync](types.IExtensionApi.md#onasync)
+- [onStateChange](types.IExtensionApi.md#onstatechange)
+- [openArchive](types.IExtensionApi.md#openarchive)
+- [runExecutable](types.IExtensionApi.md#runexecutable)
+- [saveModMeta](types.IExtensionApi.md#savemodmeta)
+- [selectDir](types.IExtensionApi.md#selectdir)
+- [selectExecutable](types.IExtensionApi.md#selectexecutable)
+- [selectFile](types.IExtensionApi.md#selectfile)
+- [sendNotification](types.IExtensionApi.md#sendnotification)
+- [setStylesheet](types.IExtensionApi.md#setstylesheet)
+- [showDialog](types.IExtensionApi.md#showdialog)
+- [showErrorNotification](types.IExtensionApi.md#showerrornotification)
+- [suppressNotification](types.IExtensionApi.md#suppressnotification)
+- [withPrePost](types.IExtensionApi.md#withprepost)
 
 ## Properties
 
 ### NAMESPACE
 
-• **NAMESPACE**: *string*
+• **NAMESPACE**: `string`
 
-Defined in: src/types/IExtensionContext.ts:664
+#### Defined in
+
+../src/types/IExtensionContext.ts:722
 
 ___
 
+### events
+
+• **events**: `EventEmitter`
+
+event emitter
+
+**`memberof`** IExtensionApi
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:491
+
+___
+
+### ext
+
+• **ext**: `Object`
+
+functions made available from extension to extension. Callers have to make
+sure they handle gracefully the case where a function doesn't exist
+
+#### Index signature
+
+▪ [key: `string`]: (...`args`: `any`[]) => `any`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:719
+
+___
+
+### extension
+
+• `Optional` **extension**: [`IRegisteredExtension`](types.IRegisteredExtension.md)
+
+name of the extension to use this api with
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:401
+
+___
+
+### laterT
+
+• **laterT**: `TFunction`
+
+prepare a string to be translated further down the line.
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:501
+
+___
+
+### registerProtocol
+
+• **registerProtocol**: [`IRegisterProtocol`](types.IRegisterProtocol.md)
+
+registers an uri protocol to be handled by this application. If the "def"ault parameter
+is set to true, this application will also be inserted as the system wide default handler
+for the protocol. Use with caution, as this will overwrite the previous value, which
+can't be undone automatically
+
+**`memberof`** IExtensionContext
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:552
+
+___
+
+### registerRepositoryLookup
+
+• **registerRepositoryLookup**: [`IRegisterRepositoryLookup`](types.IRegisterRepositoryLookup.md)
+
+registers a lookup mechanism that can be used to look up information about a mod based on ids.
+This will either work as a fallback or as a replacement to the md5 based lookup for
+applicable mods.
+The "repositoryId" should be the same as the "source" used.
+It's possible to return multiple results if the input data doesn't definitively identify a
+single item but this might be a bit of a mess to figure out later.
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:562
+
+___
+
+### store
+
+• `Optional` **store**: [`ThunkStore`](types.ThunkStore.md)<`any`\>
+
+the redux store containing all application state & data
+
+Please note: this store object will remain valid for the whole
+  application runtime so you can store it, bind it to functions
+  and so on. The state object (store.getState()) is immutable and
+  will be a different object whenever the state is changed.
+  Thus you should *not* store/bind the state directly unless you
+  actually want a "snapshot" of the state.
+
+**`memberof`** IExtensionApi
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:483
+
+___
+
+### translate
+
+• **translate**: `TFunction`
+
+translation function
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:496
+
+## Methods
+
 ### addMetaServer
 
-• **addMetaServer**: (`id`: *string*, `server?`: *any*) => *void*
+▸ **addMetaServer**(`id`, `server?`): `void`
 
 add a meta server
 Please note that setting a server with the same id again will replace the existing one
 with that id and setting it to undefined removes it
 
-#### Type declaration:
+#### Parameters
 
-▸ (`id`: *string*, `server?`: *any*): *void*
+| Name | Type |
+| :------ | :------ |
+| `id` | `string` |
+| `server?` | `any` |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`id` | *string* |
-`server?` | *any* |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:543
-
-Defined in: src/types/IExtensionContext.ts:543
+../src/types/IExtensionContext.ts:583
 
 ___
 
 ### awaitUI
 
-• **awaitUI**: () => [*Promise*](../classes/promise.md)<void\>
+▸ **awaitUI**(): [`Promise`](../classes/Promise.md)<`void`\>
 
 returns a promise that resolves once the ui has been displayed.
 This is useful if you have a callback that may be triggered before the ui is
 displayed but may require the UI to be processed.
 Specifically events can only be sent once this event has been triggered
 
-#### Type declaration:
+#### Returns
 
-▸ (): [*Promise*](../classes/promise.md)<void\>
+[`Promise`](../classes/Promise.md)<`void`\>
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:645
-
-Defined in: src/types/IExtensionContext.ts:645
+../src/types/IExtensionContext.ts:703
 
 ___
 
 ### clearStylesheet
 
-• **clearStylesheet**: () => *void*
+▸ **clearStylesheet**(): `void`
 
 clear the stylesheet cache to ensure it gets rebuilt even if the list of files hasn't changed
 
-#### Type declaration:
+#### Returns
 
-▸ (): *void*
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:573
-
-Defined in: src/types/IExtensionContext.ts:573
+../src/types/IExtensionContext.ts:613
 
 ___
 
 ### closeDialog
 
-• `Optional` **closeDialog**: (`id`: *string*, `actionKey?`: *string*, `input?`: *any*) => *void*
+▸ `Optional` **closeDialog**(`id`, `actionKey?`, `input?`): `void`
 
 close a dialog
 
-#### Type declaration:
+#### Parameters
 
-▸ (`id`: *string*, `actionKey?`: *string*, `input?`: *any*): *void*
+| Name | Type |
+| :------ | :------ |
+| `id` | `string` |
+| `actionKey?` | `string` |
+| `input?` | `any` |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`id` | *string* |
-`actionKey?` | *string* |
-`input?` | *any* |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:403
-
-Defined in: src/types/IExtensionContext.ts:403
+../src/types/IExtensionContext.ts:433
 
 ___
 
 ### deregisterProtocol
 
-• **deregisterProtocol**: (`protocol`: *string*) => *void*
+▸ **deregisterProtocol**(`protocol`): `void`
 
 deregister an uri protocol currently being handled by us
 
 **`memberof`** IExtensionApi
 
-#### Type declaration:
+#### Parameters
 
-▸ (`protocol`: *string*): *void*
+| Name | Type |
+| :------ | :------ |
+| `protocol` | `string` |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`protocol` | *string* |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:529
-
-Defined in: src/types/IExtensionContext.ts:529
+../src/types/IExtensionContext.ts:569
 
 ___
 
 ### dismissNotification
 
-• `Optional` **dismissNotification**: (`id`: *string*) => *void*
+▸ `Optional` **dismissNotification**(`id`): `void`
 
 hides a notification by its id
 
 **`memberof`** IExtensionApi
 
-#### Type declaration:
+#### Parameters
 
-▸ (`id`: *string*): *void*
+| Name | Type |
+| :------ | :------ |
+| `id` | `string` |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`id` | *string* |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:410
-
-Defined in: src/types/IExtensionContext.ts:410
+../src/types/IExtensionContext.ts:440
 
 ___
 
 ### emitAndAwait
 
-• **emitAndAwait**: (`eventName`: *string*, ...`args`: *any*[]) => [*Promise*](../classes/promise.md)<any\>
+▸ **emitAndAwait**(`eventName`, ...`args`): [`Promise`](../classes/Promise.md)<`any`\>
 
 emit an event and allow every receiver to return a Promise. This call will only return
 after all these Promises are resolved.
 If the event handlers return a value, this returns an array of results
 
-#### Type declaration:
+#### Parameters
 
-▸ (`eventName`: *string*, ...`args`: *any*[]): [*Promise*](../classes/promise.md)<any\>
+| Name | Type |
+| :------ | :------ |
+| `eventName` | `string` |
+| `...args` | `any`[] |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`eventName` | *string* |
-`...args` | *any*[] |
+[`Promise`](../classes/Promise.md)<`any`\>
 
-**Returns:** [*Promise*](../classes/promise.md)<any\>
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:616
-
-Defined in: src/types/IExtensionContext.ts:616
-
-___
-
-### events
-
-• **events**: *EventEmitter*
-
-event emitter
-
-**`memberof`** IExtensionApi
-
-Defined in: src/types/IExtensionContext.ts:461
-
-___
-
-### ext
-
-• **ext**: *object*
-
-functions made available from extension to extension. Callers have to make
-sure they handle gracefully the case where a function doesn't exist
-
-#### Type declaration:
-
-Defined in: src/types/IExtensionContext.ts:661
-
-___
-
-### extension
-
-• `Optional` **extension**: *string*
-
-name of the extension to use this api with
-
-Defined in: src/types/IExtensionContext.ts:371
+../src/types/IExtensionContext.ts:656
 
 ___
 
 ### getI18n
 
-• **getI18n**: () => i18n
+▸ **getI18n**(): `i18n`
 
 get direct access to the i18next object managing localisation.
 This is only needed to influence how localisation works in general,
 to just translate a text, use "translate"
 
-#### Type declaration:
+#### Returns
 
-▸ (): i18n
+`i18n`
 
-**Returns:** i18n
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:483
-
-Defined in: src/types/IExtensionContext.ts:483
+../src/types/IExtensionContext.ts:513
 
 ___
 
 ### getLoadedExtensions
 
-• **getLoadedExtensions**: () => [*IRegisteredExtension*](types.iregisteredextension.md)[]
+▸ **getLoadedExtensions**(): [`IRegisteredExtension`](types.IRegisteredExtension.md)[]
 
 get a list of extensions currently loaded into Vortex
 
-#### Type declaration:
+#### Returns
 
-▸ (): [*IRegisteredExtension*](types.iregisteredextension.md)[]
+[`IRegisteredExtension`](types.IRegisteredExtension.md)[]
 
-**Returns:** [*IRegisteredExtension*](types.iregisteredextension.md)[]
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:655
-
-Defined in: src/types/IExtensionContext.ts:655
+../src/types/IExtensionContext.ts:713
 
 ___
 
 ### getPath
 
-• **getPath**: (`name`: *string*) => *string*
+▸ **getPath**(`name`): `string`
 
 retrieve path for a known directory location.
 
@@ -323,126 +399,113 @@ adjust your extension.
 
 **`memberof`** IExtensionApi
 
-#### Type declaration:
+#### Parameters
 
-▸ (`name`: *string*): *string*
+| Name | Type |
+| :------ | :------ |
+| `name` | `string` |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`name` | *string* |
+`string`
 
-**Returns:** *string*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:500
-
-Defined in: src/types/IExtensionContext.ts:500
+../src/types/IExtensionContext.ts:530
 
 ___
 
 ### getState
 
-• **getState**: <T\>() => T
+▸ **getState**<`T`\>(): `T`
 
 wrapper for api.store.getState() with the benefit that it automatically assigns a type
 
-#### Type declaration:
+#### Type parameters
 
-▸ <T\>(): T
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`IState`](types.IState.md) = [`IState`](types.IState.md) |
 
-#### Type parameters:
+#### Returns
 
-Name | Type | Default |
-:------ | :------ | :------ |
-`T` | [*IState*](types.istate.md) | [*IState*](types.istate.md) |
+`T`
 
-**Returns:** T
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:650
-
-Defined in: src/types/IExtensionContext.ts:650
+../src/types/IExtensionContext.ts:708
 
 ___
 
 ### highlightControl
 
-• **highlightControl**: (`selector`: *string*, `durationMS`: *number*, `text?`: *string*) => *void*
+▸ **highlightControl**(`selector`, `durationMS`, `text?`, `altStyle?`): `void`
 
 highlight a control for a short time to direct the users attention to it.
 The control (or controls) is identified by a css selector.
 A text can be added, but no promise that it actually looks good in practice
 
-#### Type declaration:
+Usually the css style used to draw the outline contains a bit of hackery to offset the
+padding and border width it adds so that the contents doesn't get moved around.
+If altStyle is set we use absolute positioning to get the same effect. This requires
+us to make the target item "position: relative" though which is more intrusive and can
+break the styling of the contents more severely.
 
-▸ (`selector`: *string*, `durationMS`: *number*, `text?`: *string*): *void*
+#### Parameters
 
-#### Parameters:
+| Name | Type |
+| :------ | :------ |
+| `selector` | `string` |
+| `durationMS` | `number` |
+| `text?` | `string` |
+| `altStyle?` | `boolean` |
 
-Name | Type |
-:------ | :------ |
-`selector` | *string* |
-`durationMS` | *number* |
-`text?` | *string* |
+#### Returns
 
-**Returns:** *void*
+`void`
 
-Defined in: src/types/IExtensionContext.ts:637
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:637
+../src/types/IExtensionContext.ts:695
 
 ___
 
 ### isOutdated
 
-• **isOutdated**: () => *boolean*
+▸ **isOutdated**(): `boolean`
 
 returns true if the running version of Vortex is considered outdated. This is mostly used
 to determine if feedback should be sent to Nexus Mods.
 
-#### Type declaration:
+#### Returns
 
-▸ (): *boolean*
+`boolean`
 
-**Returns:** *boolean*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:630
-
-Defined in: src/types/IExtensionContext.ts:630
-
-___
-
-### laterT
-
-• **laterT**: TFunction
-
-prepare a string to be translated further down the line.
-
-Defined in: src/types/IExtensionContext.ts:471
+../src/types/IExtensionContext.ts:681
 
 ___
 
 ### locale
 
-• **locale**: () => *string*
+▸ **locale**(): `string`
 
 active locale
 
-#### Type declaration:
+#### Returns
 
-▸ (): *string*
+`string`
 
-**Returns:** *string*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:476
-
-Defined in: src/types/IExtensionContext.ts:476
+../src/types/IExtensionContext.ts:506
 
 ___
 
 ### lookupModMeta
 
-• **lookupModMeta**: (`details`: [*ILookupDetails*](types.ilookupdetails.md), `ignoreCache?`: *boolean*) => [*Promise*](../classes/promise.md)<[*ILookupResult*](types.ilookupresult.md)[]\>
+▸ **lookupModMeta**(`details`, `ignoreCache?`): [`Promise`](../classes/Promise.md)<[`ILookupResult`](types.ILookupResult.md)[]\>
 
 find meta information about a mod
 this will calculate a hash and the file size of the specified file
@@ -453,160 +516,133 @@ game.
 
 **`memberof`** IExtensionApi
 
-#### Type declaration:
+#### Parameters
 
-▸ (`details`: [*ILookupDetails*](types.ilookupdetails.md), `ignoreCache?`: *boolean*): [*Promise*](../classes/promise.md)<[*ILookupResult*](types.ilookupresult.md)[]\>
+| Name | Type |
+| :------ | :------ |
+| `details` | [`ILookupDetails`](types.ILookupDetails.md) |
+| `ignoreCache?` | `boolean` |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`details` | [*ILookupDetails*](types.ilookupdetails.md) |
-`ignoreCache?` | *boolean* |
+[`Promise`](../classes/Promise.md)<[`ILookupResult`](types.ILookupResult.md)[]\>
 
-**Returns:** [*Promise*](../classes/promise.md)<[*ILookupResult*](types.ilookupresult.md)[]\>
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:555
-
-Defined in: src/types/IExtensionContext.ts:555
+../src/types/IExtensionContext.ts:595
 
 ___
 
 ### lookupModReference
 
-• **lookupModReference**: (`ref`: [*IReference*](types.ireference.md)) => [*Promise*](../classes/promise.md)<[*ILookupResult*](types.ilookupresult.md)[]\>
+▸ **lookupModReference**(`ref`, `options?`): [`Promise`](../classes/Promise.md)<`IModLookupResult`[]\>
 
 find meta information about a mod
 
 **`memberof`** IExtensionApi
 
-#### Type declaration:
+#### Parameters
 
-▸ (`ref`: [*IReference*](types.ireference.md)): [*Promise*](../classes/promise.md)<[*ILookupResult*](types.ilookupresult.md)[]\>
+| Name | Type |
+| :------ | :------ |
+| `ref` | [`IModReference`](types.IModReference.md) |
+| `options?` | `ILookupOptions` |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`ref` | [*IReference*](types.ireference.md) |
+[`Promise`](../classes/Promise.md)<`IModLookupResult`[]\>
 
-**Returns:** [*Promise*](../classes/promise.md)<[*ILookupResult*](types.ilookupresult.md)[]\>
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:536
-
-Defined in: src/types/IExtensionContext.ts:536
+../src/types/IExtensionContext.ts:576
 
 ___
 
 ### onAsync
 
-• **onAsync**: (`eventName`: *string*, `listener`: (...`args`: *any*[]) => *PromiseLike*<any\>) => *void*
+▸ **onAsync**(`eventName`, `listener`): `void`
 
 handle an event emitted with emitAndAwait. The listener can return a promise and the emitter
 will only return after all promises from handlers are returned.
 Note that listeners should report all errors themselves, it is considered a bug if the listener
 returns a rejected promise.
+If errors do need to be reported they have to be part of the resolved valued
 
-#### Type declaration:
+#### Parameters
 
-▸ (`eventName`: *string*, `listener`: (...`args`: *any*[]) => *PromiseLike*<any\>): *void*
+| Name | Type |
+| :------ | :------ |
+| `eventName` | `string` |
+| `listener` | (...`args`: `any`[]) => `PromiseLike`<`any`\> |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`eventName` | *string* |
-`listener` | (...`args`: *any*[]) => *PromiseLike*<any\> |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:624
-
-Defined in: src/types/IExtensionContext.ts:624
+../src/types/IExtensionContext.ts:665
 
 ___
 
 ### onStateChange
 
-• `Optional` **onStateChange**: <T\>(`path`: *string*[], `callback`: [*StateChangeCallback*](../modules/types.md#statechangecallback)<T\>) => *void*
+▸ `Optional` **onStateChange**<`T`\>(`path`, `callback`): `void`
 
 register a callback for changes to the state
 
-**`param`** path in the state-tree to watch for changes,
-                  i.e. ['settings', 'interface', 'language'] would call the callback
-                  for all changes to the interface language
-
 **`memberof`** IExtensionApi
 
-#### Type declaration:
+#### Type parameters
 
-▸ <T\>(`path`: *string*[], `callback`: [*StateChangeCallback*](../modules/types.md#statechangecallback)<T\>): *void*
+| Name | Type |
+| :------ | :------ |
+| `T` | `any` |
 
-#### Type parameters:
+#### Parameters
 
-Name | Default |
-:------ | :------ |
-`T` | *any* |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `path` | `string`[] | path in the state-tree to watch for changes,                   i.e. ['settings', 'interface', 'language'] would call the callback                   for all changes to the interface language |
+| `callback` | [`StateChangeCallback`](../modules/types.md#statechangecallback)<`T`\> | - |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`path` | *string*[] |
-`callback` | [*StateChangeCallback*](../modules/types.md#statechangecallback)<T\> |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:511
-
-Defined in: src/types/IExtensionContext.ts:511
+../src/types/IExtensionContext.ts:541
 
 ___
 
 ### openArchive
 
-• **openArchive**: (`archivePath`: *string*, `options?`: [*IArchiveOptions*](types.iarchiveoptions.md), `extension?`: *string*) => [*Promise*](../classes/promise.md)<[*Archive*](../classes/util.archive.md)\>
+▸ **openArchive**(`archivePath`, `options?`, `extension?`): [`Promise`](../classes/Promise.md)<[`Archive`](../classes/util.Archive.md)\>
 
 opens an archive
 
-#### Type declaration:
+#### Parameters
 
-▸ (`archivePath`: *string*, `options?`: [*IArchiveOptions*](types.iarchiveoptions.md), `extension?`: *string*): [*Promise*](../classes/promise.md)<[*Archive*](../classes/util.archive.md)\>
+| Name | Type |
+| :------ | :------ |
+| `archivePath` | `string` |
+| `options?` | [`IArchiveOptions`](types.IArchiveOptions.md) |
+| `extension?` | `string` |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`archivePath` | *string* |
-`options?` | [*IArchiveOptions*](types.iarchiveoptions.md) |
-`extension?` | *string* |
+[`Promise`](../classes/Promise.md)<[`Archive`](../classes/util.Archive.md)\>
 
-**Returns:** [*Promise*](../classes/promise.md)<[*Archive*](../classes/util.archive.md)\>
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:567
-
-Defined in: src/types/IExtensionContext.ts:567
-
-___
-
-### registerProtocol
-
-• **registerProtocol**: [*IRegisterProtocol*](types.iregisterprotocol.md)
-
-registers an uri protocol to be handled by this application. If the "def"ault parameter
-is set to true, this application will also be inserted as the system wide default handler
-for the protocol. Use with caution, as this will overwrite the previous value, which
-can't be undone automatically
-
-**`memberof`** IExtensionContext
-
-Defined in: src/types/IExtensionContext.ts:522
+../src/types/IExtensionContext.ts:607
 
 ___
 
 ### runExecutable
 
-• **runExecutable**: (`executable`: *string*, `args`: *string*[], `options`: [*IRunOptions*](types.irunoptions.md)) => [*Promise*](../classes/promise.md)<void\>
+▸ **runExecutable**(`executable`, `args`, `options`): [`Promise`](../classes/Promise.md)<`void`\>
 
 run an executable. This is comparable to node.js child_process.spawn but it allows us to add
 extensions, like support interpreters and hooks.
@@ -614,162 +650,150 @@ It will also automatically ask the user to authorize elevation if the executable
 The returned promise is resolved when the started process has run to completion.
 IRunOptions.onSpawned can be used to react to when the process has been started.
 
-#### Type declaration:
+#### Parameters
 
-▸ (`executable`: *string*, `args`: *string*[], `options`: [*IRunOptions*](types.irunoptions.md)): [*Promise*](../classes/promise.md)<void\>
+| Name | Type |
+| :------ | :------ |
+| `executable` | `string` |
+| `args` | `string`[] |
+| `options` | [`IRunOptions`](types.IRunOptions.md) |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`executable` | *string* |
-`args` | *string*[] |
-`options` | [*IRunOptions*](types.irunoptions.md) |
+[`Promise`](../classes/Promise.md)<`void`\>
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:609
-
-Defined in: src/types/IExtensionContext.ts:609
+../src/types/IExtensionContext.ts:649
 
 ___
 
 ### saveModMeta
 
-• **saveModMeta**: (`modInfo`: [*IModInfo*](types.imodinfo.md)) => [*Promise*](../classes/promise.md)<void\>
+▸ **saveModMeta**(`modInfo`): [`Promise`](../classes/Promise.md)<`void`\>
 
 save meta information about a mod
 
 **`memberof`** IExtensionApi
 
-#### Type declaration:
+#### Parameters
 
-▸ (`modInfo`: [*IModInfo*](types.imodinfo.md)): [*Promise*](../classes/promise.md)<void\>
+| Name | Type |
+| :------ | :------ |
+| `modInfo` | [`IModInfo`](types.IModInfo.md) |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`modInfo` | [*IModInfo*](types.imodinfo.md) |
+[`Promise`](../classes/Promise.md)<`void`\>
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:562
-
-Defined in: src/types/IExtensionContext.ts:562
+../src/types/IExtensionContext.ts:602
 
 ___
 
 ### selectDir
 
-• **selectDir**: (`options`: [*IOpenOptions*](types.iopenoptions.md)) => [*Promise*](../classes/promise.md)<string\>
+▸ **selectDir**(`options`): [`Promise`](../classes/Promise.md)<`string`\>
 
 show a system dialog to open a single directory
 
 **`memberof`** IExtensionApi
 
-#### Type declaration:
+#### Parameters
 
-▸ (`options`: [*IOpenOptions*](types.iopenoptions.md)): [*Promise*](../classes/promise.md)<string\>
+| Name | Type |
+| :------ | :------ |
+| `options` | [`IOpenOptions`](types.IOpenOptions.md) |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`options` | [*IOpenOptions*](types.iopenoptions.md) |
+[`Promise`](../classes/Promise.md)<`string`\>
 
-**Returns:** [*Promise*](../classes/promise.md)<string\>
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:438
-
-Defined in: src/types/IExtensionContext.ts:438
+../src/types/IExtensionContext.ts:468
 
 ___
 
 ### selectExecutable
 
-• **selectExecutable**: (`options`: [*IOpenOptions*](types.iopenoptions.md)) => [*Promise*](../classes/promise.md)<string\>
+▸ **selectExecutable**(`options`): [`Promise`](../classes/Promise.md)<`string`\>
 
 show a system dialog to select an executable file
 
 **`memberof`** IExtensionApi
 
-#### Type declaration:
+#### Parameters
 
-▸ (`options`: [*IOpenOptions*](types.iopenoptions.md)): [*Promise*](../classes/promise.md)<string\>
+| Name | Type |
+| :------ | :------ |
+| `options` | [`IOpenOptions`](types.IOpenOptions.md) |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`options` | [*IOpenOptions*](types.iopenoptions.md) |
+[`Promise`](../classes/Promise.md)<`string`\>
 
-**Returns:** [*Promise*](../classes/promise.md)<string\>
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:431
-
-Defined in: src/types/IExtensionContext.ts:431
+../src/types/IExtensionContext.ts:461
 
 ___
 
 ### selectFile
 
-• **selectFile**: (`options`: [*IOpenOptions*](types.iopenoptions.md)) => [*Promise*](../classes/promise.md)<string\>
+▸ **selectFile**(`options`): [`Promise`](../classes/Promise.md)<`string`\>
 
 show a system dialog to open a single file
 
 **`memberof`** IExtensionApi
 
-#### Type declaration:
+#### Parameters
 
-▸ (`options`: [*IOpenOptions*](types.iopenoptions.md)): [*Promise*](../classes/promise.md)<string\>
+| Name | Type |
+| :------ | :------ |
+| `options` | [`IOpenOptions`](types.IOpenOptions.md) |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`options` | [*IOpenOptions*](types.iopenoptions.md) |
+[`Promise`](../classes/Promise.md)<`string`\>
 
-**Returns:** [*Promise*](../classes/promise.md)<string\>
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:424
-
-Defined in: src/types/IExtensionContext.ts:424
+../src/types/IExtensionContext.ts:454
 
 ___
 
 ### sendNotification
 
-• `Optional` **sendNotification**: (`notification`: [*INotification*](types.inotification.md)) => *string*
+▸ `Optional` **sendNotification**(`notification`): `string`
 
 show a notification to the user.
 This is not available in the call to registerReducer
 
-**`returns`** the notification id
-
 **`memberof`** IExtensionApi
 
-#### Type declaration:
+#### Parameters
 
-▸ (`notification`: [*INotification*](types.inotification.md)): *string*
+| Name | Type |
+| :------ | :------ |
+| `notification` | [`INotification`](types.INotification.md) |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`notification` | [*INotification*](types.inotification.md) |
+`string`
 
-**Returns:** *string*
+the notification id
 
-Defined in: src/types/IExtensionContext.ts:382
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:382
+../src/types/IExtensionContext.ts:412
 
 ___
 
 ### setStylesheet
 
-• **setStylesheet**: (`key`: *string*, `filePath`: *string*) => *void*
+▸ **setStylesheet**(`key`, `filePath`): `void`
 
 insert or replace a sass-stylesheet. It gets integrated into the existing sheets based
 on the key:
@@ -789,63 +813,54 @@ styles.
  to the controls added by your extension. This means it's your responsibility to make sure
  your stylesheet doesn't modify foreign controls.
 
-**`param`** identify the key to set. If this is an existing sheet, that sheet will be
-                    replaced
-
-**`param`** path of the corresponding stylesheet file
-
 **`memberof`** IExtensionContext
 
-#### Type declaration:
+#### Parameters
 
-▸ (`key`: *string*, `filePath`: *string*): *void*
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `string` | identify the key to set. If this is an existing sheet, that sheet will be                     replaced |
+| `filePath` | `string` | path of the corresponding stylesheet file |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`key` | *string* |
-`filePath` | *string* |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:600
-
-Defined in: src/types/IExtensionContext.ts:600
+../src/types/IExtensionContext.ts:640
 
 ___
 
 ### showDialog
 
-• `Optional` **showDialog**: (`type`: [*DialogType*](../modules/actions.md#dialogtype), `title`: *string*, `content`: [*IDialogContent*](actions.idialogcontent.md), `actions`: [*DialogActions*](../modules/actions.md#dialogactions), `id?`: *string*) => [*Promise*](../classes/promise.md)<[*IDialogResult*](actions.idialogresult.md)\>
+▸ `Optional` **showDialog**(`type`, `title`, `content`, `actions`, `id?`): [`Promise`](../classes/Promise.md)<[`IDialogResult`](actions.IDialogResult.md)\>
 
 show a dialog
 
-#### Type declaration:
+#### Parameters
 
-▸ (`type`: [*DialogType*](../modules/actions.md#dialogtype), `title`: *string*, `content`: [*IDialogContent*](actions.idialogcontent.md), `actions`: [*DialogActions*](../modules/actions.md#dialogactions), `id?`: *string*): [*Promise*](../classes/promise.md)<[*IDialogResult*](actions.idialogresult.md)\>
+| Name | Type |
+| :------ | :------ |
+| `type` | [`DialogType`](../modules/actions.md#dialogtype) |
+| `title` | `string` |
+| `content` | [`IDialogContent`](actions.IDialogContent.md) |
+| `actions` | [`DialogActions`](../modules/actions.md#dialogactions) |
+| `id?` | `string` |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`type` | [*DialogType*](../modules/actions.md#dialogtype) |
-`title` | *string* |
-`content` | [*IDialogContent*](actions.idialogcontent.md) |
-`actions` | [*DialogActions*](../modules/actions.md#dialogactions) |
-`id?` | *string* |
+[`Promise`](../classes/Promise.md)<[`IDialogResult`](actions.IDialogResult.md)\>
 
-**Returns:** [*Promise*](../classes/promise.md)<[*IDialogResult*](actions.idialogresult.md)\>
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:397
-
-Defined in: src/types/IExtensionContext.ts:397
+../src/types/IExtensionContext.ts:427
 
 ___
 
 ### showErrorNotification
 
-• `Optional` **showErrorNotification**: (`message`: *string*, `detail`: *any*, `options?`: [*IErrorOptions*](types.ierroroptions.md)) => *void*
+▸ `Optional` **showErrorNotification**(`message`, `detail`, `options?`): `void`
 
 show an error message to the user.
 This is a convenience wrapper for sendNotification.
@@ -853,76 +868,88 @@ This is not available in the call to registerReducer
 
 **`memberof`** IExtensionApi
 
-#### Type declaration:
+#### Parameters
 
-▸ (`message`: *string*, `detail`: *any*, `options?`: [*IErrorOptions*](types.ierroroptions.md)): *void*
+| Name | Type |
+| :------ | :------ |
+| `message` | `string` |
+| `detail` | `any` |
+| `options?` | [`IErrorOptions`](types.IErrorOptions.md) |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`message` | *string* |
-`detail` | *any* |
-`options?` | [*IErrorOptions*](types.ierroroptions.md) |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:391
-
-Defined in: src/types/IExtensionContext.ts:391
-
-___
-
-### store
-
-• `Optional` **store**: [*ThunkStore*](types.thunkstore.md)<any\>
-
-the redux store containing all application state & data
-
-Please note: this store object will remain valid for the whole
-  application runtime so you can store it, bind it to functions
-  and so on. The state object (store.getState()) is immutable and
-  will be a different object whenever the state is changed.
-  Thus you should *not* store/bind the state directly unless you
-  actually want a "snapshot" of the state.
-
-**`memberof`** IExtensionApi
-
-Defined in: src/types/IExtensionContext.ts:453
+../src/types/IExtensionContext.ts:421
 
 ___
 
 ### suppressNotification
 
-• `Optional` **suppressNotification**: (`id`: *string*, `suppress?`: *boolean*) => *void*
+▸ `Optional` **suppressNotification**(`id`, `suppress?`): `void`
 
 hides a notification and don't show it again
 if this is called with the second parameter set to false, it re-enables the notification
 instead
 
-#### Type declaration:
+#### Parameters
 
-▸ (`id`: *string*, `suppress?`: *boolean*): *void*
+| Name | Type |
+| :------ | :------ |
+| `id` | `string` |
+| `suppress?` | `boolean` |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`id` | *string* |
-`suppress?` | *boolean* |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:417
-
-Defined in: src/types/IExtensionContext.ts:417
+../src/types/IExtensionContext.ts:447
 
 ___
 
-### translate
+### withPrePost
 
-• **translate**: TFunction
+▸ **withPrePost**<`T`\>(`eventName`, `callback`): (...`args`: `any`[]) => [`Promise`](../classes/Promise.md)<`T`\>
 
-translation function
+wraps a function such that it will emitAndAwait will-eventName and did-eventName events
+before and after invoking the actual callback.
+both these events receive the arguments passed to the callback, the did-event also receives
+the result of the callback if any (the result is the first argument because the number
+of arguments may be variable)
 
-Defined in: src/types/IExtensionContext.ts:466
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `eventName` | `string` |
+| `callback` | (...`args`: `any`[]) => [`Promise`](../classes/Promise.md)<`T`\> |
+
+#### Returns
+
+`fn`
+
+▸ (...`args`): [`Promise`](../classes/Promise.md)<`T`\>
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...args` | `any`[] |
+
+##### Returns
+
+[`Promise`](../classes/Promise.md)<`T`\>
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:674

@@ -8,102 +8,135 @@
 
 ### Properties
 
-- [border](tooltip.iiconbuttonextraprops.md#border)
-- [flip](tooltip.iiconbuttonextraprops.md#flip)
-- [hollow](tooltip.iiconbuttonextraprops.md#hollow)
-- [icon](tooltip.iiconbuttonextraprops.md#icon)
-- [inverse](tooltip.iiconbuttonextraprops.md#inverse)
-- [pulse](tooltip.iiconbuttonextraprops.md#pulse)
-- [rotate](tooltip.iiconbuttonextraprops.md#rotate)
-- [rotateId](tooltip.iiconbuttonextraprops.md#rotateid)
-- [spin](tooltip.iiconbuttonextraprops.md#spin)
-- [stroke](tooltip.iiconbuttonextraprops.md#stroke)
-- [vertical](tooltip.iiconbuttonextraprops.md#vertical)
+- [border](tooltip.IIconButtonExtraProps.md#border)
+- [flip](tooltip.IIconButtonExtraProps.md#flip)
+- [hollow](tooltip.IIconButtonExtraProps.md#hollow)
+- [icon](tooltip.IIconButtonExtraProps.md#icon)
+- [inverse](tooltip.IIconButtonExtraProps.md#inverse)
+- [pulse](tooltip.IIconButtonExtraProps.md#pulse)
+- [rotate](tooltip.IIconButtonExtraProps.md#rotate)
+- [rotateId](tooltip.IIconButtonExtraProps.md#rotateid)
+- [set](tooltip.IIconButtonExtraProps.md#set)
+- [spin](tooltip.IIconButtonExtraProps.md#spin)
+- [stroke](tooltip.IIconButtonExtraProps.md#stroke)
+- [vertical](tooltip.IIconButtonExtraProps.md#vertical)
 
 ## Properties
 
 ### border
 
-• `Optional` **border**: *boolean*
+• `Optional` **border**: `boolean`
 
-Defined in: src/controls/TooltipControls.tsx:60
+#### Defined in
+
+../src/controls/TooltipControls.tsx:61
 
 ___
 
 ### flip
 
-• `Optional` **flip**: *horizontal* \| *vertical*
+• `Optional` **flip**: ``"horizontal"`` \| ``"vertical"``
 
-Defined in: src/controls/TooltipControls.tsx:62
+#### Defined in
+
+../src/controls/TooltipControls.tsx:63
 
 ___
 
 ### hollow
 
-• `Optional` **hollow**: *boolean*
+• `Optional` **hollow**: `boolean`
 
-Defined in: src/controls/TooltipControls.tsx:59
+#### Defined in
+
+../src/controls/TooltipControls.tsx:60
 
 ___
 
 ### icon
 
-• **icon**: *string*
+• **icon**: `string`
 
-Defined in: src/controls/TooltipControls.tsx:55
+#### Defined in
+
+../src/controls/TooltipControls.tsx:55
 
 ___
 
 ### inverse
 
-• `Optional` **inverse**: *boolean*
+• `Optional` **inverse**: `boolean`
 
-Defined in: src/controls/TooltipControls.tsx:61
+#### Defined in
+
+../src/controls/TooltipControls.tsx:62
 
 ___
 
 ### pulse
 
-• `Optional` **pulse**: *boolean*
+• `Optional` **pulse**: `boolean`
 
-Defined in: src/controls/TooltipControls.tsx:57
+#### Defined in
+
+../src/controls/TooltipControls.tsx:58
 
 ___
 
 ### rotate
 
-• `Optional` **rotate**: *number*
+• `Optional` **rotate**: `number`
 
-Defined in: src/controls/TooltipControls.tsx:63
+#### Defined in
+
+../src/controls/TooltipControls.tsx:64
 
 ___
 
 ### rotateId
 
-• `Optional` **rotateId**: *string*
+• `Optional` **rotateId**: `string`
 
-Defined in: src/controls/TooltipControls.tsx:64
+#### Defined in
+
+../src/controls/TooltipControls.tsx:65
+
+___
+
+### set
+
+• `Optional` **set**: `string`
+
+#### Defined in
+
+../src/controls/TooltipControls.tsx:56
 
 ___
 
 ### spin
 
-• `Optional` **spin**: *boolean*
+• `Optional` **spin**: `boolean`
 
-Defined in: src/controls/TooltipControls.tsx:56
+#### Defined in
+
+../src/controls/TooltipControls.tsx:57
 
 ___
 
 ### stroke
 
-• `Optional` **stroke**: *boolean*
+• `Optional` **stroke**: `boolean`
 
-Defined in: src/controls/TooltipControls.tsx:58
+#### Defined in
+
+../src/controls/TooltipControls.tsx:59
 
 ___
 
 ### vertical
 
-• `Optional` **vertical**: *boolean*
+• `Optional` **vertical**: `boolean`
 
-Defined in: src/controls/TooltipControls.tsx:65
+#### Defined in
+
+../src/controls/TooltipControls.tsx:66

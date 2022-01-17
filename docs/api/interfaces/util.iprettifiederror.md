@@ -8,30 +8,36 @@
 
 ### Properties
 
-- [allowReport](util.iprettifiederror.md#allowreport)
-- [message](util.iprettifiederror.md#message)
-- [replace](util.iprettifiederror.md#replace)
+- [allowReport](util.IPrettifiedError.md#allowreport)
+- [message](util.IPrettifiedError.md#message)
+- [replace](util.IPrettifiedError.md#replace)
 
 ## Properties
 
 ### allowReport
 
-• `Optional` **allowReport**: *boolean*
+• `Optional` **allowReport**: `boolean`
 
-Defined in: src/util/message.ts:345
+#### Defined in
+
+../src/util/message.ts:379
 
 ___
 
 ### message
 
-• **message**: *string*
+• **message**: `string`
 
-Defined in: src/util/message.ts:343
+#### Defined in
+
+../src/util/message.ts:377
 
 ___
 
 ### replace
 
-• `Optional` **replace**: *any*
+• `Optional` **replace**: `any`
 
-Defined in: src/util/message.ts:344
+#### Defined in
+
+../src/util/message.ts:378

@@ -8,30 +8,47 @@
 
 ### Properties
 
-- [instructions](types.ibrowserstate.md#instructions)
-- [subscriber](types.ibrowserstate.md#subscriber)
-- [url](types.ibrowserstate.md#url)
+- [instructions](types.IBrowserState.md#instructions)
+- [skippable](types.IBrowserState.md#skippable)
+- [subscriber](types.IBrowserState.md#subscriber)
+- [url](types.IBrowserState.md#url)
 
 ## Properties
 
 ### instructions
 
-• **instructions**: *string*
+• **instructions**: `string`
 
-Defined in: src/types/IState.ts:278
+#### Defined in
+
+../src/types/IState.ts:282
+
+___
+
+### skippable
+
+• **skippable**: `boolean`
+
+#### Defined in
+
+../src/types/IState.ts:284
 
 ___
 
 ### subscriber
 
-• **subscriber**: *string*
+• **subscriber**: `string`
 
-Defined in: src/types/IState.ts:279
+#### Defined in
+
+../src/types/IState.ts:283
 
 ___
 
 ### url
 
-• **url**: *string*
+• **url**: `string`
 
-Defined in: src/types/IState.ts:277
+#### Defined in
+
+../src/types/IState.ts:281

@@ -6,28 +6,26 @@
 
 ## Table of contents
 
-### Properties
+### Methods
 
-- [onHighlight](types.icustomprops.md#onhighlight)
+- [onHighlight](types.ICustomProps.md#onhighlight)
 
-## Properties
+## Methods
 
 ### onHighlight
 
-• **onHighlight**: (`highlight`: *boolean*) => *void*
+▸ **onHighlight**(`highlight`): `void`
 
-#### Type declaration:
+#### Parameters
 
-▸ (`highlight`: *boolean*): *void*
+| Name | Type |
+| :------ | :------ |
+| `highlight` | `boolean` |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`highlight` | *boolean* |
+`void`
 
-**Returns:** *void*
+#### Defined in
 
-Defined in: src/types/ITableAttribute.ts:62
-
-Defined in: src/types/ITableAttribute.ts:62
+../src/types/ITableAttribute.ts:68

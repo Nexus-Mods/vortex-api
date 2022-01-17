@@ -8,44 +8,49 @@
 
 ### Properties
 
-- [action](types.idialogaction.md#action)
-- [default](types.idialogaction.md#default)
-- [label](types.idialogaction.md#label)
+- [default](types.IDialogAction.md#default)
+- [label](types.IDialogAction.md#label)
+
+### Methods
+
+- [action](types.IDialogAction.md#action)
 
 ## Properties
 
-### action
-
-• `Optional` **action**: (`label`: *string*) => *void*
-
-#### Type declaration:
-
-▸ (`label`: *string*): *void*
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`label` | *string* |
-
-**Returns:** *void*
-
-Defined in: src/types/IDialog.ts:9
-
-Defined in: src/types/IDialog.ts:9
-
-___
-
 ### default
 
-• `Optional` **default**: *boolean*
+• `Optional` **default**: `boolean`
 
-Defined in: src/types/IDialog.ts:8
+#### Defined in
+
+../src/types/IDialog.ts:8
 
 ___
 
 ### label
 
-• **label**: *string*
+• **label**: `string`
 
-Defined in: src/types/IDialog.ts:7
+#### Defined in
+
+../src/types/IDialog.ts:7
+
+## Methods
+
+### action
+
+▸ `Optional` **action**(`label`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `label` | `string` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+../src/types/IDialog.ts:9

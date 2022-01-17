@@ -4,88 +4,98 @@
 
 ## Hierarchy
 
-* *PureComponent*<*typeof* Modal.prototype.props, {}\>
+- `PureComponent`<typeof `Modal.prototype.props`, {}\>
 
-  ↳ **Modal**
+  ↳ **`Modal`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](modal.md#constructor)
+- [constructor](Modal.md#constructor)
 
 ### Properties
 
-- [context](modal.md#context)
-- [mMenuLayer](modal.md#mmenulayer)
-- [props](modal.md#props)
-- [refs](modal.md#refs)
-- [state](modal.md#state)
-- [Body](modal.md#body)
-- [Footer](modal.md#footer)
-- [Header](modal.md#header)
-- [Title](modal.md#title)
-- [childContextTypes](modal.md#childcontexttypes)
-- [contextType](modal.md#contexttype)
+- [context](Modal.md#context)
+- [getContainer](Modal.md#getcontainer)
+- [mMenuLayer](Modal.md#mmenulayer)
+- [props](Modal.md#props)
+- [refs](Modal.md#refs)
+- [state](Modal.md#state)
+- [Body](Modal.md#body)
+- [Footer](Modal.md#footer)
+- [Header](Modal.md#header)
+- [Title](Modal.md#title)
+- [childContextTypes](Modal.md#childcontexttypes)
+- [contextType](Modal.md#contexttype)
 
 ### Methods
 
-- [UNSAFE\_componentWillMount](modal.md#unsafe_componentwillmount)
-- [UNSAFE\_componentWillReceiveProps](modal.md#unsafe_componentwillreceiveprops)
-- [UNSAFE\_componentWillUpdate](modal.md#unsafe_componentwillupdate)
-- [componentDidCatch](modal.md#componentdidcatch)
-- [componentDidMount](modal.md#componentdidmount)
-- [componentDidUpdate](modal.md#componentdidupdate)
-- [componentWillMount](modal.md#componentwillmount)
-- [componentWillReceiveProps](modal.md#componentwillreceiveprops)
-- [componentWillUnmount](modal.md#componentwillunmount)
-- [componentWillUpdate](modal.md#componentwillupdate)
-- [forceUpdate](modal.md#forceupdate)
-- [getChildContext](modal.md#getchildcontext)
-- [getSnapshotBeforeUpdate](modal.md#getsnapshotbeforeupdate)
-- [render](modal.md#render)
-- [setMenuLayer](modal.md#setmenulayer)
-- [setState](modal.md#setstate)
-- [shouldComponentUpdate](modal.md#shouldcomponentupdate)
+- [UNSAFE\_componentWillMount](Modal.md#unsafe_componentwillmount)
+- [UNSAFE\_componentWillReceiveProps](Modal.md#unsafe_componentwillreceiveprops)
+- [UNSAFE\_componentWillUpdate](Modal.md#unsafe_componentwillupdate)
+- [componentDidCatch](Modal.md#componentdidcatch)
+- [componentDidMount](Modal.md#componentdidmount)
+- [componentDidUpdate](Modal.md#componentdidupdate)
+- [componentWillMount](Modal.md#componentwillmount)
+- [componentWillReceiveProps](Modal.md#componentwillreceiveprops)
+- [componentWillUnmount](Modal.md#componentwillunmount)
+- [componentWillUpdate](Modal.md#componentwillupdate)
+- [forceUpdate](Modal.md#forceupdate)
+- [getChildContext](Modal.md#getchildcontext)
+- [getContainerImpl](Modal.md#getcontainerimpl)
+- [getSnapshotBeforeUpdate](Modal.md#getsnapshotbeforeupdate)
+- [render](Modal.md#render)
+- [setMenuLayer](Modal.md#setmenulayer)
+- [setState](Modal.md#setstate)
+- [shouldComponentUpdate](Modal.md#shouldcomponentupdate)
 
 ## Constructors
 
 ### constructor
 
-\+ **new Modal**(`props`: *Readonly*<ModalProps\> & *Readonly*<{ `children?`: ReactNode  }\> \| *Readonly*<*Readonly*<ModalProps\> & *Readonly*<{ `children?`: ReactNode  }\>\>): [*Modal*](modal.md)
+• **new Modal**(`props`)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`props` | *Readonly*<ModalProps\> & *Readonly*<{ `children?`: ReactNode  }\> \| *Readonly*<*Readonly*<ModalProps\> & *Readonly*<{ `children?`: ReactNode  }\>\> |
+| Name | Type |
+| :------ | :------ |
+| `props` | `Readonly`<`ModalProps`\> & `Readonly`<{ `children?`: `ReactNode`  }\> \| `Readonly`<`Readonly`<`ModalProps`\> & `Readonly`<{ `children?`: `ReactNode`  }\>\> |
 
-**Returns:** [*Modal*](modal.md)
+#### Inherited from
 
-Defined in: node_modules/@types/react/index.d.ts:472
+React.PureComponent<typeof Modal.prototype.props, {}\>.constructor
 
-\+ **new Modal**(`props`: *Readonly*<ModalProps\> & *Readonly*<{ `children?`: ReactNode  }\>, `context`: *any*): [*Modal*](modal.md)
+#### Defined in
 
-**`deprecated`** 
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:474
+
+• **new Modal**(`props`, `context`)
+
+**`deprecated`**
 
 **`see`** https://reactjs.org/docs/legacy-context.html
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`props` | *Readonly*<ModalProps\> & *Readonly*<{ `children?`: ReactNode  }\> |
-`context` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `props` | `Readonly`<`ModalProps`\> & `Readonly`<{ `children?`: `ReactNode`  }\> |
+| `context` | `any` |
 
-**Returns:** [*Modal*](modal.md)
+#### Inherited from
 
-Defined in: node_modules/@types/react/index.d.ts:474
+React.PureComponent<typeof Modal.prototype.props, {}\>.constructor
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:479
 
 ## Properties
 
 ### context
 
-• **context**: *any*
+• **context**: `any`
 
 If using the new style context, re-declare this in your class to be the
 `React.ContextType` of your `static contextType`.
@@ -101,90 +111,146 @@ declare context: React.ContextType<typeof MyContext>
 
 **`see`** https://reactjs.org/docs/context.html
 
-Defined in: node_modules/@types/react/index.d.ts:472
+#### Inherited from
+
+React.PureComponent.context
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:472
+
+___
+
+### getContainer
+
+• `Private` **getContainer**: () => `HTMLElement`
+
+#### Type declaration
+
+▸ (): `HTMLElement`
+
+##### Returns
+
+`HTMLElement`
+
+#### Defined in
+
+../src/controls/Modal.tsx:17
 
 ___
 
 ### mMenuLayer
 
-• `Private` **mMenuLayer**: Element= null
+• `Private` **mMenuLayer**: `Element` = `null`
 
-Defined in: src/controls/Modal.tsx:15
+#### Defined in
+
+../src/controls/Modal.tsx:19
 
 ___
 
 ### props
 
-• `Readonly` **props**: *Readonly*<*Readonly*<ModalProps\> & *Readonly*<{ `children?`: ReactNode  }\>\> & *Readonly*<{ `children?`: ReactNode  }\>
+• `Readonly` **props**: `Readonly`<`Readonly`<`ModalProps`\> & `Readonly`<{ `children?`: `ReactNode`  }\>\> & `Readonly`<{ `children?`: `ReactNode`  }\>
 
-Defined in: node_modules/@types/react/index.d.ts:497
+#### Inherited from
+
+React.PureComponent.props
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:497
 
 ___
 
 ### refs
 
-• **refs**: *object*
+• **refs**: `Object`
 
-**`deprecated`** 
+**`deprecated`**
 https://reactjs.org/docs/refs-and-the-dom.html#legacy-api-string-refs
 
-#### Type declaration:
+#### Index signature
 
-Defined in: node_modules/@types/react/index.d.ts:503
+▪ [key: `string`]: `ReactInstance`
+
+#### Inherited from
+
+React.PureComponent.refs
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:503
 
 ___
 
 ### state
 
-• **state**: *Readonly*<{}\>
+• **state**: `Readonly`<{}\>
 
-Defined in: node_modules/@types/react/index.d.ts:498
+#### Inherited from
+
+React.PureComponent.state
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:498
 
 ___
 
 ### Body
 
-▪ `Static` **Body**: *typeof* ModalBody
+▪ `Static` **Body**: typeof `ModalBody` = `Modal.Body`
 
-Defined in: src/controls/Modal.tsx:8
+#### Defined in
+
+../src/controls/Modal.tsx:10
 
 ___
 
 ### Footer
 
-▪ `Static` **Footer**: *typeof* ModalFooter
+▪ `Static` **Footer**: typeof `ModalFooter` = `Modal.Footer`
 
-Defined in: src/controls/Modal.tsx:9
+#### Defined in
+
+../src/controls/Modal.tsx:11
 
 ___
 
 ### Header
 
-▪ `Static` **Header**: *typeof* ModalHeader
+▪ `Static` **Header**: typeof `ModalHeader` = `Modal.Header`
 
-Defined in: src/controls/Modal.tsx:6
+#### Defined in
+
+../src/controls/Modal.tsx:8
 
 ___
 
 ### Title
 
-▪ `Static` **Title**: *typeof* ModalTitle
+▪ `Static` **Title**: typeof `ModalTitle` = `Modal.Title`
 
-Defined in: src/controls/Modal.tsx:7
+#### Defined in
+
+../src/controls/Modal.tsx:9
 
 ___
 
 ### childContextTypes
 
-▪ `Static` **childContextTypes**: *ValidationMap*<any\>
+▪ `Static` **childContextTypes**: `ValidationMap`<`any`\>
 
-Defined in: src/controls/Modal.tsx:11
+#### Defined in
+
+../src/controls/Modal.tsx:13
 
 ___
 
 ### contextType
 
-▪ `Optional` `Static` **contextType**: *Context*<any\>
+▪ `Static` `Optional` **contextType**: `Context`<`any`\>
 
 If set, `this.context` will be set at runtime to the current value of the given Context.
 
@@ -205,13 +271,19 @@ class Foo extends React.Component {
 
 **`see`** https://reactjs.org/docs/context.html#classcontexttype
 
-Defined in: node_modules/@types/react/index.d.ts:454
+#### Inherited from
+
+React.PureComponent.contextType
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:454
 
 ## Methods
 
 ### UNSAFE\_componentWillMount
 
-▸ `Optional`**UNSAFE_componentWillMount**(): *void*
+▸ `Optional` **UNSAFE_componentWillMount**(): `void`
 
 Called immediately before mounting occurs, and before `Component#render`.
 Avoid introducing any side-effects or subscriptions in this method.
@@ -227,15 +299,23 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:708
+`void`
+
+#### Inherited from
+
+React.PureComponent.UNSAFE\_componentWillMount
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:708
 
 ___
 
 ### UNSAFE\_componentWillReceiveProps
 
-▸ `Optional`**UNSAFE_componentWillReceiveProps**(`nextProps`: *Readonly*<*Readonly*<ModalProps\> & *Readonly*<{ `children?`: ReactNode  }\>\>, `nextContext`: *any*): *void*
+▸ `Optional` **UNSAFE_componentWillReceiveProps**(`nextProps`, `nextContext`): `void`
 
 Called when the component may be receiving new props.
 React may call this even if props have not changed, so be sure to compare new and existing
@@ -254,22 +334,30 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<*Readonly*<ModalProps\> & *Readonly*<{ `children?`: ReactNode  }\>\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<`Readonly`<`ModalProps`\> & `Readonly`<{ `children?`: `ReactNode`  }\>\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:740
+`void`
+
+#### Inherited from
+
+React.PureComponent.UNSAFE\_componentWillReceiveProps
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:740
 
 ___
 
 ### UNSAFE\_componentWillUpdate
 
-▸ `Optional`**UNSAFE_componentWillUpdate**(`nextProps`: *Readonly*<*Readonly*<ModalProps\> & *Readonly*<{ `children?`: ReactNode  }\>\>, `nextState`: *Readonly*<{}\>, `nextContext`: *any*): *void*
+▸ `Optional` **UNSAFE_componentWillUpdate**(`nextProps`, `nextState`, `nextContext`): `void`
 
 Called immediately before rendering when new props or state is received. Not called for the initial render.
 
@@ -286,77 +374,109 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<*Readonly*<ModalProps\> & *Readonly*<{ `children?`: ReactNode  }\>\> |
-`nextState` | *Readonly*<{}\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<`Readonly`<`ModalProps`\> & `Readonly`<{ `children?`: `ReactNode`  }\>\> |
+| `nextState` | `Readonly`<{}\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:768
+`void`
+
+#### Inherited from
+
+React.PureComponent.UNSAFE\_componentWillUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:768
 
 ___
 
 ### componentDidCatch
 
-▸ `Optional`**componentDidCatch**(`error`: Error, `errorInfo`: ErrorInfo): *void*
+▸ `Optional` **componentDidCatch**(`error`, `errorInfo`): `void`
 
 Catches exceptions generated in descendant components. Unhandled exceptions will cause
 the entire component tree to unmount.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`error` | Error |
-`errorInfo` | ErrorInfo |
+| Name | Type |
+| :------ | :------ |
+| `error` | `Error` |
+| `errorInfo` | `ErrorInfo` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:637
+`void`
+
+#### Inherited from
+
+React.PureComponent.componentDidCatch
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:637
 
 ___
 
 ### componentDidMount
 
-▸ `Optional`**componentDidMount**(): *void*
+▸ `Optional` **componentDidMount**(): `void`
 
 Called immediately after a component is mounted. Setting state here will trigger re-rendering.
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:616
+`void`
+
+#### Inherited from
+
+React.PureComponent.componentDidMount
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:616
 
 ___
 
 ### componentDidUpdate
 
-▸ `Optional`**componentDidUpdate**(`prevProps`: *Readonly*<*Readonly*<ModalProps\> & *Readonly*<{ `children?`: ReactNode  }\>\>, `prevState`: *Readonly*<{}\>, `snapshot?`: *any*): *void*
+▸ `Optional` **componentDidUpdate**(`prevProps`, `prevState`, `snapshot?`): `void`
 
 Called immediately after updating occurs. Not called for the initial render.
 
 The snapshot is only present if getSnapshotBeforeUpdate is present and returns non-null.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`prevProps` | *Readonly*<*Readonly*<ModalProps\> & *Readonly*<{ `children?`: ReactNode  }\>\> |
-`prevState` | *Readonly*<{}\> |
-`snapshot?` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `prevProps` | `Readonly`<`Readonly`<`ModalProps`\> & `Readonly`<{ `children?`: `ReactNode`  }\>\> |
+| `prevState` | `Readonly`<{}\> |
+| `snapshot?` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:679
+`void`
+
+#### Inherited from
+
+React.PureComponent.componentDidUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:679
 
 ___
 
 ### componentWillMount
 
-▸ `Optional`**componentWillMount**(): *void*
+▸ `Optional` **componentWillMount**(): `void`
 
 Called immediately before mounting occurs, and before `Component#render`.
 Avoid introducing any side-effects or subscriptions in this method.
@@ -370,15 +490,23 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:694
+`void`
+
+#### Inherited from
+
+React.PureComponent.componentWillMount
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:694
 
 ___
 
 ### componentWillReceiveProps
 
-▸ `Optional`**componentWillReceiveProps**(`nextProps`: *Readonly*<*Readonly*<ModalProps\> & *Readonly*<{ `children?`: ReactNode  }\>\>, `nextContext`: *any*): *void*
+▸ `Optional` **componentWillReceiveProps**(`nextProps`, `nextContext`): `void`
 
 Called when the component may be receiving new props.
 React may call this even if props have not changed, so be sure to compare new and existing
@@ -395,35 +523,51 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<*Readonly*<ModalProps\> & *Readonly*<{ `children?`: ReactNode  }\>\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<`Readonly`<`ModalProps`\> & `Readonly`<{ `children?`: `ReactNode`  }\>\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:723
+`void`
+
+#### Inherited from
+
+React.PureComponent.componentWillReceiveProps
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:723
 
 ___
 
 ### componentWillUnmount
 
-▸ `Optional`**componentWillUnmount**(): *void*
+▸ `Optional` **componentWillUnmount**(): `void`
 
 Called immediately before a component is destroyed. Perform any necessary cleanup in this method, such as
 cancelled network requests, or cleaning up any DOM elements created in `componentDidMount`.
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:632
+`void`
+
+#### Inherited from
+
+React.PureComponent.componentWillUnmount
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:632
 
 ___
 
 ### componentWillUpdate
 
-▸ `Optional`**componentWillUpdate**(`nextProps`: *Readonly*<*Readonly*<ModalProps\> & *Readonly*<{ `children?`: ReactNode  }\>\>, `nextState`: *Readonly*<{}\>, `nextContext`: *any*): *void*
+▸ `Optional` **componentWillUpdate**(`nextProps`, `nextState`, `nextContext`): `void`
 
 Called immediately before rendering when new props or state is received. Not called for the initial render.
 
@@ -438,49 +582,83 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<*Readonly*<ModalProps\> & *Readonly*<{ `children?`: ReactNode  }\>\> |
-`nextState` | *Readonly*<{}\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<`Readonly`<`ModalProps`\> & `Readonly`<{ `children?`: `ReactNode`  }\>\> |
+| `nextState` | `Readonly`<{}\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:753
+`void`
+
+#### Inherited from
+
+React.PureComponent.componentWillUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:753
 
 ___
 
 ### forceUpdate
 
-▸ **forceUpdate**(`callback?`: () => *void*): *void*
+▸ **forceUpdate**(`callback?`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`callback?` | () => *void* |
+| Name | Type |
+| :------ | :------ |
+| `callback?` | () => `void` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:489
+`void`
+
+#### Inherited from
+
+React.PureComponent.forceUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:489
 
 ___
 
 ### getChildContext
 
-▸ **getChildContext**(): *any*
+▸ **getChildContext**(): `any`
 
-**Returns:** *any*
+#### Returns
 
-Defined in: src/controls/Modal.tsx:17
+`any`
+
+#### Defined in
+
+../src/controls/Modal.tsx:21
+
+___
+
+### getContainerImpl
+
+▸ `Private` **getContainerImpl**(): `HTMLElement`
+
+#### Returns
+
+`HTMLElement`
+
+#### Defined in
+
+../src/controls/Modal.tsx:38
 
 ___
 
 ### getSnapshotBeforeUpdate
 
-▸ `Optional`**getSnapshotBeforeUpdate**(`prevProps`: *Readonly*<*Readonly*<ModalProps\> & *Readonly*<{ `children?`: ReactNode  }\>\>, `prevState`: *Readonly*<{}\>): *any*
+▸ `Optional` **getSnapshotBeforeUpdate**(`prevProps`, `prevState`): `any`
 
 Runs before React applies the result of `render` to the document, and
 returns an object to be given to componentDidUpdate. Useful for saving
@@ -489,71 +667,99 @@ things such as scroll position before `render` causes changes to it.
 Note: the presence of getSnapshotBeforeUpdate prevents any of the deprecated
 lifecycle events from running.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`prevProps` | *Readonly*<*Readonly*<ModalProps\> & *Readonly*<{ `children?`: ReactNode  }\>\> |
-`prevState` | *Readonly*<{}\> |
+| Name | Type |
+| :------ | :------ |
+| `prevProps` | `Readonly`<`Readonly`<`ModalProps`\> & `Readonly`<{ `children?`: `ReactNode`  }\>\> |
+| `prevState` | `Readonly`<{}\> |
 
-**Returns:** *any*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:673
+`any`
+
+#### Inherited from
+
+React.PureComponent.getSnapshotBeforeUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:673
 
 ___
 
 ### render
 
-▸ **render**(): *Element*
+▸ **render**(): `Element`
 
-**Returns:** *Element*
+#### Returns
 
-Defined in: src/controls/Modal.tsx:21
+`Element`
+
+#### Overrides
+
+React.PureComponent.render
+
+#### Defined in
+
+../src/controls/Modal.tsx:25
 
 ___
 
 ### setMenuLayer
 
-▸ `Private`**setMenuLayer**(`ref`: Element): *void*
+▸ `Private` **setMenuLayer**(`ref`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`ref` | Element |
+| Name | Type |
+| :------ | :------ |
+| `ref` | `Element` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: src/controls/Modal.tsx:32
+`void`
+
+#### Defined in
+
+../src/controls/Modal.tsx:42
 
 ___
 
 ### setState
 
-▸ **setState**<K\>(`state`: {} \| (`prevState`: *Readonly*<{}\>, `props`: *Readonly*<*Readonly*<ModalProps\> & *Readonly*<{ `children?`: ReactNode  }\>\>) => {} \| *Pick*<{}, K\> \| *Pick*<{}, K\>, `callback?`: () => *void*): *void*
+▸ **setState**<`K`\>(`state`, `callback?`): `void`
 
-#### Type parameters:
+#### Type parameters
 
-Name | Type |
-:------ | :------ |
-`K` | *never* |
+| Name | Type |
+| :------ | :------ |
+| `K` | extends `never` |
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`state` | {} \| (`prevState`: *Readonly*<{}\>, `props`: *Readonly*<*Readonly*<ModalProps\> & *Readonly*<{ `children?`: ReactNode  }\>\>) => {} \| *Pick*<{}, K\> \| *Pick*<{}, K\> |
-`callback?` | () => *void* |
+| Name | Type |
+| :------ | :------ |
+| `state` | {} \| (`prevState`: `Readonly`<{}\>, `props`: `Readonly`<`Readonly`<`ModalProps`\> & `Readonly`<{ `children?`: `ReactNode`  }\>\>) => {} \| `Pick`<{}, `K`\> \| `Pick`<{}, `K`\> |
+| `callback?` | () => `void` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:484
+`void`
+
+#### Inherited from
+
+React.PureComponent.setState
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:484
 
 ___
 
 ### shouldComponentUpdate
 
-▸ `Optional`**shouldComponentUpdate**(`nextProps`: *Readonly*<*Readonly*<ModalProps\> & *Readonly*<{ `children?`: ReactNode  }\>\>, `nextState`: *Readonly*<{}\>, `nextContext`: *any*): *boolean*
+▸ `Optional` **shouldComponentUpdate**(`nextProps`, `nextState`, `nextContext`): `boolean`
 
 Called to determine whether the change in props and state should trigger a re-render.
 
@@ -564,14 +770,22 @@ props or states have changed.
 If false is returned, `Component#render`, `componentWillUpdate`
 and `componentDidUpdate` will not be called.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<*Readonly*<ModalProps\> & *Readonly*<{ `children?`: ReactNode  }\>\> |
-`nextState` | *Readonly*<{}\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<`Readonly`<`ModalProps`\> & `Readonly`<{ `children?`: `ReactNode`  }\>\> |
+| `nextState` | `Readonly`<{}\> |
+| `nextContext` | `any` |
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:627
+`boolean`
+
+#### Inherited from
+
+React.PureComponent.shouldComponentUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:627

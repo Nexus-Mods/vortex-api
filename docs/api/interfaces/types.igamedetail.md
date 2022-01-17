@@ -8,30 +8,36 @@
 
 ### Properties
 
-- [title](types.igamedetail.md#title)
-- [type](types.igamedetail.md#type)
-- [value](types.igamedetail.md#value)
+- [title](types.IGameDetail.md#title)
+- [type](types.IGameDetail.md#type)
+- [value](types.IGameDetail.md#value)
 
 ## Properties
 
 ### title
 
-• **title**: *string*
+• **title**: `string`
 
-Defined in: src/types/IExtensionContext.ts:256
+#### Defined in
+
+../src/types/IExtensionContext.ts:285
 
 ___
 
 ### type
 
-• `Optional` **type**: *string*
+• `Optional` **type**: `string`
 
-Defined in: src/types/IExtensionContext.ts:258
+#### Defined in
+
+../src/types/IExtensionContext.ts:287
 
 ___
 
 ### value
 
-• **value**: *any*
+• **value**: `any`
 
-Defined in: src/types/IExtensionContext.ts:257
+#### Defined in
+
+../src/types/IExtensionContext.ts:286

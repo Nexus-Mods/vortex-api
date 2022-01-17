@@ -8,77 +8,82 @@
 
 ### Properties
 
-- [attributeId](types.ifilterprops.md#attributeid)
-- [domRef](types.ifilterprops.md#domref)
-- [filter](types.ifilterprops.md#filter)
-- [onSetFilter](types.ifilterprops.md#onsetfilter)
-- [t](types.ifilterprops.md#t)
+- [attributeId](types.IFilterProps.md#attributeid)
+- [filter](types.IFilterProps.md#filter)
+- [t](types.IFilterProps.md#t)
+
+### Methods
+
+- [domRef](types.IFilterProps.md#domref)
+- [onSetFilter](types.IFilterProps.md#onsetfilter)
 
 ## Properties
 
 ### attributeId
 
-• **attributeId**: *string*
+• **attributeId**: `string`
 
-Defined in: src/types/ITableAttribute.ts:22
+#### Defined in
 
-___
-
-### domRef
-
-• **domRef**: (`ref`: HTMLElement) => *void*
-
-#### Type declaration:
-
-▸ (`ref`: HTMLElement): *void*
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`ref` | HTMLElement |
-
-**Returns:** *void*
-
-Defined in: src/types/ITableAttribute.ts:25
-
-Defined in: src/types/ITableAttribute.ts:25
+../src/types/ITableAttribute.ts:23
 
 ___
 
 ### filter
 
-• **filter**: *any*
+• **filter**: `any`
 
-Defined in: src/types/ITableAttribute.ts:21
+#### Defined in
 
-___
-
-### onSetFilter
-
-• **onSetFilter**: (`attributeId`: *string*, `value`: *any*) => *void*
-
-#### Type declaration:
-
-▸ (`attributeId`: *string*, `value`: *any*): *void*
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`attributeId` | *string* |
-`value` | *any* |
-
-**Returns:** *void*
-
-Defined in: src/types/ITableAttribute.ts:24
-
-Defined in: src/types/ITableAttribute.ts:24
+../src/types/ITableAttribute.ts:22
 
 ___
 
 ### t
 
-• **t**: TFunction
+• **t**: `TFunction`
 
-Defined in: src/types/ITableAttribute.ts:23
+#### Defined in
+
+../src/types/ITableAttribute.ts:24
+
+## Methods
+
+### domRef
+
+▸ **domRef**(`ref`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `ref` | `HTMLElement` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+../src/types/ITableAttribute.ts:26
+
+___
+
+### onSetFilter
+
+▸ **onSetFilter**(`attributeId`, `value`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `attributeId` | `string` |
+| `value` | `any` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+../src/types/ITableAttribute.ts:25

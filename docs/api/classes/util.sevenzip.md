@@ -8,154 +8,180 @@
 
 ### Constructors
 
-- [constructor](util.sevenzip.md#constructor)
+- [constructor](util.SevenZip.md#constructor)
 
 ### Methods
 
-- [add](util.sevenzip.md#add)
-- [delete](util.sevenzip.md#delete)
-- [extract](util.sevenzip.md#extract)
-- [extractFull](util.sevenzip.md#extractfull)
-- [list](util.sevenzip.md#list)
-- [test](util.sevenzip.md#test)
-- [update](util.sevenzip.md#update)
+- [add](util.SevenZip.md#add)
+- [delete](util.SevenZip.md#delete)
+- [extract](util.SevenZip.md#extract)
+- [extractFull](util.SevenZip.md#extractfull)
+- [list](util.SevenZip.md#list)
+- [test](util.SevenZip.md#test)
+- [update](util.SevenZip.md#update)
 
 ## Constructors
 
 ### constructor
 
-\+ **new SevenZip**(): [*SevenZip*](util.sevenzip.md)
-
-**Returns:** [*SevenZip*](util.sevenzip.md)
+• **new SevenZip**()
 
 ## Methods
 
 ### add
 
-▸ **add**(`archive`: *string*, `files`: *string* \| *string*[], `options?`: ICommandLineSwitches, `progress?`: IProgressCB): *Bluebird*<IResult\>
+▸ **add**(`archive`, `files`, `options?`, `progress?`): `Bluebird`<`IResult`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`archive` | *string* |
-`files` | *string* \| *string*[] |
-`options?` | ICommandLineSwitches |
-`progress?` | IProgressCB |
+| Name | Type |
+| :------ | :------ |
+| `archive` | `string` |
+| `files` | `string` \| `string`[] |
+| `options?` | `ICommandLineSwitches` |
+| `progress?` | `IProgressCB` |
 
-**Returns:** *Bluebird*<IResult\>
+#### Returns
 
-Defined in: node_modules/node-7z/lib/index.d.ts:33
+`Bluebird`<`IResult`\>
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/node-7z/lib/index.d.ts:33
 
 ___
 
 ### delete
 
-▸ **delete**(`archive`: *string*, `files`: *string* \| *string*[], `options?`: ICommandLineSwitches): *Bluebird*<IResult\>
+▸ **delete**(`archive`, `files`, `options?`): `Bluebird`<`IResult`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`archive` | *string* |
-`files` | *string* \| *string*[] |
-`options?` | ICommandLineSwitches |
+| Name | Type |
+| :------ | :------ |
+| `archive` | `string` |
+| `files` | `string` \| `string`[] |
+| `options?` | `ICommandLineSwitches` |
 
-**Returns:** *Bluebird*<IResult\>
+#### Returns
 
-Defined in: node_modules/node-7z/lib/index.d.ts:34
+`Bluebird`<`IResult`\>
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/node-7z/lib/index.d.ts:34
 
 ___
 
 ### extract
 
-▸ **extract**(`archive`: *string*, `dest`: *string*, `options?`: ICommandLineSwitches, `progress?`: IProgressCB, `passwordCB?`: () => *Bluebird*<string\>): *Bluebird*<IResult\>
+▸ **extract**(`archive`, `dest`, `options?`, `progress?`, `passwordCB?`): `Bluebird`<`IResult`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`archive` | *string* |
-`dest` | *string* |
-`options?` | ICommandLineSwitches |
-`progress?` | IProgressCB |
-`passwordCB?` | () => *Bluebird*<string\> |
+| Name | Type |
+| :------ | :------ |
+| `archive` | `string` |
+| `dest` | `string` |
+| `options?` | `ICommandLineSwitches` |
+| `progress?` | `IProgressCB` |
+| `passwordCB?` | () => `Bluebird`<`string`\> |
 
-**Returns:** *Bluebird*<IResult\>
+#### Returns
 
-Defined in: node_modules/node-7z/lib/index.d.ts:35
+`Bluebird`<`IResult`\>
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/node-7z/lib/index.d.ts:35
 
 ___
 
 ### extractFull
 
-▸ **extractFull**(`archive`: *string*, `dest`: *string*, `options?`: ICommandLineSwitches, `progress?`: IProgressCB, `passwordCB?`: () => *Bluebird*<string\>): *Bluebird*<IResult\>
+▸ **extractFull**(`archive`, `dest`, `options?`, `progress?`, `passwordCB?`): `Bluebird`<`IResult`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`archive` | *string* |
-`dest` | *string* |
-`options?` | ICommandLineSwitches |
-`progress?` | IProgressCB |
-`passwordCB?` | () => *Bluebird*<string\> |
+| Name | Type |
+| :------ | :------ |
+| `archive` | `string` |
+| `dest` | `string` |
+| `options?` | `ICommandLineSwitches` |
+| `progress?` | `IProgressCB` |
+| `passwordCB?` | () => `Bluebird`<`string`\> |
 
-**Returns:** *Bluebird*<IResult\>
+#### Returns
 
-Defined in: node_modules/node-7z/lib/index.d.ts:36
+`Bluebird`<`IResult`\>
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/node-7z/lib/index.d.ts:36
 
 ___
 
 ### list
 
-▸ **list**(`archive`: *string*, `options?`: ICommandLineSwitches, `progress?`: (`entries`: IFileEntry[]) => *void*): *Bluebird*<IFileSpec\>
+▸ **list**(`archive`, `options?`, `progress?`): `Bluebird`<`IFileSpec`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`archive` | *string* |
-`options?` | ICommandLineSwitches |
-`progress?` | (`entries`: IFileEntry[]) => *void* |
+| Name | Type |
+| :------ | :------ |
+| `archive` | `string` |
+| `options?` | `ICommandLineSwitches` |
+| `progress?` | (`entries`: `IFileEntry`[]) => `void` |
 
-**Returns:** *Bluebird*<IFileSpec\>
+#### Returns
 
-Defined in: node_modules/node-7z/lib/index.d.ts:37
+`Bluebird`<`IFileSpec`\>
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/node-7z/lib/index.d.ts:37
 
 ___
 
 ### test
 
-▸ **test**(`archive`: *string*, `options?`: ICommandLineSwitches, `progress?`: IProgressCB): *Bluebird*<IResult\>
+▸ **test**(`archive`, `options?`, `progress?`): `Bluebird`<`IResult`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`archive` | *string* |
-`options?` | ICommandLineSwitches |
-`progress?` | IProgressCB |
+| Name | Type |
+| :------ | :------ |
+| `archive` | `string` |
+| `options?` | `ICommandLineSwitches` |
+| `progress?` | `IProgressCB` |
 
-**Returns:** *Bluebird*<IResult\>
+#### Returns
 
-Defined in: node_modules/node-7z/lib/index.d.ts:38
+`Bluebird`<`IResult`\>
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/node-7z/lib/index.d.ts:38
 
 ___
 
 ### update
 
-▸ **update**(`archive`: *string*, `files`: *string* \| *string*[], `options?`: ICommandLineSwitches, `progress?`: IProgressCB): *Bluebird*<IResult\>
+▸ **update**(`archive`, `files`, `options?`, `progress?`): `Bluebird`<`IResult`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`archive` | *string* |
-`files` | *string* \| *string*[] |
-`options?` | ICommandLineSwitches |
-`progress?` | IProgressCB |
+| Name | Type |
+| :------ | :------ |
+| `archive` | `string` |
+| `files` | `string` \| `string`[] |
+| `options?` | `ICommandLineSwitches` |
+| `progress?` | `IProgressCB` |
 
-**Returns:** *Bluebird*<IResult\>
+#### Returns
 
-Defined in: node_modules/node-7z/lib/index.d.ts:39
+`Bluebird`<`IResult`\>
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/node-7z/lib/index.d.ts:39

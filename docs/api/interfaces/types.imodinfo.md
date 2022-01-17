@@ -8,122 +8,168 @@
 
 ### Properties
 
-- [details](types.imodinfo.md#details)
-- [domainName](types.imodinfo.md#domainname)
-- [expires](types.imodinfo.md#expires)
-- [fileMD5](types.imodinfo.md#filemd5)
-- [fileName](types.imodinfo.md#filename)
-- [fileSizeBytes](types.imodinfo.md#filesizebytes)
-- [fileVersion](types.imodinfo.md#fileversion)
-- [gameId](types.imodinfo.md#gameid)
-- [logicalFileName](types.imodinfo.md#logicalfilename)
-- [rules](types.imodinfo.md#rules)
-- [source](types.imodinfo.md#source)
-- [sourceURI](types.imodinfo.md#sourceuri)
+- [archived](types.IModInfo.md#archived)
+- [details](types.IModInfo.md#details)
+- [domainName](types.IModInfo.md#domainname)
+- [expires](types.IModInfo.md#expires)
+- [fileMD5](types.IModInfo.md#filemd5)
+- [fileName](types.IModInfo.md#filename)
+- [fileSizeBytes](types.IModInfo.md#filesizebytes)
+- [fileVersion](types.IModInfo.md#fileversion)
+- [gameId](types.IModInfo.md#gameid)
+- [logicalFileName](types.IModInfo.md#logicalfilename)
+- [rules](types.IModInfo.md#rules)
+- [source](types.IModInfo.md#source)
+- [sourceURI](types.IModInfo.md#sourceuri)
+- [status](types.IModInfo.md#status)
 
 ## Properties
 
+### archived
+
+• `Optional` **archived**: `boolean`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/modmeta-db/lib/types.d.ts:29
+
+___
+
 ### details
 
-• `Optional` **details**: *object*
+• `Optional` **details**: `Object`
 
-#### Type declaration:
+#### Type declaration
 
-Name | Type |
-:------ | :------ |
-`author`? | *string* |
-`category`? | *string* |
-`description`? | *string* |
-`fileId`? | *string* |
-`homepage`? | *string* |
-`modId`? | *string* |
+| Name | Type |
+| :------ | :------ |
+| `author?` | `string` |
+| `category?` | `string` |
+| `description?` | `string` |
+| `fileId?` | `string` |
+| `homepage?` | `string` |
+| `modId?` | `string` |
 
-Defined in: node_modules/modmeta-db/lib/types.d.ts:28
+#### Defined in
+
+E:/WorkC/vortex/node_modules/modmeta-db/lib/types.d.ts:31
 
 ___
 
 ### domainName
 
-• `Optional` **domainName**: *string*
+• `Optional` **domainName**: `string`
 
-Defined in: node_modules/modmeta-db/lib/types.d.ts:20
+#### Defined in
+
+E:/WorkC/vortex/node_modules/modmeta-db/lib/types.d.ts:21
 
 ___
 
 ### expires
 
-• `Optional` **expires**: *number*
+• `Optional` **expires**: `number`
 
-Defined in: node_modules/modmeta-db/lib/types.d.ts:27
+#### Defined in
+
+E:/WorkC/vortex/node_modules/modmeta-db/lib/types.d.ts:28
 
 ___
 
 ### fileMD5
 
-• **fileMD5**: *string*
+• **fileMD5**: `string`
 
-Defined in: node_modules/modmeta-db/lib/types.d.ts:23
+#### Defined in
+
+E:/WorkC/vortex/node_modules/modmeta-db/lib/types.d.ts:24
 
 ___
 
 ### fileName
 
-• **fileName**: *string*
+• **fileName**: `string`
 
-Defined in: node_modules/modmeta-db/lib/types.d.ts:17
+#### Defined in
+
+E:/WorkC/vortex/node_modules/modmeta-db/lib/types.d.ts:18
 
 ___
 
 ### fileSizeBytes
 
-• **fileSizeBytes**: *number*
+• **fileSizeBytes**: `number`
 
-Defined in: node_modules/modmeta-db/lib/types.d.ts:18
+#### Defined in
+
+E:/WorkC/vortex/node_modules/modmeta-db/lib/types.d.ts:19
 
 ___
 
 ### fileVersion
 
-• **fileVersion**: *string*
+• **fileVersion**: `string`
 
-Defined in: node_modules/modmeta-db/lib/types.d.ts:22
+#### Defined in
+
+E:/WorkC/vortex/node_modules/modmeta-db/lib/types.d.ts:23
 
 ___
 
 ### gameId
 
-• **gameId**: *string*
+• **gameId**: `string`
 
-Defined in: node_modules/modmeta-db/lib/types.d.ts:19
+#### Defined in
+
+E:/WorkC/vortex/node_modules/modmeta-db/lib/types.d.ts:20
 
 ___
 
 ### logicalFileName
 
-• `Optional` **logicalFileName**: *string*
+• `Optional` **logicalFileName**: `string`
 
-Defined in: node_modules/modmeta-db/lib/types.d.ts:21
+#### Defined in
+
+E:/WorkC/vortex/node_modules/modmeta-db/lib/types.d.ts:22
 
 ___
 
 ### rules
 
-• `Optional` **rules**: IRule[]
+• `Optional` **rules**: `IRule`[]
 
-Defined in: node_modules/modmeta-db/lib/types.d.ts:26
+#### Defined in
+
+E:/WorkC/vortex/node_modules/modmeta-db/lib/types.d.ts:27
 
 ___
 
 ### source
 
-• `Optional` **source**: *string*
+• `Optional` **source**: `string`
 
-Defined in: node_modules/modmeta-db/lib/types.d.ts:25
+#### Defined in
+
+E:/WorkC/vortex/node_modules/modmeta-db/lib/types.d.ts:26
 
 ___
 
 ### sourceURI
 
-• **sourceURI**: *any*
+• **sourceURI**: `any`
 
-Defined in: node_modules/modmeta-db/lib/types.d.ts:24
+#### Defined in
+
+E:/WorkC/vortex/node_modules/modmeta-db/lib/types.d.ts:25
+
+___
+
+### status
+
+• `Optional` **status**: `ModInfoStatus`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/modmeta-db/lib/types.d.ts:30

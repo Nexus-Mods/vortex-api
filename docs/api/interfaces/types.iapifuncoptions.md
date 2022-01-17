@@ -8,14 +8,16 @@
 
 ### Properties
 
-- [minArguments](types.iapifuncoptions.md#minarguments)
+- [minArguments](types.IApiFuncOptions.md#minarguments)
 
 ## Properties
 
 ### minArguments
 
-• `Optional` **minArguments**: *number*
+• `Optional` **minArguments**: `number`
 
 minimum number of arguments the caller has to pass to a api extension function
 
-Defined in: src/types/IExtensionContext.ts:358
+#### Defined in
+
+../src/types/IExtensionContext.ts:388

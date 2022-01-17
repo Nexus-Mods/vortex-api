@@ -8,99 +8,102 @@
 
 ### Properties
 
-- [getPath](types.imodtype.md#getpath)
-- [isSupported](types.imodtype.md#issupported)
-- [options](types.imodtype.md#options)
-- [priority](types.imodtype.md#priority)
-- [test](types.imodtype.md#test)
-- [typeId](types.imodtype.md#typeid)
+- [options](types.IModType.md#options)
+- [priority](types.IModType.md#priority)
+- [typeId](types.IModType.md#typeid)
+
+### Methods
+
+- [getPath](types.IModType.md#getpath)
+- [isSupported](types.IModType.md#issupported)
+- [test](types.IModType.md#test)
 
 ## Properties
 
-### getPath
-
-• **getPath**: (`game`: [*IGame*](types.igame.md)) => *string*
-
-#### Type declaration:
-
-▸ (`game`: [*IGame*](types.igame.md)): *string*
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`game` | [*IGame*](types.igame.md) |
-
-**Returns:** *string*
-
-Defined in: src/extensions/gamemode_management/types/IModType.ts:10
-
-Defined in: src/extensions/gamemode_management/types/IModType.ts:10
-
-___
-
-### isSupported
-
-• **isSupported**: (`gameId`: *string*) => *boolean*
-
-#### Type declaration:
-
-▸ (`gameId`: *string*): *boolean*
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`gameId` | *string* |
-
-**Returns:** *boolean*
-
-Defined in: src/extensions/gamemode_management/types/IModType.ts:9
-
-Defined in: src/extensions/gamemode_management/types/IModType.ts:9
-
-___
-
 ### options
 
-• **options**: [*IModTypeOptions*](types.imodtypeoptions.md)
+• **options**: [`IModTypeOptions`](types.IModTypeOptions.md)
 
-Defined in: src/extensions/gamemode_management/types/IModType.ts:12
+#### Defined in
+
+../src/extensions/gamemode_management/types/IModType.ts:12
 
 ___
 
 ### priority
 
-• **priority**: *number*
+• **priority**: `number`
 
-Defined in: src/extensions/gamemode_management/types/IModType.ts:8
+#### Defined in
 
-___
-
-### test
-
-• **test**: (`installInstructions`: [*IInstruction*](types.iinstruction.md)[]) => [*Promise*](../classes/promise.md)<boolean\>
-
-#### Type declaration:
-
-▸ (`installInstructions`: [*IInstruction*](types.iinstruction.md)[]): [*Promise*](../classes/promise.md)<boolean\>
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`installInstructions` | [*IInstruction*](types.iinstruction.md)[] |
-
-**Returns:** [*Promise*](../classes/promise.md)<boolean\>
-
-Defined in: src/extensions/gamemode_management/types/IModType.ts:11
-
-Defined in: src/extensions/gamemode_management/types/IModType.ts:11
+../src/extensions/gamemode_management/types/IModType.ts:8
 
 ___
 
 ### typeId
 
-• **typeId**: *string*
+• **typeId**: `string`
 
-Defined in: src/extensions/gamemode_management/types/IModType.ts:7
+#### Defined in
+
+../src/extensions/gamemode_management/types/IModType.ts:7
+
+## Methods
+
+### getPath
+
+▸ **getPath**(`game`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `game` | [`IGame`](types.IGame.md) |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+../src/extensions/gamemode_management/types/IModType.ts:10
+
+___
+
+### isSupported
+
+▸ **isSupported**(`gameId`): `boolean`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `gameId` | `string` |
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+../src/extensions/gamemode_management/types/IModType.ts:9
+
+___
+
+### test
+
+▸ **test**(`installInstructions`): [`Promise`](../classes/Promise.md)<`boolean`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `installInstructions` | [`IInstruction`](types.IInstruction.md)[] |
+
+#### Returns
+
+[`Promise`](../classes/Promise.md)<`boolean`\>
+
+#### Defined in
+
+../src/extensions/gamemode_management/types/IModType.ts:11

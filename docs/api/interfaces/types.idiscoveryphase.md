@@ -8,21 +8,25 @@
 
 ### Properties
 
-- [directory](types.idiscoveryphase.md#directory)
-- [progress](types.idiscoveryphase.md#progress)
+- [directory](types.IDiscoveryPhase.md#directory)
+- [progress](types.IDiscoveryPhase.md#progress)
 
 ## Properties
 
 ### directory
 
-• **directory**: *string*
+• **directory**: `string`
 
-Defined in: src/types/IState.ts:329
+#### Defined in
+
+../src/types/IState.ts:345
 
 ___
 
 ### progress
 
-• **progress**: *number*
+• **progress**: `number`
 
-Defined in: src/types/IState.ts:328
+#### Defined in
+
+../src/types/IState.ts:344

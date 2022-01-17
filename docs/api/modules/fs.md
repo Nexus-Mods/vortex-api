@@ -10,19 +10,25 @@
 
 ### Classes
 
-- [Stats](../classes/fs.stats.md)
-- [WriteStream](../classes/fs.writestream.md)
+- [Stats](../classes/fs.Stats.md)
+- [WriteStream](../classes/fs.WriteStream.md)
 
 ### Interfaces
 
-- [FSWatcher](../interfaces/fs.fswatcher.md)
-- [ILinkFileOptions](../interfaces/fs.ilinkfileoptions.md)
-- [IRemoveFileOptions](../interfaces/fs.iremovefileoptions.md)
-- [ITmpOptions](../interfaces/fs.itmpoptions.md)
+- [FSWatcher](../interfaces/fs.FSWatcher.md)
+- [ILinkFileOptions](../interfaces/fs.ILinkFileOptions.md)
+- [IRemoveFileOptions](../interfaces/fs.IRemoveFileOptions.md)
+- [ITmpOptions](../interfaces/fs.ITmpOptions.md)
+
+### Variables
+
+- [statSync](fs.md#statsync)
 
 ### Functions
 
 - [accessSync](fs.md#accesssync)
+- [appendFileAsync](fs.md#appendfileasync)
+- [appendFileSync](fs.md#appendfilesync)
 - [changeFileAttributes](fs.md#changefileattributes)
 - [changeFileOwnership](fs.md#changefileownership)
 - [chmodAsync](fs.md#chmodasync)
@@ -59,9 +65,9 @@
 - [removeSync](fs.md#removesync)
 - [renameAsync](fs.md#renameasync)
 - [rmdirAsync](fs.md#rmdirasync)
+- [setTFunction](fs.md#settfunction)
 - [statAsync](fs.md#statasync)
 - [statSilentAsync](fs.md#statsilentasync)
-- [statSync](fs.md#statsync)
 - [symlinkAsync](fs.md#symlinkasync)
 - [symlinkSync](fs.md#symlinksync)
 - [unlinkAsync](fs.md#unlinkasync)
@@ -75,116 +81,272 @@
 - [writeFileSync](fs.md#writefilesync)
 - [writeSync](fs.md#writesync)
 
+## Variables
+
+### statSync
+
+• **statSync**: `StatSyncFn`
+
+Synchronous stat(2) - Get file status.
+
+**`param`** A path to a file. If a URL is provided, it must use the `file:` protocol.
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:972
+
 ## Functions
 
 ### accessSync
 
-▸ **accessSync**(`path`: PathLike, `mode?`: *number*): *void*
+▸ **accessSync**(`path`, `mode?`): `void`
 
-Synchronously tests a user's permissions for the file specified by path.
+Synchronously tests a user's permissions for the file or directory specified
+by `path`. The `mode` argument is an optional integer that specifies the
+accessibility checks to be performed. Check `File access constants` for
+possible values of `mode`. It is possible to create a mask consisting of
+the bitwise OR of two or more values
+(e.g. `fs.constants.W_OK | fs.constants.R_OK`).
 
-#### Parameters:
+If any of the accessibility checks fail, an `Error` will be thrown. Otherwise,
+the method will return `undefined`.
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`path` | PathLike | A path to a file or directory. If a URL is provided, it must use the `file:` protocol. URL support is _experimental_.    |
-`mode?` | *number* | - |
+```js
+import { accessSync, constants } from 'fs';
 
-**Returns:** *void*
+try {
+  accessSync('etc/passwd', constants.R_OK | constants.W_OK);
+  console.log('can read/write');
+} catch (err) {
+  console.error('no access!');
+}
+```
 
-Defined in: node_modules/@types/node/fs.d.ts:1794
+**`since`** v0.11.15
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `path` | `PathLike` |
+| `mode?` | `number` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:3383
+
+___
+
+### appendFileAsync
+
+▸ `Const` **appendFileAsync**(`file`, `data`, `options?`): [`Promise`](../classes/Promise.md)<`void`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `file` | `string` |
+| `data` | `any` |
+| `options?` | `WriteFileOptions` |
+
+#### Returns
+
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/fs.ts:444
+
+___
+
+### appendFileSync
+
+▸ **appendFileSync**(`path`, `data`, `options?`): `void`
+
+Synchronously append data to a file, creating the file if it does not yet
+exist. `data` can be a string or a `Buffer`.
+
+The `mode` option only affects the newly created file. See {@link open} for more details.
+
+```js
+import { appendFileSync } from 'fs';
+
+try {
+  appendFileSync('message.txt', 'data to append');
+  console.log('The "data to append" was appended to file!');
+} catch (err) {
+  // Handle the error
+}
+```
+
+If `options` is a string, then it specifies the encoding:
+
+```js
+import { appendFileSync } from 'fs';
+
+appendFileSync('message.txt', 'data to append', 'utf8');
+```
+
+The `path` may be specified as a numeric file descriptor that has been opened
+for appending (using `fs.open()` or `fs.openSync()`). The file descriptor will
+not be closed automatically.
+
+```js
+import { openSync, closeSync, appendFileSync } from 'fs';
+
+let fd;
+
+try {
+  fd = openSync('message.txt', 'a');
+  appendFileSync(fd, 'data to append', 'utf8');
+} catch (err) {
+  // Handle the error
+} finally {
+  if (fd !== undefined)
+    closeSync(fd);
+}
+```
+
+**`since`** v0.6.7
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `path` | `PathOrFileDescriptor` | filename or file descriptor |
+| `data` | `string` \| `Uint8Array` | - |
+| `options?` | `WriteFileOptions` | - |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:2763
 
 ___
 
 ### changeFileAttributes
 
-▸ **changeFileAttributes**(`filePath`: *string*, `wantedAttributes`: *number*, `stat`: [*Stats*](../classes/fs.stats.md)): [*Promise*](../classes/promise.md)<void\>
+▸ **changeFileAttributes**(`filePath`, `wantedAttributes`, `stat`): [`Promise`](../classes/Promise.md)<`void`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`filePath` | *string* |
-`wantedAttributes` | *number* |
-`stat` | [*Stats*](../classes/fs.stats.md) |
+| Name | Type |
+| :------ | :------ |
+| `filePath` | `string` |
+| `wantedAttributes` | `number` |
+| `stat` | [`Stats`](../classes/fs.Stats.md) |
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Returns
 
-Defined in: src/util/fs.ts:997
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/fs.ts:943
 
 ___
 
 ### changeFileOwnership
 
-▸ **changeFileOwnership**(`filePath`: *string*, `stat`: [*Stats*](../classes/fs.stats.md)): [*Promise*](../classes/promise.md)<void\>
+▸ **changeFileOwnership**(`filePath`, `stat`): [`Promise`](../classes/Promise.md)<`void`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`filePath` | *string* |
-`stat` | [*Stats*](../classes/fs.stats.md) |
+| Name | Type |
+| :------ | :------ |
+| `filePath` | `string` |
+| `stat` | [`Stats`](../classes/fs.Stats.md) |
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Returns
 
-Defined in: src/util/fs.ts:967
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/fs.ts:913
 
 ___
 
 ### chmodAsync
 
-▸ `Const`**chmodAsync**(`path`: *string*, `mode`: *string* \| *number*): [*Promise*](../classes/promise.md)<void\>
+▸ `Const` **chmodAsync**(`path`, `mode`): [`Promise`](../classes/Promise.md)<`void`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`path` | *string* |
-`mode` | *string* \| *number* |
+| Name | Type |
+| :------ | :------ |
+| `path` | `string` |
+| `mode` | `string` \| `number` |
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Returns
 
-Defined in: src/util/fs.ts:481
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/fs.ts:425
 
 ___
 
 ### closeAsync
 
-▸ `Const`**closeAsync**(`fd`: *number*): [*Promise*](../classes/promise.md)<void\>
+▸ `Const` **closeAsync**(`fd`): [`Promise`](../classes/Promise.md)<`void`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`fd` | *number* |
+| Name | Type |
+| :------ | :------ |
+| `fd` | `number` |
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Returns
 
-Defined in: src/util/fs.ts:482
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/fs.ts:426
 
 ___
 
 ### closeSync
 
-▸ **closeSync**(`fd`: *number*): *void*
+▸ **closeSync**(`fd`): `void`
 
-Synchronous close(2) - close a file descriptor.
+Closes the file descriptor. Returns `undefined`.
 
-#### Parameters:
+Calling `fs.closeSync()` on any file descriptor (`fd`) that is currently in use
+through any other `fs` operation may lead to undefined behavior.
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`fd` | *number* | A file descriptor.    |
+See the POSIX [`close(2)`](http://man7.org/linux/man-pages/man2/close.2.html) documentation for more detail.
 
-**Returns:** *void*
+**`since`** v0.1.21
 
-Defined in: node_modules/@types/node/fs.d.ts:1025
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `fd` | `number` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:1978
 
 ___
 
 ### copyAsync
 
-▸ **copyAsync**(`src`: *string*, `dest`: *string*, `options?`: fs.CopyOptions & { `noSelfCopy?`: *boolean* ; `showDialogCallback?`: () => *boolean*  }): [*Promise*](../classes/promise.md)<void\>
+▸ **copyAsync**(`src`, `dest`, `options?`): [`Promise`](../classes/Promise.md)<`void`\>
 
 copy file
 The copy function from fs-extra doesn't (at the time of writing) correctly check that a file
@@ -193,994 +355,1362 @@ so this makes a check based on the ino number.
 A bug in older versions of node.js made it necessary this check be optional but that is
 resolved now so the check should always be enabled.
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`src` | *string* | file to copy   |
-`dest` | *string* | destination path   |
-`options?` | fs.CopyOptions & { `noSelfCopy?`: *boolean* ; `showDialogCallback?`: () => *boolean*  } | copy options (see documentation for fs)    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `src` | `string` | file to copy |
+| `dest` | `string` | destination path |
+| `options?` | `CopyOptions` & { `noSelfCopy?`: `boolean` ; `showDialogCallback?`: () => `boolean`  } | copy options (see documentation for fs) |
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Returns
 
-Defined in: src/util/fs.ts:645
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/fs.ts:591
 
 ___
 
 ### createReadStream
 
-▸ **createReadStream**(`path`: PathLike, `options?`: *string* \| { `autoClose?`: *boolean* ; `emitClose?`: *boolean* ; `encoding?`: *string* ; `end?`: *number* ; `fd?`: *number* ; `flags?`: *string* ; `highWaterMark?`: *number* ; `mode?`: *number* ; `start?`: *number*  }): ReadStream
+▸ **createReadStream**(`path`, `options?`): `ReadStream`
 
-Returns a new `ReadStream` object.
+Unlike the 16 kb default `highWaterMark` for a `stream.Readable`, the stream
+returned by this method has a default `highWaterMark` of 64 kb.
 
-#### Parameters:
+`options` can include `start` and `end` values to read a range of bytes from
+the file instead of the entire file. Both `start` and `end` are inclusive and
+start counting at 0, allowed values are in the
+\[0, [`Number.MAX_SAFE_INTEGER`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER)\] range. If `fd` is specified and `start` is
+omitted or `undefined`, `fs.createReadStream()` reads sequentially from the
+current file position. The `encoding` can be any one of those accepted by `Buffer`.
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`path` | PathLike | A path to a file. If a URL is provided, it must use the `file:` protocol. URL support is _experimental_.    |
-`options?` | *string* \| { `autoClose?`: *boolean* ; `emitClose?`: *boolean* ; `encoding?`: *string* ; `end?`: *number* ; `fd?`: *number* ; `flags?`: *string* ; `highWaterMark?`: *number* ; `mode?`: *number* ; `start?`: *number*  } | - |
+If `fd` is specified, `ReadStream` will ignore the `path` argument and will use
+the specified file descriptor. This means that no `'open'` event will be
+emitted. `fd` should be blocking; non-blocking `fd`s should be passed to `net.Socket`.
 
-**Returns:** ReadStream
+If `fd` points to a character device that only supports blocking reads
+(such as keyboard or sound card), read operations do not finish until data is
+available. This can prevent the process from exiting and the stream from
+closing naturally.
 
-Defined in: node_modules/@types/node/fs.d.ts:1801
+By default, the stream will emit a `'close'` event after it has been
+destroyed.  Set the `emitClose` option to `false` to change this behavior.
+
+By providing the `fs` option, it is possible to override the corresponding `fs`implementations for `open`, `read`, and `close`. When providing the `fs` option,
+an override for `read` is required. If no `fd` is provided, an override for`open` is also required. If `autoClose` is `true`, an override for `close` is
+also required.
+
+```js
+import { createReadStream } from 'fs';
+
+// Create a stream from some character device.
+const stream = createReadStream('/dev/input/event0');
+setTimeout(() => {
+  stream.close(); // This may not close the stream.
+  // Artificially marking end-of-stream, as if the underlying resource had
+  // indicated end-of-file by itself, allows the stream to close.
+  // This does not cancel pending read operations, and if there is such an
+  // operation, the process may still not be able to exit successfully
+  // until it finishes.
+  stream.push(null);
+  stream.read(0);
+}, 100);
+```
+
+If `autoClose` is false, then the file descriptor won't be closed, even if
+there's an error. It is the application's responsibility to close it and make
+sure there's no file descriptor leak. If `autoClose` is set to true (default
+behavior), on `'error'` or `'end'` the file descriptor will be closed
+automatically.
+
+`mode` sets the file mode (permission and sticky bits), but only if the
+file was created.
+
+An example to read the last 10 bytes of a file which is 100 bytes long:
+
+```js
+import { createReadStream } from 'fs';
+
+createReadStream('sample.txt', { start: 90, end: 99 });
+```
+
+If `options` is a string, then it specifies the encoding.
+
+**`since`** v0.1.31
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `path` | `PathLike` |
+| `options?` | `BufferEncoding` \| `ReadStreamOptions` |
+
+#### Returns
+
+`ReadStream`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:3464
 
 ___
 
 ### createWriteStream
 
-▸ **createWriteStream**(`path`: PathLike, `options?`: *string* \| { `autoClose?`: *boolean* ; `emitClose?`: *boolean* ; `encoding?`: *string* ; `fd?`: *number* ; `flags?`: *string* ; `highWaterMark?`: *number* ; `mode?`: *number* ; `start?`: *number*  }): [*WriteStream*](../classes/fs.writestream.md)
+▸ **createWriteStream**(`path`, `options?`): [`WriteStream`](../classes/fs.WriteStream.md)
 
-Returns a new `WriteStream` object.
+`options` may also include a `start` option to allow writing data at some
+position past the beginning of the file, allowed values are in the
+\[0, [`Number.MAX_SAFE_INTEGER`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER)\] range. Modifying a file rather than replacing
+it may require the `flags` option to be set to `r+` rather than the default `w`.
+The `encoding` can be any one of those accepted by `Buffer`.
 
-#### Parameters:
+If `autoClose` is set to true (default behavior) on `'error'` or `'finish'`the file descriptor will be closed automatically. If `autoClose` is false,
+then the file descriptor won't be closed, even if there's an error.
+It is the application's responsibility to close it and make sure there's no
+file descriptor leak.
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`path` | PathLike | A path to a file. If a URL is provided, it must use the `file:` protocol. URL support is _experimental_.    |
-`options?` | *string* \| { `autoClose?`: *boolean* ; `emitClose?`: *boolean* ; `encoding?`: *string* ; `fd?`: *number* ; `flags?`: *string* ; `highWaterMark?`: *number* ; `mode?`: *number* ; `start?`: *number*  } | - |
+By default, the stream will emit a `'close'` event after it has been
+destroyed.  Set the `emitClose` option to `false` to change this behavior.
 
-**Returns:** [*WriteStream*](../classes/fs.writestream.md)
+By providing the `fs` option it is possible to override the corresponding `fs`implementations for `open`, `write`, `writev` and `close`. Overriding `write()`without `writev()` can reduce
+performance as some optimizations (`_writev()`)
+will be disabled. When providing the `fs` option, overrides for at least one of`write` and `writev` are required. If no `fd` option is supplied, an override
+for `open` is also required. If `autoClose` is `true`, an override for `close`is also required.
 
-Defined in: node_modules/@types/node/fs.d.ts:1821
+Like `fs.ReadStream`, if `fd` is specified, `fs.WriteStream` will ignore the`path` argument and will use the specified file descriptor. This means that no`'open'` event will be
+emitted. `fd` should be blocking; non-blocking `fd`s
+should be passed to `net.Socket`.
+
+If `options` is a string, then it specifies the encoding.
+
+**`since`** v0.1.31
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `path` | `PathLike` |
+| `options?` | `BufferEncoding` \| `StreamOptions` |
+
+#### Returns
+
+[`WriteStream`](../classes/fs.WriteStream.md)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:3492
 
 ___
 
 ### ensureDirAsync
 
-▸ **ensureDirAsync**(`dirPath`: *string*, `onDirCreatedCB?`: (`created`: *string*) => [*Promise*](../classes/promise.md)<void\>): [*Promise*](../classes/promise.md)<void\>
+▸ **ensureDirAsync**(`dirPath`, `onDirCreatedCB?`): [`Promise`](../classes/Promise.md)<`void`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`dirPath` | *string* |
-`onDirCreatedCB?` | (`created`: *string*) => [*Promise*](../classes/promise.md)<void\> |
+| Name | Type |
+| :------ | :------ |
+| `dirPath` | `string` |
+| `onDirCreatedCB?` | (`created`: `string`) => [`Promise`](../classes/Promise.md)<`void`\> |
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Returns
 
-Defined in: src/util/fs.ts:543
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/fs.ts:489
 
 ___
 
 ### ensureDirSync
 
-▸ **ensureDirSync**(`dirPath`: *string*): *void*
+▸ **ensureDirSync**(`dirPath`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`dirPath` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `dirPath` | `string` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: src/util/fs.ts:527
+`void`
+
+#### Defined in
+
+../src/util/fs.ts:473
 
 ___
 
 ### ensureDirWritableAsync
 
-▸ **ensureDirWritableAsync**(`dirPath`: *string*, `confirm?`: () => [*Promise*](../classes/promise.md)<void\>): [*Promise*](../classes/promise.md)<void\>
+▸ **ensureDirWritableAsync**(`dirPath`, `confirm?`): [`Promise`](../classes/Promise.md)<`void`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`dirPath` | *string* |
-`confirm?` | () => [*Promise*](../classes/promise.md)<void\> |
+| Name | Type |
+| :------ | :------ |
+| `dirPath` | `string` |
+| `confirm?` | () => `PromiseLike`<`void`\> |
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Returns
 
-Defined in: src/util/fs.ts:888
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/fs.ts:834
 
 ___
 
 ### ensureFileAsync
 
-▸ **ensureFileAsync**(`filePath`: *string*): [*Promise*](../classes/promise.md)<void\>
+▸ **ensureFileAsync**(`filePath`): [`Promise`](../classes/Promise.md)<`void`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`filePath` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `filePath` | `string` |
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Returns
 
-Defined in: src/util/fs.ts:535
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/fs.ts:481
 
 ___
 
 ### forcePerm
 
-▸ **forcePerm**<T\>(`t`: [*TFunction*](types.md#tfunction), `op`: () => [*Promise*](../classes/promise.md)<T\>, `filePath?`: *string*, `maxTries?`: *number*): [*Promise*](../classes/promise.md)<T\>
+▸ **forcePerm**<`T`\>(`t`, `op`, `filePath?`, `maxTries?`): [`Promise`](../classes/Promise.md)<`T`\>
 
-#### Type parameters:
+#### Type parameters
 
-Name |
-:------ |
-`T` |
+| Name |
+| :------ |
+| `T` |
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Default value |
-:------ | :------ | :------ |
-`t` | [*TFunction*](types.md#tfunction) | - |
-`op` | () => [*Promise*](../classes/promise.md)<T\> | - |
-`filePath?` | *string* | - |
-`maxTries` | *number* | 3 |
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `t` | `TFunction` | `undefined` |
+| `op` | () => [`Promise`](../classes/Promise.md)<`T`\> | `undefined` |
+| `filePath?` | `string` | `undefined` |
+| `maxTries` | `number` | `3` |
 
-**Returns:** [*Promise*](../classes/promise.md)<T\>
+#### Returns
 
-Defined in: src/util/fs.ts:1080
+[`Promise`](../classes/Promise.md)<`T`\>
+
+#### Defined in
+
+../src/util/fs.ts:1026
 
 ___
 
 ### fsyncAsync
 
-▸ `Const`**fsyncAsync**(`fd`: *number*): [*Promise*](../classes/promise.md)<void\>
+▸ `Const` **fsyncAsync**(`fd`): [`Promise`](../classes/Promise.md)<`void`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`fd` | *number* |
+| Name | Type |
+| :------ | :------ |
+| `fd` | `number` |
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Returns
 
-Defined in: src/util/fs.ts:483
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/fs.ts:427
 
 ___
 
 ### genFSWrapperAsync
 
-▸ **genFSWrapperAsync**<T\>(`func`: T): *function*
+▸ **genFSWrapperAsync**<`T`\>(`func`): (...`args`: `any`[]) => `any`
 
-#### Type parameters:
+#### Type parameters
 
-Name | Type |
-:------ | :------ |
-`T` | (...`args`: *any*[]) => *any* |
+| Name | Type |
+| :------ | :------ |
+| `T` | extends (...`args`: `any`[]) => `any` |
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`func` | T |
+| Name | Type |
+| :------ | :------ |
+| `func` | `T` |
 
-**Returns:** (...`args`: *any*[]) => *any*
+#### Returns
 
-Defined in: src/util/fs.ts:468
+`fn`
+
+▸ (...`args`): `any`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...args` | `any`[] |
+
+##### Returns
+
+`any`
+
+#### Defined in
+
+../src/util/fs.ts:412
 
 ___
 
 ### isDirectoryAsync
 
-▸ **isDirectoryAsync**(`dirPath`: *string*): [*Promise*](../classes/promise.md)<boolean\>
+▸ **isDirectoryAsync**(`dirPath`): [`Promise`](../classes/Promise.md)<`boolean`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`dirPath` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `dirPath` | `string` |
 
-**Returns:** [*Promise*](../classes/promise.md)<boolean\>
+#### Returns
 
-Defined in: src/util/fs.ts:522
+[`Promise`](../classes/Promise.md)<`boolean`\>
+
+#### Defined in
+
+../src/util/fs.ts:468
 
 ___
 
 ### linkAsync
 
-▸ **linkAsync**(`src`: *string*, `dest`: *string*, `options?`: [*ILinkFileOptions*](../interfaces/fs.ilinkfileoptions.md)): [*Promise*](../classes/promise.md)<void\>
+▸ **linkAsync**(`src`, `dest`, `options?`): [`Promise`](../classes/Promise.md)<`void`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`src` | *string* |
-`dest` | *string* |
-`options?` | [*ILinkFileOptions*](../interfaces/fs.ilinkfileoptions.md) |
+| Name | Type |
+| :------ | :------ |
+| `src` | `string` |
+| `dest` | `string` |
+| `options?` | [`ILinkFileOptions`](../interfaces/fs.ILinkFileOptions.md) |
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Returns
 
-Defined in: src/util/fs.ts:677
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/fs.ts:623
 
 ___
 
 ### linkSync
 
-▸ **linkSync**(`existingPath`: PathLike, `newPath`: PathLike): *void*
+▸ **linkSync**(`existingPath`, `newPath`): `void`
 
-Synchronous link(2) - Create a new link (also known as a hard link) to an existing file.
+Creates a new link from the `existingPath` to the `newPath`. See the POSIX [`link(2)`](http://man7.org/linux/man-pages/man2/link.2.html) documentation for more detail. Returns `undefined`.
 
-#### Parameters:
+**`since`** v0.1.31
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`existingPath` | PathLike | A path to a file. If a URL is provided, it must use the `file:` protocol.   |
-`newPath` | PathLike | A path to a file. If a URL is provided, it must use the `file:` protocol.    |
+#### Parameters
 
-**Returns:** *void*
+| Name | Type |
+| :------ | :------ |
+| `existingPath` | `PathLike` |
+| `newPath` | `PathLike` |
 
-Defined in: node_modules/@types/node/fs.d.ts:506
+#### Returns
+
+`void`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:1103
 
 ___
 
 ### lstatAsync
 
-▸ `Const`**lstatAsync**(`path`: *string*): [*Promise*](../classes/promise.md)<[*Stats*](../classes/fs.stats.md)\>
+▸ `Const` **lstatAsync**(`path`): [`Promise`](../classes/Promise.md)<[`Stats`](../classes/fs.Stats.md)\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`path` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `path` | `string` |
 
-**Returns:** [*Promise*](../classes/promise.md)<[*Stats*](../classes/fs.stats.md)\>
+#### Returns
 
-Defined in: src/util/fs.ts:484
+[`Promise`](../classes/Promise.md)<[`Stats`](../classes/fs.Stats.md)\>
+
+#### Defined in
+
+../src/util/fs.ts:428
 
 ___
 
 ### makeFileWritableAsync
 
-▸ **makeFileWritableAsync**(`filePath`: *string*): [*Promise*](../classes/promise.md)<void\>
+▸ **makeFileWritableAsync**(`filePath`): [`Promise`](../classes/Promise.md)<`void`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`filePath` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `filePath` | `string` |
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Returns
 
-Defined in: src/util/fs.ts:1009
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/fs.ts:955
 
 ___
 
 ### mkdirAsync
 
-▸ `Const`**mkdirAsync**(`path`: *string*): [*Promise*](../classes/promise.md)<void\>
+▸ `Const` **mkdirAsync**(`path`): [`Promise`](../classes/Promise.md)<`void`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`path` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `path` | `string` |
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Returns
 
-Defined in: src/util/fs.ts:485
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/fs.ts:429
 
 ___
 
 ### mkdirsAsync
 
-▸ `Const`**mkdirsAsync**(`path`: *string*): [*Promise*](../classes/promise.md)<void\>
+▸ `Const` **mkdirsAsync**(`path`): [`Promise`](../classes/Promise.md)<`void`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`path` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `path` | `string` |
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Returns
 
-Defined in: src/util/fs.ts:486
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/fs.ts:430
 
 ___
 
 ### moveAsync
 
-▸ `Const`**moveAsync**(`src`: *string*, `dest`: *string*, `options?`: MoveOptions): [*Promise*](../classes/promise.md)<void\>
+▸ `Const` **moveAsync**(`src`, `dest`, `options?`): [`Promise`](../classes/Promise.md)<`void`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`src` | *string* |
-`dest` | *string* |
-`options?` | MoveOptions |
+| Name | Type |
+| :------ | :------ |
+| `src` | `string` |
+| `dest` | `string` |
+| `options?` | `MoveOptions` |
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Returns
 
-Defined in: src/util/fs.ts:487
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/fs.ts:431
 
 ___
 
 ### moveRenameAsync
 
-▸ **moveRenameAsync**(`src`: *string*, `dest`: *string*): [*Promise*](../classes/promise.md)<string\>
+▸ **moveRenameAsync**(`src`, `dest`): [`Promise`](../classes/Promise.md)<`string`\>
 
 move a file. If the destination exists, will generate a new name with an
 increasing counter until an unused name is found
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`src` | *string* |
-`dest` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `src` | `string` |
+| `dest` | `string` |
 
-**Returns:** [*Promise*](../classes/promise.md)<string\>
+#### Returns
 
-Defined in: src/util/fs.ts:628
+[`Promise`](../classes/Promise.md)<`string`\>
+
+#### Defined in
+
+../src/util/fs.ts:574
 
 ___
 
 ### openAsync
 
-▸ `Const`**openAsync**(`path`: *string*, `flags`: *string* \| *number*, `mode?`: *number*): [*Promise*](../classes/promise.md)<number\>
+▸ `Const` **openAsync**(`path`, `flags`, `mode?`): [`Promise`](../classes/Promise.md)<`number`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`path` | *string* |
-`flags` | *string* \| *number* |
-`mode?` | *number* |
+| Name | Type |
+| :------ | :------ |
+| `path` | `string` |
+| `flags` | `string` \| `number` |
+| `mode?` | `number` |
 
-**Returns:** [*Promise*](../classes/promise.md)<number\>
+#### Returns
 
-Defined in: src/util/fs.ts:488
+[`Promise`](../classes/Promise.md)<`number`\>
+
+#### Defined in
+
+../src/util/fs.ts:432
 
 ___
 
 ### openSync
 
-▸ **openSync**(`path`: PathLike, `flags`: *string* \| *number*, `mode?`: *string* \| *number* \| *null*): *number*
+▸ **openSync**(`path`, `flags`, `mode?`): `number`
 
-Synchronous open(2) - open and possibly create a file, returning a file descriptor..
+Returns an integer representing the file descriptor.
 
-#### Parameters:
+For detailed information, see the documentation of the asynchronous version of
+this API: {@link open}.
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`path` | PathLike | A path to a file. If a URL is provided, it must use the `file:` protocol.   |
-`flags` | *string* \| *number* | - |
-`mode?` | *string* \| *number* \| *null* | A file mode. If a string is passed, it is parsed as an octal integer. If not supplied, defaults to `0o666`.    |
+**`since`** v0.1.21
 
-**Returns:** *number*
+#### Parameters
 
-Defined in: node_modules/@types/node/fs.d.ts:1055
+| Name | Type |
+| :------ | :------ |
+| `path` | `PathLike` |
+| `flags` | `OpenMode` |
+| `mode?` | `Mode` |
+
+#### Returns
+
+`number`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:2019
 
 ___
 
 ### readAsync
 
-▸ `Const`**readAsync**<BufferT\>(...`args`: *any*[]): [*Promise*](../classes/promise.md)<{ `buffer`: BufferT ; `bytesRead`: *number*  }\>
+▸ `Const` **readAsync**<`BufferT`\>(...`args`): [`Promise`](../classes/Promise.md)<{ `buffer`: `BufferT` ; `bytesRead`: `number`  }\>
 
-#### Type parameters:
+#### Type parameters
 
-Name |
-:------ |
-`BufferT` |
+| Name |
+| :------ |
+| `BufferT` |
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`...args` | *any*[] |
+| Name | Type |
+| :------ | :------ |
+| `...args` | `any`[] |
 
-**Returns:** [*Promise*](../classes/promise.md)<{ `buffer`: BufferT ; `bytesRead`: *number*  }\>
+#### Returns
 
-Defined in: src/util/fs.ts:498
+[`Promise`](../classes/Promise.md)<{ `buffer`: `BufferT` ; `bytesRead`: `number`  }\>
+
+#### Defined in
+
+../src/util/fs.ts:442
 
 ___
 
 ### readFileAsync
 
-▸ `Const`**readFileAsync**(...`args`: *any*[]): [*Promise*](../classes/promise.md)<any\>
+▸ `Const` **readFileAsync**(...`args`): [`Promise`](../classes/Promise.md)<`any`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`...args` | *any*[] |
+| Name | Type |
+| :------ | :------ |
+| `...args` | `any`[] |
 
-**Returns:** [*Promise*](../classes/promise.md)<any\>
+#### Returns
 
-Defined in: src/util/fs.ts:490
+[`Promise`](../classes/Promise.md)<`any`\>
+
+#### Defined in
+
+../src/util/fs.ts:434
 
 ___
 
 ### readFileSync
 
-▸ **readFileSync**(`path`: PathLike \| *number*, `options?`: { `encoding?`: *null* ; `flag?`: *string*  } \| *null*): Buffer
+▸ **readFileSync**(`path`, `options?`): `Buffer`
+
+Returns the contents of the `path`.
+
+For detailed information, see the documentation of the asynchronous version of
+this API: [readFile](../interfaces/types.IArchiveHandler.md#readfile).
+
+If the `encoding` option is specified then this function returns a
+string. Otherwise it returns a buffer.
+
+Similar to [readFile](../interfaces/types.IArchiveHandler.md#readfile), when the path is a directory, the behavior of`fs.readFileSync()` is platform-specific.
+
+```js
+import { readFileSync } from 'fs';
+
+// macOS, Linux, and Windows
+readFileSync('<directory>');
+// => [Error: EISDIR: illegal operation on a directory, read <directory>]
+
+//  FreeBSD
+readFileSync('<directory>'); // => <data>
+```
+
+**`since`** v0.1.8
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `path` | `PathOrFileDescriptor` | filename or file descriptor |
+| `options?` | `Object` | Either the encoding for the result, or an object that contains the encoding and an optional flag. If a flag is not provided, it defaults to `'r'`. |
+| `options.encoding?` | ``null`` | - |
+| `options.flag?` | `string` | - |
+
+#### Returns
+
+`Buffer`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:2494
+
+▸ **readFileSync**(`path`, `options`): `string`
 
 Synchronously reads the entire contents of a file.
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`path` | PathLike \| *number* | A path to a file. If a URL is provided, it must use the `file:` protocol. URL support is _experimental_. If a file descriptor is provided, the underlying file will _not_ be closed automatically.   |
-`options?` | { `encoding?`: *null* ; `flag?`: *string*  } \| *null* | An object that may contain an optional flag. If a flag is not provided, it defaults to `'r'`.    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `path` | `PathOrFileDescriptor` | A path to a file. If a URL is provided, it must use the `file:` protocol. If a file descriptor is provided, the underlying file will _not_ be closed automatically. |
+| `options` | `BufferEncoding` \| { `encoding`: `BufferEncoding` ; `flag?`: `string`  } | Either the encoding for the result, or an object that contains the encoding and an optional flag. If a flag is not provided, it defaults to `'r'`. |
 
-**Returns:** Buffer
+#### Returns
 
-Defined in: node_modules/@types/node/fs.d.ts:1379
+`string`
 
-▸ **readFileSync**(`path`: PathLike \| *number*, `options`: { `encoding`: *string* ; `flag?`: *string*  } \| *string*): *string*
+#### Defined in
 
-Synchronously reads the entire contents of a file.
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:2508
 
-#### Parameters:
-
-Name | Type | Description |
-:------ | :------ | :------ |
-`path` | PathLike \| *number* | A path to a file. If a URL is provided, it must use the `file:` protocol. URL support is _experimental_. If a file descriptor is provided, the underlying file will _not_ be closed automatically.   |
-`options` | { `encoding`: *string* ; `flag?`: *string*  } \| *string* | Either the encoding for the result, or an object that contains the encoding and an optional flag. If a flag is not provided, it defaults to `'r'`.    |
-
-**Returns:** *string*
-
-Defined in: node_modules/@types/node/fs.d.ts:1389
-
-▸ **readFileSync**(`path`: PathLike \| *number*, `options?`: { `encoding?`: *string* \| *null* ; `flag?`: *string*  } \| *string* \| *null*): *string* \| Buffer
+▸ **readFileSync**(`path`, `options?`): `string` \| `Buffer`
 
 Synchronously reads the entire contents of a file.
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`path` | PathLike \| *number* | A path to a file. If a URL is provided, it must use the `file:` protocol. URL support is _experimental_. If a file descriptor is provided, the underlying file will _not_ be closed automatically.   |
-`options?` | { `encoding?`: *string* \| *null* ; `flag?`: *string*  } \| *string* \| *null* | Either the encoding for the result, or an object that contains the encoding and an optional flag. If a flag is not provided, it defaults to `'r'`.    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `path` | `PathOrFileDescriptor` | A path to a file. If a URL is provided, it must use the `file:` protocol. If a file descriptor is provided, the underlying file will _not_ be closed automatically. |
+| `options?` | `BufferEncoding` \| `ObjectEncodingOptions` & { `flag?`: `string`  } | Either the encoding for the result, or an object that contains the encoding and an optional flag. If a flag is not provided, it defaults to `'r'`. |
 
-**Returns:** *string* \| Buffer
+#### Returns
 
-Defined in: node_modules/@types/node/fs.d.ts:1399
+`string` \| `Buffer`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:2524
 
 ___
 
 ### readdirAsync
 
-▸ `Const`**readdirAsync**(`path`: *string*): [*Promise*](../classes/promise.md)<string[]\>
+▸ `Const` **readdirAsync**(`path`): [`Promise`](../classes/Promise.md)<`string`[]\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`path` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `path` | `string` |
 
-**Returns:** [*Promise*](../classes/promise.md)<string[]\>
+#### Returns
 
-Defined in: src/util/fs.ts:489
+[`Promise`](../classes/Promise.md)<`string`[]\>
+
+#### Defined in
+
+../src/util/fs.ts:433
 
 ___
 
 ### readdirSync
 
-▸ **readdirSync**(`path`: PathLike, `options?`: { `encoding`: BufferEncoding \| *null* ; `withFileTypes?`: *false*  } \| BufferEncoding \| *null*): *string*[]
+▸ **readdirSync**(`path`, `options?`): `string`[]
+
+Reads the contents of the directory.
+
+See the POSIX [`readdir(3)`](http://man7.org/linux/man-pages/man3/readdir.3.html) documentation for more details.
+
+The optional `options` argument can be a string specifying an encoding, or an
+object with an `encoding` property specifying the character encoding to use for
+the filenames returned. If the `encoding` is set to `'buffer'`,
+the filenames returned will be passed as `Buffer` objects.
+
+If `options.withFileTypes` is set to `true`, the result will contain `fs.Dirent` objects.
+
+**`since`** v0.1.21
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `path` | `PathLike` | A path to a file. If a URL is provided, it must use the `file:` protocol. |
+| `options?` | `BufferEncoding` \| { `encoding`: `BufferEncoding` ; `withFileTypes?`: ``false``  } | If called with `withFileTypes: true` the result data will be an array of Dirent. |
+
+#### Returns
+
+`string`[]
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:1902
+
+▸ **readdirSync**(`path`, `options`): `Buffer`[]
 
 Synchronous readdir(3) - read a directory.
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`path` | PathLike | A path to a file. If a URL is provided, it must use the `file:` protocol.   |
-`options?` | { `encoding`: BufferEncoding \| *null* ; `withFileTypes?`: *false*  } \| BufferEncoding \| *null* | The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `path` | `PathLike` | A path to a file. If a URL is provided, it must use the `file:` protocol. |
+| `options` | { `encoding`: ``"buffer"`` ; `withFileTypes?`: ``false``  } \| ``"buffer"`` | The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used. |
 
-**Returns:** *string*[]
+#### Returns
 
-Defined in: node_modules/@types/node/fs.d.ts:983
+`Buffer`[]
 
-▸ **readdirSync**(`path`: PathLike, `options`: { `encoding`: *buffer* ; `withFileTypes?`: *false*  } \| *buffer*): Buffer[]
+#### Defined in
 
-Synchronous readdir(3) - read a directory.
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:1917
 
-#### Parameters:
-
-Name | Type | Description |
-:------ | :------ | :------ |
-`path` | PathLike | A path to a file. If a URL is provided, it must use the `file:` protocol.   |
-`options` | { `encoding`: *buffer* ; `withFileTypes?`: *false*  } \| *buffer* | The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.    |
-
-**Returns:** Buffer[]
-
-Defined in: node_modules/@types/node/fs.d.ts:990
-
-▸ **readdirSync**(`path`: PathLike, `options?`: { `encoding?`: *string* \| *null* ; `withFileTypes?`: *false*  } \| *string* \| *null*): *string*[] \| Buffer[]
+▸ **readdirSync**(`path`, `options?`): `string`[] \| `Buffer`[]
 
 Synchronous readdir(3) - read a directory.
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`path` | PathLike | A path to a file. If a URL is provided, it must use the `file:` protocol.   |
-`options?` | { `encoding?`: *string* \| *null* ; `withFileTypes?`: *false*  } \| *string* \| *null* | The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `path` | `PathLike` | A path to a file. If a URL is provided, it must use the `file:` protocol. |
+| `options?` | `BufferEncoding` \| `ObjectEncodingOptions` & { `withFileTypes?`: ``false``  } | The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used. |
 
-**Returns:** *string*[] \| Buffer[]
+#### Returns
 
-Defined in: node_modules/@types/node/fs.d.ts:997
+`string`[] \| `Buffer`[]
 
-▸ **readdirSync**(`path`: PathLike, `options`: { `encoding?`: *string* \| *null* ; `withFileTypes`: *true*  }): Dirent[]
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:1931
+
+▸ **readdirSync**(`path`, `options`): `Dirent`[]
 
 Synchronous readdir(3) - read a directory.
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`path` | PathLike | A path to a file. If a URL is provided, it must use the `file:` protocol.   |
-`options` | *object* | If called with `withFileTypes: true` the result data will be an array of Dirent.    |
-`options.encoding?` | *string* \| *null* | - |
-`options.withFileTypes` | *true* | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `path` | `PathLike` | A path to a file. If a URL is provided, it must use the `file:` protocol. |
+| `options` | `ObjectEncodingOptions` & { `withFileTypes`: ``true``  } | If called with `withFileTypes: true` the result data will be an array of Dirent. |
 
-**Returns:** Dirent[]
+#### Returns
 
-Defined in: node_modules/@types/node/fs.d.ts:1004
+`Dirent`[]
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:1945
 
 ___
 
 ### readlinkAsync
 
-▸ **readlinkAsync**(`linkPath`: *string*): [*Promise*](../classes/promise.md)<string\>
+▸ **readlinkAsync**(`linkPath`): [`Promise`](../classes/Promise.md)<`string`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`linkPath` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `linkPath` | `string` |
 
-**Returns:** [*Promise*](../classes/promise.md)<string\>
+#### Returns
 
-Defined in: src/util/fs.ts:804
+[`Promise`](../classes/Promise.md)<`string`\>
+
+#### Defined in
+
+../src/util/fs.ts:750
 
 ___
 
 ### removeAsync
 
-▸ **removeAsync**(`remPath`: *string*, `options?`: [*IRemoveFileOptions*](../interfaces/fs.iremovefileoptions.md)): [*Promise*](../classes/promise.md)<void\>
+▸ **removeAsync**(`remPath`, `options?`): [`Promise`](../classes/Promise.md)<`void`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`remPath` | *string* |
-`options?` | [*IRemoveFileOptions*](../interfaces/fs.iremovefileoptions.md) |
+| Name | Type |
+| :------ | :------ |
+| `remPath` | `string` |
+| `options?` | [`IRemoveFileOptions`](../interfaces/fs.IRemoveFileOptions.md) |
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Returns
 
-Defined in: src/util/fs.ts:775
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/fs.ts:721
 
 ___
 
 ### removeSync
 
-▸ **removeSync**(`dirPath`: *string*): *void*
+▸ **removeSync**(`dirPath`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`dirPath` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `dirPath` | `string` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: src/util/fs.ts:696
+`void`
+
+#### Defined in
+
+../src/util/fs.ts:642
 
 ___
 
 ### renameAsync
 
-▸ **renameAsync**(`sourcePath`: *string*, `destinationPath`: *string*): [*Promise*](../classes/promise.md)<void\>
+▸ **renameAsync**(`sourcePath`, `destinationPath`): [`Promise`](../classes/Promise.md)<`void`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`sourcePath` | *string* |
-`destinationPath` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `sourcePath` | `string` |
+| `destinationPath` | `string` |
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Returns
 
-Defined in: src/util/fs.ts:733
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/fs.ts:679
 
 ___
 
 ### rmdirAsync
 
-▸ **rmdirAsync**(`dirPath`: *string*): [*Promise*](../classes/promise.md)<void\>
+▸ **rmdirAsync**(`dirPath`): [`Promise`](../classes/Promise.md)<`void`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`dirPath` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `dirPath` | `string` |
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Returns
 
-Defined in: src/util/fs.ts:757
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/fs.ts:703
+
+___
+
+### setTFunction
+
+▸ **setTFunction**(`tFunc`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `tFunc` | `TFunction` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+../src/util/fs.ts:76
 
 ___
 
 ### statAsync
 
-▸ `Const`**statAsync**(`path`: *string*): [*Promise*](../classes/promise.md)<[*Stats*](../classes/fs.stats.md)\>
+▸ `Const` **statAsync**(`path`): [`Promise`](../classes/Promise.md)<[`Stats`](../classes/fs.Stats.md)\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`path` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `path` | `string` |
 
-**Returns:** [*Promise*](../classes/promise.md)<[*Stats*](../classes/fs.stats.md)\>
+#### Returns
 
-Defined in: src/util/fs.ts:491
+[`Promise`](../classes/Promise.md)<[`Stats`](../classes/fs.Stats.md)\>
+
+#### Defined in
+
+../src/util/fs.ts:435
 
 ___
 
 ### statSilentAsync
 
-▸ `Const`**statSilentAsync**(`path`: *string*): [*Promise*](../classes/promise.md)<[*Stats*](../classes/fs.stats.md)\>
+▸ `Const` **statSilentAsync**(`path`): [`Promise`](../classes/Promise.md)<[`Stats`](../classes/fs.Stats.md)\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`path` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `path` | `string` |
 
-**Returns:** [*Promise*](../classes/promise.md)<[*Stats*](../classes/fs.stats.md)\>
+#### Returns
 
-Defined in: src/util/fs.ts:492
+[`Promise`](../classes/Promise.md)<[`Stats`](../classes/fs.Stats.md)\>
 
-___
+#### Defined in
 
-### statSync
-
-▸ **statSync**(`path`: PathLike): [*Stats*](../classes/fs.stats.md)
-
-Synchronous stat(2) - Get file status.
-
-#### Parameters:
-
-Name | Type | Description |
-:------ | :------ | :------ |
-`path` | PathLike | A path to a file. If a URL is provided, it must use the `file:` protocol.    |
-
-**Returns:** [*Stats*](../classes/fs.stats.md)
-
-Defined in: node_modules/@types/node/fs.d.ts:440
-
-▸ **statSync**(`path`: PathLike, `options`: BigIntOptions): BigIntStats
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`path` | PathLike |
-`options` | BigIntOptions |
-
-**Returns:** BigIntStats
-
-Defined in: node_modules/@types/node/ts3.2/fs.d.ts:31
-
-▸ **statSync**(`path`: PathLike, `options`: StatOptions): [*Stats*](../classes/fs.stats.md) \| BigIntStats
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`path` | PathLike |
-`options` | StatOptions |
-
-**Returns:** [*Stats*](../classes/fs.stats.md) \| BigIntStats
-
-Defined in: node_modules/@types/node/ts3.2/fs.d.ts:32
+../src/util/fs.ts:436
 
 ___
 
 ### symlinkAsync
 
-▸ `Const`**symlinkAsync**(`srcpath`: *string*, `dstpath`: *string*, `type?`: *string*): [*Promise*](../classes/promise.md)<void\>
+▸ `Const` **symlinkAsync**(`srcpath`, `dstpath`, `type?`): [`Promise`](../classes/Promise.md)<`void`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`srcpath` | *string* |
-`dstpath` | *string* |
-`type?` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `srcpath` | `string` |
+| `dstpath` | `string` |
+| `type?` | `string` |
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Returns
 
-Defined in: src/util/fs.ts:493
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/fs.ts:437
 
 ___
 
 ### symlinkSync
 
-▸ **symlinkSync**(`target`: PathLike, `path`: PathLike, `type?`: symlink.Type \| *null*): *void*
+▸ **symlinkSync**(`target`, `path`, `type?`): `void`
 
-Synchronous symlink(2) - Create a new symbolic link to an existing file.
+Returns `undefined`.
 
-#### Parameters:
+For detailed information, see the documentation of the asynchronous version of
+this API: {@link symlink}.
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`target` | PathLike | A path to an existing file. If a URL is provided, it must use the `file:` protocol.   |
-`path` | PathLike | A path to the new symlink. If a URL is provided, it must use the `file:` protocol.   |
-`type?` | symlink.Type \| *null* | May be set to `'dir'`, `'file'`, or `'junction'` (default is `'file'`) and is only available on Windows (ignored on other platforms). When using `'junction'`, the `target` argument will automatically be normalized to an absolute path.    |
+**`since`** v0.1.31
 
-**Returns:** *void*
+#### Parameters
 
-Defined in: node_modules/@types/node/fs.d.ts:545
+| Name | Type |
+| :------ | :------ |
+| `target` | `PathLike` |
+| `path` | `PathLike` |
+| `type?` | `Type` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:1160
 
 ___
 
 ### unlinkAsync
 
-▸ **unlinkAsync**(`filePath`: *string*, `options?`: [*IRemoveFileOptions*](../interfaces/fs.iremovefileoptions.md)): [*Promise*](../classes/promise.md)<void\>
+▸ **unlinkAsync**(`filePath`, `options?`): [`Promise`](../classes/Promise.md)<`void`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`filePath` | *string* |
-`options?` | [*IRemoveFileOptions*](../interfaces/fs.iremovefileoptions.md) |
+| Name | Type |
+| :------ | :------ |
+| `filePath` | `string` |
+| `options?` | [`IRemoveFileOptions`](../interfaces/fs.IRemoveFileOptions.md) |
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Returns
 
-Defined in: src/util/fs.ts:700
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/fs.ts:646
 
 ___
 
 ### utimesAsync
 
-▸ `Const`**utimesAsync**(`path`: *string*, `atime`: *number*, `mtime`: *number*): [*Promise*](../classes/promise.md)<void\>
+▸ `Const` **utimesAsync**(`path`, `atime`, `mtime`): [`Promise`](../classes/Promise.md)<`void`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`path` | *string* |
-`atime` | *number* |
-`mtime` | *number* |
+| Name | Type |
+| :------ | :------ |
+| `path` | `string` |
+| `atime` | `number` |
+| `mtime` | `number` |
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Returns
 
-Defined in: src/util/fs.ts:494
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/fs.ts:438
 
 ___
 
 ### watch
 
-▸ **watch**(`filename`: PathLike, `options`: { `encoding?`: BufferEncoding \| *null* ; `persistent?`: *boolean* ; `recursive?`: *boolean*  } \| BufferEncoding \| *undefined* \| *null*, `listener?`: (`event`: *string*, `filename`: *string*) => *void*): [*FSWatcher*](../interfaces/fs.fswatcher.md)
+▸ **watch**(`filename`, `options`, `listener?`): [`FSWatcher`](../interfaces/fs.FSWatcher.md)
+
+Watch for changes on `filename`, where `filename` is either a file or a
+directory.
+
+The second argument is optional. If `options` is provided as a string, it
+specifies the `encoding`. Otherwise `options` should be passed as an object.
+
+The listener callback gets two arguments `(eventType, filename)`. `eventType`is either `'rename'` or `'change'`, and `filename` is the name of the file
+which triggered the event.
+
+On most platforms, `'rename'` is emitted whenever a filename appears or
+disappears in the directory.
+
+The listener callback is attached to the `'change'` event fired by `fs.FSWatcher`, but it is not the same thing as the `'change'` value of`eventType`.
+
+If a `signal` is passed, aborting the corresponding AbortController will close
+the returned `fs.FSWatcher`.
+
+**`since`** v0.5.10
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `filename` | `PathLike` | A path to a file or directory. If a URL is provided, it must use the `file:` protocol. |
+| `options` | ``"buffer"`` \| `WatchOptions` & { `encoding`: ``"buffer"``  } | - |
+| `listener?` | `WatchListener`<`Buffer`\> |  |
+
+#### Returns
+
+[`FSWatcher`](../interfaces/fs.FSWatcher.md)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:2878
+
+▸ **watch**(`filename`, `options?`, `listener?`): [`FSWatcher`](../interfaces/fs.FSWatcher.md)
 
 Watch for changes on `filename`, where `filename` is either a file or a directory, returning an `FSWatcher`.
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`filename` | PathLike | A path to a file or directory. If a URL is provided, it must use the `file:` protocol. URL support is _experimental_.   |
-`options` | { `encoding?`: BufferEncoding \| *null* ; `persistent?`: *boolean* ; `recursive?`: *boolean*  } \| BufferEncoding \| *undefined* \| *null* | Either the encoding for the filename provided to the listener, or an object optionally specifying encoding, persistent, and recursive options. If `encoding` is not supplied, the default of `'utf8'` is used. If `persistent` is not supplied, the default of `true` is used. If `recursive` is not supplied, the default of `false` is used.    |
-`listener?` | (`event`: *string*, `filename`: *string*) => *void* | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `filename` | `PathLike` | A path to a file or directory. If a URL is provided, it must use the `file:` protocol. |
+| `options?` | `BufferEncoding` \| `WatchOptions` | Either the encoding for the filename provided to the listener, or an object optionally specifying encoding, persistent, and recursive options. If `encoding` is not supplied, the default of `'utf8'` is used. If `persistent` is not supplied, the default of `true` is used. If `recursive` is not supplied, the default of `false` is used. |
+| `listener?` | `WatchListener`<`string`\> | - |
 
-**Returns:** [*FSWatcher*](../interfaces/fs.fswatcher.md)
+#### Returns
 
-Defined in: node_modules/@types/node/fs.d.ts:1539
+[`FSWatcher`](../interfaces/fs.FSWatcher.md)
 
-▸ **watch**(`filename`: PathLike, `options`: { `encoding`: *buffer* ; `persistent?`: *boolean* ; `recursive?`: *boolean*  } \| *buffer*, `listener?`: (`event`: *string*, `filename`: Buffer) => *void*): [*FSWatcher*](../interfaces/fs.fswatcher.md)
+#### Defined in
 
-Watch for changes on `filename`, where `filename` is either a file or a directory, returning an `FSWatcher`.
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:2895
 
-#### Parameters:
-
-Name | Type | Description |
-:------ | :------ | :------ |
-`filename` | PathLike | A path to a file or directory. If a URL is provided, it must use the `file:` protocol. URL support is _experimental_.   |
-`options` | { `encoding`: *buffer* ; `persistent?`: *boolean* ; `recursive?`: *boolean*  } \| *buffer* | Either the encoding for the filename provided to the listener, or an object optionally specifying encoding, persistent, and recursive options. If `encoding` is not supplied, the default of `'utf8'` is used. If `persistent` is not supplied, the default of `true` is used. If `recursive` is not supplied, the default of `false` is used.    |
-`listener?` | (`event`: *string*, `filename`: Buffer) => *void* | - |
-
-**Returns:** [*FSWatcher*](../interfaces/fs.fswatcher.md)
-
-Defined in: node_modules/@types/node/fs.d.ts:1554
-
-▸ **watch**(`filename`: PathLike, `options`: { `encoding?`: *string* \| *null* ; `persistent?`: *boolean* ; `recursive?`: *boolean*  } \| *string* \| *null*, `listener?`: (`event`: *string*, `filename`: *string* \| Buffer) => *void*): [*FSWatcher*](../interfaces/fs.fswatcher.md)
+▸ **watch**(`filename`, `options`, `listener?`): [`FSWatcher`](../interfaces/fs.FSWatcher.md)
 
 Watch for changes on `filename`, where `filename` is either a file or a directory, returning an `FSWatcher`.
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`filename` | PathLike | A path to a file or directory. If a URL is provided, it must use the `file:` protocol. URL support is _experimental_.   |
-`options` | { `encoding?`: *string* \| *null* ; `persistent?`: *boolean* ; `recursive?`: *boolean*  } \| *string* \| *null* | Either the encoding for the filename provided to the listener, or an object optionally specifying encoding, persistent, and recursive options. If `encoding` is not supplied, the default of `'utf8'` is used. If `persistent` is not supplied, the default of `true` is used. If `recursive` is not supplied, the default of `false` is used.    |
-`listener?` | (`event`: *string*, `filename`: *string* \| Buffer) => *void* | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `filename` | `PathLike` | A path to a file or directory. If a URL is provided, it must use the `file:` protocol. |
+| `options` | `string` \| `WatchOptions` | Either the encoding for the filename provided to the listener, or an object optionally specifying encoding, persistent, and recursive options. If `encoding` is not supplied, the default of `'utf8'` is used. If `persistent` is not supplied, the default of `true` is used. If `recursive` is not supplied, the default of `false` is used. |
+| `listener?` | `WatchListener`<`string` \| `Buffer`\> | - |
 
-**Returns:** [*FSWatcher*](../interfaces/fs.fswatcher.md)
+#### Returns
 
-Defined in: node_modules/@types/node/fs.d.ts:1565
+[`FSWatcher`](../interfaces/fs.FSWatcher.md)
 
-▸ **watch**(`filename`: PathLike, `listener?`: (`event`: *string*, `filename`: *string*) => *any*): [*FSWatcher*](../interfaces/fs.fswatcher.md)
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:2904
+
+▸ **watch**(`filename`, `listener?`): [`FSWatcher`](../interfaces/fs.FSWatcher.md)
 
 Watch for changes on `filename`, where `filename` is either a file or a directory, returning an `FSWatcher`.
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`filename` | PathLike | A path to a file or directory. If a URL is provided, it must use the `file:` protocol. URL support is _experimental_.    |
-`listener?` | (`event`: *string*, `filename`: *string*) => *any* | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `filename` | `PathLike` | A path to a file or directory. If a URL is provided, it must use the `file:` protocol. |
+| `listener?` | `WatchListener`<`string`\> | - |
 
-**Returns:** [*FSWatcher*](../interfaces/fs.fswatcher.md)
+#### Returns
 
-Defined in: node_modules/@types/node/fs.d.ts:1576
+[`FSWatcher`](../interfaces/fs.FSWatcher.md)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:2909
 
 ___
 
 ### withTmpDir
 
-▸ `Const`**withTmpDir**(...`args`: *any*[]): *any*
+▸ `Const` **withTmpDir**(...`args`): `any`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`...args` | *any*[] |
+| Name | Type |
+| :------ | :------ |
+| `...args` | `any`[] |
 
-**Returns:** *any*
+#### Returns
 
-Defined in: src/util/fs.ts:1163
+`any`
+
+#### Defined in
+
+../src/util/fs.ts:1109
 
 ___
 
 ### withTmpDirImpl
 
-▸ **withTmpDirImpl**<T\>(`cb`: (`tmpPath`: *string*) => [*Promise*](../classes/promise.md)<T\>): [*Promise*](../classes/promise.md)<T\>
+▸ **withTmpDirImpl**<`T`\>(`cb`): [`Promise`](../classes/Promise.md)<`T`\>
 
-#### Type parameters:
+#### Type parameters
 
-Name |
-:------ |
-`T` |
+| Name |
+| :------ |
+| `T` |
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`cb` | (`tmpPath`: *string*) => [*Promise*](../classes/promise.md)<T\> |
+| Name | Type |
+| :------ | :------ |
+| `cb` | (`tmpPath`: `string`) => [`Promise`](../classes/Promise.md)<`T`\> |
 
-**Returns:** [*Promise*](../classes/promise.md)<T\>
+#### Returns
 
-Defined in: src/util/fs.ts:1109
+[`Promise`](../classes/Promise.md)<`T`\>
+
+#### Defined in
+
+../src/util/fs.ts:1055
 
 ___
 
 ### withTmpFile
 
-▸ `Const`**withTmpFile**(...`args`: *any*[]): *any*
+▸ `Const` **withTmpFile**(...`args`): `any`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`...args` | *any*[] |
+| Name | Type |
+| :------ | :------ |
+| `...args` | `any`[] |
 
-**Returns:** *any*
+#### Returns
 
-Defined in: src/util/fs.ts:1164
+`any`
+
+#### Defined in
+
+../src/util/fs.ts:1110
 
 ___
 
 ### writeAsync
 
-▸ `Const`**writeAsync**<BufferT\>(...`args`: *any*[]): [*Promise*](../classes/promise.md)<{ `buffer`: BufferT ; `bytesWritten`: *number*  }\>
+▸ `Const` **writeAsync**<`BufferT`\>(...`args`): [`Promise`](../classes/Promise.md)<{ `buffer`: `BufferT` ; `bytesWritten`: `number`  }\>
 
-#### Type parameters:
+#### Type parameters
 
-Name |
-:------ |
-`BufferT` |
+| Name |
+| :------ |
+| `BufferT` |
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`...args` | *any*[] |
+| Name | Type |
+| :------ | :------ |
+| `...args` | `any`[] |
 
-**Returns:** [*Promise*](../classes/promise.md)<{ `buffer`: BufferT ; `bytesWritten`: *number*  }\>
+#### Returns
 
-Defined in: src/util/fs.ts:497
+[`Promise`](../classes/Promise.md)<{ `buffer`: `BufferT` ; `bytesWritten`: `number`  }\>
+
+#### Defined in
+
+../src/util/fs.ts:441
 
 ___
 
 ### writeFileAsync
 
-▸ `Const`**writeFileAsync**(`file`: *string*, `data`: *any*, `options?`: WriteFileOptions): [*Promise*](../classes/promise.md)<void\>
+▸ `Const` **writeFileAsync**(`file`, `data`, `options?`): [`Promise`](../classes/Promise.md)<`void`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`file` | *string* |
-`data` | *any* |
-`options?` | WriteFileOptions |
+| Name | Type |
+| :------ | :------ |
+| `file` | `string` |
+| `data` | `any` |
+| `options?` | `WriteFileOptions` |
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Returns
 
-Defined in: src/util/fs.ts:499
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/fs.ts:443
 
 ___
 
 ### writeFileSync
 
-▸ **writeFileSync**(`path`: PathLike \| *number*, `data`: *any*, `options?`: WriteFileOptions): *void*
+▸ **writeFileSync**(`file`, `data`, `options?`): `void`
 
-Synchronously writes data to a file, replacing the file if it already exists.
+Returns `undefined`.
 
-#### Parameters:
+If `data` is a plain object, it must have an own (not inherited) `toString`function property.
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`path` | PathLike \| *number* | A path to a file. If a URL is provided, it must use the `file:` protocol. URL support is _experimental_. If a file descriptor is provided, the underlying file will _not_ be closed automatically.   |
-`data` | *any* | The data to write. If something other than a Buffer or Uint8Array is provided, the value is coerced to a string.   |
-`options?` | WriteFileOptions | Either the encoding for the file, or an object optionally specifying the encoding, file mode, and flag. If `encoding` is not supplied, the default of `'utf8'` is used. If `mode` is not supplied, the default of `0o666` is used. If `mode` is a string, it is parsed as an octal integer. If `flag` is not supplied, the default of `'w'` is used.    |
+The `mode` option only affects the newly created file. See {@link open} for more details.
 
-**Returns:** *void*
+For detailed information, see the documentation of the asynchronous version of
+this API: {@link writeFile}.
 
-Defined in: node_modules/@types/node/fs.d.ts:1455
+**`since`** v0.1.29
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `file` | `PathOrFileDescriptor` | filename or file descriptor |
+| `data` | `string` \| `ArrayBufferView` | - |
+| `options?` | `WriteFileOptions` | - |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:2639
 
 ___
 
 ### writeSync
 
-▸ **writeSync**(`fd`: *number*, `buffer`: NodeJS.ArrayBufferView, `offset?`: *number* \| *null*, `length?`: *number* \| *null*, `position?`: *number* \| *null*): *number*
+▸ **writeSync**(`fd`, `buffer`, `offset?`, `length?`, `position?`): `number`
 
-Synchronously writes `buffer` to the file referenced by the supplied file descriptor, returning the number of bytes written.
+If `buffer` is a plain object, it must have an own (not inherited) `toString`function property.
 
-#### Parameters:
+For detailed information, see the documentation of the asynchronous version of
+this API: [write](../classes/fs.WriteStream.md#write).
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`fd` | *number* | A file descriptor.   |
-`buffer` | NodeJS.ArrayBufferView | - |
-`offset?` | *number* \| *null* | The part of the buffer to be written. If not supplied, defaults to `0`.   |
-`length?` | *number* \| *null* | The number of bytes to write. If not supplied, defaults to `buffer.length - offset`.   |
-`position?` | *number* \| *null* | The offset from the beginning of the file where this data should be written. If not supplied, defaults to the current position.    |
+**`since`** v0.1.21
 
-**Returns:** *number*
+#### Parameters
 
-Defined in: node_modules/@types/node/fs.d.ts:1244
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `fd` | `number` | A file descriptor. |
+| `buffer` | `ArrayBufferView` | - |
+| `offset?` | `number` | - |
+| `length?` | `number` | - |
+| `position?` | `number` | The offset from the beginning of the file where this data should be written. If not supplied, defaults to the current position. |
 
-▸ **writeSync**(`fd`: *number*, `string`: *any*, `position?`: *number* \| *null*, `encoding?`: *string* \| *null*): *number*
+#### Returns
+
+`number`
+
+The number of bytes written.
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:2221
+
+▸ **writeSync**(`fd`, `string`, `position?`, `encoding?`): `number`
 
 Synchronously writes `string` to the file referenced by the supplied file descriptor, returning the number of bytes written.
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`fd` | *number* | A file descriptor.   |
-`string` | *any* | A string to write. If something other than a string is supplied it will be coerced to a string.   |
-`position?` | *number* \| *null* | The offset from the beginning of the file where this data should be written. If not supplied, defaults to the current position.   |
-`encoding?` | *string* \| *null* | The expected string encoding.    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `fd` | `number` | A file descriptor. |
+| `string` | `string` | A string to write. |
+| `position?` | `number` | The offset from the beginning of the file where this data should be written. If not supplied, defaults to the current position. |
+| `encoding?` | `BufferEncoding` | The expected string encoding. |
 
-**Returns:** *number*
+#### Returns
 
-Defined in: node_modules/@types/node/fs.d.ts:1253
+`number`
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/fs.d.ts:2229

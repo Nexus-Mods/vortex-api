@@ -6,7 +6,7 @@
 
 ### Namespaces
 
-- [Promise](modules/promise.md)
+- [Promise](modules/Promise.md)
 - [actions](modules/actions.md)
 - [fs](modules/fs.md)
 - [selectors](modules/selectors.md)
@@ -16,36 +16,41 @@
 
 ### Classes
 
-- [ActionContextMenu](classes/actioncontextmenu.md)
-- [ComponentEx](classes/componentex.md)
-- [DNDContainer](classes/dndcontainer.md)
-- [Dashlet](classes/dashlet.md)
-- [Dropdown](classes/dropdown.md)
-- [DropdownButton](classes/dropdownbutton.md)
-- [EmptyPlaceholder](classes/emptyplaceholder.md)
-- [FlexLayout](classes/flexlayout.md)
-- [FormCheckboxItem](classes/formcheckboxitem.md)
-- [FormFeedback](classes/formfeedback.md)
-- [FormPathItem](classes/formpathitem.md)
-- [FormTextItem](classes/formtextitem.md)
-- [Icon](classes/icon.md)
-- [MainPage](classes/mainpage.md)
-- [Modal](classes/modal.md)
-- [OptionsFilter](classes/optionsfilter.md)
-- [Overlay](classes/overlay.md)
-- [OverlayTrigger](classes/overlaytrigger.md)
-- [Promise](classes/promise.md)
-- [PureComponentEx](classes/purecomponentex.md)
-- [TableDateTimeFilter](classes/tabledatetimefilter.md)
-- [TableNumericFilter](classes/tablenumericfilter.md)
-- [TableTextFilter](classes/tabletextfilter.md)
-- [Toggle](classes/toggle.md)
-- [ToolbarIcon](classes/toolbaricon.md)
-- [Webview](classes/webview.md)
+- [ActionContextMenu](classes/ActionContextMenu.md)
+- [ComponentEx](classes/ComponentEx.md)
+- [DNDContainer](classes/DNDContainer.md)
+- [Dashlet](classes/Dashlet.md)
+- [Dropdown](classes/Dropdown.md)
+- [DropdownButton](classes/DropdownButton.md)
+- [EmptyPlaceholder](classes/EmptyPlaceholder.md)
+- [FlexLayout](classes/FlexLayout.md)
+- [FormCheckboxItem](classes/FormCheckboxItem.md)
+- [FormFeedback](classes/FormFeedback.md)
+- [FormPathItem](classes/FormPathItem.md)
+- [FormTextItem](classes/FormTextItem.md)
+- [Icon](classes/Icon.md)
+- [MainPage](classes/MainPage.md)
+- [Modal](classes/Modal.md)
+- [OptionsFilter](classes/OptionsFilter.md)
+- [Overlay](classes/Overlay.md)
+- [OverlayTrigger](classes/OverlayTrigger.md)
+- [PortalMenu](classes/PortalMenu.md)
+- [ProgressBar](classes/ProgressBar.md)
+- [Promise](classes/Promise.md)
+- [PureComponentEx](classes/PureComponentEx.md)
+- [SelectUpDown](classes/SelectUpDown.md)
+- [TableDateTimeFilter](classes/TableDateTimeFilter.md)
+- [TableNumericFilter](classes/TableNumericFilter.md)
+- [TableTextFilter](classes/TableTextFilter.md)
+- [Toggle](classes/Toggle.md)
+- [ToolbarIcon](classes/ToolbarIcon.md)
+- [VisibilityProxy](classes/VisibilityProxy.md)
+- [Webview](classes/Webview.md)
+- [ZoomableImage](classes/ZoomableImage.md)
 
 ### Interfaces
 
-- [ITableRowAction](interfaces/itablerowaction.md)
+- [ITableRowAction](interfaces/ITableRowAction.md)
 
 ### Type aliases
 
@@ -58,9 +63,11 @@
 - [Banner](modules.md#banner)
 - [ContextMenu](modules.md#contextmenu)
 - [Dropzone](modules.md#dropzone)
+- [ErrorBoundary](modules.md#errorboundary)
 - [FormInput](modules.md#forminput)
 - [IconBar](modules.md#iconbar)
 - [More](modules.md#more)
+- [RadialProgress](modules.md#radialprogress)
 - [Steps](modules.md#steps)
 - [Table](modules.md#table)
 - [TriStateCheckbox](modules.md#tristatecheckbox)
@@ -73,7 +80,9 @@
 ### Functions
 
 - [DraggableList](modules.md#draggablelist)
+- [Image](modules.md#image)
 - [Spinner](modules.md#spinner)
+- [Timer](modules.md#timer)
 - [log](modules.md#log)
 - [makeGetSelection](modules.md#makegetselection)
 
@@ -81,170 +90,247 @@
 
 ### ChangeDataHandler
 
-Ƭ **ChangeDataHandler**: (`rowId`: *string*, `attributeId`: *string*, `newValue`: *any*) => *void*
+Ƭ **ChangeDataHandler**: (`rowId`: `string`, `attributeId`: `string`, `newValue`: `any`) => `void`
 
-#### Type declaration:
+#### Type declaration
 
-▸ (`rowId`: *string*, `attributeId`: *string*, `newValue`: *any*): *void*
+▸ (`rowId`, `attributeId`, `newValue`): `void`
 
-#### Parameters:
+##### Parameters
 
-Name | Type |
-:------ | :------ |
-`rowId` | *string* |
-`attributeId` | *string* |
-`newValue` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `rowId` | `string` |
+| `attributeId` | `string` |
+| `newValue` | `any` |
 
-**Returns:** *void*
+##### Returns
 
-Defined in: src/controls/Table.tsx:35
+`void`
+
+#### Defined in
+
+../src/controls/Table.tsx:35
 
 ## Properties
 
 ### ActionDropdown
 
-• **ActionDropdown**: *ComponentClass*<ExportType, any\>
+• **ActionDropdown**: `ComponentClass`<`ExportType`, `any`\>
 
 ___
 
 ### Advanced
 
-• **Advanced**: *ConnectedComponent*<*typeof* Advanced, Pick<*ClassAttributes*<Advanced\> & IConnectedProps & *Partial*<WithTranslation\>, *i18n* \| *tReady* \| *t* \| *ref* \| *key*\>\>
+• **Advanced**: `ComponentType`<{}\>
 
 ___
 
 ### Banner
 
-• **Banner**: *ComponentClass*<any, any\>
+• **Banner**: `ComponentClass`<`any`, `any`\>
 
 ___
 
 ### ContextMenu
 
-• **ContextMenu**: *ComponentClass*<IContextMenuProps, any\>
+• **ContextMenu**: `ComponentClass`<`IContextMenuProps`, `any`\>
 
 ___
 
 ### Dropzone
 
-• **Dropzone**: *ComponentClass*<IBaseProps, any\>
+• **Dropzone**: `ComponentClass`<`IBaseProps`, `any`\>
+
+___
+
+### ErrorBoundary
+
+• **ErrorBoundary**: `any`
 
 ___
 
 ### FormInput
 
-• **FormInput**: *ComponentClass*<IProps, any\>
+• **FormInput**: `ComponentClass`<`IProps`, `any`\>
 
 ___
 
 ### IconBar
 
-• **IconBar**: *ComponentClass*<ExportType, any\>
+• **IconBar**: `ComponentClass`<`ExportType`, `any`\>
 
 ___
 
 ### More
 
-• **More**: *ComponentClass*<IMoreProps, any\>
+• **More**: `ComponentClass`<`IMoreProps`, `any`\>
+
+___
+
+### RadialProgress
+
+• **RadialProgress**: `ComponentClass`<`IBaseProps`, `any`\>
 
 ___
 
 ### Steps
 
-• **Steps**: *ISteps*
+• **Steps**: `ISteps`
 
 ___
 
 ### Table
 
-• **Table**: *ComponentClass*<IBaseProps & IExtensibleProps, any\>
+• **Table**: `ComponentType`<`IBaseProps` & `IExtensibleProps`\>
 
 ___
 
 ### TriStateCheckbox
 
-• **TriStateCheckbox**: *any*
+• **TriStateCheckbox**: `any`
 
 ___
 
 ### Usage
 
-• **Usage**: *ComponentClass*<IUsageProps, any\>
+• **Usage**: `ComponentClass`<`IUsageProps`, `any`\>
 
 ## Variables
 
 ### MainContext
 
-• `Const` **MainContext**: *Context*<{}\>
+• **MainContext**: `Context`<[`IComponentContext`](interfaces/types.IComponentContext.md)\>
 
-Defined in: src/views/MainWindow.tsx:95
+#### Defined in
+
+../src/views/MainWindow.tsx:97
 
 ## Functions
 
 ### DraggableList
 
-▸ **DraggableList**(`props`: IDraggableListProps): *Element*
+▸ **DraggableList**(`props`): `Element`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`props` | IDraggableListProps |
+| Name | Type |
+| :------ | :------ |
+| `props` | `IDraggableListProps` |
 
-**Returns:** *Element*
+#### Returns
 
-Defined in: src/controls/DraggableList.tsx:146
+`Element`
+
+#### Defined in
+
+../src/controls/DraggableList.tsx:148
+
+___
+
+### Image
+
+▸ **Image**(`props`): `JSX.Element`
+
+image component that supports alternative images, using the first that renders
+successfully
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `props` | `IImageProps` |
+
+#### Returns
+
+`JSX.Element`
+
+#### Defined in
+
+../src/controls/Image.tsx:18
 
 ___
 
 ### Spinner
 
-▸ **Spinner**(`props`: ISpinnerProps): *Element*
+▸ **Spinner**(`props`): `Element`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`props` | ISpinnerProps |
+| Name | Type |
+| :------ | :------ |
+| `props` | `ISpinnerProps` |
 
-**Returns:** *Element*
+#### Returns
 
-Defined in: src/controls/Spinner.tsx:10
+`Element`
+
+#### Defined in
+
+../src/controls/Spinner.tsx:10
+
+___
+
+### Timer
+
+▸ **Timer**(`props`): `Element`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `props` | `ITimerProps` |
+
+#### Returns
+
+`Element`
+
+#### Defined in
+
+../src/controls/Timer.tsx:23
 
 ___
 
 ### log
 
-▸ **log**(`level`: LogLevel, `message`: *string*, `metadata?`: *any*): *void*
+▸ **log**(`level`, `message`, `metadata?`): `void`
 
 log a message
 
-**`export`** 
+**`export`**
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`level` | LogLevel | The log level of the message: 'debug', 'info' or 'error'   |
-`message` | *string* | The text message. Should contain no variable data   |
-`metadata?` | *any* | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `level` | `LogLevel` | The log level of the message: 'debug', 'info' or 'error' |
+| `message` | `string` | The text message. Should contain no variable data |
+| `metadata?` | `any` | - |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: src/util/log.ts:118
+`void`
+
+#### Defined in
+
+../src/util/log.ts:137
 
 ___
 
 ### makeGetSelection
 
-▸ **makeGetSelection**(`tableId`: *string*): GetSelection
+▸ **makeGetSelection**(`tableId`): `GetSelection`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`tableId` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `tableId` | `string` |
 
-**Returns:** GetSelection
+#### Returns
 
-Defined in: src/controls/Table.tsx:1663
+`GetSelection`
+
+#### Defined in
+
+../src/controls/Table.tsx:1773

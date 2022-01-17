@@ -8,30 +8,36 @@
 
 ### Properties
 
-- [exclusive](types.irunningtool.md#exclusive)
-- [pid](types.irunningtool.md#pid)
-- [started](types.irunningtool.md#started)
+- [exclusive](types.IRunningTool.md#exclusive)
+- [pid](types.IRunningTool.md#pid)
+- [started](types.IRunningTool.md#started)
 
 ## Properties
 
 ### exclusive
 
-• **exclusive**: *boolean*
+• **exclusive**: `boolean`
 
-Defined in: src/types/IState.ts:78
+#### Defined in
+
+../src/types/IState.ts:78
 
 ___
 
 ### pid
 
-• **pid**: *number*
+• **pid**: `number`
 
-Defined in: src/types/IState.ts:79
+#### Defined in
+
+../src/types/IState.ts:79
 
 ___
 
 ### started
 
-• **started**: *number*
+• **started**: `number`
 
-Defined in: src/types/IState.ts:77
+#### Defined in
+
+../src/types/IState.ts:77

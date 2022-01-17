@@ -4,138 +4,151 @@
 
 ## Table of contents
 
+### References
+
+- [IEnableOptions](types.md#ienableoptions)
+
 ### Classes
 
-- [GameEntryNotFound](../classes/types.gameentrynotfound.md)
-- [GameStoreNotFound](../classes/types.gamestorenotfound.md)
-- [VerifierDrop](../classes/types.verifierdrop.md)
-- [VerifierDropParent](../classes/types.verifierdropparent.md)
+- [GameEntryNotFound](../classes/types.GameEntryNotFound.md)
+- [GameStoreNotFound](../classes/types.GameStoreNotFound.md)
+- [VerifierDrop](../classes/types.VerifierDrop.md)
+- [VerifierDropParent](../classes/types.VerifierDropParent.md)
 
 ### Interfaces
 
-- [IActionDefinition](../interfaces/types.iactiondefinition.md)
-- [IActionOptions](../interfaces/types.iactionoptions.md)
-- [IApiFuncOptions](../interfaces/types.iapifuncoptions.md)
-- [IApp](../interfaces/types.iapp.md)
-- [IArchiveHandler](../interfaces/types.iarchivehandler.md)
-- [IArchiveOptions](../interfaces/types.iarchiveoptions.md)
-- [IAttachment](../interfaces/types.iattachment.md)
-- [IAttributeState](../interfaces/types.iattributestate.md)
-- [IAvailableExtension](../interfaces/types.iavailableextension.md)
-- [IBrowserState](../interfaces/types.ibrowserstate.md)
-- [ICheckbox](../interfaces/types.icheckbox.md)
-- [IComponentContext](../interfaces/types.icomponentcontext.md)
-- [IConditionResult](../interfaces/types.iconditionresult.md)
-- [IControlBase](../interfaces/types.icontrolbase.md)
-- [ICustomExecutionInfo](../interfaces/types.icustomexecutioninfo.md)
-- [ICustomProps](../interfaces/types.icustomprops.md)
-- [IDashletOptions](../interfaces/types.idashletoptions.md)
-- [IDashletSettings](../interfaces/types.idashletsettings.md)
-- [IDeployedFile](../interfaces/types.ideployedfile.md)
-- [IDeploymentManifest](../interfaces/types.ideploymentmanifest.md)
-- [IDeploymentMethod](../interfaces/types.ideploymentmethod.md)
-- [IDialog](../interfaces/types.idialog.md)
-- [IDialogAction](../interfaces/types.idialogaction.md)
-- [IDialogContent](../interfaces/types.idialogcontent.md)
-- [IDialogResult](../interfaces/types.idialogresult.md)
-- [IDimensions](../interfaces/types.idimensions.md)
-- [IDiscoveredTool](../interfaces/types.idiscoveredtool.md)
-- [IDiscoveryPhase](../interfaces/types.idiscoveryphase.md)
-- [IDiscoveryResult](../interfaces/types.idiscoveryresult.md)
-- [IDiscoveryState](../interfaces/types.idiscoverystate.md)
-- [IDownload](../interfaces/types.idownload.md)
-- [IEditChoice](../interfaces/types.ieditchoice.md)
-- [IErrorOptions](../interfaces/types.ierroroptions.md)
-- [IExecInfo](../interfaces/types.iexecinfo.md)
-- [IExtension](../interfaces/types.iextension.md)
-- [IExtensionApi](../interfaces/types.iextensionapi.md)
-- [IExtensionContext](../interfaces/types.iextensioncontext.md)
-- [IExtensionLoadFailure](../interfaces/types.iextensionloadfailure.md)
-- [IExtensionState](../interfaces/types.iextensionstate.md)
-- [IFileChange](../interfaces/types.ifilechange.md)
-- [IFileFilter](../interfaces/types.ifilefilter.md)
-- [IFilterProps](../interfaces/types.ifilterprops.md)
-- [IGame](../interfaces/types.igame.md)
-- [IGameDetail](../interfaces/types.igamedetail.md)
-- [IGameInfoEntry](../interfaces/types.igameinfoentry.md)
-- [IGameModeSettings](../interfaces/types.igamemodesettings.md)
-- [IGameStore](../interfaces/types.igamestore.md)
-- [IGameStoreEntry](../interfaces/types.igamestoreentry.md)
-- [IGameStored](../interfaces/types.igamestored.md)
-- [IHistoryEvent](../interfaces/types.ihistoryevent.md)
-- [IHistoryStack](../interfaces/types.ihistorystack.md)
-- [IInput](../interfaces/types.iinput.md)
-- [IInstallResult](../interfaces/types.iinstallresult.md)
-- [IInstruction](../interfaces/types.iinstruction.md)
-- [ILink](../interfaces/types.ilink.md)
-- [ILoadOrderDisplayItem](../interfaces/types.iloadorderdisplayitem.md)
-- [ILookupDetails](../interfaces/types.ilookupdetails.md)
-- [ILookupResult](../interfaces/types.ilookupresult.md)
-- [IMainPageOptions](../interfaces/types.imainpageoptions.md)
-- [IMergeFilter](../interfaces/types.imergefilter.md)
-- [IMod](../interfaces/types.imod.md)
-- [IModInfo](../interfaces/types.imodinfo.md)
-- [IModReference](../interfaces/types.imodreference.md)
-- [IModRule](../interfaces/types.imodrule.md)
-- [IModSourceOptions](../interfaces/types.imodsourceoptions.md)
-- [IModTable](../interfaces/types.imodtable.md)
-- [IModType](../interfaces/types.imodtype.md)
-- [IModTypeOptions](../interfaces/types.imodtypeoptions.md)
-- [IModifiers](../interfaces/types.imodifiers.md)
-- [INotification](../interfaces/types.inotification.md)
-- [INotificationAction](../interfaces/types.inotificationaction.md)
-- [INotificationState](../interfaces/types.inotificationstate.md)
-- [IOpenOptions](../interfaces/types.iopenoptions.md)
-- [IPersistor](../interfaces/types.ipersistor.md)
-- [IPosition](../interfaces/types.iposition.md)
-- [IPreviewFile](../interfaces/types.ipreviewfile.md)
-- [IProfile](../interfaces/types.iprofile.md)
-- [IProfileMod](../interfaces/types.iprofilemod.md)
-- [IProgress](../interfaces/types.iprogress.md)
-- [IReducerSpec](../interfaces/types.ireducerspec.md)
-- [IReference](../interfaces/types.ireference.md)
-- [IRegisterProtocol](../interfaces/types.iregisterprotocol.md)
-- [IRegisteredExtension](../interfaces/types.iregisteredextension.md)
-- [IRowState](../interfaces/types.irowstate.md)
-- [IRunOptions](../interfaces/types.irunoptions.md)
-- [IRunParameters](../interfaces/types.irunparameters.md)
-- [IRunningTool](../interfaces/types.irunningtool.md)
-- [ISession](../interfaces/types.isession.md)
-- [ISessionGameMode](../interfaces/types.isessiongamemode.md)
-- [ISettings](../interfaces/types.isettings.md)
-- [ISettingsAutomation](../interfaces/types.isettingsautomation.md)
-- [ISettingsDownloads](../interfaces/types.isettingsdownloads.md)
-- [ISettingsGameMode](../interfaces/types.isettingsgamemode.md)
-- [ISettingsInterface](../interfaces/types.isettingsinterface.md)
-- [ISettingsMods](../interfaces/types.isettingsmods.md)
-- [ISettingsNotification](../interfaces/types.isettingsnotification.md)
-- [ISettingsProfiles](../interfaces/types.isettingsprofiles.md)
-- [ISettingsUpdate](../interfaces/types.isettingsupdate.md)
-- [ISettingsWorkarounds](../interfaces/types.isettingsworkarounds.md)
-- [IStarterInfo](../interfaces/types.istarterinfo.md)
-- [IState](../interfaces/types.istate.md)
-- [IStateDownloads](../interfaces/types.istatedownloads.md)
-- [IStateGameMode](../interfaces/types.istategamemode.md)
-- [IStatePaths](../interfaces/types.istatepaths.md)
-- [IStateTransactions](../interfaces/types.istatetransactions.md)
-- [IStateVerifier](../interfaces/types.istateverifier.md)
-- [ISupportedResult](../interfaces/types.isupportedresult.md)
-- [ITableAttribute](../interfaces/types.itableattribute.md)
-- [ITableFilter](../interfaces/types.itablefilter.md)
-- [ITableState](../interfaces/types.itablestate.md)
-- [ITableStates](../interfaces/types.itablestates.md)
-- [ITestResult](../interfaces/types.itestresult.md)
-- [IToDoButton](../interfaces/types.itodobutton.md)
-- [IToolStored](../interfaces/types.itoolstored.md)
-- [IUIBlocker](../interfaces/types.iuiblocker.md)
-- [IUnavailableReason](../interfaces/types.iunavailablereason.md)
-- [IUser](../interfaces/types.iuser.md)
-- [IValidateKeyData](../interfaces/types.ivalidatekeydata.md)
-- [IWindow](../interfaces/types.iwindow.md)
-- [ThunkStore](../interfaces/types.thunkstore.md)
+- [IActionDefinition](../interfaces/types.IActionDefinition.md)
+- [IActionOptions](../interfaces/types.IActionOptions.md)
+- [IApiFuncOptions](../interfaces/types.IApiFuncOptions.md)
+- [IApp](../interfaces/types.IApp.md)
+- [IArchiveHandler](../interfaces/types.IArchiveHandler.md)
+- [IArchiveOptions](../interfaces/types.IArchiveOptions.md)
+- [IAttachment](../interfaces/types.IAttachment.md)
+- [IAttributeState](../interfaces/types.IAttributeState.md)
+- [IAvailableExtension](../interfaces/types.IAvailableExtension.md)
+- [IBrowserState](../interfaces/types.IBrowserState.md)
+- [ICheckbox](../interfaces/types.ICheckbox.md)
+- [IComponentContext](../interfaces/types.IComponentContext.md)
+- [IConditionResult](../interfaces/types.IConditionResult.md)
+- [IControlBase](../interfaces/types.IControlBase.md)
+- [ICustomExecutionInfo](../interfaces/types.ICustomExecutionInfo.md)
+- [ICustomProps](../interfaces/types.ICustomProps.md)
+- [IDashletOptions](../interfaces/types.IDashletOptions.md)
+- [IDashletSettings](../interfaces/types.IDashletSettings.md)
+- [IDeployedFile](../interfaces/types.IDeployedFile.md)
+- [IDeploymentManifest](../interfaces/types.IDeploymentManifest.md)
+- [IDeploymentMethod](../interfaces/types.IDeploymentMethod.md)
+- [IDialog](../interfaces/types.IDialog.md)
+- [IDialogAction](../interfaces/types.IDialogAction.md)
+- [IDialogContent](../interfaces/types.IDialogContent.md)
+- [IDialogResult](../interfaces/types.IDialogResult.md)
+- [IDimensions](../interfaces/types.IDimensions.md)
+- [IDiscoveredTool](../interfaces/types.IDiscoveredTool.md)
+- [IDiscoveryPhase](../interfaces/types.IDiscoveryPhase.md)
+- [IDiscoveryResult](../interfaces/types.IDiscoveryResult.md)
+- [IDiscoveryState](../interfaces/types.IDiscoveryState.md)
+- [IDownload](../interfaces/types.IDownload.md)
+- [IEditChoice](../interfaces/types.IEditChoice.md)
+- [IErrorOptions](../interfaces/types.IErrorOptions.md)
+- [IExecInfo](../interfaces/types.IExecInfo.md)
+- [IExtension](../interfaces/types.IExtension.md)
+- [IExtensionApi](../interfaces/types.IExtensionApi.md)
+- [IExtensionContext](../interfaces/types.IExtensionContext.md)
+- [IExtensionLoadFailure](../interfaces/types.IExtensionLoadFailure.md)
+- [IExtensionState](../interfaces/types.IExtensionState.md)
+- [IFileChange](../interfaces/types.IFileChange.md)
+- [IFileFilter](../interfaces/types.IFileFilter.md)
+- [IFilterProps](../interfaces/types.IFilterProps.md)
+- [IGame](../interfaces/types.IGame.md)
+- [IGameDetail](../interfaces/types.IGameDetail.md)
+- [IGameInfoEntry](../interfaces/types.IGameInfoEntry.md)
+- [IGameModeSettings](../interfaces/types.IGameModeSettings.md)
+- [IGameStore](../interfaces/types.IGameStore.md)
+- [IGameStoreEntry](../interfaces/types.IGameStoreEntry.md)
+- [IGameStored](../interfaces/types.IGameStored.md)
+- [IHistoryEvent](../interfaces/types.IHistoryEvent.md)
+- [IHistoryStack](../interfaces/types.IHistoryStack.md)
+- [IInput](../interfaces/types.IInput.md)
+- [IInstallResult](../interfaces/types.IInstallResult.md)
+- [IInstruction](../interfaces/types.IInstruction.md)
+- [ILink](../interfaces/types.ILink.md)
+- [ILoadOrderDisplayItem](../interfaces/types.ILoadOrderDisplayItem.md)
+- [ILoadOrderEntry](../interfaces/types.ILoadOrderEntry.md)
+- [ILoadOrderGameInfo](../interfaces/types.ILoadOrderGameInfo.md)
+- [ILookupDetails](../interfaces/types.ILookupDetails.md)
+- [ILookupResult](../interfaces/types.ILookupResult.md)
+- [IMainPageOptions](../interfaces/types.IMainPageOptions.md)
+- [IMergeFilter](../interfaces/types.IMergeFilter.md)
+- [IMod](../interfaces/types.IMod.md)
+- [IModInfo](../interfaces/types.IModInfo.md)
+- [IModLookupInfo](../interfaces/types.IModLookupInfo.md)
+- [IModReference](../interfaces/types.IModReference.md)
+- [IModRepoId](../interfaces/types.IModRepoId.md)
+- [IModRule](../interfaces/types.IModRule.md)
+- [IModSourceOptions](../interfaces/types.IModSourceOptions.md)
+- [IModTable](../interfaces/types.IModTable.md)
+- [IModType](../interfaces/types.IModType.md)
+- [IModTypeOptions](../interfaces/types.IModTypeOptions.md)
+- [IModifiers](../interfaces/types.IModifiers.md)
+- [INotification](../interfaces/types.INotification.md)
+- [INotificationAction](../interfaces/types.INotificationAction.md)
+- [INotificationState](../interfaces/types.INotificationState.md)
+- [IOpenOptions](../interfaces/types.IOpenOptions.md)
+- [IOverlay](../interfaces/types.IOverlay.md)
+- [IOverlaysState](../interfaces/types.IOverlaysState.md)
+- [IPersistor](../interfaces/types.IPersistor.md)
+- [IPosition](../interfaces/types.IPosition.md)
+- [IPreviewFile](../interfaces/types.IPreviewFile.md)
+- [IProfile](../interfaces/types.IProfile.md)
+- [IProfileMod](../interfaces/types.IProfileMod.md)
+- [IProgress](../interfaces/types.IProgress.md)
+- [IReducerSpec](../interfaces/types.IReducerSpec.md)
+- [IReference](../interfaces/types.IReference.md)
+- [IRegisterProtocol](../interfaces/types.IRegisterProtocol.md)
+- [IRegisterRepositoryLookup](../interfaces/types.IRegisterRepositoryLookup.md)
+- [IRegisteredExtension](../interfaces/types.IRegisteredExtension.md)
+- [IRowState](../interfaces/types.IRowState.md)
+- [IRunOptions](../interfaces/types.IRunOptions.md)
+- [IRunParameters](../interfaces/types.IRunParameters.md)
+- [IRunningTool](../interfaces/types.IRunningTool.md)
+- [ISession](../interfaces/types.ISession.md)
+- [ISessionGameMode](../interfaces/types.ISessionGameMode.md)
+- [ISettings](../interfaces/types.ISettings.md)
+- [ISettingsAutomation](../interfaces/types.ISettingsAutomation.md)
+- [ISettingsDownloads](../interfaces/types.ISettingsDownloads.md)
+- [ISettingsGameMode](../interfaces/types.ISettingsGameMode.md)
+- [ISettingsInterface](../interfaces/types.ISettingsInterface.md)
+- [ISettingsMods](../interfaces/types.ISettingsMods.md)
+- [ISettingsNotification](../interfaces/types.ISettingsNotification.md)
+- [ISettingsProfiles](../interfaces/types.ISettingsProfiles.md)
+- [ISettingsUpdate](../interfaces/types.ISettingsUpdate.md)
+- [ISettingsWorkarounds](../interfaces/types.ISettingsWorkarounds.md)
+- [IStarterInfo](../interfaces/types.IStarterInfo.md)
+- [IState](../interfaces/types.IState.md)
+- [IStateDownloads](../interfaces/types.IStateDownloads.md)
+- [IStateGameMode](../interfaces/types.IStateGameMode.md)
+- [IStatePaths](../interfaces/types.IStatePaths.md)
+- [IStateTransactions](../interfaces/types.IStateTransactions.md)
+- [IStateVerifier](../interfaces/types.IStateVerifier.md)
+- [ISupportedResult](../interfaces/types.ISupportedResult.md)
+- [ITableAttribute](../interfaces/types.ITableAttribute.md)
+- [ITableFilter](../interfaces/types.ITableFilter.md)
+- [ITableState](../interfaces/types.ITableState.md)
+- [ITableStates](../interfaces/types.ITableStates.md)
+- [ITestResult](../interfaces/types.ITestResult.md)
+- [IToDoButton](../interfaces/types.IToDoButton.md)
+- [IToolStored](../interfaces/types.IToolStored.md)
+- [IUIBlocker](../interfaces/types.IUIBlocker.md)
+- [IUnavailableReason](../interfaces/types.IUnavailableReason.md)
+- [IUser](../interfaces/types.IUser.md)
+- [IValidateKeyData](../interfaces/types.IValidateKeyData.md)
+- [IValidationResult](../interfaces/types.IValidationResult.md)
+- [IWindow](../interfaces/types.IWindow.md)
+- [ThunkStore](../interfaces/types.ThunkStore.md)
 
 ### Type aliases
 
+- [ActionFunc](types.md#actionfunc)
 - [ArchiveHandlerCreator](types.md#archivehandlercreator)
 - [AttributeExtractor](types.md#attributeextractor)
 - [AttributeRenderer](types.md#attributerenderer)
@@ -148,6 +161,8 @@
 - [GameInfoQuery](types.md#gameinfoquery)
 - [GameLaunchType](types.md#gamelaunchtype)
 - [InstallFunc](types.md#installfunc)
+- [InstructionType](types.md#instructiontype)
+- [LoadOrder](types.md#loadorder)
 - [MergeFunc](types.md#mergefunc)
 - [MergeTest](types.md#mergetest)
 - [NotificationDismiss](types.md#notificationdismiss)
@@ -161,10 +176,12 @@
 - [PropsCallback](types.md#propscallback)
 - [RegisterAction](types.md#registeraction)
 - [RegisterBanner](types.md#registerbanner)
+- [RegisterControlWrapper](types.md#registercontrolwrapper)
 - [RegisterDashlet](types.md#registerdashlet)
 - [RegisterDialog](types.md#registerdialog)
 - [RegisterFooter](types.md#registerfooter)
 - [RegisterMainPage](types.md#registermainpage)
+- [RegisterOverlay](types.md#registeroverlay)
 - [RegisterSettings](types.md#registersettings)
 - [RegisterToDo](types.md#registertodo)
 - [Revertability](types.md#revertability)
@@ -182,127 +199,192 @@
 
 - [addReducer](types.md#addreducer)
 
+## References
+
+### IEnableOptions
+
+Re-exports [IEnableOptions](../interfaces/actions.IEnableOptions.md)
+
 ## Type aliases
+
+### ActionFunc
+
+Ƭ **ActionFunc**: (`instanceId`: `string` \| `string`[]) => [`IActionDefinition`](../interfaces/types.IActionDefinition.md)[]
+
+#### Type declaration
+
+▸ (`instanceId`): [`IActionDefinition`](../interfaces/types.IActionDefinition.md)[]
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `instanceId` | `string` \| `string`[] |
+
+##### Returns
+
+[`IActionDefinition`](../interfaces/types.IActionDefinition.md)[]
+
+#### Defined in
+
+../src/types/IActionDefinition.ts:9
+
+___
 
 ### ArchiveHandlerCreator
 
-Ƭ **ArchiveHandlerCreator**: (`fileName`: *string*, `options`: [*IArchiveOptions*](../interfaces/types.iarchiveoptions.md)) => [*Promise*](../classes/promise.md)<[*IArchiveHandler*](../interfaces/types.iarchivehandler.md)\>
+Ƭ **ArchiveHandlerCreator**: (`fileName`: `string`, `options`: [`IArchiveOptions`](../interfaces/types.IArchiveOptions.md)) => [`Promise`](../classes/Promise.md)<[`IArchiveHandler`](../interfaces/types.IArchiveHandler.md)\>
 
-#### Type declaration:
+#### Type declaration
 
-▸ (`fileName`: *string*, `options`: [*IArchiveOptions*](../interfaces/types.iarchiveoptions.md)): [*Promise*](../classes/promise.md)<[*IArchiveHandler*](../interfaces/types.iarchivehandler.md)\>
+▸ (`fileName`, `options`): [`Promise`](../classes/Promise.md)<[`IArchiveHandler`](../interfaces/types.IArchiveHandler.md)\>
 
-#### Parameters:
+##### Parameters
 
-Name | Type |
-:------ | :------ |
-`fileName` | *string* |
-`options` | [*IArchiveOptions*](../interfaces/types.iarchiveoptions.md) |
+| Name | Type |
+| :------ | :------ |
+| `fileName` | `string` |
+| `options` | [`IArchiveOptions`](../interfaces/types.IArchiveOptions.md) |
 
-**Returns:** [*Promise*](../classes/promise.md)<[*IArchiveHandler*](../interfaces/types.iarchivehandler.md)\>
+##### Returns
 
-Defined in: src/types/IExtensionContext.ts:250
+[`Promise`](../classes/Promise.md)<[`IArchiveHandler`](../interfaces/types.IArchiveHandler.md)\>
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:272
 
 ___
 
 ### AttributeExtractor
 
-Ƭ **AttributeExtractor**: (`modInfo`: *any*, `modPath`: *string*) => [*Promise*](../classes/promise.md)<{ [key: string]: *any*;  }\>
+Ƭ **AttributeExtractor**: (`modInfo`: `any`, `modPath`: `string`) => [`Promise`](../classes/Promise.md)<{ [key: string]: `any`;  }\>
 
-#### Type declaration:
+#### Type declaration
 
-▸ (`modInfo`: *any*, `modPath`: *string*): [*Promise*](../classes/promise.md)<{ [key: string]: *any*;  }\>
+▸ (`modInfo`, `modPath`): [`Promise`](../classes/Promise.md)<{ [key: string]: `any`;  }\>
 
-#### Parameters:
+callback used to extract download information into mod info.
+This also gets called a lot when displaying uninstalled mods in the mod list
+(the modPath is going to be undefined) so when that flag is set, the extractor should
+not be accessing the disk or network or do any complex coomputation
 
-Name | Type |
-:------ | :------ |
-`modInfo` | *any* |
-`modPath` | *string* |
+##### Parameters
 
-**Returns:** [*Promise*](../classes/promise.md)<{ [key: string]: *any*;  }\>
+| Name | Type |
+| :------ | :------ |
+| `modInfo` | `any` |
+| `modPath` | `string` |
 
-Defined in: src/types/IExtensionContext.ts:253
+##### Returns
+
+[`Promise`](../classes/Promise.md)<{ [key: string]: `any`;  }\>
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:281
 
 ___
 
 ### AttributeRenderer
 
-Ƭ **AttributeRenderer**: *progress*
+Ƭ **AttributeRenderer**: ``"progress"``
 
-Defined in: src/types/ITableAttribute.ts:3
+#### Defined in
+
+../src/types/ITableAttribute.ts:3
 
 ___
 
 ### CheckFunction
 
-Ƭ **CheckFunction**: () => [*Promise*](../classes/promise.md)<[*ITestResult*](../interfaces/types.itestresult.md)\>
+Ƭ **CheckFunction**: () => [`Promise`](../classes/Promise.md)<[`ITestResult`](../interfaces/types.ITestResult.md)\>
 
-#### Type declaration:
+#### Type declaration
 
-▸ (): [*Promise*](../classes/promise.md)<[*ITestResult*](../interfaces/types.itestresult.md)\>
+▸ (): [`Promise`](../classes/Promise.md)<[`ITestResult`](../interfaces/types.ITestResult.md)\>
 
-**Returns:** [*Promise*](../classes/promise.md)<[*ITestResult*](../interfaces/types.itestresult.md)\>
+##### Returns
 
-Defined in: src/types/IExtensionContext.ts:66
+[`Promise`](../classes/Promise.md)<[`ITestResult`](../interfaces/types.ITestResult.md)\>
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:70
 
 ___
 
 ### Condition
 
-Ƭ **Condition**: (`content`: [*IDialogContent*](../interfaces/actions.idialogcontent.md)) => [*ConditionResults*](actions.md#conditionresults)
+Ƭ **Condition**: (`content`: [`IDialogContent`](../interfaces/actions.IDialogContent.md)) => [`ConditionResults`](actions.md#conditionresults)
 
-#### Type declaration:
+#### Type declaration
 
-▸ (`content`: [*IDialogContent*](../interfaces/actions.idialogcontent.md)): [*ConditionResults*](actions.md#conditionresults)
+▸ (`content`): [`ConditionResults`](actions.md#conditionresults)
 
-#### Parameters:
+##### Parameters
 
-Name | Type |
-:------ | :------ |
-`content` | [*IDialogContent*](../interfaces/actions.idialogcontent.md) |
+| Name | Type |
+| :------ | :------ |
+| `content` | [`IDialogContent`](../interfaces/actions.IDialogContent.md) |
 
-**Returns:** [*ConditionResults*](actions.md#conditionresults)
+##### Returns
 
-Defined in: src/types/IDialog.ts:30
+[`ConditionResults`](actions.md#conditionresults)
+
+#### Defined in
+
+../src/types/IDialog.ts:30
 
 ___
 
 ### ConditionResults
 
-Ƭ **ConditionResults**: [*IConditionResult*](../interfaces/actions.iconditionresult.md)[]
+Ƭ **ConditionResults**: [`IConditionResult`](../interfaces/actions.IConditionResult.md)[]
 
-Defined in: src/types/IDialog.ts:26
+#### Defined in
+
+../src/types/IDialog.ts:26
 
 ___
 
 ### DialogActions
 
-Ƭ **DialogActions**: [*IDialogAction*](../interfaces/actions.idialogaction.md)[]
+Ƭ **DialogActions**: [`IDialogAction`](../interfaces/actions.IDialogAction.md)[]
 
-Defined in: src/types/IDialog.ts:28
+#### Defined in
+
+../src/types/IDialog.ts:28
 
 ___
 
 ### DialogType
 
-Ƭ **DialogType**: *success* \| *info* \| *error* \| *question*
+Ƭ **DialogType**: ``"success"`` \| ``"info"`` \| ``"error"`` \| ``"question"``
 
-Defined in: src/types/IDialog.ts:3
+#### Defined in
+
+../src/types/IDialog.ts:3
 
 ___
 
 ### DirectoryCleaningMode
 
-Ƭ **DirectoryCleaningMode**: *tag* \| *all*
+Ƭ **DirectoryCleaningMode**: ``"tag"`` \| ``"all"``
 
-Defined in: src/types/IGame.ts:11
+#### Defined in
+
+../src/types/IGame.ts:10
 
 ___
 
 ### GameInfoQuery
 
-Ƭ **GameInfoQuery**: (`game`: *any*) => [*Promise*](../classes/promise.md)<{ [key: string]: [*IGameDetail*](../interfaces/types.igamedetail.md);  }\>
+Ƭ **GameInfoQuery**: (`game`: `any`) => [`Promise`](../classes/Promise.md)<{ [key: string]: [`IGameDetail`](../interfaces/types.IGameDetail.md);  }\>
+
+#### Type declaration
+
+▸ (`game`): [`Promise`](../classes/Promise.md)<{ [key: string]: [`IGameDetail`](../interfaces/types.IGameDetail.md);  }\>
 
 a query function that will be called to retrieve information about a game.
 The game object passed in in a union of the IGameStored and IDiscoveryResult data
@@ -311,407 +393,548 @@ it may be a custom-added game so either structure may be empty. When accessing a
 field that doesn't exist in both IGameStored and IDiscoveryResult, please assume
 it may be undefined.
 
-#### Type declaration:
+##### Parameters
 
-▸ (`game`: *any*): [*Promise*](../classes/promise.md)<{ [key: string]: [*IGameDetail*](../interfaces/types.igamedetail.md);  }\>
+| Name | Type |
+| :------ | :------ |
+| `game` | `any` |
 
-#### Parameters:
+##### Returns
 
-Name | Type |
-:------ | :------ |
-`game` | *any* |
+[`Promise`](../classes/Promise.md)<{ [key: string]: [`IGameDetail`](../interfaces/types.IGameDetail.md);  }\>
 
-**Returns:** [*Promise*](../classes/promise.md)<{ [key: string]: [*IGameDetail*](../interfaces/types.igamedetail.md);  }\>
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:289
+../src/types/IExtensionContext.ts:319
 
 ___
 
 ### GameLaunchType
 
-Ƭ **GameLaunchType**: *gamestore* \| *commandline*
+Ƭ **GameLaunchType**: ``"gamestore"`` \| ``"commandline"``
 
-Defined in: src/types/IGameStore.ts:7
+#### Defined in
+
+../src/types/IGameStore.ts:7
 
 ___
 
 ### InstallFunc
 
-Ƭ **InstallFunc**: (`files`: *string*[], `destinationPath`: *string*, `gameId`: *string*, `progressDelegate`: [*ProgressDelegate*](types.md#progressdelegate)) => [*Promise*](../classes/promise.md)<[*IInstallResult*](../interfaces/types.iinstallresult.md)\>
+Ƭ **InstallFunc**: (`files`: `string`[], `destinationPath`: `string`, `gameId`: `string`, `progressDelegate`: [`ProgressDelegate`](types.md#progressdelegate), `choices?`: `any`, `unattended?`: `boolean`) => [`Promise`](../classes/Promise.md)<[`IInstallResult`](../interfaces/types.IInstallResult.md)\>
 
-#### Type declaration:
+#### Type declaration
 
-▸ (`files`: *string*[], `destinationPath`: *string*, `gameId`: *string*, `progressDelegate`: [*ProgressDelegate*](types.md#progressdelegate)): [*Promise*](../classes/promise.md)<[*IInstallResult*](../interfaces/types.iinstallresult.md)\>
+▸ (`files`, `destinationPath`, `gameId`, `progressDelegate`, `choices?`, `unattended?`): [`Promise`](../classes/Promise.md)<[`IInstallResult`](../interfaces/types.IInstallResult.md)\>
 
-#### Parameters:
+##### Parameters
 
-Name | Type |
-:------ | :------ |
-`files` | *string*[] |
-`destinationPath` | *string* |
-`gameId` | *string* |
-`progressDelegate` | [*ProgressDelegate*](types.md#progressdelegate) |
+| Name | Type |
+| :------ | :------ |
+| `files` | `string`[] |
+| `destinationPath` | `string` |
+| `gameId` | `string` |
+| `progressDelegate` | [`ProgressDelegate`](types.md#progressdelegate) |
+| `choices?` | `any` |
+| `unattended?` | `boolean` |
 
-**Returns:** [*Promise*](../classes/promise.md)<[*IInstallResult*](../interfaces/types.iinstallresult.md)\>
+##### Returns
 
-Defined in: src/extensions/mod_management/types/InstallFunc.ts:7
+[`Promise`](../classes/Promise.md)<[`IInstallResult`](../interfaces/types.IInstallResult.md)\>
+
+#### Defined in
+
+../src/extensions/mod_management/types/InstallFunc.ts:7
+
+___
+
+### InstructionType
+
+Ƭ **InstructionType**: ``"copy"`` \| ``"mkdir"`` \| ``"submodule"`` \| ``"generatefile"`` \| ``"iniedit"`` \| ``"unsupported"`` \| ``"attribute"`` \| ``"setmodtype"`` \| ``"error"`` \| ``"rule"``
+
+#### Defined in
+
+../src/extensions/mod_management/types/IInstallResult.ts:3
+
+___
+
+### LoadOrder
+
+Ƭ **LoadOrder**: [`ILoadOrderEntry`](../interfaces/types.ILoadOrderEntry.md)[]
+
+#### Defined in
+
+../src/extensions/file_based_loadorder/types/types.ts:2
 
 ___
 
 ### MergeFunc
 
-Ƭ **MergeFunc**: (`filePath`: *string*, `mergePath`: *string*) => [*Promise*](../classes/promise.md)<void\>
+Ƭ **MergeFunc**: (`filePath`: `string`, `mergePath`: `string`) => [`Promise`](../classes/Promise.md)<`void`\>
+
+#### Type declaration
+
+▸ (`filePath`, `mergePath`): [`Promise`](../classes/Promise.md)<`void`\>
 
 callback to do the actual merging
 
-#### Type declaration:
+##### Parameters
 
-▸ (`filePath`: *string*, `mergePath`: *string*): [*Promise*](../classes/promise.md)<void\>
+| Name | Type |
+| :------ | :------ |
+| `filePath` | `string` |
+| `mergePath` | `string` |
 
-#### Parameters:
+##### Returns
 
-Name | Type |
-:------ | :------ |
-`filePath` | *string* |
-`mergePath` | *string* |
+[`Promise`](../classes/Promise.md)<`void`\>
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:308
+../src/types/IExtensionContext.ts:338
 
 ___
 
 ### MergeTest
 
-Ƭ **MergeTest**: (`game`: [*IGame*](../interfaces/types.igame.md), `gameDiscovery`: [*IDiscoveryResult*](../interfaces/types.idiscoveryresult.md)) => [*IMergeFilter*](../interfaces/types.imergefilter.md)
+Ƭ **MergeTest**: (`game`: [`IGame`](../interfaces/types.IGame.md), `gameDiscovery`: [`IDiscoveryResult`](../interfaces/types.IDiscoveryResult.md)) => [`IMergeFilter`](../interfaces/types.IMergeFilter.md)
+
+#### Type declaration
+
+▸ (`game`, `gameDiscovery`): [`IMergeFilter`](../interfaces/types.IMergeFilter.md)
 
 callback to determine if a merge function applies to a game. If so, return an
 object that describes what files to merge, otherwise return undefined
 
-#### Type declaration:
+##### Parameters
 
-▸ (`game`: [*IGame*](../interfaces/types.igame.md), `gameDiscovery`: [*IDiscoveryResult*](../interfaces/types.idiscoveryresult.md)): [*IMergeFilter*](../interfaces/types.imergefilter.md)
+| Name | Type |
+| :------ | :------ |
+| `game` | [`IGame`](../interfaces/types.IGame.md) |
+| `gameDiscovery` | [`IDiscoveryResult`](../interfaces/types.IDiscoveryResult.md) |
 
-#### Parameters:
+##### Returns
 
-Name | Type |
-:------ | :------ |
-`game` | [*IGame*](../interfaces/types.igame.md) |
-`gameDiscovery` | [*IDiscoveryResult*](../interfaces/types.idiscoveryresult.md) |
+[`IMergeFilter`](../interfaces/types.IMergeFilter.md)
 
-**Returns:** [*IMergeFilter*](../interfaces/types.imergefilter.md)
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:304
+../src/types/IExtensionContext.ts:334
 
 ___
 
 ### NotificationDismiss
 
-Ƭ **NotificationDismiss**: () => *void*
+Ƭ **NotificationDismiss**: () => `void`
 
-#### Type declaration:
+#### Type declaration
 
-▸ (): *void*
+▸ (): `void`
 
-**Returns:** *void*
+##### Returns
 
-Defined in: src/types/INotification.ts:1
+`void`
+
+#### Defined in
+
+../src/types/INotification.ts:1
 
 ___
 
 ### NotificationType
 
-Ƭ **NotificationType**: *activity* \| *global* \| *success* \| *info* \| *warning* \| *error*
+Ƭ **NotificationType**: ``"activity"`` \| ``"global"`` \| ``"success"`` \| ``"info"`` \| ``"warning"`` \| ``"error"``
 
-Defined in: src/types/INotification.ts:8
+#### Defined in
+
+../src/types/INotification.ts:8
 
 ___
 
 ### PayloadT
 
-Ƭ **PayloadT**<Type\>: Type *extends* *ComplexActionCreator*<*infer* X\> ? X : *never*
+Ƭ **PayloadT**<`Type`\>: `Type` extends `ComplexActionCreator`<infer X\> ? `X` : `never`
 
-#### Type parameters:
+#### Type parameters
 
-Name |
-:------ |
-`Type` |
+| Name |
+| :------ |
+| `Type` |
 
-Defined in: src/types/IExtensionContext.ts:709
+#### Defined in
+
+../src/types/IExtensionContext.ts:767
 
 ___
 
 ### PersistingType
 
-Ƭ **PersistingType**: *global* \| *game* \| *profile*
+Ƭ **PersistingType**: ``"global"`` \| ``"game"`` \| ``"profile"``
 
 determines where persisted state is stored and when it gets loaded.
 global: global Vortex state, loaded on startup
 game: state regarding the managed game. Will be swapped out when the game mode changes
 profile: state regarding the managed profile. Will be swapped out when the profile changes
 
-Defined in: src/types/IExtensionContext.ts:64
+#### Defined in
+
+../src/types/IExtensionContext.ts:68
 
 ___
 
 ### PersistorKey
 
-Ƭ **PersistorKey**: *string*[]
+Ƭ **PersistorKey**: `string`[]
 
-Defined in: src/types/IExtensionContext.ts:198
+#### Defined in
+
+../src/types/IExtensionContext.ts:220
 
 ___
 
 ### Placement
 
-Ƭ **Placement**: *table* \| *detail* \| *both* \| *inline*
+Ƭ **Placement**: ``"table"`` \| ``"detail"`` \| ``"both"`` \| ``"inline"``
 
-Defined in: src/types/ITableAttribute.ts:5
+#### Defined in
+
+../src/types/ITableAttribute.ts:5
 
 ___
 
 ### ProblemSeverity
 
-Ƭ **ProblemSeverity**: *warning* \| *error*
+Ƭ **ProblemSeverity**: ``"warning"`` \| ``"error"``
 
-Defined in: src/types/ITestResult.ts:3
+#### Defined in
+
+../src/types/ITestResult.ts:3
 
 ___
 
 ### ProgressDelegate
 
-Ƭ **ProgressDelegate**: (`perc`: *number*) => *void*
+Ƭ **ProgressDelegate**: (`perc`: `number`) => `void`
 
-#### Type declaration:
+#### Type declaration
 
-▸ (`perc`: *number*): *void*
+▸ (`perc`): `void`
 
-#### Parameters:
+##### Parameters
 
-Name | Type |
-:------ | :------ |
-`perc` | *number* |
+| Name | Type |
+| :------ | :------ |
+| `perc` | `number` |
 
-**Returns:** *void*
+##### Returns
 
-Defined in: src/extensions/mod_management/types/InstallFunc.ts:5
+`void`
+
+#### Defined in
+
+../src/extensions/mod_management/types/InstallFunc.ts:5
 
 ___
 
 ### PropsCallback
 
-Ƭ **PropsCallback**: () => *any*
+Ƭ **PropsCallback**: () => `any`
 
-#### Type declaration:
+#### Type declaration
 
-▸ (): *any*
+▸ (): `any`
 
-**Returns:** *any*
+##### Returns
 
-Defined in: src/types/IExtensionContext.ts:56
+`any`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:60
 
 ___
 
 ### RegisterAction
 
-Ƭ **RegisterAction**: (`group`: *string*, `position`: *number*, `iconOrComponent`: *string* \| *React.ComponentType*<any\>, `options`: [*IActionOptions*](../interfaces/types.iactionoptions.md), `titleOrProps?`: *string* \| [*PropsCallback*](types.md#propscallback), `actionOrCondition?`: (`instanceIds?`: *string*[]) => *void* \| *boolean*, `condition?`: (`instanceIds?`: *string*[]) => *boolean* \| *string*) => *void*
+Ƭ **RegisterAction**: (`group`: `string`, `position`: `number`, `iconOrComponent`: `string` \| `React.ComponentType`<`any`\>, `options`: [`IActionOptions`](../interfaces/types.IActionOptions.md), `titleOrProps?`: `string` \| [`PropsCallback`](types.md#propscallback), `actionOrCondition?`: (`instanceIds?`: `string`[]) => `void` \| `boolean`, `condition?`: (`instanceIds?`: `string`[]) => `boolean` \| `string`) => `void`
 
-#### Type declaration:
+#### Type declaration
 
-▸ (`group`: *string*, `position`: *number*, `iconOrComponent`: *string* \| *React.ComponentType*<any\>, `options`: [*IActionOptions*](../interfaces/types.iactionoptions.md), `titleOrProps?`: *string* \| [*PropsCallback*](types.md#propscallback), `actionOrCondition?`: (`instanceIds?`: *string*[]) => *void* \| *boolean*, `condition?`: (`instanceIds?`: *string*[]) => *boolean* \| *string*): *void*
+▸ (`group`, `position`, `iconOrComponent`, `options`, `titleOrProps?`, `actionOrCondition?`, `condition?`): `void`
 
-#### Parameters:
+##### Parameters
 
-Name | Type |
-:------ | :------ |
-`group` | *string* |
-`position` | *number* |
-`iconOrComponent` | *string* \| *React.ComponentType*<any\> |
-`options` | [*IActionOptions*](../interfaces/types.iactionoptions.md) |
-`titleOrProps?` | *string* \| [*PropsCallback*](types.md#propscallback) |
-`actionOrCondition?` | (`instanceIds?`: *string*[]) => *void* \| *boolean* |
-`condition?` | (`instanceIds?`: *string*[]) => *boolean* \| *string* |
+| Name | Type |
+| :------ | :------ |
+| `group` | `string` |
+| `position` | `number` |
+| `iconOrComponent` | `string` \| `React.ComponentType`<`any`\> |
+| `options` | [`IActionOptions`](../interfaces/types.IActionOptions.md) |
+| `titleOrProps?` | `string` \| [`PropsCallback`](types.md#propscallback) |
+| `actionOrCondition?` | (`instanceIds?`: `string`[]) => `void` \| `boolean` |
+| `condition?` | (`instanceIds?`: `string`[]) => `boolean` \| `string` |
 
-**Returns:** *void*
+##### Returns
 
-Defined in: src/types/IExtensionContext.ts:75
+`void`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:79
 
 ___
 
 ### RegisterBanner
 
-Ƭ **RegisterBanner**: (`group`: *string*, `component`: *React.ComponentType*<any\>, `options`: IBannerOptions) => *void*
+Ƭ **RegisterBanner**: (`group`: `string`, `component`: `React.ComponentType`<`any`\>, `options`: `IBannerOptions`) => `void`
 
-#### Type declaration:
+#### Type declaration
 
-▸ (`group`: *string*, `component`: *React.ComponentType*<any\>, `options`: IBannerOptions): *void*
+▸ (`group`, `component`, `options`): `void`
 
-#### Parameters:
+##### Parameters
 
-Name | Type |
-:------ | :------ |
-`group` | *string* |
-`component` | *React.ComponentType*<any\> |
-`options` | IBannerOptions |
+| Name | Type |
+| :------ | :------ |
+| `group` | `string` |
+| `component` | `React.ComponentType`<`any`\> |
+| `options` | `IBannerOptions` |
 
-**Returns:** *void*
+##### Returns
 
-Defined in: src/types/IExtensionContext.ts:87
+`void`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:94
+
+___
+
+### RegisterControlWrapper
+
+Ƭ **RegisterControlWrapper**: (`group`: `string`, `priority`: `number`, `wrapper`: `React.ComponentType`<`any`\>) => `void`
+
+#### Type declaration
+
+▸ (`group`, `priority`, `wrapper`): `void`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `group` | `string` |
+| `priority` | `number` |
+| `wrapper` | `React.ComponentType`<`any`\> |
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:88
 
 ___
 
 ### RegisterDashlet
 
-Ƭ **RegisterDashlet**: (`title`: *string*, `width`: *1* \| *2* \| *3*, `height`: *1* \| *2* \| *3* \| *4* \| *5* \| *6*, `position`: *number*, `component`: *React.ComponentClass*<any\> \| *React.FunctionComponent*<any\>, `isVisible`: (`state`: *any*) => *boolean*, `props`: [*PropsCallback*](types.md#propscallback), `options`: [*IDashletOptions*](../interfaces/types.idashletoptions.md)) => *void*
+Ƭ **RegisterDashlet**: (`title`: `string`, `width`: ``1`` \| ``2`` \| ``3``, `height`: ``1`` \| ``2`` \| ``3`` \| ``4`` \| ``5`` \| ``6``, `position`: `number`, `component`: `React.ComponentClass`<`any`\> \| `React.FunctionComponent`<`any`\>, `isVisible`: (`state`: `any`) => `boolean`, `props`: [`PropsCallback`](types.md#propscallback), `options`: [`IDashletOptions`](../interfaces/types.IDashletOptions.md)) => `void`
 
-**`param`** Height of the dashlet in rows. Please note that 1 row is very slim, it's not
-              commonly used in practice
+#### Type declaration
 
-#### Type declaration:
+▸ (`title`, `width`, `height`, `position`, `component`, `isVisible`, `props`, `options`): `void`
 
-▸ (`title`: *string*, `width`: *1* \| *2* \| *3*, `height`: *1* \| *2* \| *3* \| *4* \| *5* \| *6*, `position`: *number*, `component`: *React.ComponentClass*<any\> \| *React.FunctionComponent*<any\>, `isVisible`: (`state`: *any*) => *boolean*, `props`: [*PropsCallback*](types.md#propscallback), `options`: [*IDashletOptions*](../interfaces/types.idashletoptions.md)): *void*
+##### Parameters
 
-#### Parameters:
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `title` | `string` | - |
+| `width` | ``1`` \| ``2`` \| ``3`` | - |
+| `height` | ``1`` \| ``2`` \| ``3`` \| ``4`` \| ``5`` \| ``6`` | Height of the dashlet in rows. Please note that 1 row is very slim, it's not               commonly used in practice |
+| `position` | `number` | - |
+| `component` | `React.ComponentClass`<`any`\> \| `React.FunctionComponent`<`any`\> | - |
+| `isVisible` | (`state`: `any`) => `boolean` | - |
+| `props` | [`PropsCallback`](types.md#propscallback) | - |
+| `options` | [`IDashletOptions`](../interfaces/types.IDashletOptions.md) | - |
 
-Name | Type |
-:------ | :------ |
-`title` | *string* |
-`width` | *1* \| *2* \| *3* |
-`height` | *1* \| *2* \| *3* \| *4* \| *5* \| *6* |
-`position` | *number* |
-`component` | *React.ComponentClass*<any\> \| *React.FunctionComponent*<any\> |
-`isVisible` | (`state`: *any*) => *boolean* |
-`props` | [*PropsCallback*](types.md#propscallback) |
-`options` | [*IDashletOptions*](../interfaces/types.idashletoptions.md) |
+##### Returns
 
-**Returns:** *void*
+`void`
 
-Defined in: src/types/IExtensionContext.ts:135
+#### Defined in
+
+../src/types/IExtensionContext.ts:144
 
 ___
 
 ### RegisterDialog
 
-Ƭ **RegisterDialog**: (`id`: *string*, `element`: *React.ComponentType*<any\>, `props?`: [*PropsCallback*](types.md#propscallback)) => *void*
+Ƭ **RegisterDialog**: (`id`: `string`, `element`: `React.ComponentType`<`any`\>, `props?`: [`PropsCallback`](types.md#propscallback)) => `void`
 
-#### Type declaration:
+#### Type declaration
 
-▸ (`id`: *string*, `element`: *React.ComponentType*<any\>, `props?`: [*PropsCallback*](types.md#propscallback)): *void*
+▸ (`id`, `element`, `props?`): `void`
 
-#### Parameters:
+##### Parameters
 
-Name | Type |
-:------ | :------ |
-`id` | *string* |
-`element` | *React.ComponentType*<any\> |
-`props?` | [*PropsCallback*](types.md#propscallback) |
+| Name | Type |
+| :------ | :------ |
+| `id` | `string` |
+| `element` | `React.ComponentType`<`any`\> |
+| `props?` | [`PropsCallback`](types.md#propscallback) |
 
-**Returns:** *void*
+##### Returns
 
-Defined in: src/types/IExtensionContext.ts:141
+`void`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:150
 
 ___
 
 ### RegisterFooter
 
-Ƭ **RegisterFooter**: (`id`: *string*, `element`: *React.ComponentClass*<any\>, `props?`: [*PropsCallback*](types.md#propscallback)) => *void*
+Ƭ **RegisterFooter**: (`id`: `string`, `element`: `React.ComponentClass`<`any`\>, `props?`: [`PropsCallback`](types.md#propscallback)) => `void`
 
-#### Type declaration:
+#### Type declaration
 
-▸ (`id`: *string*, `element`: *React.ComponentClass*<any\>, `props?`: [*PropsCallback*](types.md#propscallback)): *void*
+▸ (`id`, `element`, `props?`): `void`
 
-#### Parameters:
+##### Parameters
 
-Name | Type |
-:------ | :------ |
-`id` | *string* |
-`element` | *React.ComponentClass*<any\> |
-`props?` | [*PropsCallback*](types.md#propscallback) |
+| Name | Type |
+| :------ | :------ |
+| `id` | `string` |
+| `element` | `React.ComponentClass`<`any`\> |
+| `props?` | [`PropsCallback`](types.md#propscallback) |
 
-**Returns:** *void*
+##### Returns
 
-Defined in: src/types/IExtensionContext.ts:84
+`void`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:91
 
 ___
 
 ### RegisterMainPage
 
-Ƭ **RegisterMainPage**: (`icon`: *string*, `title`: *string*, `element`: *React.ComponentClass*<any\> \| *React.StatelessComponent*<any\>, `options`: [*IMainPageOptions*](../interfaces/types.imainpageoptions.md)) => *void*
+Ƭ **RegisterMainPage**: (`icon`: `string`, `title`: `string`, `element`: `React.ComponentType`<`any`\>, `options`: [`IMainPageOptions`](../interfaces/types.IMainPageOptions.md)) => `void`
 
-#### Type declaration:
+#### Type declaration
 
-▸ (`icon`: *string*, `title`: *string*, `element`: *React.ComponentClass*<any\> \| *React.StatelessComponent*<any\>, `options`: [*IMainPageOptions*](../interfaces/types.imainpageoptions.md)): *void*
+▸ (`icon`, `title`, `element`, `options`): `void`
 
-#### Parameters:
+##### Parameters
 
-Name | Type |
-:------ | :------ |
-`icon` | *string* |
-`title` | *string* |
-`element` | *React.ComponentClass*<any\> \| *React.StatelessComponent*<any\> |
-`options` | [*IMainPageOptions*](../interfaces/types.imainpageoptions.md) |
+| Name | Type |
+| :------ | :------ |
+| `icon` | `string` |
+| `title` | `string` |
+| `element` | `React.ComponentType`<`any`\> |
+| `options` | [`IMainPageOptions`](../interfaces/types.IMainPageOptions.md) |
 
-**Returns:** *void*
+##### Returns
 
-Defined in: src/types/IExtensionContext.ts:122
+`void`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:131
+
+___
+
+### RegisterOverlay
+
+Ƭ **RegisterOverlay**: (`id`: `string`, `element`: `React.ComponentType`<`any`\>, `props?`: [`PropsCallback`](types.md#propscallback)) => `void`
+
+#### Type declaration
+
+▸ (`id`, `element`, `props?`): `void`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `id` | `string` |
+| `element` | `React.ComponentType`<`any`\> |
+| `props?` | [`PropsCallback`](types.md#propscallback) |
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:155
 
 ___
 
 ### RegisterSettings
 
-Ƭ **RegisterSettings**: (`title`: *string*, `element`: *React.ComponentClass*<any\> \| *React.StatelessComponent*<any\>, `props?`: [*PropsCallback*](types.md#propscallback), `visible?`: () => *boolean*, `priority?`: *number*) => *void*
+Ƭ **RegisterSettings**: (`title`: `string`, `element`: `React.ComponentClass`<`any`\> \| `React.StatelessComponent`<`any`\>, `props?`: [`PropsCallback`](types.md#propscallback), `visible?`: () => `boolean`, `priority?`: `number`) => `void`
 
-#### Type declaration:
+#### Type declaration
 
-▸ (`title`: *string*, `element`: *React.ComponentClass*<any\> \| *React.StatelessComponent*<any\>, `props?`: [*PropsCallback*](types.md#propscallback), `visible?`: () => *boolean*, `priority?`: *number*): *void*
+▸ (`title`, `element`, `props?`, `visible?`, `priority?`): `void`
 
-#### Parameters:
+##### Parameters
 
-Name | Type |
-:------ | :------ |
-`title` | *string* |
-`element` | *React.ComponentClass*<any\> \| *React.StatelessComponent*<any\> |
-`props?` | [*PropsCallback*](types.md#propscallback) |
-`visible?` | () => *boolean* |
-`priority?` | *number* |
+| Name | Type |
+| :------ | :------ |
+| `title` | `string` |
+| `element` | `React.ComponentClass`<`any`\> \| `React.StatelessComponent`<`any`\> |
+| `props?` | [`PropsCallback`](types.md#propscallback) |
+| `visible?` | () => `boolean` |
+| `priority?` | `number` |
 
-**Returns:** *void*
+##### Returns
 
-Defined in: src/types/IExtensionContext.ts:68
+`void`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:72
 
 ___
 
 ### RegisterToDo
 
-Ƭ **RegisterToDo**: (`id`: *string*, `type`: [*ToDoType*](types.md#todotype), `props`: (`state`: *any*) => *any*, `icon`: (`props`: *any*) => JSX.Element \| *string*, `text`: (`t`: [*TFunction*](types.md#tfunction), `props`: *any*) => JSX.Element \| *string*, `action`: (`props`: *any*) => *void*, `condition`: (`props`: *any*) => *boolean*, `value`: (`t`: [*TFunction*](types.md#tfunction), `props`: *any*) => JSX.Element \| *string*, `priority`: *number*) => *void*
+Ƭ **RegisterToDo**: (`id`: `string`, `type`: [`ToDoType`](types.md#todotype), `props`: (`state`: `any`) => `any`, `icon`: (`props`: `any`) => `JSX.Element` \| `string`, `text`: (`t`: [`TFunction`](types.md#tfunction), `props`: `any`) => `JSX.Element` \| `string`, `action`: (`props`: `any`) => `void`, `condition`: (`props`: `any`) => `boolean`, `value`: (`t`: [`TFunction`](types.md#tfunction), `props`: `any`) => `JSX.Element` \| `string`, `priority`: `number`) => `void`
 
-#### Type declaration:
+#### Type declaration
 
-▸ (`id`: *string*, `type`: [*ToDoType*](types.md#todotype), `props`: (`state`: *any*) => *any*, `icon`: (`props`: *any*) => JSX.Element \| *string*, `text`: (`t`: [*TFunction*](types.md#tfunction), `props`: *any*) => JSX.Element \| *string*, `action`: (`props`: *any*) => *void*, `condition`: (`props`: *any*) => *boolean*, `value`: (`t`: [*TFunction*](types.md#tfunction), `props`: *any*) => JSX.Element \| *string*, `priority`: *number*): *void*
+▸ (`id`, `type`, `props`, `icon`, `text`, `action`, `condition`, `value`, `priority`): `void`
 
-#### Parameters:
+##### Parameters
 
-Name | Type |
-:------ | :------ |
-`id` | *string* |
-`type` | [*ToDoType*](types.md#todotype) |
-`props` | (`state`: *any*) => *any* |
-`icon` | (`props`: *any*) => JSX.Element \| *string* |
-`text` | (`t`: [*TFunction*](types.md#tfunction), `props`: *any*) => JSX.Element \| *string* |
-`action` | (`props`: *any*) => *void* |
-`condition` | (`props`: *any*) => *boolean* |
-`value` | (`t`: [*TFunction*](types.md#tfunction), `props`: *any*) => JSX.Element \| *string* |
-`priority` | *number* |
+| Name | Type |
+| :------ | :------ |
+| `id` | `string` |
+| `type` | [`ToDoType`](types.md#todotype) |
+| `props` | (`state`: `any`) => `any` |
+| `icon` | (`props`: `any`) => `JSX.Element` \| `string` |
+| `text` | (`t`: [`TFunction`](types.md#tfunction), `props`: `any`) => `JSX.Element` \| `string` |
+| `action` | (`props`: `any`) => `void` |
+| `condition` | (`props`: `any`) => `boolean` |
+| `value` | (`t`: [`TFunction`](types.md#tfunction), `props`: `any`) => `JSX.Element` \| `string` |
+| `priority` | `number` |
 
-**Returns:** *void*
+##### Returns
 
-Defined in: src/types/IExtensionContext.ts:154
+`void`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:168
 
 ___
 
 ### Revertability
 
-Ƭ **Revertability**: *yes* \| *never* \| *invalid*
+Ƭ **Revertability**: ``"yes"`` \| ``"never"`` \| ``"invalid"``
 
 whether an event can be reverted.
 yes means yes.
@@ -720,146 +943,176 @@ yes means yes.
   particular one can't - usually because some other event on the same data
   makes that impossible
 
-Defined in: src/extensions/history_management/types.ts:18
+#### Defined in
+
+../src/extensions/history_management/types.ts:18
 
 ___
 
 ### SortDirection
 
-Ƭ **SortDirection**: *none* \| *asc* \| *desc*
+Ƭ **SortDirection**: ``"none"`` \| ``"asc"`` \| ``"desc"``
 
-Defined in: src/types/SortDirection.ts:1
+#### Defined in
+
+../src/types/SortDirection.ts:1
 
 ___
 
 ### SortType
 
-Ƭ **SortType**: *ascending* \| *descending*
+Ƭ **SortType**: ``"ascending"`` \| ``"descending"``
 
-Defined in: src/extensions/mod_load_order/types/types.ts:5
+#### Defined in
+
+../src/extensions/mod_load_order/types/types.ts:6
 
 ___
 
 ### StateChangeCallback
 
-Ƭ **StateChangeCallback**<T\>: (`previous`: T, `current`: T) => *void*
+Ƭ **StateChangeCallback**<`T`\>: (`previous`: `T`, `current`: `T`) => `void`
 
-#### Type parameters:
+#### Type parameters
 
-Name | Default |
-:------ | :------ |
-`T` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `T` | `any` |
 
-#### Type declaration:
+#### Type declaration
 
-▸ (`previous`: T, `current`: T): *void*
+▸ (`previous`, `current`): `void`
 
-#### Parameters:
+##### Parameters
 
-Name | Type |
-:------ | :------ |
-`previous` | T |
-`current` | T |
+| Name | Type |
+| :------ | :------ |
+| `previous` | `T` |
+| `current` | `T` |
 
-**Returns:** *void*
+##### Returns
 
-Defined in: src/types/IExtensionContext.ts:181
+`void`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:201
 
 ___
 
 ### TFunction
 
-Ƭ **TFunction**: *typeof* I18next.t
+Ƭ **TFunction**: typeof `I18next.t`
 
-Defined in: src/util/i18n.ts:14
+#### Defined in
+
+../src/util/i18n.ts:13
 
 ___
 
 ### TestSupported
 
-Ƭ **TestSupported**: (`files`: *string*[], `gameId`: *string*) => [*Promise*](../classes/promise.md)<[*ISupportedResult*](../interfaces/types.isupportedresult.md)\>
+Ƭ **TestSupported**: (`files`: `string`[], `gameId`: `string`) => [`Promise`](../classes/Promise.md)<[`ISupportedResult`](../interfaces/types.ISupportedResult.md)\>
 
-#### Type declaration:
+#### Type declaration
 
-▸ (`files`: *string*[], `gameId`: *string*): [*Promise*](../classes/promise.md)<[*ISupportedResult*](../interfaces/types.isupportedresult.md)\>
+▸ (`files`, `gameId`): [`Promise`](../classes/Promise.md)<[`ISupportedResult`](../interfaces/types.ISupportedResult.md)\>
 
-#### Parameters:
+##### Parameters
 
-Name | Type |
-:------ | :------ |
-`files` | *string*[] |
-`gameId` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `files` | `string`[] |
+| `gameId` | `string` |
 
-**Returns:** [*Promise*](../classes/promise.md)<[*ISupportedResult*](../interfaces/types.isupportedresult.md)\>
+##### Returns
 
-Defined in: src/extensions/mod_management/types/TestSupported.ts:8
+[`Promise`](../classes/Promise.md)<[`ISupportedResult`](../interfaces/types.ISupportedResult.md)\>
+
+#### Defined in
+
+../src/extensions/mod_management/types/TestSupported.ts:8
 
 ___
 
 ### ToDoType
 
-Ƭ **ToDoType**: *settings* \| *search* \| *workaround* \| *more*
+Ƭ **ToDoType**: ``"settings"`` \| ``"search"`` \| ``"workaround"`` \| ``"more"``
 
-Defined in: src/types/IExtensionContext.ts:146
+#### Defined in
+
+../src/types/IExtensionContext.ts:160
 
 ___
 
 ### ToolParameterCB
 
-Ƭ **ToolParameterCB**: (`options`: [*IRunParameters*](../interfaces/types.irunparameters.md)) => { [key: string]: *string*;  }
+Ƭ **ToolParameterCB**: (`options`: [`IRunParameters`](../interfaces/types.IRunParameters.md)) => { [key: string]: `string`;  }
+
+#### Type declaration
+
+▸ (`options`): `Object`
 
 callback to be used to determine list of variables for the tool command line
 
-#### Type declaration:
+##### Parameters
 
-▸ (`options`: [*IRunParameters*](../interfaces/types.irunparameters.md)): *object*
+| Name | Type |
+| :------ | :------ |
+| `options` | [`IRunParameters`](../interfaces/types.IRunParameters.md) |
 
-#### Parameters:
+##### Returns
 
-Name | Type |
-:------ | :------ |
-`options` | [*IRunParameters*](../interfaces/types.irunparameters.md) |
+`Object`
 
-**Returns:** *object*
+#### Defined in
 
-Defined in: src/types/IExtensionContext.ts:341
+../src/types/IExtensionContext.ts:371
 
 ___
 
 ### UpdateType
 
-Ƭ **UpdateType**: *drag-n-drop* \| *props-update* \| *refresh*
+Ƭ **UpdateType**: ``"drag-n-drop"`` \| ``"props-update"`` \| ``"refresh"``
 
-Defined in: src/extensions/mod_load_order/types/types.ts:21
+#### Defined in
+
+../src/extensions/mod_load_order/types/types.ts:22
 
 ___
 
 ### ValidationState
 
-Ƭ **ValidationState**: *success* \| *warning* \| *error*
+Ƭ **ValidationState**: ``"success"`` \| ``"warning"`` \| ``"error"``
 
-Defined in: src/types/ITableAttribute.ts:7
+#### Defined in
+
+../src/types/ITableAttribute.ts:7
 
 ## Functions
 
 ### addReducer
 
-▸ **addReducer**<ActionT, StateT\>(`action`: ActionT, `handler`: (`state`: StateT, `payload`: [*PayloadT*](types.md#payloadt)<ActionT\>) => StateT): *object*
+▸ **addReducer**<`ActionT`, `StateT`\>(`action`, `handler`): `Object`
 
-#### Type parameters:
+#### Type parameters
 
-Name |
-:------ |
-`ActionT` |
-`StateT` |
+| Name |
+| :------ |
+| `ActionT` |
+| `StateT` |
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`action` | ActionT |
-`handler` | (`state`: StateT, `payload`: [*PayloadT*](types.md#payloadt)<ActionT\>) => StateT |
+| Name | Type |
+| :------ | :------ |
+| `action` | `ActionT` |
+| `handler` | (`state`: `StateT`, `payload`: [`PayloadT`](types.md#payloadt)<`ActionT`\>) => `StateT` |
 
-**Returns:** *object*
+#### Returns
 
-Defined in: src/types/IExtensionContext.ts:711
+`Object`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:769

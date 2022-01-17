@@ -8,39 +8,47 @@
 
 ### Properties
 
-- [offIcon](tooltip.itogglebuttonextraprops.md#officon)
-- [offTooltip](tooltip.itogglebuttonextraprops.md#offtooltip)
-- [onIcon](tooltip.itogglebuttonextraprops.md#onicon)
-- [state](tooltip.itogglebuttonextraprops.md#state)
+- [offIcon](tooltip.IToggleButtonExtraProps.md#officon)
+- [offTooltip](tooltip.IToggleButtonExtraProps.md#offtooltip)
+- [onIcon](tooltip.IToggleButtonExtraProps.md#onicon)
+- [state](tooltip.IToggleButtonExtraProps.md#state)
 
 ## Properties
 
 ### offIcon
 
-• **offIcon**: *string*
+• **offIcon**: `string`
 
-Defined in: src/controls/TooltipControls.tsx:139
+#### Defined in
+
+../src/controls/TooltipControls.tsx:140
 
 ___
 
 ### offTooltip
 
-• **offTooltip**: *string* \| *Component*<any, any, any\>
+• **offTooltip**: `string` \| `Component`<`any`, `any`, `any`\>
 
-Defined in: src/controls/TooltipControls.tsx:140
+#### Defined in
+
+../src/controls/TooltipControls.tsx:141
 
 ___
 
 ### onIcon
 
-• **onIcon**: *string*
+• **onIcon**: `string`
 
-Defined in: src/controls/TooltipControls.tsx:138
+#### Defined in
+
+../src/controls/TooltipControls.tsx:139
 
 ___
 
 ### state
 
-• **state**: *boolean*
+• **state**: `boolean`
 
-Defined in: src/controls/TooltipControls.tsx:141
+#### Defined in
+
+../src/controls/TooltipControls.tsx:142

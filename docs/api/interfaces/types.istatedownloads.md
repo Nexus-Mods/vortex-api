@@ -8,32 +8,40 @@
 
 ### Properties
 
-- [files](types.istatedownloads.md#files)
-- [speed](types.istatedownloads.md#speed)
-- [speedHistory](types.istatedownloads.md#speedhistory)
+- [files](types.IStateDownloads.md#files)
+- [speed](types.IStateDownloads.md#speed)
+- [speedHistory](types.IStateDownloads.md#speedhistory)
 
 ## Properties
 
 ### files
 
-• **files**: *object*
+• **files**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IState.ts:158
+▪ [id: `string`]: [`IDownload`](types.IDownload.md)
+
+#### Defined in
+
+../src/types/IState.ts:160
 
 ___
 
 ### speed
 
-• **speed**: *number*
+• **speed**: `number`
 
-Defined in: src/types/IState.ts:156
+#### Defined in
+
+../src/types/IState.ts:158
 
 ___
 
 ### speedHistory
 
-• **speedHistory**: *number*[]
+• **speedHistory**: `number`[]
 
-Defined in: src/types/IState.ts:157
+#### Defined in
+
+../src/types/IState.ts:159

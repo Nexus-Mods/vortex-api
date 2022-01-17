@@ -8,21 +8,25 @@
 
 ### Properties
 
-- [percent](types.iprogress.md#percent)
-- [text](types.iprogress.md#text)
+- [percent](types.IProgress.md#percent)
+- [text](types.IProgress.md#text)
 
 ## Properties
 
 ### percent
 
-• **percent**: *number*
+• **percent**: `number`
 
-Defined in: src/types/IState.ts:73
+#### Defined in
+
+../src/types/IState.ts:73
 
 ___
 
 ### text
 
-• **text**: *string*
+• **text**: `string`
 
-Defined in: src/types/IState.ts:72
+#### Defined in
+
+../src/types/IState.ts:72

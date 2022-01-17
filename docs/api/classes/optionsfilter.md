@@ -4,117 +4,145 @@
 
 ## Implements
 
-* [*ITableFilter*](../interfaces/types.itablefilter.md)
+- [`ITableFilter`](../interfaces/types.ITableFilter.md)
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](optionsfilter.md#constructor)
+- [constructor](OptionsFilter.md#constructor)
 
 ### Properties
 
-- [component](optionsfilter.md#component)
-- [mMulti](optionsfilter.md#mmulti)
-- [raw](optionsfilter.md#raw)
-- [EMPTY](optionsfilter.md#empty)
+- [component](OptionsFilter.md#component)
+- [mMulti](OptionsFilter.md#mmulti)
+- [raw](OptionsFilter.md#raw)
+- [EMPTY](OptionsFilter.md#empty)
 
 ### Methods
 
-- [isEmpty](optionsfilter.md#isempty)
-- [matches](optionsfilter.md#matches)
+- [isEmpty](OptionsFilter.md#isempty)
+- [matches](OptionsFilter.md#matches)
 
 ## Constructors
 
 ### constructor
 
-\+ **new OptionsFilter**(`options`: Options \| () => Options, `multi`: *boolean*, `raw?`: *boolean*): [*OptionsFilter*](optionsfilter.md)
+• **new OptionsFilter**(`options`, `multi`, `raw?`)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`options` | Options \| () => Options |
-`multi` | *boolean* |
-`raw?` | *boolean* |
+| Name | Type |
+| :------ | :------ |
+| `options` | `Options` \| () => `Options` |
+| `multi` | `boolean` |
+| `raw?` | `boolean` |
 
-**Returns:** [*OptionsFilter*](optionsfilter.md)
+#### Defined in
 
-Defined in: src/controls/table/OptionsFilter.tsx:66
+../src/controls/table/OptionsFilter.tsx:81
 
 ## Properties
 
 ### component
 
-• **component**: *ComponentClass*<any, any\>
+• **component**: `ComponentClass`<`any`, `any`\>
 
-Implementation of: [ITableFilter](../interfaces/types.itablefilter.md).[component](../interfaces/types.itablefilter.md#component)
+#### Implementation of
 
-Defined in: src/controls/table/OptionsFilter.tsx:63
+[ITableFilter](../interfaces/types.ITableFilter.md).[component](../interfaces/types.ITableFilter.md#component)
+
+#### Defined in
+
+../src/controls/table/OptionsFilter.tsx:76
 
 ___
 
 ### mMulti
 
-• `Private` **mMulti**: *boolean*
+• `Private` **mMulti**: `boolean`
 
-Defined in: src/controls/table/OptionsFilter.tsx:66
+#### Defined in
+
+../src/controls/table/OptionsFilter.tsx:79
 
 ___
 
 ### raw
 
-• **raw**: *boolean*= true
+• **raw**: `boolean` = `true`
 
 this controls what value gets passed into the matches function, see the documentation there
 for possible values
 
-Implementation of: [ITableFilter](../interfaces/types.itablefilter.md).[raw](../interfaces/types.itablefilter.md#raw)
+#### Implementation of
 
-Defined in: src/controls/table/OptionsFilter.tsx:64
+[ITableFilter](../interfaces/types.ITableFilter.md).[raw](../interfaces/types.ITableFilter.md#raw)
+
+#### Defined in
+
+../src/controls/table/OptionsFilter.tsx:77
 
 ___
 
 ### EMPTY
 
-▪ `Static` **EMPTY**: *string*= '\_\_empty'
+▪ `Static` **EMPTY**: `string` = `'__empty'`
 
-Defined in: src/controls/table/OptionsFilter.tsx:62
+#### Defined in
+
+../src/controls/table/OptionsFilter.tsx:75
 
 ## Methods
 
 ### isEmpty
 
-▸ **isEmpty**(`filter`: *any*): *boolean*
+▸ **isEmpty**(`filter`): `boolean`
 
 return true if the specified filter will not filter out any elements
 if not specified the filter will be assumed to be "empty" if it's not truthy
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`filter` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `filter` | `any` |
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: src/controls/table/OptionsFilter.tsx:111
+`boolean`
+
+#### Implementation of
+
+[ITableFilter](../interfaces/types.ITableFilter.md).[isEmpty](../interfaces/types.ITableFilter.md#isempty)
+
+#### Defined in
+
+../src/controls/table/OptionsFilter.tsx:124
 
 ___
 
 ### matches
 
-▸ **matches**(`filter`: *any*, `value`: *any*): *boolean*
+▸ **matches**(`filter`, `value`): `boolean`
 
 return true if value matches the filter
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`filter` | *any* |
-`value` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `filter` | `any` |
+| `value` | `any` |
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: src/controls/table/OptionsFilter.tsx:74
+`boolean`
+
+#### Implementation of
+
+[ITableFilter](../interfaces/types.ITableFilter.md).[matches](../interfaces/types.ITableFilter.md#matches)
+
+#### Defined in
+
+../src/controls/table/OptionsFilter.tsx:87

@@ -6,80 +6,88 @@
 
 ## Hierarchy
 
-* *Component*<[*ToggleButtonProps*](../modules/tooltip.md#togglebuttonprops), {}\>
+- `Component`<[`ToggleButtonProps`](../modules/tooltip.md#togglebuttonprops), {}\>
 
-  ↳ **ToggleButton**
+  ↳ **`ToggleButton`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](tooltip.togglebutton.md#constructor)
+- [constructor](tooltip.ToggleButton.md#constructor)
 
 ### Properties
 
-- [context](tooltip.togglebutton.md#context)
-- [props](tooltip.togglebutton.md#props)
-- [refs](tooltip.togglebutton.md#refs)
-- [state](tooltip.togglebutton.md#state)
-- [contextType](tooltip.togglebutton.md#contexttype)
+- [context](tooltip.ToggleButton.md#context)
+- [props](tooltip.ToggleButton.md#props)
+- [refs](tooltip.ToggleButton.md#refs)
+- [state](tooltip.ToggleButton.md#state)
+- [contextType](tooltip.ToggleButton.md#contexttype)
 
 ### Methods
 
-- [UNSAFE\_componentWillMount](tooltip.togglebutton.md#unsafe_componentwillmount)
-- [UNSAFE\_componentWillReceiveProps](tooltip.togglebutton.md#unsafe_componentwillreceiveprops)
-- [UNSAFE\_componentWillUpdate](tooltip.togglebutton.md#unsafe_componentwillupdate)
-- [componentDidCatch](tooltip.togglebutton.md#componentdidcatch)
-- [componentDidMount](tooltip.togglebutton.md#componentdidmount)
-- [componentDidUpdate](tooltip.togglebutton.md#componentdidupdate)
-- [componentWillMount](tooltip.togglebutton.md#componentwillmount)
-- [componentWillReceiveProps](tooltip.togglebutton.md#componentwillreceiveprops)
-- [componentWillUnmount](tooltip.togglebutton.md#componentwillunmount)
-- [componentWillUpdate](tooltip.togglebutton.md#componentwillupdate)
-- [forceUpdate](tooltip.togglebutton.md#forceupdate)
-- [getSnapshotBeforeUpdate](tooltip.togglebutton.md#getsnapshotbeforeupdate)
-- [render](tooltip.togglebutton.md#render)
-- [setState](tooltip.togglebutton.md#setstate)
-- [shouldComponentUpdate](tooltip.togglebutton.md#shouldcomponentupdate)
+- [UNSAFE\_componentWillMount](tooltip.ToggleButton.md#unsafe_componentwillmount)
+- [UNSAFE\_componentWillReceiveProps](tooltip.ToggleButton.md#unsafe_componentwillreceiveprops)
+- [UNSAFE\_componentWillUpdate](tooltip.ToggleButton.md#unsafe_componentwillupdate)
+- [componentDidCatch](tooltip.ToggleButton.md#componentdidcatch)
+- [componentDidMount](tooltip.ToggleButton.md#componentdidmount)
+- [componentDidUpdate](tooltip.ToggleButton.md#componentdidupdate)
+- [componentWillMount](tooltip.ToggleButton.md#componentwillmount)
+- [componentWillReceiveProps](tooltip.ToggleButton.md#componentwillreceiveprops)
+- [componentWillUnmount](tooltip.ToggleButton.md#componentwillunmount)
+- [componentWillUpdate](tooltip.ToggleButton.md#componentwillupdate)
+- [forceUpdate](tooltip.ToggleButton.md#forceupdate)
+- [getSnapshotBeforeUpdate](tooltip.ToggleButton.md#getsnapshotbeforeupdate)
+- [render](tooltip.ToggleButton.md#render)
+- [setState](tooltip.ToggleButton.md#setstate)
+- [shouldComponentUpdate](tooltip.ToggleButton.md#shouldcomponentupdate)
 
 ## Constructors
 
 ### constructor
 
-\+ **new ToggleButton**(`props`: [*ToggleButtonProps*](../modules/tooltip.md#togglebuttonprops) \| *Readonly*<[*ToggleButtonProps*](../modules/tooltip.md#togglebuttonprops)\>): [*ToggleButton*](tooltip.togglebutton.md)
+• **new ToggleButton**(`props`)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`props` | [*ToggleButtonProps*](../modules/tooltip.md#togglebuttonprops) \| *Readonly*<[*ToggleButtonProps*](../modules/tooltip.md#togglebuttonprops)\> |
+| Name | Type |
+| :------ | :------ |
+| `props` | [`ToggleButtonProps`](../modules/tooltip.md#togglebuttonprops) \| `Readonly`<[`ToggleButtonProps`](../modules/tooltip.md#togglebuttonprops)\> |
 
-**Returns:** [*ToggleButton*](tooltip.togglebutton.md)
+#### Inherited from
 
-Defined in: node_modules/@types/react/index.d.ts:472
+React.Component<ToggleButtonProps, {}\>.constructor
 
-\+ **new ToggleButton**(`props`: [*ToggleButtonProps*](../modules/tooltip.md#togglebuttonprops), `context`: *any*): [*ToggleButton*](tooltip.togglebutton.md)
+#### Defined in
 
-**`deprecated`** 
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:474
+
+• **new ToggleButton**(`props`, `context`)
+
+**`deprecated`**
 
 **`see`** https://reactjs.org/docs/legacy-context.html
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`props` | [*ToggleButtonProps*](../modules/tooltip.md#togglebuttonprops) |
-`context` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `props` | [`ToggleButtonProps`](../modules/tooltip.md#togglebuttonprops) |
+| `context` | `any` |
 
-**Returns:** [*ToggleButton*](tooltip.togglebutton.md)
+#### Inherited from
 
-Defined in: node_modules/@types/react/index.d.ts:474
+React.Component<ToggleButtonProps, {}\>.constructor
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:479
 
 ## Properties
 
 ### context
 
-• **context**: *any*
+• **context**: `any`
 
 If using the new style context, re-declare this in your class to be the
 `React.ContextType` of your `static contextType`.
@@ -95,42 +103,68 @@ declare context: React.ContextType<typeof MyContext>
 
 **`see`** https://reactjs.org/docs/context.html
 
-Defined in: node_modules/@types/react/index.d.ts:472
+#### Inherited from
+
+React.Component.context
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:472
 
 ___
 
 ### props
 
-• `Readonly` **props**: *Readonly*<[*ToggleButtonProps*](../modules/tooltip.md#togglebuttonprops)\> & *Readonly*<{ `children?`: ReactNode  }\>
+• `Readonly` **props**: `Readonly`<[`ToggleButtonProps`](../modules/tooltip.md#togglebuttonprops)\> & `Readonly`<{ `children?`: `ReactNode`  }\>
 
-Defined in: node_modules/@types/react/index.d.ts:497
+#### Inherited from
+
+React.Component.props
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:497
 
 ___
 
 ### refs
 
-• **refs**: *object*
+• **refs**: `Object`
 
-**`deprecated`** 
+**`deprecated`**
 https://reactjs.org/docs/refs-and-the-dom.html#legacy-api-string-refs
 
-#### Type declaration:
+#### Index signature
 
-Defined in: node_modules/@types/react/index.d.ts:503
+▪ [key: `string`]: `ReactInstance`
+
+#### Inherited from
+
+React.Component.refs
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:503
 
 ___
 
 ### state
 
-• **state**: *Readonly*<{}\>
+• **state**: `Readonly`<{}\>
 
-Defined in: node_modules/@types/react/index.d.ts:498
+#### Inherited from
+
+React.Component.state
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:498
 
 ___
 
 ### contextType
 
-▪ `Optional` `Static` **contextType**: *Context*<any\>
+▪ `Static` `Optional` **contextType**: `Context`<`any`\>
 
 If set, `this.context` will be set at runtime to the current value of the given Context.
 
@@ -151,13 +185,19 @@ class Foo extends React.Component {
 
 **`see`** https://reactjs.org/docs/context.html#classcontexttype
 
-Defined in: node_modules/@types/react/index.d.ts:454
+#### Inherited from
+
+React.Component.contextType
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:454
 
 ## Methods
 
 ### UNSAFE\_componentWillMount
 
-▸ `Optional`**UNSAFE_componentWillMount**(): *void*
+▸ `Optional` **UNSAFE_componentWillMount**(): `void`
 
 Called immediately before mounting occurs, and before `Component#render`.
 Avoid introducing any side-effects or subscriptions in this method.
@@ -173,15 +213,23 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:708
+`void`
+
+#### Inherited from
+
+React.Component.UNSAFE\_componentWillMount
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:708
 
 ___
 
 ### UNSAFE\_componentWillReceiveProps
 
-▸ `Optional`**UNSAFE_componentWillReceiveProps**(`nextProps`: *Readonly*<[*ToggleButtonProps*](../modules/tooltip.md#togglebuttonprops)\>, `nextContext`: *any*): *void*
+▸ `Optional` **UNSAFE_componentWillReceiveProps**(`nextProps`, `nextContext`): `void`
 
 Called when the component may be receiving new props.
 React may call this even if props have not changed, so be sure to compare new and existing
@@ -200,22 +248,30 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<[*ToggleButtonProps*](../modules/tooltip.md#togglebuttonprops)\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<[`ToggleButtonProps`](../modules/tooltip.md#togglebuttonprops)\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:740
+`void`
+
+#### Inherited from
+
+React.Component.UNSAFE\_componentWillReceiveProps
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:740
 
 ___
 
 ### UNSAFE\_componentWillUpdate
 
-▸ `Optional`**UNSAFE_componentWillUpdate**(`nextProps`: *Readonly*<[*ToggleButtonProps*](../modules/tooltip.md#togglebuttonprops)\>, `nextState`: *Readonly*<{}\>, `nextContext`: *any*): *void*
+▸ `Optional` **UNSAFE_componentWillUpdate**(`nextProps`, `nextState`, `nextContext`): `void`
 
 Called immediately before rendering when new props or state is received. Not called for the initial render.
 
@@ -232,77 +288,109 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<[*ToggleButtonProps*](../modules/tooltip.md#togglebuttonprops)\> |
-`nextState` | *Readonly*<{}\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<[`ToggleButtonProps`](../modules/tooltip.md#togglebuttonprops)\> |
+| `nextState` | `Readonly`<{}\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:768
+`void`
+
+#### Inherited from
+
+React.Component.UNSAFE\_componentWillUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:768
 
 ___
 
 ### componentDidCatch
 
-▸ `Optional`**componentDidCatch**(`error`: Error, `errorInfo`: ErrorInfo): *void*
+▸ `Optional` **componentDidCatch**(`error`, `errorInfo`): `void`
 
 Catches exceptions generated in descendant components. Unhandled exceptions will cause
 the entire component tree to unmount.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`error` | Error |
-`errorInfo` | ErrorInfo |
+| Name | Type |
+| :------ | :------ |
+| `error` | `Error` |
+| `errorInfo` | `ErrorInfo` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:637
+`void`
+
+#### Inherited from
+
+React.Component.componentDidCatch
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:637
 
 ___
 
 ### componentDidMount
 
-▸ `Optional`**componentDidMount**(): *void*
+▸ `Optional` **componentDidMount**(): `void`
 
 Called immediately after a component is mounted. Setting state here will trigger re-rendering.
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:616
+`void`
+
+#### Inherited from
+
+React.Component.componentDidMount
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:616
 
 ___
 
 ### componentDidUpdate
 
-▸ `Optional`**componentDidUpdate**(`prevProps`: *Readonly*<[*ToggleButtonProps*](../modules/tooltip.md#togglebuttonprops)\>, `prevState`: *Readonly*<{}\>, `snapshot?`: *any*): *void*
+▸ `Optional` **componentDidUpdate**(`prevProps`, `prevState`, `snapshot?`): `void`
 
 Called immediately after updating occurs. Not called for the initial render.
 
 The snapshot is only present if getSnapshotBeforeUpdate is present and returns non-null.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`prevProps` | *Readonly*<[*ToggleButtonProps*](../modules/tooltip.md#togglebuttonprops)\> |
-`prevState` | *Readonly*<{}\> |
-`snapshot?` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `prevProps` | `Readonly`<[`ToggleButtonProps`](../modules/tooltip.md#togglebuttonprops)\> |
+| `prevState` | `Readonly`<{}\> |
+| `snapshot?` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:679
+`void`
+
+#### Inherited from
+
+React.Component.componentDidUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:679
 
 ___
 
 ### componentWillMount
 
-▸ `Optional`**componentWillMount**(): *void*
+▸ `Optional` **componentWillMount**(): `void`
 
 Called immediately before mounting occurs, and before `Component#render`.
 Avoid introducing any side-effects or subscriptions in this method.
@@ -316,15 +404,23 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:694
+`void`
+
+#### Inherited from
+
+React.Component.componentWillMount
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:694
 
 ___
 
 ### componentWillReceiveProps
 
-▸ `Optional`**componentWillReceiveProps**(`nextProps`: *Readonly*<[*ToggleButtonProps*](../modules/tooltip.md#togglebuttonprops)\>, `nextContext`: *any*): *void*
+▸ `Optional` **componentWillReceiveProps**(`nextProps`, `nextContext`): `void`
 
 Called when the component may be receiving new props.
 React may call this even if props have not changed, so be sure to compare new and existing
@@ -341,35 +437,51 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<[*ToggleButtonProps*](../modules/tooltip.md#togglebuttonprops)\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<[`ToggleButtonProps`](../modules/tooltip.md#togglebuttonprops)\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:723
+`void`
+
+#### Inherited from
+
+React.Component.componentWillReceiveProps
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:723
 
 ___
 
 ### componentWillUnmount
 
-▸ `Optional`**componentWillUnmount**(): *void*
+▸ `Optional` **componentWillUnmount**(): `void`
 
 Called immediately before a component is destroyed. Perform any necessary cleanup in this method, such as
 cancelled network requests, or cleaning up any DOM elements created in `componentDidMount`.
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:632
+`void`
+
+#### Inherited from
+
+React.Component.componentWillUnmount
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:632
 
 ___
 
 ### componentWillUpdate
 
-▸ `Optional`**componentWillUpdate**(`nextProps`: *Readonly*<[*ToggleButtonProps*](../modules/tooltip.md#togglebuttonprops)\>, `nextState`: *Readonly*<{}\>, `nextContext`: *any*): *void*
+▸ `Optional` **componentWillUpdate**(`nextProps`, `nextState`, `nextContext`): `void`
 
 Called immediately before rendering when new props or state is received. Not called for the initial render.
 
@@ -384,39 +496,55 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<[*ToggleButtonProps*](../modules/tooltip.md#togglebuttonprops)\> |
-`nextState` | *Readonly*<{}\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<[`ToggleButtonProps`](../modules/tooltip.md#togglebuttonprops)\> |
+| `nextState` | `Readonly`<{}\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:753
+`void`
+
+#### Inherited from
+
+React.Component.componentWillUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:753
 
 ___
 
 ### forceUpdate
 
-▸ **forceUpdate**(`callback?`: () => *void*): *void*
+▸ **forceUpdate**(`callback?`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`callback?` | () => *void* |
+| Name | Type |
+| :------ | :------ |
+| `callback?` | () => `void` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:489
+`void`
+
+#### Inherited from
+
+React.Component.forceUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:489
 
 ___
 
 ### getSnapshotBeforeUpdate
 
-▸ `Optional`**getSnapshotBeforeUpdate**(`prevProps`: *Readonly*<[*ToggleButtonProps*](../modules/tooltip.md#togglebuttonprops)\>, `prevState`: *Readonly*<{}\>): *any*
+▸ `Optional` **getSnapshotBeforeUpdate**(`prevProps`, `prevState`): `any`
 
 Runs before React applies the result of `render` to the document, and
 returns an object to be given to componentDidUpdate. Useful for saving
@@ -425,55 +553,79 @@ things such as scroll position before `render` causes changes to it.
 Note: the presence of getSnapshotBeforeUpdate prevents any of the deprecated
 lifecycle events from running.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`prevProps` | *Readonly*<[*ToggleButtonProps*](../modules/tooltip.md#togglebuttonprops)\> |
-`prevState` | *Readonly*<{}\> |
+| Name | Type |
+| :------ | :------ |
+| `prevProps` | `Readonly`<[`ToggleButtonProps`](../modules/tooltip.md#togglebuttonprops)\> |
+| `prevState` | `Readonly`<{}\> |
 
-**Returns:** *any*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:673
+`any`
+
+#### Inherited from
+
+React.Component.getSnapshotBeforeUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:673
 
 ___
 
 ### render
 
-▸ **render**(): *Element*
+▸ **render**(): `Element`
 
-**Returns:** *Element*
+#### Returns
 
-Defined in: src/controls/TooltipControls.tsx:147
+`Element`
+
+#### Overrides
+
+React.Component.render
+
+#### Defined in
+
+../src/controls/TooltipControls.tsx:148
 
 ___
 
 ### setState
 
-▸ **setState**<K\>(`state`: {} \| (`prevState`: *Readonly*<{}\>, `props`: *Readonly*<[*ToggleButtonProps*](../modules/tooltip.md#togglebuttonprops)\>) => {} \| *Pick*<{}, K\> \| *Pick*<{}, K\>, `callback?`: () => *void*): *void*
+▸ **setState**<`K`\>(`state`, `callback?`): `void`
 
-#### Type parameters:
+#### Type parameters
 
-Name | Type |
-:------ | :------ |
-`K` | *never* |
+| Name | Type |
+| :------ | :------ |
+| `K` | extends `never` |
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`state` | {} \| (`prevState`: *Readonly*<{}\>, `props`: *Readonly*<[*ToggleButtonProps*](../modules/tooltip.md#togglebuttonprops)\>) => {} \| *Pick*<{}, K\> \| *Pick*<{}, K\> |
-`callback?` | () => *void* |
+| Name | Type |
+| :------ | :------ |
+| `state` | {} \| (`prevState`: `Readonly`<{}\>, `props`: `Readonly`<[`ToggleButtonProps`](../modules/tooltip.md#togglebuttonprops)\>) => {} \| `Pick`<{}, `K`\> \| `Pick`<{}, `K`\> |
+| `callback?` | () => `void` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:484
+`void`
+
+#### Inherited from
+
+React.Component.setState
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:484
 
 ___
 
 ### shouldComponentUpdate
 
-▸ `Optional`**shouldComponentUpdate**(`nextProps`: *Readonly*<[*ToggleButtonProps*](../modules/tooltip.md#togglebuttonprops)\>, `nextState`: *Readonly*<{}\>, `nextContext`: *any*): *boolean*
+▸ `Optional` **shouldComponentUpdate**(`nextProps`, `nextState`, `nextContext`): `boolean`
 
 Called to determine whether the change in props and state should trigger a re-render.
 
@@ -484,14 +636,22 @@ props or states have changed.
 If false is returned, `Component#render`, `componentWillUpdate`
 and `componentDidUpdate` will not be called.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<[*ToggleButtonProps*](../modules/tooltip.md#togglebuttonprops)\> |
-`nextState` | *Readonly*<{}\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<[`ToggleButtonProps`](../modules/tooltip.md#togglebuttonprops)\> |
+| `nextState` | `Readonly`<{}\> |
+| `nextContext` | `any` |
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:627
+`boolean`
+
+#### Inherited from
+
+React.Component.shouldComponentUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:627

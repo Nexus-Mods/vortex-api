@@ -8,30 +8,36 @@
 
 ### Properties
 
-- [hollowIcon](types.iactionoptions.md#hollowicon)
-- [namespace](types.iactionoptions.md#namespace)
-- [noCollapse](types.iactionoptions.md#nocollapse)
+- [hollowIcon](types.IActionOptions.md#hollowicon)
+- [namespace](types.IActionOptions.md#namespace)
+- [noCollapse](types.IActionOptions.md#nocollapse)
 
 ## Properties
 
 ### hollowIcon
 
-• `Optional` **hollowIcon**: *boolean*
+• `Optional` **hollowIcon**: `boolean`
 
-Defined in: src/types/IActionDefinition.ts:6
+#### Defined in
+
+../src/types/IActionDefinition.ts:6
 
 ___
 
 ### namespace
 
-• `Optional` **namespace**: *string*
+• `Optional` **namespace**: `string`
 
-Defined in: src/types/IActionDefinition.ts:5
+#### Defined in
+
+../src/types/IActionDefinition.ts:5
 
 ___
 
 ### noCollapse
 
-• `Optional` **noCollapse**: *boolean*
+• `Optional` **noCollapse**: `boolean`
 
-Defined in: src/types/IActionDefinition.ts:4
+#### Defined in
+
+../src/types/IActionDefinition.ts:4

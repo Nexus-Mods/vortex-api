@@ -8,30 +8,36 @@
 
 ### Properties
 
-- [actions](types.iconditionresult.md#actions)
-- [errorText](types.iconditionresult.md#errortext)
-- [id](types.iconditionresult.md#id)
+- [actions](types.IConditionResult.md#actions)
+- [errorText](types.IConditionResult.md#errortext)
+- [id](types.IConditionResult.md#id)
 
 ## Properties
 
 ### actions
 
-• **actions**: *string*[]
+• **actions**: `string`[]
 
-Defined in: src/types/IDialog.ts:15
+#### Defined in
+
+../src/types/IDialog.ts:15
 
 ___
 
 ### errorText
 
-• **errorText**: *string*
+• **errorText**: `string`
 
-Defined in: src/types/IDialog.ts:19
+#### Defined in
+
+../src/types/IDialog.ts:19
 
 ___
 
 ### id
 
-• **id**: *string*
+• **id**: `string`
 
-Defined in: src/types/IDialog.ts:23
+#### Defined in
+
+../src/types/IDialog.ts:23

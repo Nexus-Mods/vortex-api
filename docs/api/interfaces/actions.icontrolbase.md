@@ -6,26 +6,28 @@
 
 ## Hierarchy
 
-* **IControlBase**
+- **`IControlBase`**
 
-  ↳ [*ICheckbox*](actions.icheckbox.md)
+  ↳ [`ICheckbox`](actions.ICheckbox.md)
 
-  ↳ [*IInput*](actions.iinput.md)
+  ↳ [`IInput`](actions.IInput.md)
 
-  ↳ [*ICheckbox*](types.icheckbox.md)
+  ↳ [`ICheckbox`](types.ICheckbox.md)
 
-  ↳ [*IInput*](types.iinput.md)
+  ↳ [`IInput`](types.IInput.md)
 
 ## Table of contents
 
 ### Properties
 
-- [id](actions.icontrolbase.md#id)
+- [id](actions.IControlBase.md#id)
 
 ## Properties
 
 ### id
 
-• **id**: *string*
+• **id**: `string`
 
-Defined in: src/types/IDialog.ts:42
+#### Defined in
+
+../src/types/IDialog.ts:46

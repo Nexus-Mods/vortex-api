@@ -8,70 +8,88 @@
 
 ### Properties
 
-- [features](types.iprofile.md#features)
-- [gameId](types.iprofile.md#gameid)
-- [id](types.iprofile.md#id)
-- [lastActivated](types.iprofile.md#lastactivated)
-- [modState](types.iprofile.md#modstate)
-- [name](types.iprofile.md#name)
-- [pendingRemove](types.iprofile.md#pendingremove)
+- [features](types.IProfile.md#features)
+- [gameId](types.IProfile.md#gameid)
+- [id](types.IProfile.md#id)
+- [lastActivated](types.IProfile.md#lastactivated)
+- [modState](types.IProfile.md#modstate)
+- [name](types.IProfile.md#name)
+- [pendingRemove](types.IProfile.md#pendingremove)
 
 ## Properties
 
 ### features
 
-• `Optional` **features**: *object*
+• `Optional` **features**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/extensions/profile_management/types/IProfile.ts:13
+▪ [featureId: `string`]: `any`
+
+#### Defined in
+
+../src/extensions/profile_management/types/IProfile.ts:13
 
 ___
 
 ### gameId
 
-• **gameId**: *string*
+• **gameId**: `string`
 
-Defined in: src/extensions/profile_management/types/IProfile.ts:8
+#### Defined in
+
+../src/extensions/profile_management/types/IProfile.ts:8
 
 ___
 
 ### id
 
-• **id**: *string*
+• **id**: `string`
 
-Defined in: src/extensions/profile_management/types/IProfile.ts:7
+#### Defined in
+
+../src/extensions/profile_management/types/IProfile.ts:7
 
 ___
 
 ### lastActivated
 
-• **lastActivated**: *number*
+• **lastActivated**: `number`
 
-Defined in: src/extensions/profile_management/types/IProfile.ts:11
+#### Defined in
+
+../src/extensions/profile_management/types/IProfile.ts:11
 
 ___
 
 ### modState
 
-• **modState**: *object*
+• **modState**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/extensions/profile_management/types/IProfile.ts:10
+▪ [id: `string`]: [`IProfileMod`](types.IProfileMod.md)
+
+#### Defined in
+
+../src/extensions/profile_management/types/IProfile.ts:10
 
 ___
 
 ### name
 
-• **name**: *string*
+• **name**: `string`
 
-Defined in: src/extensions/profile_management/types/IProfile.ts:9
+#### Defined in
+
+../src/extensions/profile_management/types/IProfile.ts:9
 
 ___
 
 ### pendingRemove
 
-• `Optional` **pendingRemove**: *boolean*
+• `Optional` **pendingRemove**: `boolean`
 
-Defined in: src/extensions/profile_management/types/IProfile.ts:12
+#### Defined in
+
+../src/extensions/profile_management/types/IProfile.ts:12

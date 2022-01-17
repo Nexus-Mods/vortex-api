@@ -8,93 +8,113 @@
 
 ### Properties
 
-- [data](types.iinstruction.md#data)
-- [destination](types.iinstruction.md#destination)
-- [key](types.iinstruction.md#key)
-- [path](types.iinstruction.md#path)
-- [rule](types.iinstruction.md#rule)
-- [section](types.iinstruction.md#section)
-- [source](types.iinstruction.md#source)
-- [submoduleType](types.iinstruction.md#submoduletype)
-- [type](types.iinstruction.md#type)
-- [value](types.iinstruction.md#value)
+- [data](types.IInstruction.md#data)
+- [destination](types.IInstruction.md#destination)
+- [key](types.IInstruction.md#key)
+- [path](types.IInstruction.md#path)
+- [rule](types.IInstruction.md#rule)
+- [section](types.IInstruction.md#section)
+- [source](types.IInstruction.md#source)
+- [submoduleType](types.IInstruction.md#submoduletype)
+- [type](types.IInstruction.md#type)
+- [value](types.IInstruction.md#value)
 
 ## Properties
 
 ### data
 
-• `Optional` **data**: *string* \| *Buffer*
+• `Optional` **data**: `string` \| `Buffer`
 
-Defined in: src/extensions/mod_management/types/IInstallResult.ts:18
+#### Defined in
+
+../src/extensions/mod_management/types/IInstallResult.ts:18
 
 ___
 
 ### destination
 
-• `Optional` **destination**: *string*
+• `Optional` **destination**: `string`
 
-Defined in: src/extensions/mod_management/types/IInstallResult.ts:13
+#### Defined in
+
+../src/extensions/mod_management/types/IInstallResult.ts:13
 
 ___
 
 ### key
 
-• `Optional` **key**: *string*
+• `Optional` **key**: `string`
 
-Defined in: src/extensions/mod_management/types/IInstallResult.ts:15
+#### Defined in
+
+../src/extensions/mod_management/types/IInstallResult.ts:15
 
 ___
 
 ### path
 
-• `Optional` **path**: *string*
+• `Optional` **path**: `string`
 
-Defined in: src/extensions/mod_management/types/IInstallResult.ts:11
+#### Defined in
+
+../src/extensions/mod_management/types/IInstallResult.ts:11
 
 ___
 
 ### rule
 
-• `Optional` **rule**: IRule
+• `Optional` **rule**: `IRule`
 
-Defined in: src/extensions/mod_management/types/IInstallResult.ts:19
+#### Defined in
+
+../src/extensions/mod_management/types/IInstallResult.ts:19
 
 ___
 
 ### section
 
-• `Optional` **section**: *string*
+• `Optional` **section**: `string`
 
-Defined in: src/extensions/mod_management/types/IInstallResult.ts:14
+#### Defined in
+
+../src/extensions/mod_management/types/IInstallResult.ts:14
 
 ___
 
 ### source
 
-• `Optional` **source**: *string*
+• `Optional` **source**: `string`
 
-Defined in: src/extensions/mod_management/types/IInstallResult.ts:12
+#### Defined in
+
+../src/extensions/mod_management/types/IInstallResult.ts:12
 
 ___
 
 ### submoduleType
 
-• `Optional` **submoduleType**: *string*
+• `Optional` **submoduleType**: `string`
 
-Defined in: src/extensions/mod_management/types/IInstallResult.ts:17
+#### Defined in
+
+../src/extensions/mod_management/types/IInstallResult.ts:17
 
 ___
 
 ### type
 
-• **type**: InstructionType
+• **type**: [`InstructionType`](../modules/types.md#instructiontype)
 
-Defined in: src/extensions/mod_management/types/IInstallResult.ts:9
+#### Defined in
+
+../src/extensions/mod_management/types/IInstallResult.ts:9
 
 ___
 
 ### value
 
-• `Optional` **value**: *string*
+• `Optional` **value**: `any`
 
-Defined in: src/extensions/mod_management/types/IInstallResult.ts:16
+#### Defined in
+
+../src/extensions/mod_management/types/IInstallResult.ts:16

@@ -6,76 +6,91 @@
 
 ## Implemented by
 
-* [*OptionsFilter*](../classes/optionsfilter.md)
-* [*TableDateTimeFilter*](../classes/tabledatetimefilter.md)
-* [*TableNumericFilter*](../classes/tablenumericfilter.md)
-* [*TableTextFilter*](../classes/tabletextfilter.md)
+- [`OptionsFilter`](../classes/OptionsFilter.md)
+- [`TableDateTimeFilter`](../classes/TableDateTimeFilter.md)
+- [`TableNumericFilter`](../classes/TableNumericFilter.md)
+- [`TableTextFilter`](../classes/TableTextFilter.md)
 
 ## Table of contents
 
 ### Properties
 
-- [component](types.itablefilter.md#component)
-- [dataId](types.itablefilter.md#dataid)
-- [isEmpty](types.itablefilter.md#isempty)
-- [matches](types.itablefilter.md#matches)
-- [raw](types.itablefilter.md#raw)
+- [component](types.ITableFilter.md#component)
+- [dataId](types.ITableFilter.md#dataid)
+- [raw](types.ITableFilter.md#raw)
+
+### Methods
+
+- [isEmpty](types.ITableFilter.md#isempty)
+- [matches](types.ITableFilter.md#matches)
 
 ## Properties
 
 ### component
 
-• **component**: *ComponentType*<[*IFilterProps*](types.ifilterprops.md)\>
+• **component**: `ComponentType`<[`IFilterProps`](types.IFilterProps.md)\>
 
-Defined in: src/types/ITableAttribute.ts:57
+#### Defined in
+
+../src/types/ITableAttribute.ts:58
 
 ___
 
 ### dataId
 
-• `Optional` **dataId**: *string*
+• `Optional` **dataId**: `string`
 
-Defined in: src/types/ITableAttribute.ts:58
+specifies which property of the object to filter on, meaning that obj[dataId] will be passed
+to the "matches" function as the value to filter by.
+This can be $ (a single dollar sign) to get the object itself
+
+#### Defined in
+
+../src/types/ITableAttribute.ts:64
 
 ___
 
+### raw
+
+• **raw**: `string` \| `boolean`
+
+this controls what value gets passed into the matches function, see the documentation there
+for possible values
+
+#### Defined in
+
+../src/types/ITableAttribute.ts:57
+
+## Methods
+
 ### isEmpty
 
-• `Optional` **isEmpty**: (`filter`: *any*) => *boolean*
+▸ `Optional` **isEmpty**(`filter`): `boolean`
 
 return true if the specified filter will not filter out any elements
 if not specified the filter will be assumed to be "empty" if it's not truthy
 
-#### Type declaration:
+#### Parameters
 
-▸ (`filter`: *any*): *boolean*
+| Name | Type |
+| :------ | :------ |
+| `filter` | `any` |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`filter` | *any* |
+`boolean`
 
-**Returns:** *boolean*
+#### Defined in
 
-Defined in: src/types/ITableAttribute.ts:51
-
-Defined in: src/types/ITableAttribute.ts:51
+../src/types/ITableAttribute.ts:52
 
 ___
 
 ### matches
 
-• **matches**: (`filter`: *any*, `value`: *any*, `state`: *any*) => *boolean*
+▸ **matches**(`filter`, `value`, `state`): `boolean`
 
 return true if value matches the filter
-
-**`param`** the filter pattern to filter by
-
-**`param`** the row value for the specified column
-
-**`param`** application state, usually an IState object but may contain additional fields
-             from extensions
 
 **`note`** the raw parameter controls what value actually gets passed into matches. If raw is false,
       value will be the output of the calc function of the ITableAttribute.
@@ -88,31 +103,18 @@ return true if value matches the filter
       If calc returns localized strings for example you will want to use raw, generally it
       is often simpler to deal with raw values (true instead of "Enabled")
 
-#### Type declaration:
+#### Parameters
 
-▸ (`filter`: *any*, `value`: *any*, `state`: *any*): *boolean*
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `filter` | `any` | the filter pattern to filter by |
+| `value` | `any` | the row value for the specified column |
+| `state` | `any` | application state, usually an IState object but may contain additional fields              from extensions |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
-:------ | :------ |
-`filter` | *any* |
-`value` | *any* |
-`state` | *any* |
+`boolean`
 
-**Returns:** *boolean*
+#### Defined in
 
-Defined in: src/types/ITableAttribute.ts:46
-
-Defined in: src/types/ITableAttribute.ts:46
-
-___
-
-### raw
-
-• **raw**: *string* \| *boolean*
-
-this controls what value gets passed into the matches function, see the documentation there
-for possible values
-
-Defined in: src/types/ITableAttribute.ts:56
+../src/types/ITableAttribute.ts:47

@@ -6,176 +6,206 @@
 
 ## Type parameters
 
-Name |
-:------ |
-`T` |
+| Name |
+| :------ |
+| `T` |
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](util.reduxprop.md#constructor)
+- [constructor](util.ReduxProp.md#constructor)
 
 ### Properties
 
-- [mApi](util.reduxprop.md#mapi)
-- [mFunc](util.reduxprop.md#mfunc)
-- [mInputs](util.reduxprop.md#minputs)
-- [mSubscribers](util.reduxprop.md#msubscribers)
-- [mUnsubscribe](util.reduxprop.md#munsubscribe)
+- [mApi](util.ReduxProp.md#mapi)
+- [mFunc](util.ReduxProp.md#mfunc)
+- [mInputs](util.ReduxProp.md#minputs)
+- [mSubscribers](util.ReduxProp.md#msubscribers)
+- [mUnsubscribe](util.ReduxProp.md#munsubscribe)
 
 ### Methods
 
-- [attach](util.reduxprop.md#attach)
-- [calculate](util.reduxprop.md#calculate)
-- [detach](util.reduxprop.md#detach)
-- [subscribe](util.reduxprop.md#subscribe)
-- [unsubscribe](util.reduxprop.md#unsubscribe)
+- [attach](util.ReduxProp.md#attach)
+- [calculate](util.ReduxProp.md#calculate)
+- [detach](util.ReduxProp.md#detach)
+- [subscribe](util.ReduxProp.md#subscribe)
+- [unsubscribe](util.ReduxProp.md#unsubscribe)
 
 ## Constructors
 
 ### constructor
 
-\+ **new ReduxProp**<T\>(`api`: [*IExtensionApi*](../interfaces/types.iextensionapi.md), `inputs`: *string*[][], `func`: (...`args`: *any*[]) => T): [*ReduxProp*](util.reduxprop.md)<T\>
+• **new ReduxProp**<`T`\>(`api`, `inputs`, `func`)
 
-#### Type parameters:
+#### Type parameters
 
-Name |
-:------ |
-`T` |
+| Name |
+| :------ |
+| `T` |
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`api` | [*IExtensionApi*](../interfaces/types.iextensionapi.md) |
-`inputs` | *string*[][] |
-`func` | (...`args`: *any*[]) => T |
+| Name | Type |
+| :------ | :------ |
+| `api` | [`IExtensionApi`](../interfaces/types.IExtensionApi.md) |
+| `inputs` | `string`[][] |
+| `func` | (...`args`: `any`[]) => `T` |
 
-**Returns:** [*ReduxProp*](util.reduxprop.md)<T\>
+#### Defined in
 
-Defined in: src/util/ReduxProp.ts:9
+../src/util/ReduxProp.ts:11
 
 ## Properties
 
 ### mApi
 
-• `Private` **mApi**: [*IExtensionApi*](../interfaces/types.iextensionapi.md)
+• `Private` **mApi**: [`IExtensionApi`](../interfaces/types.IExtensionApi.md)
 
-Defined in: src/util/ReduxProp.ts:7
+#### Defined in
+
+../src/util/ReduxProp.ts:7
 
 ___
 
 ### mFunc
 
-• `Private` **mFunc**: (...`args`: *any*[]) => T
+• `Private` **mFunc**: (...`args`: `any`[]) => `T`
 
-#### Type declaration:
+#### Type declaration
 
-▸ (...`args`: *any*[]): T
+▸ (...`args`): `T`
 
-#### Parameters:
+##### Parameters
 
-Name | Type |
-:------ | :------ |
-`...args` | *any*[] |
+| Name | Type |
+| :------ | :------ |
+| `...args` | `any`[] |
 
-**Returns:** T
+##### Returns
 
-Defined in: src/util/ReduxProp.ts:6
+`T`
 
-Defined in: src/util/ReduxProp.ts:6
+#### Defined in
+
+../src/util/ReduxProp.ts:6
 
 ___
 
 ### mInputs
 
-• `Private` **mInputs**: *string*[][]
+• `Private` **mInputs**: `string`[][]
 
-Defined in: src/util/ReduxProp.ts:5
+#### Defined in
+
+../src/util/ReduxProp.ts:5
 
 ___
 
 ### mSubscribers
 
-• `Private` **mSubscribers**: *Component*<any, any, any\>[]
+• `Private` **mSubscribers**: `Component`<`any`, `any`, `any`\>[]
 
-Defined in: src/util/ReduxProp.ts:8
+#### Defined in
+
+../src/util/ReduxProp.ts:8
 
 ___
 
 ### mUnsubscribe
 
-• `Private` **mUnsubscribe**: () => *void*
+• `Private` **mUnsubscribe**: () => `void`
 
-#### Type declaration:
+#### Type declaration
 
-▸ (): *void*
+▸ (): `void`
 
-**Returns:** *void*
+##### Returns
 
-Defined in: src/util/ReduxProp.ts:9
+`void`
 
-Defined in: src/util/ReduxProp.ts:9
+#### Defined in
+
+../src/util/ReduxProp.ts:9
 
 ## Methods
 
 ### attach
 
-▸ **attach**(`component`: *Component*<any, any, any\>): *void*
+▸ **attach**(`component`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`component` | *Component*<any, any, any\> |
+| Name | Type |
+| :------ | :------ |
+| `component` | `Component`<`any`, `any`, `any`\> |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: src/util/ReduxProp.ts:18
+`void`
+
+#### Defined in
+
+../src/util/ReduxProp.ts:18
 
 ___
 
 ### calculate
 
-▸ **calculate**(): T
+▸ **calculate**(): `T`
 
-**Returns:** T
+#### Returns
 
-Defined in: src/util/ReduxProp.ts:33
+`T`
+
+#### Defined in
+
+../src/util/ReduxProp.ts:33
 
 ___
 
 ### detach
 
-▸ **detach**(`component`: *Component*<any, any, any\>): *void*
+▸ **detach**(`component`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`component` | *Component*<any, any, any\> |
+| Name | Type |
+| :------ | :------ |
+| `component` | `Component`<`any`, `any`, `any`\> |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: src/util/ReduxProp.ts:25
+`void`
+
+#### Defined in
+
+../src/util/ReduxProp.ts:25
 
 ___
 
 ### subscribe
 
-▸ `Private`**subscribe**(): *void*
+▸ `Private` **subscribe**(): `void`
 
-**Returns:** *void*
+#### Returns
 
-Defined in: src/util/ReduxProp.ts:42
+`void`
+
+#### Defined in
+
+../src/util/ReduxProp.ts:42
 
 ___
 
 ### unsubscribe
 
-▸ `Private`**unsubscribe**(): *void*
+▸ `Private` **unsubscribe**(): `void`
 
-**Returns:** *void*
+#### Returns
 
-Defined in: src/util/ReduxProp.ts:59
+`void`
+
+#### Defined in
+
+../src/util/ReduxProp.ts:59

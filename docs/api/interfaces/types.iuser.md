@@ -7,7 +7,7 @@
 settings relating to the user (os account) personally
 even in a multi-user environment
 
-**`export`** 
+**`export`**
 
 **`interface`** IUser
 
@@ -15,12 +15,14 @@ even in a multi-user environment
 
 ### Properties
 
-- [multiUser](types.iuser.md#multiuser)
+- [multiUser](types.IUser.md#multiuser)
 
 ## Properties
 
 ### multiUser
 
-• **multiUser**: *boolean*
+• **multiUser**: `boolean`
 
-Defined in: src/types/IState.ts:148
+#### Defined in
+
+../src/types/IState.ts:150

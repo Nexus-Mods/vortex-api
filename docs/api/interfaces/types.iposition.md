@@ -6,7 +6,7 @@
 
 interface to represent a position on the screen
 
-**`export`** 
+**`export`**
 
 **`interface`** IPosition
 
@@ -14,21 +14,25 @@ interface to represent a position on the screen
 
 ### Properties
 
-- [x](types.iposition.md#x)
-- [y](types.iposition.md#y)
+- [x](types.IPosition.md#x)
+- [y](types.IPosition.md#y)
 
 ## Properties
 
 ### x
 
-• **x**: *number*
+• **x**: `number`
 
-Defined in: src/types/IState.ts:25
+#### Defined in
+
+../src/types/IState.ts:25
 
 ___
 
 ### y
 
-• **y**: *number*
+• **y**: `number`
 
-Defined in: src/types/IState.ts:26
+#### Defined in
+
+../src/types/IState.ts:26

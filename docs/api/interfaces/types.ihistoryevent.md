@@ -8,57 +8,69 @@
 
 ### Properties
 
-- [data](types.ihistoryevent.md#data)
-- [gameId](types.ihistoryevent.md#gameid)
-- [id](types.ihistoryevent.md#id)
-- [reverted](types.ihistoryevent.md#reverted)
-- [timestamp](types.ihistoryevent.md#timestamp)
-- [type](types.ihistoryevent.md#type)
+- [data](types.IHistoryEvent.md#data)
+- [gameId](types.IHistoryEvent.md#gameid)
+- [id](types.IHistoryEvent.md#id)
+- [reverted](types.IHistoryEvent.md#reverted)
+- [timestamp](types.IHistoryEvent.md#timestamp)
+- [type](types.IHistoryEvent.md#type)
 
 ## Properties
 
 ### data
 
-• **data**: *any*
+• **data**: `any`
 
-Defined in: src/extensions/history_management/types.ts:3
+#### Defined in
+
+../src/extensions/history_management/types.ts:3
 
 ___
 
 ### gameId
 
-• **gameId**: *string*
+• **gameId**: `string`
 
-Defined in: src/extensions/history_management/types.ts:4
+#### Defined in
+
+../src/extensions/history_management/types.ts:4
 
 ___
 
 ### id
 
-• `Optional` **id**: *string*
+• `Optional` **id**: `string`
 
-Defined in: src/extensions/history_management/types.ts:6
+#### Defined in
+
+../src/extensions/history_management/types.ts:6
 
 ___
 
 ### reverted
 
-• `Optional` **reverted**: *boolean*
+• `Optional` **reverted**: `boolean`
 
-Defined in: src/extensions/history_management/types.ts:5
+#### Defined in
+
+../src/extensions/history_management/types.ts:5
 
 ___
 
 ### timestamp
 
-• `Optional` **timestamp**: *number*
+• `Optional` **timestamp**: `number`
 
-Defined in: src/extensions/history_management/types.ts:7
+#### Defined in
+
+../src/extensions/history_management/types.ts:7
 
 ___
 
 ### type
 
-• **type**: *string*
+• **type**: `string`
 
-Defined in: src/extensions/history_management/types.ts:2
+#### Defined in
+
+../src/extensions/history_management/types.ts:2

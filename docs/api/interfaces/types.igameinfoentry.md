@@ -8,48 +8,80 @@
 
 ### Properties
 
-- [expires](types.igameinfoentry.md#expires)
-- [provider](types.igameinfoentry.md#provider)
-- [title](types.igameinfoentry.md#title)
-- [type](types.igameinfoentry.md#type)
-- [value](types.igameinfoentry.md#value)
+- [expires](types.IGameInfoEntry.md#expires)
+- [key](types.IGameInfoEntry.md#key)
+- [priority](types.IGameInfoEntry.md#priority)
+- [provider](types.IGameInfoEntry.md#provider)
+- [title](types.IGameInfoEntry.md#title)
+- [type](types.IGameInfoEntry.md#type)
+- [value](types.IGameInfoEntry.md#value)
 
 ## Properties
 
 ### expires
 
-• **expires**: *number*
+• **expires**: `number`
 
-Defined in: src/types/IState.ts:262
+#### Defined in
+
+../src/types/IState.ts:266
+
+___
+
+### key
+
+• **key**: `string`
+
+#### Defined in
+
+../src/types/IState.ts:263
+
+___
+
+### priority
+
+• **priority**: `number`
+
+#### Defined in
+
+../src/types/IState.ts:265
 
 ___
 
 ### provider
 
-• **provider**: *string*
+• **provider**: `string`
 
-Defined in: src/types/IState.ts:261
+#### Defined in
+
+../src/types/IState.ts:264
 
 ___
 
 ### title
 
-• **title**: *string*
+• **title**: `string`
 
-Defined in: src/types/IState.ts:263
+#### Defined in
+
+../src/types/IState.ts:267
 
 ___
 
 ### type
 
-• `Optional` **type**: *string*
+• `Optional` **type**: `string`
 
-Defined in: src/types/IState.ts:265
+#### Defined in
+
+../src/types/IState.ts:269
 
 ___
 
 ### value
 
-• **value**: *any*
+• **value**: `any`
 
-Defined in: src/types/IState.ts:264
+#### Defined in
+
+../src/types/IState.ts:268

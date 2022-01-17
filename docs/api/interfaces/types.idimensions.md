@@ -6,7 +6,7 @@
 
 interface to represent pixel-dimensions on the screen
 
-**`export`** 
+**`export`**
 
 **`interface`** IDimensions
 
@@ -14,21 +14,25 @@ interface to represent pixel-dimensions on the screen
 
 ### Properties
 
-- [height](types.idimensions.md#height)
-- [width](types.idimensions.md#width)
+- [height](types.IDimensions.md#height)
+- [width](types.IDimensions.md#width)
 
 ## Properties
 
 ### height
 
-• **height**: *number*
+• **height**: `number`
 
-Defined in: src/types/IState.ts:36
+#### Defined in
+
+../src/types/IState.ts:36
 
 ___
 
 ### width
 
-• **width**: *number*
+• **width**: `number`
 
-Defined in: src/types/IState.ts:37
+#### Defined in
+
+../src/types/IState.ts:37

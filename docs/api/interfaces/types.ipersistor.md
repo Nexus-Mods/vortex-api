@@ -8,7 +8,7 @@ a persistor is used to hook a data file into the store.
 This way any data file can be made available through the store and
 updated through actions, as long as it can be represented in json
 
-**`export`** 
+**`export`**
 
 **`interface`** IPersistor
 
@@ -16,100 +16,124 @@ updated through actions, as long as it can be represented in json
 
 ### Methods
 
-- [getAllKVs](types.ipersistor.md#getallkvs)
-- [getAllKeys](types.ipersistor.md#getallkeys)
-- [getItem](types.ipersistor.md#getitem)
-- [removeItem](types.ipersistor.md#removeitem)
-- [setItem](types.ipersistor.md#setitem)
-- [setResetCallback](types.ipersistor.md#setresetcallback)
+- [getAllKVs](types.IPersistor.md#getallkvs)
+- [getAllKeys](types.IPersistor.md#getallkeys)
+- [getItem](types.IPersistor.md#getitem)
+- [removeItem](types.IPersistor.md#removeitem)
+- [setItem](types.IPersistor.md#setitem)
+- [setResetCallback](types.IPersistor.md#setresetcallback)
 
 ## Methods
 
 ### getAllKVs
 
-▸ `Optional`**getAllKVs**(`prefix?`: *string*): [*Promise*](../classes/promise.md)<{ `key`: [*PersistorKey*](../modules/types.md#persistorkey) ; `value`: *string*  }[]\>
+▸ `Optional` **getAllKVs**(`prefix?`): [`Promise`](../classes/Promise.md)<{ `key`: [`PersistorKey`](../modules/types.md#persistorkey) ; `value`: `string`  }[]\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`prefix?` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `prefix?` | `string` |
 
-**Returns:** [*Promise*](../classes/promise.md)<{ `key`: [*PersistorKey*](../modules/types.md#persistorkey) ; `value`: *string*  }[]\>
+#### Returns
 
-Defined in: src/types/IExtensionContext.ts:214
+[`Promise`](../classes/Promise.md)<{ `key`: [`PersistorKey`](../modules/types.md#persistorkey) ; `value`: `string`  }[]\>
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:236
 
 ___
 
 ### getAllKeys
 
-▸ **getAllKeys**(): [*Promise*](../classes/promise.md)<[*PersistorKey*](../modules/types.md#persistorkey)[]\>
+▸ **getAllKeys**(): [`Promise`](../classes/Promise.md)<[`PersistorKey`](../modules/types.md#persistorkey)[]\>
 
-**Returns:** [*Promise*](../classes/promise.md)<[*PersistorKey*](../modules/types.md#persistorkey)[]\>
+#### Returns
 
-Defined in: src/types/IExtensionContext.ts:213
+[`Promise`](../classes/Promise.md)<[`PersistorKey`](../modules/types.md#persistorkey)[]\>
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:235
 
 ___
 
 ### getItem
 
-▸ **getItem**(`key`: [*PersistorKey*](../modules/types.md#persistorkey)): [*Promise*](../classes/promise.md)<string\>
+▸ **getItem**(`key`): [`Promise`](../classes/Promise.md)<`string`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`key` | [*PersistorKey*](../modules/types.md#persistorkey) |
+| Name | Type |
+| :------ | :------ |
+| `key` | [`PersistorKey`](../modules/types.md#persistorkey) |
 
-**Returns:** [*Promise*](../classes/promise.md)<string\>
+#### Returns
 
-Defined in: src/types/IExtensionContext.ts:210
+[`Promise`](../classes/Promise.md)<`string`\>
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:232
 
 ___
 
 ### removeItem
 
-▸ **removeItem**(`key`: [*PersistorKey*](../modules/types.md#persistorkey)): [*Promise*](../classes/promise.md)<void\>
+▸ **removeItem**(`key`): [`Promise`](../classes/Promise.md)<`void`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`key` | [*PersistorKey*](../modules/types.md#persistorkey) |
+| Name | Type |
+| :------ | :------ |
+| `key` | [`PersistorKey`](../modules/types.md#persistorkey) |
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Returns
 
-Defined in: src/types/IExtensionContext.ts:212
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:234
 
 ___
 
 ### setItem
 
-▸ **setItem**(`key`: [*PersistorKey*](../modules/types.md#persistorkey), `value`: *string*): [*Promise*](../classes/promise.md)<void\>
+▸ **setItem**(`key`, `value`): [`Promise`](../classes/Promise.md)<`void`\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`key` | [*PersistorKey*](../modules/types.md#persistorkey) |
-`value` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `key` | [`PersistorKey`](../modules/types.md#persistorkey) |
+| `value` | `string` |
 
-**Returns:** [*Promise*](../classes/promise.md)<void\>
+#### Returns
 
-Defined in: src/types/IExtensionContext.ts:211
+[`Promise`](../classes/Promise.md)<`void`\>
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:233
 
 ___
 
 ### setResetCallback
 
-▸ **setResetCallback**(`cb`: () => [*Promise*](../classes/promise.md)<void\>): *void*
+▸ **setResetCallback**(`cb`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`cb` | () => [*Promise*](../classes/promise.md)<void\> |
+| Name | Type |
+| :------ | :------ |
+| `cb` | () => [`Promise`](../classes/Promise.md)<`void`\> |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: src/types/IExtensionContext.ts:209
+`void`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:231

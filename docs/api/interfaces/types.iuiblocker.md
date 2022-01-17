@@ -8,30 +8,36 @@
 
 ### Properties
 
-- [description](types.iuiblocker.md#description)
-- [icon](types.iuiblocker.md#icon)
-- [mayCancel](types.iuiblocker.md#maycancel)
+- [description](types.IUIBlocker.md#description)
+- [icon](types.IUIBlocker.md#icon)
+- [mayCancel](types.IUIBlocker.md#maycancel)
 
 ## Properties
 
 ### description
 
-• **description**: *string*
+• **description**: `string`
 
-Defined in: src/types/IState.ts:84
+#### Defined in
+
+../src/types/IState.ts:84
 
 ___
 
 ### icon
 
-• **icon**: *string*
+• **icon**: `string`
 
-Defined in: src/types/IState.ts:83
+#### Defined in
+
+../src/types/IState.ts:83
 
 ___
 
 ### mayCancel
 
-• **mayCancel**: *boolean*
+• **mayCancel**: `boolean`
 
-Defined in: src/types/IState.ts:85
+#### Defined in
+
+../src/types/IState.ts:85

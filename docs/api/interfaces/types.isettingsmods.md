@@ -8,63 +8,81 @@
 
 ### Properties
 
-- [activator](types.isettingsmods.md#activator)
-- [cleanupOnDeploy](types.isettingsmods.md#cleanupondeploy)
-- [confirmPurge](types.isettingsmods.md#confirmpurge)
-- [installPath](types.isettingsmods.md#installpath)
-- [modlistState](types.isettingsmods.md#modliststate)
-- [showDropzone](types.isettingsmods.md#showdropzone)
+- [activator](types.ISettingsMods.md#activator)
+- [cleanupOnDeploy](types.ISettingsMods.md#cleanupondeploy)
+- [confirmPurge](types.ISettingsMods.md#confirmpurge)
+- [installPath](types.ISettingsMods.md#installpath)
+- [modlistState](types.ISettingsMods.md#modliststate)
+- [showDropzone](types.ISettingsMods.md#showdropzone)
 
 ## Properties
 
 ### activator
 
-• **activator**: *object*
+• **activator**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IState.ts:218
+▪ [gameId: `string`]: `string`
+
+#### Defined in
+
+../src/types/IState.ts:220
 
 ___
 
 ### cleanupOnDeploy
 
-• **cleanupOnDeploy**: *boolean*
+• **cleanupOnDeploy**: `boolean`
 
-Defined in: src/types/IState.ts:221
+#### Defined in
+
+../src/types/IState.ts:223
 
 ___
 
 ### confirmPurge
 
-• **confirmPurge**: *boolean*
+• **confirmPurge**: `boolean`
 
-Defined in: src/types/IState.ts:220
+#### Defined in
+
+../src/types/IState.ts:222
 
 ___
 
 ### installPath
 
-• **installPath**: *object*
+• **installPath**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IState.ts:216
+▪ [gameId: `string`]: `string`
+
+#### Defined in
+
+../src/types/IState.ts:218
 
 ___
 
 ### modlistState
 
-• **modlistState**: *object*
+• **modlistState**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IState.ts:217
+▪ [id: `string`]: [`IAttributeState`](types.IAttributeState.md)
+
+#### Defined in
+
+../src/types/IState.ts:219
 
 ___
 
 ### showDropzone
 
-• **showDropzone**: *boolean*
+• **showDropzone**: `boolean`
 
-Defined in: src/types/IState.ts:219
+#### Defined in
+
+../src/types/IState.ts:221

@@ -1,19 +1,21 @@
-[vortex_devel](../README.md) / [Exports](../modules.md) / [Promise](../modules/promise.md) / FromNodeOptions
+[vortex_devel](../README.md) / [Exports](../modules.md) / [Promise](../modules/Promise.md) / FromNodeOptions
 
 # Interface: FromNodeOptions
 
-[Promise](../modules/promise.md).FromNodeOptions
+[Promise](../modules/Promise.md).FromNodeOptions
 
 ## Table of contents
 
 ### Properties
 
-- [multiArgs](promise.fromnodeoptions.md#multiargs)
+- [multiArgs](Promise.FromNodeOptions.md#multiargs)
 
 ## Properties
 
 ### multiArgs
 
-• `Optional` **multiArgs**: *boolean*
+• `Optional` **multiArgs**: `boolean`
 
-Defined in: node_modules/@types/bluebird/index.d.ts:961
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:961

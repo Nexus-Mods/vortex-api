@@ -10,82 +10,97 @@ options used when starting an external application through runExecutable
 
 ### Properties
 
-- [cwd](types.irunoptions.md#cwd)
-- [detach](types.irunoptions.md#detach)
-- [env](types.irunoptions.md#env)
-- [expectSuccess](types.irunoptions.md#expectsuccess)
-- [onSpawned](types.irunoptions.md#onspawned)
-- [shell](types.irunoptions.md#shell)
-- [suggestDeploy](types.irunoptions.md#suggestdeploy)
+- [cwd](types.IRunOptions.md#cwd)
+- [detach](types.IRunOptions.md#detach)
+- [env](types.IRunOptions.md#env)
+- [expectSuccess](types.IRunOptions.md#expectsuccess)
+- [shell](types.IRunOptions.md#shell)
+- [suggestDeploy](types.IRunOptions.md#suggestdeploy)
+
+### Methods
+
+- [onSpawned](types.IRunOptions.md#onspawned)
 
 ## Properties
 
 ### cwd
 
-• `Optional` **cwd**: *string*
+• `Optional` **cwd**: `string`
 
-Defined in: src/types/IExtensionContext.ts:314
+#### Defined in
+
+../src/types/IExtensionContext.ts:344
 
 ___
 
 ### detach
 
-• `Optional` **detach**: *boolean*
+• `Optional` **detach**: `boolean`
 
-Defined in: src/types/IExtensionContext.ts:318
+#### Defined in
+
+../src/types/IExtensionContext.ts:348
 
 ___
 
 ### env
 
-• `Optional` **env**: *object*
+• `Optional` **env**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IExtensionContext.ts:315
+▪ [key: `string`]: `string`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:345
 
 ___
 
 ### expectSuccess
 
-• `Optional` **expectSuccess**: *boolean*
+• `Optional` **expectSuccess**: `boolean`
 
-Defined in: src/types/IExtensionContext.ts:321
+#### Defined in
 
-___
-
-### onSpawned
-
-• `Optional` **onSpawned**: (`pid?`: *number*) => *void*
-
-#### Type declaration:
-
-▸ (`pid?`: *number*): *void*
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`pid?` | *number* |
-
-**Returns:** *void*
-
-Defined in: src/types/IExtensionContext.ts:325
-
-Defined in: src/types/IExtensionContext.ts:325
+../src/types/IExtensionContext.ts:351
 
 ___
 
 ### shell
 
-• `Optional` **shell**: *boolean*
+• `Optional` **shell**: `boolean`
 
-Defined in: src/types/IExtensionContext.ts:317
+#### Defined in
+
+../src/types/IExtensionContext.ts:347
 
 ___
 
 ### suggestDeploy
 
-• `Optional` **suggestDeploy**: *boolean*
+• `Optional` **suggestDeploy**: `boolean`
 
-Defined in: src/types/IExtensionContext.ts:316
+#### Defined in
+
+../src/types/IExtensionContext.ts:346
+
+## Methods
+
+### onSpawned
+
+▸ `Optional` **onSpawned**(`pid?`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `pid?` | `number` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:355

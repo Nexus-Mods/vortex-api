@@ -6,112 +6,154 @@
 
 ## Hierarchy
 
-* *Error*
+- `Error`
 
-  ↳ **NotSupportedError**
+  ↳ **`NotSupportedError`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](util.notsupportederror.md#constructor)
+- [constructor](util.NotSupportedError.md#constructor)
 
 ### Properties
 
-- [message](util.notsupportederror.md#message)
-- [name](util.notsupportederror.md#name)
-- [prepareStackTrace](util.notsupportederror.md#preparestacktrace)
-- [stack](util.notsupportederror.md#stack)
-- [stackTraceLimit](util.notsupportederror.md#stacktracelimit)
+- [message](util.NotSupportedError.md#message)
+- [name](util.NotSupportedError.md#name)
+- [stack](util.NotSupportedError.md#stack)
+- [prepareStackTrace](util.NotSupportedError.md#preparestacktrace)
+- [stackTraceLimit](util.NotSupportedError.md#stacktracelimit)
 
 ### Methods
 
-- [captureStackTrace](util.notsupportederror.md#capturestacktrace)
+- [captureStackTrace](util.NotSupportedError.md#capturestacktrace)
 
 ## Constructors
 
 ### constructor
 
-\+ **new NotSupportedError**(): [*NotSupportedError*](util.notsupportederror.md)
+• **new NotSupportedError**()
 
-**Returns:** [*NotSupportedError*](util.notsupportederror.md)
+#### Overrides
 
-Defined in: src/util/CustomErrors.ts:3
+Error.constructor
+
+#### Defined in
+
+../src/util/CustomErrors.ts:4
 
 ## Properties
 
 ### message
 
-• **message**: *string*
+• **message**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:974
+#### Inherited from
+
+Error.message
+
+#### Defined in
+
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1023
 
 ___
 
 ### name
 
-• **name**: *string*
+• **name**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:973
+#### Inherited from
 
-___
+Error.name
 
-### prepareStackTrace
+#### Defined in
 
-• `Optional` **prepareStackTrace**: (`err`: Error, `stackTraces`: CallSite[]) => *any*
-
-Optional override for formatting stack traces
-
-**`see`** https://github.com/v8/v8/wiki/Stack%20Trace%20API#customizing-stack-traces
-
-#### Type declaration:
-
-▸ (`err`: Error, `stackTraces`: CallSite[]): *any*
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`err` | Error |
-`stackTraces` | CallSite[] |
-
-**Returns:** *any*
-
-Defined in: node_modules/@types/node/globals.d.ts:140
-
-Defined in: node_modules/@types/node/globals.d.ts:140
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1022
 
 ___
 
 ### stack
 
-• `Optional` **stack**: *string*
+• `Optional` **stack**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:975
+#### Inherited from
+
+Error.stack
+
+#### Defined in
+
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1024
+
+___
+
+### prepareStackTrace
+
+▪ `Static` `Optional` **prepareStackTrace**: (`err`: `Error`, `stackTraces`: `CallSite`[]) => `any`
+
+#### Type declaration
+
+▸ (`err`, `stackTraces`): `any`
+
+Optional override for formatting stack traces
+
+**`see`** https://v8.dev/docs/stack-trace-api#customizing-stack-traces
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `err` | `Error` |
+| `stackTraces` | `CallSite`[] |
+
+##### Returns
+
+`any`
+
+#### Inherited from
+
+Error.prepareStackTrace
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:11
 
 ___
 
 ### stackTraceLimit
 
-• **stackTraceLimit**: *number*
+▪ `Static` **stackTraceLimit**: `number`
 
-Defined in: node_modules/@types/node/globals.d.ts:142
+#### Inherited from
+
+Error.stackTraceLimit
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:13
 
 ## Methods
 
 ### captureStackTrace
 
-▸ **captureStackTrace**(`targetObject`: Object, `constructorOpt?`: Function): *void*
+▸ `Static` **captureStackTrace**(`targetObject`, `constructorOpt?`): `void`
 
 Create .stack property on a target object
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`targetObject` | Object |
-`constructorOpt?` | Function |
+| Name | Type |
+| :------ | :------ |
+| `targetObject` | `object` |
+| `constructorOpt?` | `Function` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/node/globals.d.ts:133
+`void`
+
+#### Inherited from
+
+Error.captureStackTrace
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:4

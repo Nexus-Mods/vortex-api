@@ -8,65 +8,76 @@
 
 ### Properties
 
-- [dynamic](types.iregisteredextension.md#dynamic)
-- [info](types.iregisteredextension.md#info)
-- [initFunc](types.iregisteredextension.md#initfunc)
-- [name](types.iregisteredextension.md#name)
-- [namespace](types.iregisteredextension.md#namespace)
-- [path](types.iregisteredextension.md#path)
+- [dynamic](types.IRegisteredExtension.md#dynamic)
+- [info](types.IRegisteredExtension.md#info)
+- [name](types.IRegisteredExtension.md#name)
+- [namespace](types.IRegisteredExtension.md#namespace)
+- [path](types.IRegisteredExtension.md#path)
+
+### Methods
+
+- [initFunc](types.IRegisteredExtension.md#initfunc)
 
 ## Properties
 
 ### dynamic
 
-• **dynamic**: *boolean*
+• **dynamic**: `boolean`
 
-Defined in: src/util/ExtensionManager.ts:80
+#### Defined in
+
+../src/util/ExtensionManager.ts:101
 
 ___
 
 ### info
 
-• `Optional` **info**: [*IExtension*](types.iextension.md)
+• `Optional` **info**: [`IExtension`](types.IExtension.md)
 
-Defined in: src/util/ExtensionManager.ts:82
+#### Defined in
 
-___
-
-### initFunc
-
-• **initFunc**: () => ExtensionInit
-
-#### Type declaration:
-
-▸ (): ExtensionInit
-
-**Returns:** ExtensionInit
-
-Defined in: src/util/ExtensionManager.ts:81
-
-Defined in: src/util/ExtensionManager.ts:81
+../src/util/ExtensionManager.ts:103
 
 ___
 
 ### name
 
-• **name**: *string*
+• **name**: `string`
 
-Defined in: src/util/ExtensionManager.ts:77
+#### Defined in
+
+../src/util/ExtensionManager.ts:98
 
 ___
 
 ### namespace
 
-• **namespace**: *string*
+• **namespace**: `string`
 
-Defined in: src/util/ExtensionManager.ts:78
+#### Defined in
+
+../src/util/ExtensionManager.ts:99
 
 ___
 
 ### path
 
-• **path**: *string*
+• **path**: `string`
 
-Defined in: src/util/ExtensionManager.ts:79
+#### Defined in
+
+../src/util/ExtensionManager.ts:100
+
+## Methods
+
+### initFunc
+
+▸ **initFunc**(): `ExtensionInit`
+
+#### Returns
+
+`ExtensionInit`
+
+#### Defined in
+
+../src/util/ExtensionManager.ts:102

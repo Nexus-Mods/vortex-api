@@ -8,30 +8,36 @@
 
 ### Properties
 
-- [base](types.istatepaths.md#base)
-- [download](types.istatepaths.md#download)
-- [install](types.istatepaths.md#install)
+- [base](types.IStatePaths.md#base)
+- [download](types.IStatePaths.md#download)
+- [install](types.IStatePaths.md#install)
 
 ## Properties
 
 ### base
 
-• **base**: *string*
+• **base**: `string`
 
-Defined in: src/types/IState.ts:210
+#### Defined in
+
+../src/types/IState.ts:212
 
 ___
 
 ### download
 
-• **download**: *string*
+• **download**: `string`
 
-Defined in: src/types/IState.ts:211
+#### Defined in
+
+../src/types/IState.ts:213
 
 ___
 
 ### install
 
-• **install**: *string*
+• **install**: `string`
 
-Defined in: src/types/IState.ts:212
+#### Defined in
+
+../src/types/IState.ts:214

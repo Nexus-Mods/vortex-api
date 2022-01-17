@@ -1,8 +1,8 @@
-[vortex_devel](../README.md) / [Exports](../modules.md) / [Promise](../modules/promise.md) / OperationalError
+[vortex_devel](../README.md) / [Exports](../modules.md) / [Promise](../modules/Promise.md) / OperationalError
 
 # Class: OperationalError
 
-[Promise](../modules/promise.md).OperationalError
+[Promise](../modules/Promise.md).OperationalError
 
 Represents an error is an explicit promise rejection as opposed to a thrown error.
  For example, if an error is errbacked by a callback API promisified through undefined or undefined
@@ -13,118 +13,160 @@ Represents an error is an explicit promise rejection as opposed to a thrown erro
 
 ## Hierarchy
 
-* *Error*
+- `Error`
 
-  ↳ **OperationalError**
+  ↳ **`OperationalError`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](promise.operationalerror.md#constructor)
+- [constructor](Promise.OperationalError.md#constructor)
 
 ### Properties
 
-- [message](promise.operationalerror.md#message)
-- [name](promise.operationalerror.md#name)
-- [stack](promise.operationalerror.md#stack)
-- [prepareStackTrace](promise.operationalerror.md#preparestacktrace)
-- [stackTraceLimit](promise.operationalerror.md#stacktracelimit)
+- [message](Promise.OperationalError.md#message)
+- [name](Promise.OperationalError.md#name)
+- [stack](Promise.OperationalError.md#stack)
+- [prepareStackTrace](Promise.OperationalError.md#preparestacktrace)
+- [stackTraceLimit](Promise.OperationalError.md#stacktracelimit)
 
 ### Methods
 
-- [captureStackTrace](promise.operationalerror.md#capturestacktrace)
+- [captureStackTrace](Promise.OperationalError.md#capturestacktrace)
 
 ## Constructors
 
 ### constructor
 
-\+ **new OperationalError**(`message?`: *string*): [*OperationalError*](promise.operationalerror.md)
+• **new OperationalError**(`message?`)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`message?` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `message?` | `string` |
 
-**Returns:** [*OperationalError*](promise.operationalerror.md)
+#### Inherited from
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:978
+Error.constructor
+
+#### Defined in
+
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1028
 
 ## Properties
 
 ### message
 
-• **message**: *string*
+• **message**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:974
+#### Inherited from
+
+Error.message
+
+#### Defined in
+
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1023
 
 ___
 
 ### name
 
-• **name**: *string*
+• **name**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:973
+#### Inherited from
+
+Error.name
+
+#### Defined in
+
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1022
 
 ___
 
 ### stack
 
-• `Optional` **stack**: *string*
+• `Optional` **stack**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:975
+#### Inherited from
+
+Error.stack
+
+#### Defined in
+
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1024
 
 ___
 
 ### prepareStackTrace
 
-▪ `Optional` `Static` **prepareStackTrace**: (`err`: Error, `stackTraces`: CallSite[]) => *any*
+▪ `Static` `Optional` **prepareStackTrace**: (`err`: `Error`, `stackTraces`: `CallSite`[]) => `any`
+
+#### Type declaration
+
+▸ (`err`, `stackTraces`): `any`
 
 Optional override for formatting stack traces
 
-**`see`** https://github.com/v8/v8/wiki/Stack%20Trace%20API#customizing-stack-traces
+**`see`** https://v8.dev/docs/stack-trace-api#customizing-stack-traces
 
-#### Type declaration:
+##### Parameters
 
-▸ (`err`: Error, `stackTraces`: CallSite[]): *any*
+| Name | Type |
+| :------ | :------ |
+| `err` | `Error` |
+| `stackTraces` | `CallSite`[] |
 
-#### Parameters:
+##### Returns
 
-Name | Type |
-:------ | :------ |
-`err` | Error |
-`stackTraces` | CallSite[] |
+`any`
 
-**Returns:** *any*
+#### Inherited from
 
-Defined in: node_modules/@types/node/globals.d.ts:140
+Error.prepareStackTrace
 
-Defined in: node_modules/@types/node/globals.d.ts:140
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:11
 
 ___
 
 ### stackTraceLimit
 
-▪ `Static` **stackTraceLimit**: *number*
+▪ `Static` **stackTraceLimit**: `number`
 
-Defined in: node_modules/@types/node/globals.d.ts:142
+#### Inherited from
+
+Error.stackTraceLimit
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:13
 
 ## Methods
 
 ### captureStackTrace
 
-▸ `Static`**captureStackTrace**(`targetObject`: Object, `constructorOpt?`: Function): *void*
+▸ `Static` **captureStackTrace**(`targetObject`, `constructorOpt?`): `void`
 
 Create .stack property on a target object
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`targetObject` | Object |
-`constructorOpt?` | Function |
+| Name | Type |
+| :------ | :------ |
+| `targetObject` | `object` |
+| `constructorOpt?` | `Function` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/node/globals.d.ts:133
+`void`
+
+#### Inherited from
+
+Error.captureStackTrace
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:4

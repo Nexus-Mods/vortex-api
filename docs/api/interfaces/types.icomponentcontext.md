@@ -6,7 +6,7 @@
 
 the context object passed along with all components
 
-**`export`** 
+**`export`**
 
 **`interface`** IContext
 
@@ -14,38 +14,43 @@ the context object passed along with all components
 
 ### Properties
 
-- [api](types.icomponentcontext.md#api)
-- [getModifiers](types.icomponentcontext.md#getmodifiers)
-- [menuLayer](types.icomponentcontext.md#menulayer)
+- [api](types.IComponentContext.md#api)
+- [menuLayer](types.IComponentContext.md#menulayer)
+
+### Methods
+
+- [getModifiers](types.IComponentContext.md#getmodifiers)
 
 ## Properties
 
 ### api
 
-• **api**: [*IExtensionApi*](types.iextensionapi.md)
+• **api**: [`IExtensionApi`](types.IExtensionApi.md)
 
-Defined in: src/types/IComponentContext.ts:11
+#### Defined in
 
-___
-
-### getModifiers
-
-• **getModifiers**: () => [*IModifiers*](types.imodifiers.md)
-
-#### Type declaration:
-
-▸ (): [*IModifiers*](types.imodifiers.md)
-
-**Returns:** [*IModifiers*](types.imodifiers.md)
-
-Defined in: src/types/IComponentContext.ts:13
-
-Defined in: src/types/IComponentContext.ts:13
+../src/types/IComponentContext.ts:11
 
 ___
 
 ### menuLayer
 
-• **menuLayer**: HTMLDivElement
+• **menuLayer**: `HTMLDivElement`
 
-Defined in: src/types/IComponentContext.ts:12
+#### Defined in
+
+../src/types/IComponentContext.ts:12
+
+## Methods
+
+### getModifiers
+
+▸ **getModifiers**(): [`IModifiers`](types.IModifiers.md)
+
+#### Returns
+
+[`IModifiers`](types.IModifiers.md)
+
+#### Defined in
+
+../src/types/IComponentContext.ts:13

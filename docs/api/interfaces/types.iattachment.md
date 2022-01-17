@@ -8,39 +8,47 @@
 
 ### Properties
 
-- [data](types.iattachment.md#data)
-- [description](types.iattachment.md#description)
-- [id](types.iattachment.md#id)
-- [type](types.iattachment.md#type)
+- [data](types.IAttachment.md#data)
+- [description](types.IAttachment.md#description)
+- [id](types.IAttachment.md#id)
+- [type](types.IAttachment.md#type)
 
 ## Properties
 
 ### data
 
-• **data**: *any*
+• **data**: `any`
 
-Defined in: src/types/IExtensionContext.ts:263
+#### Defined in
+
+../src/types/IExtensionContext.ts:292
 
 ___
 
 ### description
 
-• **description**: *string*
+• **description**: `string`
 
-Defined in: src/types/IExtensionContext.ts:265
+#### Defined in
+
+../src/types/IExtensionContext.ts:294
 
 ___
 
 ### id
 
-• **id**: *string*
+• **id**: `string`
 
-Defined in: src/types/IExtensionContext.ts:264
+#### Defined in
+
+../src/types/IExtensionContext.ts:293
 
 ___
 
 ### type
 
-• **type**: *file* \| *data*
+• **type**: ``"file"`` \| ``"data"``
 
-Defined in: src/types/IExtensionContext.ts:262
+#### Defined in
+
+../src/types/IExtensionContext.ts:291

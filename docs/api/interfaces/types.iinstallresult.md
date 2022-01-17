@@ -8,12 +8,14 @@
 
 ### Properties
 
-- [instructions](types.iinstallresult.md#instructions)
+- [instructions](types.IInstallResult.md#instructions)
 
 ## Properties
 
 ### instructions
 
-• **instructions**: [*IInstruction*](types.iinstruction.md)[]
+• **instructions**: [`IInstruction`](types.IInstruction.md)[]
 
-Defined in: src/extensions/mod_management/types/IInstallResult.ts:23
+#### Defined in
+
+../src/extensions/mod_management/types/IInstallResult.ts:23

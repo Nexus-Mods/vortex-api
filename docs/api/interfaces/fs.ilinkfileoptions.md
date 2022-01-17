@@ -6,22 +6,20 @@
 
 ## Table of contents
 
-### Properties
+### Methods
 
-- [showDialogCallback](fs.ilinkfileoptions.md#showdialogcallback)
+- [showDialogCallback](fs.ILinkFileOptions.md#showdialogcallback)
 
-## Properties
+## Methods
 
 ### showDialogCallback
 
-• `Optional` **showDialogCallback**: () => *boolean*
+▸ `Optional` **showDialogCallback**(): `boolean`
 
-#### Type declaration:
+#### Returns
 
-▸ (): *boolean*
+`boolean`
 
-**Returns:** *boolean*
+#### Defined in
 
-Defined in: src/util/fs.ts:60
-
-Defined in: src/util/fs.ts:60
+../src/util/fs.ts:65

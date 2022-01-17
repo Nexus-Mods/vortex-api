@@ -6,130 +6,252 @@
 
 wrapper around an format-specific archive handler
 
-**`export`** 
+**`export`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](util.archive.md#constructor)
+- [constructor](util.Archive.md#constructor)
 
 ### Properties
 
-- [mHandler](util.archive.md#mhandler)
+- [mHandler](util.Archive.md#mhandler)
 
 ### Accessors
 
-- [addFile](util.archive.md#addfile)
-- [create](util.archive.md#create)
-- [extractAll](util.archive.md#extractall)
-- [extractFile](util.archive.md#extractfile)
-- [readDir](util.archive.md#readdir)
-- [readFile](util.archive.md#readfile)
-- [write](util.archive.md#write)
+- [addFile](util.Archive.md#addfile)
+- [create](util.Archive.md#create)
+- [extractAll](util.Archive.md#extractall)
+- [extractFile](util.Archive.md#extractfile)
+- [readDir](util.Archive.md#readdir)
+- [readFile](util.Archive.md#readfile)
+- [write](util.Archive.md#write)
 
 ## Constructors
 
 ### constructor
 
-\+ **new Archive**(`handler`: [*IArchiveHandler*](../interfaces/types.iarchivehandler.md)): [*Archive*](util.archive.md)
+• **new Archive**(`handler`)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`handler` | [*IArchiveHandler*](../interfaces/types.iarchivehandler.md) |
+| Name | Type |
+| :------ | :------ |
+| `handler` | [`IArchiveHandler`](../interfaces/types.IArchiveHandler.md) |
 
-**Returns:** [*Archive*](util.archive.md)
+#### Defined in
 
-Defined in: src/util/archives.ts:12
+../src/util/archives.ts:14
 
 ## Properties
 
 ### mHandler
 
-• `Private` **mHandler**: [*IArchiveHandler*](../interfaces/types.iarchivehandler.md)
+• `Private` **mHandler**: [`IArchiveHandler`](../interfaces/types.IArchiveHandler.md)
 
-Defined in: src/util/archives.ts:12
+#### Defined in
+
+../src/util/archives.ts:12
 
 ## Accessors
 
 ### addFile
 
-• get **addFile**(): *function*
+• `get` **addFile**(): (`filePath`: `string`, `sourcePath`: `string`) => [`Promise`](Promise.md)<`void`\>
 
 add a single file to the archive
 
-**Returns:** (`filePath`: *string*, `sourcePath`: *string*) => [*Promise*](promise.md)<void\>
+#### Returns
 
-Defined in: src/util/archives.ts:66
+`fn`
+
+▸ (`filePath`, `sourcePath`): [`Promise`](Promise.md)<`void`\>
+
+add a single file to the archive
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `filePath` | `string` |
+| `sourcePath` | `string` |
+
+##### Returns
+
+[`Promise`](Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/archives.ts:66
 
 ___
 
 ### create
 
-• get **create**(): *function*
+• `get` **create**(): (`sourcePath`: `string`) => [`Promise`](Promise.md)<`void`\>
 
 create this archive from the files in sourcePath
 
-**Returns:** (`sourcePath`: *string*) => [*Promise*](promise.md)<void\>
+#### Returns
 
-Defined in: src/util/archives.ts:57
+`fn`
+
+▸ (`sourcePath`): [`Promise`](Promise.md)<`void`\>
+
+create this archive from the files in sourcePath
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `sourcePath` | `string` |
+
+##### Returns
+
+[`Promise`](Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/archives.ts:57
 
 ___
 
 ### extractAll
 
-• get **extractAll**(): *function*
+• `get` **extractAll**(): (`outputPath`: `string`) => [`Promise`](Promise.md)<`void`\>
 
 extract the entire archive
 
-**Returns:** (`outputPath`: *string*) => [*Promise*](promise.md)<void\>
+#### Returns
 
-Defined in: src/util/archives.ts:48
+`fn`
+
+▸ (`outputPath`): [`Promise`](Promise.md)<`void`\>
+
+extract the entire archive
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `outputPath` | `string` |
+
+##### Returns
+
+[`Promise`](Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/archives.ts:48
 
 ___
 
 ### extractFile
 
-• get **extractFile**(): *function*
+• `get` **extractFile**(): (`filePath`: `string`, `outputPath`: `string`) => [`Promise`](Promise.md)<`void`\>
 
 extract a single file
 
-**Returns:** (`filePath`: *string*, `outputPath`: *string*) => [*Promise*](promise.md)<void\>
+#### Returns
 
-Defined in: src/util/archives.ts:39
+`fn`
+
+▸ (`filePath`, `outputPath`): [`Promise`](Promise.md)<`void`\>
+
+extract a single file
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `filePath` | `string` |
+| `outputPath` | `string` |
+
+##### Returns
+
+[`Promise`](Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/archives.ts:39
 
 ___
 
 ### readDir
 
-• get **readDir**(): *function*
+• `get` **readDir**(): (`archivePath`: `string`) => [`Promise`](Promise.md)<`string`[]\>
 
 list files at the specified path
 
-**Returns:** (`archivePath`: *string*) => [*Promise*](promise.md)<string[]\>
+#### Returns
 
-Defined in: src/util/archives.ts:21
+`fn`
+
+▸ (`archivePath`): [`Promise`](Promise.md)<`string`[]\>
+
+list files at the specified path
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `archivePath` | `string` |
+
+##### Returns
+
+[`Promise`](Promise.md)<`string`[]\>
+
+#### Defined in
+
+../src/util/archives.ts:21
 
 ___
 
 ### readFile
 
-• get **readFile**(): *function*
+• `get` **readFile**(): (`filePath`: `string`) => `ReadableStream`
 
 read a file at the specified path via a stream
 
-**Returns:** (`filePath`: *string*) => *ReadableStream*
+#### Returns
 
-Defined in: src/util/archives.ts:30
+`fn`
+
+▸ (`filePath`): `ReadableStream`
+
+read a file at the specified path via a stream
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `filePath` | `string` |
+
+##### Returns
+
+`ReadableStream`
+
+#### Defined in
+
+../src/util/archives.ts:30
 
 ___
 
 ### write
 
-• get **write**(): *function*
+• `get` **write**(): () => [`Promise`](Promise.md)<`void`\>
 
-**Returns:** () => [*Promise*](promise.md)<void\>
+#### Returns
 
-Defined in: src/util/archives.ts:72
+`fn`
+
+▸ (): [`Promise`](Promise.md)<`void`\>
+
+##### Returns
+
+[`Promise`](Promise.md)<`void`\>
+
+#### Defined in
+
+../src/util/archives.ts:72

@@ -6,4 +6,4 @@
 
 ## Indexable
 
-▪ [id: *string*]: [*ITableState*](types.itablestate.md)
+▪ [id: `string`]: [`ITableState`](types.ITableState.md)

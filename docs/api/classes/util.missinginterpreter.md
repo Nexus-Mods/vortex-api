@@ -6,142 +6,190 @@
 
 ## Hierarchy
 
-* *Error*
+- `Error`
 
-  ↳ **MissingInterpreter**
+  ↳ **`MissingInterpreter`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](util.missinginterpreter.md#constructor)
+- [constructor](util.MissingInterpreter.md#constructor)
 
 ### Properties
 
-- [mURL](util.missinginterpreter.md#murl)
-- [message](util.missinginterpreter.md#message)
-- [name](util.missinginterpreter.md#name)
-- [prepareStackTrace](util.missinginterpreter.md#preparestacktrace)
-- [stack](util.missinginterpreter.md#stack)
-- [stackTraceLimit](util.missinginterpreter.md#stacktracelimit)
+- [mURL](util.MissingInterpreter.md#murl)
+- [message](util.MissingInterpreter.md#message)
+- [name](util.MissingInterpreter.md#name)
+- [stack](util.MissingInterpreter.md#stack)
+- [prepareStackTrace](util.MissingInterpreter.md#preparestacktrace)
+- [stackTraceLimit](util.MissingInterpreter.md#stacktracelimit)
 
 ### Accessors
 
-- [url](util.missinginterpreter.md#url)
+- [url](util.MissingInterpreter.md#url)
 
 ### Methods
 
-- [captureStackTrace](util.missinginterpreter.md#capturestacktrace)
+- [captureStackTrace](util.MissingInterpreter.md#capturestacktrace)
 
 ## Constructors
 
 ### constructor
 
-\+ **new MissingInterpreter**(`message`: *string*, `url?`: *string*): [*MissingInterpreter*](util.missinginterpreter.md)
+• **new MissingInterpreter**(`message`, `url?`)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`message` | *string* |
-`url?` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `message` | `string` |
+| `url?` | `string` |
 
-**Returns:** [*MissingInterpreter*](util.missinginterpreter.md)
+#### Overrides
 
-Defined in: src/util/CustomErrors.ts:150
+Error.constructor
+
+#### Defined in
+
+../src/util/CustomErrors.ts:163
 
 ## Properties
 
 ### mURL
 
-• `Private` **mURL**: *string*
+• `Private` **mURL**: `string`
 
-Defined in: src/util/CustomErrors.ts:150
+#### Defined in
+
+../src/util/CustomErrors.ts:162
 
 ___
 
 ### message
 
-• **message**: *string*
+• **message**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:974
+#### Inherited from
+
+Error.message
+
+#### Defined in
+
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1023
 
 ___
 
 ### name
 
-• **name**: *string*
+• **name**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:973
+#### Inherited from
 
-___
+Error.name
 
-### prepareStackTrace
+#### Defined in
 
-• `Optional` **prepareStackTrace**: (`err`: Error, `stackTraces`: CallSite[]) => *any*
-
-Optional override for formatting stack traces
-
-**`see`** https://github.com/v8/v8/wiki/Stack%20Trace%20API#customizing-stack-traces
-
-#### Type declaration:
-
-▸ (`err`: Error, `stackTraces`: CallSite[]): *any*
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`err` | Error |
-`stackTraces` | CallSite[] |
-
-**Returns:** *any*
-
-Defined in: node_modules/@types/node/globals.d.ts:140
-
-Defined in: node_modules/@types/node/globals.d.ts:140
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1022
 
 ___
 
 ### stack
 
-• `Optional` **stack**: *string*
+• `Optional` **stack**: `string`
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:975
+#### Inherited from
+
+Error.stack
+
+#### Defined in
+
+e:/WorkC/vortex/node_modules/typescript/lib/lib.es5.d.ts:1024
+
+___
+
+### prepareStackTrace
+
+▪ `Static` `Optional` **prepareStackTrace**: (`err`: `Error`, `stackTraces`: `CallSite`[]) => `any`
+
+#### Type declaration
+
+▸ (`err`, `stackTraces`): `any`
+
+Optional override for formatting stack traces
+
+**`see`** https://v8.dev/docs/stack-trace-api#customizing-stack-traces
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `err` | `Error` |
+| `stackTraces` | `CallSite`[] |
+
+##### Returns
+
+`any`
+
+#### Inherited from
+
+Error.prepareStackTrace
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:11
 
 ___
 
 ### stackTraceLimit
 
-• **stackTraceLimit**: *number*
+▪ `Static` **stackTraceLimit**: `number`
 
-Defined in: node_modules/@types/node/globals.d.ts:142
+#### Inherited from
+
+Error.stackTraceLimit
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:13
 
 ## Accessors
 
 ### url
 
-• get **url**(): *string*
+• `get` **url**(): `string`
 
-**Returns:** *string*
+#### Returns
 
-Defined in: src/util/CustomErrors.ts:157
+`string`
+
+#### Defined in
+
+../src/util/CustomErrors.ts:169
 
 ## Methods
 
 ### captureStackTrace
 
-▸ **captureStackTrace**(`targetObject`: Object, `constructorOpt?`: Function): *void*
+▸ `Static` **captureStackTrace**(`targetObject`, `constructorOpt?`): `void`
 
 Create .stack property on a target object
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`targetObject` | Object |
-`constructorOpt?` | Function |
+| Name | Type |
+| :------ | :------ |
+| `targetObject` | `object` |
+| `constructorOpt?` | `Function` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/node/globals.d.ts:133
+`void`
+
+#### Inherited from
+
+Error.captureStackTrace
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/node/globals.d.ts:4

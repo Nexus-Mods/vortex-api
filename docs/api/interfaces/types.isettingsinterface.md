@@ -8,97 +8,121 @@
 
 ### Properties
 
-- [advanced](types.isettingsinterface.md#advanced)
-- [dashboardLayout](types.isettingsinterface.md#dashboardlayout)
-- [dashletSettings](types.isettingsinterface.md#dashletsettings)
-- [desktopNotifications](types.isettingsinterface.md#desktopnotifications)
-- [foregroundDL](types.isettingsinterface.md#foregrounddl)
-- [hideTopLevelCategory](types.isettingsinterface.md#hidetoplevelcategory)
-- [language](types.isettingsinterface.md#language)
-- [profilesVisible](types.isettingsinterface.md#profilesvisible)
-- [relativeTimes](types.isettingsinterface.md#relativetimes)
-- [usage](types.isettingsinterface.md#usage)
+- [advanced](types.ISettingsInterface.md#advanced)
+- [dashboardLayout](types.ISettingsInterface.md#dashboardlayout)
+- [dashletSettings](types.ISettingsInterface.md#dashletsettings)
+- [desktopNotifications](types.ISettingsInterface.md#desktopnotifications)
+- [foregroundDL](types.ISettingsInterface.md#foregrounddl)
+- [hideTopLevelCategory](types.ISettingsInterface.md#hidetoplevelcategory)
+- [language](types.ISettingsInterface.md#language)
+- [profilesVisible](types.ISettingsInterface.md#profilesvisible)
+- [relativeTimes](types.ISettingsInterface.md#relativetimes)
+- [usage](types.ISettingsInterface.md#usage)
 
 ## Properties
 
 ### advanced
 
-• **advanced**: *boolean*
+• **advanced**: `boolean`
 
-Defined in: src/types/IState.ts:167
+#### Defined in
+
+../src/types/IState.ts:169
 
 ___
 
 ### dashboardLayout
 
-• **dashboardLayout**: *string*[]
+• **dashboardLayout**: `string`[]
 
-Defined in: src/types/IState.ts:172
+#### Defined in
+
+../src/types/IState.ts:174
 
 ___
 
 ### dashletSettings
 
-• **dashletSettings**: *object*
+• **dashletSettings**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IState.ts:174
+▪ [dashletId: `string`]: [`IDashletSettings`](types.IDashletSettings.md)
+
+#### Defined in
+
+../src/types/IState.ts:176
 
 ___
 
 ### desktopNotifications
 
-• **desktopNotifications**: *boolean*
+• **desktopNotifications**: `boolean`
 
-Defined in: src/types/IState.ts:169
+#### Defined in
+
+../src/types/IState.ts:171
 
 ___
 
 ### foregroundDL
 
-• **foregroundDL**: *boolean*
+• **foregroundDL**: `boolean`
 
-Defined in: src/types/IState.ts:173
+#### Defined in
+
+../src/types/IState.ts:175
 
 ___
 
 ### hideTopLevelCategory
 
-• **hideTopLevelCategory**: *boolean*
+• **hideTopLevelCategory**: `boolean`
 
-Defined in: src/types/IState.ts:170
+#### Defined in
+
+../src/types/IState.ts:172
 
 ___
 
 ### language
 
-• **language**: *string*
+• **language**: `string`
 
-Defined in: src/types/IState.ts:166
+#### Defined in
+
+../src/types/IState.ts:168
 
 ___
 
 ### profilesVisible
 
-• **profilesVisible**: *boolean*
+• **profilesVisible**: `boolean`
 
-Defined in: src/types/IState.ts:168
+#### Defined in
+
+../src/types/IState.ts:170
 
 ___
 
 ### relativeTimes
 
-• **relativeTimes**: *boolean*
+• **relativeTimes**: `boolean`
 
-Defined in: src/types/IState.ts:171
+#### Defined in
+
+../src/types/IState.ts:173
 
 ___
 
 ### usage
 
-• **usage**: *object*
+• **usage**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IState.ts:175
+▪ [usageId: `string`]: `boolean`
+
+#### Defined in
+
+../src/types/IState.ts:177

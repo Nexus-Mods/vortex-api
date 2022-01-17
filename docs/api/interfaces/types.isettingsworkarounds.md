@@ -8,12 +8,14 @@
 
 ### Properties
 
-- [userSymlinks](types.isettingsworkarounds.md#usersymlinks)
+- [userSymlinks](types.ISettingsWorkarounds.md#usersymlinks)
 
 ## Properties
 
 ### userSymlinks
 
-• **userSymlinks**: *boolean*
+• **userSymlinks**: `boolean`
 
-Defined in: src/types/IState.ts:233
+#### Defined in
+
+../src/types/IState.ts:235

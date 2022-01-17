@@ -8,21 +8,25 @@
 
 ### Properties
 
-- [encoding](util.irequestoptions.md#encoding)
-- [expectedContentType](util.irequestoptions.md#expectedcontenttype)
+- [encoding](util.IRequestOptions.md#encoding)
+- [expectedContentType](util.IRequestOptions.md#expectedcontenttype)
 
 ## Properties
 
 ### encoding
 
-• `Optional` **encoding**: *string*
+• `Optional` **encoding**: `BufferEncoding`
 
-Defined in: src/util/network.ts:8
+#### Defined in
+
+../src/util/network.ts:10
 
 ___
 
 ### expectedContentType
 
-• `Optional` **expectedContentType**: *RegExp*
+• `Optional` **expectedContentType**: `RegExp`
 
-Defined in: src/util/network.ts:7
+#### Defined in
+
+../src/util/network.ts:9

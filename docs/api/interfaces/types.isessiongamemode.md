@@ -8,32 +8,40 @@
 
 ### Properties
 
-- [addDialogVisible](types.isessiongamemode.md#adddialogvisible)
-- [disabled](types.isessiongamemode.md#disabled)
-- [known](types.isessiongamemode.md#known)
+- [addDialogVisible](types.ISessionGameMode.md#adddialogvisible)
+- [disabled](types.ISessionGameMode.md#disabled)
+- [known](types.ISessionGameMode.md#known)
 
 ## Properties
 
 ### addDialogVisible
 
-• **addDialogVisible**: *boolean*
+• **addDialogVisible**: `boolean`
 
-Defined in: src/types/IState.ts:256
+#### Defined in
+
+../src/types/IState.ts:258
 
 ___
 
 ### disabled
 
-• **disabled**: *object*
+• **disabled**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IState.ts:257
+▪ [gameId: `string`]: `string`
+
+#### Defined in
+
+../src/types/IState.ts:259
 
 ___
 
 ### known
 
-• **known**: [*IGameStored*](types.igamestored.md)[]
+• **known**: [`IGameStored`](types.IGameStored.md)[]
 
-Defined in: src/types/IState.ts:255
+#### Defined in
+
+../src/types/IState.ts:257

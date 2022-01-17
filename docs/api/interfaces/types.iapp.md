@@ -10,59 +10,73 @@ settings relating to the vortex application itself
 
 ### Properties
 
-- [appVersion](types.iapp.md#appversion)
-- [extensions](types.iapp.md#extensions)
-- [instanceId](types.iapp.md#instanceid)
-- [migrations](types.iapp.md#migrations)
-- [version](types.iapp.md#version)
-- [warnedAdmin](types.iapp.md#warnedadmin)
+- [appVersion](types.IApp.md#appversion)
+- [extensions](types.IApp.md#extensions)
+- [instanceId](types.IApp.md#instanceid)
+- [migrations](types.IApp.md#migrations)
+- [version](types.IApp.md#version)
+- [warnedAdmin](types.IApp.md#warnedadmin)
 
 ## Properties
 
 ### appVersion
 
-• **appVersion**: *string*
+• **appVersion**: `string`
 
-Defined in: src/types/IState.ts:134
+#### Defined in
+
+../src/types/IState.ts:136
 
 ___
 
 ### extensions
 
-• **extensions**: *object*
+• **extensions**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IState.ts:135
+▪ [id: `string`]: [`IExtensionState`](types.IExtensionState.md)
+
+#### Defined in
+
+../src/types/IState.ts:137
 
 ___
 
 ### instanceId
 
-• **instanceId**: *string*
+• **instanceId**: `string`
 
-Defined in: src/types/IState.ts:132
+#### Defined in
+
+../src/types/IState.ts:134
 
 ___
 
 ### migrations
 
-• **migrations**: *string*[]
+• **migrations**: `string`[]
 
-Defined in: src/types/IState.ts:137
+#### Defined in
+
+../src/types/IState.ts:139
 
 ___
 
 ### version
 
-• **version**: *string*
+• **version**: `string`
 
-Defined in: src/types/IState.ts:133
+#### Defined in
+
+../src/types/IState.ts:135
 
 ___
 
 ### warnedAdmin
 
-• **warnedAdmin**: *number*
+• **warnedAdmin**: `number`
 
-Defined in: src/types/IState.ts:136
+#### Defined in
+
+../src/types/IState.ts:138

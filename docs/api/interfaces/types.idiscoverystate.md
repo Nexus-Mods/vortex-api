@@ -6,7 +6,7 @@
 
 state of the (lengthy) gamemode discovery
 
-**`export`** 
+**`export`**
 
 **`interface`** IDiscoveryState
 
@@ -14,23 +14,29 @@ state of the (lengthy) gamemode discovery
 
 ### Properties
 
-- [phases](types.idiscoverystate.md#phases)
-- [running](types.idiscoverystate.md#running)
+- [phases](types.IDiscoveryState.md#phases)
+- [running](types.IDiscoveryState.md#running)
 
 ## Properties
 
 ### phases
 
-• **phases**: *object*
+• **phases**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IState.ts:340
+▪ [id: `number`]: [`IDiscoveryPhase`](types.IDiscoveryPhase.md)
+
+#### Defined in
+
+../src/types/IState.ts:356
 
 ___
 
 ### running
 
-• **running**: *boolean*
+• **running**: `boolean`
 
-Defined in: src/types/IState.ts:339
+#### Defined in
+
+../src/types/IState.ts:355

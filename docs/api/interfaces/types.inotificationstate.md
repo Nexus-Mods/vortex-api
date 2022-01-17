@@ -6,7 +6,7 @@
 
 state regarding all manner of user interaction
 
-**`export`** 
+**`export`**
 
 **`interface`** INotificationState
 
@@ -14,21 +14,25 @@ state regarding all manner of user interaction
 
 ### Properties
 
-- [dialogs](types.inotificationstate.md#dialogs)
-- [notifications](types.inotificationstate.md#notifications)
+- [dialogs](types.INotificationState.md#dialogs)
+- [notifications](types.INotificationState.md#notifications)
 
 ## Properties
 
 ### dialogs
 
-• **dialogs**: [*IDialog*](actions.idialog.md)[]
+• **dialogs**: [`IDialog`](actions.IDialog.md)[]
 
-Defined in: src/types/IState.ts:63
+#### Defined in
+
+../src/types/IState.ts:63
 
 ___
 
 ### notifications
 
-• **notifications**: [*INotification*](types.inotification.md)[]
+• **notifications**: [`INotification`](types.INotification.md)[]
 
-Defined in: src/types/IState.ts:62
+#### Defined in
+
+../src/types/IState.ts:62

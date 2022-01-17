@@ -8,30 +8,36 @@
 
 ### Properties
 
-- [appId](types.icustomexecutioninfo.md#appid)
-- [launchType](types.icustomexecutioninfo.md#launchtype)
-- [parameters](types.icustomexecutioninfo.md#parameters)
+- [appId](types.ICustomExecutionInfo.md#appid)
+- [launchType](types.ICustomExecutionInfo.md#launchtype)
+- [parameters](types.ICustomExecutionInfo.md#parameters)
 
 ## Properties
 
 ### appId
 
-• **appId**: *string*
+• **appId**: `string`
 
-Defined in: src/types/IGameStore.ts:61
+#### Defined in
+
+../src/types/IGameStore.ts:61
 
 ___
 
 ### launchType
 
-• `Optional` **launchType**: [*GameLaunchType*](../modules/types.md#gamelaunchtype)
+• `Optional` **launchType**: [`GameLaunchType`](../modules/types.md#gamelaunchtype)
 
-Defined in: src/types/IGameStore.ts:63
+#### Defined in
+
+../src/types/IGameStore.ts:63
 
 ___
 
 ### parameters
 
-• **parameters**: *string*[]
+• **parameters**: `string`[]
 
-Defined in: src/types/IGameStore.ts:62
+#### Defined in
+
+../src/types/IGameStore.ts:62

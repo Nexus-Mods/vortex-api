@@ -4,89 +4,111 @@
 
 ## Implements
 
-* [*ITableFilter*](../interfaces/types.itablefilter.md)
+- [`ITableFilter`](../interfaces/types.ITableFilter.md)
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](tabledatetimefilter.md#constructor)
+- [constructor](TableDateTimeFilter.md#constructor)
 
 ### Properties
 
-- [component](tabledatetimefilter.md#component)
-- [raw](tabledatetimefilter.md#raw)
+- [component](TableDateTimeFilter.md#component)
+- [raw](TableDateTimeFilter.md#raw)
 
 ### Methods
 
-- [isEmpty](tabledatetimefilter.md#isempty)
-- [matches](tabledatetimefilter.md#matches)
+- [isEmpty](TableDateTimeFilter.md#isempty)
+- [matches](TableDateTimeFilter.md#matches)
 
 ## Constructors
 
 ### constructor
 
-\+ **new TableDateTimeFilter**(): [*TableDateTimeFilter*](tabledatetimefilter.md)
-
-**Returns:** [*TableDateTimeFilter*](tabledatetimefilter.md)
+• **new TableDateTimeFilter**()
 
 ## Properties
 
 ### component
 
-• **component**: *typeof* DateTimeFilterComponent
+• **component**: typeof `DateTimeFilterComponent` = `DateTimeFilterComponent`
 
-Implementation of: [ITableFilter](../interfaces/types.itablefilter.md).[component](../interfaces/types.itablefilter.md#component)
+#### Implementation of
 
-Defined in: src/controls/table/DateTimeFilter.tsx:103
+[ITableFilter](../interfaces/types.ITableFilter.md).[component](../interfaces/types.ITableFilter.md#component)
+
+#### Defined in
+
+../src/controls/table/DateTimeFilter.tsx:110
 
 ___
 
 ### raw
 
-• **raw**: *boolean*= false
+• **raw**: `boolean` = `false`
 
 this controls what value gets passed into the matches function, see the documentation there
 for possible values
 
-Implementation of: [ITableFilter](../interfaces/types.itablefilter.md).[raw](../interfaces/types.itablefilter.md#raw)
+#### Implementation of
 
-Defined in: src/controls/table/DateTimeFilter.tsx:104
+[ITableFilter](../interfaces/types.ITableFilter.md).[raw](../interfaces/types.ITableFilter.md#raw)
+
+#### Defined in
+
+../src/controls/table/DateTimeFilter.tsx:111
 
 ## Methods
 
 ### isEmpty
 
-▸ **isEmpty**(`filter`: *any*): *boolean*
+▸ **isEmpty**(`filter`): `boolean`
 
 return true if the specified filter will not filter out any elements
 if not specified the filter will be assumed to be "empty" if it's not truthy
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`filter` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `filter` | `any` |
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: src/controls/table/DateTimeFilter.tsx:124
+`boolean`
+
+#### Implementation of
+
+[ITableFilter](../interfaces/types.ITableFilter.md).[isEmpty](../interfaces/types.ITableFilter.md#isempty)
+
+#### Defined in
+
+../src/controls/table/DateTimeFilter.tsx:131
 
 ___
 
 ### matches
 
-▸ **matches**(`filter`: *any*, `input`: *any*): *boolean*
+▸ **matches**(`filter`, `input`): `boolean`
 
 return true if value matches the filter
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`filter` | *any* |
-`input` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `filter` | `any` |
+| `input` | `any` |
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: src/controls/table/DateTimeFilter.tsx:106
+`boolean`
+
+#### Implementation of
+
+[ITableFilter](../interfaces/types.ITableFilter.md).[matches](../interfaces/types.ITableFilter.md#matches)
+
+#### Defined in
+
+../src/controls/table/DateTimeFilter.tsx:113

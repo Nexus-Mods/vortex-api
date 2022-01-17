@@ -8,21 +8,25 @@
 
 ### Properties
 
-- [extensions](types.ifilefilter.md#extensions)
-- [name](types.ifilefilter.md#name)
+- [extensions](types.IFileFilter.md#extensions)
+- [name](types.IFileFilter.md#name)
 
 ## Properties
 
 ### extensions
 
-• **extensions**: *string*[]
+• **extensions**: `string`[]
 
-Defined in: src/types/IExtensionContext.ts:171
+#### Defined in
+
+../src/types/IExtensionContext.ts:191
 
 ___
 
 ### name
 
-• **name**: *string*
+• **name**: `string`
 
-Defined in: src/types/IExtensionContext.ts:170
+#### Defined in
+
+../src/types/IExtensionContext.ts:190

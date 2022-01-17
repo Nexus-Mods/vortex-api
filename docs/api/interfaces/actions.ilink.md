@@ -8,45 +8,50 @@
 
 ### Properties
 
-- [action](actions.ilink.md#action)
-- [id](actions.ilink.md#id)
-- [label](actions.ilink.md#label)
+- [id](actions.ILink.md#id)
+- [label](actions.ILink.md#label)
+
+### Methods
+
+- [action](actions.ILink.md#action)
 
 ## Properties
 
-### action
-
-• `Optional` **action**: (`dismiss`: () => *void*, `id`: *string*) => *void*
-
-#### Type declaration:
-
-▸ (`dismiss`: () => *void*, `id`: *string*): *void*
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`dismiss` | () => *void* |
-`id` | *string* |
-
-**Returns:** *void*
-
-Defined in: src/types/IDialog.ts:61
-
-Defined in: src/types/IDialog.ts:61
-
-___
-
 ### id
 
-• `Optional` **id**: *string*
+• `Optional` **id**: `string`
 
-Defined in: src/types/IDialog.ts:60
+#### Defined in
+
+../src/types/IDialog.ts:65
 
 ___
 
 ### label
 
-• **label**: *string*
+• **label**: `string`
 
-Defined in: src/types/IDialog.ts:59
+#### Defined in
+
+../src/types/IDialog.ts:64
+
+## Methods
+
+### action
+
+▸ `Optional` **action**(`dismiss`, `id`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `dismiss` | () => `void` |
+| `id` | `string` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+../src/types/IDialog.ts:66

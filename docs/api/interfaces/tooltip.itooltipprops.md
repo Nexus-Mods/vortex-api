@@ -8,39 +8,47 @@
 
 ### Properties
 
-- [buttonType](tooltip.itooltipprops.md#buttontype)
-- [id](tooltip.itooltipprops.md#id)
-- [placement](tooltip.itooltipprops.md#placement)
-- [tooltip](tooltip.itooltipprops.md#tooltip)
+- [buttonType](tooltip.ITooltipProps.md#buttontype)
+- [id](tooltip.ITooltipProps.md#id)
+- [placement](tooltip.ITooltipProps.md#placement)
+- [tooltip](tooltip.ITooltipProps.md#tooltip)
 
 ## Properties
 
 ### buttonType
 
-• `Optional` **buttonType**: ButtonType
+• `Optional` **buttonType**: `ButtonType`
 
-Defined in: src/controls/TooltipControls.tsx:16
+#### Defined in
+
+../src/controls/TooltipControls.tsx:16
 
 ___
 
 ### id
 
-• `Optional` **id**: *string*
+• `Optional` **id**: `string`
 
-Defined in: src/controls/TooltipControls.tsx:14
+#### Defined in
+
+../src/controls/TooltipControls.tsx:14
 
 ___
 
 ### placement
 
-• `Optional` **placement**: *right* \| *top* \| *bottom* \| *left*
+• `Optional` **placement**: ``"right"`` \| ``"top"`` \| ``"bottom"`` \| ``"left"``
 
-Defined in: src/controls/TooltipControls.tsx:15
+#### Defined in
+
+../src/controls/TooltipControls.tsx:15
 
 ___
 
 ### tooltip
 
-• **tooltip**: *string* \| *ReactElement*<any, string \| (`props`: *any*) => *ReactElement*<any, any\> \| (`props`: *any*) => *Component*<any, any, any\>\>
+• **tooltip**: `string` \| `ReactElement`<`any`, `string` \| `JSXElementConstructor`<`any`\>\>
 
-Defined in: src/controls/TooltipControls.tsx:13
+#### Defined in
+
+../src/controls/TooltipControls.tsx:13

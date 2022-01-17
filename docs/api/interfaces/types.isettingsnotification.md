@@ -8,14 +8,18 @@
 
 ### Properties
 
-- [suppress](types.isettingsnotification.md#suppress)
+- [suppress](types.ISettingsNotification.md#suppress)
 
 ## Properties
 
 ### suppress
 
-• **suppress**: *object*
+• **suppress**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IState.ts:225
+▪ [notificationId: `string`]: `boolean`
+
+#### Defined in
+
+../src/types/IState.ts:227

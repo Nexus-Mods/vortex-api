@@ -8,115 +8,130 @@
 
 ### Properties
 
-- [deleteBroken](types.istateverifier.md#deletebroken)
-- [description](types.istateverifier.md#description)
-- [elements](types.istateverifier.md#elements)
-- [noEmpty](types.istateverifier.md#noempty)
-- [noNull](types.istateverifier.md#nonull)
-- [noUndefined](types.istateverifier.md#noundefined)
-- [repair](types.istateverifier.md#repair)
-- [required](types.istateverifier.md#required)
-- [type](types.istateverifier.md#type)
+- [deleteBroken](types.IStateVerifier.md#deletebroken)
+- [elements](types.IStateVerifier.md#elements)
+- [noEmpty](types.IStateVerifier.md#noempty)
+- [noNull](types.IStateVerifier.md#nonull)
+- [noUndefined](types.IStateVerifier.md#noundefined)
+- [required](types.IStateVerifier.md#required)
+- [type](types.IStateVerifier.md#type)
+
+### Methods
+
+- [description](types.IStateVerifier.md#description)
+- [repair](types.IStateVerifier.md#repair)
 
 ## Properties
 
 ### deleteBroken
 
-• `Optional` **deleteBroken**: *boolean* \| *parent*
+• `Optional` **deleteBroken**: `boolean` \| ``"parent"``
 
-Defined in: src/types/IExtensionContext.ts:684
+#### Defined in
 
-___
-
-### description
-
-• **description**: (`input`: *any*) => *string*
-
-#### Type declaration:
-
-▸ (`input`: *any*): *string*
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`input` | *any* |
-
-**Returns:** *string*
-
-Defined in: src/types/IExtensionContext.ts:669
-
-Defined in: src/types/IExtensionContext.ts:669
+../src/types/IExtensionContext.ts:742
 
 ___
 
 ### elements
 
-• `Optional` **elements**: *object*
+• `Optional` **elements**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IExtensionContext.ts:679
+▪ [key: `string`]: [`IStateVerifier`](types.IStateVerifier.md)
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:737
 
 ___
 
 ### noEmpty
 
-• `Optional` **noEmpty**: *boolean*
+• `Optional` **noEmpty**: `boolean`
 
-Defined in: src/types/IExtensionContext.ts:677
+#### Defined in
+
+../src/types/IExtensionContext.ts:735
 
 ___
 
 ### noNull
 
-• `Optional` **noNull**: *boolean*
+• `Optional` **noNull**: `boolean`
 
-Defined in: src/types/IExtensionContext.ts:675
+#### Defined in
+
+../src/types/IExtensionContext.ts:733
 
 ___
 
 ### noUndefined
 
-• `Optional` **noUndefined**: *boolean*
+• `Optional` **noUndefined**: `boolean`
 
-Defined in: src/types/IExtensionContext.ts:673
+#### Defined in
 
-___
-
-### repair
-
-• `Optional` **repair**: (`input`: *any*, `def`: *any*) => *any*
-
-#### Type declaration:
-
-▸ (`input`: *any*, `def`: *any*): *any*
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`input` | *any* |
-`def` | *any* |
-
-**Returns:** *any*
-
-Defined in: src/types/IExtensionContext.ts:686
-
-Defined in: src/types/IExtensionContext.ts:686
+../src/types/IExtensionContext.ts:731
 
 ___
 
 ### required
 
-• `Optional` **required**: *boolean*
+• `Optional` **required**: `boolean`
 
-Defined in: src/types/IExtensionContext.ts:681
+#### Defined in
+
+../src/types/IExtensionContext.ts:739
 
 ___
 
 ### type
 
-• `Optional` **type**: *string* \| *number* \| *boolean* \| *object* \| *map* \| *array*
+• `Optional` **type**: ``"string"`` \| ``"number"`` \| ``"boolean"`` \| ``"object"`` \| ``"map"`` \| ``"array"``
 
-Defined in: src/types/IExtensionContext.ts:671
+#### Defined in
+
+../src/types/IExtensionContext.ts:729
+
+## Methods
+
+### description
+
+▸ **description**(`input`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `input` | `any` |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:727
+
+___
+
+### repair
+
+▸ `Optional` **repair**(`input`, `def`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `input` | `any` |
+| `def` | `any` |
+
+#### Returns
+
+`any`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:744

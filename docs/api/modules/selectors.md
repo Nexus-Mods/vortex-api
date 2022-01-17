@@ -35,211 +35,263 @@
 
 ### activatorForGame
 
-• `Const` **activatorForGame**: *ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, string\> & { `dependencies`: [*ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, { [gameId: string]: *string*;  }\>, *ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, string\>] ; `recomputations`: () => *number* ; `resetRecomputations`: () => *number* ; `resultFunc`: (`res1`: { [gameId: string]: *string*;  }, `res2`: *string*) => *string*  } & { `cache`: ICacheObject ; `clearCache`: () => *void* ; `getMatchingSelector`: (`state`: [*IState*](../interfaces/types.istate.md), `props`: *string*, ...`args`: *any*[]) => *OutputParametricSelector*<[*IState*](../interfaces/types.istate.md), string, string, (`res1`: { [gameId: string]: *string*;  }, `res2`: *string*) => *string*, [*ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, { [gameId: string]: *string*;  }\>, *ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, string\>]\> ; `keySelector`: *ParametricKeySelector*<[*IState*](../interfaces/types.istate.md), string\> ; `removeMatchingSelector`: (`state`: [*IState*](../interfaces/types.istate.md), `props`: *string*, ...`args`: *any*[]) => *void*  }
+• **activatorForGame**: `ParametricSelector`<[`IState`](../interfaces/types.IState.md), `string`, `string`\> & { `dependencies`: [`ParametricSelector`<[`IState`](../interfaces/types.IState.md), `string`, { [gameId: string]: `string`;  }\>, `ParametricSelector`<[`IState`](../interfaces/types.IState.md), `string`, `string`\>] ; `resultFunc`: (`res1`: { [gameId: string]: `string`;  }, `res2`: `string`) => `string` ; `recomputations`: () => `number` ; `resetRecomputations`: () => `number`  } & { `cache`: `ICacheObject` ; `keySelector`: `ParametricKeySelector`<[`IState`](../interfaces/types.IState.md), `string`\> ; `clearCache`: () => `void` ; `getMatchingSelector`: (`state`: `S`, `props`: `P`, ...`args`: `any`[]) => `OutputParametricSelector`<`S`, `P`, `R`, `C`, `D`\> ; `removeMatchingSelector`: (`state`: `S`, `props`: `P`, ...`args`: `any`[]) => `void`  }
 
-Defined in: src/extensions/mod_management/selectors.ts:43
+#### Defined in
+
+../src/extensions/mod_management/selectors.ts:43
 
 ___
 
 ### activeDownloads
 
-• `Const` **activeDownloads**: *OutputSelector*<[*IState*](../interfaces/types.istate.md), {}, (`res`: { [dlId: string]: [*IDownload*](../interfaces/types.idownload.md);  }) => {}\>
+• **activeDownloads**: `OutputSelector`<[`IState`](../interfaces/types.IState.md), {}, (`res`: { [dlId: string]: [`IDownload`](../interfaces/types.IDownload.md);  }) => {}\>
 
-Defined in: src/extensions/download_management/selectors.ts:26
+#### Defined in
+
+../src/extensions/download_management/selectors.ts:26
 
 ___
 
 ### currentActivator
 
-• `Const` **currentActivator**: *OutputSelector*<any, string, (`res1`: { [gameId: string]: *string*;  }, `res2`: *string*) => *string*\>
+• **currentActivator**: `OutputSelector`<`any`, `string`, (`res1`: { [gameId: string]: `string`;  }, `res2`: `string`) => `string`\>
 
-Defined in: src/extensions/mod_management/selectors.ts:38
+#### Defined in
+
+../src/extensions/mod_management/selectors.ts:38
 
 ___
 
 ### currentGame
 
-• `Const` **currentGame**: *OutputSelector*<any, [*IGameStored*](../interfaces/types.igamestored.md), (`res1`: [*IGameStored*](../interfaces/types.igamestored.md)[], `res2`: *string*) => [*IGameStored*](../interfaces/types.igamestored.md)\>
+• **currentGame**: `OutputSelector`<`any`, [`IGameStored`](../interfaces/types.IGameStored.md), (`res1`: [`IGameStored`](../interfaces/types.IGameStored.md)[], `res2`: `string`) => [`IGameStored`](../interfaces/types.IGameStored.md)\>
 
-Defined in: src/extensions/gamemode_management/selectors.ts:21
+#### Defined in
+
+../src/extensions/gamemode_management/selectors.ts:21
 
 ___
 
 ### discoveryByGame
 
-• `Const` **discoveryByGame**: *ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, [*IDiscoveryResult*](../interfaces/types.idiscoveryresult.md)\> & { `dependencies`: [*ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, { [id: string]: [*IDiscoveryResult*](../interfaces/types.idiscoveryresult.md);  }\>, *ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, string\>] ; `recomputations`: () => *number* ; `resetRecomputations`: () => *number* ; `resultFunc`: (`res1`: { [id: string]: [*IDiscoveryResult*](../interfaces/types.idiscoveryresult.md);  }, `res2`: *string*) => [*IDiscoveryResult*](../interfaces/types.idiscoveryresult.md)  } & { `cache`: ICacheObject ; `clearCache`: () => *void* ; `getMatchingSelector`: (`state`: [*IState*](../interfaces/types.istate.md), `props`: *string*, ...`args`: *any*[]) => *OutputParametricSelector*<[*IState*](../interfaces/types.istate.md), string, [*IDiscoveryResult*](../interfaces/types.idiscoveryresult.md), (`res1`: { [id: string]: [*IDiscoveryResult*](../interfaces/types.idiscoveryresult.md);  }, `res2`: *string*) => [*IDiscoveryResult*](../interfaces/types.idiscoveryresult.md), [*ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, { [id: string]: [*IDiscoveryResult*](../interfaces/types.idiscoveryresult.md);  }\>, *ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, string\>]\> ; `keySelector`: *ParametricKeySelector*<[*IState*](../interfaces/types.istate.md), string\> ; `removeMatchingSelector`: (`state`: [*IState*](../interfaces/types.istate.md), `props`: *string*, ...`args`: *any*[]) => *void*  }
+• **discoveryByGame**: `ParametricSelector`<[`IState`](../interfaces/types.IState.md), `string`, [`IDiscoveryResult`](../interfaces/types.IDiscoveryResult.md)\> & { `dependencies`: [`ParametricSelector`<[`IState`](../interfaces/types.IState.md), `string`, { [id: string]: [`IDiscoveryResult`](../interfaces/types.IDiscoveryResult.md);  }\>, `ParametricSelector`<[`IState`](../interfaces/types.IState.md), `string`, `string`\>] ; `resultFunc`: (`res1`: { [id: string]: [`IDiscoveryResult`](../interfaces/types.IDiscoveryResult.md);  }, `res2`: `string`) => [`IDiscoveryResult`](../interfaces/types.IDiscoveryResult.md) ; `recomputations`: () => `number` ; `resetRecomputations`: () => `number`  } & { `cache`: `ICacheObject` ; `keySelector`: `ParametricKeySelector`<[`IState`](../interfaces/types.IState.md), `string`\> ; `clearCache`: () => `void` ; `getMatchingSelector`: (`state`: `S`, `props`: `P`, ...`args`: `any`[]) => `OutputParametricSelector`<`S`, `P`, `R`, `C`, `D`\> ; `removeMatchingSelector`: (`state`: `S`, `props`: `P`, ...`args`: `any`[]) => `void`  }
 
-Defined in: src/extensions/gamemode_management/selectors.ts:42
+#### Defined in
+
+../src/extensions/gamemode_management/selectors.ts:42
 
 ___
 
 ### downloadPath
 
-• `Const` **downloadPath**: *OutputSelector*<any, string, DLPathCB\>
+• **downloadPath**: `OutputSelector`<`any`, `string`, `DLPathCB`\>
 
-Defined in: src/extensions/download_management/selectors.ts:14
+#### Defined in
+
+../src/extensions/download_management/selectors.ts:14
 
 ___
 
 ### downloadPathForGame
 
-• `Const` **downloadPathForGame**: *OutputParametricSelector*<[*IState*](../interfaces/types.istate.md), string, string, DLPathCB, any\>
+• **downloadPathForGame**: `OutputParametricSelector`<[`IState`](../interfaces/types.IState.md), `string`, `string`, `DLPathCB`, `any`\>
 
-Defined in: src/extensions/download_management/selectors.ts:18
+#### Defined in
+
+../src/extensions/download_management/selectors.ts:18
 
 ___
 
 ### gameById
 
-• `Const` **gameById**: *ParametricSelector*<any, string, [*IGameStored*](../interfaces/types.igamestored.md)\> & { `dependencies`: [*ParametricSelector*<any, string, [*IGameStored*](../interfaces/types.igamestored.md)[]\>, *ParametricSelector*<any, string, string\>] ; `recomputations`: () => *number* ; `resetRecomputations`: () => *number* ; `resultFunc`: (`res1`: [*IGameStored*](../interfaces/types.igamestored.md)[], `res2`: *string*) => [*IGameStored*](../interfaces/types.igamestored.md)  } & { `cache`: ICacheObject ; `clearCache`: () => *void* ; `getMatchingSelector`: (`state`: *any*, `props`: *string*, ...`args`: *any*[]) => *OutputParametricSelector*<any, string, [*IGameStored*](../interfaces/types.igamestored.md), (`res1`: [*IGameStored*](../interfaces/types.igamestored.md)[], `res2`: *string*) => [*IGameStored*](../interfaces/types.igamestored.md), [*ParametricSelector*<any, string, [*IGameStored*](../interfaces/types.igamestored.md)[]\>, *ParametricSelector*<any, string, string\>]\> ; `keySelector`: *ParametricKeySelector*<any, string\> ; `removeMatchingSelector`: (`state`: *any*, `props`: *string*, ...`args`: *any*[]) => *void*  }
+• **gameById**: `ParametricSelector`<`any`, `string`, [`IGameStored`](../interfaces/types.IGameStored.md)\> & { `dependencies`: [`ParametricSelector`<`any`, `string`, [`IGameStored`](../interfaces/types.IGameStored.md)[]\>, `ParametricSelector`<`any`, `string`, `string`\>] ; `resultFunc`: (`res1`: [`IGameStored`](../interfaces/types.IGameStored.md)[], `res2`: `string`) => [`IGameStored`](../interfaces/types.IGameStored.md) ; `recomputations`: () => `number` ; `resetRecomputations`: () => `number`  } & { `cache`: `ICacheObject` ; `keySelector`: `ParametricKeySelector`<`any`, `string`\> ; `clearCache`: () => `void` ; `getMatchingSelector`: (`state`: `S`, `props`: `P`, ...`args`: `any`[]) => `OutputParametricSelector`<`S`, `P`, `R`, `C`, `D`\> ; `removeMatchingSelector`: (`state`: `S`, `props`: `P`, ...`args`: `any`[]) => `void`  }
 
-Defined in: src/extensions/gamemode_management/selectors.ts:26
+#### Defined in
+
+../src/extensions/gamemode_management/selectors.ts:26
 
 ___
 
 ### gameProfiles
 
-• `Const` **gameProfiles**: *OutputSelector*<any, [*IProfile*](../interfaces/types.iprofile.md)[], (`res1`: *string*, `res2`: { [id: string]: [*IProfile*](../interfaces/types.iprofile.md);  }) => [*IProfile*](../interfaces/types.iprofile.md)[]\>
+• **gameProfiles**: `OutputSelector`<`any`, [`IProfile`](../interfaces/types.IProfile.md)[], (`res1`: `string`, `res2`: { [id: string]: [`IProfile`](../interfaces/types.IProfile.md);  }) => [`IProfile`](../interfaces/types.IProfile.md)[]\>
 
-Defined in: src/extensions/profile_management/selectors.ts:19
+#### Defined in
+
+../src/extensions/profile_management/selectors.ts:19
 
 ___
 
 ### installPath
 
-• `Const` **installPath**: *OutputSelector*<any, string, (`res1`: { [gameId: string]: *string*;  }, `res2`: *string*) => *string*\>
+• **installPath**: `OutputSelector`<`any`, `string`, (`res1`: { [gameId: string]: `string`;  }, `res2`: `string`) => `string`\>
 
-Defined in: src/extensions/mod_management/selectors.ts:19
+#### Defined in
+
+../src/extensions/mod_management/selectors.ts:19
 
 ___
 
 ### installPathForGame
 
-• `Const` **installPathForGame**: *ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, string\> & { `dependencies`: [*ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, string\>, *ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, string\>] ; `recomputations`: () => *number* ; `resetRecomputations`: () => *number* ; `resultFunc`: (`res1`: *string*, `res2`: *string*) => *string*  } & { `cache`: ICacheObject ; `clearCache`: () => *void* ; `getMatchingSelector`: (`state`: [*IState*](../interfaces/types.istate.md), `props`: *string*, ...`args`: *any*[]) => *OutputParametricSelector*<[*IState*](../interfaces/types.istate.md), string, string, (`res1`: *string*, `res2`: *string*) => *string*, [*ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, string\>, *ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, string\>]\> ; `keySelector`: *ParametricKeySelector*<[*IState*](../interfaces/types.istate.md), string\> ; `removeMatchingSelector`: (`state`: [*IState*](../interfaces/types.istate.md), `props`: *string*, ...`args`: *any*[]) => *void*  }
+• **installPathForGame**: `ParametricSelector`<[`IState`](../interfaces/types.IState.md), `string`, `string`\> & { `dependencies`: [`ParametricSelector`<[`IState`](../interfaces/types.IState.md), `string`, `string`\>, `ParametricSelector`<[`IState`](../interfaces/types.IState.md), `string`, `string`\>] ; `resultFunc`: (`res1`: `string`, `res2`: `string`) => `string` ; `recomputations`: () => `number` ; `resetRecomputations`: () => `number`  } & { `cache`: `ICacheObject` ; `keySelector`: `ParametricKeySelector`<[`IState`](../interfaces/types.IState.md), `string`\> ; `clearCache`: () => `void` ; `getMatchingSelector`: (`state`: `S`, `props`: `P`, ...`args`: `any`[]) => `OutputParametricSelector`<`S`, `P`, `R`, `C`, `D`\> ; `removeMatchingSelector`: (`state`: `S`, `props`: `P`, ...`args`: `any`[]) => `void`  }
 
-Defined in: src/extensions/mod_management/selectors.ts:27
+#### Defined in
+
+../src/extensions/mod_management/selectors.ts:27
 
 ___
 
 ### lastActiveProfileForGame
 
-• `Const` **lastActiveProfileForGame**: *ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, string\> & { `dependencies`: [*ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, { [gameId: string]: *string*;  }\>, *ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, string\>] ; `recomputations`: () => *number* ; `resetRecomputations`: () => *number* ; `resultFunc`: (`res1`: { [gameId: string]: *string*;  }, `res2`: *string*) => *string*  } & { `cache`: ICacheObject ; `clearCache`: () => *void* ; `getMatchingSelector`: (`state`: [*IState*](../interfaces/types.istate.md), `props`: *string*, ...`args`: *any*[]) => *OutputParametricSelector*<[*IState*](../interfaces/types.istate.md), string, string, (`res1`: { [gameId: string]: *string*;  }, `res2`: *string*) => *string*, [*ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, { [gameId: string]: *string*;  }\>, *ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, string\>]\> ; `keySelector`: *ParametricKeySelector*<[*IState*](../interfaces/types.istate.md), string\> ; `removeMatchingSelector`: (`state`: [*IState*](../interfaces/types.istate.md), `props`: *string*, ...`args`: *any*[]) => *void*  }
+• **lastActiveProfileForGame**: `ParametricSelector`<[`IState`](../interfaces/types.IState.md), `string`, `string`\> & { `dependencies`: [`ParametricSelector`<[`IState`](../interfaces/types.IState.md), `string`, { [gameId: string]: `string`;  }\>, `ParametricSelector`<[`IState`](../interfaces/types.IState.md), `string`, `string`\>] ; `resultFunc`: (`res1`: { [gameId: string]: `string`;  }, `res2`: `string`) => `string` ; `recomputations`: () => `number` ; `resetRecomputations`: () => `number`  } & { `cache`: `ICacheObject` ; `keySelector`: `ParametricKeySelector`<[`IState`](../interfaces/types.IState.md), `string`\> ; `clearCache`: () => `void` ; `getMatchingSelector`: (`state`: `S`, `props`: `P`, ...`args`: `any`[]) => `OutputParametricSelector`<`S`, `P`, `R`, `C`, `D`\> ; `removeMatchingSelector`: (`state`: `S`, `props`: `P`, ...`args`: `any`[]) => `void`  }
 
-Defined in: src/extensions/profile_management/selectors.ts:38
+#### Defined in
+
+../src/extensions/profile_management/selectors.ts:38
 
 ___
 
 ### modPathsForGame
 
-• `Const` **modPathsForGame**: *OutputParametricSelector*<[*IState*](../interfaces/types.istate.md), string, { [typeId: string]: *string*;  }, (`res1`: { [gameId: string]: [*IDiscoveryResult*](../interfaces/types.idiscoveryresult.md);  }, `res2`: *string*) => { [typeId: string]: *string*;  }\>
+• **modPathsForGame**: `OutputParametricSelector`<[`IState`](../interfaces/types.IState.md), `string`, { [typeId: string]: `string`;  }, (`res1`: { [gameId: string]: [`IDiscoveryResult`](../interfaces/types.IDiscoveryResult.md);  }, `res2`: `string`) => { [typeId: string]: `string`;  }\>
 
-Defined in: src/extensions/mod_management/selectors.ts:74
+#### Defined in
+
+../src/extensions/mod_management/selectors.ts:74
 
 ___
 
 ### needToDeploy
 
-• `Const` **needToDeploy**: *OutputSelector*<any, boolean, (`res1`: INeedToDeployMap, `res2`: *string*) => *boolean*\>
+• **needToDeploy**: `OutputSelector`<`any`, `boolean`, (`res1`: `INeedToDeployMap`, `res2`: `string`) => `boolean`\>
 
-Defined in: src/extensions/mod_management/selectors.ts:57
+#### Defined in
+
+../src/extensions/mod_management/selectors.ts:57
 
 ___
 
 ### needToDeployForGame
 
-• `Const` **needToDeployForGame**: *ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, boolean\> & { `dependencies`: [*ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, INeedToDeployMap\>, *ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, string\>] ; `recomputations`: () => *number* ; `resetRecomputations`: () => *number* ; `resultFunc`: (`res1`: INeedToDeployMap, `res2`: *string*) => *boolean*  } & { `cache`: ICacheObject ; `clearCache`: () => *void* ; `getMatchingSelector`: (`state`: [*IState*](../interfaces/types.istate.md), `props`: *string*, ...`args`: *any*[]) => *OutputParametricSelector*<[*IState*](../interfaces/types.istate.md), string, boolean, (`res1`: INeedToDeployMap, `res2`: *string*) => *boolean*, [*ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, INeedToDeployMap\>, *ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, string\>]\> ; `keySelector`: *ParametricKeySelector*<[*IState*](../interfaces/types.istate.md), string\> ; `removeMatchingSelector`: (`state`: [*IState*](../interfaces/types.istate.md), `props`: *string*, ...`args`: *any*[]) => *void*  }
+• **needToDeployForGame**: `ParametricSelector`<[`IState`](../interfaces/types.IState.md), `string`, `boolean`\> & { `dependencies`: [`ParametricSelector`<[`IState`](../interfaces/types.IState.md), `string`, `INeedToDeployMap`\>, `ParametricSelector`<[`IState`](../interfaces/types.IState.md), `string`, `string`\>] ; `resultFunc`: (`res1`: `INeedToDeployMap`, `res2`: `string`) => `boolean` ; `recomputations`: () => `number` ; `resetRecomputations`: () => `number`  } & { `cache`: `ICacheObject` ; `keySelector`: `ParametricKeySelector`<[`IState`](../interfaces/types.IState.md), `string`\> ; `clearCache`: () => `void` ; `getMatchingSelector`: (`state`: `S`, `props`: `P`, ...`args`: `any`[]) => `OutputParametricSelector`<`S`, `P`, `R`, `C`, `D`\> ; `removeMatchingSelector`: (`state`: `S`, `props`: `P`, ...`args`: `any`[]) => `void`  }
 
-Defined in: src/extensions/mod_management/selectors.ts:62
+#### Defined in
+
+../src/extensions/mod_management/selectors.ts:62
 
 ___
 
 ### profileById
 
-• `Const` **profileById**: *ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, [*IProfile*](../interfaces/types.iprofile.md)\> & { `dependencies`: [*ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, { [profileId: string]: [*IProfile*](../interfaces/types.iprofile.md);  }\>, *ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, string\>] ; `recomputations`: () => *number* ; `resetRecomputations`: () => *number* ; `resultFunc`: (`res1`: { [profileId: string]: [*IProfile*](../interfaces/types.iprofile.md);  }, `res2`: *string*) => [*IProfile*](../interfaces/types.iprofile.md)  } & { `cache`: ICacheObject ; `clearCache`: () => *void* ; `getMatchingSelector`: (`state`: [*IState*](../interfaces/types.istate.md), `props`: *string*, ...`args`: *any*[]) => *OutputParametricSelector*<[*IState*](../interfaces/types.istate.md), string, [*IProfile*](../interfaces/types.iprofile.md), (`res1`: { [profileId: string]: [*IProfile*](../interfaces/types.iprofile.md);  }, `res2`: *string*) => [*IProfile*](../interfaces/types.iprofile.md), [*ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, { [profileId: string]: [*IProfile*](../interfaces/types.iprofile.md);  }\>, *ParametricSelector*<[*IState*](../interfaces/types.istate.md), string, string\>]\> ; `keySelector`: *ParametricKeySelector*<[*IState*](../interfaces/types.istate.md), string\> ; `removeMatchingSelector`: (`state`: [*IState*](../interfaces/types.istate.md), `props`: *string*, ...`args`: *any*[]) => *void*  }
+• **profileById**: `ParametricSelector`<[`IState`](../interfaces/types.IState.md), `string`, [`IProfile`](../interfaces/types.IProfile.md)\> & { `dependencies`: [`ParametricSelector`<[`IState`](../interfaces/types.IState.md), `string`, { [profileId: string]: [`IProfile`](../interfaces/types.IProfile.md);  }\>, `ParametricSelector`<[`IState`](../interfaces/types.IState.md), `string`, `string`\>] ; `resultFunc`: (`res1`: { [profileId: string]: [`IProfile`](../interfaces/types.IProfile.md);  }, `res2`: `string`) => [`IProfile`](../interfaces/types.IProfile.md) ; `recomputations`: () => `number` ; `resetRecomputations`: () => `number`  } & { `cache`: `ICacheObject` ; `keySelector`: `ParametricKeySelector`<[`IState`](../interfaces/types.IState.md), `string`\> ; `clearCache`: () => `void` ; `getMatchingSelector`: (`state`: `S`, `props`: `P`, ...`args`: `any`[]) => `OutputParametricSelector`<`S`, `P`, `R`, `C`, `D`\> ; `removeMatchingSelector`: (`state`: `S`, `props`: `P`, ...`args`: `any`[]) => `void`  }
 
-Defined in: src/extensions/profile_management/selectors.ts:32
+#### Defined in
+
+../src/extensions/profile_management/selectors.ts:32
 
 ## Functions
 
 ### activeGameId
 
-▸ `Const`**activeGameId**(`state`: *any*): *string*
+▸ `Const` **activeGameId**(`state`): `string`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`state` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `state` | `any` |
 
-**Returns:** *string*
+#### Returns
 
-Defined in: src/extensions/profile_management/selectors.ts:14
+`string`
+
+#### Defined in
+
+../src/extensions/profile_management/selectors.ts:14
 
 ___
 
 ### activeProfile
 
-▸ `Const`**activeProfile**(`state`: *any*): [*IProfile*](../interfaces/types.iprofile.md)
+▸ `Const` **activeProfile**(`state`): [`IProfile`](../interfaces/types.IProfile.md)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`state` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `state` | `any` |
 
-**Returns:** [*IProfile*](../interfaces/types.iprofile.md)
+#### Returns
 
-Defined in: src/extensions/profile_management/selectors.ts:27
+[`IProfile`](../interfaces/types.IProfile.md)
+
+#### Defined in
+
+../src/extensions/profile_management/selectors.ts:27
 
 ___
 
 ### currentGameDiscovery
 
-▸ **currentGameDiscovery**(`state`: *any*): [*IDiscoveryResult*](../interfaces/types.idiscoveryresult.md)
+▸ **currentGameDiscovery**(`state`): [`IDiscoveryResult`](../interfaces/types.IDiscoveryResult.md)
 
 return the discovery information about a game
 
-**`export`** 
+**`export`**
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`state` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `state` | `any` |
 
-**Returns:** [*IDiscoveryResult*](../interfaces/types.idiscoveryresult.md)
+#### Returns
 
-Defined in: src/extensions/gamemode_management/selectors.ts:37
+[`IDiscoveryResult`](../interfaces/types.IDiscoveryResult.md)
+
+#### Defined in
+
+../src/extensions/gamemode_management/selectors.ts:37
 
 ___
 
 ### gameName
 
-▸ **gameName**(`state`: *any*, `gameId`: *string*): *string*
+▸ **gameName**(`state`, `gameId`): `string`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`state` | *any* |
-`gameId` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `state` | `any` |
+| `gameId` | `string` |
 
-**Returns:** *string*
+#### Returns
 
-Defined in: src/extensions/gamemode_management/selectors.ts:48
+`string`
+
+#### Defined in
+
+../src/extensions/gamemode_management/selectors.ts:48
 
 ___
 
 ### knownGames
 
-▸ **knownGames**(`state`: *any*): [*IGameStored*](../interfaces/types.igamestored.md)[]
+▸ **knownGames**(`state`): [`IGameStored`](../interfaces/types.IGameStored.md)[]
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`state` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `state` | `any` |
 
-**Returns:** [*IGameStored*](../interfaces/types.igamestored.md)[]
+#### Returns
 
-Defined in: src/extensions/gamemode_management/selectors.ts:13
+[`IGameStored`](../interfaces/types.IGameStored.md)[]
+
+#### Defined in
+
+../src/extensions/gamemode_management/selectors.ts:13

@@ -8,12 +8,14 @@
 
 ### Properties
 
-- [channel](types.isettingsupdate.md#channel)
+- [channel](types.ISettingsUpdate.md#channel)
 
 ## Properties
 
 ### channel
 
-• **channel**: *none* \| *stable* \| *beta*
+• **channel**: ``"none"`` \| ``"stable"`` \| ``"beta"``
 
-Defined in: src/types/IState.ts:229
+#### Defined in
+
+../src/types/IState.ts:231

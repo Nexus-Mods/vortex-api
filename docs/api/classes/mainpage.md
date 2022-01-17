@@ -4,162 +4,190 @@
 
 ## Hierarchy
 
-* [*ComponentEx*](componentex.md)<IProps, {}\>
+- [`ComponentEx`](ComponentEx.md)<`IProps`, {}\>
 
-  ↳ **MainPage**
+  ↳ **`MainPage`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](mainpage.md#constructor)
+- [constructor](MainPage.md#constructor)
 
 ### Properties
 
-- [context](mainpage.md#context)
-- [nextState](mainpage.md#nextstate)
-- [props](mainpage.md#props)
-- [refs](mainpage.md#refs)
-- [state](mainpage.md#state)
-- [Body](mainpage.md#body)
-- [Header](mainpage.md#header)
-- [contextType](mainpage.md#contexttype)
-- [contextTypes](mainpage.md#contexttypes)
+- [context](MainPage.md#context)
+- [nextState](MainPage.md#nextstate)
+- [props](MainPage.md#props)
+- [refs](MainPage.md#refs)
+- [state](MainPage.md#state)
+- [Body](MainPage.md#body)
+- [Header](MainPage.md#header)
+- [contextType](MainPage.md#contexttype)
+- [contextTypes](MainPage.md#contexttypes)
 
 ### Methods
 
-- [UNSAFE\_componentWillMount](mainpage.md#unsafe_componentwillmount)
-- [UNSAFE\_componentWillReceiveProps](mainpage.md#unsafe_componentwillreceiveprops)
-- [UNSAFE\_componentWillUpdate](mainpage.md#unsafe_componentwillupdate)
-- [componentDidCatch](mainpage.md#componentdidcatch)
-- [componentDidMount](mainpage.md#componentdidmount)
-- [componentDidUpdate](mainpage.md#componentdidupdate)
-- [componentWillMount](mainpage.md#componentwillmount)
-- [componentWillReceiveProps](mainpage.md#componentwillreceiveprops)
-- [componentWillUnmount](mainpage.md#componentwillunmount)
-- [componentWillUpdate](mainpage.md#componentwillupdate)
-- [forceUpdate](mainpage.md#forceupdate)
-- [getSnapshotBeforeUpdate](mainpage.md#getsnapshotbeforeupdate)
-- [initState](mainpage.md#initstate)
-- [render](mainpage.md#render)
-- [setState](mainpage.md#setstate)
-- [shouldComponentUpdate](mainpage.md#shouldcomponentupdate)
+- [UNSAFE\_componentWillMount](MainPage.md#unsafe_componentwillmount)
+- [UNSAFE\_componentWillReceiveProps](MainPage.md#unsafe_componentwillreceiveprops)
+- [UNSAFE\_componentWillUpdate](MainPage.md#unsafe_componentwillupdate)
+- [componentDidCatch](MainPage.md#componentdidcatch)
+- [componentDidMount](MainPage.md#componentdidmount)
+- [componentDidUpdate](MainPage.md#componentdidupdate)
+- [componentWillMount](MainPage.md#componentwillmount)
+- [componentWillReceiveProps](MainPage.md#componentwillreceiveprops)
+- [componentWillUnmount](MainPage.md#componentwillunmount)
+- [componentWillUpdate](MainPage.md#componentwillupdate)
+- [forceUpdate](MainPage.md#forceupdate)
+- [getSnapshotBeforeUpdate](MainPage.md#getsnapshotbeforeupdate)
+- [initState](MainPage.md#initstate)
+- [render](MainPage.md#render)
+- [setState](MainPage.md#setstate)
+- [shouldComponentUpdate](MainPage.md#shouldcomponentupdate)
 
 ## Constructors
 
 ### constructor
 
-\+ **new MainPage**(`props`: IBaseProps & *Partial*<WithTranslation\> \| *Readonly*<IBaseProps & *Partial*<WithTranslation\>\>): [*MainPage*](mainpage.md)
+• **new MainPage**(`props`)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`props` | IBaseProps & *Partial*<WithTranslation\> \| *Readonly*<IBaseProps & *Partial*<WithTranslation\>\> |
+| Name | Type |
+| :------ | :------ |
+| `props` | `IBaseProps` & `Partial`<`WithTranslation`<``"translation"``\>\> \| `Readonly`<`IBaseProps` & `Partial`<`WithTranslation`<``"translation"``\>\>\> |
 
-**Returns:** [*MainPage*](mainpage.md)
+#### Inherited from
 
-Inherited from: [ComponentEx](componentex.md)
+[ComponentEx](ComponentEx.md).[constructor](ComponentEx.md#constructor)
 
-Defined in: node_modules/@types/react/index.d.ts:472
+#### Defined in
 
-\+ **new MainPage**(`props`: IBaseProps & *Partial*<WithTranslation\>, `context`: *any*): [*MainPage*](mainpage.md)
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:474
 
-**`deprecated`** 
+• **new MainPage**(`props`, `context`)
+
+**`deprecated`**
 
 **`see`** https://reactjs.org/docs/legacy-context.html
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`props` | IBaseProps & *Partial*<WithTranslation\> |
-`context` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `props` | `IBaseProps` & `Partial`<`WithTranslation`<``"translation"``\>\> |
+| `context` | `any` |
 
-**Returns:** [*MainPage*](mainpage.md)
+#### Inherited from
 
-Inherited from: [ComponentEx](componentex.md)
+[ComponentEx](ComponentEx.md).[constructor](ComponentEx.md#constructor)
 
-Defined in: node_modules/@types/react/index.d.ts:474
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:479
 
 ## Properties
 
 ### context
 
-• **context**: [*IComponentContext*](../interfaces/types.icomponentcontext.md)
+• **context**: [`IComponentContext`](../interfaces/types.IComponentContext.md)
 
-Inherited from: [ComponentEx](componentex.md).[context](componentex.md#context)
+#### Inherited from
 
-Defined in: src/util/ComponentEx.ts:132
+[ComponentEx](ComponentEx.md).[context](ComponentEx.md#context)
+
+#### Defined in
+
+../src/util/ComponentEx.ts:133
 
 ___
 
 ### nextState
 
-• **nextState**: *object*
+• **nextState**: `Object`
 
-#### Type declaration:
+#### Inherited from
 
-Inherited from: [ComponentEx](componentex.md).[nextState](componentex.md#nextstate)
+[ComponentEx](ComponentEx.md).[nextState](ComponentEx.md#nextstate)
 
-Defined in: src/util/ComponentEx.ts:134
+#### Defined in
+
+../src/util/ComponentEx.ts:135
 
 ___
 
 ### props
 
-• `Readonly` **props**: *Readonly*<IBaseProps & *Partial*<WithTranslation\>\> & *Readonly*<{ `children?`: ReactNode  }\>
+• `Readonly` **props**: `Readonly`<`IBaseProps` & `Partial`<`WithTranslation`<``"translation"``\>\>\> & `Readonly`<{ `children?`: `ReactNode`  }\>
 
-Inherited from: [ComponentEx](componentex.md).[props](componentex.md#props)
+#### Inherited from
 
-Defined in: node_modules/@types/react/index.d.ts:497
+[ComponentEx](ComponentEx.md).[props](ComponentEx.md#props)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:497
 
 ___
 
 ### refs
 
-• **refs**: *object*
+• **refs**: `Object`
 
-**`deprecated`** 
+**`deprecated`**
 https://reactjs.org/docs/refs-and-the-dom.html#legacy-api-string-refs
 
-#### Type declaration:
+#### Index signature
 
-Inherited from: [ComponentEx](componentex.md).[refs](componentex.md#refs)
+▪ [key: `string`]: `ReactInstance`
 
-Defined in: node_modules/@types/react/index.d.ts:503
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[refs](ComponentEx.md#refs)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:503
 
 ___
 
 ### state
 
-• **state**: *Readonly*<{}\>
+• **state**: `Readonly`<{}\>
 
-Inherited from: [ComponentEx](componentex.md).[state](componentex.md#state)
+#### Inherited from
 
-Defined in: node_modules/@types/react/index.d.ts:498
+[ComponentEx](ComponentEx.md).[state](ComponentEx.md#state)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:498
 
 ___
 
 ### Body
 
-▪ `Static` **Body**: *typeof* MainPageBody
+▪ `Static` **Body**: typeof `MainPageBody` = `Body`
 
-Defined in: src/views/MainPage.tsx:17
+#### Defined in
+
+../src/views/MainPage.tsx:17
 
 ___
 
 ### Header
 
-▪ `Static` **Header**: *any*
+▪ `Static` **Header**: `any` = `Header`
 
-Defined in: src/views/MainPage.tsx:18
+#### Defined in
+
+../src/views/MainPage.tsx:18
 
 ___
 
 ### contextType
 
-▪ `Optional` `Static` **contextType**: *Context*<any\>
+▪ `Static` `Optional` **contextType**: `Context`<`any`\>
 
 If set, `this.context` will be set at runtime to the current value of the given Context.
 
@@ -180,25 +208,33 @@ class Foo extends React.Component {
 
 **`see`** https://reactjs.org/docs/context.html#classcontexttype
 
-Inherited from: [ComponentEx](componentex.md).[contextType](componentex.md#contexttype)
+#### Inherited from
 
-Defined in: node_modules/@types/react/index.d.ts:454
+[ComponentEx](ComponentEx.md).[contextType](ComponentEx.md#contexttype)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:454
 
 ___
 
 ### contextTypes
 
-▪ `Static` **contextTypes**: *ValidationMap*<any\>
+▪ `Static` **contextTypes**: `ValidationMap`<`any`\>
 
-Inherited from: [ComponentEx](componentex.md).[contextTypes](componentex.md#contexttypes)
+#### Inherited from
 
-Defined in: src/util/ComponentEx.ts:126
+[ComponentEx](ComponentEx.md).[contextTypes](ComponentEx.md#contexttypes)
+
+#### Defined in
+
+../src/util/ComponentEx.ts:127
 
 ## Methods
 
 ### UNSAFE\_componentWillMount
 
-▸ `Optional`**UNSAFE_componentWillMount**(): *void*
+▸ `Optional` **UNSAFE_componentWillMount**(): `void`
 
 Called immediately before mounting occurs, and before `Component#render`.
 Avoid introducing any side-effects or subscriptions in this method.
@@ -214,17 +250,23 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-**Returns:** *void*
+#### Returns
 
-Inherited from: [ComponentEx](componentex.md)
+`void`
 
-Defined in: node_modules/@types/react/index.d.ts:708
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[UNSAFE_componentWillMount](ComponentEx.md#unsafe_componentwillmount)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:708
 
 ___
 
 ### UNSAFE\_componentWillReceiveProps
 
-▸ `Optional`**UNSAFE_componentWillReceiveProps**(`nextProps`: *Readonly*<IBaseProps & *Partial*<WithTranslation\>\>, `nextContext`: *any*): *void*
+▸ `Optional` **UNSAFE_componentWillReceiveProps**(`nextProps`, `nextContext`): `void`
 
 Called when the component may be receiving new props.
 React may call this even if props have not changed, so be sure to compare new and existing
@@ -243,24 +285,30 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<IBaseProps & *Partial*<WithTranslation\>\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<`IBaseProps` & `Partial`<`WithTranslation`<``"translation"``\>\>\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Inherited from: [ComponentEx](componentex.md)
+`void`
 
-Defined in: node_modules/@types/react/index.d.ts:740
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[UNSAFE_componentWillReceiveProps](ComponentEx.md#unsafe_componentwillreceiveprops)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:740
 
 ___
 
 ### UNSAFE\_componentWillUpdate
 
-▸ `Optional`**UNSAFE_componentWillUpdate**(`nextProps`: *Readonly*<IBaseProps & *Partial*<WithTranslation\>\>, `nextState`: *Readonly*<{}\>, `nextContext`: *any*): *void*
+▸ `Optional` **UNSAFE_componentWillUpdate**(`nextProps`, `nextState`, `nextContext`): `void`
 
 Called immediately before rendering when new props or state is received. Not called for the initial render.
 
@@ -277,85 +325,109 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<IBaseProps & *Partial*<WithTranslation\>\> |
-`nextState` | *Readonly*<{}\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<`IBaseProps` & `Partial`<`WithTranslation`<``"translation"``\>\>\> |
+| `nextState` | `Readonly`<{}\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Inherited from: [ComponentEx](componentex.md)
+`void`
 
-Defined in: node_modules/@types/react/index.d.ts:768
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[UNSAFE_componentWillUpdate](ComponentEx.md#unsafe_componentwillupdate)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:768
 
 ___
 
 ### componentDidCatch
 
-▸ `Optional`**componentDidCatch**(`error`: Error, `errorInfo`: ErrorInfo): *void*
+▸ `Optional` **componentDidCatch**(`error`, `errorInfo`): `void`
 
 Catches exceptions generated in descendant components. Unhandled exceptions will cause
 the entire component tree to unmount.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`error` | Error |
-`errorInfo` | ErrorInfo |
+| Name | Type |
+| :------ | :------ |
+| `error` | `Error` |
+| `errorInfo` | `ErrorInfo` |
 
-**Returns:** *void*
+#### Returns
 
-Inherited from: [ComponentEx](componentex.md)
+`void`
 
-Defined in: node_modules/@types/react/index.d.ts:637
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[componentDidCatch](ComponentEx.md#componentdidcatch)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:637
 
 ___
 
 ### componentDidMount
 
-▸ `Optional`**componentDidMount**(): *void*
+▸ `Optional` **componentDidMount**(): `void`
 
 Called immediately after a component is mounted. Setting state here will trigger re-rendering.
 
-**Returns:** *void*
+#### Returns
 
-Inherited from: [ComponentEx](componentex.md)
+`void`
 
-Defined in: node_modules/@types/react/index.d.ts:616
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[componentDidMount](ComponentEx.md#componentdidmount)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:616
 
 ___
 
 ### componentDidUpdate
 
-▸ `Optional`**componentDidUpdate**(`prevProps`: *Readonly*<IBaseProps & *Partial*<WithTranslation\>\>, `prevState`: *Readonly*<{}\>, `snapshot?`: *any*): *void*
+▸ `Optional` **componentDidUpdate**(`prevProps`, `prevState`, `snapshot?`): `void`
 
 Called immediately after updating occurs. Not called for the initial render.
 
 The snapshot is only present if getSnapshotBeforeUpdate is present and returns non-null.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`prevProps` | *Readonly*<IBaseProps & *Partial*<WithTranslation\>\> |
-`prevState` | *Readonly*<{}\> |
-`snapshot?` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `prevProps` | `Readonly`<`IBaseProps` & `Partial`<`WithTranslation`<``"translation"``\>\>\> |
+| `prevState` | `Readonly`<{}\> |
+| `snapshot?` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Inherited from: [ComponentEx](componentex.md)
+`void`
 
-Defined in: node_modules/@types/react/index.d.ts:679
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[componentDidUpdate](ComponentEx.md#componentdidupdate)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:679
 
 ___
 
 ### componentWillMount
 
-▸ `Optional`**componentWillMount**(): *void*
+▸ `Optional` **componentWillMount**(): `void`
 
 Called immediately before mounting occurs, and before `Component#render`.
 Avoid introducing any side-effects or subscriptions in this method.
@@ -369,17 +441,23 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-**Returns:** *void*
+#### Returns
 
-Inherited from: [ComponentEx](componentex.md)
+`void`
 
-Defined in: node_modules/@types/react/index.d.ts:694
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[componentWillMount](ComponentEx.md#componentwillmount)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:694
 
 ___
 
 ### componentWillReceiveProps
 
-▸ `Optional`**componentWillReceiveProps**(`nextProps`: *Readonly*<IBaseProps & *Partial*<WithTranslation\>\>, `nextContext`: *any*): *void*
+▸ `Optional` **componentWillReceiveProps**(`nextProps`, `nextContext`): `void`
 
 Called when the component may be receiving new props.
 React may call this even if props have not changed, so be sure to compare new and existing
@@ -396,39 +474,51 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<IBaseProps & *Partial*<WithTranslation\>\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<`IBaseProps` & `Partial`<`WithTranslation`<``"translation"``\>\>\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Inherited from: [ComponentEx](componentex.md)
+`void`
 
-Defined in: node_modules/@types/react/index.d.ts:723
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[componentWillReceiveProps](ComponentEx.md#componentwillreceiveprops)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:723
 
 ___
 
 ### componentWillUnmount
 
-▸ `Optional`**componentWillUnmount**(): *void*
+▸ `Optional` **componentWillUnmount**(): `void`
 
 Called immediately before a component is destroyed. Perform any necessary cleanup in this method, such as
 cancelled network requests, or cleaning up any DOM elements created in `componentDidMount`.
 
-**Returns:** *void*
+#### Returns
 
-Inherited from: [ComponentEx](componentex.md)
+`void`
 
-Defined in: node_modules/@types/react/index.d.ts:632
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[componentWillUnmount](ComponentEx.md#componentwillunmount)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:632
 
 ___
 
 ### componentWillUpdate
 
-▸ `Optional`**componentWillUpdate**(`nextProps`: *Readonly*<IBaseProps & *Partial*<WithTranslation\>\>, `nextState`: *Readonly*<{}\>, `nextContext`: *any*): *void*
+▸ `Optional` **componentWillUpdate**(`nextProps`, `nextState`, `nextContext`): `void`
 
 Called immediately before rendering when new props or state is received. Not called for the initial render.
 
@@ -443,43 +533,55 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<IBaseProps & *Partial*<WithTranslation\>\> |
-`nextState` | *Readonly*<{}\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<`IBaseProps` & `Partial`<`WithTranslation`<``"translation"``\>\>\> |
+| `nextState` | `Readonly`<{}\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Inherited from: [ComponentEx](componentex.md)
+`void`
 
-Defined in: node_modules/@types/react/index.d.ts:753
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[componentWillUpdate](ComponentEx.md#componentwillupdate)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:753
 
 ___
 
 ### forceUpdate
 
-▸ **forceUpdate**(`callback?`: () => *void*): *void*
+▸ **forceUpdate**(`callback?`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`callback?` | () => *void* |
+| Name | Type |
+| :------ | :------ |
+| `callback?` | () => `void` |
 
-**Returns:** *void*
+#### Returns
 
-Inherited from: [ComponentEx](componentex.md)
+`void`
 
-Defined in: node_modules/@types/react/index.d.ts:489
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[forceUpdate](ComponentEx.md#forceupdate)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:489
 
 ___
 
 ### getSnapshotBeforeUpdate
 
-▸ `Optional`**getSnapshotBeforeUpdate**(`prevProps`: *Readonly*<IBaseProps & *Partial*<WithTranslation\>\>, `prevState`: *Readonly*<{}\>): *any*
+▸ `Optional` **getSnapshotBeforeUpdate**(`prevProps`, `prevState`): `any`
 
 Runs before React applies the result of `render` to the document, and
 returns an object to be given to componentDidUpdate. Useful for saving
@@ -488,80 +590,104 @@ things such as scroll position before `render` causes changes to it.
 Note: the presence of getSnapshotBeforeUpdate prevents any of the deprecated
 lifecycle events from running.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`prevProps` | *Readonly*<IBaseProps & *Partial*<WithTranslation\>\> |
-`prevState` | *Readonly*<{}\> |
+| Name | Type |
+| :------ | :------ |
+| `prevProps` | `Readonly`<`IBaseProps` & `Partial`<`WithTranslation`<``"translation"``\>\>\> |
+| `prevState` | `Readonly`<{}\> |
 
-**Returns:** *any*
+#### Returns
 
-Inherited from: [ComponentEx](componentex.md)
+`any`
 
-Defined in: node_modules/@types/react/index.d.ts:673
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[getSnapshotBeforeUpdate](ComponentEx.md#getsnapshotbeforeupdate)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:673
 
 ___
 
 ### initState
 
-▸ `Protected`**initState**(`value`: {}, `delayed?`: *boolean*): *void*
+▸ `Protected` **initState**(`value`, `delayed?`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Default value |
-:------ | :------ | :------ |
-`value` | *object* | - |
-`delayed` | *boolean* | false |
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value` | `Object` | `undefined` |
+| `delayed` | `boolean` | `false` |
 
-**Returns:** *void*
+#### Returns
 
-Inherited from: [ComponentEx](componentex.md)
+`void`
 
-Defined in: src/util/ComponentEx.ts:136
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[initState](ComponentEx.md#initstate)
+
+#### Defined in
+
+../src/util/ComponentEx.ts:137
 
 ___
 
 ### render
 
-▸ **render**(): *Element*
+▸ **render**(): `Element`
 
-**Returns:** *Element*
+#### Returns
 
-Overrides: [ComponentEx](componentex.md)
+`Element`
 
-Defined in: src/views/MainPage.tsx:20
+#### Overrides
+
+[ComponentEx](ComponentEx.md).[render](ComponentEx.md#render)
+
+#### Defined in
+
+../src/views/MainPage.tsx:20
 
 ___
 
 ### setState
 
-▸ **setState**<K\>(`state`: {} \| (`prevState`: *Readonly*<{}\>, `props`: *Readonly*<IBaseProps & *Partial*<WithTranslation\>\>) => {} \| *Pick*<{}, K\> \| *Pick*<{}, K\>, `callback?`: () => *void*): *void*
+▸ **setState**<`K`\>(`state`, `callback?`): `void`
 
-#### Type parameters:
+#### Type parameters
 
-Name | Type |
-:------ | :------ |
-`K` | *never* |
+| Name | Type |
+| :------ | :------ |
+| `K` | extends `never` |
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`state` | {} \| (`prevState`: *Readonly*<{}\>, `props`: *Readonly*<IBaseProps & *Partial*<WithTranslation\>\>) => {} \| *Pick*<{}, K\> \| *Pick*<{}, K\> |
-`callback?` | () => *void* |
+| Name | Type |
+| :------ | :------ |
+| `state` | {} \| (`prevState`: `Readonly`<{}\>, `props`: `Readonly`<`IBaseProps` & `Partial`<`WithTranslation`<``"translation"``\>\>\>) => {} \| `Pick`<{}, `K`\> \| `Pick`<{}, `K`\> |
+| `callback?` | () => `void` |
 
-**Returns:** *void*
+#### Returns
 
-Inherited from: [ComponentEx](componentex.md)
+`void`
 
-Defined in: node_modules/@types/react/index.d.ts:484
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[setState](ComponentEx.md#setstate)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:484
 
 ___
 
 ### shouldComponentUpdate
 
-▸ `Optional`**shouldComponentUpdate**(`nextProps`: *Readonly*<IBaseProps & *Partial*<WithTranslation\>\>, `nextState`: *Readonly*<{}\>, `nextContext`: *any*): *boolean*
+▸ `Optional` **shouldComponentUpdate**(`nextProps`, `nextState`, `nextContext`): `boolean`
 
 Called to determine whether the change in props and state should trigger a re-render.
 
@@ -572,16 +698,22 @@ props or states have changed.
 If false is returned, `Component#render`, `componentWillUpdate`
 and `componentDidUpdate` will not be called.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<IBaseProps & *Partial*<WithTranslation\>\> |
-`nextState` | *Readonly*<{}\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<`IBaseProps` & `Partial`<`WithTranslation`<``"translation"``\>\>\> |
+| `nextState` | `Readonly`<{}\> |
+| `nextContext` | `any` |
 
-**Returns:** *boolean*
+#### Returns
 
-Inherited from: [ComponentEx](componentex.md)
+`boolean`
 
-Defined in: node_modules/@types/react/index.d.ts:627
+#### Inherited from
+
+[ComponentEx](ComponentEx.md).[shouldComponentUpdate](ComponentEx.md#shouldcomponentupdate)
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:627

@@ -8,38 +8,43 @@
 
 ### Properties
 
-- [icon](types.itodobutton.md#icon)
-- [onClick](types.itodobutton.md#onclick)
-- [text](types.itodobutton.md#text)
+- [icon](types.IToDoButton.md#icon)
+- [text](types.IToDoButton.md#text)
+
+### Methods
+
+- [onClick](types.IToDoButton.md#onclick)
 
 ## Properties
 
 ### icon
 
-• **icon**: *string*
+• **icon**: `string`
 
-Defined in: src/types/IExtensionContext.ts:150
+#### Defined in
 
-___
-
-### onClick
-
-• **onClick**: () => *void*
-
-#### Type declaration:
-
-▸ (): *void*
-
-**Returns:** *void*
-
-Defined in: src/types/IExtensionContext.ts:151
-
-Defined in: src/types/IExtensionContext.ts:151
+../src/types/IExtensionContext.ts:164
 
 ___
 
 ### text
 
-• **text**: *string*
+• **text**: `string`
 
-Defined in: src/types/IExtensionContext.ts:149
+#### Defined in
+
+../src/types/IExtensionContext.ts:163
+
+## Methods
+
+### onClick
+
+▸ **onClick**(): `void`
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:165

@@ -8,14 +8,18 @@
 
 ### Properties
 
-- [gameInfo](types.istategamemode.md#gameinfo)
+- [gameInfo](types.IStateGameMode.md#gameinfo)
 
 ## Properties
 
 ### gameInfo
 
-• **gameInfo**: *object*
+• **gameInfo**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IState.ts:269
+▪ [gameId: `string`]: { [key: string]: [`IGameInfoEntry`](types.IGameInfoEntry.md);  }
+
+#### Defined in
+
+../src/types/IState.ts:273

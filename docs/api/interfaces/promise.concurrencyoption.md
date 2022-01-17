@@ -1,19 +1,21 @@
-[vortex_devel](../README.md) / [Exports](../modules.md) / [Promise](../modules/promise.md) / ConcurrencyOption
+[vortex_devel](../README.md) / [Exports](../modules.md) / [Promise](../modules/Promise.md) / ConcurrencyOption
 
 # Interface: ConcurrencyOption
 
-[Promise](../modules/promise.md).ConcurrencyOption
+[Promise](../modules/Promise.md).ConcurrencyOption
 
 ## Table of contents
 
 ### Properties
 
-- [concurrency](promise.concurrencyoption.md#concurrency)
+- [concurrency](Promise.ConcurrencyOption.md#concurrency)
 
 ## Properties
 
 ### concurrency
 
-• **concurrency**: *number*
+• **concurrency**: `number`
 
-Defined in: node_modules/@types/bluebird/index.d.ts:955
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/bluebird/index.d.ts:955

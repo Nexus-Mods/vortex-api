@@ -8,48 +8,58 @@
 
 ### Properties
 
-- [deploy](types.isettingsautomation.md#deploy)
-- [enable](types.isettingsautomation.md#enable)
-- [install](types.isettingsautomation.md#install)
-- [minimized](types.isettingsautomation.md#minimized)
-- [start](types.isettingsautomation.md#start)
+- [deploy](types.ISettingsAutomation.md#deploy)
+- [enable](types.ISettingsAutomation.md#enable)
+- [install](types.ISettingsAutomation.md#install)
+- [minimized](types.ISettingsAutomation.md#minimized)
+- [start](types.ISettingsAutomation.md#start)
 
 ## Properties
 
 ### deploy
 
-• **deploy**: *boolean*
+• **deploy**: `boolean`
 
-Defined in: src/types/IState.ts:179
+#### Defined in
+
+../src/types/IState.ts:181
 
 ___
 
 ### enable
 
-• **enable**: *boolean*
+• **enable**: `boolean`
 
-Defined in: src/types/IState.ts:181
+#### Defined in
+
+../src/types/IState.ts:183
 
 ___
 
 ### install
 
-• **install**: *boolean*
+• **install**: `boolean`
 
-Defined in: src/types/IState.ts:180
+#### Defined in
+
+../src/types/IState.ts:182
 
 ___
 
 ### minimized
 
-• **minimized**: *boolean*
+• **minimized**: `boolean`
 
-Defined in: src/types/IState.ts:183
+#### Defined in
+
+../src/types/IState.ts:185
 
 ___
 
 ### start
 
-• **start**: *boolean*
+• **start**: `boolean`
 
-Defined in: src/types/IState.ts:182
+#### Defined in
+
+../src/types/IState.ts:184

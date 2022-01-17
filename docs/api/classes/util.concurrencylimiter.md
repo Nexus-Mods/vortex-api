@@ -10,182 +10,206 @@ helper class to limit concurrency with asynchronous functions.
 
 ### Constructors
 
-- [constructor](util.concurrencylimiter.md#constructor)
+- [constructor](util.ConcurrencyLimiter.md#constructor)
 
 ### Properties
 
-- [mEndOfQueue](util.concurrencylimiter.md#mendofqueue)
-- [mLimit](util.concurrencylimiter.md#mlimit)
-- [mNext](util.concurrencylimiter.md#mnext)
-- [mRepeatTest](util.concurrencylimiter.md#mrepeattest)
+- [mEndOfQueue](util.ConcurrencyLimiter.md#mendofqueue)
+- [mLimit](util.ConcurrencyLimiter.md#mlimit)
+- [mNext](util.ConcurrencyLimiter.md#mnext)
+- [mRepeatTest](util.ConcurrencyLimiter.md#mrepeattest)
 
 ### Methods
 
-- [do](util.concurrencylimiter.md#do)
-- [doImpl](util.concurrencylimiter.md#doimpl)
-- [enqueue](util.concurrencylimiter.md#enqueue)
-- [process](util.concurrencylimiter.md#process)
+- [do](util.ConcurrencyLimiter.md#do)
+- [doImpl](util.ConcurrencyLimiter.md#doimpl)
+- [enqueue](util.ConcurrencyLimiter.md#enqueue)
+- [process](util.ConcurrencyLimiter.md#process)
 
 ## Constructors
 
 ### constructor
 
-\+ **new ConcurrencyLimiter**(`limit`: *number*, `repeatTest?`: (`err`: Error) => *boolean*): [*ConcurrencyLimiter*](util.concurrencylimiter.md)
+• **new ConcurrencyLimiter**(`limit`, `repeatTest?`)
 
 Constructor
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`limit` | *number* | number of operations enqueued with do() that will happen concurrently   |
-`repeatTest?` | (`err`: Error) => *boolean* | if set, this function is called when an error happens and it can                   decide if the operation should be retried.                   This is purely a convenience feature but usually if you want to limit                   concurrency it's because you're worried that some resource will run out                   and it's not usually possible to know in advance how many operations                   exactly can happen in parallel so you will usually still want to                   handle errors that indicate the resource running out separately    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `limit` | `number` | number of operations enqueued with do() that will happen concurrently |
+| `repeatTest?` | (`err`: `Error`) => `boolean` | if set, this function is called when an error happens and it can                   decide if the operation should be retried.                   This is purely a convenience feature but usually if you want to limit                   concurrency it's because you're worried that some resource will run out                   and it's not usually possible to know in advance how many operations                   exactly can happen in parallel so you will usually still want to                   handle errors that indicate the resource running out separately |
 
-**Returns:** [*ConcurrencyLimiter*](util.concurrencylimiter.md)
+#### Defined in
 
-Defined in: src/util/ConcurrencyLimiter.ts:12
+../src/util/ConcurrencyLimiter.ts:25
 
 ## Properties
 
 ### mEndOfQueue
 
-• `Private` **mEndOfQueue**: *Promise*<void\>
+• `Private` **mEndOfQueue**: `Promise`<`void`\>
 
-Defined in: src/util/ConcurrencyLimiter.ts:11
+#### Defined in
+
+../src/util/ConcurrencyLimiter.ts:11
 
 ___
 
 ### mLimit
 
-• `Private` **mLimit**: *number*
+• `Private` **mLimit**: `number`
 
-Defined in: src/util/ConcurrencyLimiter.ts:9
+#### Defined in
+
+../src/util/ConcurrencyLimiter.ts:9
 
 ___
 
 ### mNext
 
-• `Private` **mNext**: () => *any*
+• `Private` **mNext**: () => `any`
 
-#### Type declaration:
+#### Type declaration
 
-▸ (): *any*
+▸ (): `any`
 
-**Returns:** *any*
+##### Returns
 
-Defined in: src/util/ConcurrencyLimiter.ts:10
+`any`
 
-Defined in: src/util/ConcurrencyLimiter.ts:10
+#### Defined in
+
+../src/util/ConcurrencyLimiter.ts:10
 
 ___
 
 ### mRepeatTest
 
-• `Private` **mRepeatTest**: (`err`: Error) => *boolean*
+• `Private` **mRepeatTest**: (`err`: `Error`) => `boolean`
 
-#### Type declaration:
+#### Type declaration
 
-▸ (`err`: Error): *boolean*
+▸ (`err`): `boolean`
 
-#### Parameters:
+##### Parameters
 
-Name | Type |
-:------ | :------ |
-`err` | Error |
+| Name | Type |
+| :------ | :------ |
+| `err` | `Error` |
 
-**Returns:** *boolean*
+##### Returns
 
-Defined in: src/util/ConcurrencyLimiter.ts:12
+`boolean`
 
-Defined in: src/util/ConcurrencyLimiter.ts:12
+#### Defined in
+
+../src/util/ConcurrencyLimiter.ts:12
 
 ## Methods
 
 ### do
 
-▸ **do**<T\>(`cb`: () => *Promise*<T\>): *Promise*<T\>
+▸ **do**<`T`\>(`cb`): `Promise`<`T`\>
 
-#### Type parameters:
+#### Type parameters
 
-Name |
-:------ |
-`T` |
+| Name |
+| :------ |
+| `T` |
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`cb` | () => *Promise*<T\> |
+| Name | Type |
+| :------ | :------ |
+| `cb` | () => `PromiseLike`<`T`\> |
 
-**Returns:** *Promise*<T\>
+#### Returns
 
-Defined in: src/util/ConcurrencyLimiter.ts:31
+`Promise`<`T`\>
+
+#### Defined in
+
+../src/util/ConcurrencyLimiter.ts:31
 
 ___
 
 ### doImpl
 
-▸ `Private`**doImpl**<T\>(`cb`: () => *Promise*<T\>, `tries`: *number*): *Promise*<T\>
+▸ `Private` **doImpl**<`T`\>(`cb`, `tries`): `Promise`<`T`\>
 
-#### Type parameters:
+#### Type parameters
 
-Name |
-:------ |
-`T` |
+| Name |
+| :------ |
+| `T` |
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`cb` | () => *Promise*<T\> |
-`tries` | *number* |
+| Name | Type |
+| :------ | :------ |
+| `cb` | () => `PromiseLike`<`T`\> |
+| `tries` | `number` |
 
-**Returns:** *Promise*<T\>
+#### Returns
 
-Defined in: src/util/ConcurrencyLimiter.ts:35
+`Promise`<`T`\>
+
+#### Defined in
+
+../src/util/ConcurrencyLimiter.ts:35
 
 ___
 
 ### enqueue
 
-▸ `Private`**enqueue**<T\>(`cb`: () => *Promise*<T\>, `tries`: *number*): *Promise*<T\>
+▸ `Private` **enqueue**<`T`\>(`cb`, `tries`): `Promise`<`T`\>
 
-#### Type parameters:
+#### Type parameters
 
-Name |
-:------ |
-`T` |
+| Name |
+| :------ |
+| `T` |
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`cb` | () => *Promise*<T\> |
-`tries` | *number* |
+| Name | Type |
+| :------ | :------ |
+| `cb` | () => `PromiseLike`<`T`\> |
+| `tries` | `number` |
 
-**Returns:** *Promise*<T\>
+#### Returns
 
-Defined in: src/util/ConcurrencyLimiter.ts:66
+`Promise`<`T`\>
+
+#### Defined in
+
+../src/util/ConcurrencyLimiter.ts:66
 
 ___
 
 ### process
 
-▸ `Private`**process**<T\>(`cb`: () => *Promise*<T\>, `tries`: *number*): *Promise*<T\>
+▸ `Private` **process**<`T`\>(`cb`, `tries`): `Promise`<`T`\>
 
-#### Type parameters:
+#### Type parameters
 
-Name |
-:------ |
-`T` |
+| Name |
+| :------ |
+| `T` |
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`cb` | () => *Promise*<T\> |
-`tries` | *number* |
+| Name | Type |
+| :------ | :------ |
+| `cb` | () => `PromiseLike`<`T`\> |
+| `tries` | `number` |
 
-**Returns:** *Promise*<T\>
+#### Returns
 
-Defined in: src/util/ConcurrencyLimiter.ts:42
+`Promise`<`T`\>
+
+#### Defined in
+
+../src/util/ConcurrencyLimiter.ts:42

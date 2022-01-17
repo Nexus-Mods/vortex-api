@@ -6,67 +6,71 @@
 
 ## Hierarchy
 
-* *Component*<[*ClickPopoverProps*](../modules/tooltip.md#clickpopoverprops), { `open`: *boolean*  }\>
+- `Component`<[`ClickPopoverProps`](../modules/tooltip.md#clickpopoverprops), { `open`: `boolean`  }\>
 
-  ↳ **ClickPopover**
+  ↳ **`ClickPopover`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](tooltip.clickpopover.md#constructor)
+- [constructor](tooltip.ClickPopover.md#constructor)
 
 ### Properties
 
-- [context](tooltip.clickpopover.md#context)
-- [mRef](tooltip.clickpopover.md#mref)
-- [props](tooltip.clickpopover.md#props)
-- [refs](tooltip.clickpopover.md#refs)
-- [state](tooltip.clickpopover.md#state)
-- [contextType](tooltip.clickpopover.md#contexttype)
+- [context](tooltip.ClickPopover.md#context)
+- [mRef](tooltip.ClickPopover.md#mref)
+- [props](tooltip.ClickPopover.md#props)
+- [refs](tooltip.ClickPopover.md#refs)
+- [state](tooltip.ClickPopover.md#state)
+- [contextType](tooltip.ClickPopover.md#contexttype)
 
 ### Methods
 
-- [UNSAFE\_componentWillMount](tooltip.clickpopover.md#unsafe_componentwillmount)
-- [UNSAFE\_componentWillReceiveProps](tooltip.clickpopover.md#unsafe_componentwillreceiveprops)
-- [UNSAFE\_componentWillUpdate](tooltip.clickpopover.md#unsafe_componentwillupdate)
-- [componentDidCatch](tooltip.clickpopover.md#componentdidcatch)
-- [componentDidMount](tooltip.clickpopover.md#componentdidmount)
-- [componentDidUpdate](tooltip.clickpopover.md#componentdidupdate)
-- [componentWillMount](tooltip.clickpopover.md#componentwillmount)
-- [componentWillReceiveProps](tooltip.clickpopover.md#componentwillreceiveprops)
-- [componentWillUnmount](tooltip.clickpopover.md#componentwillunmount)
-- [componentWillUpdate](tooltip.clickpopover.md#componentwillupdate)
-- [forceUpdate](tooltip.clickpopover.md#forceupdate)
-- [getSnapshotBeforeUpdate](tooltip.clickpopover.md#getsnapshotbeforeupdate)
-- [hideOverlay](tooltip.clickpopover.md#hideoverlay)
-- [render](tooltip.clickpopover.md#render)
-- [setRef](tooltip.clickpopover.md#setref)
-- [setState](tooltip.clickpopover.md#setstate)
-- [shouldComponentUpdate](tooltip.clickpopover.md#shouldcomponentupdate)
-- [toggleOverlay](tooltip.clickpopover.md#toggleoverlay)
+- [UNSAFE\_componentWillMount](tooltip.ClickPopover.md#unsafe_componentwillmount)
+- [UNSAFE\_componentWillReceiveProps](tooltip.ClickPopover.md#unsafe_componentwillreceiveprops)
+- [UNSAFE\_componentWillUpdate](tooltip.ClickPopover.md#unsafe_componentwillupdate)
+- [componentDidCatch](tooltip.ClickPopover.md#componentdidcatch)
+- [componentDidMount](tooltip.ClickPopover.md#componentdidmount)
+- [componentDidUpdate](tooltip.ClickPopover.md#componentdidupdate)
+- [componentWillMount](tooltip.ClickPopover.md#componentwillmount)
+- [componentWillReceiveProps](tooltip.ClickPopover.md#componentwillreceiveprops)
+- [componentWillUnmount](tooltip.ClickPopover.md#componentwillunmount)
+- [componentWillUpdate](tooltip.ClickPopover.md#componentwillupdate)
+- [forceUpdate](tooltip.ClickPopover.md#forceupdate)
+- [getSnapshotBeforeUpdate](tooltip.ClickPopover.md#getsnapshotbeforeupdate)
+- [hideOverlay](tooltip.ClickPopover.md#hideoverlay)
+- [render](tooltip.ClickPopover.md#render)
+- [setRef](tooltip.ClickPopover.md#setref)
+- [setState](tooltip.ClickPopover.md#setstate)
+- [shouldComponentUpdate](tooltip.ClickPopover.md#shouldcomponentupdate)
+- [toggleOverlay](tooltip.ClickPopover.md#toggleoverlay)
 
 ## Constructors
 
 ### constructor
 
-\+ **new ClickPopover**(`props`: [*IconButtonProps*](../modules/tooltip.md#iconbuttonprops)): [*ClickPopover*](tooltip.clickpopover.md)
+• **new ClickPopover**(`props`)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`props` | [*IconButtonProps*](../modules/tooltip.md#iconbuttonprops) |
+| Name | Type |
+| :------ | :------ |
+| `props` | [`ClickPopoverProps`](../modules/tooltip.md#clickpopoverprops) |
 
-**Returns:** [*ClickPopover*](tooltip.clickpopover.md)
+#### Overrides
 
-Defined in: src/controls/TooltipControls.tsx:291
+React.Component&lt;ClickPopoverProps, { open: boolean }\&gt;.constructor
+
+#### Defined in
+
+../src/controls/TooltipControls.tsx:294
 
 ## Properties
 
 ### context
 
-• **context**: *any*
+• **context**: `any`
 
 If using the new style context, re-declare this in your class to be the
 `React.ContextType` of your `static contextType`.
@@ -82,50 +86,78 @@ declare context: React.ContextType<typeof MyContext>
 
 **`see`** https://reactjs.org/docs/context.html
 
-Defined in: node_modules/@types/react/index.d.ts:472
+#### Inherited from
+
+React.Component.context
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:472
 
 ___
 
 ### mRef
 
-• `Private` **mRef**: *Element*
+• `Private` **mRef**: `Element`
 
-Defined in: src/controls/TooltipControls.tsx:291
+#### Defined in
+
+../src/controls/TooltipControls.tsx:292
 
 ___
 
 ### props
 
-• `Readonly` **props**: *Readonly*<[*IconButtonProps*](../modules/tooltip.md#iconbuttonprops)\> & *Readonly*<{ `children?`: ReactNode  }\>
+• `Readonly` **props**: `Readonly`<[`ClickPopoverProps`](../modules/tooltip.md#clickpopoverprops)\> & `Readonly`<{ `children?`: `ReactNode`  }\>
 
-Defined in: node_modules/@types/react/index.d.ts:497
+#### Inherited from
+
+React.Component.props
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:497
 
 ___
 
 ### refs
 
-• **refs**: *object*
+• **refs**: `Object`
 
-**`deprecated`** 
+**`deprecated`**
 https://reactjs.org/docs/refs-and-the-dom.html#legacy-api-string-refs
 
-#### Type declaration:
+#### Index signature
 
-Defined in: node_modules/@types/react/index.d.ts:503
+▪ [key: `string`]: `ReactInstance`
+
+#### Inherited from
+
+React.Component.refs
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:503
 
 ___
 
 ### state
 
-• **state**: *Readonly*<{ `open`: *boolean*  }\>
+• **state**: `Readonly`<{ `open`: `boolean`  }\>
 
-Defined in: node_modules/@types/react/index.d.ts:498
+#### Inherited from
+
+React.Component.state
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:498
 
 ___
 
 ### contextType
 
-▪ `Optional` `Static` **contextType**: *Context*<any\>
+▪ `Static` `Optional` **contextType**: `Context`<`any`\>
 
 If set, `this.context` will be set at runtime to the current value of the given Context.
 
@@ -146,13 +178,19 @@ class Foo extends React.Component {
 
 **`see`** https://reactjs.org/docs/context.html#classcontexttype
 
-Defined in: node_modules/@types/react/index.d.ts:454
+#### Inherited from
+
+React.Component.contextType
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:454
 
 ## Methods
 
 ### UNSAFE\_componentWillMount
 
-▸ `Optional`**UNSAFE_componentWillMount**(): *void*
+▸ `Optional` **UNSAFE_componentWillMount**(): `void`
 
 Called immediately before mounting occurs, and before `Component#render`.
 Avoid introducing any side-effects or subscriptions in this method.
@@ -168,15 +206,23 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:708
+`void`
+
+#### Inherited from
+
+React.Component.UNSAFE\_componentWillMount
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:708
 
 ___
 
 ### UNSAFE\_componentWillReceiveProps
 
-▸ `Optional`**UNSAFE_componentWillReceiveProps**(`nextProps`: *Readonly*<[*IconButtonProps*](../modules/tooltip.md#iconbuttonprops)\>, `nextContext`: *any*): *void*
+▸ `Optional` **UNSAFE_componentWillReceiveProps**(`nextProps`, `nextContext`): `void`
 
 Called when the component may be receiving new props.
 React may call this even if props have not changed, so be sure to compare new and existing
@@ -195,22 +241,30 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<[*IconButtonProps*](../modules/tooltip.md#iconbuttonprops)\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<[`ClickPopoverProps`](../modules/tooltip.md#clickpopoverprops)\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:740
+`void`
+
+#### Inherited from
+
+React.Component.UNSAFE\_componentWillReceiveProps
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:740
 
 ___
 
 ### UNSAFE\_componentWillUpdate
 
-▸ `Optional`**UNSAFE_componentWillUpdate**(`nextProps`: *Readonly*<[*IconButtonProps*](../modules/tooltip.md#iconbuttonprops)\>, `nextState`: *Readonly*<{ `open`: *boolean*  }\>, `nextContext`: *any*): *void*
+▸ `Optional` **UNSAFE_componentWillUpdate**(`nextProps`, `nextState`, `nextContext`): `void`
 
 Called immediately before rendering when new props or state is received. Not called for the initial render.
 
@@ -227,77 +281,109 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<[*IconButtonProps*](../modules/tooltip.md#iconbuttonprops)\> |
-`nextState` | *Readonly*<{ `open`: *boolean*  }\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<[`ClickPopoverProps`](../modules/tooltip.md#clickpopoverprops)\> |
+| `nextState` | `Readonly`<{ `open`: `boolean`  }\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:768
+`void`
+
+#### Inherited from
+
+React.Component.UNSAFE\_componentWillUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:768
 
 ___
 
 ### componentDidCatch
 
-▸ `Optional`**componentDidCatch**(`error`: Error, `errorInfo`: ErrorInfo): *void*
+▸ `Optional` **componentDidCatch**(`error`, `errorInfo`): `void`
 
 Catches exceptions generated in descendant components. Unhandled exceptions will cause
 the entire component tree to unmount.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`error` | Error |
-`errorInfo` | ErrorInfo |
+| Name | Type |
+| :------ | :------ |
+| `error` | `Error` |
+| `errorInfo` | `ErrorInfo` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:637
+`void`
+
+#### Inherited from
+
+React.Component.componentDidCatch
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:637
 
 ___
 
 ### componentDidMount
 
-▸ `Optional`**componentDidMount**(): *void*
+▸ `Optional` **componentDidMount**(): `void`
 
 Called immediately after a component is mounted. Setting state here will trigger re-rendering.
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:616
+`void`
+
+#### Inherited from
+
+React.Component.componentDidMount
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:616
 
 ___
 
 ### componentDidUpdate
 
-▸ `Optional`**componentDidUpdate**(`prevProps`: *Readonly*<[*IconButtonProps*](../modules/tooltip.md#iconbuttonprops)\>, `prevState`: *Readonly*<{ `open`: *boolean*  }\>, `snapshot?`: *any*): *void*
+▸ `Optional` **componentDidUpdate**(`prevProps`, `prevState`, `snapshot?`): `void`
 
 Called immediately after updating occurs. Not called for the initial render.
 
 The snapshot is only present if getSnapshotBeforeUpdate is present and returns non-null.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`prevProps` | *Readonly*<[*IconButtonProps*](../modules/tooltip.md#iconbuttonprops)\> |
-`prevState` | *Readonly*<{ `open`: *boolean*  }\> |
-`snapshot?` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `prevProps` | `Readonly`<[`ClickPopoverProps`](../modules/tooltip.md#clickpopoverprops)\> |
+| `prevState` | `Readonly`<{ `open`: `boolean`  }\> |
+| `snapshot?` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:679
+`void`
+
+#### Inherited from
+
+React.Component.componentDidUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:679
 
 ___
 
 ### componentWillMount
 
-▸ `Optional`**componentWillMount**(): *void*
+▸ `Optional` **componentWillMount**(): `void`
 
 Called immediately before mounting occurs, and before `Component#render`.
 Avoid introducing any side-effects or subscriptions in this method.
@@ -311,15 +397,23 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:694
+`void`
+
+#### Inherited from
+
+React.Component.componentWillMount
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:694
 
 ___
 
 ### componentWillReceiveProps
 
-▸ `Optional`**componentWillReceiveProps**(`nextProps`: *Readonly*<[*IconButtonProps*](../modules/tooltip.md#iconbuttonprops)\>, `nextContext`: *any*): *void*
+▸ `Optional` **componentWillReceiveProps**(`nextProps`, `nextContext`): `void`
 
 Called when the component may be receiving new props.
 React may call this even if props have not changed, so be sure to compare new and existing
@@ -336,35 +430,51 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<[*IconButtonProps*](../modules/tooltip.md#iconbuttonprops)\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<[`ClickPopoverProps`](../modules/tooltip.md#clickpopoverprops)\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:723
+`void`
+
+#### Inherited from
+
+React.Component.componentWillReceiveProps
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:723
 
 ___
 
 ### componentWillUnmount
 
-▸ `Optional`**componentWillUnmount**(): *void*
+▸ `Optional` **componentWillUnmount**(): `void`
 
 Called immediately before a component is destroyed. Perform any necessary cleanup in this method, such as
 cancelled network requests, or cleaning up any DOM elements created in `componentDidMount`.
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:632
+`void`
+
+#### Inherited from
+
+React.Component.componentWillUnmount
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:632
 
 ___
 
 ### componentWillUpdate
 
-▸ `Optional`**componentWillUpdate**(`nextProps`: *Readonly*<[*IconButtonProps*](../modules/tooltip.md#iconbuttonprops)\>, `nextState`: *Readonly*<{ `open`: *boolean*  }\>, `nextContext`: *any*): *void*
+▸ `Optional` **componentWillUpdate**(`nextProps`, `nextState`, `nextContext`): `void`
 
 Called immediately before rendering when new props or state is received. Not called for the initial render.
 
@@ -379,39 +489,55 @@ prevents this from being invoked.
 
 **`see`** https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<[*IconButtonProps*](../modules/tooltip.md#iconbuttonprops)\> |
-`nextState` | *Readonly*<{ `open`: *boolean*  }\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<[`ClickPopoverProps`](../modules/tooltip.md#clickpopoverprops)\> |
+| `nextState` | `Readonly`<{ `open`: `boolean`  }\> |
+| `nextContext` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:753
+`void`
+
+#### Inherited from
+
+React.Component.componentWillUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:753
 
 ___
 
 ### forceUpdate
 
-▸ **forceUpdate**(`callback?`: () => *void*): *void*
+▸ **forceUpdate**(`callback?`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`callback?` | () => *void* |
+| Name | Type |
+| :------ | :------ |
+| `callback?` | () => `void` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:489
+`void`
+
+#### Inherited from
+
+React.Component.forceUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:489
 
 ___
 
 ### getSnapshotBeforeUpdate
 
-▸ `Optional`**getSnapshotBeforeUpdate**(`prevProps`: *Readonly*<[*IconButtonProps*](../modules/tooltip.md#iconbuttonprops)\>, `prevState`: *Readonly*<{ `open`: *boolean*  }\>): *any*
+▸ `Optional` **getSnapshotBeforeUpdate**(`prevProps`, `prevState`): `any`
 
 Runs before React applies the result of `render` to the document, and
 returns an object to be given to componentDidUpdate. Useful for saving
@@ -420,81 +546,113 @@ things such as scroll position before `render` causes changes to it.
 Note: the presence of getSnapshotBeforeUpdate prevents any of the deprecated
 lifecycle events from running.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`prevProps` | *Readonly*<[*IconButtonProps*](../modules/tooltip.md#iconbuttonprops)\> |
-`prevState` | *Readonly*<{ `open`: *boolean*  }\> |
+| Name | Type |
+| :------ | :------ |
+| `prevProps` | `Readonly`<[`ClickPopoverProps`](../modules/tooltip.md#clickpopoverprops)\> |
+| `prevState` | `Readonly`<{ `open`: `boolean`  }\> |
 
-**Returns:** *any*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:673
+`any`
+
+#### Inherited from
+
+React.Component.getSnapshotBeforeUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:673
 
 ___
 
 ### hideOverlay
 
-▸ `Private`**hideOverlay**(): *void*
+▸ `Private` **hideOverlay**(): `void`
 
-**Returns:** *void*
+#### Returns
 
-Defined in: src/controls/TooltipControls.tsx:334
+`void`
+
+#### Defined in
+
+../src/controls/TooltipControls.tsx:335
 
 ___
 
 ### render
 
-▸ **render**(): *Element*
+▸ **render**(): `Element`
 
-**Returns:** *Element*
+#### Returns
 
-Defined in: src/controls/TooltipControls.tsx:300
+`Element`
+
+#### Overrides
+
+React.Component.render
+
+#### Defined in
+
+../src/controls/TooltipControls.tsx:301
 
 ___
 
 ### setRef
 
-▸ `Private`**setRef**(`ref`: *any*): *void*
+▸ `Private` **setRef**(`ref`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`ref` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `ref` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: src/controls/TooltipControls.tsx:338
+`void`
+
+#### Defined in
+
+../src/controls/TooltipControls.tsx:339
 
 ___
 
 ### setState
 
-▸ **setState**<K\>(`state`: { `open`: *boolean*  } \| (`prevState`: *Readonly*<{ `open`: *boolean*  }\>, `props`: *Readonly*<[*IconButtonProps*](../modules/tooltip.md#iconbuttonprops)\>) => { `open`: *boolean*  } \| *Pick*<{ `open`: *boolean*  }, K\> \| *Pick*<{ `open`: *boolean*  }, K\>, `callback?`: () => *void*): *void*
+▸ **setState**<`K`\>(`state`, `callback?`): `void`
 
-#### Type parameters:
+#### Type parameters
 
-Name | Type |
-:------ | :------ |
-`K` | *open* |
+| Name | Type |
+| :------ | :------ |
+| `K` | extends ``"open"`` |
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`state` | { `open`: *boolean*  } \| (`prevState`: *Readonly*<{ `open`: *boolean*  }\>, `props`: *Readonly*<[*IconButtonProps*](../modules/tooltip.md#iconbuttonprops)\>) => { `open`: *boolean*  } \| *Pick*<{ `open`: *boolean*  }, K\> \| *Pick*<{ `open`: *boolean*  }, K\> |
-`callback?` | () => *void* |
+| Name | Type |
+| :------ | :------ |
+| `state` | { `open`: `boolean`  } \| (`prevState`: `Readonly`<{ `open`: `boolean`  }\>, `props`: `Readonly`<[`ClickPopoverProps`](../modules/tooltip.md#clickpopoverprops)\>) => { `open`: `boolean`  } \| `Pick`<{ `open`: `boolean`  }, `K`\> \| `Pick`<{ `open`: `boolean`  }, `K`\> |
+| `callback?` | () => `void` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:484
+`void`
+
+#### Inherited from
+
+React.Component.setState
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:484
 
 ___
 
 ### shouldComponentUpdate
 
-▸ `Optional`**shouldComponentUpdate**(`nextProps`: *Readonly*<[*IconButtonProps*](../modules/tooltip.md#iconbuttonprops)\>, `nextState`: *Readonly*<{ `open`: *boolean*  }\>, `nextContext`: *any*): *boolean*
+▸ `Optional` **shouldComponentUpdate**(`nextProps`, `nextState`, `nextContext`): `boolean`
 
 Called to determine whether the change in props and state should trigger a re-render.
 
@@ -505,24 +663,36 @@ props or states have changed.
 If false is returned, `Component#render`, `componentWillUpdate`
 and `componentDidUpdate` will not be called.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`nextProps` | *Readonly*<[*IconButtonProps*](../modules/tooltip.md#iconbuttonprops)\> |
-`nextState` | *Readonly*<{ `open`: *boolean*  }\> |
-`nextContext` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `nextProps` | `Readonly`<[`ClickPopoverProps`](../modules/tooltip.md#clickpopoverprops)\> |
+| `nextState` | `Readonly`<{ `open`: `boolean`  }\> |
+| `nextContext` | `any` |
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: node_modules/@types/react/index.d.ts:627
+`boolean`
+
+#### Inherited from
+
+React.Component.shouldComponentUpdate
+
+#### Defined in
+
+E:/WorkC/vortex/node_modules/@types/react/index.d.ts:627
 
 ___
 
 ### toggleOverlay
 
-▸ `Private`**toggleOverlay**(): *void*
+▸ `Private` **toggleOverlay**(): `void`
 
-**Returns:** *void*
+#### Returns
 
-Defined in: src/controls/TooltipControls.tsx:330
+`void`
+
+#### Defined in
+
+../src/controls/TooltipControls.tsx:331

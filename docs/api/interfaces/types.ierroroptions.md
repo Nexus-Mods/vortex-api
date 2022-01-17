@@ -8,95 +8,128 @@
 
 ### Properties
 
-- [allowReport](types.ierroroptions.md#allowreport)
-- [allowSuppress](types.ierroroptions.md#allowsuppress)
-- [attachments](types.ierroroptions.md#attachments)
-- [extension](types.ierroroptions.md#extension)
-- [hideDetails](types.ierroroptions.md#hidedetails)
-- [id](types.ierroroptions.md#id)
-- [isBBCode](types.ierroroptions.md#isbbcode)
-- [isHTML](types.ierroroptions.md#ishtml)
-- [message](types.ierroroptions.md#message)
-- [replace](types.ierroroptions.md#replace)
+- [actions](types.IErrorOptions.md#actions)
+- [allowReport](types.IErrorOptions.md#allowreport)
+- [allowSuppress](types.IErrorOptions.md#allowsuppress)
+- [attachments](types.IErrorOptions.md#attachments)
+- [extensionName](types.IErrorOptions.md#extensionname)
+- [hideDetails](types.IErrorOptions.md#hidedetails)
+- [id](types.IErrorOptions.md#id)
+- [isBBCode](types.IErrorOptions.md#isbbcode)
+- [isHTML](types.IErrorOptions.md#ishtml)
+- [message](types.IErrorOptions.md#message)
+- [replace](types.IErrorOptions.md#replace)
 
 ## Properties
 
+### actions
+
+• `Optional` **actions**: [`INotificationAction`](types.INotificationAction.md)[]
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:308
+
+___
+
 ### allowReport
 
-• `Optional` **allowReport**: *boolean*
+• `Optional` **allowReport**: `boolean`
 
-Defined in: src/types/IExtensionContext.ts:273
+#### Defined in
+
+../src/types/IExtensionContext.ts:302
 
 ___
 
 ### allowSuppress
 
-• `Optional` **allowSuppress**: *boolean*
+• `Optional` **allowSuppress**: `boolean`
 
-Defined in: src/types/IExtensionContext.ts:274
+#### Defined in
+
+../src/types/IExtensionContext.ts:303
 
 ___
 
 ### attachments
 
-• `Optional` **attachments**: [*IAttachment*](types.iattachment.md)[]
+• `Optional` **attachments**: [`IAttachment`](types.IAttachment.md)[]
 
-Defined in: src/types/IExtensionContext.ts:277
+#### Defined in
+
+../src/types/IExtensionContext.ts:306
 
 ___
 
-### extension
+### extensionName
 
-• `Optional` **extension**: [*IExtension*](types.iextension.md)
+• `Optional` **extensionName**: `string`
 
-Defined in: src/types/IExtensionContext.ts:278
+#### Defined in
+
+../src/types/IExtensionContext.ts:307
 
 ___
 
 ### hideDetails
 
-• `Optional` **hideDetails**: *boolean*
+• `Optional` **hideDetails**: `boolean`
 
-Defined in: src/types/IExtensionContext.ts:275
+#### Defined in
+
+../src/types/IExtensionContext.ts:304
 
 ___
 
 ### id
 
-• `Optional` **id**: *string*
+• `Optional` **id**: `string`
 
-Defined in: src/types/IExtensionContext.ts:269
+#### Defined in
+
+../src/types/IExtensionContext.ts:298
 
 ___
 
 ### isBBCode
 
-• `Optional` **isBBCode**: *boolean*
+• `Optional` **isBBCode**: `boolean`
 
-Defined in: src/types/IExtensionContext.ts:271
+#### Defined in
+
+../src/types/IExtensionContext.ts:300
 
 ___
 
 ### isHTML
 
-• `Optional` **isHTML**: *boolean*
+• `Optional` **isHTML**: `boolean`
 
-Defined in: src/types/IExtensionContext.ts:272
+#### Defined in
+
+../src/types/IExtensionContext.ts:301
 
 ___
 
 ### message
 
-• `Optional` **message**: *string*
+• `Optional` **message**: `string`
 
-Defined in: src/types/IExtensionContext.ts:270
+#### Defined in
+
+../src/types/IExtensionContext.ts:299
 
 ___
 
 ### replace
 
-• `Optional` **replace**: *object*
+• `Optional` **replace**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IExtensionContext.ts:276
+▪ [key: `string`]: `string`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:305

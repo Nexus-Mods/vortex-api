@@ -6,16 +6,22 @@
 
 ## Callable
 
-▸ **IRegisterProtocol**(`protocol`: *string*, `def`: *boolean*, `callback`: (`url`: *string*, `install`: *boolean*) => *void*): *any*
+### IRegisterProtocol
 
-#### Parameters:
+▸ **IRegisterProtocol**(`protocol`, `def`, `callback`): `any`
 
-Name | Type |
-:------ | :------ |
-`protocol` | *string* |
-`def` | *boolean* |
-`callback` | (`url`: *string*, `install`: *boolean*) => *void* |
+#### Parameters
 
-**Returns:** *any*
+| Name | Type |
+| :------ | :------ |
+| `protocol` | `string` |
+| `def` | `boolean` |
+| `callback` | (`url`: `string`, `install`: `boolean`) => `void` |
 
-Defined in: src/types/IExtensionContext.ts:165
+#### Returns
+
+`any`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:180

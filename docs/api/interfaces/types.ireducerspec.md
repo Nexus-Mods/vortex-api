@@ -8,48 +8,58 @@ specification a reducer registration has to follow.
 defaults must be an object with the same keys as
 reducers
 
-**`export`** 
+**`export`**
 
 **`interface`** IReducerSpec
 
 ## Type parameters
 
-Name | Default |
-:------ | :------ |
-`T` | { [key: string]: *any*;  } |
+| Name | Type |
+| :------ | :------ |
+| `T` | { [key: string]: `any`;  } |
 
 ## Table of contents
 
 ### Properties
 
-- [defaults](types.ireducerspec.md#defaults)
-- [reducers](types.ireducerspec.md#reducers)
-- [verifiers](types.ireducerspec.md#verifiers)
+- [defaults](types.IReducerSpec.md#defaults)
+- [reducers](types.IReducerSpec.md#reducers)
+- [verifiers](types.IReducerSpec.md#verifiers)
 
 ## Properties
 
 ### defaults
 
-• **defaults**: T
+• **defaults**: `T`
 
-Defined in: src/types/IExtensionContext.ts:728
+#### Defined in
+
+../src/types/IExtensionContext.ts:786
 
 ___
 
 ### reducers
 
-• **reducers**: *object*
+• **reducers**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IExtensionContext.ts:727
+▪ [key: `string`]: (`state`: `T`, `payload`: `any`) => `T`
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:785
 
 ___
 
 ### verifiers
 
-• `Optional` **verifiers**: *object*
+• `Optional` **verifiers**: `Object`
 
-#### Type declaration:
+#### Index signature
 
-Defined in: src/types/IExtensionContext.ts:729
+▪ [key: `string`]: [`IStateVerifier`](types.IStateVerifier.md)
+
+#### Defined in
+
+../src/types/IExtensionContext.ts:787

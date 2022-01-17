@@ -8,21 +8,25 @@
 
 ### Properties
 
-- [action](actions.idialogresult.md#action)
-- [input](actions.idialogresult.md#input)
+- [action](actions.IDialogResult.md#action)
+- [input](actions.IDialogResult.md#input)
 
 ## Properties
 
 ### action
 
-• **action**: *string*
+• **action**: `string`
 
-Defined in: src/types/IDialog.ts:107
+#### Defined in
+
+../src/types/IDialog.ts:114
 
 ___
 
 ### input
 
-• **input**: *any*
+• **input**: `any`
 
-Defined in: src/types/IDialog.ts:108
+#### Defined in
+
+../src/types/IDialog.ts:115

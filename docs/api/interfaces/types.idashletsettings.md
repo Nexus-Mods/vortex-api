@@ -8,12 +8,14 @@
 
 ### Properties
 
-- [enabled](types.idashletsettings.md#enabled)
+- [enabled](types.IDashletSettings.md#enabled)
 
 ## Properties
 
 ### enabled
 
-• **enabled**: *boolean*
+• **enabled**: `boolean`
 
-Defined in: src/types/IState.ts:162
+#### Defined in
+
+../src/types/IState.ts:164
