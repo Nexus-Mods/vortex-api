@@ -118,6 +118,12 @@ function config(moduleName, basePath, version) {
   if (version >= 4) {
     res['mode'] = process.env.TARGET_ENV || 'development';
   }
+  if (version >= 5) {
+    res['stats'] = {
+      errorDetails: true,
+      
+    }
+  }
 
   return res;
 }

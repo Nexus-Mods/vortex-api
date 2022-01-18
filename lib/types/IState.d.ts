@@ -240,8 +240,11 @@ export interface ISettingsNotification {
         [notificationId: string]: boolean;
     };
 }
+export declare const UPDATE_CHANNELS: readonly ["stable", "beta", "next", "none"];
+declare type ValuesOf<T extends readonly any[]> = T[number];
+export declare type UpdateChannel = ValuesOf<typeof UPDATE_CHANNELS>;
 export interface ISettingsUpdate {
-    channel: 'stable' | 'beta' | 'none';
+    channel: UpdateChannel;
 }
 export interface ISettingsWorkarounds {
     userSymlinks: boolean;

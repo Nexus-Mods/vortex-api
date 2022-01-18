@@ -26,10 +26,11 @@ declare class InstallContext implements IInstallContext {
     private mIsDownload;
     private mSilent;
     private mDidReportError;
+    private mLastPhase;
     private mLastProgress;
     constructor(gameMode: string, api: IExtensionApi, silent: boolean);
     startIndicator(id: string): void;
-    stopIndicator(mod: IMod): void;
+    stopIndicator(mod?: IMod): void;
     setProgress(phase: string, percent?: number): void;
     startInstallCB(id: string, gameId: string, archiveId: string): void;
     finishInstallCB(outcome: InstallOutcome, info?: any, reason?: string): void;
