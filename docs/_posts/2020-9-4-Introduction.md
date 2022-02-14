@@ -2,7 +2,7 @@
 layout: article
 author: TanninOne
 created: Thu, 22 Oct 2020 13:06:18 GMT
-updated: Wed, 15 Sep 2021 07:21:30 GMT
+updated: Mon, 14 Feb 2022 12:03:15 GMT
 wip: true
 title: Introduction
 order: 0
@@ -88,6 +88,12 @@ Now if it turns out there is no registerAction function that call simply has no 
 
 It's not technically required but convention is that functions you can call on context that somehow add to Vortex (e.g. adding ui elements) are called register_Something_, like the "registerAction" function you saw before.
 See the reference to get a complete list.
+
+One thing to keep in mind: Any more complex extension will probably "register" multiple things, multiple buttons, screens, callbacks, ... that together form one feature.
+There is no implicit/automatic connection between the things your extension adds to Vortex. "registerAction" in this example had to say which action group to add a button to, if the extension had also registered a separate navigation page, the button wouldn't automatically have been added to that.
+Very commonly you may write an extension to support a game (registerGame) and then you might need an installer (registerInstaller) because mods for this game are packaged in a specific way.
+That installer isn't implicitly only active for that game, it will be considered for _any_ game when the user installs a mod for it and your code has to explicitly check if it can/wants to handle that mod for that game. If it doesn't your extension may break functionality for other games.
+But that also means you can write an Installer dealing with multiple/arbitrary games to support generic packaging styles/installer systems.
 
 ### once
 
