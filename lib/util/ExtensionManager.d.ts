@@ -134,6 +134,7 @@ declare class ExtensionManager {
     private selectFile;
     private selectExecutable;
     private selectDir;
+    private commandLineUserData;
     private registerProtocol;
     private registerRepositoryLookup;
     private registerArchiveHandler;

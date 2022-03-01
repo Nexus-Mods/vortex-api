@@ -6,6 +6,7 @@ export interface IMenuActionProps {
     id: string;
     action: IActionDefinitionEx;
     instanceId: string;
+    onTrigger?: () => void;
 }
 export interface IContextPosition {
     x: number;
@@ -20,6 +21,7 @@ export interface IContextMenuProps {
     instanceId: string;
     actions?: IActionDefinitionEx[];
     className?: string;
+    onTrigger?: () => void;
 }
 declare const _default: React.ComponentClass<IContextMenuProps, any>;
 export default _default;

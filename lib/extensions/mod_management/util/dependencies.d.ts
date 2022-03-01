@@ -22,5 +22,5 @@ export declare function findDownloadByRef(reference: IReference, downloads: {
  * @param api
  * @param recommendations
  */
-declare function gatherDependencies(rules: IModRule[], api: IExtensionApi, recommendations: boolean, progressCB?: (percent: number) => void, modId?: string): Promise<IDependency[]>;
+declare function gatherDependencies(rules: IModRule[], api: IExtensionApi, recommendations: boolean, progressCB?: (percent: number) => void): Promise<IDependency[]>;
 export default gatherDependencies;

@@ -17,6 +17,7 @@ export declare function quickDiscoveryTools(gameId: string, tools: ITool[], onDi
 export declare function quickDiscovery(knownGames: IGame[], discoveredGames: {
     [id: string]: IDiscoveryResult;
 }, onDiscoveredGame: DiscoveredCB, onDiscoveredTool: DiscoveredToolCB): Promise<string[]>;
+export declare function assertToolDir(tool: ITool, testPath: string): Promise<string>;
 export declare function discoverRelativeTools(game: IGame, gamePath: string, discoveredGames: {
     [id: string]: IDiscoveryResult;
 }, onDiscoveredTool: DiscoveredToolCB, normalize: Normalize): Promise<void>;
