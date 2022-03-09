@@ -62,8 +62,8 @@ declare class InstallManager {
      *                                 the auto-detection.
      */
     install(archiveId: string, archivePath: string, downloadGameIds: string[], api: IExtensionApi, info: any, processDependencies: boolean, enable: boolean, callback: (error: Error, id: string) => void, forceGameId?: string, fileList?: IFileListItem[], unattended?: boolean, forceInstaller?: string, allowAutoDeploy?: boolean): void;
-    installDependencies(api: IExtensionApi, profile: IProfile, modId: string, allowAutoDeploy: boolean): Promise<void>;
-    installRecommendations(api: IExtensionApi, profile: IProfile, modId: string): Promise<void>;
+    installDependencies(api: IExtensionApi, profile: IProfile, gameId: string, modId: string, allowAutoDeploy: boolean): Promise<void>;
+    installRecommendations(api: IExtensionApi, profile: IProfile, gameId: string, modId: string): Promise<void>;
     private hasFuzzyReference;
     private setModSize;
     /**

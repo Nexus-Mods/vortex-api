@@ -8,11 +8,13 @@ export interface IBar {
 export interface IBaseProps {
     data: IBar[];
     className?: string;
+    innerGap?: number;
     gap?: number;
     totalRadius: number;
     offset?: number;
     maxWidth?: number;
     style?: React.CSSProperties;
+    restOverlap?: boolean;
 }
 declare const _default: React.ComponentClass<IBaseProps, any>;
 export default _default;
