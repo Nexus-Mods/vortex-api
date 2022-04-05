@@ -56,6 +56,7 @@ export declare function bundleAttachment(options?: IErrorOptions): Promise<strin
 export declare function showError(dispatch: ThunkDispatch<IState, null, Redux.Action>, title: string, details?: string | Error | any, options?: IErrorOptions): void;
 export interface IPrettifiedError {
     message: string;
+    code?: string;
     replace?: any;
     allowReport?: boolean;
 }

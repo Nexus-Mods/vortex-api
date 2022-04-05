@@ -201,6 +201,7 @@ export interface IErrorOptions {
     isBBCode?: boolean;
     isHTML?: boolean;
     allowReport?: boolean;
+    warning?: boolean;
     allowSuppress?: boolean;
     hideDetails?: boolean;
     replace?: {

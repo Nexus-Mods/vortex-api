@@ -8,6 +8,9 @@ export declare const addDiscoveredGame: reduxAct.ComplexActionCreator2<string, I
     id: string;
     result: IDiscoveryResult;
 }, {}>;
+export declare const clearDiscoveredGame: reduxAct.ComplexActionCreator1<string, {
+    id: string;
+}, {}>;
 /**
  * override the path of a game that's already been discovered
  */
