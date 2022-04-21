@@ -1,5 +1,6 @@
 import { IGameStore, IGameStoreEntry } from '../types/api';
 export interface ISteamEntry extends IGameStoreEntry {
+    manifestData?: any;
 }
 export declare class GameNotFound extends Error {
     private mSearch;

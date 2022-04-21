@@ -205,6 +205,8 @@ export interface ISettingsGameMode {
     };
     searchPaths: string[];
     pickerLayout: 'list' | 'small' | 'large';
+    sortManaged: string;
+    sortUnmanaged: string;
 }
 export interface ISettingsDownloads {
     minChunkSize: number;

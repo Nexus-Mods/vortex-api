@@ -54,3 +54,5 @@ export declare const setGameSearchPaths: reduxAct.ComplexActionCreator1<string[]
 export declare const setPickerLayout: reduxAct.ComplexActionCreator1<"list" | "small" | "large", {
     layout: "list" | "small" | "large";
 }, {}>;
+export declare const setSortManaged: reduxAct.ComplexActionCreator1<string, string, {}>;
+export declare const setSortUnmanaged: reduxAct.ComplexActionCreator1<string, string, {}>;
