@@ -2,7 +2,7 @@
 layout: article
 author: Pickysaurus
 created: Wed, 18 May 2022 15:43:57 GMT
-updated: Wed, 18 May 2022 15:43:57 GMT
+updated: Wed, 18 May 2022 15:45:23 GMT
 wip: true
 title: Creating a theme
 order: 1000
@@ -16,14 +16,14 @@ Vortex comes with the ability to customise its appearance to suit you. Whether y
 # Getting Started
 To get started, navigate to the “settings” section and select the “theme” tab.
 
-![themes1.jpg](/vortex/themes1.jpg)
+![themes1](https://user-images.githubusercontent.com/31670524/169085551-b9f2234d-384d-4d94-ab0e-c2439bc9d8b5.jpg)
 
 To make your first theme you want to clone the default, so you can start editing it. You will be asked for a name, this can be whatever you like.
 
 Now you will have unlocked the options to change the text and colours of Vortex for your new theme. The options presented to you will have the following effect on the style.
 
 # Font Options
-![themes2.jpg](/vortex/themes2.jpg)
+![themes2](https://user-images.githubusercontent.com/31670524/169085575-2983108a-5adb-4056-9cb3-4ab5d2abb12b.jpg)
 
 | Option Name |	Elements changed |
 | --- | --- |
@@ -34,7 +34,7 @@ Now you will have unlocked the options to change the text and colours of Vortex 
 
 
 # Colour Options
-![1200px-themes3.jpg](/vortex/1200px-themes3.jpg)
+![1200px-themes3](https://user-images.githubusercontent.com/31670524/169085609-af32b1ec-2b75-4b8a-9f5e-a2c24ba18c01.jpg)
 
 | Option Name	| Elements changed 
 | --- | --- |
