@@ -2,7 +2,7 @@
 layout: article
 author: Pickysaurus
 created: Wed, 18 May 2022 14:34:54 GMT
-updated: Wed, 18 May 2022 15:43:05 GMT
+updated: Mon, 23 May 2022 14:04:56 GMT
 wip: true
 title: Creating a game extension
 order: 1000
@@ -13,7 +13,8 @@ issue_url: https://github.com/Nexus-Mods/vortex-api/issues/31
 ---
 This guide will explain how to create a very basic game extension for Vortex, touching on where to start with some of the more advanced features. It requires a basic understanding of Javascript/programming. I also recommend you use an application with syntax highlighting, such as Visual Studio Code or Notepad++ for the coding sections of the guide.
 
-
+ℹ️ As an alternative, simple game extensions can be created without coding using [this extension](https://www.nexusmods.com/site/mods/155).
+Not every game can be supported with just that extension but at least in can provide a robust start.
 
 # Getting set up
 To get started, you first need a version of Vortex to work with. I recommend using the current release of Vortex installed at the default location. If you're familiar with Github and other development tools you can also follow the instructions on the Vortex Github to clone the repository and build a development environment. To keep things simple, we'll be using the first option.
@@ -201,10 +202,10 @@ Now that Vortex knows how to find the game, it's also possible to add some addit
 
 ```js
 function prepareForModding(discovery) {
-    return fs.ensureDirAsync(path.join(discovery.path, 'BloodstainedRotN', 'Content', 'Paks', '~mods'));
+    return fs.ensureDirWritableAsync(path.join(discovery.path, 'BloodstainedRotN', 'Content', 'Paks', '~mods'));
 }
 ```
-The `fs.ensureDirAsync()` call is handy for this. It does exactly what we need. So each time Bloodstained is managed, Vortex will now ensure this folder is present. If for some reason this function fails (usually a symptom of a more serious issue with their setup), the user will not be able to manage the game.
+The `fs.ensureDirWritableAsync()` call is handy for this. It does exactly what we need. So each time Bloodstained is managed, Vortex will now ensure this folder is present and writable to Vortex. If for some reason this function fails (usually a symptom of a more serious issue with their setup), Vortex will either help the user resolve the issue or the user will not be able to manage the game.
 
 Once this has been added, make sure to go back to your `registerGame` function and change the `setup: undefined`, line to `setup: prepareForModding`, otherwise the code we have just added will never be called.
 
@@ -241,6 +242,44 @@ function checkForQMM(api, qModPath) {
 
 
 # Mod installation patterns
+There is no universal standard how mod authors package their mods, although on a game-by-game basis, standards usually emerge as authors try to avoid confusion for their users and thus follow the example of prior mods.
+
+By default Vortex will usually just unpack the mod as is into the mods directory identified by `queryModPath`.
+
+If necessary you can customize this behavior in one of two ways:
+
+## Stop Patterns
+If you go this route, Vortex unpacks into the mod directory either directly or it unpacks a subdirectory from the archive. Which subdirectory it picks is determined by patterns (more precisely: "regular expressions", google is your friend) you can set. For Fallout 4 it might be something like this:
+
+```js
+context.registerGame({
+  ...
+  details: {
+     ...
+    stopPatterns: [
+      '(^|/)textures(/|$)',
+      '(^|/).*\.es(p|m|l)$'
+    ]
+  }
+})
+```
+
+If you don't know regular expressions this is likely hard to read. What this means is roughly:
+
+> The directory containing a directory named "textures" or a file with the extension .esp, .esm or .esl should map to the top-level mod directory.
+
+Now if the mod archive contains
+```
+Readme.txt
+mymod\textures\foobar.dds
+mymod\foobar.esp
+```
+
+Vortex will extract only `foobar.esp` and `textures\foobar.dds` and place that in the top level mod directory (Fallout 4\data).
+
+## Custom Installer
+Go this route if you find javascript easier to understand than regular expressions (no one would blame you) or if you need more control.
+
 In order to have Vortex understand different formats that mods can take, we want to register an installer that will be used to check for the relevant files. In our example, Bloodstained: Ritual of the Night, most mods take the form of a PAK file which must be placed in the ~mods folder. The problem arises when authors pack the mod inside a subfolder when packing the archive, without a mod installer this would be deployed to ~mods/MyFolder rather than ~mods and could not be loaded by the game.
 
 To register an installer, we'll need to add the following line to the main function, after registering the game.
@@ -272,7 +311,8 @@ function testSupportedContent(files, gameId) {
   });
 }
 ```
-Here, what we are doing is first ensuring the mod we're checking is for the correct game, then we'll check if any of the files in the archive have the PAK file extension. If either of these checks fail the archive will not be installed using this pattern. When we resolve the promise, we also need to include an empty array for requiredFiles. This is not used in our example.
+Here, what we are doing is first ensuring the mod is actually being installed for the correct game. A single installer could support a whole range, here we're only focusing on one.
+Next we'll check if any of the files in the archive have the PAK file extension. If either of these checks fail the archive will not be installed using this pattern and Vortex may try a different, more generic, installer. When we resolve the promise, we also need to include an empty array for requiredFiles. This is not used in our example.
 
 ```js
 function installContent(files) {
@@ -357,7 +397,10 @@ The properties for each tool are as follows:
 | shell |	Optional. If true, the tool will run inside a shell. |
 | exclusive |	Optional. If true, will block any other tools from starting while this one is running. |
 
-## Advanced tutorials
-* 
+
+# Further reading:
+- Before you upload your extension, please review our guideline on packing extensions correctly so Vortex can install it without a hitch: [Packaging Extensions](https://nexus-mods.github.io/vortex-api/2020/09/01/Packaging-extensions.html)
+- If your game extension needs to control the order in which mods get loaded by the game, you can use our [FBLO](https://nexus-mods.github.io/vortex-api/2020/10/05/File-Based-Load-Order-API.html) module
+
 
 [Discuss this article](https://github.com/Nexus-Mods/vortex-api/issues/31)
