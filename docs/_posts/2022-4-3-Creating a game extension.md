@@ -2,7 +2,7 @@
 layout: article
 author: Pickysaurus
 created: Wed, 18 May 2022 14:34:54 GMT
-updated: Tue, 24 May 2022 07:36:01 GMT
+updated: Tue, 24 May 2022 07:36:54 GMT
 wip: true
 title: Creating a game extension
 order: 1000
@@ -400,7 +400,7 @@ The properties for each tool are as follows:
 
 # Further reading:
 - Before you upload your extension, please review our guideline on packing extensions correctly so Vortex can install it without a hitch: [Packaging Extensions](https://nexus-mods.github.io/vortex-api/2020/09/01/Packaging-extensions.html)
-- Games developed using the Unity 3D game engine may require code injection for mods to work. Vortex provides functionality to simplify the download, installation and configuration of the BepInEx mod loader on the user's machine [BepInEx](https://nexus-mods.github.io/vortex-api/2021/02/01/BepInEx-Extension-Usage.html)
+- Games developed using the Unity 3D game engine may require code injection for mods to work. Vortex provides functionality to simplify the download, installation and configuration of the [BepInEx](https://nexus-mods.github.io/vortex-api/2021/02/01/BepInEx-Extension-Usage.html) mod loader on the user's machine.
 - If your game extension needs to control the order in which mods get loaded by the game, you can use our [FBLO](https://nexus-mods.github.io/vortex-api/2020/10/05/File-Based-Load-Order-API.html) module
 
 [Discuss this article](https://github.com/Nexus-Mods/vortex-api/issues/31)
