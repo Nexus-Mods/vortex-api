@@ -3,13 +3,36 @@
 
 @import "{{ site.theme }}";
 
+
 #root {
+  --theme-dark: #815316;
+  --theme-primary: #da8e35;
+  --theme-primary-translucent: #da8e35d8;
+  --theme-secondary: #b4762c;
+  --background-primary: 16,16,16;
+  --background-secondary: 24,24,24;
+  --background-tertiary: 34,34,34;
+
+  font-size: 16px;
+  color: #fff;
+  background-color: rgb(var(--background-primary));
+}
+
+a {
+  color: var(--theme-primary);
+  &:hover {
+    color: var(--theme-dark);
+  }
 }
 
 #sidenav > nav {
   padding: 2em;
   position: sticky;
   top: 0;
+
+  h1, h2, h3, h4 {
+    border-bottom: 1px solid var(--theme-primary);
+  }
 }
 
 #apinav > nav {
@@ -22,11 +45,18 @@
   padding: 2em;
   position: sticky;
   top: 0;
+  background: rgb(var(--background-secondary));
+  border-bottom-left-radius: 10px;
 }
 
 
 #content {
   max-width: 60em;
+
+  background: rgba(var(--background-tertiary), 1);
+  padding: 2em;
+  border-radius: 10px;
+  margin: 2em;
 }
 
 #content img {
