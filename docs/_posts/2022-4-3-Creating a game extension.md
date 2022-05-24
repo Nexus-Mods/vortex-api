@@ -2,7 +2,7 @@
 layout: article
 author: Pickysaurus
 created: Wed, 18 May 2022 14:34:54 GMT
-updated: Tue, 24 May 2022 07:36:54 GMT
+updated: Tue, 24 May 2022 09:44:00 GMT
 wip: true
 title: Creating a game extension
 order: 1000
@@ -77,7 +77,7 @@ const { fs, log, util } = require('vortex-api');
 function main(context) {
 	//This is the main function Vortex will run when detecting the game extension. 
 	
-	return true
+	return true;
 }
 
 module.exports = {
@@ -113,7 +113,7 @@ context.registerGame({
     executable: () => 'BloodstainedROTN.exe',
     requiredFiles: [
       'BloodstainedRotN.exe',
-      'BloodstainedROTN/Binaries/Win64/BloodstainedRotN-Win64-Shipping.exe'
+      'BloodstainedROTN/Binaries/Win64/BloodstainedRotN-Win64-Shipping.exe',
     ],
     setup: prepareForModding,
     environment: {
@@ -230,9 +230,9 @@ function checkForQMM(api, qModPath) {
         actions: [
           {
             title: 'Get QMM',
-            action: () => util.opn(QMM_MODPAGE).catch(() => undefined)
-          }
-        ]
+            action: () => util.opn(QMM_MODPAGE).catch(() => undefined),
+          },
+        ],
       });
     });
 }
@@ -259,9 +259,9 @@ context.registerGame({
     stopPatterns: [
       '(^|/)textures(/|$)',
       '(^|/).*\.es(p|m|l)$'
-    ]
-  }
-})
+    ],
+  },
+});
 ```
 
 If you don't know regular expressions this is likely hard to read. What this means is roughly:
@@ -378,7 +378,7 @@ const moddingTools = [
     ],
     relative: true,
     exclusive: true,
-  }
+  },
 ];
 ```
 The properties for each tool are as follows:
