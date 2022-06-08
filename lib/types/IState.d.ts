@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { IAttributeState } from './IAttributeState';
 import { IDialog } from './IDialog';
 import { INotification } from './INotification';
@@ -168,6 +169,8 @@ export interface IStateDownloads {
 }
 export interface IDashletSettings {
     enabled: boolean;
+    width: number;
+    height: number;
 }
 export interface ISettingsInterface {
     language: string;
@@ -303,8 +306,16 @@ export interface IModTable {
 }
 export interface IOverlay {
     title: string;
-    text: string;
+    content: string | React.ComponentType<any>;
     position: IPosition;
+    options?: IOverlayOptions;
+}
+export interface IOverlayOptions {
+    containerTitle?: string;
+    showIcon?: boolean;
+    className?: string;
+    disableCollapse?: boolean;
+    props?: any;
 }
 export interface IOverlaysState {
     overlays: {

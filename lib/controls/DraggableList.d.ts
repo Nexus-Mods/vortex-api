@@ -5,8 +5,9 @@ export interface IDraggableListProps {
     items: any[];
     isLocked?: (item: any) => boolean;
     idFunc?: (item: any) => string;
-    itemRenderer: React.ComponentClass<{
+    itemRenderer: React.ComponentType<{
         item: any;
+        ref?: React.LegacyRef<any>;
     }>;
     apply: (ordered: any[]) => void;
     style?: React.CSSProperties;

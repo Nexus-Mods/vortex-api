@@ -17,6 +17,7 @@ export interface IProps {
     validate?: ValidationState | ((value: any) => ValidationState);
     debounceTimer?: number;
     clearable?: boolean;
+    emptyIcon?: string;
 }
 declare const _default: React.ComponentClass<IProps, any>;
 export default _default;

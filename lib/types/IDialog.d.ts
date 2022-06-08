@@ -29,6 +29,7 @@ export interface ICheckbox extends IControlBase {
     bbcode?: string;
     value: boolean;
     disabled?: boolean;
+    subText?: string;
 }
 export interface IInput extends IControlBase {
     type?: 'text' | 'password' | 'number' | 'date' | 'time' | 'email' | 'url' | 'multiline';
@@ -41,6 +42,7 @@ export interface ILink {
     id?: string;
     action?: (dismiss: () => void, id: string) => void;
 }
+export declare type DialogContentItem = 'htmlFile' | 'htmlText' | 'text' | 'message' | 'bbcode' | 'md' | 'checkboxes' | 'choices' | 'input' | 'links';
 export interface IDialogContent {
     htmlFile?: string;
     /**
@@ -79,6 +81,7 @@ export interface IDialogContent {
         hideMessage?: boolean;
         bbcodeContext?: IBBCodeContext;
         linksAsButtons?: boolean;
+        order?: DialogContentItem[];
     };
     condition?: Condition;
 }

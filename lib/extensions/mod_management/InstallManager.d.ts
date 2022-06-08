@@ -1,5 +1,6 @@
 import { IExtensionApi } from '../../types/IExtensionContext';
 import { IProfile } from '../../types/IState';
+import { IInstallResult } from './types/IInstallResult';
 import { IFileListItem } from './types/IMod';
 import { InstallFunc } from './types/InstallFunc';
 import { TestSupported } from './types/TestSupported';
@@ -37,6 +38,7 @@ declare class InstallManager {
      * @memberOf InstallManager
      */
     addInstaller(id: string, priority: number, testSupported: TestSupported, install: InstallFunc): void;
+    simulate(api: IExtensionApi, gameId: string, archivePath: string, tempPath: string, extractList?: IFileListItem[], unattended?: boolean, installChoices?: any, progress?: (entries: string[], percent: number) => void): Promise<IInstallResult>;
     /**
      * start installing a mod.
      *

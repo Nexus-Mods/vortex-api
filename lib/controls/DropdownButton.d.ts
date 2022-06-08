@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { DropdownButton } from 'react-bootstrap';
 export interface IBaseProps {
     split?: boolean;
@@ -13,16 +12,5 @@ export declare type IProps = IBaseProps & typeof DropdownButton.prototype.props;
  * @class MyDropdownButton
  * @extends {React.Component<IProps, { up: boolean }>}
  */
-declare class MyDropdownButton extends React.Component<IProps, {
-    up: boolean;
-    right: boolean;
-}> {
-    private mNode;
-    private mOpen;
-    constructor(props: IProps);
-    componentDidMount(): void;
-    render(): JSX.Element;
-    private get bounds();
-    private onToggle;
-}
+declare function MyDropdownButton(props: IProps): JSX.Element;
 export default MyDropdownButton;
