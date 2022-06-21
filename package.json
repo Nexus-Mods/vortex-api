@@ -1,6 +1,6 @@
 {
   "name": "vortex-api",
-  "version": "1.6.0-r1",
+  "version": "1.6.0-r2",
   "description": "Library exporting nmm components extensions may use",
   "main": "lib/index.js",
   "bin": {
