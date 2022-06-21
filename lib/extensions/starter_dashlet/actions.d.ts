@@ -4,5 +4,5 @@ export declare const setPrimaryTool: import("redux-act").ComplexActionCreator2<s
 }, {}>;
 export declare const setToolOrder: import("redux-act").ComplexActionCreator2<string, string[], {
     gameId: string;
-    order: string[];
+    tools: string[];
 }, {}>;
