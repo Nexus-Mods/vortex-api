@@ -2,7 +2,7 @@
 layout: article
 author: Pickysaurus
 created: Wed, 18 May 2022 15:54:08 GMT
-updated: Thu, 23 Jun 2022 11:27:48 GMT
+updated: Thu, 23 Jun 2022 11:34:59 GMT
 wip: true
 title: Game Detection
 order: 1000
@@ -248,8 +248,8 @@ async function requiresLauncher(gamePath) {
   // we have to go through the MS launcher.
 
   // alternatively, if the game is set to allow mods and is installed in a custom location (as allowed by newer
-  // versions of the MS store application) it's far more reliable to try to confirm the existence of
-  // the game's 'appxmanifest.xml' file.
+  // versions of the MS store application) the game store is far less restrictive and it it's more reliable to try
+  // to confirm the existence of the game's 'appxmanifest.xml' file. (executable will still have restrictions)
   try {
     // Try to confirm the existence of the game's executable.
     await fs.stat(path.join(gamePath, EXE_NAME))
