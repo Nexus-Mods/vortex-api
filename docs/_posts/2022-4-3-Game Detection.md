@@ -2,7 +2,7 @@
 layout: article
 author: Pickysaurus
 created: Wed, 18 May 2022 15:54:08 GMT
-updated: Thu, 23 Jun 2022 11:21:38 GMT
+updated: Thu, 23 Jun 2022 11:27:48 GMT
 wip: true
 title: Game Detection
 order: 1000
@@ -257,8 +257,9 @@ async function requiresLauncher(gamePath) {
     // If we failed, given that this function can only be called if the game
     // has been successfully "discovered" - it's a fair assumption that the Xbox game store blocked us.
     // We can now try to launch the game through the xbox launcher as seen below. 'appExecName' parameter
-    // refers to the executable id we picked up from the appmanifest earlier. FYI: since 'App' is the default executable id
-    // for most Microsoft applications/games, the parameters property in this case can be omitted entirely.
+    // refers to the executable id we picked up from the appmanifest earlier. FYI: since 'App' is the default
+    // executable id for most Microsoft applications/games, the parameters property in this case can be
+    // omitted entirely as the GameStoreHelper will default to 'App' when 'appExecName' is not provided.
     return {
         launcher: 'xbox',
         addInfo: {
@@ -269,6 +270,20 @@ async function requiresLauncher(gamePath) {
         }
     };
   }
+}
+
+// The 'requiresLauncher' function needs to be added to the game registration
+// function call as a property.
+function main(context) {
+context.registerGame({
+      id: GAME_ID,
+      requiresLauncher, // <- here it is.
+      executable: () => EXE_NAME,
+      requiredFiles: [
+        EXE_NAME,
+      ],
+      // ... all other required game registration parameters have been omitted for demonstration purposes
+    })
 }
 ```
 
