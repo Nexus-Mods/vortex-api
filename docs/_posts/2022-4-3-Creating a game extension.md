@@ -2,7 +2,7 @@
 layout: article
 author: Pickysaurus
 created: Wed, 18 May 2022 14:34:54 GMT
-updated: Thu, 23 Jun 2022 10:51:28 GMT
+updated: Thu, 23 Jun 2022 10:54:39 GMT
 wip: true
 title: Creating a game extension
 order: 1000
@@ -148,7 +148,7 @@ Now we need to create the `findGame()` function mentioned earlier. This will be 
 
 Vortex features a utility function called the `GameStoreHelper` which can easily locate games installed with Steam, GOG, Epic, Origin, EA Play, UPlay and the Windows Store.
 
-> For more information on how to find the Application IDs for the various game stores, see [Game Detection](/en/vortex/developer/game-detection).
+> For more information on how to find the Application IDs for the various game stores, see [Game Detection](https://nexus-mods.github.io/vortex-api/2022/04/03/Game-Detection.html).
 {.is-info}
 
 
