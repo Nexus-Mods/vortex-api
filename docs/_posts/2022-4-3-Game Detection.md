@@ -2,7 +2,7 @@
 layout: article
 author: Pickysaurus
 created: Wed, 18 May 2022 15:54:08 GMT
-updated: Wed, 18 May 2022 15:54:08 GMT
+updated: Thu, 23 Jun 2022 11:21:38 GMT
 wip: true
 title: Game Detection
 order: 1000
@@ -176,7 +176,7 @@ If your game supports modding, you'll find an option in the context menu next to
 ![Fallout 4 in the Xbox app with the "Enable Mods" button visible beneath the "Play" button](https://user-images.githubusercontent.com/31670524/169086586-a795ff73-4fe7-49aa-8a00-e8a5c5e79595.jpg)
 
 ## Extract the ID from the appmanifest.xml
-Once you have mods enabled, you'll be able to open the mods folder either from within on the Xbox app or by finding the game folder under `C:\Program Files\ModifiableWindowsApps`. Inside the game folder you're looking for an `appmanifest.xml` file similar to the example below.
+Once you have mods enabled, you'll be able to open the mods folder either from within on the Xbox app or by finding the game folder under `C:\Program Files\ModifiableWindowsApps`. Inside the game folder you're looking for an `appxmanifest.xml` file similar to the example below.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -224,9 +224,53 @@ Once you have mods enabled, you'll be able to open the mods folder either from w
 </Package>
 ```
 
-In the example above, you can find the application ID and publisher ID under the `Identity` tag. So Pillars of Eternity 2 has an application ID of `VersusEvil.PillarsofEternity2-PC` and a publisher ID of `N=AC6C8E65-87DD-4311-AFEA-997EC62C606E`. You can also get the game executable name and path from the manifest, in this case it's under the `Application` tag as `PillarsOfEternity2.exe`.
+In the example above, you can find the application ID and publisher ID under the `Identity` tag. So Pillars of Eternity 2 has an application ID of `VersusEvil.PillarsofEternity2-PC` and a publisher ID of `N=AC6C8E65-87DD-4311-AFEA-997EC62C606E`. In order to launch Xbox games through Vortex, you will need to ascertain the id of the game's executable, luckily this information can be found in the appmanifest under the `Application` tag - you will need to look for the target executable, in this case `PillarsOfEternity2.exe`. Note in the data provided above that the application Id is `App` (this is generally the default id for most game executables but can differ from game to game)
 
-The ID required for Vortex to detect this game is `VersusEvil.PillarsofEternity2-PC`.
+The game ID required for Vortex to detect this game is `VersusEvil.PillarsofEternity2-PC`, and the app Id required to start the game is `App`.
+
+```
+import fs from 'fs-extra';
+import { util } from 'vortex-api';
+function findGame() {
+  // The game store helper utility function will search for any provided Game Id
+  // regardless of game store (unless a specific store id is specified)
+  return util.GameStoreHelper.findByAppId([MS_APPID, STEAM_APPID])
+    .then(disco => disco.gamePath);
+}
+
+async function requiresLauncher(gamePath) {
+  // In order to run MS store games through Vortex - the MS game launcher MUST
+  // be used. The purpose of this function is to confirm that the game is installed through
+  // the MS store before trying to run the game through the launcher.
+
+  // the windows store application has this silly permission system where we can't
+  // even stat some of the files in the game directory, so if we can't stat the exe, it's a safe bet
+  // we have to go through the MS launcher.
+
+  // alternatively, if the game is set to allow mods and is installed in a custom location (as allowed by newer
+  // versions of the MS store application) it's far more reliable to try to confirm the existence of
+  // the game's 'appxmanifest.xml' file.
+  try {
+    // Try to confirm the existence of the game's executable.
+    await fs.stat(path.join(gamePath, EXE_NAME))
+  } catch (err) {
+    // If we failed, given that this function can only be called if the game
+    // has been successfully "discovered" - it's a fair assumption that the Xbox game store blocked us.
+    // We can now try to launch the game through the xbox launcher as seen below. 'appExecName' parameter
+    // refers to the executable id we picked up from the appmanifest earlier. FYI: since 'App' is the default executable id
+    // for most Microsoft applications/games, the parameters property in this case can be omitted entirely.
+    return {
+        launcher: 'xbox',
+        addInfo: {
+          appId: MS_APPID,
+          parameters: [
+            { appExecName: 'App' },
+          ],
+        }
+    };
+  }
+}
+```
 
 ## Getting the ID from the registry
 > Due to the way Windows Store games are managed by your system, if you can't enable modding through the Xbox app, you may not be able to install mods correctly. 
