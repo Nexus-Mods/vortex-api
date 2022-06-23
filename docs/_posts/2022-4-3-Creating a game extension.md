@@ -2,7 +2,7 @@
 layout: article
 author: Pickysaurus
 created: Wed, 18 May 2022 14:34:54 GMT
-updated: Tue, 24 May 2022 09:44:00 GMT
+updated: Thu, 23 Jun 2022 10:51:28 GMT
 wip: true
 title: Creating a game extension
 order: 1000
@@ -48,6 +48,8 @@ If you can't answer most of these questions, you may have problems creating a co
 
 # Creating your extension
 A basic game extension consists of 3 files an info file, a game image and a javascript file. First, we will need a folder for our extension. If you're using a regular installation of Vortex, navigate to `AppData\Roaming\Vortex\plugins`. If you're using a Github repository, you can create this folder at `vortex\extensions\games`. For consistency, give your folder the same name as your game with no spaces, prefixed with "game-" e.g. "game-bloodstainedritualofthenight". Now, open this folder and we're ready to get set up.
+
+ℹ️ The `AppData\Roaming\Vortex\plugins` folder is meant to only hold custom extensions written by the community, in-development extensions, and/or updates for bundled Vortex plugins. The default location for game extensions that are bundled with the Vortex installer is `C:\Program Files\Black Tree Gaming Ltd\Vortex\resources\app.asar.unpacked\bundledPlugins`, it's highly advised you do not tamper with the bundled game extensions (Vortex will inform you on start-up if it detects any changes).
 
 For the game image, we recommend using an image similar to the game art used by the Nexus Mods website. Just ensure it's the same ratio as the other images inside Vortex (e.g. 640x360). It's also important that you name it "gameart", as this will help us find it later.
 
@@ -144,7 +146,7 @@ context.registerGame({
 # Game Detection
 Now we need to create the `findGame()` function mentioned earlier. This will be what Vortex uses to discover the game during a search. You can use different methods (or a combination) to detect the game. The most common instances are SteamApp ID and registry key.
 
-Vortex features a utility function called the `GameStoreHelper` which can easily locate games installed with Steam, GOG, Epic, Origin, UPlay and the Windows Store.
+Vortex features a utility function called the `GameStoreHelper` which can easily locate games installed with Steam, GOG, Epic, Origin, EA Play, UPlay and the Windows Store.
 
 > For more information on how to find the Application IDs for the various game stores, see [Game Detection](/en/vortex/developer/game-detection).
 {.is-info}
