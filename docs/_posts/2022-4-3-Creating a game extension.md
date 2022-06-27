@@ -2,7 +2,7 @@
 layout: article
 author: Pickysaurus
 created: Wed, 18 May 2022 14:34:54 GMT
-updated: Thu, 23 Jun 2022 10:54:39 GMT
+updated: Mon, 27 Jun 2022 13:45:02 GMT
 wip: true
 title: Creating a game extension
 order: 1000
@@ -279,6 +279,7 @@ mymod\foobar.esp
 
 Vortex will extract only `foobar.esp` and `textures\foobar.dds` and place that in the top level mod directory (Fallout 4\data).
 
+<a id="custom-installer">-</>
 ## Custom Installer
 Go this route if you find javascript easier to understand than regular expressions (no one would blame you) or if you need more control.
 
