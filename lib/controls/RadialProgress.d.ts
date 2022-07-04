@@ -15,6 +15,7 @@ export interface IBaseProps {
     maxWidth?: number;
     style?: React.CSSProperties;
     restOverlap?: boolean;
+    spin?: boolean;
 }
 declare const _default: React.ComponentClass<IBaseProps, any>;
 export default _default;

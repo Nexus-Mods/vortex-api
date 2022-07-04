@@ -14,10 +14,11 @@ export interface IHeaderProps {
     onSetFilter: (id?: string, filter?: any) => void;
     t: TFunction;
 }
-declare class HeaderCell extends React.Component<IHeaderProps, {}> {
+declare type IProps = React.PropsWithChildren<IHeaderProps>;
+declare class HeaderCell extends React.Component<IProps, {}> {
     private mMinWidth;
     private mRef;
-    shouldComponentUpdate(newProps: IHeaderProps): boolean;
+    shouldComponentUpdate(newProps: IProps): boolean;
     render(): JSX.Element;
     updateWidth(): void;
     private renderGroupIndicator;

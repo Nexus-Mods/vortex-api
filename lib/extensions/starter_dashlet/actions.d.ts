@@ -6,3 +6,8 @@ export declare const setToolOrder: import("redux-act").ComplexActionCreator2<str
     gameId: string;
     tools: string[];
 }, {}>;
+export declare const setToolValid: import("redux-act").ComplexActionCreator3<string, string, boolean, {
+    gameId: string;
+    toolId: string;
+    valid: boolean;
+}, {}>;
