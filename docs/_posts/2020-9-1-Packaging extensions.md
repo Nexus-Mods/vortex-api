@@ -2,7 +2,7 @@
 layout: article
 author: TanninOne
 created: Mon, 26 Oct 2020 08:31:23 GMT
-updated: Mon, 26 Oct 2020 08:55:35 GMT
+updated: Fri, 08 Jul 2022 06:40:00 GMT
 wip: true
 title: Packaging extensions
 order: 2
@@ -19,10 +19,10 @@ This article is for those who have created an extension (or a translation or the
 The easiest way for users to find and install extensions is through the built-in dialog. For your extension to be listed there a couple of things have to be fulfilled:
 
 - it has to be packaged in the correct way (see below) 
-- it has to be uploaded to https://www.nexusmods.com/site
+- it has to be uploaded to [https://www.nexusmods.com/site](https://www.nexusmods.com/site)
 - it has to be added to the correct category 
 - it can only have a single file under "main files" (there are exceptions, see under "Advanced: Supporting multiple versions") 
-- it must use semantic versioning (3 numbers:&nbsp;major.minor.patch, see https://semver.org/)
+- it must use semantic versioning (3 numbers:&nbsp;major.minor.patch, see [https://semver.org/](https://semver.org/))
 - it has to be manually reviewed by us 
 
 This last step means that after uploading your extension it may still take some time before it will be offered within Vortex.
@@ -90,7 +90,7 @@ Sometimes your extension will use features only introduced after a certain relea
 
 To support this you can include the text "Requires Vortex <version range>" (important: no spelling mistakes!) in the description text for the file.
 
- The version range can be a semantic versioning range as described (for example) here: https://devhints.io/semver
+ The version range can be a semantic versioning range as described (for example) here: [https://devhints.io/semver](https://devhints.io/semver)
 
 Most commonly you'll want to do something like "Requires Vortex >=1.2.0" to signify: "all versions starting with 1.2.0".
 
