@@ -94,3 +94,15 @@ export interface ITmpOptions {
 declare const withTmpDir: (...args: any[]) => any;
 declare const withTmpFile: (...args: any[]) => any;
 export { withTmpDir, withTmpFile, };
+export declare function encodingFromBOM(buf: Buffer): {
+    encoding: string;
+    length: number;
+};
+/**
+ * read file, using the BOM to determine the encoding
+ * @param filePath the file to read
+ * @param fallbackEncoding the encoding to use if there is no BOM. Expects one of the iconv-constants,
+ *                         which seem to be a super-set of the regular node buffer encodings
+ * @returns decoded file encoding
+ */
+export declare function readFileBOM(filePath: string, fallbackEncoding: string): Promise<string>;

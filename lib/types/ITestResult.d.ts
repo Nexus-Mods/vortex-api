@@ -1,5 +1,5 @@
 import Promise from 'bluebird';
-export declare type ProblemSeverity = 'warning' | 'error';
+export declare type ProblemSeverity = 'warning' | 'error' | 'fatal';
 export interface ITestResult {
     description: {
         short: string;
