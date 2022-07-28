@@ -2,7 +2,7 @@
 layout: article
 author: Pickysaurus
 created: Wed, 18 May 2022 14:34:54 GMT
-updated: Mon, 27 Jun 2022 13:45:56 GMT
+updated: Thu, 28 Jul 2022 13:10:53 GMT
 wip: true
 title: Creating a game extension
 order: 1000
@@ -326,7 +326,7 @@ function installContent(files) {
   
   // Remove directories and anything that isn't in the rootPath.
   const filtered = files.filter(file => 
-    ((file.indexOf(rootPath)&nbsp;!== -1) 
+    ((file.indexOf(rootPath) !== -1) 
     && (!file.endsWith(path.sep))));
 
   const instructions = filtered.map(file => {
