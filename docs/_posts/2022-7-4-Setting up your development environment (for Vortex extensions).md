@@ -2,11 +2,12 @@
 layout: article
 author: IDCs
 created: Thu, 11 Aug 2022 07:44:29 GMT
-updated: Wed, 17 Aug 2022 07:30:14 GMT
+updated: Wed, 17 Aug 2022 07:31:11 GMT
 wip: true
 title: Setting up your development environment (for Vortex extensions)
 order: 1000
 tags:
+  - General
   - Tutorial
 comments: 0
 issue_url: https://github.com/Nexus-Mods/vortex-api/issues/35
