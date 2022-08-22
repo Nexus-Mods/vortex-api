@@ -2,7 +2,7 @@
 layout: article
 author: Pickysaurus
 created: Wed, 18 May 2022 14:34:54 GMT
-updated: Thu, 28 Jul 2022 13:10:53 GMT
+updated: Mon, 22 Aug 2022 07:54:32 GMT
 wip: true
 title: Creating a game extension
 order: 1000
@@ -47,11 +47,11 @@ If you can't answer most of these questions, you may have problems creating a co
 *The majority of mods have the .pak files on the root level of the mod archive, however, some mod archives contain variants or are structured in different ways.*
 
 # Creating your extension
-A basic game extension consists of 3 files an info file, a game image and a javascript file. First, we will need a folder for our extension. If you're using a regular installation of Vortex, navigate to `AppData\Roaming\Vortex\plugins`. If you're using a Github repository, you can create this folder at `vortex\extensions\games`. For consistency, give your folder the same name as your game with no spaces, prefixed with "game-" e.g. "game-bloodstainedritualofthenight". Now, open this folder and we're ready to get set up.
+A basic game extension consists of 3 files an info file, a game image and a javascript file. First, we will need a folder for our extension. If you're using a regular installation of Vortex, navigate to `%AppData%\Vortex\plugins` (you can type this into windows explorer, %AppData% gets replaced with c:\Users\<account name>\AppData\Roaming).
 
-ℹ️ The `AppData\Roaming\Vortex\plugins` folder is meant to only hold custom extensions written by the community, in-development extensions, and/or updates for bundled Vortex plugins. The default location for game extensions that are bundled with the Vortex installer is `C:\Program Files\Black Tree Gaming Ltd\Vortex\resources\app.asar.unpacked\bundledPlugins`, it's highly advised you do not tamper with the bundled game extensions (Vortex will inform you on start-up if it detects any changes).
+ℹ️ The `%AppData%\Vortex\plugins` folder is meant to only hold custom extensions written by the community, in-development extensions, and/or updates for bundled Vortex plugins. The location of game extensions that are bundled with the Vortex installer is `C:\Program Files\Black Tree Gaming Ltd\Vortex\resources\app.asar.unpacked\bundledPlugins`, it's highly advised you do not tamper with the bundled game extensions (Vortex will inform you on start-up if it detects any changes).
 
-For the game image, we recommend using an image similar to the game art used by the Nexus Mods website. Just ensure it's the same ratio as the other images inside Vortex (e.g. 640x360). It's also important that you name it "gameart", as this will help us find it later.
+For the game image, we recommend using an image similar to the game art used by the Nexus Mods website. Just ensure it has an aspect ratio of 16/9 (they will be rendered at 256/144 in the default theme). You should also name it "gameart.jpg", as this will help us find it later.
 
 > To avoid confusion, please use the same exact image that you are using as the gameart for the mod page on Nexus Mods. Vortex will pull the mod page's primary image to display as game art in the app itself until the extension has been downloaded by the user.
 {.is-info}
@@ -199,8 +199,8 @@ function findGame() {
 
 At this point, you have now created a working game extension. This extension will take the contents of the downloaded mod archive and deploy them into the BloodstainedRotN/Content/Paks/~mods folder. As you might be aware, not every mod is packed in a consistent way. We might want a way of checking the archive structure and altering it slightly to fit the standardised modding pattern. This is where mod installation patterns become important.
 
-# Checking the user's enviroment
-Now that Vortex knows how to find the game, it's also possible to add some additional checks before we start managing mods for the game. These checks are run each time the user starts Vortex with the game currently active or switches to your game from a different one. This setup step can be used to check if the required folders exist, any required applications are present or any other checks you feel are required. In our example case, we want to make sure the ~mods folder already exists and create it if not.
+# Preparing the user's enviroment
+Now that Vortex knows how to find the game, it's also possible to add some additional checks before we start managing mods for the game. These checks are run each time the user starts Vortex with the game currently active or switches to your game from a different one. This setup step can be used to ensure the required folders exist, check if any required applications are present or any other checks you feel are required. In our example case, we want to make sure the ~mods folder already exists and create it if not.
 
 ```js
 function prepareForModding(discovery) {
@@ -244,14 +244,14 @@ function checkForQMM(api, qModPath) {
 
 
 # Mod installation patterns
-There is no universal standard how mod authors package their mods, although on a game-by-game basis, standards usually emerge as authors try to avoid confusion for their users and thus follow the example of prior mods.
+There is no universal standard for how mod authors package their mods, although on a game-by-game basis, standards usually emerge as authors try to avoid confusion for their users and thus follow the example of prior mods.
 
-By default Vortex will usually just unpack the mod as is into the mods directory identified by `queryModPath`.
+By default, Vortex will usually just unpack the mod as is into the mods directory identified by `queryModPath`.
 
 If necessary you can customize this behavior in one of two ways:
 
 ## Stop Patterns
-If you go this route, Vortex unpacks into the mod directory either directly or it unpacks a subdirectory from the archive. Which subdirectory it picks is determined by patterns (more precisely: "regular expressions", google is your friend) you can set. For Fallout 4 it might be something like this:
+If you go this route, Vortex unpacks the mod archive either fully or it unpacks a subdirectory from the archive into the mod directory. You control, based on file name patterns (more precisely: "regular expressions", google is your friend), which subdirectory it picks. For Fallout 4 it might be something like this:
 
 ```js
 context.registerGame({
@@ -347,12 +347,10 @@ It is possible to repeat this section for additional mod installers, especially 
 The next question you might be asking is "What if a mod has several variants in the same download?". There is a solution to this, but it does require some cooperation from the mod authors in the community. We discuss Mod Installers in the next section.
 
 # Mod installers
-A useful feature for mod authors is the ability to pack different variants of the same mod into a single package. This can be done by creating a [Mod Installer](/en/vortex/developer/mod-installers). Vortex is able to process mod installers natively, just be aware that the resulting files from the mod installer will be installed to the ~mods folder.
+A useful feature for mod authors is the ability to pack different variants of the same mod into a single package. This can be done by creating a [Mod Installer](https://modding.wiki/en/vortex/users/How-to-create-mod-installers). Vortex is able to process mod installers natively, just be aware that the resulting files from the mod installer will be installed to the ~mods folder.
 
 # Publishing your extension
-Now you're ready to share your extension. Make sure you pack it up including all 3 files. If you are using GitHub, you can submit a Pull Request to request your support be added to the main Vortex build. Alternatively, you can contact our team via Nexus Mods, Discord or GitHub to request we add it to the build.
-
-You may also wish to upload your game extension to Nexus Mods independently of the main Vortex build. This is particularly useful if you plan to continue developing the extension. To do so, [upload it to Nexus Mods](https://www.nexusmods.com/site/mods/add) and be sure to put it in the User Extensions subcategory.
+Now you're ready to share your extension. Please read [Packaging Extensions](https://nexus-mods.github.io/vortex-api/2020/09/01/Packaging-extensions.html) for this.
 
 # Advanced options
 ## Defining tools
