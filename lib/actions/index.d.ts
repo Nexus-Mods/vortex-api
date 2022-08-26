@@ -23,3 +23,4 @@ export { setNextProfile } from '../extensions/profile_management/actions/setting
 export * from '../extensions/settings_interface/actions/automation';
 export * from '../extensions/settings_interface/actions/interface';
 export * from '../extensions/updater/actions';
+export * from '../extensions/starter_dashlet/actions';

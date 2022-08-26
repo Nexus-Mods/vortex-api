@@ -18,6 +18,7 @@ export interface IProps {
     debounceTimer?: number;
     clearable?: boolean;
     emptyIcon?: string;
+    maxLength?: number;
 }
 declare const _default: React.ComponentClass<IProps, any>;
 export default _default;

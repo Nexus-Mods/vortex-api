@@ -3,4 +3,4 @@ export interface ISupportedResult {
     supported: boolean;
     requiredFiles: string[];
 }
-export declare type TestSupported = (files: string[], gameId: string) => Promise<ISupportedResult>;
+export declare type TestSupported = (files: string[], gameId: string, archivePath?: string) => Promise<ISupportedResult>;

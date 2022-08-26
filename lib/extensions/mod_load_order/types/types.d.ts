@@ -50,11 +50,11 @@ export interface IGameLoadOrderEntry {
     gameArtURL: string;
     displayCheckboxes?: boolean;
     noCollectionGeneration?: boolean;
-    createInfoPanel: (props: IInfoPanelProps) => string | React.Component;
+    createInfoPanel: (props: IInfoPanelProps) => string | React.ComponentType;
     preSort?: (items: ILoadOrderDisplayItem[], sortDir: SortType, updateType?: UpdateType) => Promise<ILoadOrderDisplayItem[]>;
     filter?: (mods: IMod[]) => IMod[];
     callback?: (loadOrder: ILoadOrder, updateType?: UpdateType) => void;
-    itemRenderer?: React.ComponentClass<{
+    itemRenderer?: React.ComponentType<{
         className?: string;
         item: ILoadOrderDisplayItem;
         onRef: (ref: any) => any;
