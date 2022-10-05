@@ -96,7 +96,8 @@ declare class InstallManager {
     private processRule;
     private processIniEdits;
     private processInstructions;
-    private checkModExists;
+    private checkModVariantsExist;
+    private checkModNameExists;
     private findPreviousVersionMod;
     private queryIgnoreDependent;
     private userVersionChoice;

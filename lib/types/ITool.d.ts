@@ -1,4 +1,5 @@
 import Promise from 'bluebird';
+import { IGameStoreEntry } from './IGameStoreEntry';
 /**
  * static information about a tool associated with a game.
  * This info is used to discover such tools and to store that
@@ -54,7 +55,7 @@ export interface ITool {
      * This may be left undefined but then the tool/game can only be discovered
      * by searching the disk which is slow and only happens manually.
      */
-    queryPath?: () => string | Promise<string>;
+    queryPath?: () => string | Promise<string | IGameStoreEntry>;
     /**
      * return the path of the tool executable relative to the tool base path,
      * i.e. binaries/UT3.exe or TESV.exe

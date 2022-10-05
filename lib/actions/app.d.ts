@@ -1,4 +1,5 @@
 import * as reduxAct from 'redux-act';
+import VortexInstallType from '../types/VortexInstallType';
 export declare const setStateVersion: reduxAct.ComplexActionCreator1<unknown, unknown, {}>;
 export declare const setApplicationVersion: reduxAct.ComplexActionCreator1<unknown, unknown, {}>;
 export declare const setExtensionEnabled: reduxAct.ComplexActionCreator2<string, boolean, {
@@ -18,3 +19,4 @@ export declare const forgetExtension: reduxAct.ComplexActionCreator1<any, any, {
 export declare const completeMigration: reduxAct.ComplexActionCreator1<any, any, {}>;
 export declare const setInstanceId: reduxAct.ComplexActionCreator1<any, any, {}>;
 export declare const setWarnedAdmin: reduxAct.ComplexActionCreator1<any, any, {}>;
+export declare const setInstallType: reduxAct.ComplexActionCreator1<VortexInstallType, VortexInstallType, {}>;

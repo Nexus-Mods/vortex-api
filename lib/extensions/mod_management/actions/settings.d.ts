@@ -1,4 +1,5 @@
 import * as reduxAct from 'redux-act';
+import { InstallPathMode } from '../../../types/api';
 /**
  * change the mod install path. Supports placeholders
  */
@@ -6,6 +7,8 @@ export declare const setInstallPath: reduxAct.ComplexActionCreator2<string, stri
     gameId: string;
     path: string;
 }, {}>;
+export declare const setInstallPathMode: reduxAct.ComplexActionCreator1<InstallPathMode, InstallPathMode, {}>;
+export declare const setSuggestInstallPathDirectory: reduxAct.ComplexActionCreator1<string, string, {}>;
 /**
  * sets the activator to use for this game
  */

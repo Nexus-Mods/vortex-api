@@ -11,6 +11,7 @@ import { IHistoryPersistent, IHistoryState } from '../extensions/history_managem
 import { IMod } from '../extensions/mod_management/types/IMod';
 import { IProfile } from '../extensions/profile_management/types/IProfile';
 import { IParameters } from '../util/commandLine';
+import VortexInstallType from './VortexInstallType';
 export { IDownload, IDiscoveryResult, IGameStored, IMod, IProfile };
 /**
  * interface to represent a position on the screen
@@ -145,6 +146,7 @@ export interface IApp {
         [id: string]: IExtensionState;
     };
     warnedAdmin: number;
+    installType: VortexInstallType;
     migrations: string[];
 }
 /**
@@ -226,6 +228,7 @@ export interface IStatePaths {
     download: string;
     install: string;
 }
+export declare type InstallPathMode = 'userData' | 'suggested';
 export interface ISettingsMods {
     installPath: {
         [gameId: string]: string;
@@ -236,6 +239,8 @@ export interface ISettingsMods {
     activator: {
         [gameId: string]: string;
     };
+    installPathMode: InstallPathMode;
+    suggestInstallPathDirectory: string;
     showDropzone: boolean;
     confirmPurge: boolean;
     cleanupOnDeploy: boolean;

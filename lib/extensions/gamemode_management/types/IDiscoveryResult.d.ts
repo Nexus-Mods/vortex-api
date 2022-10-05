@@ -14,6 +14,7 @@ import { IDiscoveredTool } from '../../../types/IDiscoveredTool';
 export interface IDiscoveryResult {
     path?: string;
     pathSetManually?: boolean;
+    store?: string;
     tools?: {
         [id: string]: IDiscoveredTool;
     };

@@ -1,10 +1,11 @@
 import Bluebird from 'bluebird';
 import * as reduxAct from 'redux-act';
 import { IExtensionApi } from '../../../types/IExtensionContext';
+import { IProfile } from '../types/IProfile';
 /**
  * add or edit a profile
  */
-export declare const setProfile: reduxAct.ComplexActionCreator1<unknown, unknown, {}>;
+export declare const setProfile: reduxAct.ComplexActionCreator1<IProfile, IProfile, {}>;
 export declare const removeProfile: reduxAct.ComplexActionCreator1<unknown, unknown, {}>;
 export declare const willRemoveProfile: reduxAct.ComplexActionCreator1<unknown, unknown, {}>;
 /**

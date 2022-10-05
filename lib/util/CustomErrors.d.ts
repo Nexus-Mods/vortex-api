@@ -40,7 +40,9 @@ export declare class DocumentsPathMissing extends Error {
     constructor();
 }
 export declare class SetupError extends Error {
-    constructor(message: string);
+    private mComponent;
+    constructor(message: string, component?: string);
+    get component(): string;
 }
 export declare class TemporaryError extends Error {
     constructor(message: string);

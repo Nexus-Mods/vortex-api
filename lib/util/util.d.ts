@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import { Normalize } from './getNormalizeFunc';
 import Bluebird from 'bluebird';
 import * as Redux from 'redux';
@@ -198,3 +199,18 @@ export interface INexusURLOptions {
     parameters?: string[];
 }
 export declare function nexusModsURL(reqPath: string[], options?: INexusURLOptions): string;
+export declare function filteredEnvironment(): NodeJS.ProcessEnv;
+declare type RecursivePartial<T> = {
+    [P in keyof T]?: T[P] extends (infer U)[] ? RecursivePartial<U>[] : T[P] extends object ? RecursivePartial<T[P]> : T[P];
+};
+export declare class Overlayable<T extends object> {
+    private mBaseData;
+    private mLayers;
+    private mDeduce;
+    constructor(baseData: T, deduceLayer: (key: keyof T) => string);
+    setLayer(layerId: string, data: RecursivePartial<T>): void;
+    get<KeyT extends keyof T, ObjT extends T[KeyT], AttrT extends keyof ObjT | undefined, ValueT extends ObjT[AttrT]>(key: KeyT, attr: AttrT): AttrT extends undefined ? ObjT : ValueT;
+}
+export declare function makeOverlayableDictionary<T extends object>(baseData: T, layers: {
+    [id: string]: RecursivePartial<T>;
+}, deduceLayer: (key: keyof T) => string): Overlayable<T>;

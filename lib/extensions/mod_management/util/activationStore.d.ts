@@ -7,7 +7,7 @@ export declare function fallbackPurgeType(api: IExtensionApi, activator: IDeploy
 /**
  * purge files using information from the manifest
  */
-export declare function fallbackPurge(api: IExtensionApi): Promise<void>;
+export declare function fallbackPurge(api: IExtensionApi, gameId?: string): Promise<void>;
 export declare function withActivationLock(func: () => Promise<any>, tryOnly?: boolean): Promise<unknown>;
 /**
  * return a manifest (detailing which files are currently deployed by Vortex)

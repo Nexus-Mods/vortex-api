@@ -6,6 +6,8 @@ export interface IApplication {
     memory: {
         total: number;
     };
+    platform: string;
+    platformVersion: string;
     quit: (exitCode?: number) => void;
 }
 export declare function setApplication(appIn: IApplication): void;

@@ -79,8 +79,10 @@ export interface IGame extends ITool {
      * If there are multiple <Application> tags, pick the one you actually want Vortex to start.
      *
      * @param gamePath path where the game is installed.
+     * @param store id of the store the game was detected through
+     *
      */
-    requiresLauncher?: (gamePath: string) => Promise<{
+    requiresLauncher?: (gamePath: string, store?: string) => Promise<{
         launcher: string;
         addInfo?: any;
     }>;

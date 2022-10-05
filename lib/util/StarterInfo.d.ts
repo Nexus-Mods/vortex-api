@@ -16,6 +16,7 @@ export interface IStarterInfo {
     exclusive: boolean;
     detach: boolean;
     shell: boolean;
+    store: string;
     onStart?: 'hide' | 'hide_recover' | 'close';
     environment: {
         [key: string]: string;
@@ -67,6 +68,7 @@ declare class StarterInfo implements IStarterInfo {
     extensionPath: string;
     logoName: string;
     timestamp: number;
+    store: string;
     constructor(game: IGameStored, gameDiscovery: IDiscoveryResult, tool?: IToolStored, toolDiscovery?: IDiscoveredTool);
     private initFromGame;
     private initFromTool;
