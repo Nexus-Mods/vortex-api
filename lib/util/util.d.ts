@@ -206,6 +206,7 @@ export declare class Overlayable<KeyT extends string | number | symbol, ObjT> {
     private mDeduce;
     constructor(baseData: Record<KeyT, ObjT>, deduceLayer: (key: KeyT) => string);
     setLayer(layerId: string, data: Record<KeyT, Partial<ObjT>>): void;
+    has(key: KeyT): boolean;
     get<AttrT extends keyof ObjT, ValT extends ObjT[AttrT]>(key: KeyT, attr: AttrT): ValT;
 }
 /**
