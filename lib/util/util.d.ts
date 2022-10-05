@@ -200,17 +200,22 @@ export interface INexusURLOptions {
 }
 export declare function nexusModsURL(reqPath: string[], options?: INexusURLOptions): string;
 export declare function filteredEnvironment(): NodeJS.ProcessEnv;
-declare type RecursivePartial<T> = {
-    [P in keyof T]?: T[P] extends (infer U)[] ? RecursivePartial<U>[] : T[P] extends object ? RecursivePartial<T[P]> : T[P];
-};
-export declare class Overlayable<T extends object> {
+export declare class Overlayable<KeyT extends string | number | symbol, ObjT> {
     private mBaseData;
     private mLayers;
     private mDeduce;
-    constructor(baseData: T, deduceLayer: (key: keyof T) => string);
-    setLayer(layerId: string, data: RecursivePartial<T>): void;
-    get<KeyT extends keyof T, ObjT extends T[KeyT], AttrT extends keyof ObjT | undefined, ValueT extends ObjT[AttrT]>(key: KeyT, attr: AttrT): AttrT extends undefined ? ObjT : ValueT;
+    constructor(baseData: Record<KeyT, ObjT>, deduceLayer: (key: KeyT) => string);
+    setLayer(layerId: string, data: Record<KeyT, Partial<ObjT>>): void;
+    get<AttrT extends keyof ObjT, ValT extends ObjT[AttrT]>(key: KeyT, attr: AttrT): ValT;
 }
-export declare function makeOverlayableDictionary<T extends object>(baseData: T, layers: {
-    [id: string]: RecursivePartial<T>;
-}, deduceLayer: (key: keyof T) => string): Overlayable<T>;
+/**
+ * helper function to create a dictionary that can have conditional
+ * overlays applied to it
+ * @param baseData the base data object
+ * @param layers keyed layers
+ * @param deduceLayer determine the layer to be used for a given key. If this returns
+ * @returns
+ */
+export declare function makeOverlayableDictionary<KeyT extends string | number | symbol, ValueT>(baseData: Record<KeyT, ValueT>, layers: {
+    [layerId: string]: Record<KeyT, Partial<ValueT>>;
+}, deduceLayer: (key: KeyT) => string): Overlayable<KeyT, ValueT>;
