@@ -2,18 +2,32 @@ import Bluebird from 'bluebird';
 import { IGameStore } from '../types/IGameStore';
 import { IGameStoreEntry } from '../types/IGameStoreEntry';
 import { IExtensionApi } from '../types/IExtensionContext';
+export interface IStoreQuery {
+    [storeId: string]: {
+        id?: string;
+        name?: string;
+        prefer?: number;
+    };
+}
 declare class GameStoreHelper {
     private mStores;
+    private mStoresDict;
     getGameStore(storeId: string): IGameStore;
     isGameInstalled(id: string, storeId?: string): Bluebird<string>;
     isGameStoreInstalled(storeId: string): Bluebird<boolean>;
+    registryLookup(lookup: string): Bluebird<IGameStoreEntry>;
+    find(query: IStoreQuery): Bluebird<IGameStoreEntry[]>;
     findByName(name: string | string[], storeId?: string): Bluebird<IGameStoreEntry>;
     findByAppId(appId: string | string[], storeId?: string): Bluebird<IGameStoreEntry>;
     launchGameStore(api: IExtensionApi, gameStoreId: string, parameters?: string[], askConsent?: boolean): Bluebird<void>;
     identifyStore(gamePath: string): Promise<string>;
     reloadGames(): Bluebird<void>;
+    /**
+     * @returns list of stores, sorted by priority
+     */
+    storeIds(): IGameStore[];
     private isStoreRunning;
-    private getstores;
+    private getStores;
     /**
      * Returns a store entry for a specified pattern.
      * @param searchType dictates which functor we execute.

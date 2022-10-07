@@ -204,10 +204,10 @@ export declare class Overlayable<KeyT extends string | number | symbol, ObjT> {
     private mBaseData;
     private mLayers;
     private mDeduce;
-    constructor(baseData: Record<KeyT, ObjT>, deduceLayer: (key: KeyT) => string);
+    constructor(baseData: Record<KeyT, ObjT>, deduceLayer: (key: KeyT, extraArg: any) => string);
     setLayer(layerId: string, data: Record<KeyT, Partial<ObjT>>): void;
     has(key: KeyT): boolean;
-    get<AttrT extends keyof ObjT, ValT extends ObjT[AttrT]>(key: KeyT, attr: AttrT): ValT;
+    get<AttrT extends keyof ObjT, ValT extends ObjT[AttrT]>(key: KeyT, attr: AttrT, extraArg?: any): ValT;
 }
 /**
  * helper function to create a dictionary that can have conditional
@@ -219,4 +219,4 @@ export declare class Overlayable<KeyT extends string | number | symbol, ObjT> {
  */
 export declare function makeOverlayableDictionary<KeyT extends string | number | symbol, ValueT>(baseData: Record<KeyT, ValueT>, layers: {
     [layerId: string]: Record<KeyT, Partial<ValueT>>;
-}, deduceLayer: (key: KeyT) => string): Overlayable<KeyT, ValueT>;
+}, deduceLayer: (key: KeyT, extraArg: any) => string): Overlayable<KeyT, ValueT>;
