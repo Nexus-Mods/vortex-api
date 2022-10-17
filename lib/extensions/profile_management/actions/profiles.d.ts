@@ -29,6 +29,7 @@ export declare const setProfileActivated: reduxAct.ComplexActionCreator1<string,
 export interface IEnableOptions {
     installed?: boolean;
     allowAutoDeploy?: boolean;
+    willBeReplaced?: boolean;
 }
 declare const setModsEnabled: (api: IExtensionApi, profileIdIn: string, modIdsIn: string[], enableIn: boolean, optionsIn?: IEnableOptions) => Bluebird<void>;
 export { setModsEnabled, };

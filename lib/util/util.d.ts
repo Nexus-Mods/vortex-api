@@ -200,14 +200,17 @@ export interface INexusURLOptions {
 }
 export declare function nexusModsURL(reqPath: string[], options?: INexusURLOptions): string;
 export declare function filteredEnvironment(): NodeJS.ProcessEnv;
+export declare function parseBool(input: string): boolean;
 export declare class Overlayable<KeyT extends string | number | symbol, ObjT> {
     private mBaseData;
     private mLayers;
     private mDeduce;
     constructor(baseData: Record<KeyT, ObjT>, deduceLayer: (key: KeyT, extraArg: any) => string);
     setLayer(layerId: string, data: Record<KeyT, Partial<ObjT>>): void;
+    keys(): string[];
     has(key: KeyT): boolean;
     get<AttrT extends keyof ObjT, ValT extends ObjT[AttrT]>(key: KeyT, attr: AttrT, extraArg?: any): ValT;
+    get baseData(): Record<KeyT, ObjT>;
 }
 /**
  * helper function to create a dictionary that can have conditional

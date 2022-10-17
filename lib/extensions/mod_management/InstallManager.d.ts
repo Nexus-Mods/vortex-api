@@ -25,6 +25,7 @@ declare class InstallManager {
     private mDependencyInstalls;
     private mDependencyDownloadsLimit;
     private mDependencyInstallsLimit;
+    private mDependencyQueue;
     constructor(api: IExtensionApi, installPath: (gameId: string) => string);
     /**
      * add an installer extension
@@ -120,6 +121,7 @@ declare class InstallManager {
     private downloadMatching;
     private downloadDependencyAsync;
     private applyExtraFromRule;
+    private dropUnfulfilled;
     private doInstallDependenciesPhase;
     private doInstallDependencies;
     private updateModRule;

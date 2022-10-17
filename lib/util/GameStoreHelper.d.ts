@@ -3,11 +3,11 @@ import { IGameStore } from '../types/IGameStore';
 import { IGameStoreEntry } from '../types/IGameStoreEntry';
 import { IExtensionApi } from '../types/IExtensionContext';
 export interface IStoreQuery {
-    [storeId: string]: {
+    [storeId: string]: Array<{
         id?: string;
         name?: string;
         prefer?: number;
-    };
+    }>;
 }
 declare class GameStoreHelper {
     private mStores;
@@ -16,11 +16,11 @@ declare class GameStoreHelper {
     isGameInstalled(id: string, storeId?: string): Bluebird<string>;
     isGameStoreInstalled(storeId: string): Bluebird<boolean>;
     registryLookup(lookup: string): Bluebird<IGameStoreEntry>;
-    find(query: IStoreQuery): Bluebird<IGameStoreEntry[]>;
+    find: (...args: any[]) => Bluebird<IGameStoreEntry[]>;
     findByName(name: string | string[], storeId?: string): Bluebird<IGameStoreEntry>;
     findByAppId(appId: string | string[], storeId?: string): Bluebird<IGameStoreEntry>;
     launchGameStore(api: IExtensionApi, gameStoreId: string, parameters?: string[], askConsent?: boolean): Bluebird<void>;
-    identifyStore(gamePath: string): Promise<string>;
+    identifyStore: (...args: any[]) => Bluebird<string>;
     reloadGames(): Bluebird<void>;
     /**
      * @returns list of stores, sorted by priority

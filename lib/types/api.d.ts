@@ -10,6 +10,7 @@ export * from './IState';
 export * from './ITestResult';
 export * from './ITableAttribute';
 export * from './SortDirection';
+export { ITool } from './ITool';
 export { TFunction } from '../util/i18n';
 export { IDiscoveredTool } from '../types/IDiscoveredTool';
 export { IExecInfo } from '../types/IExecInfo';

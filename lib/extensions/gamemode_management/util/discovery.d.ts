@@ -14,6 +14,7 @@ export declare function quickDiscoveryTools(gameId: string, tools: ITool[], onDi
  * @export
  * @param {IGame[]} knownGames
  * @param {DiscoveredCB} onDiscoveredGame
+ * @return the list of gameIds that were discovered
  */
 export declare function quickDiscovery(knownGames: IGame[], discoveredGames: {
     [id: string]: IDiscoveryResult;

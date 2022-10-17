@@ -6,6 +6,7 @@ export interface IModLookupInfo {
     fileName: string;
     name?: string;
     logicalFileName?: string;
+    additionalLogicalFileNames?: string[];
     customFileName?: string;
     version: string;
     game?: string[];
