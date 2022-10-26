@@ -14,10 +14,11 @@ export declare const clearDiscoveredGame: reduxAct.ComplexActionCreator1<string,
 /**
  * override the path of a game that's already been discovered
  */
-export declare const setGamePath: reduxAct.ComplexActionCreator3<string, string, string, {
+export declare const setGamePath: reduxAct.ComplexActionCreator4<string, string, string, string, {
     gameId: string;
     gamePath: string;
     store: string;
+    exePath: string;
 }, {}>;
 /**
  * add info about a discovered tool

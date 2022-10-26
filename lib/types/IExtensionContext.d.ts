@@ -2,7 +2,7 @@
 import { IExtensionDownloadInfo } from '../extensions/extension_manager/types';
 import { ILoadOrderGameInfo } from '../extensions/file_based_loadorder/types/types';
 import { GameVersionProviderFunc, GameVersionProviderTest, IGameVersionProviderOptions } from '../extensions/gameversion_management/types/IGameVersionProvider';
-import { IHistoryStack } from '../extensions/history_management/types';
+import { IHistoryEvent, IHistoryStack } from '../extensions/history_management/types';
 import { IGameLoadOrderEntry } from '../extensions/mod_load_order/types/types';
 import { IDeployedFile, IDeploymentMethod, IFileChange } from '../extensions/mod_management/types/IDeploymentMethod';
 import { IInstallResult, IInstruction, InstructionType } from '../extensions/mod_management/types/IInstallResult';
@@ -14,7 +14,7 @@ import { i18n, TFunction } from '../util/i18n';
 import ReduxProp from '../util/ReduxProp';
 import { SanityCheck } from '../util/reduxSanity';
 import { ICollectionsGameSupportEntry } from './collections/api';
-import { DialogActions, IDialogContent, IModReference, IModRepoId } from './api';
+import { DialogActions, IDialogContent, IModReference, IModRepoId, IOverlayOptions, IPosition } from './api';
 import { IActionOptions } from './IActionDefinition';
 import { IBannerOptions } from './IBannerOptions';
 import { DialogType, IDialogResult } from './IDialog';
@@ -31,6 +31,7 @@ import * as React from 'react';
 import * as Redux from 'redux';
 import { ComplexActionCreator } from 'redux-act';
 import { ThunkDispatch } from 'redux-thunk';
+import { INexusAPIExtension } from '../extensions/nexus_integration/types/INexusAPIExtension';
 export { TestSupported, IInstallResult, IInstruction, IDeployedFile, IDeploymentMethod, IFileChange, ILookupResult, IModInfo, IQuery, InstructionType, IReference, InstallFunc, ISupportedResult, ProgressDelegate };
 export interface ThunkStore<S> extends Redux.Store<S> {
     dispatch: ThunkDispatch<S, null, Redux.Action>;
@@ -283,6 +284,14 @@ export interface IApiFuncOptions {
      * minimum number of arguments the caller has to pass to a api extension function
      */
     minArguments?: number;
+}
+export interface IExtensionApiExtension extends INexusAPIExtension {
+    ensureLoggedIn?: () => Promise<void>;
+    awaitProfileSwitch?: (api: IExtensionApi) => Promise<string>;
+    showOverlay?: (id: string, title: string, content: string | React.ComponentType<any>, pos?: IPosition, options?: IOverlayOptions) => void;
+    showHistory?: (stack: string) => void;
+    addToHistory?: (stack: string, entry: IHistoryEvent) => void;
+    [key: string]: (...args: any[]) => any;
 }
 /**
  * interface for convenience functions made available to extensions
@@ -570,9 +579,7 @@ export interface IExtensionApi {
      * functions made available from extension to extension. Callers have to make
      * sure they handle gracefully the case where a function doesn't exist
      */
-    ext: {
-        [key: string]: (...args: any[]) => any;
-    };
+    ext: IExtensionApiExtension;
     NAMESPACE: string;
 }
 export interface IStateVerifier {
@@ -1023,10 +1030,10 @@ export interface IExtensionContext {
      * profile, so when users switch to a different profile, this file will be copied to the
      * profile they're switching away from, then the corresponding file from the profile they're
      * switching to is copied to filePath.
-     * Right now this only supports static file paths, no patterns (glob or regular expressions) and
-     * no way to dynamically find the file to synchronize
+     * filePath can either be a static string or a function returning a promise that resolves
+     * to the actual file path. The latter allows for the path to be determined dynamically
      */
-    registerProfileFile?: (gameId: string, filePath: string) => void;
+    registerProfileFile?: (gameId: string, filePath: string | (() => PromiseLike<string[]>)) => void;
     /**
      * register a profile feature that can be toggled/configured on the profiles screen.
      * The configured value can be queried at

@@ -50,6 +50,6 @@ declare class BatchContext implements IBatchContext {
     close(): void;
     onClose(cb: (context: BatchContext) => void): void;
 }
-export declare function getBatchContext(operation: string, key: string): IBatchContext;
+export declare function getBatchContext(operation: string, key: string, create?: boolean): IBatchContext;
 export declare function withBatchContext<T>(operation: string, keys: string[], cb: () => PromiseLike<T>): Promise<T>;
 export {};

@@ -67,6 +67,8 @@ declare class InstallManager {
     install(archiveId: string, archivePath: string, downloadGameIds: string[], api: IExtensionApi, info: any, processDependencies: boolean, enable: boolean, callback: (error: Error, id: string) => void, forceGameId?: string, fileList?: IFileListItem[], unattended?: boolean, forceInstaller?: string, allowAutoDeploy?: boolean): void;
     installDependencies(api: IExtensionApi, profile: IProfile, gameId: string, modId: string, allowAutoDeploy: boolean): Promise<void>;
     installRecommendations(api: IExtensionApi, profile: IProfile, gameId: string, modId: string): Promise<void>;
+    private augmentRules;
+    private withDependenciesContext;
     private hasFuzzyReference;
     private setModSize;
     /**
@@ -127,7 +129,10 @@ declare class InstallManager {
     private updateModRule;
     private updateRules;
     private doInstallDependencyList;
+    private showMemoDialog;
     private installDependenciesImpl;
+    private installRecommendationsQueryMain;
+    private installRecommendationsQuerySelect;
     private installRecommendationsImpl;
     private withInstructions;
     private installModAsync;

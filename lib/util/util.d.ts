@@ -157,7 +157,7 @@ export declare function makeUniqueByKey<T>(input: T[], key: (item: T) => string)
 export declare function withTmpDir<T>(cb: (tmpPath: string) => Promise<T>): Promise<T>;
 export declare function unique<T, U>(input: T[], keyFunc?: (item: T) => U): T[];
 export declare function delayed(delayMS: number): Promise<void>;
-export declare function toBlue<T>(func: (...args: any[]) => Promise<T>): (...args: any[]) => Bluebird<T>;
+export declare function toBlue<T, ArgsT extends any[]>(func: (...args: ArgsT) => Promise<T>): (...args: ArgsT) => Bluebird<T>;
 export declare function replaceRecursive(input: any, from: any, to: any): any;
 export declare function semverCoerce(input: string): semver.SemVer;
 export declare function batchDispatch(store: Redux.Dispatch | Redux.Store, actions: Redux.Action[]): void;

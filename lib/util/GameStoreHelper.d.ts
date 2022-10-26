@@ -16,11 +16,11 @@ declare class GameStoreHelper {
     isGameInstalled(id: string, storeId?: string): Bluebird<string>;
     isGameStoreInstalled(storeId: string): Bluebird<boolean>;
     registryLookup(lookup: string): Bluebird<IGameStoreEntry>;
-    find: (...args: any[]) => Bluebird<IGameStoreEntry[]>;
+    find: (query: IStoreQuery) => Bluebird<IGameStoreEntry[]>;
     findByName(name: string | string[], storeId?: string): Bluebird<IGameStoreEntry>;
     findByAppId(appId: string | string[], storeId?: string): Bluebird<IGameStoreEntry>;
     launchGameStore(api: IExtensionApi, gameStoreId: string, parameters?: string[], askConsent?: boolean): Bluebird<void>;
-    identifyStore: (...args: any[]) => Bluebird<string>;
+    identifyStore: (gamePath: string) => Bluebird<string>;
     reloadGames(): Bluebird<void>;
     /**
      * @returns list of stores, sorted by priority
