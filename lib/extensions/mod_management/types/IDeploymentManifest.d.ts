@@ -9,4 +9,4 @@ export interface IDeploymentManifest {
     targetPath?: string;
     files: IDeployedFile[];
 }
-export declare type ManifestFormat = (input: any) => IDeploymentManifest;
+export type ManifestFormat = (input: any) => IDeploymentManifest;

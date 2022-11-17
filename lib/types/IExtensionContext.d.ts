@@ -1,4 +1,5 @@
 /// <reference types="node" />
+/// <reference types="node" />
 import { IExtensionDownloadInfo } from '../extensions/extension_manager/types';
 import { ILoadOrderGameInfo } from '../extensions/file_based_loadorder/types/types';
 import { GameVersionProviderFunc, GameVersionProviderTest, IGameVersionProviderOptions } from '../extensions/gameversion_management/types/IGameVersionProvider';
@@ -36,20 +37,20 @@ export { TestSupported, IInstallResult, IInstruction, IDeployedFile, IDeployment
 export interface ThunkStore<S> extends Redux.Store<S> {
     dispatch: ThunkDispatch<S, null, Redux.Action>;
 }
-export declare type PropsCallback = () => any;
+export type PropsCallback = () => any;
 /**
  * determines where persisted state is stored and when it gets loaded.
  * global: global Vortex state, loaded on startup
  * game: state regarding the managed game. Will be swapped out when the game mode changes
  * profile: state regarding the managed profile. Will be swapped out when the profile changes
  */
-export declare type PersistingType = 'global' | 'game' | 'profile';
-export declare type CheckFunction = () => Promise<ITestResult>;
-export declare type RegisterSettings = (title: string, element: React.ComponentClass<any> | React.StatelessComponent<any>, props?: PropsCallback, visible?: () => boolean, priority?: number) => void;
-export declare type RegisterAction = (group: string, position: number, iconOrComponent: string | React.ComponentType<any>, options: IActionOptions, titleOrProps?: string | PropsCallback, actionOrCondition?: (instanceIds?: string[]) => void | boolean, condition?: (instanceIds?: string[]) => boolean | string) => void;
-export declare type RegisterControlWrapper = (group: string, priority: number, wrapper: React.ComponentType<any>) => void;
-export declare type RegisterFooter = (id: string, element: React.ComponentClass<any>, props?: PropsCallback) => void;
-export declare type RegisterBanner = (group: string, component: React.ComponentType<any>, options: IBannerOptions) => void;
+export type PersistingType = 'global' | 'game' | 'profile';
+export type CheckFunction = () => Promise<ITestResult>;
+export type RegisterSettings = (title: string, element: React.ComponentClass<any> | React.StatelessComponent<any>, props?: PropsCallback, visible?: () => boolean, priority?: number) => void;
+export type RegisterAction = (group: string, position: number, iconOrComponent: string | React.ComponentType<any>, options: IActionOptions, titleOrProps?: string | PropsCallback, actionOrCondition?: (instanceIds?: string[]) => void | boolean, condition?: (instanceIds?: string[]) => boolean | string) => void;
+export type RegisterControlWrapper = (group: string, priority: number, wrapper: React.ComponentType<any>) => void;
+export type RegisterFooter = (id: string, element: React.ComponentClass<any>, props?: PropsCallback) => void;
+export type RegisterBanner = (group: string, component: React.ComponentType<any>, options: IBannerOptions) => void;
 export interface IModSourceOptions {
     /**
      * condition for this source to show up. Please make sure this returns quickly, cache if
@@ -82,7 +83,7 @@ export interface IMainPageOptions {
     activity?: ReduxProp<boolean>;
     onReset?: () => void;
 }
-export declare type RegisterMainPage = (icon: string, title: string, element: React.ComponentType<any>, options: IMainPageOptions) => void;
+export type RegisterMainPage = (icon: string, title: string, element: React.ComponentType<any>, options: IMainPageOptions) => void;
 export interface IDashletOptions {
     fixed?: boolean;
     closable?: boolean;
@@ -91,16 +92,16 @@ export interface IDashletOptions {
  * @param height Height of the dashlet in rows. Please note that 1 row is very slim, it's not
  *               commonly used in practice
  */
-export declare type RegisterDashlet = (title: string, width: 1 | 2 | 3, height: 1 | 2 | 3 | 4 | 5 | 6, position: number, component: React.ComponentClass<any> | React.FunctionComponent<any>, isVisible: (state: any) => boolean, props: PropsCallback, options: IDashletOptions) => void;
-export declare type RegisterDialog = (id: string, element: React.ComponentType<any>, props?: PropsCallback) => void;
-export declare type RegisterOverlay = (id: string, element: React.ComponentType<any>, props?: PropsCallback) => void;
-export declare type ToDoType = 'settings' | 'search' | 'workaround' | 'more';
+export type RegisterDashlet = (title: string, width: 1 | 2 | 3, height: 1 | 2 | 3 | 4 | 5 | 6, position: number, component: React.ComponentClass<any> | React.FunctionComponent<any>, isVisible: (state: any) => boolean, props: PropsCallback, options: IDashletOptions) => void;
+export type RegisterDialog = (id: string, element: React.ComponentType<any>, props?: PropsCallback) => void;
+export type RegisterOverlay = (id: string, element: React.ComponentType<any>, props?: PropsCallback) => void;
+export type ToDoType = 'settings' | 'search' | 'workaround' | 'more';
 export interface IToDoButton {
     text: string;
     icon: string;
     onClick: () => void;
 }
-export declare type RegisterToDo = (id: string, type: ToDoType, props: (state: any) => any, icon: ((props: any) => JSX.Element) | string, text: ((t: TFunction, props: any) => JSX.Element) | string, action: (props: any) => void, condition: (props: any) => boolean, value: ((t: TFunction, props: any) => JSX.Element) | string, priority: number) => void;
+export type RegisterToDo = (id: string, type: ToDoType, props: (state: any) => any, icon: ((props: any) => JSX.Element) | string, text: ((t: TFunction, props: any) => JSX.Element) | string, action: (props: any) => void, condition: (props: any) => boolean, value: ((t: TFunction, props: any) => JSX.Element) | string, priority: number) => void;
 export interface IRegisterProtocol {
     (protocol: string, def: boolean, callback: (url: string, install: boolean) => void): any;
 }
@@ -117,7 +118,7 @@ export interface IOpenOptions {
     filters?: IFileFilter[];
     create?: boolean;
 }
-export declare type StateChangeCallback<T = any> = (previous: T, current: T) => void;
+export type StateChangeCallback<T = any> = (previous: T, current: T) => void;
 /**
  * additional detail to further narrow down which file is meant
  * in a lookup
@@ -132,7 +133,7 @@ export interface ILookupDetails {
     fileSize?: number;
     gameId?: string;
 }
-export declare type PersistorKey = string[];
+export type PersistorKey = string[];
 /**
  * a persistor is used to hook a data file into the store.
  * This way any data file can be made available through the store and
@@ -176,14 +177,14 @@ export interface IArchiveHandler {
     create?(sourcePath: string): Promise<void>;
     write?(): Promise<void>;
 }
-export declare type ArchiveHandlerCreator = (fileName: string, options: IArchiveOptions) => Promise<IArchiveHandler>;
+export type ArchiveHandlerCreator = (fileName: string, options: IArchiveOptions) => Promise<IArchiveHandler>;
 /**
  * callback used to extract download information into mod info.
  * This also gets called a lot when displaying uninstalled mods in the mod list
  * (the modPath is going to be undefined) so when that flag is set, the extractor should
  * not be accessing the disk or network or do any complex coomputation
  */
-export declare type AttributeExtractor = (modInfo: any, modPath: string) => Promise<{
+export type AttributeExtractor = (modInfo: any, modPath: string) => Promise<{
     [key: string]: any;
 }>;
 export interface IGameDetail {
@@ -221,7 +222,7 @@ export interface IErrorOptions {
  * field that doesn't exist in both IGameStored and IDiscoveryResult, please assume
  * it may be undefined.
  */
-export declare type GameInfoQuery = (game: any) => Promise<{
+export type GameInfoQuery = (game: any) => Promise<{
     [key: string]: IGameDetail;
 }>;
 export interface IMergeFilter {
@@ -235,11 +236,11 @@ export interface IMergeFilter {
  * callback to determine if a merge function applies to a game. If so, return an
  * object that describes what files to merge, otherwise return undefined
  */
-export declare type MergeTest = (game: IGame, gameDiscovery: IDiscoveryResult) => IMergeFilter;
+export type MergeTest = (game: IGame, gameDiscovery: IDiscoveryResult) => IMergeFilter;
 /**
  * callback to do the actual merging
  */
-export declare type MergeFunc = (filePath: string, mergePath: string) => Promise<void>;
+export type MergeFunc = (filePath: string, mergePath: string) => Promise<void>;
 /**
  * options used when starting an external application through runExecutable
  */
@@ -266,7 +267,7 @@ export interface IRunParameters {
 /**
  * callback to be used to determine list of variables for the tool command line
  */
-export declare type ToolParameterCB = (options: IRunParameters) => {
+export type ToolParameterCB = (options: IRunParameters) => {
     [key: string]: string;
 };
 export interface IPreviewFile {
@@ -607,7 +608,7 @@ export declare class VerifierDrop extends Error {
 export declare class VerifierDropParent extends Error {
     constructor();
 }
-export declare type PayloadT<Type> = Type extends ComplexActionCreator<infer X> ? X : never;
+export type PayloadT<Type> = Type extends ComplexActionCreator<infer X> ? X : never;
 export declare function addReducer<ActionT, StateT>(action: ActionT, handler: (state: StateT, payload: PayloadT<ActionT>) => StateT): {
     [x: number]: (state: StateT, payload: PayloadT<ActionT>) => StateT;
 };

@@ -48,7 +48,7 @@ export interface IActionProps {
     onHideDialog: () => void;
     onUnblockUI: (id: string) => void;
 }
-export declare type IProps = IBaseProps & IConnectedProps & IExtendedProps & IActionProps & II18NProps;
+export type IProps = IBaseProps & IConnectedProps & IExtendedProps & IActionProps & II18NProps;
 export declare const MainContext: React.Context<IComponentContext>;
 export declare class MainWindow extends React.Component<IProps, IMainWindowState> {
     static childContextTypes: React.ValidationMap<any>;

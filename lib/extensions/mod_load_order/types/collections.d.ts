@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { ICollectionInfo, IRevision, SourceType, UpdatePolicy } from '@nexusmods/nexus-api';
 import * as types from '../../../types/api';
 import { ILoadOrder } from '../types/types';
@@ -31,7 +32,7 @@ export interface ICollectionMod {
     author?: string;
     details?: ICollectionModDetails;
 }
-export declare type RuleType = 'before' | 'after' | 'requires' | 'conflicts' | 'recommends' | 'provides';
+export type RuleType = 'before' | 'after' | 'requires' | 'conflicts' | 'recommends' | 'provides';
 export interface ICollectionModRule {
     source: types.IModReference;
     type: RuleType;

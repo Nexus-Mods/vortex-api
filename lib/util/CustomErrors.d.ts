@@ -30,7 +30,7 @@ interface IUserCanceled extends Error {
     skipped: boolean;
     timed: number;
 }
-declare type IUserCanceledConstructor = new (skipped?: boolean) => IUserCanceled;
+type IUserCanceledConstructor = new (skipped?: boolean) => IUserCanceled;
 declare const UserCanceled: IUserCanceledConstructor;
 export { UserCanceled };
 export declare class MissingDependency extends Error {

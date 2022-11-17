@@ -1,7 +1,11 @@
-import { IDiscoveryResult, IState } from '../../types/IState';
-export declare const installPath: import("reselect").OutputSelector<any, string, (res1: {
+import { IState } from '../../types/IState';
+export declare const installPath: ((state: any) => string) & import("reselect").OutputSelectorFields<(args_0: {
     [gameId: string]: string;
-}, res2: string) => string>;
+}, args_1: string) => string & {
+    clearCache: () => void;
+}> & {
+    clearCache: () => void;
+};
 export declare const installPathForGame: import("re-reselect").ParametricSelector<IState, string, string> & {
     resultFunc: (res1: string, res2: string) => string;
     dependencies: [import("re-reselect").ParametricSelector<IState, string, string>, import("re-reselect").ParametricSelector<IState, string, string>];
@@ -14,9 +18,13 @@ export declare const installPathForGame: import("re-reselect").ParametricSelecto
     cache: import("re-reselect").ICacheObject;
     keySelector: import("re-reselect").ParametricKeySelector<IState, string>;
 };
-export declare const currentActivator: import("reselect").OutputSelector<any, string, (res1: {
+export declare const currentActivator: ((state: any) => string) & import("reselect").OutputSelectorFields<(args_0: {
     [gameId: string]: string;
-}, res2: string) => string>;
+}, args_1: string) => string & {
+    clearCache: () => void;
+}> & {
+    clearCache: () => void;
+};
 export declare const activatorForGame: import("re-reselect").ParametricSelector<IState, string, string> & {
     resultFunc: (res1: {
         [gameId: string]: string;
@@ -40,7 +48,13 @@ export declare const activatorForGame: import("re-reselect").ParametricSelector<
 interface INeedToDeployMap {
     [gameId: string]: boolean;
 }
-export declare const needToDeploy: import("reselect").OutputSelector<any, boolean, (res1: INeedToDeployMap, res2: string) => boolean>;
+export declare const needToDeploy: ((state: any) => boolean) & import("reselect").OutputSelectorFields<(args_0: {
+    [gameId: string]: boolean;
+}, args_1: string) => boolean & {
+    clearCache: () => void;
+}> & {
+    clearCache: () => void;
+};
 export declare const needToDeployForGame: import("re-reselect").ParametricSelector<IState, string, boolean> & {
     resultFunc: (res1: INeedToDeployMap, res2: string) => boolean;
     dependencies: [import("re-reselect").ParametricSelector<IState, string, INeedToDeployMap>, import("re-reselect").ParametricSelector<IState, string, string>];
@@ -53,11 +67,13 @@ export declare const needToDeployForGame: import("re-reselect").ParametricSelect
     cache: import("re-reselect").ICacheObject;
     keySelector: import("re-reselect").ParametricKeySelector<IState, string>;
 };
-export declare const modPathsForGame: import("reselect").OutputParametricSelector<IState, string, {
+export declare const modPathsForGame: ((state: IState, gameId: string) => {
     [typeId: string]: string;
-}, (res1: {
-    [gameId: string]: IDiscoveryResult;
-}, res2: string) => {
+}) & import("reselect").OutputSelectorFields<(args_0: {}, args_1: string) => {
     [typeId: string]: string;
-}>;
+} & {
+    clearCache: () => void;
+}> & {
+    clearCache: () => void;
+};
 export {};

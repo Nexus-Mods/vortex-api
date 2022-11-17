@@ -1,6 +1,6 @@
 /// <reference types="react" />
-export declare type LockedState = true | false | 'true' | 'false' | 'always' | 'never';
-export declare type LoadOrder = ILoadOrderEntry[];
+export type LockedState = true | false | 'true' | 'false' | 'always' | 'never';
+export type LoadOrder = ILoadOrderEntry[];
 export interface IItemRendererProps {
     loEntry: ILoadOrderEntry;
     displayCheckboxes: boolean;

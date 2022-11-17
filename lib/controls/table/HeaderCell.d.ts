@@ -14,7 +14,7 @@ export interface IHeaderProps {
     onSetFilter: (id?: string, filter?: any) => void;
     t: TFunction;
 }
-declare type IProps = React.PropsWithChildren<IHeaderProps>;
+type IProps = React.PropsWithChildren<IHeaderProps>;
 declare class HeaderCell extends React.Component<IProps, {}> {
     private mMinWidth;
     private mRef;

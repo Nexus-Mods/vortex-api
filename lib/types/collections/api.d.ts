@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { IGameSpecificInterfaceProps } from './IGameSpecificInterfaceProps';
 import * as types from '../api';
 export interface ICollectionsGameSupportEntry {

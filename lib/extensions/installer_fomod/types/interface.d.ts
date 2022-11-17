@@ -3,9 +3,9 @@ export interface IHeaderImage {
     showFade: boolean;
     height: number;
 }
-export declare type OrderType = 'AlphaAsc' | 'AlphaDesc' | 'Explicit';
-export declare type GroupType = 'SelectAtLeastOne' | 'SelectAtMostOne' | 'SelectExactlyOne' | 'SelectAll' | 'SelectAny';
-export declare type PluginType = 'Required' | 'Optional' | 'Recommended' | 'NotUsable' | 'CouldBeUsable';
+export type OrderType = 'AlphaAsc' | 'AlphaDesc' | 'Explicit';
+export type GroupType = 'SelectAtLeastOne' | 'SelectAtMostOne' | 'SelectExactlyOne' | 'SelectAll' | 'SelectAny';
+export type PluginType = 'Required' | 'Optional' | 'Recommended' | 'NotUsable' | 'CouldBeUsable';
 export interface IPlugin {
     id: number;
     selected: boolean;
@@ -32,13 +32,13 @@ export interface IInstallStep {
     visible: boolean;
     optionalFileGroups?: IGroupList;
 }
-export declare type Direction = 'forward' | 'back';
+export type Direction = 'forward' | 'back';
 export interface IStateParameters {
     stepId: number;
     groupId: number;
     plugins: number[];
 }
-export declare type StateCallback = (parameters: IStateParameters) => void;
+export type StateCallback = (parameters: IStateParameters) => void;
 export interface IInstallerInfo {
     moduleName: string;
     image: IHeaderImage;

@@ -1,2 +1,2 @@
-declare type VortexInstallType = 'regular' | 'managed';
+type VortexInstallType = 'regular' | 'managed';
 export default VortexInstallType;

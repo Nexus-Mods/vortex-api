@@ -2,9 +2,9 @@
 import * as Promise from 'bluebird';
 import { IActionDefinitionEx } from '../../../controls/ActionControl';
 import { IMod } from '../../../types/IState';
-export declare type SortType = 'ascending' | 'descending';
-export declare type ListViewType = 'compact' | 'full';
-export declare type UpdateType = 'drag-n-drop' | 'props-update' | 'refresh';
+export type SortType = 'ascending' | 'descending';
+export type ListViewType = 'compact' | 'full';
+export type UpdateType = 'drag-n-drop' | 'props-update' | 'refresh';
 export interface IInfoPanelProps {
     refresh: () => void;
 }

@@ -25,7 +25,7 @@ export interface IStarterInfo {
     extensionPath: string;
     logoName: string;
 }
-declare type OnShowErrorFunc = (message: string, details?: string | Error | any, allowReport?: boolean) => void;
+type OnShowErrorFunc = (message: string, details?: string | Error | any, allowReport?: boolean) => void;
 /**
  * wrapper for information about a game or tool, combining static and runtime/discovery information
  * for the purpose of actually starting them in a uniform way.

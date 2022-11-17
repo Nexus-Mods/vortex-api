@@ -1,4 +1,4 @@
-import { EndorsedStatus, ICollection, ICollectionManifest, IDownloadURL, IFeedbackResponse, IIssue, IRevision } from '@nexusmods/nexus-api';
+import { EndorsedStatus, ICollection, ICollectionManifest, IDownloadURL, IFeedbackResponse, IFileInfo, IIssue, IRevision } from '@nexusmods/nexus-api';
 export interface INexusAPIExtension {
     nexusCheckModsVersion?: () => void;
     nexusDownload?: () => void;
@@ -20,6 +20,9 @@ export interface INexusAPIExtension {
     nexusRequestNexusLogin?: (callback: any) => void;
     nexusRequestOwnIssues?: (cb: (err: Error, issues?: IIssue[]) => void) => void;
     nexusRetrieveCategoryList?: (isUpdate: boolean) => void;
-    nexusGetModFiles?: () => void;
-    nexusDownloadUpdate?: () => void;
+    nexusGetModFiles?: (gameId: string, modId: number) => PromiseLike<IFileInfo[]>;
+    nexusDownloadUpdate?: (source: string, gameId: string, modId: string, fileId: string, versionPattern: string, campaign: string, referenceTag?: string) => PromiseLike<{
+        error: Error;
+        dlId?: string;
+    }>;
 }

@@ -4,7 +4,7 @@ export interface IActionOptions {
     namespace?: string;
     hollowIcon?: boolean;
 }
-export declare type ActionFunc = (instanceId: string | string[]) => IActionDefinition[];
+export type ActionFunc = (instanceId: string | string[]) => IActionDefinition[];
 /**
  * interface of an action within one of the icon bars
  *

@@ -228,7 +228,7 @@ export interface IStatePaths {
     download: string;
     install: string;
 }
-export declare type InstallPathMode = 'userData' | 'suggested';
+export type InstallPathMode = 'userData' | 'suggested';
 export interface ISettingsMods {
     installPath: {
         [gameId: string]: string;
@@ -252,8 +252,8 @@ export interface ISettingsNotification {
     };
 }
 export declare const UPDATE_CHANNELS: readonly ["stable", "beta", "next", "none"];
-declare type ValuesOf<T extends readonly any[]> = T[number];
-export declare type UpdateChannel = ValuesOf<typeof UPDATE_CHANNELS>;
+type ValuesOf<T extends readonly any[]> = T[number];
+export type UpdateChannel = ValuesOf<typeof UPDATE_CHANNELS>;
 export interface ISettingsUpdate {
     channel: UpdateChannel;
 }

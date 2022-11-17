@@ -1,10 +1,10 @@
-export declare type NotificationDismiss = () => void;
+export type NotificationDismiss = () => void;
 export interface INotificationAction {
     icon?: string;
     title?: string;
     action: (dismiss: NotificationDismiss) => void;
 }
-export declare type NotificationType = 'activity' | 'global' | 'success' | 'info' | 'warning' | 'error' | 'silent';
+export type NotificationType = 'activity' | 'global' | 'success' | 'info' | 'warning' | 'error' | 'silent';
 /**
  * a notification message
  *

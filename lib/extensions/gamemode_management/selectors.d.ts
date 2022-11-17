@@ -2,7 +2,11 @@ import { IState } from '../../types/IState';
 import { IDiscoveryResult } from './types/IDiscoveryResult';
 import { IGameStored } from './types/IGameStored';
 export declare function knownGames(state: any): IGameStored[];
-export declare const currentGame: import("reselect").OutputSelector<any, IGameStored, (res1: IGameStored[], res2: string) => IGameStored>;
+export declare const currentGame: ((state: any) => IGameStored) & import("reselect").OutputSelectorFields<(args_0: IGameStored[], args_1: string) => IGameStored & {
+    clearCache: () => void;
+}> & {
+    clearCache: () => void;
+};
 export declare const gameById: import("re-reselect").ParametricSelector<any, string, IGameStored> & {
     resultFunc: (res1: IGameStored[], res2: string) => IGameStored;
     dependencies: [import("re-reselect").ParametricSelector<any, string, IGameStored[]>, import("re-reselect").ParametricSelector<any, string, string>];

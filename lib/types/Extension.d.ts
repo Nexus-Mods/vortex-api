@@ -3,4 +3,4 @@ export interface IExtensionReducer {
     path: string[];
     reducer: IReducerSpec;
 }
-export declare type ExtensionInit = (context: IExtensionContext) => boolean;
+export type ExtensionInit = (context: IExtensionContext) => boolean;

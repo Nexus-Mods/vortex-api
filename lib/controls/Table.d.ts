@@ -3,7 +3,7 @@ import { IExtensibleProps } from '../types/IExtensionProvider';
 import { ITableState } from '../types/IState';
 import * as React from 'react';
 import { OutputSelector } from 'reselect';
-export declare type ChangeDataHandler = (rowId: string, attributeId: string, newValue: any) => void;
+export type ChangeDataHandler = (rowId: string, attributeId: string, newValue: any) => void;
 export interface ITableRowAction extends IActionDefinition {
     singleRowAction?: boolean;
     multiRowAction?: boolean;
@@ -36,7 +36,7 @@ export interface ILookupCalculated {
         [attributeId: string]: any;
     };
 }
-declare type GetSelection = OutputSelector<any, string[], (res: ITableState) => string[]>;
+type GetSelection = OutputSelector<any, string[], (res: ITableState) => string[]>;
 export declare function makeGetSelection(tableId: string): GetSelection;
 declare const _default: React.ComponentType<IBaseProps & IExtensibleProps>;
 export default _default;

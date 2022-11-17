@@ -1,5 +1,5 @@
 import { IBBCodeContext } from '../util/bbcode';
-export declare type DialogType = 'success' | 'info' | 'error' | 'question';
+export type DialogType = 'success' | 'info' | 'error' | 'question';
 export interface IDialogAction {
     label: string;
     default?: boolean;
@@ -10,9 +10,9 @@ export interface IConditionResult {
     errorText: string;
     id: string;
 }
-export declare type ConditionResults = IConditionResult[];
-export declare type DialogActions = IDialogAction[];
-export declare type Condition = (content: IDialogContent) => ConditionResults;
+export type ConditionResults = IConditionResult[];
+export type DialogActions = IDialogAction[];
+export type Condition = (content: IDialogContent) => ConditionResults;
 export interface IDialog {
     id: string;
     type: DialogType;
@@ -42,7 +42,7 @@ export interface ILink {
     id?: string;
     action?: (dismiss: () => void, id: string) => void;
 }
-export declare type DialogContentItem = 'htmlFile' | 'htmlText' | 'text' | 'message' | 'bbcode' | 'md' | 'checkboxes' | 'choices' | 'input' | 'links';
+export type DialogContentItem = 'htmlFile' | 'htmlText' | 'text' | 'message' | 'bbcode' | 'md' | 'checkboxes' | 'choices' | 'input' | 'links';
 export interface IDialogContent {
     htmlFile?: string;
     /**

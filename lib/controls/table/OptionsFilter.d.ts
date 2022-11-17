@@ -4,7 +4,7 @@ export interface ISelectOption {
     value: any;
     label: string;
 }
-declare type Options = ISelectOption[];
+type Options = ISelectOption[];
 declare class OptionsFilter implements ITableFilter {
     static EMPTY: string;
     component: React.ComponentClass<any>;

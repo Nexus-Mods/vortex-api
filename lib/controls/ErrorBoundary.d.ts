@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { WithTranslation } from 'react-i18next';
-export declare type CBFunction = (...args: any[]) => void;
+export type CBFunction = (...args: any[]) => void;
 export interface IErrorContext {
     safeCB: (cb: CBFunction, dependencyList?: any[]) => CBFunction;
 }

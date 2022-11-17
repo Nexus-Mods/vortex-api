@@ -1,8 +1,8 @@
 /// <reference types="react" />
 import { ITString, TFunction } from '../util/i18n';
-export declare type AttributeRenderer = 'progress';
-export declare type Placement = 'table' | 'detail' | 'both' | 'inline';
-export declare type ValidationState = 'success' | 'warning' | 'error';
+export type AttributeRenderer = 'progress';
+export type Placement = 'table' | 'detail' | 'both' | 'inline';
+export type ValidationState = 'success' | 'warning' | 'error';
 export interface IEditChoice {
     key: string;
     text?: string;

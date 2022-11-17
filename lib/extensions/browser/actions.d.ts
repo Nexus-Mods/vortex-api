@@ -1,5 +1,5 @@
 import { Action } from 'redux';
-declare type ShowUrlFunc = (url: string, instructions?: string, subscriber?: string, skippable?: boolean) => Action<{
+type ShowUrlFunc = (url: string, instructions?: string, subscriber?: string, skippable?: boolean) => Action<{
     url: string;
     instructions: string;
     subscriber: string;

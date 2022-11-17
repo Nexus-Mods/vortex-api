@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { TFunction } from '../util/i18n';
 export interface IItemProps {
     name: string;

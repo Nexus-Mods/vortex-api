@@ -23,4 +23,4 @@ export interface IDependency {
 export interface IDependencyError {
     error: string;
 }
-export declare type Dependency = IDependency | IDependencyError;
+export type Dependency = IDependency | IDependencyError;

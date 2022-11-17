@@ -6,7 +6,7 @@ export interface IFlexLayoutProps {
     type: 'column' | 'row';
     fill?: boolean;
 }
-export declare type IProps = IFlexLayoutProps & React.HTMLAttributes<HTMLDivElement>;
+export type IProps = IFlexLayoutProps & React.HTMLAttributes<HTMLDivElement>;
 declare class FlexLayout extends React.PureComponent<IProps, {}> {
     static Fixed: (props: React.HTMLAttributes<HTMLDivElement>) => JSX.Element;
     static Flex: (props: IFlexProps & React.HTMLAttributes<HTMLDivElement>) => JSX.Element;

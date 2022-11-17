@@ -3,7 +3,7 @@ import { Dropdown } from 'react-bootstrap';
 export interface IBaseProps {
     container?: Element;
 }
-export declare type IProps = IBaseProps & typeof Dropdown.prototype.props;
+export type IProps = IBaseProps & typeof Dropdown.prototype.props;
 export declare class DummyMenu extends React.Component<{}, {}> {
     static defaultProps: {
         bsRole: any;

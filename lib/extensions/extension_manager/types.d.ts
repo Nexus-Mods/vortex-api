@@ -1,5 +1,5 @@
 import { IExtensionLoadFailure, IExtensionState } from '../../types/IState';
-export declare type ExtensionType = 'game' | 'translation' | 'theme';
+export type ExtensionType = 'game' | 'translation' | 'theme';
 export interface IExtension {
     id?: string;
     namespace?: string;
@@ -12,7 +12,7 @@ export interface IExtension {
     path?: string;
     modId?: number;
 }
-export declare type IExtensionWithState = IExtension & IExtensionState & {
+export type IExtensionWithState = IExtension & IExtensionState & {
     loadFailures: IExtensionLoadFailure[];
 };
 export interface IExtensionDownloadInfo {

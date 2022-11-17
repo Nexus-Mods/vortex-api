@@ -6,7 +6,7 @@ export interface IBaseProps {
     orientation: 'vertical' | 'horizontal';
     shouldUpdatePosition?: boolean;
 }
-export declare type IProps = IBaseProps & typeof Overlay.prototype.props;
+export type IProps = IBaseProps & typeof Overlay.prototype.props;
 /**
  * custom variant of the overlay that automatically chooses the placement
  * of the popover based on the position on the screen.

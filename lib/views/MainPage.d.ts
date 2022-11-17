@@ -7,7 +7,7 @@ export interface IBaseProps {
     className?: string;
     domRef?: (ref: HTMLElement) => void;
 }
-declare type IProps = IBaseProps;
+type IProps = IBaseProps;
 declare class MainPage extends ComponentEx<IProps, {}> {
     static Body: typeof Body;
     static Header: any;

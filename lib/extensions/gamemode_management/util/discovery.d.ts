@@ -5,8 +5,8 @@ import { ITool } from '../../../types/ITool';
 import { Normalize } from '../../../util/getNormalizeFunc';
 import { IDiscoveryResult } from '../types/IDiscoveryResult';
 import Bluebird from 'bluebird';
-export declare type DiscoveredCB = (gameId: string, result: IDiscoveryResult) => void;
-export declare type DiscoveredToolCB = (gameId: string, result: IDiscoveredTool) => void;
+export type DiscoveredCB = (gameId: string, result: IDiscoveryResult) => void;
+export type DiscoveredToolCB = (gameId: string, result: IDiscoveredTool) => void;
 export declare function quickDiscoveryTools(gameId: string, tools: ITool[], onDiscoveredTool: DiscoveredToolCB): Bluebird<void>;
 /**
  * run the "quick" discovery using functions provided by the game extension

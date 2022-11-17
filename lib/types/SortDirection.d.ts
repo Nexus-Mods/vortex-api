@@ -1,1 +1,1 @@
-export declare type SortDirection = 'none' | 'asc' | 'desc';
+export type SortDirection = 'none' | 'asc' | 'desc';

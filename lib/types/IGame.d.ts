@@ -4,7 +4,7 @@ import { ITool } from './ITool';
 import Promise from 'bluebird';
 import { IStoreQuery } from '../util/GameStoreHelper';
 export { IModType };
-export declare type DirectoryCleaningMode = 'tag' | 'all';
+export type DirectoryCleaningMode = 'tag' | 'all';
 /**
  * interface for game extensions
  *

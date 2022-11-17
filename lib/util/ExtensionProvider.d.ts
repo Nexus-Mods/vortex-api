@@ -1,7 +1,7 @@
 import ExtensionManager from './ExtensionManager';
 import { IExtendedProps, IExtensibleProps } from '../types/IExtensionProvider';
 import * as React from 'react';
-declare type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 export declare const ExtensionContext: React.Context<{}>;
 export interface IExtensionProps {
     extensions: ExtensionManager;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-export declare type CheckboxState = 'enabled' | 'disabled' | 'locked';
+export type CheckboxState = 'enabled' | 'disabled' | 'locked';
 export interface ITriCheckboxProps {
     checked: boolean;
     indeterminate: boolean;

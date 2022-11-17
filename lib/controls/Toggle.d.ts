@@ -5,7 +5,7 @@ export interface IToggleProps {
     onToggle: (newValue: boolean, dataId?: string) => void;
     disabled?: boolean;
 }
-export declare type IProps = React.HTMLAttributes<HTMLDivElement> & IToggleProps;
+export type IProps = React.HTMLAttributes<HTMLDivElement> & IToggleProps;
 declare class Toggle extends React.PureComponent<IProps, {}> {
     render(): JSX.Element;
     private onToggle;

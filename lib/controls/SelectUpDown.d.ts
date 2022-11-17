@@ -7,7 +7,7 @@ export interface ISelectUpDownProps {
 interface ISelectUpDownState {
     up: boolean;
 }
-declare type IProps = ISelectUpDownProps & ReactSelectProps;
+type IProps = ISelectUpDownProps & ReactSelectProps;
 declare class SelectUpDown extends React.Component<IProps, ISelectUpDownState> {
     private mNode;
     constructor(props: IProps);

@@ -7,7 +7,7 @@ interface IParameters<T, U> {
     prevValue: U;
     currentValue: U;
 }
-declare type WatchCallback<T, U> = (parameters: IParameters<T, U>) => void;
+type WatchCallback<T, U> = (parameters: IParameters<T, U>) => void;
 /**
  * this is a rewrite of redux-watcher (https://github.com/imsun/redux-watcher/)
  * The base idea is the same, it's a way to subscribe to changes on a redux store

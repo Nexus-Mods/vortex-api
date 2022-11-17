@@ -7,7 +7,7 @@ export interface ITooltipProps {
     placement?: 'top' | 'right' | 'bottom' | 'left';
     buttonType?: ButtonType;
 }
-export declare type ButtonProps = ITooltipProps & typeof BootstrapButton.prototype.props;
+export type ButtonProps = ITooltipProps & typeof BootstrapButton.prototype.props;
 /**
  * Button with a tooltip
  *
@@ -29,7 +29,7 @@ export interface IIconButtonExtraProps {
     rotateId?: string;
     vertical?: boolean;
 }
-export declare type IconButtonProps = ButtonProps & IIconButtonExtraProps;
+export type IconButtonProps = ButtonProps & IIconButtonExtraProps;
 export declare class IconButton extends React.Component<IconButtonProps, {}> {
     render(): JSX.Element;
 }
@@ -39,11 +39,11 @@ export interface IToggleButtonExtraProps {
     offTooltip: string | React.Component<any, any>;
     state: boolean;
 }
-export declare type ToggleButtonProps = ButtonProps & IToggleButtonExtraProps;
+export type ToggleButtonProps = ButtonProps & IToggleButtonExtraProps;
 export declare class ToggleButton extends React.Component<ToggleButtonProps, {}> {
     render(): JSX.Element;
 }
-export declare type NavItemProps = ITooltipProps & typeof BootstrapNavItem.prototype.props;
+export type NavItemProps = ITooltipProps & typeof BootstrapNavItem.prototype.props;
 export declare class NavItem extends React.Component<NavItemProps, {}> {
     render(): JSX.Element;
 }
@@ -69,7 +69,7 @@ export interface ITooltipIconProps {
     hollow?: boolean;
     style?: React.CSSProperties;
 }
-export declare type IconProps = ITooltipProps & ITooltipIconProps;
+export type IconProps = ITooltipProps & ITooltipIconProps;
 /**
  * Icon with a tooltip
  *
@@ -79,7 +79,7 @@ export declare type IconProps = ITooltipProps & ITooltipIconProps;
 export declare class Icon extends React.Component<IconProps, {}> {
     render(): JSX.Element;
 }
-export declare type ClickPopoverProps = ButtonProps & IIconButtonExtraProps & {};
+export type ClickPopoverProps = ButtonProps & IIconButtonExtraProps & {};
 export declare class ClickPopover extends React.Component<ClickPopoverProps, {
     open: boolean;
 }> {
