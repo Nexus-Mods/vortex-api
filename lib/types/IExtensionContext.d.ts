@@ -288,7 +288,7 @@ export interface IApiFuncOptions {
 }
 export interface IExtensionApiExtension extends INexusAPIExtension {
     ensureLoggedIn?: () => Promise<void>;
-    awaitProfileSwitch?: (api: IExtensionApi) => Promise<string>;
+    awaitProfileSwitch?: () => Promise<string>;
     showOverlay?: (id: string, title: string, content: string | React.ComponentType<any>, pos?: IPosition, options?: IOverlayOptions) => void;
     showHistory?: (stack: string) => void;
     addToHistory?: (stack: string, entry: IHistoryEvent) => void;
