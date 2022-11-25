@@ -1,6 +1,6 @@
 {
   "name": "vortex-api",
-  "version": "1.7.0-r9",
+  "version": "1.7.0-r10",
   "description": "Library exporting nmm components extensions may use",
   "main": "lib/index.js",
   "bin": {
@@ -26,6 +26,7 @@
     "js-yaml": "^3.14.0",
     "lunr": "^2.3.9",
     "request": "^2.88.2",
+    "re-reselect": "^3.4.0",
     "typedoc": "^0.22.10",
     "typedoc-plugin-markdown": "^3.11.11"
   }

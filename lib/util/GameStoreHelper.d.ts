@@ -3,11 +3,9 @@ import { IGameStore } from '../types/IGameStore';
 import { IGameStoreEntry } from '../types/IGameStoreEntry';
 import { IExtensionApi } from '../types/IExtensionContext';
 export interface IStoreQuery {
-    [storeId: string]: Array<{
-        id?: string;
-        name?: string;
-        prefer?: number;
-    }>;
+    id?: string;
+    name?: string;
+    prefer?: number;
 }
 declare class GameStoreHelper {
     private mStores;

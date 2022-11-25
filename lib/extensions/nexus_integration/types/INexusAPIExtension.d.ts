@@ -1,7 +1,10 @@
 import { EndorsedStatus, ICollection, ICollectionManifest, IDownloadURL, IFeedbackResponse, IFileInfo, IIssue, IRevision } from '@nexusmods/nexus-api';
+import { IMod } from '../../mod_management/types/IMod';
 export interface INexusAPIExtension {
-    nexusCheckModsVersion?: () => void;
-    nexusDownload?: () => void;
+    nexusCheckModsVersion?: (gameId: string, mods: {
+        [modId: string]: IMod;
+    }, forceFull: boolean | 'silent') => void;
+    nexusDownload?: (gameId: string, modId: number, fileId: number, fileName?: string, allowInstall?: boolean) => PromiseLike<string>;
     nexusGetCollection?: (slug: string) => PromiseLike<ICollection>;
     nexusGetCollections?: (gameId: string) => PromiseLike<ICollection[]>;
     nexusGetMyCollections?: (gameId: string, count?: number, offset?: number) => PromiseLike<IRevision[]>;
