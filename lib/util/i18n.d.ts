@@ -1,5 +1,5 @@
 import { IExtension } from '../extensions/extension_manager/types';
-import Promise from 'bluebird';
+import Bluebird from 'bluebird';
 import I18next, { i18n, TOptions } from 'i18next';
 type TFunction = typeof I18next.t;
 declare const fallbackTFunc: TFunction;
@@ -16,8 +16,9 @@ export interface IInitResult {
  * @param {string} language
  * @returns {I18next.I18n}
  */
-declare function init(language: string, translationExts: () => IExtension[]): Promise<IInitResult>;
+declare function init(language: string, translationExts: () => IExtension[]): Bluebird<IInitResult>;
 export declare function getCurrentLanguage(): string;
+export declare function changeLanguage(lng: string, cb?: (err: Error) => void): Promise<TFunction>;
 export declare function globalT(key: string | string[], options: TOptions): string;
 export declare function debugTranslations(enable?: boolean): void;
 export declare function getMissingTranslations(): {
