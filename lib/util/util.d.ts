@@ -57,6 +57,7 @@ export declare function truthy(val: any): boolean;
  * @param rhs the right, "after", object
  */
 export declare function objDiff(lhs: any, rhs: any, skip?: string[]): any;
+export declare function restackErr(error: Error, stackErr: Error): Error;
 /**
  * create a "queue".
  * Returns an enqueue function such that that the callback passed to it

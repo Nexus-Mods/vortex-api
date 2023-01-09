@@ -7,6 +7,14 @@ try {
   // nop
 }
 
+let haveESBuild = false;
+try {
+  require('esbuild-loader');
+  haveESBuild = true;
+} catch (err) {
+  // nop
+}
+
 function externalsDirect() {
   return [
     'bluebird',
@@ -77,10 +85,18 @@ function loaders(version) {
   const transpileOnly = (ForkTsCheckerWebpackPlugin === undefined)
                       || (process.env['BUILD_QUICK_AND_DIRTY'] !== undefined);
   const res = [
-    {test: /\.tsx?$/, loader: 'ts-loader', exclude: /node_modules/, options: {
-      transpileOnly
-    } },
   ];
+  
+  if (haveESBuild && transpileOnly) {
+    res.push({test: /\.tsx?$/, loader: 'esbuild-loader', exclude: /node_modules/, options: {
+      loader: 'tsx',
+    } });
+  } else {
+    res.push({test: /\.tsx?$/, loader: 'ts-loader', exclude: /node_modules/, options: {
+      transpileOnly
+    } });
+  }
+
   if (version < 4) {
     res.push({test: /\.json$/, loader: 'json-loader'});
   }
@@ -90,12 +106,12 @@ function loaders(version) {
 function config(moduleName, basePath, version) {
   let tsx = true;
   try {
-    fs.statSync('./src/index.tsx');
+    fs.statSync(path.join(basePath, 'src', 'index.tsx'));
   } catch (err) {
     tsx = false;
   }
   const res = {
-    entry: tsx ? './src/index.tsx' : './src/index.ts',
+    entry: path.join(basePath, 'src', tsx ? 'index.tsx' : 'index.ts'),
     target: 'electron-renderer',
     node: {__filename: false, __dirname: false},
     output: output(moduleName, basePath, version),
@@ -130,7 +146,7 @@ function config(moduleName, basePath, version) {
 
 module.exports = {
   externals,
-  loaders,
+  loaders: 'foobar',
   output,
   default: config,
 }

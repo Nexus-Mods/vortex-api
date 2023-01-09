@@ -1,4 +1,10 @@
 import { IToolStored } from './IToolStored';
+/**
+ * cached information about games.
+ * Don't trunst this, avoid using it as dynamic information
+ *   (e.g. the executable) that might be affected by which variant of the
+ *   game is discovered will not be correct
+ */
 export interface IGameStored {
     id: string;
     name: string;
