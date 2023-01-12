@@ -11,7 +11,7 @@ export interface INexusAPIExtension {
     nexusResolveCollectionUrl?: (apiLink: string) => PromiseLike<IDownloadURL[]>;
     nexusGetCollectionRevision?: (collectionSlug: string, revisionNumber: number) => PromiseLike<IRevision>;
     nexusRateCollectionRevision?: (revisionId: number, rating: number) => PromiseLike<any>;
-    nexusGetLatestMods?: (gaemId: string) => PromiseLike<any>;
+    nexusGetLatestMods?: (gameId: string) => PromiseLike<any>;
     nexusGetTrendingMods?: (gameId: string) => PromiseLike<any>;
     nexusEndorseDirect?: (gameId: string, nexusId: number, version: string, endorsedStatus: EndorsedStatus) => PromiseLike<EndorsedStatus>;
     nexusEndorseMod?: (gameId: string, modId: string, endorsedStatus: EndorsedStatus) => void;
@@ -19,7 +19,7 @@ export interface INexusAPIExtension {
     nexusSubmitCollection?: (collectionInfo: ICollectionManifest, assetFilePath: string, collectionId: number, callback: (err: Error, response?: any) => void) => void;
     nexusModUpdate?: (gameId: string, modId: number, fileId: number, source: string) => void;
     nexusOpenCollectionPage?: (gameId: string, collectionSlug: string, revisionNumber: number, source: string) => void;
-    nexusOpenModMage?: (gameId: string, modId: string, source: string) => void;
+    nexusOpenModPage?: (gameId: string, modId: string, source: string) => void;
     nexusRequestNexusLogin?: (callback: any) => void;
     nexusRequestOwnIssues?: (cb: (err: Error, issues?: IIssue[]) => void) => void;
     nexusRetrieveCategoryList?: (isUpdate: boolean) => void;

@@ -44,6 +44,7 @@ export interface IAvailableExtension extends IExtensionDownloadInfo {
     dependencies?: {
         [key: string]: any;
     };
+    hide?: boolean;
 }
 export interface IExtensionManifest {
     last_updated: number;
