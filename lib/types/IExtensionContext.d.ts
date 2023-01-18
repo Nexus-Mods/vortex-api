@@ -1,6 +1,6 @@
 /// <reference types="node" />
 /// <reference types="node" />
-import { IExtensionDownloadInfo } from '../extensions/extension_manager/types';
+import { IAvailableExtension, IExtensionDownloadInfo } from '../extensions/extension_manager/types';
 import { ILoadOrderGameInfo } from '../extensions/file_based_loadorder/types/types';
 import { GameVersionProviderFunc, GameVersionProviderTest, IGameVersionProviderOptions } from '../extensions/gameversion_management/types/IGameVersionProvider';
 import { IHistoryEvent, IHistoryStack } from '../extensions/history_management/types';
@@ -212,6 +212,8 @@ export interface IErrorOptions {
     };
     attachments?: IAttachment[];
     extensionName?: string;
+    extension?: IRegisteredExtension;
+    extensionRemote?: IAvailableExtension;
     actions?: INotificationAction[];
 }
 /**

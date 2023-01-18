@@ -1,5 +1,8 @@
 import { IExtensionLoadFailure, IExtensionState } from '../../types/IState';
 export type ExtensionType = 'game' | 'translation' | 'theme';
+/**
+ * Information about an extension available from the info.json file
+ */
 export interface IExtension {
     id?: string;
     namespace?: string;
@@ -11,6 +14,7 @@ export interface IExtension {
     bundled?: boolean;
     path?: string;
     modId?: number;
+    issueTrackerURL?: string;
 }
 export type IExtensionWithState = IExtension & IExtensionState & {
     loadFailures: IExtensionLoadFailure[];
@@ -23,6 +27,9 @@ export interface IExtensionDownloadInfo {
     githubRawPath?: string;
     githubRelease?: string;
 }
+/**
+ * information about an extension available on the central extension list
+ */
 export interface IAvailableExtension extends IExtensionDownloadInfo {
     description: {
         short: string;

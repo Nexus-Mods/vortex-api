@@ -21,17 +21,18 @@ function getExtensionName(pkgInfo) {
  * function intended to be run during build of an extension,
  * extracting details about it from its package.json
  * @param {string} extPath path to the extension
- * @returns {any} an extensionInfo object
+ * @returns {import('vortex-api').types.IExtension} an extensionInfo object
  */
 function extractExtensionInfo(extPath) {
   const pkgInfo = JSON.parse(fs.readFileSync(path.join(extPath, 'package.json')).toString());
 
   return {
     name: getExtensionName(pkgInfo),
-    namespace: (pkgInfo.config && pkgInfo.config.namespace) ? pkgInfo.config.namespace : undefined,
+    namespace: pkgInfo.config?.namespace,
     author: pkgInfo.author,
     version: pkgInfo.version,
     description: pkgInfo.description,
+    issueTrackerURL: pkgInfo.config?.issueTracker,
   };
 }
 
