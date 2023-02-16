@@ -2,16 +2,18 @@
 layout: article
 author: TanninOne
 created: Fri, 23 Oct 2020 11:18:11 GMT
-updated: Fri, 23 Oct 2020 11:18:11 GMT
+updated: Thu, 16 Feb 2023 08:33:41 GMT
 wip: true
 title: Harmony Patcher
 order: 6
 tags:
   - Feature
-comments: 0
+comments: 1
 issue_url: https://github.com/Nexus-Mods/vortex-api/issues/9
 ---
 ## Introduction
+
+**This functionality is deprecated, please use the [BepInEx](https://nexus-mods.github.io/vortex-api/2021/02/01/BepInEx-Extension-Usage.html) integration instead**
 
 This project aims to enhance Vortex’s modding capabilities by implementing an API/Modding resource which mod authors can use to inject their C# code and assets into game assemblies. This is particularly useful when modding Unity3D games which do not provide their own Mods Loader/Management system.
 

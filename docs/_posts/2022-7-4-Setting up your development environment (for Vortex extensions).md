@@ -2,14 +2,14 @@
 layout: article
 author: IDCs
 created: Thu, 11 Aug 2022 07:44:29 GMT
-updated: Wed, 17 Aug 2022 07:31:11 GMT
+updated: Sat, 31 Dec 2022 00:31:53 GMT
 wip: true
 title: Setting up your development environment (for Vortex extensions)
 order: 1000
 tags:
   - General
   - Tutorial
-comments: 0
+comments: 2
 issue_url: https://github.com/Nexus-Mods/vortex-api/issues/35
 ---
 Developing Vortex extensions (or developing for Vortex's core application) can at times seem daunting, especially for new developers. This guide intends to walk its reader through all the steps we (Vortex Developers) recommend when first setting up a development environment for Vortex extensions. To develop for Vortex itself, please follow this guide instead: https://github.com/Nexus-Mods/Vortex/blob/master/README.md

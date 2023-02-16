@@ -2,13 +2,13 @@
 layout: article
 author: Pickysaurus
 created: Wed, 18 May 2022 15:54:08 GMT
-updated: Thu, 23 Jun 2022 11:34:59 GMT
+updated: Thu, 26 Jan 2023 10:02:40 GMT
 wip: true
 title: Game Detection
 order: 1000
 tags:
   - Tutorial
-comments: 0
+comments: 2
 issue_url: https://github.com/Nexus-Mods/vortex-api/issues/33
 ---
 Whether you're developing an extension for Vortex or another tool, having your app automatically detect the install folder of a game can be incredibly useful and provides added convenience for your users. In this article we'll discuss how to find the identifiers used by different game stores and use them to resolve the install folder. 
