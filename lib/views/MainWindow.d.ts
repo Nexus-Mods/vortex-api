@@ -34,7 +34,6 @@ export interface IConnectedProps {
     customTitlebar: boolean;
     userInfo: any;
     notifications: INotification[];
-    APIKey: string;
     uiBlockers: {
         [id: string]: IUIBlocker;
     };

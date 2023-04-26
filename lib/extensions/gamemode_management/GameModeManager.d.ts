@@ -73,6 +73,7 @@ declare class GameModeManager {
     private postDiscovery;
     private ensureWritable;
     private reloadStoreGames;
+    private isValidGame;
     private storeGame;
     private storeTool;
     private onDiscoveredTool;
