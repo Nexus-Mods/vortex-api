@@ -2,7 +2,7 @@
 layout: article
 author: IDCs
 created: Fri, 24 Jun 2022 09:34:09 GMT
-updated: Thu, 30 Jun 2022 09:03:59 GMT
+updated: Tue, 23 May 2023 10:51:58 GMT
 wip: true
 title: Common patterns/Vortex API usage when writing game extensions
 order: 1000
@@ -14,6 +14,7 @@ issue_url: https://github.com/Nexus-Mods/vortex-api/issues/34
 # Contents
  - [Vortex Dialog System](#dialog-system) 
  - [7Zip Utility Feature](#7zip) 
+ - [Nexus API](#nexus)
 
 The modding requirements of games can differ substantially, and therefore the logic behind the Vortex game extensions themselves will differ from extension to extension. There are however some common requirements, e.g. asking the user to install a mod loader/mod library on which other mods may be dependent. This document aims to demonstrate and explain certain Vortex API utility functions which may help 3rd party developers enhance their game extensions to improve user experience and/or cater to commonly encountered issues during development.
 
@@ -247,5 +248,29 @@ function toBlue(func) {
   return (...args) => Bluebird.resolve(func(...args));
 }
 ```
+
+<a id="nexus">_</a>
+### Using the Nexus API
+
+#### Usage
+The Nexus Mods page contains a lot of information about mods that might be useful to extensions. It has to be noted though that not all information available on the page is also available through the API.
+
+The core application maintains the network connection to the api meaning you don't have to care about networking stuff, dealing with authentication or network problems, ... and it means the core application can correctly monitor API limits and such.
+The drawback is that you can only access API functionality that Vortex exposes to extensions.
+
+The easiest way to use API functionality is through the dynamic context.api.ext object, they are all prefixed with "nexus", e.g.
+```javascript
+const trending = await api.ext.nexusGetTrendingMods('fallout4');`
+console.log('trending:', trending.mods);
+```
+
+#### Available functions
+
+The concrete list of functions exposed in api.ext is not currently documented and might be extended in the future (but functions shouldn't disappear), use the inspector/debugger to check what's currently available.
+
+#### Authentication
+
+API functions require the user to be logged in, if they are not, these calls will trigger an exception that you can handle.
+If you want to provide a better user experience, `await api.ext.ensureLoggedIn()` can be used to trigger a login if necessary. If the user is already logged in, this call will just return immediately.
 
 [Discuss this article](https://github.com/Nexus-Mods/vortex-api/issues/34)

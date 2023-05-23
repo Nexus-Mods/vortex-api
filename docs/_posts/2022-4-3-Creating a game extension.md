@@ -2,13 +2,13 @@
 layout: article
 author: Pickysaurus
 created: Wed, 18 May 2022 14:34:54 GMT
-updated: Mon, 22 Aug 2022 07:54:32 GMT
+updated: Wed, 22 Mar 2023 00:43:53 GMT
 wip: true
 title: Creating a game extension
 order: 1000
 tags:
   - General
-comments: 0
+comments: 1
 issue_url: https://github.com/Nexus-Mods/vortex-api/issues/31
 ---
 This guide will explain how to create a very basic game extension for Vortex, touching on where to start with some of the more advanced features. It requires a basic understanding of Javascript/programming. I also recommend you use an application with syntax highlighting, such as Visual Studio Code or Notepad++ for the coding sections of the guide.
