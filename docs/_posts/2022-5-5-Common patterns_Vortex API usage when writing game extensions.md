@@ -2,7 +2,7 @@
 layout: article
 author: IDCs
 created: Fri, 24 Jun 2022 09:34:09 GMT
-updated: Tue, 23 May 2023 10:51:58 GMT
+updated: Tue, 23 May 2023 10:57:34 GMT
 wip: true
 title: Common patterns/Vortex API usage when writing game extensions
 order: 1000
@@ -255,7 +255,7 @@ function toBlue(func) {
 #### Usage
 The Nexus Mods page contains a lot of information about mods that might be useful to extensions. It has to be noted though that not all information available on the page is also available through the API.
 
-The core application maintains the network connection to the api meaning you don't have to care about networking stuff, dealing with authentication or network problems, ... and it means the core application can correctly monitor API limits and such.
+The core application maintains the network connection to the API meaning you don't have to deal with that or low-level network errors, authentication and so on. It also means the core application can correctly monitor API limits and such.
 The drawback is that you can only access API functionality that Vortex exposes to extensions.
 
 The easiest way to use API functionality is through the dynamic context.api.ext object, they are all prefixed with "nexus", e.g.
