@@ -191,9 +191,7 @@ export declare enum Section {
 export declare enum Campaign {
     ViewCollection = "view_collection",
     ViewCollectionAsCurator = "curator_view_collection",
-    Collections = "collections",
-    DownloadsAd = "downloads-ad",
-    DashboardAd = "dashboard-ad"
+    BuyPremium = "buy_premium"
 }
 export declare enum Source {
     HeaderAd = "header_ad",
