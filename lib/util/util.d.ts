@@ -197,7 +197,8 @@ export declare enum Source {
     HeaderAd = "header_ad",
     DownloadsAd = "downloads_ad",
     DashboardAd = "dashboard_ad",
-    CollectionsAd = "collections_ad"
+    CollectionsAd = "collections_ad",
+    SettingsAd = "settings_ad"
 }
 export interface INexusURLOptions {
     section?: Section;
