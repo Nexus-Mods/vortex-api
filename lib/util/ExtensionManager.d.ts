@@ -71,6 +71,7 @@ declare class ExtensionManager {
      * @memberOf ExtensionManager
      */
     setStore<S extends IState>(store: ThunkStore<S>): void;
+    private reportExtLoadErrors;
     /**
      * set up the api for the main process.
      *

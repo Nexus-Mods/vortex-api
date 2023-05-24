@@ -189,14 +189,21 @@ export declare enum Section {
     Users = 2
 }
 export declare enum Campaign {
-    ViewCollection = "view+collection",
-    ViewCollectionAsCurator = "curator+view+collection",
-    Collections = "Collections",
-    DownloadsAd = "Downloads-Ad",
-    DashboardAd = "Dashboard-Ad"
+    ViewCollection = "view_collection",
+    ViewCollectionAsCurator = "curator_view_collection",
+    Collections = "collections",
+    DownloadsAd = "downloads-ad",
+    DashboardAd = "dashboard-ad"
+}
+export declare enum Source {
+    HeaderAd = "header_ad",
+    DownloadsAd = "downloads_ad",
+    DashboardAd = "dashboard_ad",
+    CollectionsAd = "collections_ad"
 }
 export interface INexusURLOptions {
     section?: Section;
+    source?: Source;
     campaign?: Campaign | string;
     parameters?: string[];
 }
