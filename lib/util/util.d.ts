@@ -189,7 +189,8 @@ export declare enum Section {
     Users = 2
 }
 export declare enum Campaign {
-    ViewCollection = "ViewCollection",
+    ViewCollection = "view+collection",
+    ViewCollectionAsCurator = "curator+view+collection",
     Collections = "Collections",
     DownloadsAd = "Downloads-Ad",
     DashboardAd = "Dashboard-Ad"
