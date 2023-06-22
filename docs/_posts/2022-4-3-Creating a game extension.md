@@ -2,7 +2,7 @@
 layout: article
 author: Pickysaurus
 created: Wed, 18 May 2022 14:34:54 GMT
-updated: Wed, 22 Mar 2023 00:43:53 GMT
+updated: Thu, 22 Jun 2023 15:00:13 GMT
 wip: true
 title: Creating a game extension
 order: 1000
@@ -199,7 +199,7 @@ function findGame() {
 
 At this point, you have now created a working game extension. This extension will take the contents of the downloaded mod archive and deploy them into the BloodstainedRotN/Content/Paks/~mods folder. As you might be aware, not every mod is packed in a consistent way. We might want a way of checking the archive structure and altering it slightly to fit the standardised modding pattern. This is where mod installation patterns become important.
 
-# Preparing the user's enviroment
+# Preparing the user's environment
 Now that Vortex knows how to find the game, it's also possible to add some additional checks before we start managing mods for the game. These checks are run each time the user starts Vortex with the game currently active or switches to your game from a different one. This setup step can be used to ensure the required folders exist, check if any required applications are present or any other checks you feel are required. In our example case, we want to make sure the ~mods folder already exists and create it if not.
 
 ```js
