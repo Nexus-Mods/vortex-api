@@ -8,12 +8,13 @@ interface IErrorContext {
 }
 export declare function createErrorReport(type: string, error: IError, context: IErrorContext, labels: string[], state: any, sourceProcess?: string): void;
 export declare function setApiKey(key: string): void;
+export declare function setOauthToken(token: any): void;
 export declare function setOutdated(api: IExtensionApi): void;
 export declare function isOutdated(): boolean;
 export declare function didIgnoreError(): boolean;
 export declare function disableErrorReport(): void;
 export declare function sendReportFile(fileName: string): Promise<IFeedbackResponse>;
-export declare function sendReport(type: string, error: IError, context: IErrorContext, labels: string[], reporterId: string, reporterProcess: string, sourceProcess: string, attachment: string): Promise<IFeedbackResponse>;
+export declare function sendReport(type: string, error: IError, context: IErrorContext, labels: string[], reporterToken: any, reporterProcess: string, sourceProcess: string, attachment: string): Promise<IFeedbackResponse>;
 export declare function setWindow(window: BrowserWindow): void;
 export declare function getWindow(): BrowserWindow;
 export declare function getVisibleWindow(win?: BrowserWindow): BrowserWindow | null;
