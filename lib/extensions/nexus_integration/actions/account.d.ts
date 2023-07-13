@@ -6,3 +6,4 @@ export declare const setOAuthCredentials: reduxAct.ComplexActionCreator3<string,
     refreshToken: string;
     fingerprint: string;
 }, {}>;
+export declare const setForcedLogout: reduxAct.ComplexActionCreator1<boolean, boolean, {}>;

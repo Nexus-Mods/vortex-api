@@ -17,6 +17,7 @@ export * from '../extensions/mod_management/actions/deployment';
 export * from '../extensions/mod_management/actions/mods';
 export * from '../extensions/nexus_integration/actions/account';
 export * from '../extensions/nexus_integration/actions/settings';
+export * from '../extensions/nexus_integration/actions/persistent';
 export * from '../extensions/gamemode_management/actions/settings';
 export * from '../extensions/profile_management/actions/profiles';
 export { setNextProfile } from '../extensions/profile_management/actions/settings';
