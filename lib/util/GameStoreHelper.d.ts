@@ -25,6 +25,7 @@ declare class GameStoreHelper {
      */
     storeIds(): IGameStore[];
     private isStoreRunning;
+    private validInput;
     private getStores;
     /**
      * Returns a store entry for a specified pattern.
