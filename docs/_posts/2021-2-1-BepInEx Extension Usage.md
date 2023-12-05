@@ -2,7 +2,7 @@
 layout: article
 author: IDCs
 created: Mon, 22 Mar 2021 13:21:42 GMT
-updated: Mon, 22 Mar 2021 14:39:43 GMT
+updated: Tue, 05 Dec 2023 12:19:04 GMT
 wip: true
 title: BepInEx Extension Usage
 order: 1000
@@ -58,16 +58,21 @@ function main(context) {
 
 Registering your game extension with the BepInEx extension (with the above specified arguments) will ensure that Vortex automatically downloads and installs the latest BepInEx package we have on the Nexus Mods website (if it’s missing) whenever the user switches to your game extension AND whenever he deploys his mods, which should ensure that the package is still installed even if the user randomly decides he wants to remove it.
 
-By default the extension will download the latest 64 bit stable release we (Vortex devs) defined (5.4.8.0 at the time of writing) from https://www.nexusmods.com/site/mods/115 - the target package can be changed as long as the wanted package is hosted on our website (more on that further down).
+By default the extension will download the latest 64 bit stable release available on the site https://www.nexusmods.com/site/mods/115 - the target package can be changed as long as the wanted package is hosted on our website (more on that further down).
+
+Alternatively, it is possible to force Vortex to download the BepInEx package from Github directly (more on that further down)
 
 Please note that although the package will be downloaded and installed to Vortex’s staging folder by default - it is up to the user if he wishes to use your package and he will have to manually enable the “Bepis Injector Extensible” mod entry inside the mods page in order for it to be deployed to the game’s mods directory. We may extend the BepInEx extension to force enable it as well in the future.
 
 As mentioned previously the BepInEx registration function can be used to customize how the BepInEx extension works, it can be used to override the default BepInEx package the developer wishes to apply to the user’s environment, even configure the Unity Doorstop if required. The registration function requires an IBepInExGameConfig object to be provided, which must have the following properties:
 
 * gameId - a string which represents the game’s Id/domain name as seen when browsing the website, https://www.nexusmods.com/skyrimspecialedition/mods/19181 for SSE it’s “skyrimspecialedition”
-* autoDownloadBepInEx - a boolean defining whether the BepInEx extension should automatically download and install the default/custom download package. This should be set to true at all times unless for whatever reason the extension developer wants the user to download and install the pack manually from the BepInEx’s GitHub releases page.
+* autoDownloadBepInEx - a boolean defining whether the BepInEx extension should automatically download and install the default/custom download package. This should be set to true at all times unless for whatever reason the extension developer wants the user to download and install the pack manually from a different source than NexusMods or Github.
 
 Optional Properties:
+* architecture: string - if not specified, Vortex will default to the 64bit variant of BIX - `x64` alternatively `x86` or `unix` can be specified as well.
+* unityBuild: string - the unity build of the BepInEx package - `unitymono' | 'unityil2cpp` - this depends on the game's compiled assemblies; this can be confirmed in the game's directory - if the game has an `Assembly-CSharp.dll` file, use `unitymono`, otherwise it's `unityil2cpp` - `unitymono` is set by default if this property is not defined.
+* bepinexConfigObject: object - by default Vortex will generate a default `BepInEx.cfg` file which contains a set of pre-defined values for BepInEx to use (activating console logging + other minor stuff) - alternatively, the extension developer can provide an object which will be converted to the TOML format which BepInEx expects. (This should be used sparingly if possible - it's much easier to include a BepInEx.cfg file alongside the `index.js` file in the extension folder)
 * installRelPath: string - should be used in cases where the game’s executable is not located at the game’s root directory; so for example if a Game is installed in “C:/GameRootFolder” but the executable is located in “C:/GameRootFolder/bin/x86/Game.exe”, the installRelPath property should be set to ‘bin/x86’ for the BepInEx package to be deployed correctly.
 * doorstopConfig: DoorstopConfig - this is yet another object which will be described further down this document, but in essence this object will control how the Unity Doorstop utility is configured (dllOverrides, targetAssembly, whether it’s enabled at all, etc)
 * customPackDownloader: - the extension developer can use this asynchronous functor to define a custom download package from the Nexus Mods website, or write his own custom downloader within the game extension and tell the BepInEx extension the location of the downloaded package archive which Vortex will install for the user.
