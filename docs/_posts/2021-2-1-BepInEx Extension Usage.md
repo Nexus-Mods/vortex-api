@@ -2,7 +2,7 @@
 layout: article
 author: IDCs
 created: Mon, 22 Mar 2021 13:21:42 GMT
-updated: Tue, 05 Dec 2023 12:19:04 GMT
+updated: Tue, 05 Dec 2023 12:51:54 GMT
 wip: true
 title: BepInEx Extension Usage
 order: 1000
@@ -107,6 +107,42 @@ if (context.api.ext.bepinexAddGame !== undefined) {
     }
 ```
 
+## Downloading a BepInEx package from Github (Recommended)
+
+Given that the package on Nexus Mods isn't regularly updated, Vortex (1.9.11 and higher) is able to download the required package directly from Github.
+
+Please note that providing the `unityBuild: 'unityil2cpp` parameter as seen below, will force Vortex to default to the latest 6.0.0 (and higher) versions of BepInEx.
+
+Usage example:
+```
+// Standard IL2CPP BepInEx registration
+context.once(() => {
+    // This will default to version 6.0.0 of BepInEx
+    if (context.api.ext.bepinexAddGame !== undefined) {
+      context.api.ext.bepinexAddGame({
+        gameId: GAME_ID,
+        autoDownloadBepInEx: true,
+        architecture: 'x64',
+        forceGithubDownload: true, // <--- This will force Vortex to download directly from Github
+        unityBuild: 'unityil2cpp',
+      });
+    }
+  })
+
+context.once(() => {
+    // Standard example of registering for a 32bit version of BepInEx 5.4.21
+    if (context.api.ext.bepinexAddGame !== undefined) {
+      context.api.ext.bepinexAddGame({
+        gameId: GAME_ID,
+        autoDownloadBepInEx: true,
+        architecture: 'x86',
+        bepinexVersion: '5.4.21',
+        forceGithubDownload: true, // <--- This will force Vortex to download directly from Github
+        unityBuild: 'unitymono',
+      });
+    }
+  })
+```
 ## Downloading a custom package from Nexus
 
 Let's say that the latest stable version of the BepInEx package that we approved (5.4.8.0) has a bug which is causing mods to fail to load in the game, but we know that an older version (5.0.1.0) works just fine. The game extension can override the downloaded package by providing the customPackDownloader functor, which can either be used to define a custom downloader within the game extension, passing back the file path to the downloaded BepInEx package archive; or far more easier if the package is hosted on the Nexus Mods website: to provide the package mod’s information so that Vortex can download and install it automatically for the user.
