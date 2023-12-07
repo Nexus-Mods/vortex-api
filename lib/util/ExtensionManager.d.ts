@@ -134,6 +134,7 @@ declare class ExtensionManager {
     private migrateExtensions;
     private getPath;
     private selectFile;
+    private saveFile;
     private selectExecutable;
     private selectDir;
     private commandLineUserData;
