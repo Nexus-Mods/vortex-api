@@ -2,7 +2,7 @@
 layout: article
 author: IDCs
 created: Mon, 22 Mar 2021 13:21:42 GMT
-updated: Tue, 05 Dec 2023 12:51:54 GMT
+updated: Tue, 12 Dec 2023 10:28:23 GMT
 wip: true
 title: BepInEx Extension Usage
 order: 1000
@@ -66,30 +66,29 @@ Please note that although the package will be downloaded and installed to Vortex
 
 As mentioned previously the BepInEx registration function can be used to customize how the BepInEx extension works, it can be used to override the default BepInEx package the developer wishes to apply to the user’s environment, even configure the Unity Doorstop if required. The registration function requires an IBepInExGameConfig object to be provided, which must have the following properties:
 
-* gameId - a string which represents the game’s Id/domain name as seen when browsing the website, https://www.nexusmods.com/skyrimspecialedition/mods/19181 for SSE it’s “skyrimspecialedition”
-* autoDownloadBepInEx - a boolean defining whether the BepInEx extension should automatically download and install the default/custom download package. This should be set to true at all times unless for whatever reason the extension developer wants the user to download and install the pack manually from a different source than NexusMods or Github.
-
-Optional Properties:
-* architecture: string - if not specified, Vortex will default to the 64bit variant of BIX - `x64` alternatively `x86` or `unix` can be specified as well.
-* unityBuild: string - the unity build of the BepInEx package - `unitymono' | 'unityil2cpp` - this depends on the game's compiled assemblies; this can be confirmed in the game's directory - if the game has an `Assembly-CSharp.dll` file, use `unitymono`, otherwise it's `unityil2cpp` - `unitymono` is set by default if this property is not defined.
-* bepinexConfigObject: object - by default Vortex will generate a default `BepInEx.cfg` file which contains a set of pre-defined values for BepInEx to use (activating console logging + other minor stuff) - alternatively, the extension developer can provide an object which will be converted to the TOML format which BepInEx expects. (This should be used sparingly if possible - it's much easier to include a BepInEx.cfg file alongside the `index.js` file in the extension folder)
-* installRelPath: string - should be used in cases where the game’s executable is not located at the game’s root directory; so for example if a Game is installed in “C:/GameRootFolder” but the executable is located in “C:/GameRootFolder/bin/x86/Game.exe”, the installRelPath property should be set to ‘bin/x86’ for the BepInEx package to be deployed correctly.
-* doorstopConfig: DoorstopConfig - this is yet another object which will be described further down this document, but in essence this object will control how the Unity Doorstop utility is configured (dllOverrides, targetAssembly, whether it’s enabled at all, etc)
-* customPackDownloader: - the extension developer can use this asynchronous functor to define a custom download package from the Nexus Mods website, or write his own custom downloader within the game extension and tell the BepInEx extension the location of the downloaded package archive which Vortex will install for the user.
-* validateBepInExConfiguration - this async functor is designed to be used to validate the user’s BepInEx installation/configuration - the validator will execute whenever the user activates the game extension AND every time the user deploys his mods which can be used to inform the user of environment related issues before they start their game. More advanced features include the ability to apply an “automatic fix” to the user’s environment as defined by the game extension.
+| Variable  | Type  |      Description      |  Optional? |
+|----------|------|:-------------|:------:|
+| `gameId` | `string` | represents the game’s Id/domain name as seen when browsing the website,  for SSE it’s “skyrimspecialedition” | [ ] |
+| `autoDownloadBepInEx` | `boolean` | defining whether the BepInEx extension should automatically download and install the default/custom download package. This should be set to true at all times unless for whatever reason the extension developer wants the user to download and install the pack manually from a different source than NexusMods or Github. | [ ] |
+| `architecture` | `string` | if not specified, Vortex will default to the 64bit variant of BIX - `x64` alternatively `x86` or `unix` can be specified | [x] |
+| `unityBuild` | `string` | the unity build of the BepInEx package - `unitymono` or `unityil2cpp` - this depends on the game's compiled assemblies; this can be confirmed in the game's directory - if the game has an Assembly-CSharp.dll file, use `unitymono`, otherwise it's `unityil2cpp` - `unitymono` is set by default if this property is not defined. | [x] |
+| `bepinexConfigObject` | `object` | by default Vortex will generate a default `BepInEx.cfg` file which contains a set of pre-defined values for BepInEx to use (activating console logging + other minor stuff) - alternatively, the extension developer can provide an object which will be converted to the TOML format which BepInEx expects. (This should be used sparingly if possible - it's much easier to include a BepInEx.cfg file alongside the `index.js` file in the extension folder) | [x] |
+| `installRelPath` | `string` | should be used in cases where the game’s executable is not located at the game’s root directory; so for example if a Game is installed in “`C:/GameRootFolder`” but the executable is located in “`C:/GameRootFolder/bin/x86/Game.exe`”, the installRelPath property should be set to "`bin/x86`" for the BepInEx package to be deployed correctly. | [x] |
+| `doorstopConfig` | `object` | Control how the Unity Doorstop utility is configured (dllOverrides, targetAssembly, whether it’s enabled at all, etc) | [x] |
+| `customPackDownloader` | `function` | the extension developer can use this asynchronous functor to define a custom download package from the Nexus Mods website, or write his own custom downloader within the game extension and tell the BepInEx extension the location of the downloaded package archive which Vortex will install for the user. | [x] |
+| `validateBepInExConfiguration` | `function` | async functor is designed to be used to validate the user’s BepInEx installation/configuration - the validator will execute whenever the user activates the game extension AND every time the user deploys his mods which can be used to inform the user of environment related issues before they start their game. More advanced features include the ability to apply an “automatic fix” to the user’s environment as defined by the game extension. | [x] |
 
 The Unity Doorstop configuration object which can be provided as an optional property to the registration function can optionally re-configure the doorstopper’s ini file as defined by the game extension developer and can automatically rename the “winhttp.dll” to “version.dll” for Unity 3 games. Mandatory properties are:
-* doorstopType - the doorstop type will decide how the doorstopper hook assembly is called when it is deployed (if at all), the different types are: 
-     1. “default” - will deploy the hook as “winhttp.dll”
-     2. "none” - will not deploy the hook at all - you will have to provide your own hook for the game.
-     3. “unity3” - will deploy the hook as “version.dll” - should only be used with older Unity 3 games if the default hook doesn’t appear to work properly.
 
-Optional properties:
-* targetAssembly - a string that represents a relative/absolute path to the target assembly. By default this will be set to BepInEx’s preloader assembly.
-* ignoreDisableSwitch - a boolean which dictates whether the doorstopper should ignore the DOORSTOP_DISABLE environment variable.
-* redirectOutputLog - a boolean which dictates whether the game’s Unity generated log should be redirected to the game’s directory which makes debugging errors easier.
-* dllOverrideRelPath - some games opt to distribute their assemblies in an optimized state which will generally remove functionality which will limit a game’s moddability. This issue can be bypassed by downloading/creating a package of unoptimized assemblies containing all the stripped functionality for mod authors to use. The dll override path property allows the game extension developer to define where the doorstopper should be looking for the unstripped assemblies.
-* validateDoorStopConfig - similar to the BepInEx configuration validation - the game extension developer can define a test to ensure that the user’s environment is set up correctly whenever he deploys his mods or activates the game extension.
+| Variable  | Type  |      Description      |  Optional? |
+|----------|------|:-------------|:-----:|
+| `doorstopType` | `string` | the doorstop type will decide how the doorstopper hook assembly is called when it is deployed (if at all), the different types are: “`default`” - will deploy the hook as “`winhttp.dll`” "`none`” - will not deploy the hook at all - you will have to provide your own hook for the game. “`unity3`” - will deploy the hook as “version.dll” - should only be used with older Unity 3 games if the default hook doesn’t appear to work properly. | [ ] |
+| `targetAssembly` | `string` | represents a relative/absolute path to the target assembly. By default this will be set to BepInEx’s preloader assembly. | [x] |
+| `ignoreDisableSwitch` | `boolean` | Dictates whether the doorstopper should ignore the DOORSTOP_DISABLE environment variable. | [x] |
+| `redirectOutputLog` | `boolean` | dictates whether the game’s Unity generated log should be redirected to the game’s directory which makes debugging errors easier. | [x] |
+| `dllOverrideRelPath` | `string` | some games opt to distribute their assemblies in an optimized state which will generally remove functionality which will limit a game’s moddability. This issue can be bypassed by downloading/creating a package of unoptimized assemblies containing all the stripped functionality for mod authors to use. The dll override path property allows the game extension developer to define where the doorstopper should be looking for the unstripped assemblies | [x] |
+| `validateDoorStopConfig` | `function` | similar to the BepInEx configuration validation - the game extension developer can define a test to ensure that the user’s environment is set up correctly whenever he deploys his mods or activates the game extension. | [x] |
+
 Usage example:
 
 ```
