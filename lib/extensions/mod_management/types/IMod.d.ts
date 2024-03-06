@@ -36,6 +36,9 @@ export interface IModReference extends IReference {
     } & IModRepoId;
     description?: string;
     instructions?: string;
+    installerChoices?: any;
+    fileList?: IFileListItem[];
+    patches?: any;
 }
 /**
  * a mod (requires/recommends) rule can provide a list of files to control how the referenced

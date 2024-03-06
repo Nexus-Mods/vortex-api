@@ -31,11 +31,26 @@ export interface ILoadOrderGameInfo {
      */
     toggleableEntries?: boolean;
     /**
+     * Defaults to true unless specified otherwise.
+     *  The load order will get cleared upon purge by default.
+     * Set this to false if you want to preserve the load order.
+     */
+    clearStateOnPurge?: boolean;
+    /**
      * Extension developers are able to provide usage instructions to be displayed
      *  in the load order page alongside the load order panel.
      *  Default instructions will be provided if custom instructions aren't provided.
      */
     usageInstructions?: string | React.ComponentType<{}>;
+    /**
+     * Extension developers are able to provide a custom item renderer for the
+     *  load order page. This will get rendered instead of the default one.
+     */
+    customItemRenderer?: React.ComponentType<{
+        className?: string;
+        item: IItemRendererProps;
+        forwardedRef?: (ref: any) => void;
+    }>;
     /**
      * By default the FBLO extension will attempt to automatically generate the data
      *  required when publishing/exporting a collection; the noCollectionGeneration

@@ -14,6 +14,7 @@ export interface IDependency {
     lookupResults: ILookupResultEx[];
     fileList?: IFileListItem[];
     installerChoices?: any;
+    patches?: any;
     mod?: IMod;
     extra?: {
         [key: string]: any;

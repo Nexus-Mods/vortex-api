@@ -3,9 +3,10 @@ export interface IDraggableListItemProps {
     index: number;
     item: any;
     isLocked: boolean;
-    itemRenderer: React.ComponentClass<{
+    itemRenderer: React.ComponentType<{
         className?: string;
         item: any;
+        forwardedRef?: any;
     }>;
     containerId: string;
     take: (item: any, list: any[]) => any;
