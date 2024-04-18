@@ -8,6 +8,7 @@ export interface IStoreQuery {
     prefer?: number;
 }
 declare class GameStoreHelper {
+    private mApi;
     private mStores;
     private mStoresDict;
     getGameStore(storeId: string): IGameStore;
@@ -19,7 +20,7 @@ declare class GameStoreHelper {
     findByAppId(appId: string | string[], storeId?: string): Bluebird<IGameStoreEntry>;
     launchGameStore(api: IExtensionApi, gameStoreId: string, parameters?: string[], askConsent?: boolean): Bluebird<void>;
     identifyStore: (gamePath: string) => Bluebird<string>;
-    reloadGames(): Bluebird<void>;
+    reloadGames(api?: IExtensionApi): Bluebird<void>;
     /**
      * @returns list of stores, sorted by priority
      */

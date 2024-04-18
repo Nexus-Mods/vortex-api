@@ -32,6 +32,8 @@ export interface IConnectedProps {
         [progressId: string]: IProgress;
     };
     customTitlebar: boolean;
+    version: string;
+    updateChannel: string;
     userInfo: any;
     notifications: INotification[];
     uiBlockers: {

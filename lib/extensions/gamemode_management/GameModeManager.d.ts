@@ -1,3 +1,4 @@
+import { IExtensionApi } from '../../types/IExtensionContext';
 import { IGame } from '../../types/IGame';
 import { IGameStore } from '../../types/IGameStore';
 import { IState } from '../../types/IState';
@@ -14,13 +15,14 @@ export interface IGameStub {
  * @class GameModeManager
  */
 declare class GameModeManager {
+    private mApi;
     private mStore;
     private mKnownGames;
     private mGameStubs;
     private mKnownGameStores;
     private mActiveSearch;
     private mOnGameModeActivated;
-    constructor(extensionGames: IGame[], gameStubs: IGameStub[], gameStoreExtensions: IGameStore[], onGameModeActivated: (mode: string) => void);
+    constructor(api: IExtensionApi, extensionGames: IGame[], gameStubs: IGameStub[], gameStoreExtensions: IGameStore[], onGameModeActivated: (mode: string) => void);
     /**
      * attach this manager to the specified store
      *
