@@ -21,6 +21,7 @@ export interface IModLookupInfo {
 export declare function idOnlyRef(ref: IModReference): boolean;
 export declare function referenceEqual(lhs: IModReference, rhs: IModReference): boolean;
 export declare function sanitizeExpression(fileName: string): string;
+export declare function coerceToSemver(version: string): string;
 export declare function isFuzzyVersion(input: string): boolean;
 /**
  * sets the callback for when a (fuzzy) mod reference is resolved, so the cache can be updated

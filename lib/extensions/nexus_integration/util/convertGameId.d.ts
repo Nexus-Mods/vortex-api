@@ -1,5 +1,5 @@
 import { IGame } from '../../../types/IGame';
-import { IGameStored } from '../../../types/IState';
+import { IGameStored, IGameStoredExt } from '../../gamemode_management/types/IGameStored';
 /**
  * get the nexus page id for a game
  * TODO: some games have hard-coded transformations here, should move all of that to game.details
@@ -16,4 +16,4 @@ export declare function convertNXMIdReverse(knownGames: IGameStored[], input: st
 /**
  * get the nxm link id for a game
  */
-export declare function toNXMId(game: IGameStored, gameId: string): string;
+export declare function toNXMId(game: IGameStoredExt, gameId: string): string;
