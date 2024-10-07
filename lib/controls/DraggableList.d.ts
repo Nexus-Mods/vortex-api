@@ -1,5 +1,6 @@
 import * as React from 'react';
 export interface IDraggableListProps {
+    disabled?: boolean;
     id: string;
     itemTypeId: string;
     items: any[];
