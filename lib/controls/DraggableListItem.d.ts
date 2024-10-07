@@ -1,5 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 export interface IDraggableListItemProps {
+    disabled?: boolean;
     index: number;
     item: any;
     isLocked: boolean;
@@ -9,9 +10,15 @@ export interface IDraggableListItemProps {
         forwardedRef?: any;
     }>;
     containerId: string;
+    isSelected: boolean;
+    selectedItems: any[];
+    draggedItems: any[];
+    apply: () => void;
+    findItemIndex: (item: any) => number;
     take: (item: any, list: any[]) => any;
     onChangeIndex: (oldIndex: number, newIndex: number, changeContainer: boolean, take: (list: any[]) => any) => void;
-    apply: () => void;
+    onClick: (event: React.MouseEvent) => void;
+    onDragStart: (items: any[]) => void;
 }
-declare function makeDraggable(itemTypeId: string): React.ComponentClass<IDraggableListItemProps>;
-export default makeDraggable;
+declare const DraggableItem: React.FC<IDraggableListItemProps>;
+export default DraggableItem;
