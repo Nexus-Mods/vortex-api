@@ -4,7 +4,7 @@ import { IFeedbackResponse } from '@nexusmods/nexus-api';
 import Promise from 'bluebird';
 import { BrowserWindow } from 'electron';
 interface IErrorContext {
-    [id: string]: string;
+    [id: string]: any;
 }
 export declare function createErrorReport(type: string, error: IError, context: IErrorContext, labels: string[], state: any, sourceProcess?: string): void;
 export declare function setApiKey(key: string): void;
@@ -14,7 +14,7 @@ export declare function isOutdated(): boolean;
 export declare function didIgnoreError(): boolean;
 export declare function disableErrorReport(): void;
 export declare function sendReportFile(fileName: string): Promise<IFeedbackResponse>;
-export declare function sendReport(type: string, error: IError, context: IErrorContext, labels: string[], reporterToken: any, reporterProcess: string, sourceProcess: string, attachment: string): Promise<IFeedbackResponse>;
+export declare function sendReport(type: string, error: IError, context: IErrorContext, labels: string[], reporterToken: any, reporterProcess: string, sourceProcess: string, attachment: string): Promise<IFeedbackResponse | undefined>;
 export declare function setWindow(window: BrowserWindow): void;
 export declare function getWindow(): BrowserWindow;
 export declare function getVisibleWindow(win?: BrowserWindow): BrowserWindow | null;
@@ -41,7 +41,7 @@ export declare function toError(input: any, title?: string, options?: IErrorOpti
  * @param id context id
  * @param value context value
  */
-export declare function setErrorContext(id: string, value: string): void;
+export declare function setErrorContext(id: string, value: any): void;
 /**
  * clear an error context
  * @param id id of the context

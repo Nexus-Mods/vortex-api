@@ -103,6 +103,7 @@ declare class InstallManager {
     private checkModNameExists;
     private findPreviousVersionMod;
     private queryIgnoreDependent;
+    private queryProfileCount;
     private userVersionChoice;
     private queryUserReplace;
     private getInstaller;
