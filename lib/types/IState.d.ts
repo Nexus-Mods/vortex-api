@@ -63,6 +63,13 @@ export interface IExtensionLoadFailure {
         [key: string]: any;
     };
 }
+export interface IExtensionOptional {
+    id: string;
+    extensionPath: string;
+    args: {
+        [key: string]: any;
+    };
+}
 export interface IProgress {
     text: string;
     percent: number;
@@ -222,6 +229,7 @@ export interface ISettingsDownloads {
     showDropzone: boolean;
     showGraph: boolean;
     copyOnIFF: boolean;
+    collectionsInstallWhileDownloading: boolean;
 }
 export interface IStatePaths {
     base: string;
@@ -352,6 +360,9 @@ export interface IState {
         overlays: IOverlaysState;
         extensions: {
             available: IAvailableExtension[];
+            optional: {
+                [extId: string]: IExtensionOptional[];
+            };
             installed: {
                 [extId: string]: IExtension;
             };

@@ -161,7 +161,7 @@ export declare function unique<T, U>(input: T[], keyFunc?: (item: T) => U): T[];
 export declare function delayed(delayMS: number): Promise<void>;
 export declare function toBlue<T, ArgsT extends any[]>(func: (...args: ArgsT) => Promise<T>): (...args: ArgsT) => Bluebird<T>;
 export declare function replaceRecursive(input: any, from: any, to: any): any;
-export declare function semverCoerce(input: string): semver.SemVer;
+export declare function semverCoerce(input: string, options?: semver.CoerceOptions): semver.SemVer;
 export declare function batchDispatch(store: Redux.Dispatch | Redux.Store, actions: Redux.Action[]): void;
 export declare function isFunction(functionToCheck: any): boolean;
 /**

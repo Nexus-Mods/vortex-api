@@ -47,6 +47,7 @@ declare class ExtensionManager {
     private mContextProxyHandler;
     private mExtensionState;
     private mLoadFailures;
+    private mOptionalExtensions;
     private mInterpreters;
     private mStartHooks;
     private mToolParameterCBs;

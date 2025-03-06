@@ -1,6 +1,7 @@
 export interface IParameters {
     download?: string;
     install?: string;
+    installArchive?: string;
     installExtension?: string;
     report?: string;
     restore?: string;
