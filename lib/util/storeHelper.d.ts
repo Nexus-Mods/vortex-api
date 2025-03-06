@@ -6,7 +6,7 @@ import Promise from 'bluebird';
 import * as Redux from 'redux';
 /**
  * return an item from state or the fallback if the path doesn't lead
- * to an item.
+ * to an item or if the item is null/undefined.
  *
  * @export
  * @template T

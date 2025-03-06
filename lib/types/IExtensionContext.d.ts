@@ -1129,8 +1129,9 @@ export interface IExtensionContext {
      * register a dependency on a different extension
      * @param {string} extId id of the extension that this one depends on
      * @param {string} version a semver version range that the mod is compatible with
+     * @param {boolean} optional if set to true, the extension will not fail if the dependency is not found
      */
-    requireExtension: (extId: string, version?: string) => void;
+    requireExtension: (extId: string, version?: string, optional?: boolean) => void;
     /**
      * called once after the store has been set up and after all extensions have been initialized
      * This means that if your extension registers its own extension function
