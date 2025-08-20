@@ -98,6 +98,7 @@ declare class InstallManager {
     private processSetModType;
     private processRule;
     private processIniEdits;
+    private modTypeExists;
     private processInstructions;
     private checkModVariantsExist;
     private checkModNameExists;

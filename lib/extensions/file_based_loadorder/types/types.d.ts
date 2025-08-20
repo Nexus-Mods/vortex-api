@@ -7,6 +7,10 @@ export interface IItemRendererProps {
     invalidEntries?: IInvalidResult[];
     setRef?: (ref: any) => void;
 }
+export interface ILoadOrderEntryExt extends ILoadOrderEntry {
+    index: number;
+    fileId?: number | undefined;
+}
 export interface ILoadOrderEntry<T = any> {
     id: string;
     enabled: boolean;
