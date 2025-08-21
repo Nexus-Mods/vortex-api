@@ -184,27 +184,43 @@ export declare function wrapExtCBSync<ArgT extends any[], ResT>(cb: (...args: Ar
     name: string;
     official: boolean;
 }): (...args: ArgT) => ResT;
+/**
+ * Represents the different sections available in the application and is used to construct URLs for specific subdomains.
+ */
 export declare enum Section {
     Mods = 0,
     Collections = 1,
     Users = 2
 }
+/**
+ * Represents the available campaign types for tracking user interactions.
+ * @property BuyPremium - Campaign for premium subscription advertisements.
+ * @property GeneralNavigation - Campaign for general navigation events.
+ */
 export declare enum Campaign {
-    ViewCollection = "view_collection",
-    ViewCollectionAsCurator = "curator_view_collection",
-    BuyPremium = "buy_premium"
+    BuyPremium = "buy_premium",
+    GeneralNavigation = "general_navigation"
 }
-export declare enum Source {
+/**
+ * Represents the different types of content placements for advertisements within the application.
+ * @property HeaderAd - Ad displayed in the titlebar.
+ * @property DownloadsBannerAd - Banner shown at top of downloads page.
+ * @property CollectionsDownloadModModal - Modal shown when downloading a mod from a collection.
+ * @property DashboardDashletAd - Advertisement displayed in a dashboard dashlet.
+ * @property CollectionsDownloadAd - Advertisement shown during collection downloads.
+ * @property SettingsDownloadAd - Advertisement displayed in the settings download section.
+ */
+export declare enum Content {
     HeaderAd = "header_ad",
     DownloadsBannerAd = "downloads_banner_ad",
-    DownloadsNagAd = "downloads_nag_ad",
-    DashboardAd = "dashboard_ad",
-    CollectionsAd = "collections_ad",
-    SettingsAd = "settings_ad"
+    DownloadModModal = "downloadmod_modal",
+    DashboardDashletAd = "dashboard_dashlet_ad",
+    CollectionsDownloadAd = "collections_download_ad",
+    SettingsDownloadAd = "settings_download_ad"
 }
 export interface INexusURLOptions {
     section?: Section;
-    source?: Source;
+    content?: Content;
     campaign?: Campaign | string;
     parameters?: string[];
 }
