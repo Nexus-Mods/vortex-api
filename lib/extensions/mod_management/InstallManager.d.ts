@@ -1,5 +1,15 @@
 import { IExtensionApi } from '../../types/IExtensionContext';
 import { IProfile } from '../../types/IState';
+interface IActiveInstallation {
+    installId: string;
+    archiveId: string;
+    archivePath: string;
+    modId: string;
+    gameId: string;
+    callback: (error: Error, id: string) => void;
+    startTime: number;
+    baseName: string;
+}
 import { IInstallResult } from './types/IInstallResult';
 import { IFileListItem } from './types/IMod';
 import { InstallFunc } from './types/InstallFunc';
@@ -20,13 +30,38 @@ export declare const VARIANT_ACTION = "Add Variant";
 declare class InstallManager {
     private mInstallers;
     private mGetInstallPath;
-    private mTask;
-    private mQueue;
     private mDependencyInstalls;
     private mDependencyDownloadsLimit;
     private mDependencyInstallsLimit;
-    private mDependencyQueue;
+    private mPendingInstalls;
+    private mActiveInstalls;
+    private mMainInstallsLimit;
     constructor(api: IExtensionApi, installPath: (gameId: string) => string);
+    /**
+     * Get information about all currently active installations
+     */
+    getActiveInstallations(): IActiveInstallation[];
+    /**
+     * Get information about a specific active installation
+     */
+    getActiveInstallation(installId: string): IActiveInstallation | undefined;
+    /**
+     * Check if an installation is currently active
+     */
+    isInstallationActive(installId: string): boolean;
+    /**
+     * Get count of active installations
+     */
+    getActiveInstallationCount(): number;
+    /**
+     * Debug method: Get details about active installations
+     */
+    debugActiveInstalls(): any[];
+    /**
+     * Force cleanup of stuck installations (for debugging)
+     * @param maxAgeMinutes - installations older than this will be force-cleaned
+     */
+    forceCleanupStuckInstalls(api: IExtensionApi, maxAgeMinutes?: number): number;
     /**
      * add an installer extension
      *
@@ -71,6 +106,22 @@ declare class InstallManager {
     private withDependenciesContext;
     private hasFuzzyReference;
     private setModSize;
+    /**
+     * Clean up pending and active installations for a specific source mod
+     */
+    private cleanupPendingInstalls;
+    /**
+     * Queue an installation to run asynchronously without blocking downloads.
+     * Installers are gated by phase so higher phases won't start until lower phases finish.
+     */
+    private queueInstallation;
+    private startQueuedInstallation;
+    private mInstallPhaseState;
+    private ensurePhaseState;
+    private scheduleDeployOnPhaseSettled;
+    private markPhaseDownloadsFinished;
+    private startPendingForPhase;
+    private maybeAdvancePhase;
     /**
      * when installing a mod from a dependency rule we store the id of the installed mod
      * in the rule for quicker and consistent matching but if - at a later time - we
@@ -138,8 +189,6 @@ declare class InstallManager {
     private installRecommendationsImpl;
     private withInstructions;
     private installModAsync;
-    private fixDestination;
-    private transferFile;
     /**
      * extract an archive
      *

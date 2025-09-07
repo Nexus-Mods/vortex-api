@@ -148,6 +148,7 @@ declare class ExtensionManager {
     private lookupModMeta;
     private makeSorter;
     private saveModMeta;
+    private genMd5Hash;
     private openArchive;
     private applyStartHooks;
     private runExecutable;
