@@ -28,6 +28,8 @@ declare class InstallContext implements IInstallContext {
     private mDidReportError;
     private mLastPhase;
     private mLastProgress;
+    private mApi;
+    private mStartTime;
     constructor(gameMode: string, api: IExtensionApi, silent: boolean);
     startIndicator(id: string): void;
     stopIndicator(mod?: IMod): void;
