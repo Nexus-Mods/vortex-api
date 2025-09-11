@@ -52,42 +52,53 @@ export declare class AppUpsellClickedEvent implements MixpanelEvent {
  * COLLECTION EVENTS
  */
 /**
- * (DO NOT USE) This event is currently being tracked SERVER side
- *
- * Event sent when a collection download is started.
+ * Event sent when a collection download is completed.
+ * @param collection_id ID of the collection
+ * @param revision_id ID of the revision
+ * @param game_id ID of the game
+ * @param mod_count Number of mods in the collection
+ * @param duration_ms Duration in milliseconds
+ */
+export declare class CollectionsDownloadCompletedEvent implements MixpanelEvent {
+    readonly eventName = "collections_download_completed";
+    readonly properties: Record<string, any>;
+    constructor(collection_id: string, revision_id: string, game_id: string, file_size: number, duration_ms: number);
+}
+/** *
+ * Event sent when a collection installation is started.
  * @param collection_id ID of the collection
  * @param mod_count Number of mods in the collection
  * @param game_id ID of the game
  * @param revision_id ID of the revision
  */
-export declare class CollectionsDownloadStartedEvent implements MixpanelEvent {
-    readonly eventName = "collections_download_started";
+export declare class CollectionsInstallationStartedEvent implements MixpanelEvent {
+    readonly eventName = "collections_installation_started";
     readonly properties: Record<string, any>;
     constructor(collection_id: string, mod_count: number, game_id: string, revision_id: string);
 }
 /**
- * Event sent when a collection download is completed.
+ * Event sent when a collection installation is completed.
  * @param collection_id ID of the collection
  * @param mod_count Number of mods in the collection
  * @param duration_ms Duration in milliseconds
  * @param game_id ID of the game
  * @param revision_id ID of the revision
  */
-export declare class CollectionsDownloadCompletedEvent implements MixpanelEvent {
-    readonly eventName = "collections_download_completed";
+export declare class CollectionsInstallationCompletedEvent implements MixpanelEvent {
+    readonly eventName = "collections_installation_completed";
     readonly properties: Record<string, any>;
     constructor(collection_id: string, mod_count: number, duration_ms: number, game_id: string, revision_id: string);
 }
 /**
- * Event sent when a collection download fails.
+ * Event sent when a collection installation fails.
  * @param collection_id ID of the collection
  * @param error_code Error code
  * @param error_message Error message
  * @param game_id ID of the game
  * @param revision_id ID of the revision
  */
-export declare class CollectionsDownloadFailedEvent implements MixpanelEvent {
-    readonly eventName = "collections_download_failed";
+export declare class CollectionsInstallationFailedEvent implements MixpanelEvent {
+    readonly eventName = "collections_installation_failed";
     readonly properties: Record<string, any>;
     constructor(collection_id: string, error_code: string, error_message: string, game_id: string, revision_id: string);
 }
