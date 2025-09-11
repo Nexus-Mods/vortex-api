@@ -223,17 +223,6 @@ export declare class CollectionsClickedEvent implements MixpanelEvent {
     constructor(collection_id: string, badge_type: string);
 }
 /**
- * Event sent when collection installation is started.
- * @param collection_id ID of the collection
- * @param game_id ID of the game
- * @param revision_id ID of the revision
- */
-export declare class CollectionsInstallationStartedEvent implements MixpanelEvent {
-    readonly eventName = "collections_installation_started";
-    readonly properties: Record<string, any>;
-    constructor(collection_id: string, game_id: string, revision_id: string);
-}
-/**
  * Event sent when an upsell is seen.
  * @param placement Placement location of the upsell
  */
