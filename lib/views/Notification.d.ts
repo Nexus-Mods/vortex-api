@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { INotification } from '../types/INotification';
 import { ComponentEx } from '../util/ComponentEx';
 import { TFunction } from '../util/i18n';

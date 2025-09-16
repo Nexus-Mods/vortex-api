@@ -30,6 +30,8 @@ declare class DownloadManager {
     private mDownloadPath;
     private mBusyWorkers;
     private mSlowWorkers;
+    private mWorkerRestartCounts;
+    private mWorkerLastRestart;
     private mQueue;
     private mNextId;
     private mSpeedCalculator;
@@ -38,6 +40,8 @@ declare class DownloadManager {
     private mResolveCache;
     private mFileExistsCB;
     private mThrottle;
+    private mHttpAgent;
+    private mHttpsAgent;
     /**
      * Creates an instance of DownloadManager.
      *
@@ -52,7 +56,16 @@ declare class DownloadManager {
     constructor(downloadPath: string, maxWorkers: number, maxChunks: number, speedCB: (speed: number) => void, userAgent: string, protocolHandlers: IProtocolHandlers, maxBandwidth: () => number);
     setFileExistsCB: (cb: (fileName: string) => Bluebird<boolean>) => void;
     setDownloadPath: (downloadPath: string) => void;
+    /**
+     * Get the appropriate HTTP agent based on protocol for persistent connections
+     */
+    private getAgent;
+    /**
+     * Clean up persistent connection agents
+     */
+    cleanup(): void;
     setMaxConcurrentDownloads: (maxConcurrent: number) => void;
+    getFreeSlots: () => number;
     /**
      * enqueues a download
      *
@@ -83,8 +96,10 @@ declare class DownloadManager {
     private initChunk;
     private cancelDownload;
     private tickQueue;
+    private cleanupCompletedDownloads;
     private startWorker;
     private makeProgressCB;
+    private shouldRestartSlowWorker;
     private startJob;
     private makeDataCB;
     private updateDownloadSize;

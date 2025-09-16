@@ -10,5 +10,5 @@ export interface IBaseProps {
 export interface IExtendedProps {
     objects: IExtOverlay[];
 }
-declare const _default: React.ComponentClass<IBaseProps, any>;
+declare const _default: React.ComponentClass<IBaseProps>;
 export default _default;

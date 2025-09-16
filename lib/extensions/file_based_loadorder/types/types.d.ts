@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export type LockedState = true | false | 'true' | 'false' | 'always' | 'never';
 export type LoadOrder = ILoadOrderEntry[];
 export interface IItemRendererProps {

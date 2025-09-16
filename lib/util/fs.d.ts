@@ -12,8 +12,6 @@
  *   (virus scanners, functions called from vortex) locking files.
  * - ignoring ENOENT error when deleting a file.
  */
-/// <reference types="node" />
-/// <reference types="node" />
 import { TFunction } from './i18n';
 import PromiseBB from 'bluebird';
 import * as fs from 'fs-extra';
@@ -26,7 +24,7 @@ export interface IRemoveFileOptions {
     showDialogCallback?: () => boolean;
 }
 export declare function setTFunction(tFunc: TFunction): void;
-export declare function genFSWrapperAsync<T extends (...args: any[]) => any>(func: T): (...args: any[]) => any;
+export declare function genFSWrapperAsync<T extends (...args: any[]) => any>(func: T): (...args: any[]) => PromiseBB<any>;
 declare const chmodAsync: (path: string, mode: string | number) => PromiseBB<void>;
 declare const closeAsync: (fd: number) => PromiseBB<void>;
 declare const fsyncAsync: (fd: number) => PromiseBB<void>;
@@ -92,8 +90,8 @@ export declare function withTmpDirImpl<T>(cb: (tmpPath: string) => PromiseBB<T>)
 export interface ITmpOptions {
     cleanup?: boolean;
 }
-declare const withTmpDir: (...args: any[]) => any;
-declare const withTmpFile: (...args: any[]) => any;
+declare const withTmpDir: (...args: any[]) => PromiseBB<any>;
+declare const withTmpFile: (...args: any[]) => PromiseBB<any>;
 export { withTmpDir, withTmpFile, };
 export declare function encodingFromBOM(buf: Buffer): {
     encoding: string;

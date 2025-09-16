@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export interface ITimerProps {
     className?: string;
     started: number;
