@@ -9,4 +9,5 @@ export declare function setVortexPath(id: AppPath, value: string | (() => string
  * of any of that.
  */
 declare function getVortexPath(id: AppPath): string;
+export declare function getVortexPathAsync(id: AppPath): Promise<string>;
 export default getVortexPath;

@@ -11,7 +11,7 @@
         "outDir": "./lib",
         "sourceMap": false,
         "jsx":"react",
-        "emitDeclarationOnly": true,
+        "emitDeclarationOnly": false,
         "declaration": true,
         "skipLibCheck": true,
         "esModuleInterop": true
