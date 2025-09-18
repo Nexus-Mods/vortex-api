@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import Promise from 'bluebird';
 /**
  * assembles a file received in chunks.

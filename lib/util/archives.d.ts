@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { IArchiveHandler } from '../types/IExtensionContext';
 import Promise from 'bluebird';
 /**

@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { ITableAttribute } from '../../types/ITableAttribute';
 import { ComponentEx } from '../../util/ComponentEx';
 import { TFunction } from '../../util/i18n';

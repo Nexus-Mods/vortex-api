@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { IAttributeState } from './IAttributeState';
 import { IDialog } from './IDialog';
 import { INotification } from './INotification';

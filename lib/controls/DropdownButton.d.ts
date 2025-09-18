@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { DropdownButton } from 'react-bootstrap';
 export interface IBaseProps {
     split?: boolean;

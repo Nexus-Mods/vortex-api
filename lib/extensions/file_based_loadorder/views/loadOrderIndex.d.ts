@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { ILoadOrderEntry } from '../../../types/api';
 import { IExtensionApi, LoadOrder } from '../../../types/api';
 interface IProps {

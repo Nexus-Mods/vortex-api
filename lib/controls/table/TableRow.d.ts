@@ -26,5 +26,5 @@ export interface IRowProps {
     onSetVisible: (rowId: string, visible: boolean) => void;
     onHighlight: (rowId: string, highlight: boolean) => void;
 }
-declare const _default: React.ComponentClass<IRowProps, any>;
+declare const _default: React.ComponentClass<IRowProps>;
 export default _default;

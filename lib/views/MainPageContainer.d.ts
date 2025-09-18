@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { IMainPage } from '../types/IMainPage';
 export interface IBaseProps {
     page: IMainPage;

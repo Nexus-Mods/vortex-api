@@ -1,6 +1,3 @@
-/// <reference types="node" />
-/// <reference types="node" />
-/// <reference types="node" />
 import { IncomingMessage, ClientRequest } from 'http';
 import { Readable } from 'stream';
 export interface IRequestOptions {

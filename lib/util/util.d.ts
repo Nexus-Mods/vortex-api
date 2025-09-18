@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { Normalize } from './getNormalizeFunc';
 import Bluebird from 'bluebird';
 import * as Redux from 'redux';

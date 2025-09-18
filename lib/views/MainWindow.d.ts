@@ -90,5 +90,5 @@ export declare class MainWindow extends React.Component<IProps, IMainWindowState
     private setMainPage;
     private toggleMenu;
 }
-declare const _default: React.ComponentClass<IBaseProps, any>;
+declare const _default: React.ComponentClass<IBaseProps>;
 export default _default;

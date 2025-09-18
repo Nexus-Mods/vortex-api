@@ -10,5 +10,5 @@ export interface IMoreProps {
 export interface IComponentState {
     open: boolean;
 }
-declare const _default: React.ComponentClass<IMoreProps, any>;
+declare const _default: React.ComponentClass<IMoreProps>;
 export default _default;
