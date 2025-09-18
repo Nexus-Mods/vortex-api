@@ -13,7 +13,7 @@ export type ButtonProps = ITooltipProps & typeof BootstrapButton.prototype.props
  *
  */
 export declare class Button extends React.PureComponent<ButtonProps, {}> {
-    render(): JSX.Element;
+    render(): React.JSX.Element;
 }
 export interface IIconButtonExtraProps {
     icon: string;
@@ -31,7 +31,7 @@ export interface IIconButtonExtraProps {
 }
 export type IconButtonProps = ButtonProps & IIconButtonExtraProps;
 export declare class IconButton extends React.Component<IconButtonProps, {}> {
-    render(): JSX.Element;
+    render(): React.JSX.Element;
 }
 export interface IToggleButtonExtraProps {
     onIcon: string;
@@ -41,11 +41,11 @@ export interface IToggleButtonExtraProps {
 }
 export type ToggleButtonProps = ButtonProps & IToggleButtonExtraProps;
 export declare class ToggleButton extends React.Component<ToggleButtonProps, {}> {
-    render(): JSX.Element;
+    render(): React.JSX.Element;
 }
 export type NavItemProps = ITooltipProps & typeof BootstrapNavItem.prototype.props;
 export declare class NavItem extends React.Component<NavItemProps, {}> {
-    render(): JSX.Element;
+    render(): React.JSX.Element;
 }
 /**
  * copied from the typings .d.ts file because this interface is not exported
@@ -77,7 +77,7 @@ export type IconProps = ITooltipProps & ITooltipIconProps;
  * @class Icon
  */
 export declare class Icon extends React.Component<IconProps, {}> {
-    render(): JSX.Element;
+    render(): React.JSX.Element;
 }
 export type ClickPopoverProps = ButtonProps & IIconButtonExtraProps & {};
 export declare class ClickPopover extends React.Component<ClickPopoverProps, {

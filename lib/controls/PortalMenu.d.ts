@@ -22,7 +22,7 @@ declare class PortalMenu extends React.Component<IPortalMenuProps, {
         menuLayer: JSX.Element;
     };
     constructor(props: IPortalMenuProps);
-    render(): JSX.Element;
+    render(): React.JSX.Element;
     private onClick;
 }
 export default PortalMenu;

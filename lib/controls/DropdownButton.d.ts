@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { DropdownButton } from 'react-bootstrap';
 export interface IBaseProps {
     split?: boolean;
@@ -12,5 +13,5 @@ export type IProps = IBaseProps & typeof DropdownButton.prototype.props;
  * @class MyDropdownButton
  * @extends {React.Component<IProps, { up: boolean }>}
  */
-declare function MyDropdownButton(props: IProps): JSX.Element;
+declare function MyDropdownButton(props: IProps): React.JSX.Element;
 export default MyDropdownButton;

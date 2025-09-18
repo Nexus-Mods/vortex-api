@@ -28,7 +28,7 @@ declare class MyOverlay extends React.Component<IProps, {
     placement: string;
 }> {
     constructor(props: any);
-    render(): JSX.Element;
+    render(): React.JSX.Element;
     private onEnter;
 }
 export default MyOverlay;

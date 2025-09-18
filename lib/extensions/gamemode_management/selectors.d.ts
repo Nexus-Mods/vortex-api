@@ -2,7 +2,7 @@ import { IState } from '../../types/IState';
 import { IDiscoveryResult } from './types/IDiscoveryResult';
 import { IGameStored } from './types/IGameStored';
 export declare function knownGames(state: any): IGameStored[];
-export declare const currentGame: ((state: any) => IGameStored) & import("reselect").OutputSelectorFields<(args_0: IGameStored[], args_1: string) => IGameStored & {
+export declare const currentGame: ((state: any) => IGameStored) & import("reselect").OutputSelectorFields<(args_0: IGameStored[], args_1: string) => IGameStored, {
     clearCache: () => void;
 }> & {
     clearCache: () => void;

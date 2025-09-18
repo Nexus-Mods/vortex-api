@@ -1,7 +1,7 @@
 import { IState } from '../../types/IState';
 export declare const installPath: ((state: IState) => string) & import("reselect").OutputSelectorFields<(args_0: {
     [gameId: string]: string;
-}, args_1: string) => string & {
+}, args_1: string) => string, {
     clearCache: () => void;
 }> & {
     clearCache: () => void;
@@ -20,7 +20,7 @@ export declare const installPathForGame: import("re-reselect").ParametricSelecto
 };
 export declare const currentActivator: ((state: IState) => string) & import("reselect").OutputSelectorFields<(args_0: {
     [gameId: string]: string;
-}, args_1: string) => string & {
+}, args_1: string) => string, {
     clearCache: () => void;
 }> & {
     clearCache: () => void;
@@ -50,7 +50,7 @@ interface INeedToDeployMap {
 }
 export declare const needToDeploy: ((state: IState) => boolean) & import("reselect").OutputSelectorFields<(args_0: {
     [gameId: string]: boolean;
-}, args_1: string) => boolean & {
+}, args_1: string) => boolean, {
     clearCache: () => void;
 }> & {
     clearCache: () => void;
@@ -71,7 +71,7 @@ export declare const modPathsForGame: ((state: IState, gameId: string) => {
     [typeId: string]: string;
 }) & import("reselect").OutputSelectorFields<(args_0: {}, args_1: string) => {
     [typeId: string]: string;
-} & {
+}, {
     clearCache: () => void;
 }> & {
     clearCache: () => void;

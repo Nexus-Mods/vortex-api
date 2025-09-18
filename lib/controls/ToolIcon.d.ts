@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { TFunction } from '../util/i18n';
 export interface IItemProps {
     name: string;
@@ -13,5 +14,5 @@ export interface IToolIconProps {
     imageId?: number;
     onRun?: () => void;
 }
-declare const ToolIcon: (props: IToolIconProps) => JSX.Element;
+declare const ToolIcon: (props: IToolIconProps) => React.JSX.Element;
 export default ToolIcon;

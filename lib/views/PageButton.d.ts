@@ -9,7 +9,7 @@ interface IPageButtonProps {
 declare class PageButton extends React.Component<IPageButtonProps, {}> {
     componentDidMount(): void;
     componentWillUnmount(): void;
-    render(): JSX.Element;
+    render(): React.JSX.Element;
     private renderBadge;
     private renderActivity;
 }

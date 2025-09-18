@@ -13,5 +13,5 @@ export interface IDraggableListProps {
     style?: React.CSSProperties;
     className?: string;
 }
-declare function DraggableListWrapper(props: IDraggableListProps): JSX.Element;
+declare function DraggableListWrapper(props: IDraggableListProps): React.JSX.Element;
 export default DraggableListWrapper;

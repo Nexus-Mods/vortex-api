@@ -8,8 +8,8 @@ export interface IFlexLayoutProps {
 }
 export type IProps = IFlexLayoutProps & React.HTMLAttributes<HTMLDivElement>;
 declare class FlexLayout extends React.PureComponent<IProps, {}> {
-    static Fixed: (props: React.HTMLAttributes<HTMLDivElement>) => JSX.Element;
-    static Flex: (props: IFlexProps & React.HTMLAttributes<HTMLDivElement>) => JSX.Element;
+    static Fixed: (props: React.HTMLAttributes<HTMLDivElement>) => React.JSX.Element;
+    static Flex: (props: IFlexProps & React.HTMLAttributes<HTMLDivElement>) => React.JSX.Element;
     render(): JSX.Element;
 }
 export default FlexLayout;

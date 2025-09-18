@@ -15,12 +15,12 @@ export interface IFormItemProps {
     style?: React.CSSProperties;
 }
 export declare class FormTextItem extends React.Component<IFormItemProps, {}> {
-    render(): JSX.Element;
+    render(): React.JSX.Element;
     private validationState;
     private onChangeValue;
 }
 export declare class FormCheckboxItem extends React.Component<IFormItemProps, {}> {
-    render(): JSX.Element;
+    render(): React.JSX.Element;
     private onChangeValue;
 }
 export interface IFormPathProps extends IFormItemProps {

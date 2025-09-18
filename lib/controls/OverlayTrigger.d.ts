@@ -30,7 +30,7 @@ declare class MyOverlayTrigger extends React.Component<IProps, {
     private mNode;
     constructor(props: any);
     componentDidMount(): void;
-    render(): JSX.Element;
+    render(): React.JSX.Element;
     private onEnter;
 }
 export default MyOverlayTrigger;
