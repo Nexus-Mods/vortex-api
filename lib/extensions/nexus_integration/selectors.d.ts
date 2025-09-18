@@ -5,7 +5,7 @@ export declare const nexusIdsFromDownloadId: ((state: IState, downloadId: string
     gameDomainName: any;
     fileId: any;
     modId: any;
-    numericGameId: string;
+    numericGameId: any;
     collectionSlug: any;
     collectionId: any;
     revisionId: any;
@@ -15,7 +15,7 @@ export declare const nexusIdsFromDownloadId: ((state: IState, downloadId: string
     gameDomainName: any;
     fileId: any;
     modId: any;
-    numericGameId: string;
+    numericGameId: any;
     collectionSlug: any;
     collectionId: any;
     revisionId: any;
