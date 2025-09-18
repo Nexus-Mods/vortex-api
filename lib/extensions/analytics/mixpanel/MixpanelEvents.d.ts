@@ -210,7 +210,7 @@ export declare class ModsDownloadFailedEvent implements MixpanelEvent {
     constructor(mod_id: string, file_id: string, game_id: string, mod_uid: string, file_uid: string, error_code: string, error_message: string);
 }
 /** DONE
- * Event sent when mod installation is started.
+ * Event sent when mod installation is started. Not sent for collection bundle/manifest mod.
  * @param mod_id ID of the mod
  * @param file_id ID of the file
  * @param game_id ID of the game
@@ -223,7 +223,7 @@ export declare class ModsInstallationStartedEvent implements MixpanelEvent {
     constructor(mod_id: string, file_id: string, game_id: string, mod_uid: string, file_uid: string);
 }
 /** DONE
- * Event sent when mod installation is completed.
+ * Event sent when mod installation is completed. Not sent for collection bundle/manifest mod.
  * @param mod_id ID of the mod
  * @param file_id ID of the file
  * @param game_id ID of the game
@@ -237,7 +237,7 @@ export declare class ModsInstallationCompletedEvent implements MixpanelEvent {
     constructor(mod_id: string, file_id: string, game_id: string, mod_uid: string, file_uid: string, duration_ms: number);
 }
 /**
- * Event sent when mod installation is cancelled.
+ * Event sent when mod installation is cancelled. Not sent for collection bundle/manifest mod.
  * @param mod_id ID of the mod
  * @param file_id ID of the file
  * @param game_id ID of the game
@@ -250,7 +250,7 @@ export declare class ModsInstallationCancelledEvent implements MixpanelEvent {
     constructor(mod_id: string, file_id: string, game_id: string, mod_uid: string, file_uid: string);
 }
 /** DONE
- * Event sent when mod installation fails.
+ * Event sent when mod installation fails. Not sent for collection bundle/manifest mod.
  * @param mod_id ID of the mod
  * @param file_id ID of the file
  * @param game_id ID of the game

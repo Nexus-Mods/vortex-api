@@ -7,6 +7,7 @@ export declare const nexusIdsFromDownloadId: ((state: IState, downloadId: string
     modId: any;
     numericGameId: string;
     collectionSlug: any;
+    collectionId: any;
     revisionId: any;
 }) & import("reselect").OutputSelectorFields<(args_0: {
     [id: string]: import("../download_management/types/IDownload").IDownload;
@@ -16,6 +17,7 @@ export declare const nexusIdsFromDownloadId: ((state: IState, downloadId: string
     modId: any;
     numericGameId: string;
     collectionSlug: any;
+    collectionId: any;
     revisionId: any;
 }, {
     clearCache: () => void;
