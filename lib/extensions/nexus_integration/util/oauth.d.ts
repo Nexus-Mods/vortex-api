@@ -10,6 +10,7 @@ interface IOAuthServerSettings {
     baseUrl: string;
     clientId: string;
     redirectUrl: string;
+    getRedirectUrl?: (port: number) => string;
 }
 /**
  * deals with token exchange for OAuth2

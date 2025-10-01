@@ -123,6 +123,7 @@ declare class ExtensionManager {
     private watcherError;
     private queryLoadTimeout;
     private getModDB;
+    private canBeToast;
     private getMetaServerList;
     private connectMetaDB;
     private stateChangeHandler;

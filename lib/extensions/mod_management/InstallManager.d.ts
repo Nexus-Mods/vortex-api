@@ -32,11 +32,17 @@ declare class InstallManager {
     private mGetInstallPath;
     private mDependencyInstalls;
     private mDependencyDownloadsLimit;
+    private mNotificationAggregator;
+    private mNotificationAggregationTimeoutMS;
     private mDependencyInstallsLimit;
     private mPendingInstalls;
     private mActiveInstalls;
+    private mDependencyRetryCount;
+    private static readonly MAX_DEPENDENCY_RETRIES;
     private mMainInstallsLimit;
     constructor(api: IExtensionApi, installPath: (gameId: string) => string);
+    private handleDownloadFinished;
+    private handleDownloadFailed;
     /**
      * Get information about all currently active installations
      */
@@ -99,8 +105,8 @@ declare class InstallManager {
      *                                 (registerInstaller) to be used, instead of going through
      *                                 the auto-detection.
      */
-    install(archiveId: string, archivePath: string, downloadGameIds: string[], api: IExtensionApi, info: any, processDependencies: boolean, enable: boolean, callback: (error: Error, id: string) => void, forceGameId?: string, fileList?: IFileListItem[], unattended?: boolean, forceInstaller?: string, allowAutoDeploy?: boolean): void;
-    installDependencies(api: IExtensionApi, profile: IProfile, gameId: string, modId: string, allowAutoDeploy: boolean): Bluebird<void>;
+    install(archiveId: string, archivePath: string, downloadGameIds: string[], api: IExtensionApi, info: any, processDependencies: boolean, enable: boolean, callback: (error: Error, id: string) => void, forceGameId?: string, fileList?: IFileListItem[], unattended?: boolean, forceInstaller?: string, allowAutoDeploy?: boolean, sourceModId?: string): void;
+    installDependencies(api: IExtensionApi, profile: IProfile, gameId: string, modId: string, silent: boolean, allowAutoDeploy?: boolean): Bluebird<void>;
     installRecommendations(api: IExtensionApi, profile: IProfile, gameId: string, modId: string): Bluebird<void>;
     private augmentRules;
     private withDependenciesContext;
@@ -118,6 +124,10 @@ declare class InstallManager {
     private startQueuedInstallation;
     private mInstallPhaseState;
     private ensurePhaseState;
+    private pollPhaseSettlement;
+    private checkCollectionPhaseStatus;
+    private hasActiveOrPendingInstallation;
+    private reQueueDownloadedMods;
     private scheduleDeployOnPhaseSettled;
     private markPhaseDownloadsFinished;
     private startPendingForPhase;
@@ -197,5 +207,9 @@ declare class InstallManager {
      * @param {string} destinationPath path to install to
      */
     private extractArchive;
+    /**
+     * Helper method to show aggregated error notification for dependency installation failures
+     */
+    private showDependencyError;
 }
 export default InstallManager;

@@ -343,6 +343,7 @@ export interface IExtensionApi {
      * @memberOf IExtensionApi
      */
     dismissNotification?: (id: string) => void;
+    dismissAllNotifications?: () => void;
     /**
      * hides a notification and don't show it again
      * if this is called with the second parameter set to false, it re-enables the notification

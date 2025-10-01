@@ -11,6 +11,8 @@ export declare const FALLBACK_AVATAR = "assets/images/noavatar.png";
 export declare const REVALIDATION_FREQUENCY: number;
 export declare const OAUTH_URL: string;
 export declare const USERINFO_ENDPOINT: string;
+export declare const OAUTH_REDIRECT_BASE = "http://127.0.0.1";
+export declare const getOAuthRedirectUrl: (port: number) => string;
 export declare const OAUTH_REDIRECT_URL = "http://127.0.0.1:PORT";
 export declare const OAUTH_CLIENT_ID = "vortex_loopback";
 export declare const NEXUS_PUBLIC_KEY: string;

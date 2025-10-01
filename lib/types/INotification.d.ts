@@ -105,6 +105,9 @@ export interface INotification {
      *
      * Therefore: Absolutely never display an important message with a timer!
      *
+     * As of Vortex 1.16.x, any notification with a timer will be raised
+     *  as a toast notification (unless noToast is set)
+     *
      * @type {number}
      * @memberOf INotification
      */
@@ -118,6 +121,10 @@ export interface INotification {
      * if set, no Dismiss button is provided automatically
      */
     noDismiss?: boolean;
+    /**
+     * if set, the notification will not be shown as a toast even if it has a displayMS
+     */
+    noToast?: boolean;
     /**
      * if set, the user may suppress the notification in the future
      */
