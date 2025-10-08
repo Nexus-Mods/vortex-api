@@ -1,3 +1,4 @@
+import { URL } from 'url';
 export declare enum NXMType {
     Mod = 0,
     Collection = 1,
@@ -20,8 +21,18 @@ declare class NXMUrl {
     private mView;
     private mExtraParams;
     private mPremium;
-    constructor(input: string);
+    constructor(input: string | URL);
     get type(): 'mod' | 'collection' | 'oauth' | 'premium';
+    get identifiers(): {
+        type: NXMType;
+        gameId: string;
+        modId?: number;
+        fileId?: number;
+        collectionId?: number;
+        revisionId?: number;
+        collectionSlug?: string;
+        revisionNumber?: number;
+    };
     get gameId(): string;
     get modId(): number;
     get fileId(): number;

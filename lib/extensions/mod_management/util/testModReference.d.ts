@@ -24,6 +24,12 @@ export declare function sanitizeExpression(fileName: string): string;
 export declare function safeCoerce(input: string): string;
 export declare function coerceToSemver(version: string): string;
 export declare function isFuzzyVersion(input: string): boolean;
+export declare function testRefByIdentifiers(identifiers: {
+    name?: string;
+    gameId: string;
+    modId?: number;
+    fileId?: number;
+}, ref: IModReference): boolean;
 /**
  * sets the callback for when a (fuzzy) mod reference is resolved, so the cache can be updated
  */

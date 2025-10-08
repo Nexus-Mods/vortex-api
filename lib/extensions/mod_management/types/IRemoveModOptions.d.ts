@@ -1,5 +1,6 @@
 import { IMod } from '../types/IMod';
 export interface IRemoveModOptions {
+    silent?: boolean;
     willBeReplaced?: boolean;
     incomplete?: boolean;
     ignoreInstalling?: boolean;
