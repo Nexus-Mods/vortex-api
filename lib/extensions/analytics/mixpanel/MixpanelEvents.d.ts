@@ -6,16 +6,24 @@ export interface MixpanelEvent {
     readonly properties: Record<string, any>;
 }
 /**
+ * Maps Node.js process.platform values to Mixpanel's expected OS format
+ * @param platform - Node.js platform string (win32, darwin, linux, etc.)
+ * @returns Mixpanel-compatible OS name (Windows, Mac OS X, Linux, etc.)
+ */
+export declare function mapPlatformToMixpanel(platform: string): string;
+/**
  * APP EVENTS
  */
 /**
  * App launched event - sent when Vortex starts up
- * @param os Operating system
+ * @param os Operating system (Node.js platform string: win32, darwin, linux)
+ * @param os_version Operating system version (e.g., "10.0.22000" for Windows 11)
+ * @param architecture CPU architecture (e.g., "x64", "arm64")
  */
 export declare class AppLaunchedEvent implements MixpanelEvent {
     readonly eventName = "app_launched";
     readonly properties: Record<string, any>;
-    constructor(os: string);
+    constructor(os: string, os_version?: string, architecture?: string);
 }
 /**
  * App start game event - sent when Vortex launches a game
@@ -33,7 +41,7 @@ export declare class AppStartGameEvent implements MixpanelEvent {
  * Event sent when the application is updated.
  * @param from_version Previous version
  * @param to_version New version
- * @param os Operating system
+ * @param os Operating system (Node.js platform string: win32, darwin, linux)
  */
 export declare class AppUpdatedEvent implements MixpanelEvent {
     readonly eventName = "app_updated";
@@ -42,7 +50,7 @@ export declare class AppUpdatedEvent implements MixpanelEvent {
 }
 /**
  * Event sent when the application crashes.
- * @param os Operating system
+ * @param os Operating system (Node.js platform string: win32, darwin, linux)
  * @param error_code Error code
  * @param error_message Error message
  */

@@ -56,7 +56,7 @@ export declare function truthy(val: any): boolean;
  * @param rhs the right, "after", object
  * @param skip properties to skip in the diff, string array
  */
-export declare function objDiff(lhs: any, rhs: any, skip?: string[]): any;
+export declare function objDiff(lhs: any, rhs: any, skip?: string[]): Record<string, any>;
 export declare function restackErr(error: Error, stackErr: Error): Error;
 /**
  * create a "queue".

@@ -43,6 +43,7 @@ declare class InstallManager {
     constructor(api: IExtensionApi, installPath: (gameId: string) => string);
     private handleDownloadFinished;
     private handleDownloadFailed;
+    private handleDownloadSkipped;
     /**
      * Get information about all currently active installations
      */
@@ -121,9 +122,11 @@ declare class InstallManager {
      * Installers are gated by phase so higher phases won't start until lower phases finish.
      */
     private queueInstallation;
+    private generateDependencyInstallKey;
     private startQueuedInstallation;
     private mInstallPhaseState;
     private ensurePhaseState;
+    private pollAllPhasesComplete;
     private pollPhaseSettlement;
     private checkCollectionPhaseStatus;
     private hasActiveOrPendingInstallation;
@@ -207,6 +210,10 @@ declare class InstallManager {
      * @param {string} destinationPath path to install to
      */
     private extractArchive;
+    /**
+     * Find any download that matches the given mod reference using all available methods
+     */
+    private findDownloadForMod;
     /**
      * Helper method to show aggregated error notification for dependency installation failures
      */
