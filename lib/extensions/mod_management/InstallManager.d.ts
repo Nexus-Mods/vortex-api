@@ -43,7 +43,6 @@ declare class InstallManager {
     constructor(api: IExtensionApi, installPath: (gameId: string) => string);
     private handleDownloadFinished;
     private handleDownloadFailed;
-    private handleDownloadSkipped;
     /**
      * Get information about all currently active installations
      */
