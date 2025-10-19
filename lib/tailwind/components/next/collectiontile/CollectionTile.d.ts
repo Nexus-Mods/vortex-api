@@ -14,9 +14,9 @@ export interface CollectionTileProps {
     coverImage: string;
     tags: string[];
     stats: {
-        downloads: number;
-        size: string;
         endorsements: number;
+        modCount: number;
+        size: string;
     };
     description: string;
     version?: string;
