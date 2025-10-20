@@ -6,7 +6,7 @@
  */
 import * as React from 'react';
 import { AnchorHTMLAttributes, ButtonHTMLAttributes, ComponentProps, ReactNode, Ref } from 'react';
-import { Link } from './Link';
+import { Link } from '../link';
 import { XOr } from '../utils';
 export type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'success' | 'premium';
 type BaseButtonProps = {
