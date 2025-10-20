@@ -40,10 +40,10 @@ export type IconProps = Omit<React.SVGProps<SVGSVGElement>, 'size' | 'path'> & {
     size?: IconSize;
 }, {
     /**
-     * Custom size in rem units (e.g., '1.5rem')
+     * Custom size override (e.g., '1.5rem', '24px', 'var(--custom-size)')
      * Cannot be used with size
      */
-    sizeOverride?: `${number}rem`;
+    sizeOverride?: string;
 }>;
 /**
  * Icon component that renders icons from multiple sources
