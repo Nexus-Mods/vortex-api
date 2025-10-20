@@ -30,6 +30,7 @@ export declare function testRefByIdentifiers(identifiers: {
     fileId?: number;
     fileNames?: string[];
     fileIds?: string[];
+    condition?: () => boolean;
 }, ref: IModReference): boolean;
 /**
  * sets the callback for when a (fuzzy) mod reference is resolved, so the cache can be updated
