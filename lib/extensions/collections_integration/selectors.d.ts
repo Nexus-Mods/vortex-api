@@ -1,9 +1,10 @@
 import { ICollectionInstallSession, ICollectionModInstallInfo, CollectionModStatus } from './types';
+import { IState } from '../../types/IState';
 /**
  * Get the active installation session
  * @returns The current active session or undefined if no session is active
  */
-export declare const getActiveSession: (state: any) => ICollectionInstallSession | undefined;
+export declare const getActiveSession: (state: IState) => ICollectionInstallSession | undefined;
 /**
  * Get the session ID of the last completed installation
  * @returns The last active session ID or undefined
@@ -87,7 +88,7 @@ export declare const getTotalPhases: (state: any) => number;
  * Get installation progress statistics for the active session
  * @returns Object with various progress metrics
  */
-export declare const getInstallProgress: ((state: any) => {
+export declare const getInstallProgress: ((state: IState) => {
     totalRequired: number;
     totalOptional: number;
     downloadedCount: number;
