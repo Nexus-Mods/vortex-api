@@ -1,4 +1,4 @@
-import Nexus, { IFileInfo, IGameListEntry, IModInfo, IRevision, NexusError } from '@nexusmods/nexus-api';
+import Nexus, { ICollectionQuery, IFileInfo, IGameListEntry, IModInfo, IRevision, NexusError, ICollectionSearchOptions, ICollectionSearchResult } from '@nexusmods/nexus-api';
 import BluebirdPromise from 'bluebird';
 import { TFunction } from 'i18next';
 import * as Redux from 'redux';
@@ -15,6 +15,15 @@ interface IUserInfo {
     membership_roles: string[];
     premium_expiry: number;
 }
+/**
+ * Search for collections using the GraphQL API
+ *
+ * @param {Nexus} nexus - The Nexus API instance
+ * @param {ICollectionQuery} query - GraphQL query for collection fields
+ * @param {types.ICollectionSearchOptions} options - Search options (gameId, filters, sort, etc.)
+ * @return {Promise<types.ICollectionSearchResult>} Search results with nodes and totalCount
+ */
+export declare function searchCollections(nexus: Nexus, query: ICollectionQuery, options: ICollectionSearchOptions): Promise<ICollectionSearchResult>;
 export declare function onCancelLoginImpl(api: IExtensionApi): void;
 export declare function bringToFront(): void;
 export declare function requestLogin(nexus: Nexus, api: IExtensionApi, callback: (err: Error) => void): Promise<void>;
