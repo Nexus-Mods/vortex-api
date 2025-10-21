@@ -9,3 +9,4 @@ export * from './controls/api';
 export * from './views/api';
 export { actions, Promise, fs, log, selectors, types, util };
 export { ComponentEx, PureComponentEx } from './util/ComponentEx';
+export { Tailwind } from './tailwind';
