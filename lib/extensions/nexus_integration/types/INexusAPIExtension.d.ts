@@ -1,7 +1,5 @@
 import { EndorsedStatus, ICollection, ICollectionManifest, ICollectionSearchOptions, ICollectionSearchResult, IDownloadURL, IFeedbackResponse, IFileInfo, IIssue, IRevision } from '@nexusmods/nexus-api';
 import { IMod } from '../../mod_management/types/IMod';
-export type SortField = 'createdAt' | 'endorsements' | 'recentRating' | 'downloads';
-export type SortDirection = 'ASC' | 'DESC';
 export interface INexusAPIExtension {
     nexusCheckModsVersion?: (gameId: string, mods: {
         [modId: string]: IMod;
