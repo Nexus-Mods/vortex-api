@@ -1,5 +1,10 @@
 import { IExtensionApi } from '../../types/IExtensionContext';
 import { IProfile } from '../../types/IState';
+import { IInstallResult } from './types/IInstallResult';
+import { IFileListItem } from './types/IMod';
+import { InstallFunc } from './types/InstallFunc';
+import { TestSupported } from './types/TestSupported';
+import Bluebird from 'bluebird';
 interface IActiveInstallation {
     installId: string;
     archiveId: string;
@@ -10,11 +15,6 @@ interface IActiveInstallation {
     startTime: number;
     baseName: string;
 }
-import { IInstallResult } from './types/IInstallResult';
-import { IFileListItem } from './types/IMod';
-import { InstallFunc } from './types/InstallFunc';
-import { TestSupported } from './types/TestSupported';
-import Bluebird from 'bluebird';
 export declare class ArchiveBrokenError extends Error {
     constructor(message: string);
 }
