@@ -16,7 +16,7 @@ export interface CollectionTileProps {
     stats: {
         endorsements: number;
         modCount: number;
-        size: number;
+        size: string;
     };
     description: string;
     version?: string;
