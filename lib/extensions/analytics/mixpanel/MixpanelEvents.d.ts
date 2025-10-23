@@ -71,6 +71,16 @@ export declare class AppUpsellClickedEvent implements MixpanelEvent {
  * COLLECTION EVENTS
  */
 /**
+ * Event sent when a collection download is clicked/initiated by the user.
+ * @param collection_slug Slug of the collection
+ * @param game_id ID of the game
+ */
+export declare class CollectionsDownloadClickedEvent implements MixpanelEvent {
+    readonly eventName = "collections_download_clicked";
+    readonly properties: Record<string, any>;
+    constructor(collection_slug: string, game_id: string);
+}
+/**
  * Event sent when a collection download is completed.
  * @param collection_id ID of the collection
  * @param revision_id ID of the revision
