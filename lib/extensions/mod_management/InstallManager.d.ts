@@ -129,7 +129,6 @@ declare class InstallManager {
     private pollAllPhasesComplete;
     pollPhaseSettlement(api: IExtensionApi, sourceModId: string, options: {
         phase?: number;
-        deployOnSettle?: boolean;
     }): Bluebird<void>;
     private checkCollectionPhaseStatus;
     private hasActiveOrPendingInstallation;
