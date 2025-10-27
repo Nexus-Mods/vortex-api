@@ -53,6 +53,18 @@ export declare const getCollectionActiveSessionMods: (state: any) => {
  */
 export declare const getCollectionActiveSessionMod: (state: any, ruleId: string) => ICollectionModInstallInfo | undefined;
 /**
+ * Search for a mod in the active collection by mod reference details
+ * This is useful when you have deployment information and need to find the corresponding collection rule
+ * @param searchParams Object containing mod identifiers to search by
+ * @returns The mod installation info or undefined if not found
+ */
+export declare const getCollectionModByReference: (state: any, searchParams: {
+    modId?: string;
+    fileMD5?: string;
+    fileId?: string;
+    logicalFileName?: string;
+}) => ICollectionModInstallInfo | undefined;
+/**
  * Get all mods with a specific status from the active session
  * @param status The status to filter by
  * @returns Array of mods with the specified status
