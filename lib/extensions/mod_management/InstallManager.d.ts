@@ -1,5 +1,10 @@
 import { IExtensionApi } from '../../types/IExtensionContext';
 import { IProfile } from '../../types/IState';
+import { IInstallResult } from './types/IInstallResult';
+import { IFileListItem, IModReference } from './types/IMod';
+import { InstallFunc } from './types/InstallFunc';
+import { TestSupported } from './types/TestSupported';
+import Bluebird from 'bluebird';
 interface IActiveInstallation {
     installId: string;
     archiveId: string;
@@ -10,11 +15,6 @@ interface IActiveInstallation {
     startTime: number;
     baseName: string;
 }
-import { IInstallResult } from './types/IInstallResult';
-import { IFileListItem } from './types/IMod';
-import { InstallFunc } from './types/InstallFunc';
-import { TestSupported } from './types/TestSupported';
-import Bluebird from 'bluebird';
 export declare class ArchiveBrokenError extends Error {
     constructor(message: string);
 }
@@ -106,7 +106,7 @@ declare class InstallManager {
      *                                 (registerInstaller) to be used, instead of going through
      *                                 the auto-detection.
      */
-    install(archiveId: string, archivePath: string, downloadGameIds: string[], api: IExtensionApi, info: any, processDependencies: boolean, enable: boolean, callback: (error: Error, id: string) => void, forceGameId?: string, fileList?: IFileListItem[], unattended?: boolean, forceInstaller?: string, allowAutoDeploy?: boolean, sourceModId?: string): void;
+    install(archiveId: string, archivePath: string, downloadGameIds: string[], api: IExtensionApi, info: any, processDependencies: boolean, enable: boolean, callback: (error: Error, id: string) => void, forceGameId?: string, fileList?: IFileListItem[], unattended?: boolean, forceInstaller?: string, allowAutoDeploy?: boolean, sourceModId?: string, modReference?: IModReference): void;
     installDependencies(api: IExtensionApi, profile: IProfile, gameId: string, modId: string, silent: boolean, allowAutoDeploy?: boolean): Bluebird<void>;
     installRecommendations(api: IExtensionApi, profile: IProfile, gameId: string, modId: string): Bluebird<void>;
     private augmentRules;
@@ -127,11 +127,16 @@ declare class InstallManager {
     private mInstallPhaseState;
     private ensurePhaseState;
     private pollAllPhasesComplete;
-    private pollPhaseSettlement;
+    pollPhaseSettlement(api: IExtensionApi, sourceModId: string, options: {
+        phase?: number;
+    }): Bluebird<void>;
     private checkCollectionPhaseStatus;
     private hasActiveOrPendingInstallation;
     private reQueueDownloadedMods;
-    private scheduleDeployOnPhaseSettled;
+    isPhaseDeployed(sourceModId: string, phase: number): boolean;
+    markPhaseDeployed(sourceModId: string, phase: number): void;
+    awaitScheduledDeployment(sourceModId: string, phase: number): Promise<void>;
+    scheduleDeployOnPhaseSettled(api: IExtensionApi, sourceModId: string, phase: number, deployOnSettle?: boolean): void;
     private markPhaseDownloadsFinished;
     private startPendingForPhase;
     private maybeAdvancePhase;
