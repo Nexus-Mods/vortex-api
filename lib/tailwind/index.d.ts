@@ -93,8 +93,10 @@ export declare const Tailwind: {
     InputDemo: () => import("react").JSX.Element;
     Select: ({ children, className, disabled, errorMessage, hideLabel, hints, id, label, ref, required, showRequiredLabel, ...props }: form.SelectProps) => import("react").JSX.Element;
     SelectDemo: () => import("react").JSX.Element;
-    CollectionTile: import("react").ComponentType<collectiontile.CollectionTileProps>;
-    CollectionTileDemo: import("react").ComponentType<{}>;
+    CollectionTile: import("react").ComponentType<collectiontile.CollectionTileProps & {
+        api: import("../types/IExtensionContext").IExtensionApi;
+    }>;
+    CollectionTileDemo: import("react").ComponentType<import("./components/next/collectiontile/CollectionTileDemo").ICollectionTileDemoProps>;
     Link: import("react").ForwardRefExoticComponent<link.LinkProps & import("react").RefAttributes<HTMLAnchorElement>>;
     Icon: ({ path, size, sizeOverride, className, title, ...rest }: icon.IconProps) => import("react").JSX.Element;
     Button: (all: (import("react").ButtonHTMLAttributes<HTMLButtonElement> & ({

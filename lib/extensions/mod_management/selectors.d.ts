@@ -1,4 +1,4 @@
-import { IState } from '../../types/IState';
+import { IMod, IState } from '../../types/IState';
 export declare const installPath: ((state: IState) => string) & import("reselect").OutputSelectorFields<(args_0: {
     [gameId: string]: string;
 }, args_1: string) => string, {
@@ -71,6 +71,18 @@ export declare const modPathsForGame: ((state: IState, gameId: string) => {
     [typeId: string]: string;
 }) & import("reselect").OutputSelectorFields<(args_0: {}, args_1: string) => {
     [typeId: string]: string;
+}, {
+    clearCache: () => void;
+}> & {
+    clearCache: () => void;
+};
+export declare const modsForGame: (state: IState, gameId: string) => {
+    [modId: string]: IMod;
+};
+export declare const modsForActiveGame: ((state: IState) => {
+    [modId: string]: IMod;
+}) & import("reselect").OutputSelectorFields<(args_0: string, args_1: IState) => {
+    [modId: string]: IMod;
 }, {
     clearCache: () => void;
 }> & {

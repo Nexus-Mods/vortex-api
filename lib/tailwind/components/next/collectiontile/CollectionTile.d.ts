@@ -4,8 +4,11 @@
  * Adapted from Figma design for collection browsing
  */
 import * as React from 'react';
+import { IExtensionApi } from '../../../../types/IExtensionContext';
 export interface CollectionTileProps {
     id: string;
+    slug: string;
+    gameId: string;
     title: string;
     author: {
         name: string;
@@ -24,4 +27,6 @@ export interface CollectionTileProps {
     onViewPage?: () => void;
     className?: string;
 }
-export declare const CollectionTile: React.ComponentType<CollectionTileProps>;
+export declare const CollectionTile: React.ComponentType<CollectionTileProps & {
+    api: IExtensionApi;
+}>;

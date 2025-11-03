@@ -28,6 +28,7 @@ export declare const VARIANT_ACTION = "Add Variant";
  * @class InstallManager
  */
 declare class InstallManager {
+    private static readonly MAX_SIMULTANEOUS_INSTALLS;
     private mInstallers;
     private mGetInstallPath;
     private mDependencyInstalls;
@@ -201,6 +202,7 @@ declare class InstallManager {
     private updateRules;
     private doInstallDependencyList;
     private showMemoDialog;
+    private addToPhaseStateCache;
     private installDependenciesImpl;
     private installRecommendationsQueryMain;
     private installRecommendationsQuerySelect;

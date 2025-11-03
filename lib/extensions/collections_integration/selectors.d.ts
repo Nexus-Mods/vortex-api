@@ -1,5 +1,5 @@
 import { ICollectionInstallSession, ICollectionModInstallInfo, CollectionModStatus } from './types';
-import { IState } from '../../types/IState';
+import { IMod, IState } from '../../types/IState';
 /**
  * Get the active installation session
  * @returns The current active session or undefined if no session is active
@@ -59,6 +59,7 @@ export declare const getCollectionActiveSessionMod: (state: any, ruleId: string)
  * @returns The mod installation info or undefined if not found
  */
 export declare const getCollectionModByReference: (state: any, searchParams: {
+    tag?: string;
     modId?: string;
     fileMD5?: string;
     fileId?: string;
@@ -121,6 +122,13 @@ export declare const getCollectionInstallProgress: ((state: IState) => {
     installProgress: number;
     isComplete: boolean;
 }, {
+    clearCache: () => void;
+}> & {
+    clearCache: () => void;
+};
+export declare const isCollectionModPresent: ((state: IState, collectionSlug: string) => boolean) & import("reselect").OutputSelectorFields<(args_0: {
+    [modId: string]: IMod;
+}, args_1: {}, args_2: string) => boolean, {
     clearCache: () => void;
 }> & {
     clearCache: () => void;
