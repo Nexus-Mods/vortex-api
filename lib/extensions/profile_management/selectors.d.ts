@@ -9,7 +9,7 @@ export declare const gameProfiles: ((state: IState) => IProfile[]) & import("res
 }> & {
     clearCache: () => void;
 };
-export declare const activeProfile: (state: any) => IProfile;
+export declare const activeProfile: (state: any) => IProfile | undefined;
 export declare function profileById(state: IState, profileId: string): IProfile;
 export declare const lastActiveProfileForGame: ParametricSelector<IState, string, string> & {
     resultFunc: (res1: {

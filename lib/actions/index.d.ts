@@ -9,7 +9,7 @@ export * from '../extensions/browser/actions';
 export * from '../extensions/category_management/actions/category';
 export * from '../extensions/download_management/actions/settings';
 export * from '../extensions/download_management/actions/state';
-export * from '../extensions/installer_fomod/actions/installerUI';
+export * from '../extensions/installer_fomod_shared/actions/installerUI';
 export * from '../extensions/mod_load_order/actions/loadOrder';
 export * from '../extensions/file_based_loadorder/actions/loadOrder';
 export * from '../extensions/mod_management/actions/settings';

@@ -23,6 +23,10 @@ export interface CollectionTileProps {
     };
     description: string;
     version?: string;
+    badges?: Array<{
+        name: string;
+        description: string;
+    }>;
     onAddCollection?: () => void;
     onViewPage?: () => void;
     className?: string;

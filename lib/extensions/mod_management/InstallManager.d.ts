@@ -136,8 +136,7 @@ declare class InstallManager {
     private reQueueDownloadedMods;
     isPhaseDeployed(sourceModId: string, phase: number): boolean;
     markPhaseDeployed(sourceModId: string, phase: number): void;
-    awaitScheduledDeployment(sourceModId: string, phase: number): Promise<void>;
-    scheduleDeployOnPhaseSettled(api: IExtensionApi, sourceModId: string, phase: number, deployOnSettle?: boolean): void;
+    scheduleDeployOnPhaseSettled(api: IExtensionApi, sourceModId: string, phase: number, deployOnSettle?: boolean): Promise<void> | undefined;
     private markPhaseDownloadsFinished;
     private startPendingForPhase;
     private maybeAdvancePhase;
