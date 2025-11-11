@@ -95,4 +95,9 @@ export declare const getMod: ((state: IState, gameId: string, modId: string) => 
 }> & {
     clearCache: () => void;
 };
+export declare const modInstallPath: ((state: IState, gameId: string, modId: string) => string) & import("reselect").OutputSelectorFields<(args_0: IMod, args_1: string) => string, {
+    clearCache: () => void;
+}> & {
+    clearCache: () => void;
+};
 export {};
