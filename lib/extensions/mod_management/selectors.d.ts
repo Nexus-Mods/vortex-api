@@ -88,14 +88,14 @@ export declare const modsForActiveGame: ((state: IState) => {
 }> & {
     clearCache: () => void;
 };
-export declare const getMod: ((state: IState, gameId: string, modId: string) => IMod) & import("reselect").OutputSelectorFields<(args_0: {
+export declare const getMod: ((state: IState, gameId: string, modId: string | number) => IMod) & import("reselect").OutputSelectorFields<(args_0: {
     [modId: string]: IMod;
-}, args_1: string) => IMod, {
+}, args_1: string | number) => IMod, {
     clearCache: () => void;
 }> & {
     clearCache: () => void;
 };
-export declare const getModInstallPath: ((state: IState, gameId: string, modId: string) => string) & import("reselect").OutputSelectorFields<(args_0: IMod, args_1: string) => string, {
+export declare const getModInstallPath: ((state: IState, gameId: string, modId: string | number) => string) & import("reselect").OutputSelectorFields<(args_0: IMod, args_1: string) => string, {
     clearCache: () => void;
 }> & {
     clearCache: () => void;
