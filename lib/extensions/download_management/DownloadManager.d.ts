@@ -97,6 +97,7 @@ declare class DownloadManager {
     private resolveUrls;
     private initChunk;
     private cancelDownload;
+    private cleanupOrphanedPlaceholder;
     private tickQueue;
     private cleanupCompletedDownloads;
     private startWorker;
@@ -115,6 +116,7 @@ declare class DownloadManager {
     private finishChunk;
     private stopWorker;
     private sanitizeFilename;
+    private detectFileExtensionFromMagic;
     /**
      * finds and reserves a not-yet-used file name.
      * If the input filename is sample.txt then this function will try

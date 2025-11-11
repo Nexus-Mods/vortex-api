@@ -14,6 +14,56 @@ export interface IDownloadOptions {
     fileName?: string;
 }
 /**
+ * Metadata for Nexus Mods downloads
+ */
+export interface INexusModMeta {
+    archived?: boolean;
+    details?: {
+        author?: string;
+        category?: string;
+        description?: string;
+        fileId?: string;
+        homepage?: string;
+        modId?: string;
+    };
+    domainName?: string;
+    expires?: number;
+    fileMD5?: string;
+    fileName?: string;
+    fileSizeBytes?: number;
+    fileVersion?: string;
+    gameId?: string;
+    logicalFileName?: string;
+    source?: string;
+    sourceURI?: string;
+    status?: string;
+}
+/**
+ * Extended mod info structure with common properties
+ */
+export interface IModInfo {
+    collectionSlug?: string;
+    game?: string;
+    meta?: INexusModMeta;
+    name?: string;
+    nexus?: {
+        ids?: {
+            collectionSlug?: string;
+            collectionId?: number;
+            fileId?: number;
+            gameId?: string;
+            modId?: number;
+            revisionId?: number;
+            revisionNumber?: number;
+        };
+        [key: string]: any;
+    };
+    referenceTag?: string;
+    revisionNumber?: number;
+    source?: string;
+    [key: string]: any;
+}
+/**
  * download information
  *
  * @export
@@ -63,12 +113,10 @@ export interface IDownload {
      * info about the mod being downloaded. This will
      * be associated with the mod entry after its installation
      *
-     * @type {{ [key: string]: any }}
+     * @type {IModInfo}
      * @memberOf IDownload
      */
-    modInfo: {
-        [key: string]: any;
-    };
+    modInfo: IModInfo;
     /**
      * id of the (last) mod installed from this archive. Will be undefined
      * while the archive is not installed. This will not be unset if the
