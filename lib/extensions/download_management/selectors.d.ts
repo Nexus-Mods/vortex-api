@@ -27,17 +27,17 @@ export declare const activeDownloads: ((state: IState) => {}) & import("reselect
 }> & {
     clearCache: () => void;
 };
-export declare const downloadByIds: ((state: IState, identifiers: {
+export declare const getDownloadByIds: ((state: IState, identifiers: {
     fileId: number;
     modId: number;
     gameId: string;
-}) => string) & import("reselect").OutputSelectorFields<(args_0: {
+}) => IDownload) & import("reselect").OutputSelectorFields<(args_0: {
     [id: string]: IDownload;
 }, args_1: {
     fileId: number;
     modId: number;
     gameId: string;
-}) => string, {
+}) => IDownload, {
     clearCache: () => void;
 }> & {
     clearCache: () => void;
