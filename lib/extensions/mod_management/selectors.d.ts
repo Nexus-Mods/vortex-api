@@ -88,4 +88,11 @@ export declare const modsForActiveGame: ((state: IState) => {
 }> & {
     clearCache: () => void;
 };
+export declare const getMod: ((state: IState, gameId: string, modId: string) => IMod) & import("reselect").OutputSelectorFields<(args_0: {
+    [modId: string]: IMod;
+}, args_1: string) => IMod, {
+    clearCache: () => void;
+}> & {
+    clearCache: () => void;
+};
 export {};
