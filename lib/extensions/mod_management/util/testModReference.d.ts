@@ -1,4 +1,4 @@
-import { IMod, IModReference, IFileListItem } from '../types/IMod';
+import { IMod, IModReference, IFileListItem, IModAttributes } from '../types/IMod';
 import { IDownload } from '../../download_management/types/IDownload';
 export interface IModLookupInfo {
     id?: string;
@@ -19,6 +19,7 @@ export interface IModLookupInfo {
     patches?: any;
     fileList?: IFileListItem[];
 }
+export declare function modAttributesToLookupInfo(mod: IMod | IModAttributes | IModLookupInfo): IModLookupInfo;
 export declare function idOnlyRef(ref: IModReference): boolean;
 export declare function referenceEqual(lhs: IModReference, rhs: IModReference): boolean;
 /**
