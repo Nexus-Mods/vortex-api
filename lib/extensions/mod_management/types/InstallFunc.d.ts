@@ -7,5 +7,6 @@ export interface IInstallationDetails {
     modReference?: IModReference;
     hasXmlConfigXML?: boolean;
     hasCSScripts?: boolean;
+    isTrusted?: boolean;
 }
 export type InstallFunc = (files: string[], destinationPath: string, gameId: string, progressDelegate: ProgressDelegate, choices?: any, unattended?: boolean, archivePath?: string, options?: IInstallationDetails) => Promise<IInstallResult>;

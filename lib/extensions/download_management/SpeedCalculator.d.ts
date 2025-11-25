@@ -14,6 +14,7 @@ declare class SpeedCalculator {
     initCounter(id: number): void;
     addMeasure(id: number, count: number): boolean;
     stopCounter(id: number): void;
+    getLastActivity(id: number): number;
     private moveHorizon;
     private now;
 }
