@@ -1,4 +1,4 @@
-import Nexus, { ICollectionQuery, IFileInfo, IGameListEntry, IModInfo, IRevision, NexusError, ICollectionSearchOptions, ICollectionSearchResult } from '@nexusmods/nexus-api';
+import Nexus, { ICollectionQuery, IFileInfo, IGameListEntry, IModInfo, IRevision, NexusError, ICollectionSearchOptions, ICollectionSearchResult, IPreference } from '@nexusmods/nexus-api';
 import BluebirdPromise from 'bluebird';
 import { TFunction } from 'i18next';
 import * as Redux from 'redux';
@@ -68,7 +68,9 @@ export declare function checkModVersionsImpl(store: Redux.Store<any>, nexus: Nex
     errors: string[];
     modIds: string[];
 }>;
-export declare function transformUserInfoFromApi(input: IUserInfo): IValidateKeyDataV2;
+export declare function transformUserInfoFromApi(input: IUserInfo & {
+    preferences: IPreference;
+}): IValidateKeyDataV2;
 export declare function getOAuthTokenFromState(api: IExtensionApi): string;
 export declare function updateToken(api: IExtensionApi, nexus: Nexus, credentials: any): BluebirdPromise<boolean>;
 export declare function updateKey(api: IExtensionApi, nexus: Nexus, key: string): BluebirdPromise<boolean>;

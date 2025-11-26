@@ -76,3 +76,11 @@ export declare class TimeoutError extends Error {
 export declare class ThirdPartyError extends Error {
     constructor(message: string);
 }
+export declare class SelfCopyCheckError extends Error {
+    constructor(src: string, dest: string, ino: BigInt);
+}
+export declare class ArchiveBrokenError extends Error {
+    private mFileName;
+    constructor(fileNameOrMessage: string, message?: string);
+    get fileName(): string;
+}
