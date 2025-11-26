@@ -66,4 +66,5 @@ export declare function dismissAllNotifications(): (dispatch: any) => Promise<vo
  */
 export declare function showDialog(type: DialogType, title: string, content: IDialogContent, actions: DialogActions, inId?: string): (dispatch: any) => Promise<IDialogResult>;
 export declare function closeDialog(id: string, actionKey?: string, input?: any): (dispatch: any) => void;
+export declare function closeDialogs(ids: string[], actionKey?: string, input?: any): (dispatch: any) => void;
 export declare function triggerDialogLink(id: string, idx: number): void;
