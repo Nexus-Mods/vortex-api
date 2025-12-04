@@ -1,6 +1,6 @@
 export * from './message';
 export * from './storeHelper';
-import { installIconSet } from '../controls/Icon';
+import { installIconSet } from '../renderer/controls/Icon';
 import { resolveCategoryName, resolveCategoryPath } from '../extensions/category_management/util/retrieveCategoryPath';
 import { generateCollectionSessionId, modRuleId } from '../extensions/collections_integration/util';
 import { readExtensibleDir } from '../extensions/extension_manager/util';
