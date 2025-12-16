@@ -1,10 +1,10 @@
-import { EndorsedStatus, IModFileContentPage, ICollection, ICollectionManifest, IPreferenceQuery, IPreference, ICollectionSearchOptions, ICollectionSearchResult, IDownloadURL, IFeedbackResponse, IFileInfo, IIssue, IModFileContentPageQuery, IModFileContentSearchFilter, IRevision } from '@nexusmods/nexus-api';
-import { IMod } from '../../mod_management/types/IMod';
-import { IValidateKeyDataV2 } from './IValidateKeyData';
+import { EndorsedStatus, IModFileContentPage, ICollection, ICollectionManifest, IPreferenceQuery, IPreference, ICollectionSearchOptions, ICollectionSearchResult, IDownloadURL, IFeedbackResponse, IFileInfo, IIssue, IModFileContentPageQuery, IModFileContentSearchFilter, IRevision } from "@nexusmods/nexus-api";
+import { IMod } from "../../mod_management/types/IMod";
+import { IValidateKeyDataV2 } from "./IValidateKeyData";
 export interface INexusAPIExtension {
     nexusCheckModsVersion?: (gameId: string, mods: {
         [modId: string]: IMod;
-    }, forceFull: boolean | 'silent') => void;
+    }, forceFull: boolean | "silent") => void;
     nexusDownload?: (gameId: string, modId: number, fileId: number, fileName?: string, allowInstall?: boolean) => PromiseLike<string>;
     nexusGetCollection?: (slug: string) => PromiseLike<ICollection>;
     nexusGetCollections?: (gameId: string) => PromiseLike<ICollection[]>;

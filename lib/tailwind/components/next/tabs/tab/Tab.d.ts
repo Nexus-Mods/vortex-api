@@ -1,12 +1,12 @@
-import * as React from 'react';
-import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
+import * as React from "react";
+import { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
 type Tab = {
     count?: number;
     name: string;
 };
 export type TabButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & Tab;
 export type TabLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & Tab;
-export declare const TabContent: ({ count, label }: {
+export declare const TabContent: ({ count, label, }: {
     count?: number;
     label: string;
 }) => React.JSX.Element;

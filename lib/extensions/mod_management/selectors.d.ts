@@ -1,4 +1,4 @@
-import { IMod, IState } from '../../types/IState';
+import { IMod, IState } from "../../types/IState";
 export declare const installPath: ((state: IState) => string) & import("reselect").OutputSelectorFields<(args_0: {
     [gameId: string]: string;
 }, args_1: string) => string, {

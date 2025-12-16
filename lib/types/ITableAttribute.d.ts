@@ -1,7 +1,7 @@
-import { ITString, TFunction } from '../util/i18n';
-export type AttributeRenderer = 'progress';
-export type Placement = 'table' | 'detail' | 'both' | 'inline';
-export type ValidationState = 'success' | 'warning' | 'error';
+import { ITString, TFunction } from "../util/i18n";
+export type AttributeRenderer = "progress";
+export type Placement = "table" | "detail" | "both" | "inline";
+export type ValidationState = "success" | "warning" | "error";
 export interface IEditChoice {
     key: string;
     text?: string;
@@ -142,7 +142,7 @@ export interface ITableAttribute<T = any> {
      * if this is true and if the user hasn't changed column sorting yet, this column will be used
      * for sorting (ascending) as long as it's visible and no previous column had this flag set.
      */
-    isDefaultSort?: boolean | 'desc';
+    isDefaultSort?: boolean | "desc";
     /**
      * TODO: Obsolete
      * if true, the calc-function for this attribute is called whenever table data is refreshed,

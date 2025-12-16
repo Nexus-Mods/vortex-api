@@ -1,4 +1,4 @@
-import { IState } from '../../../types/IState';
+import { IState } from "../../../types/IState";
 /**
  * retrieve the Category from the Store returning the full category path.
  *

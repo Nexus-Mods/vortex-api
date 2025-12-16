@@ -1,11 +1,11 @@
-import { IAvailableExtension, IExtension } from '../extensions/extension_manager/types';
-import { ExtensionInit } from '../types/Extension';
-import { IExtensionApi, IExtensionContext, ThunkStore } from '../types/IExtensionContext';
-import { IState } from '../types/IState';
-import { i18n } from './i18n';
-import Promise from 'bluebird';
-import { WebContents } from 'electron';
-import * as Redux from 'redux';
+import { IAvailableExtension, IExtension } from "../extensions/extension_manager/types";
+import { ExtensionInit } from "../types/Extension";
+import { IExtensionApi, IExtensionContext, ThunkStore } from "../types/IExtensionContext";
+import { IState } from "../types/IState";
+import { i18n } from "./i18n";
+import Promise from "bluebird";
+import { WebContents } from "electron";
+import * as Redux from "redux";
 export declare function isExtSame(installed: IExtension, remote: IAvailableExtension): boolean;
 export interface IRegisteredExtension {
     name: string;

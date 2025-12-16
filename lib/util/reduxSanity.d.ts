@@ -1,4 +1,4 @@
-import * as Redux from 'redux';
+import * as Redux from "redux";
 export declare class StateError extends Error {
     private mAction;
     constructor(action: Redux.Action, message: string);

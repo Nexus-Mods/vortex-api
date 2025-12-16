@@ -1,4 +1,4 @@
-import { IState } from '../../types/IState';
+import { IState } from "../../types/IState";
 export declare const apiKey: (state: IState) => any;
 export declare const isLoggedIn: (state: IState) => boolean;
 export declare const nexusIdsFromDownloadId: ((state: IState, downloadId: string) => {

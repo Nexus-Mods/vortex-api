@@ -1,5 +1,5 @@
-import { IMod, IModReference, IModRule, ModState } from '../types/IMod';
-import * as reduxAct from 'redux-act';
+import { IMod, IModReference, IModRule, ModState } from "../types/IMod";
+import * as reduxAct from "redux-act";
 export declare const addMod: reduxAct.ComplexActionCreator2<string, IMod, {
     gameId: string;
     mod: IMod;

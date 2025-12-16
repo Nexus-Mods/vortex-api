@@ -1,6 +1,6 @@
-import { IReference, IRule } from 'modmeta-db';
+import { IReference, IRule } from "modmeta-db";
 export { IReference, IRule };
-export type ModState = 'downloading' | 'downloaded' | 'installing' | 'installed';
+export type ModState = "downloading" | "downloaded" | "installing" | "installed";
 /**
  * Attributes specific to Nexus Mods Collections (when IMod.type === "collection")
  */
@@ -154,7 +154,7 @@ export interface IFileListItem {
     xxh64?: string;
 }
 export interface IDownloadHint {
-    mode: 'direct' | 'browse' | 'manual';
+    mode: "direct" | "browse" | "manual";
     url?: string;
     instructions?: string;
 }

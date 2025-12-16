@@ -1,4 +1,4 @@
-import * as reduxAct from 'redux-act';
+import * as reduxAct from "redux-act";
 /**
  * sets a profile to be activated
  */

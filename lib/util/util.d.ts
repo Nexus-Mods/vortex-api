@@ -1,7 +1,7 @@
-import { Normalize } from './getNormalizeFunc';
-import Bluebird from 'bluebird';
-import * as Redux from 'redux';
-import * as semver from 'semver';
+import { Normalize } from "./getNormalizeFunc";
+import Bluebird from "bluebird";
+import * as Redux from "redux";
+import * as semver from "semver";
 /**
  * count the elements in an array for which the predicate matches
  *

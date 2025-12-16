@@ -1,5 +1,5 @@
-import { IGameSpecificInterfaceProps } from './IGameSpecificInterfaceProps';
-import * as types from '../api';
+import { IGameSpecificInterfaceProps } from "./IGameSpecificInterfaceProps";
+import * as types from "../api";
 export interface ICollectionsGameSupportEntry {
     gameId: string;
     generator: (state: types.IState, gameId: string, stagingPath: string, modIds: string[], mods: {

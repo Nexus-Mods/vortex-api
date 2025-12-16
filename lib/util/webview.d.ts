@@ -1,4 +1,4 @@
-import { BrowserWindow } from 'electron';
+import { BrowserWindow } from "electron";
 export declare const makeBrowserView: (src: string, forwardEvents: string[], options?: Electron.BrowserViewConstructorOptions) => Promise<string>;
 export declare const closeBrowserView: (viewId: string) => Promise<void>;
 export declare const positionBrowserView: (viewId: string, rect: Electron.Rectangle) => Promise<void>;

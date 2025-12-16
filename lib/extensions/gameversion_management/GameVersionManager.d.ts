@@ -1,7 +1,7 @@
-import { IExtensionApi } from '../../types/IExtensionContext';
-import { IGame } from '../../types/IGame';
-import { IDiscoveryResult } from '../gamemode_management/types/IDiscoveryResult';
-import { IGameVersionProvider } from './types/IGameVersionProvider';
+import { IExtensionApi } from "../../types/IExtensionContext";
+import { IGame } from "../../types/IGame";
+import { IDiscoveryResult } from "../gamemode_management/types/IDiscoveryResult";
+import { IGameVersionProvider } from "./types/IGameVersionProvider";
 export default class GameVersionManager {
     private mApi;
     private mProviders;

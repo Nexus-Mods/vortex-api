@@ -1,7 +1,7 @@
-import { IExtensionApi } from '../../../types/IExtensionContext';
-import { Normalize } from '../../../util/getNormalizeFunc';
-import { TFunction } from '../../../util/i18n';
-import Promise from 'bluebird';
+import { IExtensionApi } from "../../../types/IExtensionContext";
+import { Normalize } from "../../../util/getNormalizeFunc";
+import { TFunction } from "../../../util/i18n";
+import Promise from "bluebird";
 /**
  * details about a file change
  */
@@ -28,7 +28,7 @@ export interface IFileChange {
      * deleted means that the file was deleted in the destination directory
      * srcdeleted means that the file was deleted in the source directory
      */
-    changeType: 'refchange' | 'valchange' | 'deleted' | 'srcdeleted';
+    changeType: "refchange" | "valchange" | "deleted" | "srcdeleted";
     /**
      * time the deployed file was last changed
      */

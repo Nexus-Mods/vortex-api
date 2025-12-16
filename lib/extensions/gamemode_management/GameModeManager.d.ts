@@ -1,10 +1,10 @@
-import { IExtensionApi } from '../../types/IExtensionContext';
-import { IGame } from '../../types/IGame';
-import { IGameStore } from '../../types/IGameStore';
-import { IState } from '../../types/IState';
-import { IExtensionDownloadInfo } from '../extension_manager/types';
-import Promise from 'bluebird';
-import * as Redux from 'redux';
+import { IExtensionApi } from "../../types/IExtensionContext";
+import { IGame } from "../../types/IGame";
+import { IGameStore } from "../../types/IGameStore";
+import { IState } from "../../types/IState";
+import { IExtensionDownloadInfo } from "../extension_manager/types";
+import Promise from "bluebird";
+import * as Redux from "redux";
 export interface IGameStub {
     ext: IExtensionDownloadInfo;
     game: IGame;

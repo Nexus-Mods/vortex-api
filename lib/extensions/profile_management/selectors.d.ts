@@ -1,6 +1,6 @@
-import { IProfile } from './types/IProfile';
-import { ICacheObject, OutputParametricSelector, ParametricSelector } from 're-reselect';
-import { IState } from '../../types/IState';
+import { IProfile } from "./types/IProfile";
+import { ICacheObject, OutputParametricSelector, ParametricSelector } from "re-reselect";
+import { IState } from "../../types/IState";
 export declare const activeGameId: (state: IState) => string;
 export declare const gameProfiles: ((state: IState) => IProfile[]) & import("reselect").OutputSelectorFields<(args_0: string, args_1: {
     [profileId: string]: IProfile;

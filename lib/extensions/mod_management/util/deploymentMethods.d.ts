@@ -1,5 +1,5 @@
-import { IState } from '../../../types/IState';
-import { IDeploymentMethod } from '../types/IDeploymentMethod';
+import { IState } from "../../../types/IState";
+import { IDeploymentMethod } from "../types/IDeploymentMethod";
 export declare function registerDeploymentMethod(activator: IDeploymentMethod): void;
 export declare function getAllActivators(): IDeploymentMethod[];
 /**

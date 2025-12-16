@@ -1,4 +1,4 @@
-import Promise from 'bluebird';
+import Promise from "bluebird";
 /**
  * custom implementation of recursive directory copying.
  * copy from fs-extra does this already, but that function has no limit on the number

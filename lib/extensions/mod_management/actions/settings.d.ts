@@ -1,5 +1,5 @@
-import * as reduxAct from 'redux-act';
-import { InstallPathMode } from '../../../types/api';
+import * as reduxAct from "redux-act";
+import { InstallPathMode } from "../../../types/api";
 /**
  * change the mod install path. Supports placeholders
  */

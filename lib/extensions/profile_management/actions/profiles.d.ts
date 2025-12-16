@@ -1,7 +1,7 @@
-import Bluebird from 'bluebird';
-import * as reduxAct from 'redux-act';
-import { IExtensionApi } from '../../../types/IExtensionContext';
-import { IProfile } from '../types/IProfile';
+import Bluebird from "bluebird";
+import * as reduxAct from "redux-act";
+import { IExtensionApi } from "../../../types/IExtensionContext";
+import { IProfile } from "../types/IProfile";
 /**
  * add or edit a profile
  */
@@ -32,4 +32,4 @@ export interface IEnableOptions {
     willBeReplaced?: boolean;
 }
 declare const setModsEnabled: (api: IExtensionApi, profileIdIn: string, modIdsIn: string[], enableIn: boolean, optionsIn?: IEnableOptions) => Bluebird<void>;
-export { setModsEnabled, };
+export { setModsEnabled };

@@ -1,4 +1,4 @@
-import * as Redux from 'redux';
+import * as Redux from "redux";
 interface IParameters<T, U> {
     store: Redux.Store<T>;
     selector: string[];

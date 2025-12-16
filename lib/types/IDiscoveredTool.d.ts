@@ -1,4 +1,4 @@
-import { ITool } from './ITool';
+import { ITool } from "./ITool";
 export interface IDiscoveredTool extends ITool {
     path: string;
     hidden: boolean;

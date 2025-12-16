@@ -1,5 +1,5 @@
-import { IGame } from '../../../types/IGame';
-import { IGameStored, IGameStoredExt } from '../../gamemode_management/types/IGameStored';
+import { IGame } from "../../../types/IGame";
+import { IGameStored, IGameStoredExt } from "../../gamemode_management/types/IGameStored";
 /**
  * get the nexus page id for a game
  * TODO: some games have hard-coded transformations here, should move all of that to game.details

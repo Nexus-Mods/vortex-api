@@ -1,5 +1,5 @@
-import { IBBCodeContext } from '../util/bbcode';
-export type DialogType = 'success' | 'info' | 'error' | 'question';
+import { IBBCodeContext } from "../util/bbcode";
+export type DialogType = "success" | "info" | "error" | "question";
 export interface IDialogAction {
     label: string;
     default?: boolean;
@@ -32,7 +32,7 @@ export interface ICheckbox extends IControlBase {
     subText?: string;
 }
 export interface IInput extends IControlBase {
-    type?: 'text' | 'password' | 'number' | 'date' | 'time' | 'email' | 'url' | 'multiline';
+    type?: "text" | "password" | "number" | "date" | "time" | "email" | "url" | "multiline";
     value?: string;
     label?: string;
     placeholder?: string;
@@ -42,7 +42,7 @@ export interface ILink {
     id?: string;
     action?: (dismiss: () => void, id: string) => void;
 }
-export type DialogContentItem = 'htmlFile' | 'htmlText' | 'text' | 'message' | 'bbcode' | 'md' | 'checkboxes' | 'choices' | 'input' | 'links';
+export type DialogContentItem = "htmlFile" | "htmlText" | "text" | "message" | "bbcode" | "md" | "checkboxes" | "choices" | "input" | "links";
 export interface IDialogContent {
     htmlFile?: string;
     /**

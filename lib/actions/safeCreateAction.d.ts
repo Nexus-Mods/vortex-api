@@ -1,4 +1,4 @@
-import * as ra from 'redux-act';
+import * as ra from "redux-act";
 export declare function safeCreateAction(description: string): ra.EmptyActionCreator;
 export declare function safeCreateAction<P, M = {}>(description: string): ra.SimpleActionCreator<P, M>;
 export declare function safeCreateAction<Arg1, P, M = {}>(description: string, payloadReducer: ra.PayloadReducer1<Arg1, P>, metaReducer?: ra.MetaReducer<M>): ra.ComplexActionCreator1<Arg1, P, M>;
@@ -7,5 +7,5 @@ export declare function safeCreateAction<Arg1, Arg2, Arg3, P, M = {}>(descriptio
 export declare function safeCreateAction<Arg1, Arg2, Arg3, Arg4, P, M = {}>(description: string, payloadReducer: ra.PayloadReducer4<Arg1, Arg2, Arg3, Arg4, P>, metaReducer?: ra.MetaReducer<M>): ra.ComplexActionCreator4<Arg1, Arg2, Arg3, Arg4, P, M>;
 export declare function safeCreateAction<Arg1, Arg2, Arg3, Arg4, Arg5, P, M = {}>(description: string, payloadReducer: ra.PayloadReducer5<Arg1, Arg2, Arg3, Arg4, Arg5, P>, metaReducer?: ra.MetaReducer<M>): ra.ComplexActionCreator5<Arg1, Arg2, Arg3, Arg4, Arg5, P, M>;
 export declare function safeCreateAction<Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, P, M = {}>(description: string, payloadReducer: ra.PayloadReducer6<Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, P>, metaReducer?: ra.MetaReducer<M>): ra.ComplexActionCreator6<Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, P, M>;
-export { SimpleActionCreator, ComplexActionCreator1, ComplexActionCreator2 } from 'redux-act';
+export { SimpleActionCreator, ComplexActionCreator1, ComplexActionCreator2, } from "redux-act";
 export default safeCreateAction;

@@ -1,17 +1,17 @@
-import { IAttributeState } from './IAttributeState';
-import { IDialog } from './IDialog';
-import { INotification } from './INotification';
-import { ICollectionInstallState } from '../extensions/collections_integration/types';
-import { ICategoryDictionary } from '../extensions/category_management/types/ICategoryDictionary';
-import { IDownload } from '../extensions/download_management/types/IDownload';
-import { IAvailableExtension, IExtension } from '../extensions/extension_manager/types';
-import { IDiscoveryResult } from '../extensions/gamemode_management/types/IDiscoveryResult';
-import { IGameStored } from '../extensions/gamemode_management/types/IGameStored';
-import { IHistoryPersistent, IHistoryState } from '../extensions/history_management/reducers';
-import { IMod } from '../extensions/mod_management/types/IMod';
-import { IProfile } from '../extensions/profile_management/types/IProfile';
-import { IParameters } from '../util/commandLine';
-import VortexInstallType from './VortexInstallType';
+import { IAttributeState } from "./IAttributeState";
+import { IDialog } from "./IDialog";
+import { INotification } from "./INotification";
+import { ICollectionInstallState } from "../extensions/collections_integration/types";
+import { ICategoryDictionary } from "../extensions/category_management/types/ICategoryDictionary";
+import { IDownload } from "../extensions/download_management/types/IDownload";
+import { IAvailableExtension, IExtension } from "../extensions/extension_manager/types";
+import { IDiscoveryResult } from "../extensions/gamemode_management/types/IDiscoveryResult";
+import { IGameStored } from "../extensions/gamemode_management/types/IGameStored";
+import { IHistoryPersistent, IHistoryState } from "../extensions/history_management/reducers";
+import { IMod } from "../extensions/mod_management/types/IMod";
+import { IProfile } from "../extensions/profile_management/types/IProfile";
+import { IParameters } from "../util/commandLine";
+import VortexInstallType from "./VortexInstallType";
 export { IDownload, IDiscoveryResult, IGameStored, IMod, IProfile };
 /**
  * interface to represent a position on the screen
@@ -137,7 +137,7 @@ export interface ITableState {
     };
 }
 export interface IExtensionState {
-    enabled: boolean | 'failed';
+    enabled: boolean | "failed";
     version: string;
     remove: boolean;
     endorsed: string;
@@ -216,7 +216,7 @@ export interface ISettingsGameMode {
         [id: string]: IDiscoveryResult;
     };
     searchPaths: string[];
-    pickerLayout: 'list' | 'small' | 'large';
+    pickerLayout: "list" | "small" | "large";
     sortManaged: string;
     sortUnmanaged: string;
 }
@@ -236,7 +236,7 @@ export interface IStatePaths {
     download: string;
     install: string;
 }
-export type InstallPathMode = 'userData' | 'suggested';
+export type InstallPathMode = "userData" | "suggested";
 export interface ISettingsMods {
     installPath: {
         [gameId: string]: string;

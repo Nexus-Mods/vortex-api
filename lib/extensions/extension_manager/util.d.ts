@@ -1,6 +1,6 @@
-import { IExtensionApi } from '../../types/IExtensionContext';
-import { ExtensionType, IAvailableExtension, IExtension, IExtensionDownloadInfo, ISelector } from './types';
-import Promise from 'bluebird';
+import { IExtensionApi } from "../../types/IExtensionContext";
+import { ExtensionType, IAvailableExtension, IExtension, IExtensionDownloadInfo, ISelector } from "./types";
+import Promise from "bluebird";
 export declare function selectorMatch(ext: IAvailableExtension, selector: ISelector): boolean;
 export declare function sanitize(input: string): string;
 export declare function readExtensionInfo(extensionPath: string, bundled: boolean, fallback?: any): Promise<{

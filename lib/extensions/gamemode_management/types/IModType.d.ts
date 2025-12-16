@@ -1,6 +1,6 @@
-import { IInstruction, IModTypeOptions } from '../../../types/IExtensionContext';
-import { IGame } from '../../../types/IGame';
-import Promise from 'bluebird';
+import { IInstruction, IModTypeOptions } from "../../../types/IExtensionContext";
+import { IGame } from "../../../types/IGame";
+import Promise from "bluebird";
 export interface IModType {
     typeId: string;
     priority: number;

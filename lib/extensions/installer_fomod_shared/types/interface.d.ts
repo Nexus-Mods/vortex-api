@@ -3,9 +3,9 @@ export interface IHeaderImage {
     showFade: boolean;
     height: number;
 }
-export type OrderType = 'AlphaAsc' | 'AlphaDesc' | 'Explicit';
-export type GroupType = 'SelectAtLeastOne' | 'SelectAtMostOne' | 'SelectExactlyOne' | 'SelectAll' | 'SelectAny';
-export type PluginType = 'Required' | 'Optional' | 'Recommended' | 'NotUsable' | 'CouldBeUsable';
+export type OrderType = "AlphaAsc" | "AlphaDesc" | "Explicit";
+export type GroupType = "SelectAtLeastOne" | "SelectAtMostOne" | "SelectExactlyOne" | "SelectAll" | "SelectAny";
+export type PluginType = "Required" | "Optional" | "Recommended" | "NotUsable" | "CouldBeUsable";
 export interface IPlugin {
     id: number;
     selected: boolean;
@@ -32,7 +32,7 @@ export interface IInstallStep {
     visible: boolean;
     optionalFileGroups?: IGroupList;
 }
-export type Direction = 'forward' | 'back';
+export type Direction = "forward" | "back";
 export interface IStateParameters {
     stepId: number;
     groupId: number;

@@ -16,10 +16,10 @@
  * - 2xl: 3rem (48px) - 2X extra large icons
  * - none: Size controlled via className
  */
-import * as React from 'react';
-import { XOr } from '../utils';
-export type IconSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'none';
-export type IconProps = Omit<React.SVGProps<SVGSVGElement>, 'size' | 'path'> & {
+import * as React from "react";
+import { XOr } from "../utils";
+export type IconSize = "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "none";
+export type IconProps = Omit<React.SVGProps<SVGSVGElement>, "size" | "path"> & {
     /**
      * Icon path or name (REQUIRED):
      * - MDI icon name: 'mdiAccount', 'mdiDownload', etc.

@@ -1,5 +1,5 @@
-import { ICollectionInstallSession, ICollectionModInstallInfo, CollectionModStatus } from './types';
-import { IMod, IState } from '../../types/IState';
+import { ICollectionInstallSession, ICollectionModInstallInfo, CollectionModStatus } from "./types";
+import { IMod, IState } from "../../types/IState";
 /**
  * Get the active installation session
  * @returns The current active session or undefined if no session is active

@@ -1,4 +1,4 @@
-import * as Redux from 'redux';
+import * as Redux from "redux";
 export declare function reduxLogger(): (storeIn: Redux.Store<any>) => (next: Redux.Dispatch) => <A extends Redux.Action>(action: A) => A;
 export interface ILog {
     action: {

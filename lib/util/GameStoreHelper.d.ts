@@ -1,7 +1,7 @@
-import Bluebird from 'bluebird';
-import { IGameStore } from '../types/IGameStore';
-import { IGameStoreEntry } from '../types/IGameStoreEntry';
-import { IExtensionApi } from '../types/IExtensionContext';
+import Bluebird from "bluebird";
+import { IGameStore } from "../types/IGameStore";
+import { IGameStoreEntry } from "../types/IGameStoreEntry";
+import { IExtensionApi } from "../types/IExtensionContext";
 export interface IStoreQuery {
     id?: string;
     name?: string;

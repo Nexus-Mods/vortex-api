@@ -1,5 +1,5 @@
-import { IChunk } from '../types/IChunk';
-import * as reduxAct from 'redux-act';
+import { IChunk } from "../types/IChunk";
+import * as reduxAct from "redux-act";
 export interface IDictionary {
     [key: string]: any;
 }

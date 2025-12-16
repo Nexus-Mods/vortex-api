@@ -1,4 +1,4 @@
-export type LockedState = true | false | 'true' | 'false' | 'always' | 'never';
+export type LockedState = true | false | "true" | "false" | "always" | "never";
 export type LoadOrder = ILoadOrderEntry[];
 export interface IItemRendererProps {
     loEntry: ILoadOrderEntry;

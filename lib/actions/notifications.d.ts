@@ -1,8 +1,8 @@
-import { DialogActions, DialogType, IDialogContent, IDialogResult } from '../types/IDialog';
-import { INotification, NotificationDismiss } from '../types/INotification';
-import Promise from 'bluebird';
-import * as reduxAct from 'redux-act';
-export * from '../types/IDialog';
+import { DialogActions, DialogType, IDialogContent, IDialogResult } from "../types/IDialog";
+import { INotification, NotificationDismiss } from "../types/INotification";
+import Promise from "bluebird";
+import * as reduxAct from "redux-act";
+export * from "../types/IDialog";
 /**
  * adds a notification to be displayed. Takes one parameter of type INotification. The id may be
  * left unset, in that case one will be generated

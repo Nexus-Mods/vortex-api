@@ -1,4 +1,4 @@
-import { IHistoryEvent } from './types';
+import { IHistoryEvent } from "./types";
 export declare const addHistoryEvent: import("redux-act").ComplexActionCreator3<string, IHistoryEvent, number, {
     stack: string;
     event: IHistoryEvent;

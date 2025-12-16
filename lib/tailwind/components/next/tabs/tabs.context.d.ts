@@ -1,12 +1,12 @@
-import * as React from 'react';
-import { KeyboardEvent, MutableRefObject, ReactNode } from 'react';
+import * as React from "react";
+import { KeyboardEvent, MutableRefObject, ReactNode } from "react";
 /**
  * Arguments for the register tab method
  */
 type RegisterTabArgs = {
     name: string;
     ref: MutableRefObject<HTMLButtonElement | HTMLAnchorElement>;
-    type: 'link' | 'button';
+    type: "link" | "button";
 };
 /**
  * State for the TabContext
@@ -34,7 +34,7 @@ export declare const TabContext: React.Context<TabsState>;
 /**
  * React component to provide context to tabs
  */
-export declare const TabProvider: ({ children, onSetSelectedTab, tab, tabListId }: TabProviderProps) => React.JSX.Element;
+export declare const TabProvider: ({ children, onSetSelectedTab, tab, tabListId, }: TabProviderProps) => React.JSX.Element;
 /**
  * Hook to enforce that context has a provider
  * COMPATIBILITY FIX: Using useContext instead of use() for React 16 compatibility

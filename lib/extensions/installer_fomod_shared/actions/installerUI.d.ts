@@ -1,4 +1,4 @@
-import { IInstallerInfoState, IInstallerState } from '../types/interface';
+import { IInstallerInfoState, IInstallerState } from "../types/interface";
 export declare const startDialog: import("redux-act").ComplexActionCreator2<IInstallerInfoState, string, {
     info: IInstallerInfoState;
     instanceId: string;

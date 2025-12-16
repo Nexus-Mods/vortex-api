@@ -4,9 +4,9 @@
  *
  * Provides a consistent input component with validation, hints, and accessibility features.
  */
-import * as React from 'react';
-import { InputHTMLAttributes, Ref } from 'react';
-import { BaseFormFieldProps } from '../formfield';
+import * as React from "react";
+import { InputHTMLAttributes, Ref } from "react";
+import { BaseFormFieldProps } from "../formfield";
 export interface InputProps extends BaseFormFieldProps, InputHTMLAttributes<HTMLInputElement> {
     /**
      * Restrict default value to string | number as we don't use this component for checkbox
@@ -14,7 +14,7 @@ export interface InputProps extends BaseFormFieldProps, InputHTMLAttributes<HTML
     defaultValue?: string | number;
     fieldClassName?: string;
     ref?: Ref<HTMLInputElement>;
-    type?: 'text' | 'email' | 'password' | 'url' | 'number' | 'time' | 'date';
+    type?: "text" | "email" | "password" | "url" | "number" | "time" | "date";
     /**
      * Restrict value to string | number as we don't use this component for checkbox
      */

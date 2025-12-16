@@ -1,5 +1,5 @@
-import { IParameters } from '../util/commandLine';
-import * as reduxAct from 'redux-act';
+import { IParameters } from "../util/commandLine";
+import * as reduxAct from "redux-act";
 /**
  * action to choose which item in a group to display (all other items in the
  * group will be hidden). the itemId can be undefined to hide them all.

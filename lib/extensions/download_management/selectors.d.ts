@@ -1,4 +1,4 @@
-import { IDownload, IState } from '../../types/IState';
+import { IDownload, IState } from "../../types/IState";
 export declare const downloadPath: (state: IState) => string;
 export declare function downloadPathForGame(state: IState, gameId?: string): string;
 export declare const downloadsForGame: (state: IState, gameId: string) => {

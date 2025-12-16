@@ -1,4 +1,4 @@
-import { IMod, IModReference } from '../types/IMod';
+import { IMod, IModReference } from "../types/IMod";
 export interface INameOptions {
     version?: boolean;
     variant?: boolean;

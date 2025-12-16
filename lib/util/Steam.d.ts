@@ -1,4 +1,4 @@
-import { IGameStore, IGameStoreEntry } from '../types/api';
+import { IGameStore, IGameStoreEntry } from "../types/api";
 export interface ISteamEntry extends IGameStoreEntry {
     manifestData?: any;
 }

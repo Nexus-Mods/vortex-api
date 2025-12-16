@@ -1,4 +1,4 @@
-import * as reduxAct from 'redux-act';
+import * as reduxAct from "redux-act";
 /**
  * action to set window size in the store.
  * Takes one parameter of the form {width: number, height: number}

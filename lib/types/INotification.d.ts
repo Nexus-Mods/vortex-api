@@ -4,7 +4,7 @@ export interface INotificationAction {
     title?: string;
     action: (dismiss: NotificationDismiss) => void;
 }
-export type NotificationType = 'activity' | 'global' | 'success' | 'info' | 'warning' | 'error' | 'silent';
+export type NotificationType = "activity" | "global" | "success" | "info" | "warning" | "error" | "silent";
 /**
  * a notification message
  *

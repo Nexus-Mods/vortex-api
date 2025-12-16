@@ -12,11 +12,11 @@
  *   (virus scanners, functions called from vortex) locking files.
  * - ignoring ENOENT error when deleting a file.
  */
-import { TFunction } from './i18n';
-import PromiseBB from 'bluebird';
-import * as fs from 'fs-extra';
-export { constants, FSWatcher, Stats, WriteStream } from 'fs';
-export { accessSync, appendFileSync, closeSync, createReadStream, createWriteStream, linkSync, openSync, readdirSync, readFileSync, statSync, symlinkSync, watch, writeFileSync, writeSync, } from 'original-fs';
+import { TFunction } from "./i18n";
+import PromiseBB from "bluebird";
+import * as fs from "fs-extra";
+export { constants, FSWatcher, Stats, WriteStream } from "fs";
+export { accessSync, appendFileSync, closeSync, createReadStream, createWriteStream, linkSync, openSync, readdirSync, readFileSync, statSync, symlinkSync, watch, writeFileSync, writeSync, } from "original-fs";
 export interface ILinkFileOptions {
     showDialogCallback?: () => boolean;
 }
@@ -92,7 +92,7 @@ export interface ITmpOptions {
 }
 declare const withTmpDir: (...args: any[]) => PromiseBB<any>;
 declare const withTmpFile: (...args: any[]) => PromiseBB<any>;
-export { withTmpDir, withTmpFile, };
+export { withTmpDir, withTmpFile };
 export declare function encodingFromBOM(buf: Buffer): {
     encoding: string;
     length: number;

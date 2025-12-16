@@ -1,9 +1,9 @@
-import { IExtensionApi } from '../../../types/IExtensionContext';
-import { IMod } from '../../mod_management/types/IMod';
-import NexusT, { IFileUpdate, IUpdateEntry } from '@nexusmods/nexus-api';
-import Promise from 'bluebird';
-import { TFunction } from 'i18next';
-import * as Redux from 'redux';
+import { IExtensionApi } from "../../../types/IExtensionContext";
+import { IMod } from "../../mod_management/types/IMod";
+import NexusT, { IFileUpdate, IUpdateEntry } from "@nexusmods/nexus-api";
+import Promise from "bluebird";
+import { TFunction } from "i18next";
+import * as Redux from "redux";
 export declare const ONE_MINUTE: number;
 export declare const ONE_DAY: number;
 export declare const ONE_WEEK: number;

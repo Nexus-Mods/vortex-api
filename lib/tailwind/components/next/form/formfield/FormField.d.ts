@@ -4,9 +4,9 @@
  *
  * Provides a form field wrapper with label, hints, error messages, and character counter.
  */
-import * as React from 'react';
-import { HTMLAttributes, ReactNode, Ref } from 'react';
-import { TypographyTypes } from '../../typography/Typography';
+import * as React from "react";
+import { HTMLAttributes, ReactNode, Ref } from "react";
+import { TypographyTypes } from "../../typography/Typography";
 export interface BaseFormFieldProps {
     /**
      * Makes the elements non-interactive

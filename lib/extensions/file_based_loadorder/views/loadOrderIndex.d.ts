@@ -1,6 +1,6 @@
-import React from 'react';
-import { ILoadOrderEntry } from '../../../types/api';
-import { IExtensionApi, LoadOrder } from '../../../types/api';
+import React from "react";
+import { ILoadOrderEntry } from "../../../types/api";
+import { IExtensionApi, LoadOrder } from "../../../types/api";
 interface IProps {
     className?: string;
     api: IExtensionApi;

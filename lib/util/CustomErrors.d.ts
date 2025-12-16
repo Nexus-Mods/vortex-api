@@ -65,7 +65,7 @@ export declare class NotFound extends Error {
     constructor(what: string);
 }
 export declare class StalledError extends Error {
-    constructor();
+    constructor(msg: string);
 }
 export declare class TimeoutError extends Error {
     constructor();

@@ -14,7 +14,7 @@ export interface IHistoryEvent {
  *   particular one can't - usually because some other event on the same data
  *   makes that impossible
  */
-export type Revertability = 'yes' | 'never' | 'invalid';
+export type Revertability = "yes" | "never" | "invalid";
 export interface IHistoryStack {
     /**
      * number of items to remember on the stack

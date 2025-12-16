@@ -1,10 +1,10 @@
-import * as React from 'react';
-import { IComponentContext } from '../types/IComponentContext';
-import { WithTranslation } from 'react-i18next';
-export { connect } from 'react-redux';
-export { extend } from './ExtensionProvider';
+import * as React from "react";
+import { IComponentContext } from "../types/IComponentContext";
+import { WithTranslation } from "react-i18next";
+export { connect } from "react-redux";
+export { extend } from "./ExtensionProvider";
 declare const translate: any;
-export { translate, };
+export { translate };
 export declare class StateProxyHandler<T extends object> implements ProxyHandler<T> {
     private mComponent;
     private mPath;

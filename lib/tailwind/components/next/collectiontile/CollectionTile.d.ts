@@ -3,8 +3,8 @@
  * Displays a collection card with image, metadata, and action buttons
  * Adapted from Figma design for collection browsing
  */
-import * as React from 'react';
-import { IExtensionApi } from '../../../../types/IExtensionContext';
+import * as React from "react";
+import { IExtensionApi } from "../../../../types/IExtensionContext";
 export interface CollectionTileProps {
     id: string;
     slug: string;

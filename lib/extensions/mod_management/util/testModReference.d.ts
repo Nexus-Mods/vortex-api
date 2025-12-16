@@ -1,5 +1,5 @@
-import { IMod, IModReference, IFileListItem, IModAttributes } from '../types/IMod';
-import { IDownload } from '../../download_management/types/IDownload';
+import { IMod, IModReference, IFileListItem, IModAttributes } from "../types/IMod";
+import { IDownload } from "../../download_management/types/IDownload";
 export interface IModLookupInfo {
     id?: string;
     fileMD5: string;

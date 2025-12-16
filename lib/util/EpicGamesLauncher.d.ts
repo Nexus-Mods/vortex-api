@@ -1,3 +1,3 @@
-import { IGameStore } from '../types/api';
+import { IGameStore } from "../types/api";
 declare const instance: IGameStore;
 export default instance;

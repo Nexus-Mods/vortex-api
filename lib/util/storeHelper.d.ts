@@ -1,9 +1,9 @@
 /**
  * Helper functions when working with immutable state (or immutable objects in general)
  */
-import { IGameStored } from '../extensions/gamemode_management/types/IGameStored';
-import Promise from 'bluebird';
-import * as Redux from 'redux';
+import { IGameStored } from "../extensions/gamemode_management/types/IGameStored";
+import Promise from "bluebird";
+import * as Redux from "redux";
 /**
  * return an item from state or the fallback if the path doesn't lead
  * to an item or if the item is null/undefined.
@@ -15,12 +15,12 @@ import * as Redux from 'redux';
  * @param {T} fallback
  * @returns {T}
  */
-export declare function getSafe<T>(state: any, path: Array<(string | number)>, fallback: T): T;
+export declare function getSafe<T>(state: any, path: Array<string | number>, fallback: T): T;
 /**
  * case insensitive variant of getSafe
  */
-export declare function getSafeCI<T>(state: any, path: Array<(string | number)>, fallback: T): T;
-export declare function mutateSafe<T>(state: T, path: Array<(string | number)>, value: any): void;
+export declare function getSafeCI<T>(state: any, path: Array<string | number>, fallback: T): T;
+export declare function mutateSafe<T>(state: T, path: Array<string | number>, value: any): void;
 /**
  * set an item in state, creating all intermediate nodes as necessary
  *
@@ -31,7 +31,7 @@ export declare function mutateSafe<T>(state: T, path: Array<(string | number)>, 
  * @param {*} value
  * @returns {T}
  */
-export declare function setSafe<T extends object>(state: T, path: Array<(string | number)>, value: any): T;
+export declare function setSafe<T extends object>(state: T, path: Array<string | number>, value: any): T;
 /**
  * sets a value or do nothing if the path (except for the last element) doesn't exist.
  * That is: setOrNop does not create the object hierarchy referenced in the path but
@@ -56,7 +56,7 @@ export declare function setOrNop<T>(state: T, path: string[], value: any): T;
  * @param {*} value
  * @returns {T}
  */
-export declare function changeOrNop<T>(state: T, path: Array<(string | number)>, value: any): T;
+export declare function changeOrNop<T>(state: T, path: Array<string | number>, value: any): T;
 /**
  * delete a value or do nothing if the path doesn't exist
  *
@@ -66,8 +66,8 @@ export declare function changeOrNop<T>(state: T, path: Array<(string | number)>,
  * @param {string[]} path
  * @returns {T}
  */
-export declare function deleteOrNop<T>(state: T, path: Array<(string | number)>): T;
-export declare function setDefaultArray<T>(state: T, path: Array<(string | number)>, fallback: any[]): T;
+export declare function deleteOrNop<T>(state: T, path: Array<string | number>): T;
+export declare function setDefaultArray<T>(state: T, path: Array<string | number>, fallback: any[]): T;
 /**
  * push an item to an array inside state. This creates all intermediate
  * nodes and the array itself as necessary
@@ -75,14 +75,14 @@ export declare function setDefaultArray<T>(state: T, path: Array<(string | numbe
  * @param path path to the item to update
  * @param value the value to add.
  */
-export declare function pushSafe<T>(state: T, path: Array<(string | number)>, value: any): T;
+export declare function pushSafe<T>(state: T, path: Array<string | number>, value: any): T;
 /**
  * add an item to an array inside state but don't allow duplicates
  * @param state immutable object to update
  * @param path path to the item to update
  * @param value the value to add.
  */
-export declare function addUniqueSafe<T>(state: T, path: Array<(string | number)>, value: any): T;
+export declare function addUniqueSafe<T>(state: T, path: Array<string | number>, value: any): T;
 /**
  * remove a value from an array by value
  *
@@ -93,7 +93,7 @@ export declare function addUniqueSafe<T>(state: T, path: Array<(string | number)
  * @param {*} value
  * @returns {T}
  */
-export declare function removeValue<T>(state: T, path: Array<(string | number)>, value: any): T;
+export declare function removeValue<T>(state: T, path: Array<string | number>, value: any): T;
 /**
  * remove all vales for which the predicate applies
  *
@@ -104,7 +104,7 @@ export declare function removeValue<T>(state: T, path: Array<(string | number)>,
  * @param {(element: any) => boolean} predicate
  * @returns {T}
  */
-export declare function removeValueIf<T extends object>(state: T, path: Array<(string | number)>, predicate: (element: any) => boolean): T;
+export declare function removeValueIf<T extends object>(state: T, path: Array<string | number>, predicate: (element: any) => boolean): T;
 /**
  * shallow merge a value into the store at the specified location
  *
@@ -115,7 +115,7 @@ export declare function removeValueIf<T extends object>(state: T, path: Array<(s
  * @param {Object} value
  * @returns {T}
  */
-export declare function merge<T extends object>(state: T, path: Array<(string | number)>, value: any): T;
+export declare function merge<T extends object>(state: T, path: Array<string | number>, value: any): T;
 export declare function rehydrate<T extends object>(state: T, inbound: any, path: string[], replace: boolean, defaults: any): T;
 /**
  * return the stored static details about the currently selected game mode

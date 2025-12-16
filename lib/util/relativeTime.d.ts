@@ -1,5 +1,5 @@
-import { TFunction } from './i18n';
-export type TimeMode = 'relative' | 'absolute';
+import { TFunction } from "./i18n";
+export type TimeMode = "relative" | "absolute";
 export declare function setTimeMode(mode: TimeMode): void;
 /**
  * format the specified date in a user-friendly way, depending on the globally set time mode

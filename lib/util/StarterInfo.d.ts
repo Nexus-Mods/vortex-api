@@ -1,9 +1,9 @@
-import { IDiscoveredTool } from '../types/IDiscoveredTool';
-import { IDiscoveryResult } from '../extensions/gamemode_management/types/IDiscoveryResult';
-import { IGameStored } from '../extensions/gamemode_management/types/IGameStored';
-import { IToolStored } from '../extensions/gamemode_management/types/IToolStored';
-import { IExtensionApi } from '../types/IExtensionContext';
-import Promise from 'bluebird';
+import { IDiscoveredTool } from "../types/IDiscoveredTool";
+import { IDiscoveryResult } from "../extensions/gamemode_management/types/IDiscoveryResult";
+import { IGameStored } from "../extensions/gamemode_management/types/IGameStored";
+import { IToolStored } from "../extensions/gamemode_management/types/IToolStored";
+import { IExtensionApi } from "../types/IExtensionContext";
+import Promise from "bluebird";
 export interface IStarterInfo {
     id: string;
     gameId: string;
@@ -17,7 +17,7 @@ export interface IStarterInfo {
     detach: boolean;
     shell: boolean;
     store: string;
-    onStart?: 'hide' | 'hide_recover' | 'close';
+    onStart?: "hide" | "hide_recover" | "close";
     environment: {
         [key: string]: string;
     };
@@ -63,7 +63,7 @@ declare class StarterInfo implements IStarterInfo {
     };
     exclusive: boolean;
     detach: boolean;
-    onStart?: 'hide' | 'hide_recover' | 'close';
+    onStart?: "hide" | "hide_recover" | "close";
     defaultPrimary: boolean;
     extensionPath: string;
     logoName: string;

@@ -1,5 +1,5 @@
-import Promise from 'bluebird';
-export type ProblemSeverity = 'warning' | 'error' | 'fatal';
+import Promise from "bluebird";
+export type ProblemSeverity = "warning" | "error" | "fatal";
 export interface ITestResult {
     description: {
         short: string;

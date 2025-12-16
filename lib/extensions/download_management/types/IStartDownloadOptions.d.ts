@@ -1,4 +1,4 @@
 export interface IStartDownloadOptions {
-    allowInstall?: boolean | 'force';
+    allowInstall?: boolean | "force";
     allowOpenHTML?: boolean;
 }

@@ -1,4 +1,4 @@
-import Promise from 'bluebird';
+import Promise from "bluebird";
 export interface ISupportedResult {
     supported: boolean;
     requiredFiles: string[];

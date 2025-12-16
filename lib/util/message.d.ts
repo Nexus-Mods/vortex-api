@@ -1,8 +1,8 @@
-import { IErrorOptions } from '../types/IExtensionContext';
-import { IState } from '../types/IState';
-import Promise from 'bluebird';
-import * as Redux from 'redux';
-import { ThunkDispatch } from 'redux-thunk';
+import { IErrorOptions } from "../types/IExtensionContext";
+import { IState } from "../types/IState";
+import Promise from "bluebird";
+import * as Redux from "redux";
+import { ThunkDispatch } from "redux-thunk";
 /**
  * calculate a reasonable time to display a message based on the
  * amount of text.
@@ -59,6 +59,7 @@ export interface IPrettifiedError {
     code?: string;
     replace?: any;
     allowReport?: boolean;
+    stack?: string;
 }
 export declare function prettifyNodeErrorMessage(err: any, options?: IErrorOptions, fileName?: string): IPrettifiedError;
 export interface IErrorRendered {

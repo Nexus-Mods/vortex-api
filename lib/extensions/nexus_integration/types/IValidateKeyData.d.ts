@@ -1,4 +1,4 @@
-import { IPreference } from '@nexusmods/nexus-api';
+import { IPreference } from "@nexusmods/nexus-api";
 /**
  * Data retrieved with a correct API Key
  *

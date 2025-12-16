@@ -14,7 +14,7 @@ export declare function joinClasses(classes: (string | string[] | Record<string,
 /**
  * Responsive screen sizes for Tailwind
  */
-export type ResponsiveScreenSizes = 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+export type ResponsiveScreenSizes = "default" | "sm" | "md" | "lg" | "xl" | "2xl";
 /**
  * Converts a tab name into a valid HTML element ID
  * Converts to lowercase and replaces whitespace with underscores

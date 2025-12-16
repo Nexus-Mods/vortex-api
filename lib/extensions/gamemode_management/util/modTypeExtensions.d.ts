@@ -1,6 +1,6 @@
-import { IInstruction, IModTypeOptions } from '../../../types/IExtensionContext';
-import { IGame, IModType } from '../../../types/IGame';
-import Promise from 'bluebird';
+import { IInstruction, IModTypeOptions } from "../../../types/IExtensionContext";
+import { IGame, IModType } from "../../../types/IGame";
+import Promise from "bluebird";
 export declare function getModTypeExtensions(): IModType[];
 /**
  * get information about a mod type

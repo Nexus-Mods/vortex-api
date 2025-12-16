@@ -1,4 +1,4 @@
-import React = require('react');
+import React = require("react");
 /**
  * options that can be passed into the bbcode parser to configure how bbcode
  * tags are being translated.

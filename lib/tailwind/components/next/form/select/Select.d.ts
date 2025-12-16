@@ -4,9 +4,9 @@
  *
  * Provides a styled select dropdown with custom icon and validation support.
  */
-import * as React from 'react';
-import { Ref, SelectHTMLAttributes } from 'react';
-import { BaseFormFieldProps } from '../formfield';
+import * as React from "react";
+import { Ref, SelectHTMLAttributes } from "react";
+import { BaseFormFieldProps } from "../formfield";
 export type SelectProps = SelectHTMLAttributes<HTMLSelectElement> & BaseFormFieldProps & {
     ref?: Ref<HTMLSelectElement>;
 };

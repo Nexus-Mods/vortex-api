@@ -1,8 +1,8 @@
-import { IErrorOptions, IExtensionApi } from '../types/api';
-import { IError } from '../types/IError';
-import { IFeedbackResponse } from '@nexusmods/nexus-api';
-import Promise from 'bluebird';
-import { BrowserWindow } from 'electron';
+import { IErrorOptions, IExtensionApi } from "../types/api";
+import { IError } from "../types/IError";
+import { IFeedbackResponse } from "@nexusmods/nexus-api";
+import Promise from "bluebird";
+import { BrowserWindow } from "electron";
 interface IErrorContext {
     [id: string]: string;
 }

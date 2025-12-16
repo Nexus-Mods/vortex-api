@@ -1,4 +1,4 @@
-import Promise from 'bluebird';
+import Promise from "bluebird";
 export declare function writeFileAtomic(filePath: string, input: string | Buffer): Promise<void>;
 /**
  * copy a file in such a way that it will not replace the target if the copy is

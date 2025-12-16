@@ -1,11 +1,11 @@
-import Nexus, { ICollectionQuery, IFileInfo, IGameListEntry, IModInfo, IRevision, NexusError, ICollectionSearchOptions, ICollectionSearchResult, IPreference } from '@nexusmods/nexus-api';
-import BluebirdPromise from 'bluebird';
-import { TFunction } from 'i18next';
-import * as Redux from 'redux';
-import { IExtensionApi } from '../../types/IExtensionContext';
-import { IMod } from '../../types/IState';
-import { RedownloadMode } from '../download_management/DownloadManager';
-import { IValidateKeyDataV2 } from './types/IValidateKeyData';
+import Nexus, { ICollectionQuery, IFileInfo, IGameListEntry, IModInfo, IRevision, NexusError, ICollectionSearchOptions, ICollectionSearchResult, IPreference } from "@nexusmods/nexus-api";
+import BluebirdPromise from "bluebird";
+import { TFunction } from "i18next";
+import * as Redux from "redux";
+import { IExtensionApi } from "../../types/IExtensionContext";
+import { IMod } from "../../types/IState";
+import { RedownloadMode } from "../download_management/DownloadManager";
+import { IValidateKeyDataV2 } from "./types/IValidateKeyData";
 interface IUserInfo {
     sub: string;
     name: string;
@@ -64,7 +64,7 @@ export declare function checkForCollectionUpdates(store: Redux.Store<any>, nexus
 }>;
 export declare function checkModVersionsImpl(store: Redux.Store<any>, nexus: Nexus, gameId: string, mods: {
     [modId: string]: IMod;
-}, forceFull: boolean | 'silent'): BluebirdPromise<{
+}, forceFull: boolean | "silent"): BluebirdPromise<{
     errors: string[];
     modIds: string[];
 }>;

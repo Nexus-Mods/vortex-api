@@ -1,4 +1,4 @@
-type TokenType = 'Bearer';
+type TokenType = "Bearer";
 export interface ITokenReply {
     access_token: string;
     token_type: TokenType;

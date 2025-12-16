@@ -1,39 +1,39 @@
-import { IAvailableExtension, IExtensionDownloadInfo } from '../extensions/extension_manager/types';
-import { ILoadOrderGameInfo } from '../extensions/file_based_loadorder/types/types';
-import { GameVersionProviderFunc, GameVersionProviderTest, IGameVersionProviderOptions } from '../extensions/gameversion_management/types/IGameVersionProvider';
-import { IHistoryEvent, IHistoryStack } from '../extensions/history_management/types';
-import { IGameLoadOrderEntry } from '../extensions/mod_load_order/types/types';
-import { IDeployedFile, IDeploymentMethod, IFileChange } from '../extensions/mod_management/types/IDeploymentMethod';
-import { IInstallResult, IInstruction, InstructionType } from '../extensions/mod_management/types/IInstallResult';
-import { InstallFunc, ProgressDelegate } from '../extensions/mod_management/types/InstallFunc';
-import { ISupportedResult, TestSupported } from '../extensions/mod_management/types/TestSupported';
-import { Archive } from '../util/archives';
-import { IRegisteredExtension } from '../util/ExtensionManager';
-import { i18n, TFunction } from '../util/i18n';
-import ReduxProp from '../util/ReduxProp';
-import { SanityCheck } from '../util/reduxSanity';
-import { ICollectionsGameSupportEntry } from './collections/api';
-import { DialogActions, IDialogContent, IModReference, IModRepoId, IOverlayOptions, IPosition } from './api';
-import { IActionOptions } from './IActionDefinition';
-import { IBannerOptions } from './IBannerOptions';
-import { DialogType, IDialogResult } from './IDialog';
-import { IGame } from './IGame';
-import { IGameStore } from './IGameStore';
-import { ILookupOptions, IModLookupResult } from './IModLookupResult';
-import { INotification, INotificationAction } from './INotification';
-import { IDiscoveryResult, IMod, IState } from './IState';
-import { ITableAttribute } from './ITableAttribute';
-import { ITestResult } from './ITestResult';
-import Promise from 'bluebird';
-import { IHashResult, ILookupResult, IModInfo, IQuery, IReference, IServer } from 'modmeta-db';
-import * as React from 'react';
-import * as Redux from 'redux';
-import { ComplexActionCreator } from 'redux-act';
-import { ThunkDispatch } from 'redux-thunk';
-import { INexusAPIExtension } from '../extensions/nexus_integration/types/INexusAPIExtension';
-import { IModsAPIExtension } from '../extensions/mod_management/types/IModsAPIExtension';
-import { IDownloadsAPIExtension } from '../extensions/download_management/types/IDownloadsAPIExtension';
-export { TestSupported, IInstallResult, IInstruction, IDeployedFile, IDeploymentMethod, IFileChange, ILookupResult, IModInfo, IQuery, InstructionType, IReference, InstallFunc, ISupportedResult, ProgressDelegate };
+import { IAvailableExtension, IExtensionDownloadInfo } from "../extensions/extension_manager/types";
+import { ILoadOrderGameInfo } from "../extensions/file_based_loadorder/types/types";
+import { GameVersionProviderFunc, GameVersionProviderTest, IGameVersionProviderOptions } from "../extensions/gameversion_management/types/IGameVersionProvider";
+import { IHistoryEvent, IHistoryStack } from "../extensions/history_management/types";
+import { IGameLoadOrderEntry } from "../extensions/mod_load_order/types/types";
+import { IDeployedFile, IDeploymentMethod, IFileChange } from "../extensions/mod_management/types/IDeploymentMethod";
+import { IInstallResult, IInstruction, InstructionType } from "../extensions/mod_management/types/IInstallResult";
+import { InstallFunc, ProgressDelegate } from "../extensions/mod_management/types/InstallFunc";
+import { ISupportedResult, TestSupported } from "../extensions/mod_management/types/TestSupported";
+import { Archive } from "../util/archives";
+import { IRegisteredExtension } from "../util/ExtensionManager";
+import { i18n, TFunction } from "../util/i18n";
+import ReduxProp from "../util/ReduxProp";
+import { SanityCheck } from "../util/reduxSanity";
+import { ICollectionsGameSupportEntry } from "./collections/api";
+import { DialogActions, IDialogContent, IModReference, IModRepoId, IOverlayOptions, IPosition } from "./api";
+import { IActionOptions } from "./IActionDefinition";
+import { IBannerOptions } from "./IBannerOptions";
+import { DialogType, IDialogResult } from "./IDialog";
+import { IGame } from "./IGame";
+import { IGameStore } from "./IGameStore";
+import { ILookupOptions, IModLookupResult } from "./IModLookupResult";
+import { INotification, INotificationAction } from "./INotification";
+import { IDiscoveryResult, IMod, IState } from "./IState";
+import { ITableAttribute } from "./ITableAttribute";
+import { ITestResult } from "./ITestResult";
+import Promise from "bluebird";
+import { IHashResult, ILookupResult, IModInfo, IQuery, IReference, IServer } from "modmeta-db";
+import * as React from "react";
+import * as Redux from "redux";
+import { ComplexActionCreator } from "redux-act";
+import { ThunkDispatch } from "redux-thunk";
+import { INexusAPIExtension } from "../extensions/nexus_integration/types/INexusAPIExtension";
+import { IModsAPIExtension } from "../extensions/mod_management/types/IModsAPIExtension";
+import { IDownloadsAPIExtension } from "../extensions/download_management/types/IDownloadsAPIExtension";
+export { TestSupported, IInstallResult, IInstruction, IDeployedFile, IDeploymentMethod, IFileChange, ILookupResult, IModInfo, IQuery, InstructionType, IReference, InstallFunc, ISupportedResult, ProgressDelegate, };
 export interface ThunkStore<S> extends Redux.Store<S> {
     dispatch: ThunkDispatch<S, null, Redux.Action>;
 }
@@ -44,7 +44,7 @@ export type PropsCallback = () => any;
  * game: state regarding the managed game. Will be swapped out when the game mode changes
  * profile: state regarding the managed profile. Will be swapped out when the profile changes
  */
-export type PersistingType = 'global' | 'game' | 'profile';
+export type PersistingType = "global" | "game" | "profile";
 export type CheckFunction = () => Promise<ITestResult>;
 export type RegisterSettings = (title: string, element: React.ComponentClass<any> | React.StatelessComponent<any>, props?: PropsCallback, visible?: () => boolean, priority?: number) => void;
 export type RegisterAction = (group: string, position: number, iconOrComponent: string | React.ComponentType<any>, options: IActionOptions, titleOrProps?: string | PropsCallback, actionOrCondition?: (instanceIds?: string[]) => void | boolean, condition?: (instanceIds?: string[]) => boolean | string) => void;
@@ -76,7 +76,7 @@ export interface IMainPageOptions {
      */
     hotkeyRaw?: string;
     visible?: () => boolean;
-    group: 'dashboard' | 'global' | 'per-game' | 'support' | 'hidden';
+    group: "dashboard" | "global" | "per-game" | "support" | "hidden";
     priority?: number;
     props?: () => any;
     badge?: ReduxProp<any>;
@@ -95,7 +95,7 @@ export interface IDashletOptions {
 export type RegisterDashlet = (title: string, width: 1 | 2 | 3, height: 1 | 2 | 3 | 4 | 5 | 6, position: number, component: React.ComponentClass<any> | React.FunctionComponent<any>, isVisible: (state: any) => boolean, props: PropsCallback, options: IDashletOptions) => void;
 export type RegisterDialog = (id: string, element: React.ComponentType<any>, props?: PropsCallback) => void;
 export type RegisterOverlay = (id: string, element: React.ComponentType<any>, props?: PropsCallback) => void;
-export type ToDoType = 'settings' | 'search' | 'workaround' | 'more';
+export type ToDoType = "settings" | "search" | "workaround" | "more";
 export interface IToDoButton {
     text: string;
     icon: string;
@@ -199,7 +199,7 @@ export interface IGameDetail {
     type?: string;
 }
 export interface IAttachment {
-    type: 'file' | 'data';
+    type: "file" | "data";
     data: any;
     id: string;
     description: string;
@@ -565,7 +565,7 @@ export interface IExtensionApi {
      * the result of the callback if any (the result is the first argument because the number
      * of arguments may be variable)
      */
-    withPrePost: <T>(eventName: string, callback: (...args: any[]) => Promise<T>) => ((...args: any[]) => Promise<T>);
+    withPrePost: <T>(eventName: string, callback: (...args: any[]) => Promise<T>) => (...args: any[]) => Promise<T>;
     /**
      * returns true if the running version of Vortex is considered outdated. This is mostly used
      * to determine if feedback should be sent to Nexus Mods.
@@ -607,7 +607,7 @@ export interface IExtensionApi {
 }
 export interface IStateVerifier {
     description: (input: any) => string;
-    type?: 'map' | 'string' | 'boolean' | 'number' | 'object' | 'array';
+    type?: "map" | "string" | "boolean" | "number" | "object" | "array";
     noUndefined?: boolean;
     noNull?: boolean;
     noEmpty?: boolean;
@@ -615,7 +615,7 @@ export interface IStateVerifier {
         [key: string]: IStateVerifier;
     };
     required?: boolean;
-    deleteBroken?: boolean | 'parent';
+    deleteBroken?: boolean | "parent";
     repair?: (input: any, def: any) => any;
 }
 /**

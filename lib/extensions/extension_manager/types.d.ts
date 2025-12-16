@@ -1,5 +1,5 @@
-import { IExtensionLoadFailure, IExtensionState } from '../../types/IState';
-export type ExtensionType = 'game' | 'translation' | 'theme';
+import { IExtensionLoadFailure, IExtensionState } from "../../types/IState";
+export type ExtensionType = "game" | "translation" | "theme";
 /**
  * Information about an extension available from the info.json file
  */
