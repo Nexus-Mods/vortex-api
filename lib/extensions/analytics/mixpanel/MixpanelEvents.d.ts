@@ -38,17 +38,6 @@ export declare class AppUpdatedEvent implements MixpanelEvent {
     constructor(from_version: string, to_version: string, os: string);
 }
 /**
- * Event sent when the application crashes.
- * @param os Operating system (Node.js platform string: win32, darwin, linux)
- * @param error_code Error code
- * @param error_message Error message
- */
-export declare class AppCrashedEvent implements MixpanelEvent {
-    readonly eventName = "app_crashed";
-    readonly properties: Record<string, any>;
-    constructor(os: string, error_code: string, error_message: string);
-}
-/**
  * Event sent when an upsell prompt is clicked in the application.
  */
 export declare class AppUpsellClickedEvent implements MixpanelEvent {
@@ -159,17 +148,18 @@ export declare class CollectionsInstallationCancelledEvent implements MixpanelEv
  * MOD EVENTS
  */
 /**
- * (DO NOT USE) This event is currently being tracked SERVER side
- *
- * Event sent when a mod download is started.
+ * Event sent when a mod download is started from the client.
+ * This client-side event complements the server-side mods_download_started event
+ * to enable success rate calculations by matching with _completed or _failed events.
  * @param mod_id ID of the mod
  * @param file_id ID of the file
  * @param game_id ID of the game
  * @param mod_uid UID of the mod
  * @param file_uid UID of the file
+ * @note "mods_download_started" event name is taken by server-side. Use "mods_download_started_client" instead.
  */
-export declare class ModsDownloadStartedEvent implements MixpanelEvent {
-    readonly eventName = "mods_download_started";
+export declare class ModsDownloadStartedClientEvent implements MixpanelEvent {
+    readonly eventName = "mods_download_started_client";
     readonly properties: Record<string, any>;
     constructor(mod_id: string, file_id: string, game_id: number, mod_uid: string, file_uid: string);
 }

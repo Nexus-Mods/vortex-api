@@ -1,4 +1,4 @@
-import { ComponentEx } from "../../../util/ComponentEx";
+import { ComponentEx } from "../ComponentEx";
 import { TFunction } from "../../../util/i18n";
 export declare const EMPTY_ID = "<Unspecified>";
 export interface IGroupingRowProps {
