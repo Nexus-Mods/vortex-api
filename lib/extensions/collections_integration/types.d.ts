@@ -15,6 +15,8 @@ export interface ICollectionModInstallInfo {
     modId?: string;
     /** Whether this is a required or optional mod */
     type: "requires" | "recommends";
+    /** Installation phase for ordering */
+    phase?: number;
 }
 /**
  * Overall collection installation session information

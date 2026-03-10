@@ -9,12 +9,12 @@ export declare const getCollectionActiveSession: (state: IState) => ICollectionI
  * Get the session ID of the last completed installation
  * @returns The last active session ID or undefined
  */
-export declare const getCollectionLastActiveSessionId: (state: any) => string | undefined;
+export declare const getCollectionLastActiveSessionId: (state: IState) => string | undefined;
 /**
  * Get the history of all completed/failed installation sessions
  * @returns Map of session IDs to session data
  */
-export declare const getCollectionSessionHistory: (state: any) => {
+export declare const getCollectionSessionHistory: (state: IState) => {
     [sessionId: string]: ICollectionInstallSession;
 };
 /**
@@ -22,28 +22,31 @@ export declare const getCollectionSessionHistory: (state: any) => {
  * @param sessionId The session ID to retrieve
  * @returns The session or undefined if not found
  */
-export declare const getCollectionSessionById: (state: any, sessionId: string) => ICollectionInstallSession | undefined;
+export declare const getCollectionSessionById: (state: IState, sessionId: string) => ICollectionInstallSession | undefined;
 /**
  * Get the last completed session from history
  * @returns The last completed session or undefined
  */
-export declare const getCollectionLastCompletedSession: (state: any) => ICollectionInstallSession | undefined;
+export declare const getCollectionLastCompletedSession: (state: IState) => ICollectionInstallSession | undefined;
 /**
  * Check if there is an active installation session
  * @returns True if a session is currently active
  */
-export declare const hasCollectionActiveSession: (state: any) => boolean;
+export declare const hasCollectionActiveSession: (state: IState) => boolean;
 /**
  * Check if a specific collection is currently being installed
  * @param collectionId The collection ID to check
  * @returns True if the collection is being installed
  */
-export declare const isCollectionInstalling: (state: any, collectionId: string) => boolean;
+export declare const isCollectionInstalling: (state: IState, collectionId: string) => boolean;
+export declare const getCollectionSessionMods: (state: IState, sessionId: string) => {
+    [ruleId: string]: ICollectionModInstallInfo;
+} | undefined;
 /**
  * Get all mods in the active session
  * @returns Map of rule IDs to mod installation info, or empty object if no active session
  */
-export declare const getCollectionActiveSessionMods: (state: any) => {
+export declare const getCollectionActiveSessionMods: (state: IState) => {
     [ruleId: string]: ICollectionModInstallInfo;
 };
 /**
@@ -51,14 +54,14 @@ export declare const getCollectionActiveSessionMods: (state: any) => {
  * @param ruleId The rule ID to retrieve
  * @returns The mod installation info or undefined if not found
  */
-export declare const getCollectionActiveSessionMod: (state: any, ruleId: string) => ICollectionModInstallInfo | undefined;
+export declare const getCollectionActiveSessionMod: (state: IState, ruleId: string) => ICollectionModInstallInfo | undefined;
 /**
  * Search for a mod in the active collection by mod reference details
  * This is useful when you have deployment information and need to find the corresponding collection rule
  * @param searchParams Object containing mod identifiers to search by
  * @returns The mod installation info or undefined if not found
  */
-export declare const getCollectionModByReference: (state: any, searchParams: {
+export declare const getCollectionModByReference: (state: IState, searchParams: {
     tag?: string;
     modId?: string;
     fileMD5?: string;
@@ -70,33 +73,33 @@ export declare const getCollectionModByReference: (state: any, searchParams: {
  * @param status The status to filter by
  * @returns Array of mods with the specified status
  */
-export declare const getCollectionModsByStatus: (state: any, status: CollectionModStatus) => ICollectionModInstallInfo[];
+export declare const getCollectionModsByStatus: (state: IState, status: CollectionModStatus) => ICollectionModInstallInfo[];
 /**
  * Get all required mods from the active session
  * @returns Array of required mods
  */
-export declare const getCollectionRequiredMods: (state: any) => ICollectionModInstallInfo[];
+export declare const getCollectionRequiredMods: (state: IState) => ICollectionModInstallInfo[];
 /**
  * Get all optional/recommended mods from the active session
  * @returns Array of optional mods
  */
-export declare const getCollectionOptionalMods: (state: any) => ICollectionModInstallInfo[];
+export declare const getCollectionOptionalMods: (state: IState) => ICollectionModInstallInfo[];
 /**
  * Get all mods grouped by phase
  * @returns Map of phase number to array of mods in that phase
  */
-export declare const getCollectionModsByPhase: (state: any) => Map<number, ICollectionModInstallInfo[]>;
+export declare const getCollectionModsByPhase: (state: IState) => Map<number, ICollectionModInstallInfo[]>;
 /**
  * Get all mods for a specific phase
  * @param phase The phase number
  * @returns Array of mods in the specified phase
  */
-export declare const getCollectionModsForPhase: (state: any, phase: number) => ICollectionModInstallInfo[];
+export declare const getCollectionModsForPhase: (state: IState, phase: number) => ICollectionModInstallInfo[];
 /**
  * Get the total number of phases in the active session
  * @returns The highest phase number, or 0 if no active session
  */
-export declare const getCollectionTotalPhases: (state: any) => number;
+export declare const getCollectionTotalPhases: (state: IState) => number;
 /**
  * Get installation progress statistics for the active session
  * @returns Object with various progress metrics
@@ -137,12 +140,28 @@ export declare const isCollectionModPresent: ((state: IState, collectionSlug: st
  * Get the status breakdown for all mods in the active session
  * @returns Object with counts for each status
  */
-export declare const getCollectionStatusBreakdown: ((state: any) => {
-    [status: string]: number;
+export declare const getCollectionStatusBreakdown: ((state: IState, sessionId: string) => {
+    required: {
+        [status: string]: number;
+    };
+    optional: {
+        [status: string]: number;
+    };
+    total: {
+        [status: string]: number;
+    };
 }) & import("reselect").OutputSelectorFields<(args_0: {
     [ruleId: string]: ICollectionModInstallInfo;
 }) => {
-    [status: string]: number;
+    required: {
+        [status: string]: number;
+    };
+    optional: {
+        [status: string]: number;
+    };
+    total: {
+        [status: string]: number;
+    };
 }, {
     clearCache: () => void;
 }> & {
@@ -152,33 +171,33 @@ export declare const getCollectionStatusBreakdown: ((state: any) => {
  * Get mods that are currently in progress (downloading or installing)
  * @returns Array of mods that are actively being processed
  */
-export declare const getCollectionModsInProgress: (state: any) => ICollectionModInstallInfo[];
+export declare const getCollectionModsInProgress: (state: IState) => ICollectionModInstallInfo[];
 /**
  * Get mods that are waiting to be processed
  * @returns Array of mods with 'pending' or 'downloaded' status
  */
-export declare const getCollectionPendingMods: (state: any) => ICollectionModInstallInfo[];
+export declare const getCollectionPendingMods: (state: IState) => ICollectionModInstallInfo[];
 /**
  * Get mods that have completed (successfully or not)
  * @returns Array of mods with 'installed', 'failed', or 'skipped' status
  */
-export declare const getCollectionCompletedMods: (state: any) => ICollectionModInstallInfo[];
+export declare const getCollectionCompletedMods: (state: IState) => ICollectionModInstallInfo[];
 /**
  * Check if a specific phase is complete
  * @param phase The phase number to check
  * @returns True if all required mods in the phase are completed
  */
-export declare const isCollectionPhaseComplete: (state: any, phase: number) => boolean;
+export declare const isCollectionPhaseComplete: (state: IState, phase: number) => boolean;
 /**
  * Get the current phase being processed
  * @returns The lowest phase number with incomplete mods, or -1 if all complete
  */
-export declare const getCollectionCurrentPhase: (state: any) => number;
+export declare const getCollectionCurrentPhase: (state: IState) => number;
 /**
  * Get detailed phase progress information
  * @returns Array of phase progress objects with stats for each phase
  */
-export declare const getCollectionPhaseProgress: ((state: any) => {
+export declare const getCollectionPhaseProgress: ((state: IState) => {
     phase: number;
     total: number;
     required: number;

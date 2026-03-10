@@ -1,6 +1,6 @@
 import { TFunction } from "i18next";
 import * as React from "react";
-import { ComponentEx } from "../../util/ComponentEx";
+import { ComponentEx } from "./ComponentEx";
 export interface IFormItemProps {
     t: TFunction;
     controlId: string;

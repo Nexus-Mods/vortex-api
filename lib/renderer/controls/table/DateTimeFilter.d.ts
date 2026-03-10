@@ -1,5 +1,5 @@
 import { IFilterProps, ITableFilter } from "../../../types/ITableAttribute";
-import { ComponentEx } from "../../../util/ComponentEx";
+import { ComponentEx } from "../ComponentEx";
 export declare class DateTimeFilterComponent extends ComponentEx<IFilterProps, {}> {
     private currentComparison;
     private currentValue;

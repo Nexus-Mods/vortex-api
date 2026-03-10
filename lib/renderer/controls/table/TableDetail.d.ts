@@ -1,5 +1,5 @@
 import { ITableAttribute } from "../../../types/ITableAttribute";
-import { ComponentEx } from "../../../util/ComponentEx";
+import { ComponentEx } from "../ComponentEx";
 import { TFunction } from "../../../util/i18n";
 export interface IDetailProps {
     language: string;

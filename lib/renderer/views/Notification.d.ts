@@ -1,5 +1,5 @@
 import { INotification } from "../../types/INotification";
-import { ComponentEx } from "../../util/ComponentEx";
+import { ComponentEx } from "../controls/ComponentEx";
 import { TFunction } from "../../util/i18n";
 export interface IProps {
     t: TFunction;

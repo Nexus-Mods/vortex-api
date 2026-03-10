@@ -1,4 +1,4 @@
-import { ITableFilter } from "../../../types/ITableAttribute";
+import { IFilterProps, ITableFilter } from "../../../types/ITableAttribute";
 import * as React from "react";
 export interface ISelectOption {
     value: any;
@@ -7,7 +7,7 @@ export interface ISelectOption {
 type Options = ISelectOption[];
 declare class OptionsFilter implements ITableFilter {
     static EMPTY: string;
-    component: React.ComponentClass<any>;
+    component: React.ComponentClass<IFilterProps>;
     raw: boolean;
     private mMulti;
     constructor(options: Options | (() => Options), multi: boolean, raw?: boolean);

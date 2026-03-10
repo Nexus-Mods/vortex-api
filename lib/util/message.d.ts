@@ -54,12 +54,10 @@ export declare function bundleAttachment(options?: IErrorOptions): Promise<strin
  *                        where Errors are expected we have to be a bit more flexible here.
  */
 export declare function showError(dispatch: ThunkDispatch<IState, null, Redux.Action>, title: string, details?: string | Error | any, options?: IErrorOptions): void;
-export interface IPrettifiedError {
-    message: string;
+export interface IPrettifiedError extends Error {
     code?: string;
-    replace?: any;
+    replace?: Record<string, string>;
     allowReport?: boolean;
-    stack?: string;
 }
 export declare function prettifyNodeErrorMessage(err: any, options?: IErrorOptions, fileName?: string): IPrettifiedError;
 export interface IErrorRendered {

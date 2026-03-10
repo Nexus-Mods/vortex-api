@@ -21,7 +21,7 @@ import { convertGameIdReverse, nexusGameId } from "../extensions/nexus_integrati
 import GameStoreHelper from "../util/GameStoreHelper";
 import { getApplication } from "./application";
 import { Archive } from "./archives";
-import bbcodeToReact, { bbcodeToHTML, preProcess as bbcodePreProcess } from "./bbcode";
+import bbcodeToReact, { bbcodeToHTML, preProcess as bbcodePreProcess } from "../renderer/controls/bbcode";
 import calculateFolderSize from "./calculateFolderSize";
 import { checksum, fileMD5 } from "./checksum";
 import ConcurrencyLimiter from "./ConcurrencyLimiter";
@@ -38,7 +38,7 @@ import getNormalizeFunc, { makeNormalizingDict, Normalize } from "./getNormalize
 import getVortexPath from "./getVortexPath";
 import github from "./github";
 import { getCurrentLanguage, TFunction } from "./i18n";
-import LazyComponent from "./LazyComponent";
+import LazyComponent from "../renderer/controls/LazyComponent";
 import lazyRequire from "./lazyRequire";
 import local from "./local";
 import makeReactive from "./makeReactive";
