@@ -5,7 +5,12 @@
   "author": "Black Tree Gaming Ltd",
   "license": "GPL-3.0",
   "description": "Type information for the Vortex API exposed to extensions",
-  "typings": "./lib/index.d.ts",
+  "typings": "./lib/api.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/api.d.ts"
+    }
+  },
   "bin": {
     "extractInfo": "./bin/extractInfo.js"
   },
