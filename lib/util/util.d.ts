@@ -1,7 +1,7 @@
-import { Normalize } from "./getNormalizeFunc";
+import type * as Redux from "redux";
 import Bluebird from "bluebird";
-import * as Redux from "redux";
 import * as semver from "semver";
+import type { Normalize } from "./getNormalizeFunc";
 /**
  * count the elements in an array for which the predicate matches
  *
@@ -57,7 +57,8 @@ export declare function truthy(val: any): boolean;
  * @param skip properties to skip in the diff, string array
  */
 export declare function objDiff(lhs: any, rhs: any, skip?: string[]): Record<string, any>;
-export declare function restackErr(error: Error, stackErr: Error): Error;
+/** @deprecated */
+export declare function restackErr(error: unknown, stackErr: Error): Error;
 /**
  * create a "queue".
  * Returns an enqueue function such that that the callback passed to it
@@ -74,8 +75,8 @@ export declare function bytesToString(bytes: number): string;
 export declare function largeNumToString(num: number): string;
 export declare function pad(value: number, padding: string, width: number): string;
 export declare function timeToString(seconds: number): string;
-export declare function encodeHTML(input: string): string;
-export declare function decodeHTML(input: string): string;
+export declare function encodeHTML(input: string | undefined): string | undefined;
+export declare function decodeHTML(input: string | undefined): string | undefined;
 export declare function getAllPropertyNames(obj: object): string[];
 /**
  * test if a directory is a sub-directory of another one
@@ -123,7 +124,7 @@ declare const INVALID_FILEPATH_CHARACTERS: string[];
 /**
  * characters invalid in a file name
  */
-declare const INVALID_FILENAME_CHARACTERS: any[];
+declare const INVALID_FILENAME_CHARACTERS: string[];
 declare const INVALID_FILENAME_RE: RegExp;
 export declare function isFilenameValid(input: string): boolean;
 /**
@@ -132,7 +133,6 @@ export declare function isFilenameValid(input: string): boolean;
 export declare function sanitizeFilename(input: string): string;
 export declare function isPathValid(input: string, allowRelative?: boolean): boolean;
 export { INVALID_FILEPATH_CHARACTERS, INVALID_FILENAME_RE, INVALID_FILENAME_CHARACTERS, };
-export declare function isMajorDowngrade(previous: string, current: string): boolean;
 export interface IFlattenParameters {
     maxLength?: number;
     separator?: string;
@@ -208,6 +208,7 @@ export declare enum Campaign {
  * @property DashboardDashletAd - Advertisement displayed in a dashboard dashlet.
  * @property CollectionsDownloadAd - Advertisement shown during collection downloads.
  * @property SettingsDownloadAd - Advertisement displayed in the settings download section.
+ * @property HealthCheckAd - Advertisement displayed in the health check page.
  */
 export declare enum Content {
     HeaderAd = "header_ad",
@@ -215,7 +216,8 @@ export declare enum Content {
     DownloadModModal = "downloadmod_modal",
     DashboardDashletAd = "dashboard_dashlet_ad",
     CollectionsDownloadAd = "collections_download_ad",
-    SettingsDownloadAd = "settings_download_ad"
+    SettingsDownloadAd = "settings_download_ad",
+    HealthCheckAd = "health_check_ad"
 }
 export interface INexusURLOptions {
     section?: Section;

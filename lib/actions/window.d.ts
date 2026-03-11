@@ -18,3 +18,4 @@ export declare const setMaximized: reduxAct.ComplexActionCreator1<any, any, {}>;
 export declare const setZoomFactor: reduxAct.ComplexActionCreator1<any, any, {}>;
 export declare const setTabsMinimized: reduxAct.ComplexActionCreator1<any, any, {}>;
 export declare const setCustomTitlebar: reduxAct.ComplexActionCreator1<any, any, {}>;
+export declare const setUseModernLayout: reduxAct.ComplexActionCreator1<any, any, {}>;

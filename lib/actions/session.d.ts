@@ -1,63 +1,62 @@
-import { IParameters } from "../util/commandLine";
-import * as reduxAct from "redux-act";
+import type { IParameters } from "@vortex/shared/cli";
 /**
  * action to choose which item in a group to display (all other items in the
  * group will be hidden). the itemId can be undefined to hide them all.
  */
-export declare const displayGroup: reduxAct.ComplexActionCreator2<string, string, {
+export declare const displayGroup: import("redux-act").ComplexActionCreator2<string, string, {
     groupId: string;
     itemId: string;
 }, {}>;
-export declare const setDialogVisible: reduxAct.ComplexActionCreator1<string, {
+export declare const setDialogVisible: import("redux-act").ComplexActionCreator1<string, {
     dialogId: string;
 }, {}>;
-export declare const setSettingsPage: reduxAct.ComplexActionCreator1<string, {
+export declare const setSettingsPage: import("redux-act").ComplexActionCreator1<string, {
     pageId: string;
 }, {}>;
-export declare const setOpenMainPage: reduxAct.ComplexActionCreator2<string, boolean, {
+export declare const setOpenMainPage: import("redux-act").ComplexActionCreator2<string, boolean, {
     page: string;
     secondary: boolean;
 }, {}>;
-export declare const startActivity: reduxAct.ComplexActionCreator2<string, string, {
+export declare const startActivity: import("redux-act").ComplexActionCreator2<string, string, {
     group: string;
     activityId: string;
 }, {
     forward: boolean;
     scope: string;
 }>;
-export declare const stopActivity: reduxAct.ComplexActionCreator2<string, string, {
+export declare const stopActivity: import("redux-act").ComplexActionCreator2<string, string, {
     group: string;
     activityId: string;
 }, {
     forward: boolean;
     scope: string;
 }>;
-export declare const setProgress: reduxAct.ComplexActionCreator4<string, string, string, number, {
+export declare const setProgress: import("redux-act").ComplexActionCreator4<string, string, string, number, {
     group: string;
     progressId: string;
     text: string;
     percent: number;
 }, {}>;
-export declare const setToolRunning: reduxAct.ComplexActionCreator3<string, number, boolean, {
+export declare const setToolRunning: import("redux-act").ComplexActionCreator3<string, number, boolean, {
     exePath: string;
     started: number;
     exclusive: boolean;
 }, {}>;
-export declare const setToolPid: reduxAct.ComplexActionCreator3<string, number, boolean, {
+export declare const setToolPid: import("redux-act").ComplexActionCreator3<string, number, boolean, {
     exePath: string;
     pid: number;
     exclusive: boolean;
 }, {}>;
-export declare const setToolStopped: reduxAct.ComplexActionCreator1<string, {
+export declare const setToolStopped: import("redux-act").ComplexActionCreator1<string, {
     exePath: string;
 }, {}>;
-export declare const setExtensionLoadFailures: reduxAct.ComplexActionCreator1<unknown, unknown, {}>;
-export declare const setUIBlocker: reduxAct.ComplexActionCreator4<string, string, string, boolean, {
+export declare const setExtensionLoadFailures: import("redux-act").ComplexActionCreator1<unknown, unknown, {}>;
+export declare const setUIBlocker: import("redux-act").ComplexActionCreator4<string, string, string, boolean, {
     id: string;
     icon: string;
     description: string;
     mayCancel: boolean;
 }, {}>;
-export declare const clearUIBlocker: reduxAct.ComplexActionCreator1<string, string, {}>;
-export declare const setNetworkConnected: reduxAct.ComplexActionCreator1<boolean, boolean, {}>;
-export declare const setCommandLine: reduxAct.ComplexActionCreator1<IParameters, IParameters, {}>;
+export declare const clearUIBlocker: import("redux-act").ComplexActionCreator1<string, string, {}>;
+export declare const setNetworkConnected: import("redux-act").ComplexActionCreator1<boolean, boolean, {}>;
+export declare const setCommandLine: import("redux-act").ComplexActionCreator1<IParameters, IParameters, {}>;

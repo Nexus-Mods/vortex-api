@@ -1,4 +1,4 @@
-import Promise from "bluebird";
+import PromiseBB from "bluebird";
 export type Normalize = (input: string) => string;
 export interface INormalizeParameters {
     separators?: boolean;
@@ -14,9 +14,9 @@ export interface INormalizeParameters {
  * normalization anyway.
  *
  * @param {string} path
- * @returns {Promise<Normalize>}
+ * @returns {PromiseBB<Normalize>}
  */
-declare function getNormalizeFunc(testPath: string, parameters?: INormalizeParameters): Promise<Normalize>;
+declare function getNormalizeFunc(testPath: string, parameters?: INormalizeParameters): PromiseBB<Normalize>;
 /**
  * creates a proxy for a dictionary that makes all key access normalized with the specified
  * normalization function

@@ -1,4 +1,4 @@
-import { IBBCodeContext } from "../renderer/controls/bbcode";
+import type { IBBCodeContext } from "../controls/bbcode";
 export type DialogType = "success" | "info" | "error" | "question";
 export interface IDialogAction {
     label: string;
@@ -74,7 +74,9 @@ export interface IDialogContent {
      * list of clickable entries that don't (necessarily) cause the dialog to close
      */
     links?: ILink[];
-    parameters?: any;
+    parameters?: Record<string, string | number> & {
+        count?: number;
+    };
     options?: {
         translated?: boolean;
         wrap?: boolean;

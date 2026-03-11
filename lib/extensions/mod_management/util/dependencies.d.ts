@@ -1,10 +1,10 @@
-import { IExtensionApi } from "../../../types/IExtensionContext";
-import { IDownload } from "../../../types/IState";
-import { IDependency } from "../types/IDependency";
-import { IMod, IModReference, IModRule } from "../types/IMod";
+import type { IExtensionApi } from "../../../types/IExtensionContext";
+import type { IDownload } from "../../../types/IState";
+import type { IDependency } from "../types/IDependency";
+import type { IMod, IModReference, IModRule } from "../types/IMod";
 import Bluebird from "bluebird";
-import { IReference } from "modmeta-db";
-import { IModLookupInfo } from "./testModReference";
+import type { IReference } from "modmeta-db";
+import type { IModLookupInfo } from "./testModReference";
 export declare function findModByRef(reference: IModReference, mods: {
     [modId: string]: IMod;
 }, source?: {

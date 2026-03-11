@@ -1,4 +1,4 @@
-import { TFunction } from "./i18n";
+import type { TFunction } from "./i18n";
 export type TimeMode = "relative" | "absolute";
 export declare function setTimeMode(mode: TimeMode): void;
 /**

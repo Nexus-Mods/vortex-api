@@ -1,6 +1,6 @@
-import { IInstruction, IModTypeOptions } from "../../../types/IExtensionContext";
-import { IGame, IModType } from "../../../types/IGame";
-import Promise from "bluebird";
+import type { IInstruction, IModTypeOptions } from "../../../types/IExtensionContext";
+import type { IGame, IModType } from "../../../types/IGame";
+import type PromiseBB from "bluebird";
 export declare function getModTypeExtensions(): IModType[];
 /**
  * get information about a mod type
@@ -11,4 +11,4 @@ export declare function getModTypeExtensions(): IModType[];
  * @returns details about the mod type, if available, undefined otherwise
  */
 export declare function getModType(id: string): IModType;
-export declare function registerModType(id: string, priority: number, isSupported: (gameId: string) => boolean, getPath: (game: IGame) => string, test: (instructions: IInstruction[]) => Promise<boolean>, options?: IModTypeOptions): void;
+export declare function registerModType(id: string, priority: number, isSupported: (gameId: string) => boolean, getPath: (game: IGame) => string, test: (instructions: IInstruction[]) => PromiseBB<boolean>, options?: IModTypeOptions): void;

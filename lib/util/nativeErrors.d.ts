@@ -3,4 +3,4 @@ export interface IDecoded {
     message: string;
     rethrowAs: string;
 }
-export declare function decodeSystemError(err: Error, filePath: string): IDecoded;
+export declare function decodeSystemError(err: Error, filePath: string): IDecoded | undefined;

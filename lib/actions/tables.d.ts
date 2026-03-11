@@ -1,4 +1,4 @@
-import { SortDirection } from "../types/SortDirection";
+import type { SortDirection } from "../types/SortDirection";
 import * as reduxAct from "redux-act";
 export declare const setAttributeVisible: reduxAct.ComplexActionCreator3<string, string, boolean, {
     tableId: string;

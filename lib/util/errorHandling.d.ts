@@ -1,23 +1,16 @@
-import { IErrorOptions, IExtensionApi } from "../types/api";
-import { IError } from "../types/IError";
-import { IFeedbackResponse } from "@nexusmods/nexus-api";
-import Promise from "bluebird";
-import { BrowserWindow } from "electron";
-interface IErrorContext {
-    [id: string]: string;
-}
-export declare function createErrorReport(type: string, error: IError, context: IErrorContext, labels: string[], state: any, sourceProcess?: string): void;
-export declare function setApiKey(key: string): void;
-export declare function setOauthToken(token: any): void;
+import type PromiseBB from "bluebird";
+import type { BrowserWindow } from "electron";
+import type { IErrorOptions, IExtensionApi } from "../types/api";
+import type { IError } from "../types/IError";
+type IErrorContext = Record<string, string>;
+export declare function createErrorReport(type: string, error: IError, context: IErrorContext, state: any, sourceProcess?: string): void;
 export declare function setOutdated(api: IExtensionApi): void;
 export declare function isOutdated(): boolean;
 export declare function didIgnoreError(): boolean;
 export declare function disableErrorReport(): void;
-export declare function sendReportFile(fileName: string): Promise<IFeedbackResponse>;
-export declare function sendReport(type: string, error: IError, context: IErrorContext, labels: string[], reporterToken: any, reporterProcess: string, sourceProcess: string, attachment: string): Promise<IFeedbackResponse>;
-export declare function setWindow(window: BrowserWindow): void;
-export declare function getWindow(): BrowserWindow;
-export declare function getVisibleWindow(win?: BrowserWindow): BrowserWindow | null;
+export declare function setWindow(window: BrowserWindow | null): void;
+export declare function getWindow(): BrowserWindow | null;
+export declare function getVisibleWindow(win?: BrowserWindow | null): BrowserWindow | null;
 /**
  * display an error message and quit the application
  * on confirmation.
@@ -53,11 +46,35 @@ export declare function clearErrorContext(id: string): void;
  * @param value context value
  * @param fun the function to set
  */
-export declare function withContext(id: string, value: string, fun: () => Promise<any>): Promise<any>;
+export declare function withContext(id: string, value: string, fun: () => PromiseBB<any>): Promise<any>;
 /**
  * attach context to an error that may be caught after the global context has been reset
  * @param err the error to add context to
  */
 export declare function contextify(err: Error): Error;
 export declare function getErrorContext(): IErrorContext;
+export type SetAttribute = (key: string, value: string | number | boolean) => void;
+export type SetError = (error: Error) => void;
+export type TrackedFunction<T> = (setAttribute: SetAttribute, setError: SetError) => PromiseBB<T> | Promise<T>;
+export interface TrackedActivityOptions {
+    /** Start a new root trace instead of inheriting the active parent span. */
+    root?: boolean;
+}
+/**
+ * Execute a function wrapped in an OTel span with full control over
+ * tracer name, span name, and attributes.
+ * The span is automatically ended when the returned promise settles.
+ * The callback receives a `setAttribute` function for adding dynamic attributes.
+ *
+ * Pass `{ root: true }` for top-level operations (downloads, installs) that
+ * should start a new trace rather than becoming children of whatever span
+ * happens to be active in the Bluebird chain.
+ */
+export declare function withTrackedActivity<T>(tracerName: string, spanName: string, attributes: Record<string, string | number | boolean>, fun: TrackedFunction<T>, options?: TrackedActivityOptions): Promise<T>;
+/**
+ * Record an error on the currently active span, or create a new root span
+ * if none exists. The RingBufferSpanProcessor will detect the ERROR status
+ * and export the trace automatically.
+ */
+export declare function recordErrorSpan(title: string, error: Error, attributes?: Record<string, string | number | boolean>): void;
 export {};

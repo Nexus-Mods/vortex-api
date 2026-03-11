@@ -1,8 +1,7 @@
-import { IErrorOptions } from "../types/IExtensionContext";
-import { IState } from "../types/IState";
-import Promise from "bluebird";
-import * as Redux from "redux";
-import { ThunkDispatch } from "redux-thunk";
+import type * as Redux from "redux";
+import type { ThunkDispatch } from "redux-thunk";
+import type { IErrorOptions } from "../types/IExtensionContext";
+import type { IState } from "../types/IState";
 /**
  * calculate a reasonable time to display a message based on the
  * amount of text.
@@ -41,7 +40,6 @@ export declare function showActivity<S>(dispatch: ThunkDispatch<IState, null, Re
  * @param {string} [id]
  */
 export declare function showInfo<S>(dispatch: ThunkDispatch<IState, null, Redux.Action>, message: string, id?: string): void;
-export declare function bundleAttachment(options?: IErrorOptions): Promise<string>;
 /**
  * show an error notification with an optional "more" button that displays further details
  * in a modal dialog.

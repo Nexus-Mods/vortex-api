@@ -1,7 +1,7 @@
-import { IExtensionApi } from "../../../types/IExtensionContext";
-import { IDeploymentManifest } from "../types/IDeploymentManifest";
-import { IDeployedFile, IDeploymentMethod } from "../types/IDeploymentMethod";
 import Bluebird from "bluebird";
+import type { IExtensionApi } from "../../../types/IExtensionContext";
+import type { IDeploymentManifest } from "../types/IDeploymentManifest";
+import type { IDeployedFile, IDeploymentMethod } from "../types/IDeploymentMethod";
 export declare function purgeDeployedFiles(basePath: string, files: IDeployedFile[]): Bluebird<void>;
 export declare function fallbackPurgeType(api: IExtensionApi, activator: IDeploymentMethod, gameId: string, modType: string, deployPath: string, stagingPath: string): Bluebird<void>;
 /**

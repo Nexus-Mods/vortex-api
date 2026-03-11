@@ -1,9 +1,11 @@
-import { IExtension } from "../extensions/extension_manager/types";
+import type { TOptions, i18n } from "i18next";
 import Bluebird from "bluebird";
-import I18next, { i18n, TOptions } from "i18next";
+import I18next from "i18next";
+import type { IExtension } from "../types/extensions";
 type TFunction = typeof I18next.t;
 declare const fallbackTFunc: TFunction;
-export { fallbackTFunc, i18n, TFunction };
+export { fallbackTFunc };
+export type { i18n, TFunction };
 export interface IInitResult {
     i18n: i18n;
     tFunc: TFunction;

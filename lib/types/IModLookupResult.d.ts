@@ -1,4 +1,4 @@
-import { IRule } from "modmeta-db";
+import type { IRule } from "modmeta-db";
 export interface IModLookupData {
     fileName: string;
     fileSizeBytes: number;

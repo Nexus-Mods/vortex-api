@@ -1,6 +1,6 @@
-import { EndorsedStatus, IModFileContentPage, ICollection, ICollectionManifest, IPreferenceQuery, IPreference, ICollectionSearchOptions, ICollectionSearchResult, IDownloadURL, IFeedbackResponse, IFileInfo, IIssue, IModFileContentPageQuery, IModFileContentSearchFilter, IRevision } from "@nexusmods/nexus-api";
-import { IMod } from "../../mod_management/types/IMod";
-import { IValidateKeyDataV2 } from "./IValidateKeyData";
+import type { EndorsedStatus, IModFileContentPage, ICollection, ICollectionManifest, IPreferenceQuery, IPreference, ICollectionSearchOptions, ICollectionSearchResult, IDownloadURL, IFeedbackResponse, IFileInfo, IIssue, IModFileContentPageQuery, IModFileContentSearchFilter, IRevision, IModRequirements, IModInfo } from "@nexusmods/nexus-api";
+import type { IMod } from "../../mod_management/types/IMod";
+import type { IValidateKeyDataV2 } from "./IValidateKeyData";
 export interface INexusAPIExtension {
     nexusCheckModsVersion?: (gameId: string, mods: {
         [modId: string]: IMod;
@@ -32,5 +32,9 @@ export interface INexusAPIExtension {
     }>;
     nexusModFileContents?: (query: IModFileContentPageQuery, filter?: IModFileContentSearchFilter, offset?: number, count?: number) => PromiseLike<Partial<IModFileContentPage>>;
     nexusGetPreferences?: (query: IPreferenceQuery) => PromiseLike<Partial<IPreference>>;
+    nexusGetModInfo?: (gameId: string, modId: number) => PromiseLike<Partial<IModInfo>>;
+    nexusGetModRequirements?: (gameId: string, modIds: number[]) => PromiseLike<{
+        [modId: number]: Partial<IModRequirements>;
+    }>;
     nexusGetUserKeyData?: () => PromiseLike<IValidateKeyDataV2>;
 }

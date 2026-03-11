@@ -1,5 +1,5 @@
-import Promise from "bluebird";
-export declare function writeFileAtomic(filePath: string, input: string | Buffer): Promise<void>;
+import PromiseBB from "bluebird";
+export declare function writeFileAtomic(filePath: string, input: string | Buffer): PromiseBB<void>;
 /**
  * copy a file in such a way that it will not replace the target if the copy is
  * somehow interrupted. The file is first copied to a temporary file in the same
@@ -10,6 +10,6 @@ export declare function writeFileAtomic(filePath: string, input: string | Buffer
  * @export
  * @param {string} srcPath
  * @param {string} destPath
- * @returns {Promise<void>}
+ * @returns {PromiseBB<void>}
  */
-export declare function copyFileAtomic(srcPath: string, destPath: string): Promise<void>;
+export declare function copyFileAtomic(srcPath: string, destPath: string): PromiseBB<void>;

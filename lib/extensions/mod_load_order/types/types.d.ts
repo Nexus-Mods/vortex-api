@@ -1,6 +1,6 @@
-import * as Promise from "bluebird";
-import { IActionDefinitionEx } from "../../../renderer/controls/ActionControl";
-import { IMod } from "../../../types/IState";
+import type * as Promise from "bluebird";
+import type { IActionDefinitionEx } from "../../../controls/ActionControl";
+import type { IMod } from "../../../types/IState";
 export type SortType = "ascending" | "descending";
 export type ListViewType = "compact" | "full";
 export type UpdateType = "drag-n-drop" | "props-update" | "refresh";

@@ -1,7 +1,7 @@
-import { IDownloadRemoveOptions } from "../types/IDownloadRemoveOptions";
-import { IDownloadResult } from "./IDownloadResult";
-import { IStartDownloadOptions } from "../types/IStartDownloadOptions";
-import { RedownloadMode } from "../DownloadManager";
+import type { IDownloadRemoveOptions } from "./IDownloadRemoveOptions";
+import type { IDownloadResult } from "./IDownloadResult";
+import type { IStartDownloadOptions } from "./IStartDownloadOptions";
+import type { RedownloadMode } from "../DownloadManager";
 export interface IDownloadsAPIExtension {
     removeDownload?: (downloadId: string, options?: IDownloadRemoveOptions) => Promise<void>;
     pauseDownload?: (downloadId: string) => Promise<void>;

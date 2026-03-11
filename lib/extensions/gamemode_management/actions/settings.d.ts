@@ -1,5 +1,5 @@
-import { IDiscoveredTool } from "../../../types/IDiscoveredTool";
-import { IDiscoveryResult } from "../types/IDiscoveryResult";
+import type { IDiscoveredTool } from "../../../types/IDiscoveredTool";
+import type { IDiscoveryResult } from "../types/IDiscoveryResult";
 import * as reduxAct from "redux-act";
 /**
  * add info about a discovered game

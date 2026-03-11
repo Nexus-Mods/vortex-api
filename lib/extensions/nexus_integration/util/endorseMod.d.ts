@@ -1,5 +1,5 @@
-import NexusT from "@nexusmods/nexus-api";
-import Promise from "bluebird";
+import type NexusT from "@nexusmods/nexus-api";
+import PromiseBB from "bluebird";
 /**
  * endorse the mod by the server call
  *
@@ -10,8 +10,8 @@ import Promise from "bluebird";
  * @return {boolean} isEndorsed
  *
  */
-declare function endorseMod(nexus: NexusT, gameId: string, nexusModId: number, version: string, endorseStatus: string): Promise<string>;
-declare function endorseCollection(nexus: NexusT, gameId: string, collectionId: number, endorseStatus: string): Promise<{
+declare function endorseMod(nexus: NexusT, gameId: string, nexusModId: number, version: string, endorseStatus: string): PromiseBB<string>;
+declare function endorseCollection(nexus: NexusT, gameId: string, collectionId: number, endorseStatus: string): PromiseBB<{
     success: boolean;
 }>;
 export { endorseCollection, endorseMod };

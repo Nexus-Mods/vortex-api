@@ -1,5 +1,5 @@
-import Promise from "bluebird";
-import { IGameStoreEntry } from "./IGameStoreEntry";
+import type PromiseBB from "bluebird";
+import type { IGameStoreEntry } from "./IGameStoreEntry";
 /**
  * static information about a tool associated with a game.
  * This info is used to discover such tools and to store that
@@ -55,7 +55,7 @@ export interface ITool {
      * This may be left undefined but then the location for the tool/game can only be set
      * manually
      */
-    queryPath?: () => string | Promise<string | IGameStoreEntry>;
+    queryPath?: () => string | PromiseBB<string | IGameStoreEntry>;
     /**
      * return the path of the tool executable relative to the tool base path,
      * i.e. binaries/UT3.exe or TESV.exe

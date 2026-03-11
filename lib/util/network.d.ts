@@ -1,5 +1,5 @@
-import { IncomingMessage, ClientRequest } from "http";
-import { Readable } from "stream";
+import type { IncomingMessage, ClientRequest } from "http";
+import type { Readable } from "stream";
 export interface IRequestOptions {
     expectedContentType?: RegExp;
     encoding?: BufferEncoding;

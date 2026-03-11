@@ -1,11 +1,13 @@
-import Nexus, { ICollectionQuery, IFileInfo, IGameListEntry, IModInfo, IRevision, NexusError, ICollectionSearchOptions, ICollectionSearchResult, IPreference } from "@nexusmods/nexus-api";
+import type { ICollectionQuery, IFileInfo, IGameListEntry, IRevision, ICollectionSearchOptions, ICollectionSearchResult, IPreference, IModInfo } from "@nexusmods/nexus-api";
+import type Nexus from "@nexusmods/nexus-api";
+import { NexusError } from "@nexusmods/nexus-api";
 import BluebirdPromise from "bluebird";
-import { TFunction } from "i18next";
-import * as Redux from "redux";
-import { IExtensionApi } from "../../types/IExtensionContext";
-import { IMod } from "../../types/IState";
-import { RedownloadMode } from "../download_management/DownloadManager";
-import { IValidateKeyDataV2 } from "./types/IValidateKeyData";
+import type { TFunction } from "i18next";
+import type * as Redux from "redux";
+import type { IExtensionApi } from "../../types/IExtensionContext";
+import type { IMod } from "../../types/IState";
+import type { RedownloadMode } from "../download_management/DownloadManager";
+import type { IValidateKeyDataV2 } from "./types/IValidateKeyData";
 interface IUserInfo {
     sub: string;
     name: string;
@@ -25,7 +27,7 @@ interface IUserInfo {
  */
 export declare function searchCollections(nexus: Nexus, query: ICollectionQuery, options: ICollectionSearchOptions): Promise<ICollectionSearchResult>;
 export declare function onCancelLoginImpl(api: IExtensionApi): void;
-export declare function bringToFront(): void;
+export declare function bringToFront(): Promise<void>;
 export declare function requestLogin(nexus: Nexus, api: IExtensionApi, callback: (err: Error) => void): Promise<void>;
 export declare function oauthCallback(api: IExtensionApi, code: string, state?: string): Promise<void>;
 export declare function ensureLoggedIn(api: IExtensionApi): BluebirdPromise<void>;
@@ -77,4 +79,5 @@ export declare function updateKey(api: IExtensionApi, nexus: Nexus, key: string)
 export declare function retrieveNexusGames(nexus: Nexus): BluebirdPromise<void>;
 export declare function nexusGames(): IGameListEntry[];
 export declare function nexusGamesProm(): BluebirdPromise<IGameListEntry[]>;
+export declare function numericGameIdToDomainName(gameId: number): string | undefined;
 export {};

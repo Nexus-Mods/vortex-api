@@ -1,5 +1,5 @@
-import { IReducerSpec } from "../../types/IExtensionContext";
-import { IHistoryEvent } from "./types";
+import type { IReducerSpec } from "../../types/IExtensionContext";
+import type { IHistoryEvent } from "./types";
 export interface IHistoryPersistent {
     historyStacks: {
         [key: string]: IHistoryEvent[];

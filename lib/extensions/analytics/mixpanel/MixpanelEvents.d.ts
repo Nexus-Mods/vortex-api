@@ -49,6 +49,37 @@ export declare class AppUpsellClickedEvent implements MixpanelEvent {
  * COLLECTION EVENTS
  */
 /**
+ * Event sent when a collection draft is created in Vortex.
+ * @param collection_name Name of the collection
+ * @param game_name Name of the game
+ * @param creation_method How the collection was created
+ */
+export declare class CollectionsDraftedEvent implements MixpanelEvent {
+    readonly eventName = "collection_drafted";
+    readonly properties: Record<string, any>;
+    constructor(collection_name: string, game_name: string, creation_method: "from_profile" | "quick_collection" | "empty");
+}
+/**
+ * Event sent when a new draft collection is uploaded.
+ * @param collection_name Name of the collection
+ * @param game_name Name of the game
+ */
+export declare class CollectionsDraftUploadedEvent implements MixpanelEvent {
+    readonly eventName = "collection_draft_uploaded";
+    readonly properties: Record<string, any>;
+    constructor(collection_name: string, game_name: string);
+}
+/**
+ * Event sent when a draft collection update is uploaded.
+ * @param collection_name Name of the collection
+ * @param game_name Name of the game
+ */
+export declare class CollectionsDraftUpdateUploadedEvent implements MixpanelEvent {
+    readonly eventName = "collection_draft_updated";
+    readonly properties: Record<string, any>;
+    constructor(collection_name: string, game_name: string);
+}
+/**
  * Event sent when a collection download is clicked/initiated by the user.
  * @param collection_slug Slug of the collection
  * @param game_id ID of the game
@@ -260,4 +291,20 @@ export declare class ModsInstallationFailedEvent implements MixpanelEvent {
     readonly eventName = "mods_installation_failed";
     readonly properties: Record<string, any>;
     constructor(mod_id: string, file_id: string, game_id: number, mod_uid: string, file_uid: string, error_code: string, error_message: string);
+}
+/**
+ * HEALTH CHECK EVENTS
+ */
+/**
+ * Event sent when a user provides feedback on a health check requirement.
+ * @param feedback_type Whether the feedback was positive or negative
+ * @param game_id Game domain ID
+ * @param mod_id Nexus mod ID of the missing requirement
+ * @param required_by_mod_id Nexus mod ID of the mod that requires the dependency
+ * @param feedback_reasons Array of reason keys (only for negative feedback)
+ */
+export declare class HealthCheckFeedbackEvent implements MixpanelEvent {
+    readonly eventName = "health_check_feedback";
+    readonly properties: Record<string, any>;
+    constructor(feedback_type: "positive" | "negative", game_id: string, mod_id: number, required_by_mod_id: number, feedback_reasons?: string[]);
 }

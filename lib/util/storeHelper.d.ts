@@ -1,9 +1,9 @@
 /**
  * Helper functions when working with immutable state (or immutable objects in general)
  */
-import { IGameStored } from "../extensions/gamemode_management/types/IGameStored";
-import Promise from "bluebird";
-import * as Redux from "redux";
+import type { IGameStored } from "../extensions/gamemode_management/types/IGameStored";
+import PromiseBB from "bluebird";
+import type * as Redux from "redux";
 /**
  * return an item from state or the fallback if the path doesn't lead
  * to an item or if the item is null/undefined.
@@ -15,7 +15,7 @@ import * as Redux from "redux";
  * @param {T} fallback
  * @returns {T}
  */
-export declare function getSafe<T>(state: any, path: Array<string | number>, fallback: T): T;
+export declare function getSafe<T>(state: any, path: Array<string | number | undefined>, fallback: T): T;
 /**
  * case insensitive variant of getSafe
  */
@@ -126,6 +126,6 @@ export declare function rehydrate<T extends object>(state: T, inbound: any, path
  *
  * @export
  * @param {*} state
- * @returns {Promise<IGameStored>}
+ * @returns {PromiseBB<IGameStored>}
  */
-export declare function currentGame(store: Redux.Store<any>): Promise<IGameStored>;
+export declare function currentGame(store: Redux.Store<any>): PromiseBB<IGameStored>;

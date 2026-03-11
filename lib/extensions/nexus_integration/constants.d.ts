@@ -4,7 +4,7 @@ export declare const NEXUS_FLAMEWORK_SUBDOMAIN: string;
 export declare const NEXUS_NEXT_SUBDOMAIN: string;
 export declare const NEXUS_USERS_SUBDOMAIN: string;
 export declare const NEXUS_BASE_URL: string;
-export declare const NEXUS_NEXT_URL: string;
+export declare const NEXUS_GAMES_URL: string;
 export declare const NEXUS_PROTOCOL = "https:";
 export declare const PREMIUM_PATH: string[];
 export declare const FALLBACK_AVATAR = "assets/images/noavatar.png";

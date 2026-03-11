@@ -1,4 +1,4 @@
-import { IUpdateEntry } from "@nexusmods/nexus-api";
+import type { IUpdateEntry } from "@nexusmods/nexus-api";
 import * as reduxAct from "redux-act";
 export declare const setLoginId: reduxAct.ComplexActionCreator1<unknown, unknown, {}>;
 export declare const setOauthPending: reduxAct.ComplexActionCreator1<unknown, unknown, {}>;

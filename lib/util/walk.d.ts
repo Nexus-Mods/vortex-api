@@ -1,5 +1,5 @@
 import * as fs from "./fs";
-import Promise from "bluebird";
+import PromiseBB from "bluebird";
 export interface IWalkOptions {
     ignoreErrors?: string[] | true;
 }
@@ -11,7 +11,7 @@ export interface IWalkOptions {
  *                       corresponding fs stats as parameter. Should return a promise that will be
  *                       awaited before proceeding to the next directory. If this promise is
  *                       rejected, the walk is interrupted
- * @returns {Promise<void>} a promise that is resolved once the search is complete
+ * @returns {PromiseBB<void>} a promise that is resolved once the search is complete
  */
-declare function walk(target: string, callback: (iterPath: string, stats: fs.Stats) => Promise<any>, options?: IWalkOptions): Promise<void>;
+declare function walk(target: string, callback: (iterPath: string, stats: fs.Stats) => PromiseBB<any>, options?: IWalkOptions): PromiseBB<void>;
 export default walk;

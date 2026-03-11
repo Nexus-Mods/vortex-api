@@ -1,9 +1,9 @@
-import { IDiscoveredTool } from "../types/IDiscoveredTool";
-import { IDiscoveryResult } from "../extensions/gamemode_management/types/IDiscoveryResult";
-import { IGameStored } from "../extensions/gamemode_management/types/IGameStored";
-import { IToolStored } from "../extensions/gamemode_management/types/IToolStored";
-import { IExtensionApi } from "../types/IExtensionContext";
-import Promise from "bluebird";
+import type { IDiscoveredTool } from "../types/IDiscoveredTool";
+import type { IDiscoveryResult } from "../extensions/gamemode_management/types/IDiscoveryResult";
+import type { IGameStored } from "../extensions/gamemode_management/types/IGameStored";
+import type { IToolStored } from "../extensions/gamemode_management/types/IToolStored";
+import type { IExtensionApi } from "../types/IExtensionContext";
+import PromiseBB from "bluebird";
 export interface IStarterInfo {
     id: string;
     gameId: string;
@@ -36,7 +36,7 @@ type OnShowErrorFunc = (message: string, details?: string | Error | any, allowRe
 declare class StarterInfo implements IStarterInfo {
     static getGameIcon(game: IGameStored, gameDiscovery: IDiscoveryResult): string;
     static toolIconRW(gameId: string, toolId: string): string;
-    static run(info: IStarterInfo, api: IExtensionApi, onShowError: OnShowErrorFunc): Promise<any>;
+    static run(info: IStarterInfo, api: IExtensionApi, onShowError: OnShowErrorFunc): PromiseBB<any>;
     static getIconPath(info: IStarterInfo): string;
     private static runDirectly;
     private static runThroughLauncher;

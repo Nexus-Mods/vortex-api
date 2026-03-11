@@ -1,4 +1,4 @@
-import Promise from "bluebird";
+import PromiseBB from "bluebird";
 export interface IGitHubUser {
     login: string;
     id: number;
@@ -70,8 +70,8 @@ declare class GitHub {
     private static rawUrl;
     private mReleaseCache;
     private mRatelimitReset;
-    releases(): Promise<IGitHubRelease[]>;
-    fetchConfig(config: string): Promise<any>;
+    releases(): PromiseBB<IGitHubRelease[]>;
+    fetchConfig(config: string): PromiseBB<any>;
     private query;
     private queryReleases;
 }

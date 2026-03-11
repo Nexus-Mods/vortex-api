@@ -1,6 +1,6 @@
-import Promise from "bluebird";
+import type PromiseBB from "bluebird";
 export interface IChunk {
-    url: () => Promise<string>;
+    url: () => PromiseBB<string>;
     received: number;
     offset: number;
     size: number;

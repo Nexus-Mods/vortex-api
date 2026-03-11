@@ -1,6 +1,6 @@
-import { IInstallResult } from "./IInstallResult";
-import Promise from "bluebird";
-import { IModReference } from "./IMod";
+import type { IInstallResult } from "./IInstallResult";
+import type PromiseBB from "bluebird";
+import type { IModReference } from "./IMod";
 export type ProgressDelegate = (perc: number) => void;
 export interface IInstallationDetails {
     hasInstructionsOverrideFile?: boolean;
@@ -9,4 +9,4 @@ export interface IInstallationDetails {
     hasCSScripts?: boolean;
     isTrusted?: boolean;
 }
-export type InstallFunc = (files: string[], destinationPath: string, gameId: string, progressDelegate: ProgressDelegate, choices?: any, unattended?: boolean, archivePath?: string, options?: IInstallationDetails) => Promise<IInstallResult>;
+export type InstallFunc = (files: string[], destinationPath: string, gameId: string, progressDelegate: ProgressDelegate, choices?: any, unattended?: boolean, archivePath?: string, options?: IInstallationDetails) => PromiseBB<IInstallResult>;

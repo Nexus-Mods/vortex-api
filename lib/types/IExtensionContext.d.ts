@@ -1,43 +1,49 @@
-import { IAvailableExtension, IExtensionDownloadInfo } from "../extensions/extension_manager/types";
-import { ILoadOrderGameInfo } from "../extensions/file_based_loadorder/types/types";
-import { GameVersionProviderFunc, GameVersionProviderTest, IGameVersionProviderOptions } from "../extensions/gameversion_management/types/IGameVersionProvider";
-import { IHistoryEvent, IHistoryStack } from "../extensions/history_management/types";
-import { IGameLoadOrderEntry } from "../extensions/mod_load_order/types/types";
-import { IDeployedFile, IDeploymentMethod, IFileChange } from "../extensions/mod_management/types/IDeploymentMethod";
-import { IInstallResult, IInstruction, InstructionType } from "../extensions/mod_management/types/IInstallResult";
-import { InstallFunc, ProgressDelegate } from "../extensions/mod_management/types/InstallFunc";
-import { ISupportedResult, TestSupported } from "../extensions/mod_management/types/TestSupported";
-import { Archive } from "../util/archives";
-import { IRegisteredExtension } from "../util/ExtensionManager";
-import { i18n, TFunction } from "../util/i18n";
-import ReduxProp from "../util/ReduxProp";
-import { SanityCheck } from "../util/reduxSanity";
-import { ICollectionsGameSupportEntry } from "./collections/api";
-import { DialogActions, IDialogContent, IModReference, IModRepoId, IOverlayOptions, IPosition } from "./api";
-import { IActionOptions } from "./IActionDefinition";
-import { IBannerOptions } from "./IBannerOptions";
-import { DialogType, IDialogResult } from "./IDialog";
-import { IGame } from "./IGame";
-import { IGameStore } from "./IGameStore";
-import { ILookupOptions, IModLookupResult } from "./IModLookupResult";
-import { INotification, INotificationAction } from "./INotification";
-import { IDiscoveryResult, IMod, IState } from "./IState";
-import { ITableAttribute } from "./ITableAttribute";
-import { ITestResult } from "./ITestResult";
-import Promise from "bluebird";
-import { IHashResult, ILookupResult, IModInfo, IQuery, IReference, IServer } from "modmeta-db";
-import * as React from "react";
-import * as Redux from "redux";
-import { ComplexActionCreator } from "redux-act";
-import { ThunkDispatch } from "redux-thunk";
-import { INexusAPIExtension } from "../extensions/nexus_integration/types/INexusAPIExtension";
-import { IModsAPIExtension } from "../extensions/mod_management/types/IModsAPIExtension";
-import { IDownloadsAPIExtension } from "../extensions/download_management/types/IDownloadsAPIExtension";
-export { TestSupported, IInstallResult, IInstruction, IDeployedFile, IDeploymentMethod, IFileChange, ILookupResult, IModInfo, IQuery, InstructionType, IReference, InstallFunc, ISupportedResult, ProgressDelegate, };
+import type PromiseBB from "bluebird";
+import type { IHashResult, IServer } from "modmeta-db";
+import type { ILookupResult, IModInfo, IQuery, IReference } from "modmeta-db";
+import type * as React from "react";
+import type * as Redux from "redux";
+import type { ComplexActionCreator } from "redux-act";
+import type { ThunkDispatch } from "redux-thunk";
+import type { IDownloadsAPIExtension } from "../extensions/download_management/types/IDownloadsAPIExtension";
+import type { ILoadOrderGameInfo } from "../extensions/file_based_loadorder/types/types";
+import type { GameVersionProviderFunc, GameVersionProviderTest, IGameVersionProviderOptions } from "../extensions/gameversion_management/types/IGameVersionProvider";
+import type { IHistoryEvent, IHistoryStack } from "../extensions/history_management/types";
+import type { IGameLoadOrderEntry } from "../extensions/mod_load_order/types/types";
+import type { IDeployedFile, IDeploymentMethod, IFileChange } from "../extensions/mod_management/types/IDeploymentMethod";
+import type { IInstallResult, IInstruction, InstructionType } from "../extensions/mod_management/types/IInstallResult";
+import type { IModsAPIExtension } from "../extensions/mod_management/types/IModsAPIExtension";
+import type { InstallFunc, ProgressDelegate } from "../extensions/mod_management/types/InstallFunc";
+import type { ISupportedResult, TestSupported } from "../extensions/mod_management/types/TestSupported";
+import type { INexusAPIExtension } from "../extensions/nexus_integration/types/INexusAPIExtension";
+import type ReduxProp from "../ReduxProp";
+import type { SanityCheck } from "../store/reduxSanity";
+import type { Archive } from "../util/archives";
+import type { i18n, TFunction } from "../util/i18n";
+import type { DialogActions, IDialogContent, IModReference, IModRepoId, IOverlayOptions, IPosition } from "./api";
+import type { ICollectionsGameSupportEntry } from "./collections/api";
+import type { IAvailableExtension, IExtensionDownloadInfo } from "./extensions";
+import type { IRegisteredExtension } from "./extensions";
+import type { IActionOptions } from "./IActionDefinition";
+import type { IBannerOptions } from "./IBannerOptions";
+import type { DialogType, IDialogResult } from "./IDialog";
+import type { IGame } from "./IGame";
+import type { IGameStore } from "./IGameStore";
+import type { ILookupOptions, IModLookupResult } from "./IModLookupResult";
+import type { INotification, INotificationAction } from "./INotification";
+import type { IDiscoveryResult, IMod, IState } from "./IState";
+import type { ITableAttribute } from "./ITableAttribute";
+import type { ITestResult } from "./ITestResult";
+export type { TestSupported, IInstallResult, IInstruction, IDeployedFile, IDeploymentMethod, IFileChange, ILookupResult, IModInfo, IQuery, InstructionType, IReference, InstallFunc, ISupportedResult, ProgressDelegate, };
+import type { PersistorKey, IPersistor } from "@vortex/shared/state";
+export type { PersistorKey, IPersistor };
 export interface ThunkStore<S> extends Redux.Store<S> {
     dispatch: ThunkDispatch<S, null, Redux.Action>;
 }
-export type PropsCallback = () => any;
+export type PropsCallback = () => {
+    [key: string]: unknown;
+};
+export type PropsCallbackTyped<T> = () => T;
 /**
  * determines where persisted state is stored and when it gets loaded.
  * global: global Vortex state, loaded on startup
@@ -45,7 +51,7 @@ export type PropsCallback = () => any;
  * profile: state regarding the managed profile. Will be swapped out when the profile changes
  */
 export type PersistingType = "global" | "game" | "profile";
-export type CheckFunction = () => Promise<ITestResult>;
+export type CheckFunction = () => PromiseBB<ITestResult>;
 export type RegisterSettings = (title: string, element: React.ComponentClass<any> | React.StatelessComponent<any>, props?: PropsCallback, visible?: () => boolean, priority?: number) => void;
 export type RegisterAction = (group: string, position: number, iconOrComponent: string | React.ComponentType<any>, options: IActionOptions, titleOrProps?: string | PropsCallback, actionOrCondition?: (instanceIds?: string[]) => void | boolean, condition?: (instanceIds?: string[]) => boolean | string) => void;
 export type RegisterControlWrapper = (group: string, priority: number, wrapper: React.ComponentType<any>) => void;
@@ -77,11 +83,14 @@ export interface IMainPageOptions {
     hotkeyRaw?: string;
     visible?: () => boolean;
     group: "dashboard" | "global" | "per-game" | "support" | "hidden";
+    isClassicOnly?: boolean;
+    isModernOnly?: boolean;
     priority?: number;
-    props?: () => any;
+    props?: PropsCallback;
     badge?: ReduxProp<any>;
     activity?: ReduxProp<boolean>;
     onReset?: () => void;
+    mdi?: string;
 }
 export type RegisterMainPage = (icon: string, title: string, element: React.ComponentType<any>, options: IMainPageOptions) => void;
 export interface IDashletOptions {
@@ -106,7 +115,7 @@ export interface IRegisterProtocol {
     (protocol: string, def: boolean, callback: (url: string, install: boolean) => void): any;
 }
 export interface IRegisterRepositoryLookup {
-    (repositoryId: string, preferOverMD5: boolean, callback: (id: IModRepoId) => Promise<IModLookupResult[]>): any;
+    (repositoryId: string, preferOverMD5: boolean, callback: (id: IModRepoId) => PromiseBB<IModLookupResult[]>): any;
 }
 export interface IFileFilter {
     name: string;
@@ -139,26 +148,6 @@ export interface ILookupDetails {
     fileSize?: number;
     gameId?: string;
 }
-export type PersistorKey = string[];
-/**
- * a persistor is used to hook a data file into the store.
- * This way any data file can be made available through the store and
- * updated through actions, as long as it can be represented in json
- *
- * @export
- * @interface IPersistor
- */
-export interface IPersistor {
-    setResetCallback(cb: () => Promise<void>): void;
-    getItem(key: PersistorKey): Promise<string>;
-    setItem(key: PersistorKey, value: string): Promise<void>;
-    removeItem(key: PersistorKey): Promise<void>;
-    getAllKeys(): Promise<PersistorKey[]>;
-    getAllKVs?(prefix?: string): Promise<Array<{
-        key: PersistorKey;
-        value: string;
-    }>>;
-}
 /**
  * options that can be passed to archive handler on opening
  */
@@ -175,22 +164,22 @@ export interface IArchiveOptions {
  * @interface IArchiveHandler
  */
 export interface IArchiveHandler {
-    readDir(archPath: string): Promise<string[]>;
+    readDir(archPath: string): PromiseBB<string[]>;
     readFile?(filePath: string): NodeJS.ReadableStream;
-    extractFile?(filePath: string, outputPath: string): Promise<void>;
-    extractAll(outputPath: string): Promise<void>;
-    addFile?(filePath: string, sourcePath: string): Promise<void>;
-    create?(sourcePath: string): Promise<void>;
-    write?(): Promise<void>;
+    extractFile?(filePath: string, outputPath: string): PromiseBB<void>;
+    extractAll(outputPath: string): PromiseBB<void>;
+    addFile?(filePath: string, sourcePath: string): PromiseBB<void>;
+    create?(sourcePath: string): PromiseBB<void>;
+    write?(): PromiseBB<void>;
 }
-export type ArchiveHandlerCreator = (fileName: string, options: IArchiveOptions) => Promise<IArchiveHandler>;
+export type ArchiveHandlerCreator = (fileName: string, options: IArchiveOptions) => PromiseBB<IArchiveHandler>;
 /**
  * callback used to extract download information into mod info.
  * This also gets called a lot when displaying uninstalled mods in the mod list
  * (the modPath is going to be undefined) so when that flag is set, the extractor should
  * not be accessing the disk or network or do any complex coomputation
  */
-export type AttributeExtractor = (modInfo: any, modPath: string) => Promise<{
+export type AttributeExtractor = (modInfo: any, modPath: string) => PromiseBB<{
     [key: string]: any;
 }>;
 export interface IGameDetail {
@@ -230,7 +219,7 @@ export interface IErrorOptions {
  * field that doesn't exist in both IGameStored and IDiscoveryResult, please assume
  * it may be undefined.
  */
-export type GameInfoQuery = (game: any) => Promise<{
+export type GameInfoQuery = (game: any) => PromiseBB<{
     [key: string]: IGameDetail;
 }>;
 export interface IMergeFilter {
@@ -248,7 +237,7 @@ export type MergeTest = (game: IGame, gameDiscovery: IDiscoveryResult) => IMerge
 /**
  * callback to do the actual merging
  */
-export type MergeFunc = (filePath: string, mergePath: string) => Promise<void>;
+export type MergeFunc = (filePath: string, mergePath: string) => PromiseBB<void>;
 /**
  * options used when starting an external application through runExecutable
  */
@@ -295,8 +284,8 @@ export interface IApiFuncOptions {
     minArguments?: number;
 }
 export interface IExtensionApiExtension extends INexusAPIExtension, IModsAPIExtension, IDownloadsAPIExtension {
-    ensureLoggedIn?: () => Promise<void>;
-    awaitProfileSwitch?: () => Promise<string>;
+    ensureLoggedIn?: () => PromiseBB<void>;
+    awaitProfileSwitch?: () => PromiseBB<string>;
     showOverlay?: (id: string, title: string, content: string | React.ComponentType<any>, pos?: IPosition, options?: IOverlayOptions) => void;
     showHistory?: (stack: string) => void;
     addToHistory?: (stack: string, entry: IHistoryEvent) => void;
@@ -334,7 +323,7 @@ export interface IExtensionApi {
     /**
      * show a dialog
      */
-    showDialog?: (type: DialogType, title: string, content: IDialogContent, actions: DialogActions, id?: string) => Promise<IDialogResult>;
+    showDialog?: (type: DialogType, title: string, content: IDialogContent, actions: DialogActions, id?: string) => PromiseBB<IDialogResult>;
     /**
      * close a dialog
      */
@@ -357,25 +346,25 @@ export interface IExtensionApi {
      *
      * @memberOf IExtensionApi
      */
-    selectFile: (options: IOpenOptions) => Promise<string>;
+    selectFile: (options: IOpenOptions) => PromiseBB<string>;
     /**
      * show a system dialog to save a single file
      *
      * @memberOf IExtensionApi
      */
-    saveFile: (options: ISaveOptions) => Promise<string>;
+    saveFile: (options: ISaveOptions) => PromiseBB<string>;
     /**
      * show a system dialog to select an executable file
      *
      * @memberOf IExtensionApi
      */
-    selectExecutable: (options: IOpenOptions) => Promise<string>;
+    selectExecutable: (options: IOpenOptions) => PromiseBB<string>;
     /**
      * show a system dialog to open a single directory
      *
      * @memberOf IExtensionApi
      */
-    selectDir: (options: IOpenOptions) => Promise<string>;
+    selectDir: (options: IOpenOptions) => PromiseBB<string>;
     /**
      * the redux store containing all application state & data
      *
@@ -471,7 +460,7 @@ export interface IExtensionApi {
      *
      * @memberOf IExtensionApi
      */
-    lookupModReference: (ref: IModReference, options?: ILookupOptions) => Promise<IModLookupResult[]>;
+    lookupModReference: (ref: IModReference, options?: ILookupOptions) => PromiseBB<IModLookupResult[]>;
     /**
      * add a meta server
      * Please note that setting a server with the same id again will replace the existing one
@@ -484,7 +473,7 @@ export interface IExtensionApi {
      * @param progressFunc optional function to report progress
      * @returns a promise resolving to the md5 hash result
      */
-    genMd5Hash: (data: string | Buffer, progressFunc?: (progress: number, total: number) => void) => Promise<IHashResult>;
+    genMd5Hash: (data: string | Buffer, progressFunc?: (progress: number, total: number) => void) => PromiseBB<IHashResult>;
     /**
      * find meta information about a mod
      * this will calculate a hash and the file size of the specified file
@@ -495,17 +484,17 @@ export interface IExtensionApi {
      *
      * @memberOf IExtensionApi
      */
-    lookupModMeta: (details: ILookupDetails, ignoreCache?: boolean) => Promise<ILookupResult[]>;
+    lookupModMeta: (details: ILookupDetails, ignoreCache?: boolean) => PromiseBB<ILookupResult[]>;
     /**
      * save meta information about a mod
      *
      * @memberOf IExtensionApi
      */
-    saveModMeta: (modInfo: IModInfo) => Promise<void>;
+    saveModMeta: (modInfo: IModInfo) => PromiseBB<void>;
     /**
      * opens an archive
      */
-    openArchive: (archivePath: string, options?: IArchiveOptions, extension?: string) => Promise<Archive>;
+    openArchive: (archivePath: string, options?: IArchiveOptions, extension?: string) => PromiseBB<Archive>;
     /**
      * clear the stylesheet cache to ensure it gets rebuilt even if the list of files hasn't changed
      */
@@ -543,13 +532,13 @@ export interface IExtensionApi {
      * The returned promise is resolved when the started process has run to completion.
      * IRunOptions.onSpawned can be used to react to when the process has been started.
      */
-    runExecutable: (executable: string, args: string[], options: IRunOptions) => Promise<void>;
+    runExecutable: (executable: string, args: string[], options: IRunOptions) => PromiseBB<void>;
     /**
      * emit an event and allow every receiver to return a Promise. This call will only return
      * after all these Promises are resolved.
      * If the event handlers return a value, this returns an array of results
      */
-    emitAndAwait: <T = any>(eventName: string, ...args: any[]) => Promise<T>;
+    emitAndAwait: <T = any>(eventName: string, ...args: any[]) => PromiseBB<T>;
     /**
      * handle an event emitted with emitAndAwait. The listener can return a promise and the emitter
      * will only return after all promises from handlers are returned.
@@ -565,7 +554,7 @@ export interface IExtensionApi {
      * the result of the callback if any (the result is the first argument because the number
      * of arguments may be variable)
      */
-    withPrePost: <T>(eventName: string, callback: (...args: any[]) => Promise<T>) => (...args: any[]) => Promise<T>;
+    withPrePost: <T>(eventName: string, callback: (...args: any[]) => PromiseBB<T>) => (...args: any[]) => PromiseBB<T>;
     /**
      * returns true if the running version of Vortex is considered outdated. This is mostly used
      * to determine if feedback should be sent to Nexus Mods.
@@ -589,7 +578,7 @@ export interface IExtensionApi {
      * displayed but may require the UI to be processed.
      * Specifically events can only be sent once this event has been triggered
      */
-    awaitUI: () => Promise<void>;
+    awaitUI: () => PromiseBB<void>;
     /**
      * wrapper for api.store.getState() with the benefit that it automatically assigns a type
      */
@@ -945,11 +934,11 @@ export interface IExtensionContext {
      *                                          game
      * @param {(game: IGame) => string} getPath given the specified game, return the absolute path to
      *                                          where games of this type should be installed.
-     * @param {(instructions) => Promise<boolean>} test given the list of install instructions,
+     * @param {(instructions) => PromiseBB<boolean>} test given the list of install instructions,
      *                                                  determine if the installed mod is of this type
      * @param {IModTypeOptions} options options controlling the mod type
      */
-    registerModType: (id: string, priority: number, isSupported: (gameId: string) => boolean, getPath: (game: IGame) => string, test: (installInstructions: IInstruction[]) => Promise<boolean>, options?: IModTypeOptions) => void;
+    registerModType: (id: string, priority: number, isSupported: (gameId: string) => boolean, getPath: (game: IGame) => string, test: (installInstructions: IInstruction[]) => PromiseBB<boolean>, options?: IModTypeOptions) => void;
     /**
      * register an action sanity check
      * a sanity check like this is called before any redux-action of the specified type and gets
@@ -1023,7 +1012,7 @@ export interface IExtensionContext {
      * @param {string} id identifier for the hook. This will only be used for logging
      * @param {function} hook the hook to be called
      */
-    registerStartHook: (priority: number, id: string, hook: (call: IRunParameters) => Promise<IRunParameters>) => void;
+    registerStartHook: (priority: number, id: string, hook: (call: IRunParameters) => PromiseBB<IRunParameters>) => void;
     /**
      * register a migration step. This migration is always called when the loaded extension has
      * a different version from the one that was used last.
@@ -1047,7 +1036,7 @@ export interface IExtensionContext {
      *                           As soon as the promise returned from this is resolved, the stored
      *                           version number is updated.
      */
-    registerMigration: (migrate: (oldVersion: string) => Promise<void>) => void;
+    registerMigration: (migrate: (oldVersion: string) => PromiseBB<void>) => void;
     /**
      * register a file to be stored with the profile. It will always be synchronised with the current
      * profile, so when users switch to a different profile, this file will be copied to the
@@ -1093,7 +1082,7 @@ export interface IExtensionContext {
      *   choice is made and include the selected entry, if it doesn't it can resolve
      *   as soon as the handler knows whether it supports the file.
      */
-    registerPreview?: (priority: number, handler: (files: IPreviewFile[], allowPick: boolean) => Promise<IPreviewFile>) => void;
+    registerPreview?: (priority: number, handler: (files: IPreviewFile[], allowPick: boolean) => PromiseBB<IPreviewFile>) => void;
     /**
      * register a callback that will introduce additional variables that can be used as part of
      * tool command lines. The callback you provide here gets called every time a tool gets started
@@ -1153,13 +1142,23 @@ export interface IExtensionContext {
      *
      * @memberOf IExtensionContext
      */
-    once: (callback: () => void | Promise<void>) => void;
+    once: (callback: () => void | PromiseBB<void>) => void;
     /**
      * similar to once but this callback will be run (only) on the electron "main" process.
      * Use this only if you absolutely must (if you don't know what electron main process means, it's
      * almost certain you don't want this).
      * While almost all program logic of Vortex runs in the renderer process, some libraries will not
      * work correctly on that process so you have to run on the main process.
+     *
+     * @deprecated This is a very niche use case and modern Electron practices are explicitly
+     * discouraging running code on the main process. This will be removed in future versions.
+     *
+     * If you need unrestricted NodeJS environment for your extension - use a separate NodeJS process
+     * and communicate with it via IPC.
+     *
+     * If you need to run code before the renderer process is ready,
+     * inform the Vortex team about your use case and we will investigate your requirements or
+     * suggest alternatives.
      */
     onceMain: (callback: () => void) => void;
     /**

@@ -1,52 +1,22 @@
-import { IAttributeState } from "./IAttributeState";
-import { IDialog } from "./IDialog";
-import { INotification } from "./INotification";
-import { ICollectionInstallState } from "../extensions/collections_integration/types";
-import { ICategoryDictionary } from "../extensions/category_management/types/ICategoryDictionary";
-import { IDownload } from "../extensions/download_management/types/IDownload";
-import { IAvailableExtension, IExtension } from "../extensions/extension_manager/types";
-import { IDiscoveryResult } from "../extensions/gamemode_management/types/IDiscoveryResult";
-import { IGameStored } from "../extensions/gamemode_management/types/IGameStored";
-import { IHistoryPersistent, IHistoryState } from "../extensions/history_management/reducers";
-import { IMod } from "../extensions/mod_management/types/IMod";
-import { IProfile } from "../extensions/profile_management/types/IProfile";
-import { IParameters } from "../util/commandLine";
-import VortexInstallType from "./VortexInstallType";
-export { IDownload, IDiscoveryResult, IGameStored, IMod, IProfile };
-/**
- * interface to represent a position on the screen
- *
- * @export
- * @interface IPosition
- */
-export interface IPosition {
-    x: number;
-    y: number;
-}
-/**
- * interface to represent pixel-dimensions on the screen
- *
- * @export
- * @interface IDimensions
- */
-export interface IDimensions {
-    height: number;
-    width: number;
-}
-/**
- * interface for window state
- *
- * @export
- * @interface IWindow
- */
-export interface IWindow {
-    maximized: boolean;
-    position?: IPosition;
-    size: IDimensions;
-    tabsMinimized: boolean;
-    customTitlebar: boolean;
-    minimizeToTray: boolean;
-}
+import type { ICategoryDictionary } from "../extensions/category_management/types/ICategoryDictionary";
+import type { ICollectionInstallState } from "../extensions/collections_integration/types";
+import type { IDownload } from "../extensions/download_management/types/IDownload";
+import type { IDiscoveryResult } from "../extensions/gamemode_management/types/IDiscoveryResult";
+import type { IGameStored } from "../extensions/gamemode_management/types/IGameStored";
+import type { IHistoryPersistent, IHistoryState } from "../extensions/history_management/reducers";
+import type { IMod } from "../extensions/mod_management/types/IMod";
+import type { IProfile } from "../extensions/profile_management/types/IProfile";
+import type { IParameters } from "@vortex/shared/cli";
+import type { IAvailableExtension, IExtension } from "./extensions";
+import type { IAttributeState } from "./IAttributeState";
+import type { IDialog } from "./IDialog";
+import type { INotification } from "./INotification";
+import type { VortexInstallType } from "./VortexInstallType";
+import type { IHealthCheckSessionState } from "../extensions/health_check/reducers/session";
+import type { IHealthCheckPersistentState } from "../extensions/health_check/reducers/persistent";
+export type { IDownload, IDiscoveryResult, IGameStored, IMod, IProfile };
+import type { IDimensions, IPosition, IWindow } from "@vortex/shared/state";
+export type { IDimensions, IPosition, IWindow };
 /**
  * state regarding all manner of user interaction
  *
@@ -84,6 +54,16 @@ export interface IUIBlocker {
     description: string;
     mayCancel: boolean;
 }
+export interface IProgressWithProfile {
+    profile?: IProgressProfile;
+}
+export interface IProgressProfile {
+    deploying?: IProgressProfileDeploying;
+}
+export interface IProgressProfileDeploying {
+    percent: number;
+    text: string;
+}
 /**
  * "ephemeral" session state.
  * This state is generated at startup and forgotten at application exit
@@ -106,7 +86,7 @@ export interface ISession {
         [group: string]: {
             [id: string]: IProgress;
         };
-    };
+    } & IProgressWithProfile;
     settingsPage: string;
     extLoadFailures: {
         [extId: string]: IExtensionLoadFailure[];
@@ -195,6 +175,15 @@ export interface ISettingsInterface {
     };
     usage: {
         [usageId: string]: boolean;
+    };
+    tools?: {
+        addToolsToTitleBar: boolean;
+        order?: {
+            [gameId: string]: string[];
+        };
+    };
+    primaryTool?: {
+        [gameId: string]: string;
     };
 }
 export interface ISettingsAutomation {
@@ -360,6 +349,7 @@ export interface IState {
         browser: IBrowserState;
         history: IHistoryState;
         overlays: IOverlaysState;
+        healthCheck: IHealthCheckSessionState;
         extensions: {
             available: IAvailableExtension[];
             optional: {
@@ -389,6 +379,7 @@ export interface IState {
         };
         transactions: IStateTransactions;
         history: IHistoryPersistent;
+        healthCheck: IHealthCheckPersistentState;
     };
 }
 export interface IDiscoveryPhase {

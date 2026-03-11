@@ -1,4 +1,4 @@
-import { ICategory, ICategoryDictionary } from "../types/ICategoryDictionary";
+import type { ICategory, ICategoryDictionary } from "../types/ICategoryDictionary";
 import * as reduxAct from "redux-act";
 export declare const loadCategories: reduxAct.ComplexActionCreator2<string, ICategoryDictionary, {
     gameId: string;

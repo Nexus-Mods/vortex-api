@@ -1,7 +1,8 @@
 import Bluebird from "bluebird";
-import { IGameStore } from "../types/IGameStore";
-import { IGameStoreEntry } from "../types/IGameStoreEntry";
-import { IExtensionApi } from "../types/IExtensionContext";
+import type { IExtensionApi } from "../types/IExtensionContext";
+import type { IGameStore } from "../types/IGameStore";
+import type { IGameStoreEntry } from "../types/IGameStoreEntry";
+export declare const defaultPriority = 100;
 export interface IStoreQuery {
     id?: string;
     name?: string;
@@ -11,8 +12,8 @@ declare class GameStoreHelper {
     private mApi;
     private mStores;
     private mStoresDict;
-    getGameStore(storeId: string): IGameStore;
-    isGameInstalled(id: string, storeId?: string): Bluebird<string>;
+    getGameStore(storeId: string): IGameStore | undefined;
+    isGameInstalled(id: string, storeId?: string): Bluebird<string | undefined>;
     isGameStoreInstalled(storeId: string): Bluebird<boolean>;
     registryLookup(lookup: string): Bluebird<IGameStoreEntry>;
     find: (query: IStoreQuery) => Bluebird<IGameStoreEntry[]>;

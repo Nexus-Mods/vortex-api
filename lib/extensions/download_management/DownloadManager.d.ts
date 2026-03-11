@@ -1,10 +1,10 @@
-import { IChunk } from "./types/IChunk";
-import { IDownloadOptions } from "./types/IDownload";
-import { IDownloadResult } from "./types/IDownloadResult";
-import { ProgressCallback } from "./types/ProgressCallback";
-import { IProtocolHandlers } from "./types/ProtocolHandlers";
+import type { IChunk } from "./types/IChunk";
+import type { IDownloadOptions } from "./types/IDownload";
+import type { IDownloadResult } from "./types/IDownloadResult";
+import type { ProgressCallback } from "./types/ProgressCallback";
+import type { IProtocolHandlers } from "./types/ProtocolHandlers";
 import Bluebird from "bluebird";
-import { IExtensionApi } from "../../types/api";
+import type { IExtensionApi } from "../../types/api";
 export type RedownloadMode = "always" | "never" | "ask" | "replace";
 export declare class AlreadyDownloaded extends Error {
     private mFileName;

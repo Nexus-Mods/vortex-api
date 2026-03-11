@@ -1,23 +1,26 @@
-import { IState } from "../../types/IState";
-import { IDiscoveryResult } from "./types/IDiscoveryResult";
-import { IGameStored } from "./types/IGameStored";
-export declare function knownGames(state: any): IGameStored[];
-export declare const currentGame: ((state: any) => IGameStored) & import("reselect").OutputSelectorFields<(args_0: IGameStored[], args_1: string) => IGameStored, {
+import type { IState } from "../../types/IState";
+import type { IDiscoveryResult } from "./types/IDiscoveryResult";
+import type { IGameStored } from "./types/IGameStored";
+export declare function knownGames(state: IState): IGameStored[];
+export declare function discovered(state: IState): {
+    [id: string]: IDiscoveryResult;
+};
+export declare const currentGame: ((state: IState) => IGameStored) & import("reselect").OutputSelectorFields<(args_0: IGameStored[], args_1: string) => IGameStored, {
     clearCache: () => void;
 }> & {
     clearCache: () => void;
 };
-export declare const gameById: import("re-reselect").ParametricSelector<any, string, IGameStored> & {
+export declare const gameById: import("re-reselect").ParametricSelector<IState, string, IGameStored> & {
     resultFunc: (res1: IGameStored[], res2: string) => IGameStored;
-    dependencies: [import("re-reselect").ParametricSelector<any, string, IGameStored[]>, import("re-reselect").ParametricSelector<any, string, string>];
+    dependencies: [import("re-reselect").ParametricSelector<IState, string, IGameStored[]>, import("re-reselect").ParametricSelector<IState, string, string>];
     recomputations: () => number;
     resetRecomputations: () => number;
 } & {
-    getMatchingSelector: (state: any, props: string, ...args: any[]) => import("re-reselect").OutputParametricSelector<any, string, IGameStored, (res1: IGameStored[], res2: string) => IGameStored, [import("re-reselect").ParametricSelector<any, string, IGameStored[]>, import("re-reselect").ParametricSelector<any, string, string>]>;
-    removeMatchingSelector: (state: any, props: string, ...args: any[]) => void;
+    getMatchingSelector: (state: IState, props: string, ...args: any[]) => import("re-reselect").OutputParametricSelector<IState, string, IGameStored, (res1: IGameStored[], res2: string) => IGameStored, [import("re-reselect").ParametricSelector<IState, string, IGameStored[]>, import("re-reselect").ParametricSelector<IState, string, string>]>;
+    removeMatchingSelector: (state: IState, props: string, ...args: any[]) => void;
     clearCache: () => void;
     cache: import("re-reselect").ICacheObject;
-    keySelector: import("re-reselect").ParametricKeySelector<any, string>;
+    keySelector: import("re-reselect").ParametricKeySelector<IState, string>;
 };
 /**
  * return the discovery information about a game

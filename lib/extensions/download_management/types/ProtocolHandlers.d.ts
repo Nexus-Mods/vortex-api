@@ -1,4 +1,4 @@
-import Promise from "bluebird";
+import type PromiseBB from "bluebird";
 export interface IResolvedURL {
     urls: string[];
     updatedUrl?: string;
@@ -10,5 +10,5 @@ export interface IResolvedURLs {
     meta: any;
 }
 export interface IProtocolHandlers {
-    [schema: string]: (inputUrl: string, name: string, friendlyName: string) => Promise<IResolvedURL>;
+    [schema: string]: (inputUrl: string, name: string, friendlyName: string) => PromiseBB<IResolvedURL>;
 }

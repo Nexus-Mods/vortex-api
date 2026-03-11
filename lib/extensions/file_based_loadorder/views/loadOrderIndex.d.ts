@@ -1,6 +1,5 @@
-import React from "react";
-import { ILoadOrderEntry } from "../../../types/api";
-import { IExtensionApi, LoadOrder } from "../../../types/api";
+import type { ILoadOrderEntry } from "../../../types/api";
+import type { IExtensionApi, LoadOrder } from "../../../types/api";
 interface IProps {
     className?: string;
     api: IExtensionApi;
@@ -11,5 +10,5 @@ interface IProps {
     isLocked: (item: ILoadOrderEntry) => boolean;
     onApplyIndex: (idx: number) => void;
 }
-export declare function LoadOrderIndexInput(props: IProps): React.JSX.Element;
+export declare function LoadOrderIndexInput(props: IProps): JSX.Element;
 export {};

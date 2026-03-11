@@ -1,6 +1,6 @@
-import { IChunk } from "./IChunk";
-import { IDownloadOptions } from "./IDownload";
-import Promise from "bluebird";
+import type { IChunk } from "./IChunk";
+import type { IDownloadOptions } from "./IDownload";
+import type PromiseBB from "bluebird";
 /**
  * Represents a download job with precise semantics for chunk positioning and progress tracking.
  *
@@ -46,7 +46,7 @@ export interface IDownloadJob extends IChunk {
     /** Number of times this chunk has been requeued after finishing with remaining data */
     requeues?: number;
     extraCookies: string[];
-    dataCB?: (offset: number, data: any) => Promise<boolean>;
+    dataCB?: (offset: number, data: any) => PromiseBB<boolean>;
     completionCB?: () => void;
     errorCB?: (err: any) => void;
     responseCB?: (size: number, fileName: string, chunkable: boolean) => void;

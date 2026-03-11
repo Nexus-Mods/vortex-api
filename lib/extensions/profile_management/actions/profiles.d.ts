@@ -1,7 +1,7 @@
 import Bluebird from "bluebird";
 import * as reduxAct from "redux-act";
-import { IExtensionApi } from "../../../types/IExtensionContext";
-import { IProfile } from "../types/IProfile";
+import type { IExtensionApi } from "../../../types/IExtensionContext";
+import type { IProfile } from "../types/IProfile";
 /**
  * add or edit a profile
  */

@@ -1,10 +1,10 @@
-import { IExtensionApi } from "../../types/IExtensionContext";
-import { IGame } from "../../types/IGame";
-import { IGameStore } from "../../types/IGameStore";
-import { IState } from "../../types/IState";
-import { IExtensionDownloadInfo } from "../extension_manager/types";
-import Promise from "bluebird";
-import * as Redux from "redux";
+import type { IExtensionApi } from "../../types/IExtensionContext";
+import type { IGame } from "../../types/IGame";
+import type { IGameStore } from "../../types/IGameStore";
+import type { IState } from "../../types/IState";
+import type { IExtensionDownloadInfo } from "../../types/extensions";
+import PromiseBB from "bluebird";
+import type * as Redux from "redux";
 export interface IGameStub {
     ext: IExtensionDownloadInfo;
     game: IGame;
@@ -38,16 +38,16 @@ declare class GameModeManager {
      *
      * @memberOf GameModeManager
      */
-    setGameMode(oldMode: string, newMode: string, profileId: string): Promise<void>;
+    setGameMode(oldMode: string, newMode: string, profileId: string): PromiseBB<void>;
     /**
      * prepare change to a different game mode
      *
      * @param {string} gameMode
-     * @returns {Promise<void>}
+     * @returns {PromiseBB<void>}
      *
      * @memberOf GameModeManager
      */
-    setupGameMode(gameMode: string): Promise<void>;
+    setupGameMode(gameMode: string): PromiseBB<void>;
     get games(): IGame[];
     get stubs(): IGameStub[];
     get gameStores(): IGameStore[];
@@ -57,8 +57,8 @@ declare class GameModeManager {
      *
      * @memberOf GameModeManager
      */
-    startQuickDiscovery(games?: IGame[]): Promise<string[]>;
-    startToolDiscovery(gameId: string): Promise<void>;
+    startQuickDiscovery(games?: IGame[]): PromiseBB<string[]>;
+    startToolDiscovery(gameId: string): PromiseBB<void>;
     isSearching(): boolean;
     /**
      * start game discovery using known files

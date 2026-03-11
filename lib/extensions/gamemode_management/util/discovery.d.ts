@@ -1,9 +1,9 @@
-import { IDiscoveredTool } from "../../../types/IDiscoveredTool";
-import { IExtensionApi } from "../../../types/IExtensionContext";
-import { IGame } from "../../../types/IGame";
-import { ITool } from "../../../types/ITool";
-import { Normalize } from "../../../util/getNormalizeFunc";
-import { IDiscoveryResult } from "../types/IDiscoveryResult";
+import type { IDiscoveredTool } from "../../../types/IDiscoveredTool";
+import type { IExtensionApi } from "../../../types/IExtensionContext";
+import type { IGame } from "../../../types/IGame";
+import type { ITool } from "../../../types/ITool";
+import type { Normalize } from "../../../util/getNormalizeFunc";
+import type { IDiscoveryResult } from "../types/IDiscoveryResult";
 import Bluebird from "bluebird";
 export type DiscoveredCB = (gameId: string, result: IDiscoveryResult) => void;
 export type DiscoveredToolCB = (gameId: string, result: IDiscoveredTool) => void;

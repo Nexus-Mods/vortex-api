@@ -1,9 +1,9 @@
-import { IModType } from "../extensions/gamemode_management/types/IModType";
-import { IDiscoveryResult, IMod } from "./IState";
-import { ITool } from "./ITool";
-import Promise from "bluebird";
-import { IStoreQuery } from "../util/GameStoreHelper";
-export { IModType };
+import type { IModType } from "../extensions/gamemode_management/types/IModType";
+import type { IDiscoveryResult, IMod } from "./IState";
+import type { ITool } from "./ITool";
+import type PromiseBB from "bluebird";
+import type { IStoreQuery } from "../util/GameStoreHelper";
+export type { IModType };
 export type DirectoryCleaningMode = "tag" | "all";
 /**
  * interface for game extensions
@@ -64,7 +64,7 @@ export interface IGame extends ITool {
      *
      * Do not implement this in your game extension, the function is added by vortex itself
      */
-    getInstalledVersion?: (discovery: IDiscoveryResult) => Promise<string>;
+    getInstalledVersion?: (discovery: IDiscoveryResult) => PromiseBB<string>;
     /**
      * Determine whether the game needs to be executed via a launcher, like Steam or EpicGamesLauncher
      *
@@ -89,7 +89,7 @@ export interface IGame extends ITool {
      * @param store id of the store the game was detected through
      *
      */
-    requiresLauncher?: (gamePath: string, store?: string) => Promise<{
+    requiresLauncher?: (gamePath: string, store?: string) => PromiseBB<{
         launcher: string;
         addInfo?: any;
     }>;
@@ -147,7 +147,7 @@ export interface IGame extends ITool {
      * (like creating a directory, changing a registry key, ...) do it here. It will be called
      * every time before the game mode is activated.
      */
-    setup?: (discovery: IDiscoveryResult) => Promise<void>;
+    setup?: (discovery: IDiscoveryResult) => PromiseBB<void>;
     /**
      * additional details about the game that may be used by extensions. Some extensions may work
      * better/offer more features if certain details are provided but they are all optional.
@@ -216,5 +216,5 @@ export interface IGame extends ITool {
      * Once the promise resolves the mods as enabled at that time will be deployed, so for example
      * if the user enabled a mod while this promise is pending, that mod will be deployed.
      */
-    deploymentGate?: () => Promise<void>;
+    deploymentGate?: () => PromiseBB<void>;
 }

@@ -1,5 +1,5 @@
-import { IReference, IRule } from "modmeta-db";
-export { IReference, IRule };
+import type { IReference, IRule } from "modmeta-db";
+export type { IReference, IRule };
 export type ModState = "downloading" | "downloaded" | "installing" | "installed";
 /**
  * Attributes specific to Nexus Mods Collections (when IMod.type === "collection")
