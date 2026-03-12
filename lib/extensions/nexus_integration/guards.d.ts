@@ -5,6 +5,7 @@ type IStateConfidential = IState["confidential"];
 export interface IStatePersistentWithNexus extends IStatePersistent {
     nexus: {
         userInfo?: IValidateKeyDataV2;
+        newestVersion?: string;
     };
 }
 export interface IStateConfidentialWithNexus extends IStateConfidential {

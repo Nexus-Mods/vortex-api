@@ -1,9 +1,9 @@
 import type PromiseBB from "bluebird";
 import type { BrowserWindow } from "electron";
-import type { IErrorOptions, IExtensionApi } from "../types/api";
+import type { IErrorOptions, IExtensionApi, IState } from "../types/api";
 import type { IError } from "../types/IError";
 type IErrorContext = Record<string, string>;
-export declare function createErrorReport(type: string, error: IError, context: IErrorContext, state: any, sourceProcess?: string): void;
+export declare function createErrorReport(type: string, error: IError, context: IErrorContext, state: IState | undefined, sourceProcess?: string): void;
 export declare function setOutdated(api: IExtensionApi): void;
 export declare function isOutdated(): boolean;
 export declare function didIgnoreError(): boolean;
@@ -20,7 +20,7 @@ export declare function getVisibleWindow(win?: BrowserWindow | null): BrowserWin
  * @export
  * @param {ITermination} error
  */
-export declare function terminate(error: IError, state: any, allowReport?: boolean, source?: string): void;
+export declare function terminate(error: IError, state: IState | undefined, allowReport?: boolean, source?: string): void;
 /**
  * render error message for internal processing (issue tracker and such).
  * It's important this doesn't translate the error message or lose information
