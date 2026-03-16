@@ -18,6 +18,18 @@ export declare const activeProfileId: (state: IState) => string | undefined;
 export declare const nextProfileId: (state: IState) => string | undefined;
 export declare const activeProfile: (state: IState) => IProfile | undefined;
 export declare function profileById(state: IState, profileId: string): IProfile;
+export declare const enabledModCountForProfile: import("re-reselect").ParametricSelector<IState, string, number> & {
+    resultFunc: (res1: import("../../types/IState").IModTable, res2: IProfile) => number;
+    dependencies: [import("re-reselect").ParametricSelector<IState, string, import("../../types/IState").IModTable>, import("re-reselect").ParametricSelector<IState, string, IProfile>];
+    recomputations: () => number;
+    resetRecomputations: () => number;
+} & {
+    getMatchingSelector: (state: IState, props: string, ...args: any[]) => import("re-reselect").OutputParametricSelector<IState, string, number, (res1: import("../../types/IState").IModTable, res2: IProfile) => number, [import("re-reselect").ParametricSelector<IState, string, import("../../types/IState").IModTable>, import("re-reselect").ParametricSelector<IState, string, IProfile>]>;
+    removeMatchingSelector: (state: IState, props: string, ...args: any[]) => void;
+    clearCache: () => void;
+    cache: import("re-reselect").ICacheObject;
+    keySelector: import("re-reselect").ParametricKeySelector<IState, string>;
+};
 export declare const lastActiveProfileForGame: import("re-reselect").ParametricSelector<IState, string, string> & {
     resultFunc: (res1: {
         [gameId: string]: string;
