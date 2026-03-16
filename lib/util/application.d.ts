@@ -12,5 +12,6 @@ export interface IApplication {
 }
 export declare function setApplication(appIn: IApplication): void;
 export declare function getApplication(): IApplication;
+/** @deprecated Use ApplicationData directly */
 declare const _default: IApplication;
 export default _default;

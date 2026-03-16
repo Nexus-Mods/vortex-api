@@ -1,9 +1,9 @@
-import type { IDiscoveredTool } from "../types/IDiscoveredTool";
+import PromiseBB from "bluebird";
 import type { IDiscoveryResult } from "../extensions/gamemode_management/types/IDiscoveryResult";
 import type { IGameStored } from "../extensions/gamemode_management/types/IGameStored";
 import type { IToolStored } from "../extensions/gamemode_management/types/IToolStored";
+import type { IDiscoveredTool } from "../types/IDiscoveredTool";
 import type { IExtensionApi } from "../types/IExtensionContext";
-import PromiseBB from "bluebird";
 export interface IStarterInfo {
     id: string;
     gameId: string;

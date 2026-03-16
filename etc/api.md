@@ -1468,7 +1468,7 @@ function getVisibleWindow(win?: BrowserWindow | null): BrowserWindow | null;
 
 // Warning: (ae-forgotten-export) The symbol "AppPath" needs to be exported by the entry point api.d.ts
 //
-// @public
+// @public (undocumented)
 function getVortexPath(id: AppPath): string;
 
 // @public
