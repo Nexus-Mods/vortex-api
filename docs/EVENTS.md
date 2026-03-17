@@ -7,11 +7,11 @@ This document lists all events that extensions can listen to or emit through the
 Vortex uses two event mechanisms:
 
 ```ts
-// Synchronous events — fire-and-forget
+// Synchronous events - fire-and-forget
 context.api.events.on('event-name', (args) => { ... });
 context.api.events.emit('event-name', args);
 
-// Async events — handlers return promises, caller can await all handlers
+// Async events - handlers return promises, caller can await all handlers
 context.api.onAsync('event-name', async (args) => { ... });
 await context.api.emitAndAwait('event-name', args);
 ```
@@ -27,7 +27,7 @@ Register event handlers inside `context.once()` to ensure all extensions are loa
 | `gamemode-activated` | `(gameId: string)` | User switched to a different game mode |
 | `activate-game` | `(gameId: string)` | Request to activate a game |
 | `profile-did-change` | `(profileId: string)` | Profile has been switched |
-| `profile-will-change` | — | About to switch profiles |
+| `profile-will-change` | - | About to switch profiles |
 
 ## Game discovery
 
@@ -35,9 +35,9 @@ Register event handlers inside `context.once()` to ensure all extensions are loa
 |-------|------|-------------|
 | `discover-game` | `(gameId: string)` | Async. Discover a specific game installation |
 | `discover-tools` | `(gameId: string)` | Async. Discover tools for a game |
-| `start-discovery` | — | Start full game discovery scan |
+| `start-discovery` | - | Start full game discovery scan |
 | `start-quick-discovery` | `(cb?: (gameIds: string[]) => void)` | Quick discovery of known games |
-| `cancel-discovery` | — | Cancel ongoing discovery |
+| `cancel-discovery` | - | Cancel ongoing discovery |
 | `refresh-game-info` | `(gameId: string, cb: (err: Error) => void)` | Refresh cached info for a game |
 | `manually-set-game-location` | `(gameId: string, cb: (err: Error) => void)` | Manually set game install path |
 
@@ -64,8 +64,8 @@ Register event handlers inside `context.once()` to ensure all extensions are loa
 | `start-install` | `(archivePath: string, cb?: (err, id: string) => void)` | Start install from archive path |
 | `start-install-download` | `(downloadId: string, ...)` | Start install from a download |
 | `create-mod` | `(gameId: string, mod: IMod, cb: (err: Error) => void)` | Create a new mod entry |
-| `mod-content-changed` | — | Mod files on disk changed |
-| `simulate-installer` | — | Simulate mod installation |
+| `mod-content-changed` | - | Mod files on disk changed |
+| `simulate-installer` | - | Simulate mod installation |
 
 ## Mod removal
 
@@ -83,9 +83,9 @@ Register event handlers inside `context.once()` to ensure all extensions are loa
 | Event | Args | Description |
 |-------|------|-------------|
 | `mod-enabled` | `(profileId: string, modId: string)` | A mod was enabled in a profile |
-| `mods-enabled` | — | One or more mods were enabled |
-| `did-enable-mods` | — | Async. Mods were enabled (load order trigger) |
-| `recalculate-modtype-conflicts` | — | Recalculate mod type conflicts |
+| `mods-enabled` | - | One or more mods were enabled |
+| `did-enable-mods` | - | Async. Mods were enabled (load order trigger) |
+| `recalculate-modtype-conflicts` | - | Recalculate mod type conflicts |
 
 ## Downloads
 
@@ -99,8 +99,8 @@ Register event handlers inside `context.once()` to ensure all extensions are loa
 | `did-finish-download` | `(downloadId: string, state: string)` | Download completed |
 | `import-downloads` | `([filePath], cb: (dlIds: string[]) => void)` | Import downloads from files |
 | `did-import-downloads` | `(dlIds: string[], cb?: (err?: Error) => void)` | Downloads were imported |
-| `did-move-downloads` | — | Downloads folder was moved |
-| `will-move-downloads` | — | Downloads folder is about to move |
+| `did-move-downloads` | - | Downloads folder was moved |
+| `will-move-downloads` | - | Downloads folder is about to move |
 | `refresh-downloads` | `(gameId: string, cb: (err) => void)` | Refresh download list |
 | `enable-download-watch` | `(enabled: boolean)` | Enable/disable download folder watching |
 | `set-download-games` | `(dlId: string, gameIds: string[], fromMetadata?: boolean)` | Async. Assign game(s) to a download |
@@ -115,10 +115,10 @@ Register event handlers inside `context.once()` to ensure all extensions are loa
 |-------|------|-------------|
 | `install-dependencies` | `(profileId: string, gameId: string, modIds: string[], silent?: boolean)` | Install mod dependencies |
 | `install-recommendations` | `(profileId: string, gameId: string, modIds: string[])` | Install recommended mods |
-| `did-install-dependencies` | — | Dependencies were installed |
-| `install-from-dependencies` | — | Async. Install from dependency list |
+| `did-install-dependencies` | - | Dependencies were installed |
+| `install-from-dependencies` | - | Async. Install from dependency list |
 | `cancel-dependency-install` | `(modId: string)` | Async. Cancel dependency install |
-| `reset-dependency-installs` | — | Async. Reset all dependency installs |
+| `reset-dependency-installs` | - | Async. Reset all dependency installs |
 
 ## Nexus Mods integration
 
@@ -128,36 +128,36 @@ Register event handlers inside `context.once()` to ensure all extensions are loa
 | `endorse-nexus-mod` | `(siteId: string, modId: string, version: string, endorseStatus: string)` | Async. Endorse a mod |
 | `check-mods-version` | `(gameId, modIds?, ...)` | Async. Check mods for updates |
 | `get-mod-files` | `(siteId, modId, ...)` | Async. Get available files for a mod |
-| `get-latest-mods` | — | Async. Get latest mods |
-| `get-trending-mods` | — | Async. Get trending mods |
-| `refresh-user-info` | — | Refresh Nexus user info / session |
+| `get-latest-mods` | - | Async. Get latest mods |
+| `get-trending-mods` | - | Async. Get trending mods |
+| `refresh-user-info` | - | Refresh Nexus user info / session |
 | `request-nexus-login` | `(cb)` | Prompt user to log in to Nexus |
 | `did-login` | `(err: Error)` | Nexus login completed |
 | `retrieve-category-list` | `(isUpdate: boolean)` | Fetch category list from Nexus |
 | `update-categories` | `(gameId, categories, isUpdate)` | Update mod categories |
-| `open-mod-page` | — | Open mod page on Nexus |
-| `mod-update` | — | A mod has an update available |
-| `mods-update` | — | Multiple mods have updates |
-| `submit-feedback` | — | Submit user feedback |
-| `send-metric` | — | Async. Send metric to Nexus |
+| `open-mod-page` | - | Open mod page on Nexus |
+| `mod-update` | - | A mod has an update available |
+| `mods-update` | - | Multiple mods have updates |
+| `submit-feedback` | - | Submit user feedback |
+| `send-metric` | - | Async. Send metric to Nexus |
 
 ## Collections
 
 | Event | Args | Description |
 |-------|------|-------------|
 | `get-nexus-collection` | `(collectionId, revisionId?, ...)` | Async. Get a Nexus collection |
-| `get-nexus-collections` | — | Async. Get multiple collections |
-| `get-my-collections` | — | Async. Get user's collections |
-| `get-nexus-collection-revision` | — | Async. Get collection revision |
+| `get-nexus-collections` | - | Async. Get multiple collections |
+| `get-my-collections` | - | Async. Get user's collections |
+| `get-nexus-collection-revision` | - | Async. Get collection revision |
 | `resolve-collection-url` | `(collectionUrl: string)` | Async. Resolve URL to collection ID |
-| `rate-nexus-collection-revision` | — | Async. Rate a collection revision |
-| `will-install-collection` | — | Async. Before collection install |
-| `did-install-collection` | — | Collection was installed |
-| `did-download-collection` | — | Collection was downloaded |
-| `collection-postprocess-complete` | — | Collection post-processing done |
-| `collection-mod-skipped` | — | A mod in the collection was skipped |
-| `submit-collection` | — | Submit collection to Nexus |
-| `update-conflicts-and-rules` | — | Async. Update collection conflicts |
+| `rate-nexus-collection-revision` | - | Async. Rate a collection revision |
+| `will-install-collection` | - | Async. Before collection install |
+| `did-install-collection` | - | Collection was installed |
+| `did-download-collection` | - | Collection was downloaded |
+| `collection-postprocess-complete` | - | Collection post-processing done |
+| `collection-mod-skipped` | - | A mod in the collection was skipped |
+| `submit-collection` | - | Submit collection to Nexus |
+| `update-conflicts-and-rules` | - | Async. Update collection conflicts |
 
 ## Extensions
 
@@ -181,11 +181,11 @@ Register event handlers inside `context.once()` to ensure all extensions are loa
 | Event | Args | Description |
 |-------|------|-------------|
 | `show-main-page` | `(pageId: string)` | Navigate to a main page |
-| `refresh-main-page` | — | Refresh current main page |
+| `refresh-main-page` | - | Refresh current main page |
 | `open-knowledge-base` | `(articleId: string)` | Open a knowledge base article |
 | `hide-modal` | `(modal: string)` | Hide a modal dialog |
 | `preview-files` | `(files: IPreviewFile[], cb?: (selection: IPreviewFile) => void)` | Show file preview dialog |
-| `quick-launch` | — | Quick launch game/tool |
+| `quick-launch` | - | Quick launch game/tool |
 
 ## Analytics
 
@@ -198,6 +198,6 @@ Register event handlers inside `context.once()` to ensure all extensions are loa
 
 | Event | Args | Description |
 |-------|------|-------------|
-| `startup` | — | Application startup complete |
+| `startup` | - | Application startup complete |
 | `report-feedback` | `(errorMessage: string)` | Report feedback/error |
 | `trigger-test-run` | `(eventType: string, delay?: number)` | Trigger test runner |
