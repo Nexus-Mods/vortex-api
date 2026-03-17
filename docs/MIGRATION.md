@@ -1,6 +1,6 @@
 # Migration Guide
 
-This guide covers the changes extension developers need to make when migrating from Vortex 1.16 to Vortex 2.0. The Vortex API surface is largely unchanged, so most extensions will not require source code modifications — the migration is primarily about build tooling and dependency management.
+This guide covers the changes extension developers need to make when migrating from Vortex 1.16 to Vortex 2.0. The Vortex API surface is largely unchanged, so most extensions will not require source code modifications - the migration is primarily about build tooling and dependency management.
 
 ## Overview of Changes
 
@@ -20,7 +20,7 @@ Switching to pnpm aligns your tooling with Vortex's own build system. See [Step 
 
 ### Path B: Keep your current package manager
 
-npm (7+) and Yarn Berry (v2+) also auto-install peer dependencies — just skip Step 1 and go to [Step 2: Update Dependencies](<#step-2-update-dependencies>).
+npm (7+) and Yarn Berry (v2+) also auto-install peer dependencies - just skip Step 1 and go to [Step 2: Update Dependencies](<#step-2-update-dependencies>).
 
 > **Note:** Yarn Classic (v1) does **not** auto-install peer dependencies. If you stay on Yarn Classic, you'll need to **manually maintain** your `devDependencies` to match the versions Vortex ships at runtime. The correct versions can be found in Vortex's [`pnpm-workspace.yaml`](<https://github.com/Nexus-Mods/Vortex/blob/master/pnpm-workspace.yaml>) under the `catalog:` section.
 
@@ -84,7 +84,7 @@ allowBuilds:
 
 ### 1e. Adapt `resolutions`
 
-The Yarn `resolutions` field is not supported by pnpm. Resolutions that pinned Vortex-provided packages (e.g., `@types/react`, `@types/react-dom`) can be removed entirely — those versions are now enforced by `vortex-api` peer dependencies.
+The Yarn `resolutions` field is not supported by pnpm. Resolutions that pinned Vortex-provided packages (e.g., `@types/react`, `@types/react-dom`) can be removed entirely - those versions are now enforced by `vortex-api` peer dependencies.
 
 If your extension has its own resolutions for **non-Vortex packages**, migrate them to pnpm `overrides` in `package.json`:
 
@@ -110,7 +110,7 @@ Vortex 2.0 ships `vortex-api` with `peerDependencies` that declare most packages
 
 You can **remove most Vortex runtime packages** from your `devDependencies`.
 
-> The following example shows a subset of Vortex packages — your extension may use more or fewer. The principle is the same: any package covered by `vortex-api` peer dependencies can be removed.
+> The following example shows a subset of Vortex packages - your extension may use more or fewer. The principle is the same: any package covered by `vortex-api` peer dependencies can be removed.
 
 #### Example: Before (1.16)
 
@@ -196,7 +196,7 @@ You only need to add the ones your extension actually imports. For example, if y
 
 ### Webpack (still works)
 
-If your extension uses the `vortex-api`-provided webpack helper (`api/bin/webpack.js`), no changes are needed — it handles externals automatically.
+If your extension uses the `vortex-api`-provided webpack helper (`api/bin/webpack.js`), no changes are needed - it handles externals automatically.
 
 If you use a custom webpack config, you can simplify your externals by reading from `vortex-api`:
 
