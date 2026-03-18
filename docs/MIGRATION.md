@@ -319,6 +319,33 @@ If your build scripts copy the extension to Vortex's dev plugins folder, update 
 
 The production path (`Vortex/plugins`) remains unchanged.
 
+## Step 7: Update Main Page Priorities
+
+If your extension registers custom main pages for load order or save game management, update their `priority` values to match Vortex 2.0's page ordering:
+
+| Page type | Priority |
+| -- | -- |
+| Custom Load Order pages | `30` |
+| Custom Save pages | `50` |
+
+Additionally, page names should use **sentence case** (e.g., "Load order") rather than Title Case (e.g., "Load Order").
+
+```js
+context.registerMainPage("sort-none", "Load order", MyLoadOrderPage, {
+  priority: 30,
+  id: "my-loadorder",
+  group: "per-game",
+  // ...
+});
+
+context.registerMainPage("savegame", "Save games", MySavegamePage, {
+  priority: 50,
+  id: "my-savegames",
+  group: "per-game",
+  // ...
+});
+```
+
 ## Quick Checklist
 
 ### All extensions
@@ -328,6 +355,7 @@ The production path (`Vortex/plugins`) remains unchanged.
 - [ ] If using a custom webpack config, simplify externals to read from `vortex-api/package.json` (or optionally migrate to Rolldown)
 - [ ] Add local `collections` type declarations if needed
 - [ ] Replace `VORTEX_VERSION` imports with `state.app.appVersion`
+- [ ] Update `priority` for custom Load Order pages to `30` and Save pages to `50`
 - [ ] If using a dev build of Vortex, update dev deployment path from `vortex_devel/plugins` to `@vortex/main/plugins`
 - [ ] If using ESLint, add `typings.custom/**` to ignores (if applicable)
 - [ ] Verify your extension builds and loads correctly
