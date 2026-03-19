@@ -162,6 +162,7 @@ declare namespace actions {
         clearUIBlocker,
         setNetworkConnected,
         setCommandLine,
+        setDownloadGameFilter,
         setAttributeVisible,
         setAttributeSort,
         setAttributeFilter,
@@ -2315,7 +2316,7 @@ declare interface ICommonModAttributes {
     uploaderId?: number;
     uploadedTimestamp?: number;
     updatedTimestamp?: number;
-    installTime?: string;
+    installTime?: string | Date;
     installedAsDependency?: boolean;
     referenceTag?: string;
     installerChoices?: any;
@@ -5888,6 +5889,7 @@ declare interface ISession {
     };
     networkConnected: boolean;
     commandLine: IParameters;
+    downloadGameFilter: string | null;
 }
 
 declare interface ISessionGameMode {
@@ -7913,6 +7915,8 @@ declare const setDownloadFilePath: ComplexActionCreator2<string, string, {
 id: string;
 filePath: string;
 }, {}>;
+
+declare const setDownloadGameFilter: ComplexActionCreator1<string, string, {}>;
 
 declare const setDownloadHash: ComplexActionCreator2<string, string, {
 id: string;
