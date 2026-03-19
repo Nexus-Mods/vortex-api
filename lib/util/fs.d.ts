@@ -54,7 +54,7 @@ export { appendFileAsync, chmodAsync, closeAsync, fsyncAsync, lstatAsync, mkdirA
 export declare function isDirectoryAsync(dirPath: string): PromiseBB<boolean>;
 export declare function ensureDirSync(dirPath: string): void;
 export declare function ensureFileAsync(filePath: string): PromiseBB<void>;
-export declare function ensureDirAsync(dirPath: string, onDirCreatedCB?: (created: string) => PromiseBB<void>): PromiseBB<void>;
+export declare function ensureDirAsync(dirPath: string, onDirCreatedCB?: (created: string) => PromiseLike<void>): PromiseBB<void>;
 /**
  * move a file. If the destination exists, will generate a new name with an
  * increasing counter until an unused name is found

@@ -65,7 +65,7 @@ export declare function restackErr(error: unknown, stackErr: Error): Error;
  * will be called only after everything before it in the queue is finished
  * and with the promise that nothing else in the queue is run in parallel.
  */
-export declare function makeQueue<T>(): (func: () => Bluebird<T>, tryOnly: boolean) => Bluebird<T>;
+export declare function makeQueue<T>(): (func: () => PromiseLike<T>, tryOnly: boolean) => Bluebird<T>;
 /**
  * spawn this application itself
  * @param args

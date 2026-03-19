@@ -1,14 +1,13 @@
-import Bluebird from "bluebird";
 import type { IExtensionApi } from "../../../types/IExtensionContext";
 import type { IDeploymentManifest } from "../types/IDeploymentManifest";
 import type { IDeployedFile, IDeploymentMethod } from "../types/IDeploymentMethod";
-export declare function purgeDeployedFiles(basePath: string, files: IDeployedFile[]): Bluebird<void>;
-export declare function fallbackPurgeType(api: IExtensionApi, activator: IDeploymentMethod, gameId: string, modType: string, deployPath: string, stagingPath: string): Bluebird<void>;
+export declare function purgeDeployedFiles(basePath: string, files: IDeployedFile[]): Promise<void>;
+export declare function fallbackPurgeType(api: IExtensionApi, activator: IDeploymentMethod, gameId: string, modType: string, deployPath: string, stagingPath: string): Promise<void>;
 /**
  * purge files using information from the manifest
  */
-export declare function fallbackPurge(api: IExtensionApi, gameId?: string): Bluebird<void>;
-export declare function withActivationLock(func: () => Bluebird<any>, tryOnly?: boolean): Bluebird<unknown>;
+export declare function fallbackPurge(api: IExtensionApi, gameId?: string): Promise<void>;
+export declare function withActivationLock(func: () => PromiseLike<any>, tryOnly?: boolean): import("bluebird")<unknown>;
 /**
  * return a manifest (detailing which files are currently deployed by Vortex)
  * Please note that the manifest is intended only as kind of a fallback, core functionality
@@ -22,6 +21,6 @@ export declare function withActivationLock(func: () => Bluebird<any>, tryOnly?: 
  * @param modType the mod type for which to retrieve the manifest, default mod type if undefined
  * @param gameId the game for which to retrieve the manifest, defaults to the current game.
  */
-export declare function getManifest(api: IExtensionApi, modType?: string, gameId?: string): Bluebird<IDeploymentManifest>;
-export declare function loadActivation(api: IExtensionApi, gameId: string, modType: string, deployPath: string, stagingPath: string, activator: IDeploymentMethod): Bluebird<IDeployedFile[]>;
-export declare function saveActivation(gameId: string, modType: string, instance: string, gamePath: string, stagingPath: string, activation: IDeployedFile[], activatorId?: string): Bluebird<any>;
+export declare function getManifest(api: IExtensionApi, modType?: string, gameId?: string): Promise<IDeploymentManifest>;
+export declare function loadActivation(api: IExtensionApi, gameId: string, modType: string, deployPath: string, stagingPath: string, activator: IDeploymentMethod): Promise<IDeployedFile[]>;
+export declare function saveActivation(gameId: string, modType: string, instance: string, gamePath: string, stagingPath: string, activation: IDeployedFile[], activatorId?: string): import("bluebird")<any> | Promise<never>;

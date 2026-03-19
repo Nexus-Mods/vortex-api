@@ -51,7 +51,7 @@ export type PropsCallbackTyped<T> = () => T;
  * profile: state regarding the managed profile. Will be swapped out when the profile changes
  */
 export type PersistingType = "global" | "game" | "profile";
-export type CheckFunction = () => PromiseBB<ITestResult>;
+export type CheckFunction = () => PromiseLike<ITestResult>;
 export type RegisterSettings = (title: string, element: React.ComponentClass<any> | React.StatelessComponent<any>, props?: PropsCallback, visible?: () => boolean, priority?: number) => void;
 export type RegisterAction = (group: string, position: number, iconOrComponent: string | React.ComponentType<any>, options: IActionOptions, titleOrProps?: string | PropsCallback, actionOrCondition?: (instanceIds?: string[]) => void | boolean, condition?: (instanceIds?: string[]) => boolean | string) => void;
 export type RegisterControlWrapper = (group: string, priority: number, wrapper: React.ComponentType<any>) => void;
@@ -179,7 +179,7 @@ export type ArchiveHandlerCreator = (fileName: string, options: IArchiveOptions)
  * (the modPath is going to be undefined) so when that flag is set, the extractor should
  * not be accessing the disk or network or do any complex coomputation
  */
-export type AttributeExtractor = (modInfo: any, modPath: string) => PromiseBB<{
+export type AttributeExtractor = (modInfo: any, modPath: string) => PromiseLike<{
     [key: string]: any;
 }>;
 export interface IGameDetail {
@@ -219,7 +219,7 @@ export interface IErrorOptions {
  * field that doesn't exist in both IGameStored and IDiscoveryResult, please assume
  * it may be undefined.
  */
-export type GameInfoQuery = (game: any) => PromiseBB<{
+export type GameInfoQuery = (game: any) => PromiseLike<{
     [key: string]: IGameDetail;
 }>;
 export interface IMergeFilter {
@@ -237,7 +237,7 @@ export type MergeTest = (game: IGame, gameDiscovery: IDiscoveryResult) => IMerge
 /**
  * callback to do the actual merging
  */
-export type MergeFunc = (filePath: string, mergePath: string) => PromiseBB<void>;
+export type MergeFunc = (filePath: string, mergePath: string) => PromiseLike<void>;
 /**
  * options used when starting an external application through runExecutable
  */
@@ -1012,7 +1012,7 @@ export interface IExtensionContext {
      * @param {string} id identifier for the hook. This will only be used for logging
      * @param {function} hook the hook to be called
      */
-    registerStartHook: (priority: number, id: string, hook: (call: IRunParameters) => PromiseBB<IRunParameters>) => void;
+    registerStartHook: (priority: number, id: string, hook: (call: IRunParameters) => PromiseLike<IRunParameters>) => void;
     /**
      * register a migration step. This migration is always called when the loaded extension has
      * a different version from the one that was used last.
@@ -1142,7 +1142,7 @@ export interface IExtensionContext {
      *
      * @memberOf IExtensionContext
      */
-    once: (callback: () => void | PromiseBB<void>) => void;
+    once: (callback: () => void | PromiseLike<void>) => void;
     /**
      * similar to once but this callback will be run (only) on the electron "main" process.
      * Use this only if you absolutely must (if you don't know what electron main process means, it's

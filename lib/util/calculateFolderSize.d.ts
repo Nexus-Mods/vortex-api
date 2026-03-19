@@ -1,3 +1,2 @@
-import Bluebird from "bluebird";
-declare function calculateFolderSize(dirPath: string): Bluebird<number>;
+declare function calculateFolderSize(dirPath: string): Promise<number>;
 export default calculateFolderSize;

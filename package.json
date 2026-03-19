@@ -18,5 +18,7 @@
     "./bin",
     "./etc",
     "./lib"
-  ]
+  ],
+  "peerDependencies": {},
+  "devDependencies": {}
 }
