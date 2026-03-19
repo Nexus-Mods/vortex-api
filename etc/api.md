@@ -799,12 +799,6 @@ function deepMerge(lhs: any, rhs: any): any;
 // @public (undocumented)
 const _default: GitHub;
 
-// @public (undocumented)
-function <T>(load: () => any): (props: any) => JSX.Element;
-
-// @public (undocumented)
-function <T>(delayed: () => T, exportId?: string): T;
-
 // @public
 function delay(timeoutMS: number): Bluebird<void>;
 
@@ -4130,6 +4124,12 @@ const lastActiveProfiles: (state: IState) => {
 };
 
 // @public (undocumented)
+function LazyComponent<T>(load: () => any): (props: any) => JSX.Element;
+
+// @public (undocumented)
+function lazyRequire<T>(delayed: () => T, exportId?: string): T;
+
+// @public (undocumented)
 function linkAsync(src: string, dest: string, options?: ILinkFileOptions): Promise_2<void>;
 
 // Warning: (ae-forgotten-export) The symbol "ICategoryDictionary" needs to be exported by the entry point api.d.ts
@@ -6076,8 +6076,8 @@ declare namespace util {
         isFilenameValid,
         isFuzzyVersion,
         isPathValid,
-        default_2 as LazyComponent,
-        default_3 as lazyRequire,
+        LazyComponent,
+        lazyRequire,
         local,
         lookupFromDownload,
         makeModReference,
