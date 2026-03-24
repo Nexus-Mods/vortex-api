@@ -6960,7 +6960,6 @@ declare function local<T>(id: string, init: T): T;
 
 declare type LockedState = true | false | "true" | "false" | "always" | "never";
 
-/** @deprecated Use log method from renderer directly */
 export declare function log(level: Level, message: string, metadata?: unknown): void;
 
 declare function lookupFromDownload(download: IDownload): IModLookupInfo;
