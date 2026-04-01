@@ -288,7 +288,8 @@ declare namespace actions {
         setUpdateChannel,
         setPrimaryTool,
         setToolOrder,
-        setToolValid
+        setToolValid,
+        setToolPinned
     }
 }
 export { actions }
@@ -5969,6 +5970,9 @@ declare interface ISettingsInterface {
         order?: {
             [gameId: string]: string[];
         };
+        pinned?: {
+            [gameId: string]: string[];
+        };
     };
     primaryTool?: {
         [gameId: string]: string;
@@ -6105,6 +6109,9 @@ declare interface IState {
         deployment: {
             needToDeploy: {
                 [gameId: string]: boolean;
+            };
+            deploymentCounter: {
+                [gameId: string]: number;
             };
         };
         transactions: IStateTransactions;
@@ -6862,7 +6869,7 @@ declare interface IWalkOptions {
     ignoreErrors?: string[] | true;
 }
 
-declare interface IWebView_2 extends React_2.DetailedHTMLProps<React_2.WebViewHTMLAttributes<HTMLWebViewElement>, HTMLWebViewElement> {
+declare interface IWebView extends React_2.DetailedHTMLProps<React_2.WebViewHTMLAttributes<HTMLWebViewElement>, HTMLWebViewElement> {
     src?: string;
     style?: any;
     autosize?: boolean;
@@ -8291,6 +8298,12 @@ pid: number;
 exclusive: boolean;
 }, {}>;
 
+declare const setToolPinned: ComplexActionCreator3<string, string, boolean, {
+gameId: string;
+toolId: string;
+pinned: boolean;
+}, {}>;
+
 declare const setToolRunning: ComplexActionCreator3<string, number, boolean, {
 exePath: string;
 started: number;
@@ -9214,7 +9227,7 @@ declare type VortexPaths = {
  */
 declare function walk(target: string, callback: (iterPath: string, stats: fs.Stats) => PromiseLike<any>, options?: IWalkOptions): Promise<void>;
 
-export declare class Webview extends React_2.Component<IWebviewProps & IWebView_2, {}> {
+export declare class Webview extends React_2.Component<IWebviewProps & IWebView, {}> {
     private mNode;
     componentDidMount(): void;
     componentWillUnmount(): void;
