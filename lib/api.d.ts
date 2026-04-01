@@ -9182,6 +9182,7 @@ declare type VortexInstallType = "regular" | "managed";
 /** Vortex application paths */
 declare type VortexPaths = {
     base: string;
+    base_unpacked: string;
     assets: string;
     assets_unpacked: string;
     modules: string;
