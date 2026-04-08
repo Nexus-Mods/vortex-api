@@ -5971,7 +5971,9 @@ declare interface ISettingsInterface {
             [gameId: string]: string[];
         };
         pinned?: {
-            [gameId: string]: string[];
+            [gameId: string]: {
+                [toolId: string]: boolean;
+            };
         };
     };
     primaryTool?: {
