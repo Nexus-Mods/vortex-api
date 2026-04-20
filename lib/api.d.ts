@@ -3542,6 +3542,16 @@ declare interface IExtensionContext {
      */
     registerSettingsHive: (type: PersistingType, hive: string) => void;
     /**
+     * registers a handler for a download URL scheme (e.g. "nxm"). The handler
+     * resolves the scheme-specific URL to a plain http/https URL that can be
+     * downloaded directly.
+     */
+    registerDownloadProtocol: (scheme: string, handler: (inputUrl: string, name: string, friendlyName: string) => PromiseLike<{
+        urls: string[];
+        updatedUrl?: string;
+        meta: unknown;
+    }>) => void;
+    /**
      * register a new persistor that will hook a data file into the application store,
      * meaning any part of the application can access that data like any other data in the application
      * state and the UI will automatically refresh if it's tied to that data.
