@@ -3546,7 +3546,7 @@ declare interface IExtensionContext {
      * resolves the scheme-specific URL to a plain http/https URL that can be
      * downloaded directly.
      */
-    registerDownloadProtocol: (scheme: string, handler: (inputUrl: string, name: string, friendlyName: string) => PromiseLike<{
+    registerDownloadProtocol: (scheme: string, handler: (inputUrl: string) => PromiseLike<{
         urls: string[];
         updatedUrl?: string;
         meta: unknown;
