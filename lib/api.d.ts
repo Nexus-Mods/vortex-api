@@ -494,6 +494,14 @@ declare type ButtonType = "text" | "icon" | "both" | "menu";
 
 declare type ButtonType_2 = "text" | "icon" | "both" | "menu";
 
+/**
+ * A range starting at 0 with a length of 500 bytes is represented as start=0, end=499
+ */
+declare type ByteRange = {
+    start: number;
+    end: number;
+};
+
 declare function bytesToString(bytes: number): string;
 
 /**
@@ -1040,6 +1048,14 @@ itemId: string;
  * "manager" work in react-dnd and what changed in its api since we needed this.
  */
 export declare const DNDContainer: FC<IDNDContainerProps>;
+
+declare type DownloadCheckpoint<T = unknown> = {
+    downloadId: string;
+    resource: T;
+    dest: string;
+    completedRanges: ByteRange[];
+    etag: string | null;
+};
 
 declare const downloadPath: (state: IState) => string;
 
@@ -6137,6 +6153,9 @@ declare interface IStateDownloads {
     speedHistory: number[];
     files: {
         [id: string]: IDownload;
+    };
+    checkpoints: {
+        [id: string]: DownloadCheckpoint<string>;
     };
 }
 
