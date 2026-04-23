@@ -1177,7 +1177,7 @@ declare type ExtensionType = "game" | "translation" | "theme";
 
 declare function extractExeIcon(exePath: string, destPath: string): Promise<void>;
 
-declare function fileMD5(filePath: string): Promise<string>;
+declare function fileMD5(input: string | Buffer, progress?: (bytesProcessed: number, totalBytes: number) => void): Promise<string>;
 
 /**
  * mark download as finalizing, meaning the file has been downloaded fully,

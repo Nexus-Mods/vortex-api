@@ -987,7 +987,7 @@ export const ErrorBoundary: any;
 function extractExeIcon(exePath: string, destPath: string): Promise<void>;
 
 // @public (undocumented)
-function fileMD5(filePath: string): Promise<string>;
+function fileMD5(input: string | Buffer, progress?: (bytesProcessed: number, totalBytes: number) => void): Promise<string>;
 
 // @public
 const finalizingDownload: ComplexActionCreator1<string, {
