@@ -7250,7 +7250,7 @@ declare const nexusIdsFromDownloadId: ((state: IState, downloadId: string) => {
     modId: string;
     numericGameId: number;
     collectionSlug: string;
-    collectionId: any;
+    collectionId: string;
     revisionId: string;
 }) & OutputSelectorFields<(args_0: {
 [id: string]: IDownload;
@@ -7260,7 +7260,7 @@ fileId: string;
 modId: string;
 numericGameId: number;
 collectionSlug: string;
-collectionId: any;
+collectionId: string;
 revisionId: string;
 }, {
 clearCache: () => void;
