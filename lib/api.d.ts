@@ -398,7 +398,7 @@ declare const addMods: reduxAct.ComplexActionCreator2<string, IMod[], {
  * @param {INotification} notification
  * @returns
  */
-declare function addNotification(notification: INotification): (dispatch: any) => Promise_2<void> | Promise<void>;
+declare function addNotification(notification: INotification): (dispatch: any) => Promise<void> | Promise_2<void>;
 
 declare function addReducer<ActionT, StateT>(action: ActionT, handler: (state: StateT, payload: PayloadT<ActionT>) => StateT): {
     [x: number]: (state: StateT, payload: PayloadT<ActionT>) => StateT;
