@@ -1,7 +1,7 @@
 {
   "$schema": "https://www.schemastore.org/package.json",
   "name": "vortex-api",
-  "version": "2.0.0-beta.1",
+  "version": "2.0.0-beta.2",
   "author": "Black Tree Gaming Ltd",
   "license": "GPL-3.0",
   "description": "Type information for the Vortex API exposed to extensions",
