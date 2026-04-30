@@ -11,7 +11,6 @@ import { ComplexActionCreator1 } from 'redux-act';
 import { ComplexActionCreator2 } from 'redux-act';
 import { ComplexActionCreator3 } from 'redux-act';
 import { ComplexActionCreator4 } from 'redux-act';
-import { ComplexActionCreator5 } from 'redux-act';
 import { ComplexActionCreator6 } from 'redux-act';
 import { constants } from 'fs';
 import { createReadStream } from 'original-fs';
@@ -1064,11 +1063,10 @@ declare function downloadPathForGame(state: IState, gameId?: string): string;
 /**
  * set download progress (in percent)
  */
-declare const downloadProgress: ComplexActionCreator5<string, number, number, IChunk[], string[], {
+declare const downloadProgress: ComplexActionCreator4<string, number, number, string[], {
 id: string;
 received: number;
 total: number;
-chunks: IChunk[];
 urls: string[];
 }, {}>;
 
@@ -2913,10 +2911,6 @@ declare interface IDownload {
      * number of bytes hashed during finalizing
      */
     verified: number;
-    /**
-     * for paused downloads, this contains the list segments that are still missing
-     */
-    chunks?: IChunk[];
     /**
      * whether the download server supports resuming downloads
      */
@@ -7403,10 +7397,9 @@ declare function pad(value: number, padding: string, width: number): string;
 /**
  * mark download paused
  */
-declare const pauseDownload: ComplexActionCreator3<string, boolean, IChunk[], {
+declare const pauseDownload: ComplexActionCreator2<string, boolean, {
 id: string;
 paused: boolean;
-chunks: IChunk[];
 }, {}>;
 
 declare type PayloadT<Type> = Type extends ComplexActionCreator<infer X> ? X : never;
