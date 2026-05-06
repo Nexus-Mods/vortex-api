@@ -3218,7 +3218,7 @@ interface IRegisteredExtension {
 // @public (undocumented)
 interface IRegisterProtocol {
     // (undocumented)
-    (protocol: string, def: boolean, callback: (url: string, install: boolean) => void): any;
+    (protocol: string, def: boolean, callback: (url: string, install: boolean) => void): Promise<boolean>;
 }
 
 // @public (undocumented)

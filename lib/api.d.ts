@@ -5756,7 +5756,7 @@ declare interface IRegisteredExtension {
 }
 
 declare interface IRegisterProtocol {
-    (protocol: string, def: boolean, callback: (url: string, install: boolean) => void): any;
+    (protocol: string, def: boolean, callback: (url: string, install: boolean) => void): Promise<boolean>;
 }
 
 declare interface IRegisterRepositoryLookup {
