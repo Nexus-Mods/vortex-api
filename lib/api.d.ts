@@ -5583,6 +5583,11 @@ declare interface IPersistor {
         key: PersistorKey;
         value: string;
     }>>;
+    bulkSetItem?(items: ReadonlyArray<{
+        key: PersistorKey;
+        value: string;
+    }>): PromiseLike<void>;
+    bulkRemoveItem?(keys: ReadonlyArray<PersistorKey>): PromiseLike<void>;
 }
 
 declare interface IPlugin {
