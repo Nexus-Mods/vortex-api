@@ -5233,7 +5233,7 @@ declare interface INexusAPIExtension {
     }, forceFull: boolean | "silent") => void;
     nexusDownload?: (gameId: string, modId: number, fileId: number, fileName?: string, allowInstall?: boolean) => PromiseLike<string>;
     nexusGetCollection?: (slug: string) => PromiseLike<ICollection>;
-    nexusGetCollections?: (gameId: string) => PromiseLike<ICollection[]>;
+    nexusGetCollections?: (gameId: string) => PromiseLike<Partial<ICollection>[] | undefined>;
     nexusSearchCollections?: (options: ICollectionSearchOptions) => PromiseLike<ICollectionSearchResult>;
     nexusGetMyCollections?: (gameId: string, count?: number, offset?: number) => PromiseLike<IRevision[]>;
     nexusResolveCollectionUrl?: (apiLink: string) => PromiseLike<IDownloadURL[]>;
