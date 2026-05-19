@@ -480,6 +480,18 @@ declare function batchDispatch(store: Redux.Dispatch | Redux.Store, actions: Red
 declare function bbcodeToHTML(input: string): string;
 
 /**
+ * Build a `copy` instruction for every non-directory entry. When
+ * `stripCommonRoot` is true and the archive wraps everything in a single
+ * top-level dir, that dir is stripped from destination paths so the mod stages
+ * at game root rather than inside the wrapper. Appends a `setmodtype`
+ * instruction when `modType` is provided.
+ */
+declare function buildCopyInstructions(files: readonly string[], opts: {
+    stripCommonRoot: boolean;
+    modType?: string;
+}): IInstallResult;
+
+/**
  * Button with a tooltip
  *
  */
@@ -760,6 +772,12 @@ declare class CollectionsInstallationStartedEvent implements MixpanelEvent {
     constructor(collection_id: string, revision_id: string, game_id: number, mod_count: number);
 }
 
+/**
+ * Compile string stopPatterns (typically taken from `IGame.details.stopPatterns`)
+ * to case-insensitive RegExp objects.
+ */
+declare function compileStopPatterns(patterns: readonly string[]): RegExp[];
+
 declare const completeMigration: reduxAct.ComplexActionCreator1<any, any, {}>;
 
 /**
@@ -955,6 +973,14 @@ declare function deBOM(input: string): string;
 declare class Debouncer extends GenericDebouncer<number, typeof window.setTimeout, typeof window.clearTimeout> {
     constructor(func: (...args: any[]) => Error | PromiseLike<void>, debounceMS: number, reset?: boolean, triggerImmediately?: boolean);
 }
+
+/**
+ * Register a data-driven installer table for one game. For each spec, builds a
+ * `testSupported`/`install` pair from the match + install config and calls
+ * `context.registerInstaller`. Registration id defaults to `${gameId}-${spec.id}`
+ * when no `modType` is provided.
+ */
+declare function declareInstallers(context: IExtensionContext, gameId: string, specs: readonly IInstallerSpec[]): void;
 
 /**
  * very simplistic deep merge.
@@ -1190,6 +1216,13 @@ id: string;
 progress: number;
 }, {}>;
 
+/**
+ * Returns the single top-level directory that contains every entry in `files`,
+ * or `undefined` if files live at the root or under different top-level dirs.
+ * Entries may use either `/` or `\` separators; both are recognised.
+ */
+declare function findCommonRootDir(files: readonly string[]): string | undefined;
+
 declare function findDownloadByRef(reference: IReference, downloads: {
     [dlId: string]: IDownload;
 }): string;
@@ -1389,7 +1422,9 @@ declare class GameStoreHelper {
     isGameInstalled(id: string, storeId?: string): Bluebird<string | undefined>;
     isGameStoreInstalled(storeId: string): Bluebird<boolean>;
     registryLookup(lookup: string): Bluebird<IGameStoreEntry>;
-    find: (query: IStoreQuery) => Bluebird<IGameStoreEntry[]>;
+    find: (query: {
+        [storeId: string]: IQueryArgEntry;
+    }) => Bluebird<IGameStoreEntry[]>;
     findByName(name: string | string[], storeId?: string): Bluebird<IGameStoreEntry>;
     findByAppId(appId: string | string[], storeId?: string): Bluebird<IGameStoreEntry>;
     launchGameStore(api: IExtensionApi, gameStoreId: string, parameters?: string[], askConsent?: boolean): Bluebird<void>;
@@ -1861,11 +1896,38 @@ declare type GroupType = "SelectAtLeastOne" | "SelectAtMostOne" | "SelectExactly
  */
 declare const hasCollectionActiveSession: (state: IState) => boolean;
 
+declare enum HealthCheckCategory {
+    System = "system",
+    Game = "game",
+    Mods = "mods",
+    Requirements = "requirements",
+    Tools = "tools",
+    Performance = "performance",
+    Legacy = "legacy"
+}
+
+declare type HealthCheckFixFunction = (api: IExtensionApi) => Promise<void>;
+
+declare type HealthCheckFunction = (api: IExtensionApi) => Promise<IHealthCheckResult>;
+
 declare enum HealthCheckSeverity {
     Info = "info",
     Warning = "warning",
     Error = "error",
     Critical = "critical"
+}
+
+declare enum HealthCheckTrigger {
+    Manual = "manual",
+    Startup = "startup",
+    GameChanged = "game-changed",
+    ProfileChanged = "profile-changed",
+    ModsChanged = "mods-changed",
+    ResultsChanged = "health-check-results-changed",
+    SettingsChanged = "settings-changed",
+    PluginsChanged = "plugins-changed",
+    LootUpdated = "loot-updated",
+    Scheduled = "scheduled"
 }
 
 declare enum IAccountStatus {
@@ -3598,6 +3660,16 @@ declare interface IExtensionContext {
      */
     registerTest: (id: string, event: string, check: CheckFunction) => void;
     /**
+     * register a health check. Pass an IHealthCheck for whole-game checks, or
+     * an IModHealthCheck for per-mod checks (the registry iterates mods and
+     * aggregates per-mod results).
+     *
+     * Prefer this over the legacy `registerTest` for new code.
+     *
+     * @memberOf IExtensionContext
+     */
+    registerHealthCheck: (healthCheck: IHealthCheck | IModHealthCheck) => void;
+    /**
      * register a handler for archive types so the content of such archives is exposed to
      * the application (especially other extensions)
      *
@@ -4055,10 +4127,18 @@ declare interface IGame extends ITool {
      */
     queryModPath: (gamePath: string) => string;
     /**
-     * use instead of queryPath for simpler specification of search arguments
+     * use instead of queryPath for simpler specification of search arguments.
+     *
+     * Each store key accepts:
+     * - a string (treated as an app ID): `{ steam: "2870" }`
+     * - a single query object: `{ steam: { id: "2870" } }`
+     * - an array of query objects: `{ steam: [{ id: "2870" }] }`
+     *
+     * Consumers should pass the per-store value through
+     * `normalizeStoreQuery` rather than branching on the three forms by hand.
      */
     queryArgs?: {
-        [storeId: string]: IStoreQuery[];
+        [storeId: string]: IQueryArgEntry;
     };
     /**
      * returns all directories where mods for this game
@@ -4165,7 +4245,7 @@ declare interface IGame extends ITool {
      * TODO The name "mergeMods" is horrible since we also talk about "merging" in the context of
      *      combining individual files (archives) during mod deployment which is independent of this
      */
-    mergeMods: boolean | ((mod: IMod) => string);
+    mergeMods?: boolean | ((mod: IMod) => string);
     /**
      * determines if a file is to be merged with others with the same path, instead of the
      * highest-priority one being used. This only works if support for repackaging the file type
@@ -4539,6 +4619,29 @@ declare interface IHeaderImage {
     height: number;
 }
 
+declare interface IHealthCheck {
+    id: string;
+    name: string;
+    description: string;
+    category: HealthCheckCategory;
+    severity: HealthCheckSeverity;
+    triggers: HealthCheckTrigger[];
+    dependencies?: string[];
+    timeout?: number;
+    cacheDuration?: number;
+    check: HealthCheckFunction;
+    fix?: HealthCheckFixFunction;
+    extensionName?: string;
+}
+
+declare interface IHealthCheckEntry {
+    healthCheck: IHealthCheck | IModHealthCheck | ILegacyTestAdapter;
+    lastResult?: IHealthCheckResult;
+    lastExecuted?: Date;
+    enabled: boolean;
+    cachedUntil?: Date;
+}
+
 declare interface IHealthCheckPersistentState {
     /**
      * Map of mod nexusModId to array of hidden requirement IDs (from Nexus API)
@@ -4692,6 +4795,63 @@ declare interface IInstallerInfoState {
     dataPath: string;
 }
 
+/**
+ * How matched files are turned into install instructions. `declareInstallers`
+ * always emits `copy` instructions for every non-directory entry; this struct
+ * tweaks paths and tagging.
+ */
+declare interface IInstallerInstall {
+    /**
+     * If true and the archive wraps everything in a single top-level directory,
+     * that directory is stripped from destination paths so the mod stages at
+     * game root rather than inside the wrapper.
+     */
+    stripCommonRoot: boolean;
+}
+
+/**
+ * Discriminated union describing how an installer decides whether it supports
+ * an archive. Directory entries (paths ending in path-sep) are filtered out
+ * before evaluation in all modes.
+ */
+declare type IInstallerMatch = {
+    kind: "extensions";
+    list: readonly string[];
+    mode: InstallerMatchMode;
+} | {
+    kind: "regex";
+    patterns: readonly RegExp[];
+    mode: InstallerMatchMode;
+} | {
+    kind: "filename";
+    names: readonly string[];
+    mode: InstallerMatchMode;
+}
+/** Any file matches any of `game.details.stopPatterns` for the active game. */
+| {
+    kind: "stopPatterns";
+}
+/** Escape hatch: caller-supplied predicate over the (raw) file list. */
+| {
+    kind: "custom";
+    predicate: (files: string[]) => boolean;
+};
+
+/**
+ * One row in a game's installer config table.
+ *
+ * `id` doubles as the `registerInstaller` id (prefixed with `${gameId}-` if
+ * `modType` is unset) and, when `modType` is set, gets emitted as a
+ * `setmodtype` instruction at install time so deployment can be routed.
+ */
+declare interface IInstallerSpec {
+    id: string;
+    priority: number;
+    modType?: string;
+    match: IInstallerMatch;
+    install: IInstallerInstall;
+}
+
 declare interface IInstallerState {
     installSteps: IInstallStep[];
     currentStep: number;
@@ -4735,6 +4895,13 @@ declare interface IItemRendererProps {
     displayCheckboxes: boolean;
     invalidEntries?: IInvalidResult[];
     setRef?: (ref: any) => void;
+}
+
+declare interface ILegacyTestAdapter extends IHealthCheck {
+    eventType: string;
+    originalCheck: CheckFunction;
+    fix?: HealthCheckFixFunction;
+    isLegacyTest: true;
 }
 
 declare interface ILink {
@@ -5022,6 +5189,21 @@ declare type IModAttributes = Partial<ICommonModAttributes & ICollectionAttribut
 };
 
 /**
+ * Context passed to a per-mod healthcheck for a single installed mod.
+ *
+ * - `files` lists paths relative to the mod's staging root.
+ * - `readFile(p)` resolves a path under the mod root and returns its bytes.
+ * - `attributes` reflects the attribute instructions emitted at install time
+ *   (e.g. customFileName, author, version).
+ */
+declare interface IModCheckContext {
+    modId: string;
+    files: string[];
+    readFile: (path: string) => Promise<Buffer>;
+    attributes: Record<string, unknown>;
+}
+
+/**
  * File information for a mod from Nexus
  */
 declare interface IModFileInfo {
@@ -5049,6 +5231,19 @@ declare interface IModFileInfo {
     isPrimary: boolean;
     /** Thumbnail URL if available */
     thumbnailUrl?: string;
+}
+
+/**
+ * Per-mod variant of IHealthCheck. The registry iterates installed mods for the
+ * active game, calls `checkMod` per mod, and aggregates the results.
+ * Identical metadata fields to IHealthCheck, with `checkMod` in place of `check`.
+ *
+ * `fix` is also omitted from the inherited fields: `HealthCheckFixFunction`
+ * takes only `(api)` and can't meaningfully fix a per-mod problem. A per-mod
+ * fix shape can be added in the future if needed.
+ */
+declare interface IModHealthCheck extends Omit<IHealthCheck, "check" | "fix"> {
+    checkMod: PerModCheckFunction;
 }
 
 declare interface IModifiers {
@@ -5485,6 +5680,17 @@ declare interface INotificationState {
     dialogs: IDialog[];
 }
 
+/**
+ * `extensions`/`regex`/`filename` matches support two evaluation modes:
+ *   - `any`: at least one file matches → installer accepts.
+ *   - `all`: every (non-directory) file matches → installer accepts. Empty
+ *     archives are rejected.
+ */
+declare type InstallerMatchMode = "any" | "all";
+
+/** Public signature of the install function `declareInstallers` synthesises. */
+declare type InstallerSpecInstallFunc = (files: string[], destinationPath: string) => Promise<IInstallResult>;
+
 declare type InstallFunc = (files: string[], destinationPath: string, gameId: string, progressDelegate: ProgressDelegate, choices?: any, unattended?: boolean, archivePath?: string, options?: IInstallationDetails) => PromiseLike<IInstallResult>;
 
 /**
@@ -5738,6 +5944,9 @@ declare type IProps_7 = IBaseProps_8 & typeof OverlayTrigger_2.prototype.props;
 declare type IProps_8 = ISelectUpDownProps & ReactSelectProps;
 
 declare type IProps_9 = React_2.HTMLAttributes<any> & IStepsProps;
+
+/** Normalized form of one store's IGame.queryArgs entry. */
+declare type IQueryArgEntry = string | IStoreQuery | IStoreQuery[];
 
 /**
  * specification a reducer registration has to follow.
@@ -6059,6 +6268,11 @@ declare function isFilenameValid(input: string): boolean;
 declare function isFuzzyVersion(input: string): boolean;
 
 declare const isLoggedIn: (state: IState) => boolean;
+
+/**
+ * Type guard distinguishing the per-mod variant from a normal IHealthCheck.
+ */
+declare function isModHealthCheck(hc: IHealthCheck | IModHealthCheck | ILegacyTestAdapter): hc is IModHealthCheck;
 
 declare function isPathValid(input: string, allowRelative?: boolean): boolean;
 
@@ -7030,6 +7244,17 @@ declare function makeFileWritableAsync(filePath: string): Promise_2<void>;
 
 export declare function makeGetSelection(tableId: string): GetSelection;
 
+/**
+ * Build a `(testSupported, install)` pair from a spec. Exposed primarily so
+ * callers can wire the pair into `context.registerInstaller` directly without
+ * the loop in `declareInstallers` — useful when a game wants to mix
+ * spec-driven installers with hand-written ones at custom priorities.
+ */
+declare function makeInstallerFromSpec(spec: IInstallerSpec, gameId: string): {
+    testSupported: TestSupported;
+    install: (files: string[]) => Promise<IInstallResult>;
+};
+
 declare function makeModReference(mod: IMod): IReference;
 
 /**
@@ -7279,6 +7504,14 @@ declare function nexusModsURL(reqPath: string[], options?: INexusURLOptions): st
 
 declare type Normalize = (input: string) => string;
 
+/**
+ * Normalize the polymorphic form `IGame.queryArgs` accepts (string app ID,
+ * single query, or array) into a single array of IStoreQuery. Callers that
+ * iterate per-store entries should funnel through this so the three forms
+ * are handled in one place.
+ */
+declare function normalizeStoreQuery(raw: IQueryArgEntry | undefined): IStoreQuery[];
+
 declare class NotFound extends Error {
     constructor(what: string);
 }
@@ -7416,6 +7649,8 @@ paused: boolean;
 }, {}>;
 
 declare type PayloadT<Type> = Type extends ComplexActionCreator<infer X> ? X : never;
+
+declare type PerModCheckFunction = (api: IExtensionApi, mod: IModCheckContext) => Promise<IHealthCheckResult>;
 
 /**
  * determines where persisted state is stored and when it gets loaded.
@@ -8778,6 +9013,7 @@ declare namespace types {
         TFunction,
         IDiscoveredTool,
         IExecInfo,
+        IQueryArgEntry,
         IStoreQuery,
         IGameStoreEntry,
         GameEntryNotFound,
@@ -8919,6 +9155,24 @@ declare namespace types {
         IModType,
         DirectoryCleaningMode,
         IGame,
+        isModHealthCheck,
+        HealthCheckCategory,
+        HealthCheckSeverity,
+        HealthCheckTrigger,
+        IHealthCheckResult,
+        HealthCheckFunction,
+        HealthCheckFixFunction,
+        IHealthCheck,
+        ILegacyTestAdapter,
+        IHealthCheckEntry,
+        IModCheckContext,
+        PerModCheckFunction,
+        IModHealthCheck,
+        InstallerMatchMode,
+        IInstallerMatch,
+        IInstallerInstall,
+        IInstallerSpec,
+        InstallerSpecInstallFunc,
         IModifiers,
         NotificationDismiss,
         INotificationAction,
@@ -9039,16 +9293,19 @@ declare namespace util {
         preProcess as bbcodePreProcess,
         bbcodeToHTML,
         renderBBCode as bbcodeToReact,
+        buildCopyInstructions,
         bytesToString,
         calculateFolderSize,
         Campaign,
         checksum,
         convertGameIdReverse,
+        compileStopPatterns,
         copyFileAtomic,
         copyRecursive,
         ConcurrencyLimiter,
         Content,
         CycleError,
+        declareInstallers,
         DataInvalid,
         Debouncer,
         deBOM,
@@ -9058,10 +9315,12 @@ declare namespace util {
         instance as epicGamesLauncher,
         extractExeIcon,
         fileMD5,
+        findCommonRootDir,
         findDownloadByRef,
         findModByRef,
         GameNotFound,
         instance_2 as GameStoreHelper,
+        normalizeStoreQuery,
         generateCollectionSessionId,
         getActivator,
         getApplication,
@@ -9088,6 +9347,7 @@ declare namespace util {
         lazyRequire,
         local,
         lookupFromDownload,
+        makeInstallerFromSpec,
         makeModReference,
         coerceToSemver,
         makeNormalizingDict,
