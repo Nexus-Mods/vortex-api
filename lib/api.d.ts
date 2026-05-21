@@ -9422,6 +9422,12 @@ declare namespace util {
         renderError,
         IPrettifiedError,
         IErrorRendered,
+        rawRequest,
+        jsonRequest,
+        request,
+        upload,
+        IRequestOptions,
+        Method,
         getSafe,
         getSafeCI,
         mutateSafe,
@@ -9436,13 +9442,7 @@ declare namespace util {
         removeValueIf,
         merge,
         rehydrate,
-        currentGame_2 as currentGame,
-        rawRequest,
-        jsonRequest,
-        request,
-        upload,
-        IRequestOptions,
-        Method
+        currentGame_2 as currentGame
     }
 }
 export { util }

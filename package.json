@@ -39,7 +39,7 @@
     "xml2js": "0.5.0"
   },
   "devDependencies": {
-    "@nexusmods/nexus-api": "1.6.1",
+    "@nexusmods/nexus-api": "1.6.2",
     "@types/react": "16.14.69",
     "@types/react-dom": "16.9.25",
     "@types/redux": "3.6.0",
