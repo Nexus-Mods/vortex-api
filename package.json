@@ -9,6 +9,12 @@
   "exports": {
     ".": {
       "types": "./lib/api.d.ts"
+    },
+    "./bin/webpack": {
+      "require": "./bin/webpack.js"
+    },
+    "./bin/webpack.js": {
+      "require": "./bin/webpack.js"
     }
   },
   "bin": {
