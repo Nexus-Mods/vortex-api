@@ -970,8 +970,8 @@ declare class DateTimeFilterComponent extends ComponentEx<IFilterProps, {}> {
  */
 declare function deBOM(input: string): string;
 
-declare class Debouncer extends GenericDebouncer<number, typeof window.setTimeout, typeof window.clearTimeout> {
-    constructor(func: (...args: any[]) => Error | PromiseLike<void>, debounceMS: number, reset?: boolean, triggerImmediately?: boolean);
+declare class Debouncer<Args extends unknown[] = unknown[]> extends GenericDebouncer<number, typeof window.setTimeout, typeof window.clearTimeout, Args> {
+    constructor(func: (...args: Args) => Error | PromiseLike<void>, debounceMS: number, reset?: boolean, triggerImmediately?: boolean);
 }
 
 /**
@@ -1463,7 +1463,7 @@ declare function generateCollectionSessionId(collectionId: string, profileId: st
  * and, for function returning a promise, it ensures that it's not run
  * again (through this Debouncer) before the promise is resolved.
  */
-declare class GenericDebouncer<Timeout, SetTimeout extends SetTimeoutFunc<Timeout>, ClearTimeout extends ClearTimeoutFunc<Timeout>> {
+declare class GenericDebouncer<Timeout, SetTimeout extends SetTimeoutFunc<Timeout>, ClearTimeout extends ClearTimeoutFunc<Timeout>, Args extends unknown[] = unknown[]> {
     #private;
     private mDebounceMS;
     private mFunc;
@@ -1472,7 +1472,7 @@ declare class GenericDebouncer<Timeout, SetTimeout extends SetTimeoutFunc<Timeou
     private mAddCallbacks;
     private mRunning;
     private mReschedule;
-    private mArgs;
+    private mArgs?;
     private mResetting;
     private mTriggerImmediately;
     private mRetrigger;
@@ -1489,7 +1489,7 @@ declare class GenericDebouncer<Timeout, SetTimeout extends SetTimeoutFunc<Timeou
      *                           until the timer expires. Otherwise (the default)
      *                           the initial call is delay.
      */
-    constructor(setTimeoutFunc: SetTimeout, clearTimeoutFunc: ClearTimeout, func: (...args: any[]) => Error | PromiseLike<void>, debounceMS: number, reset?: boolean, triggerImmediately?: boolean);
+    constructor(setTimeoutFunc: SetTimeout, clearTimeoutFunc: ClearTimeout, func: (...args: Args) => Error | PromiseLike<void>, debounceMS: number, reset?: boolean, triggerImmediately?: boolean);
     /**
      * schedule the function and invoke the callback once that is done
      * @param callback the callback to invoke upon completion
@@ -1497,7 +1497,7 @@ declare class GenericDebouncer<Timeout, SetTimeout extends SetTimeoutFunc<Timeou
      *             and the function actually gets invoked, only the last set of
      *             parameters will be used
      */
-    schedule(callback?: Callback, ...args: any[]): void;
+    schedule(callback?: Callback, ...args: Args): void;
     /**
      * run the function immediately without waiting for the timer
      * to run out. (It does cancel the timer though and invokes all
@@ -1508,7 +1508,7 @@ declare class GenericDebouncer<Timeout, SetTimeout extends SetTimeoutFunc<Timeou
      *
      * @memberOf Debouncer
      */
-    runNow(callback: Callback, ...args: any[]): void;
+    runNow(callback: Callback, ...args: Args): void;
     /**
      * wait for the completion of the current timer without scheduling it.
      * if the function is not scheduled currently the callback will be
@@ -7694,7 +7694,7 @@ declare type ProblemSeverity = "warning" | "error" | "fatal";
 declare class ProcessCanceled extends Error {
     private mExtraInfo;
     constructor(message: string, extraInfo?: unknown);
-    get extraInfo(): any;
+    get extraInfo(): unknown;
 }
 
 declare function profileById(state: IState, profileId: string): IProfile;
