@@ -6409,7 +6409,7 @@ declare interface IStateVerifier {
     };
     required?: boolean;
     deleteBroken?: boolean | "parent";
-    repair?: (input: any, def: any) => any;
+    repair?: (input: any, def: any, context?: IVerifierRepairContext) => any;
 }
 
 declare interface ISteamEntry extends IGameStoreEntry {
@@ -7115,6 +7115,12 @@ declare interface IValidateKeyDataV2 extends IValidateKeyData, Partial<IPreferen
 
 declare interface IValidationResult {
     invalid: IInvalidResult[];
+}
+
+declare interface IVerifierRepairContext {
+    parentKey?: string;
+    parent?: unknown;
+    key: string;
 }
 
 declare interface IWalkOptions {
@@ -9145,6 +9151,7 @@ declare namespace types {
         IApiFuncOptions,
         IExtensionApiExtension,
         IExtensionApi,
+        IVerifierRepairContext,
         IStateVerifier,
         VerifierDrop,
         VerifierDropParent,
