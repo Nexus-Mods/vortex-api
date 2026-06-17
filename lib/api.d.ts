@@ -9069,6 +9069,7 @@ declare namespace types {
         IProfile,
         IProfileMod,
         IEnableOptions,
+        IMembership,
         IValidateKeyData,
         ILoadOrderDisplayItem,
         SortType,
