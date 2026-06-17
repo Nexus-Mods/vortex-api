@@ -4302,14 +4302,12 @@ interface IUser {
     multiUser: boolean;
 }
 
+// Warning: (ae-forgotten-export) The symbol "IMembership" needs to be exported by the entry point api.d.ts
+//
 // @public
-interface IValidateKeyData {
+interface IValidateKeyData extends Pick<IMembership, "isPremium" | "isSupporter"> {
     // (undocumented)
     email: string;
-    // (undocumented)
-    isPremium: boolean;
-    // (undocumented)
-    isSupporter: boolean;
     // (undocumented)
     name: string;
     // (undocumented)

@@ -1930,14 +1930,6 @@ declare enum HealthCheckTrigger {
     Scheduled = "scheduled"
 }
 
-declare enum IAccountStatus {
-    Premium = 0,
-    Supporter = 1,
-    Free = 2,
-    Banned = 3,
-    Closed = 4
-}
-
 declare interface IActionControlProps {
     instanceId?: string | string[];
     filter?: (action: IActionDefinition) => boolean;
@@ -5134,6 +5126,17 @@ declare interface IMainPageOptions {
     mdi?: string;
 }
 
+/**
+ * Membership-related fields of a user, derived from the role strings in the API
+ * user payload / JWT. Single source of truth for these flags so they can be
+ * derived, spread and compared as a unit instead of field-by-field.
+ */
+declare interface IMembership {
+    isPremium: boolean;
+    isSupporter: boolean;
+    isLifetime: boolean;
+}
+
 declare interface IMergeFilter {
     baseFiles: (deployedFiles: IDeployedFile[]) => Array<{
         in: string;
@@ -7092,25 +7095,19 @@ declare interface IUser {
 }
 
 /**
- * Data retrieved with a correct API Key
+ * Data retrieved with a correct API Key (legacy /users/validate shape).
  *
  * @export
  * @interface IValidateKeyData
  */
-declare interface IValidateKeyData {
+declare interface IValidateKeyData extends Pick<IMembership, "isPremium" | "isSupporter"> {
     email: string;
-    isPremium: boolean;
-    isSupporter: boolean;
     name: string;
     profileUrl: string;
     userId: number;
 }
 
-declare interface IValidateKeyDataV2 extends IValidateKeyData, Partial<IPreference> {
-    isLifetime?: boolean;
-    isBanned?: boolean;
-    isClosed?: boolean;
-    status?: IAccountStatus;
+declare interface IValidateKeyDataV2 extends IValidateKeyData, IMembership, Partial<IPreference> {
 }
 
 declare interface IValidationResult {
