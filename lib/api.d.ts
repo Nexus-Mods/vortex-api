@@ -1506,7 +1506,7 @@ declare class GenericDebouncer<Timeout, SetTimeout extends SetTimeoutFunc<Timeou
      * @param {(err: Error) => void} callback
      * @param {...any[]} args
      *
-     * @memberOf Debouncer
+     * @memberof Debouncer
      */
     runNow(callback: Callback, ...args: Args): void;
     /**
@@ -1519,7 +1519,7 @@ declare class GenericDebouncer<Timeout, SetTimeout extends SetTimeoutFunc<Timeou
      * @param {boolean} immediately if set (default is false) the function gets called
      *                              immediately instead of awaiting the timer
      *
-     * @memberOf Debouncer
+     * @memberof Debouncer
      */
     wait(callback: (err: Error | null) => void, immediately?: boolean): void;
     clear(): void;
