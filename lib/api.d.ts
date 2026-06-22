@@ -1079,7 +1079,7 @@ declare type DownloadCheckpoint<T = unknown> = {
     resource: T;
     dest: string;
     completedRanges: ByteRange[];
-    etag: string | null;
+    etag: string | undefined;
 };
 
 declare const downloadPath: (state: IState) => string;
