@@ -627,9 +627,14 @@ declare const collapseGroup: reduxAct.ComplexActionCreator3<string, string, bool
 }, {}>;
 
 /**
- * Status of an individual mod within a collection installation
+ * Status of an individual mod within a collection installation.
+ *
+ * The live states are picked explicitly from a mod's ModState (the `keyof Pick<...>`):
+ * picking a value that isn't a ModState is a compile error so the two can't drift, while
+ * a newly added ModState is NOT silently absorbed. The rest are collection-only lifecycle
+ * states with no IMod equivalent.
  */
-declare type CollectionModStatus = "pending" | "downloading" | "downloaded" | "installing" | "installed" | "failed" | "skipped" | "optional";
+declare type CollectionModStatus = keyof Pick<Record<ModState, true>, "downloading" | "downloaded" | "installing" | "installed"> | "pending" | "failed" | "ignored" | "optional";
 
 /**
  * Event sent when a collection download is cancelled.
@@ -1232,7 +1237,19 @@ declare function findModByRef(reference: IModReference, mods: {
 }, source?: {
     gameId: string;
     modId: string;
-}): IMod;
+}, installSpec?: IModInstallSpec): IMod;
+
+/**
+ * Find the rule whose reference matches a mod - the inverse of findModByRef (which finds a mod by a
+ * reference). Answers "which of these rules applies to / pulled in this mod"; pass a mod's or a
+ * collection's `rules`.
+ *
+ * The mod is converted to lookup info once, up front, rather than letting testModReference rebuild
+ * it for every rule in the scan (the same "hoist the constant per-scan work" idea findModByRef uses
+ * for its reference). The per-rule tag/md5/id fast-paths already live inside testRef, so there is
+ * nothing to add here for those.
+ */
+declare function findRuleByRef(rules: IModRule[] | undefined, mod: IMod): IModRule | undefined;
 
 /**
  * mark download as finished
@@ -1578,9 +1595,10 @@ declare const getCollectionInstallProgress: ((state: IState) => {
     downloadedCount: number;
     installedCount: number;
     failedCount: number;
-    skippedCount: number;
+    ignoredCount: number;
     downloadProgress: number;
     installProgress: number;
+    combinedProgress: number;
     isComplete: boolean;
 }) & OutputSelectorFields<(args_0: ICollectionInstallSession) => {
 totalRequired: number;
@@ -1588,9 +1606,10 @@ totalOptional: number;
 downloadedCount: number;
 installedCount: number;
 failedCount: number;
-skippedCount: number;
+ignoredCount: number;
 downloadProgress: number;
 installProgress: number;
+combinedProgress: number;
 isComplete: boolean;
 }, {
 clearCache: () => void;
@@ -1611,18 +1630,16 @@ declare const getCollectionLastActiveSessionId: (state: IState) => string | unde
 declare const getCollectionLastCompletedSession: (state: IState) => ICollectionInstallSession | undefined;
 
 /**
- * Search for a mod in the active collection by mod reference details
- * This is useful when you have deployment information and need to find the corresponding collection rule
- * @param searchParams Object containing mod identifiers to search by
+ * Search for a mod in the active collection that a download corresponds to.
+ * @param lookup Canonical lookup info for the download (use lookupFromDownload)
  * @returns The mod installation info or undefined if not found
+ *
+ * Matches each session rule's reference with the shared testModReference matcher (the same
+ * identity logic the dependency resolver uses), so there is one notion of reference identity
+ * and no separate "find by modId" path: the session stores the installed Vortex mod id,
+ * which is a different namespace than the Nexus ids a download carries.
  */
-declare const getCollectionModByReference: (state: IState, searchParams: {
-    tag?: string;
-    modId?: string;
-    fileMD5?: string;
-    fileId?: string;
-    logicalFileName?: string;
-}) => ICollectionModInstallInfo | undefined;
+declare const getCollectionModByReference: (state: IState, lookup: IModLookupInfo) => ICollectionModInstallInfo | undefined;
 
 /**
  * Get all mods grouped by phase
@@ -1780,6 +1797,24 @@ clearCache: () => void;
 };
 
 declare function getDriveList(api: IExtensionApi): Promise<string[]>;
+
+/**
+ * Optional members of the active session that settled as failed. A default-skipped optional is
+ * "ignored", never "failed", so this lists only optionals the user SELECTED and that then failed to
+ * install. Surfaced additively in the install-finished dialog - a failed optional annotates the
+ * result but does not make the collection "incomplete" the way a failed required member does.
+ * @returns Array of failed optional mods
+ */
+declare const getFailedOptionalMods: (state: IState) => ICollectionModInstallInfo[];
+
+/**
+ * Required members of the active session that settled as failed (terminal "failed"). Used by the
+ * install-finished dialog to reword the prompt and trim its actions when the collection completed
+ * WITH failures rather than cleanly - a failed required member means the collection isn't really
+ * "installed", so we don't offer to install the optional mods on top of a broken required set.
+ * @returns Array of failed required mods
+ */
+declare const getFailedRequiredMods: (state: IState) => ICollectionModInstallInfo[];
 
 declare function getGame(gameId: string): IGame;
 
@@ -2254,6 +2289,22 @@ declare interface ICheckbox extends IControlBase {
     subText?: string;
 }
 
+declare type IChoices = {
+    name: string;
+    groups: {
+        name: string;
+        choices: {
+            name: string;
+            idx: number;
+        }[];
+    }[];
+}[] | undefined;
+
+declare type IChoiceType = {
+    type: string;
+    options: IChoices;
+};
+
 declare interface IChunk {
     url: () => Promise_2<string>;
     received: number;
@@ -2315,7 +2366,7 @@ declare interface ICollectionInstallSession {
     /** Number of mods that failed to install */
     failedCount: number;
     /** Number of optional mods skipped */
-    skippedCount: number;
+    ignoredCount: number;
 }
 
 declare interface ICollectionInstallState {
@@ -2355,6 +2406,29 @@ declare interface ICollectionsGameSupportEntry {
 }
 
 /**
+ * interface for the top-level state object
+ * this should precisely mirror the reducer structure
+ *
+ * @export
+ * @interface IState
+ */
+declare interface ICollectionsPersistentState {
+    collections: Record<string, {
+        timestamp: number;
+        info: ICollection;
+    }>;
+    revisions: Record<string, {
+        timestamp: number;
+        info: IRevision;
+    }>;
+    pendingVotes: Record<string, {
+        collectionSlug: string;
+        revisionNumber: number;
+        time: number;
+    }>;
+}
+
+/**
  * Common attributes shared by all mods
  */
 declare interface ICommonModAttributes {
@@ -2388,8 +2462,8 @@ declare interface ICommonModAttributes {
     installTime?: string | Date;
     installedAsDependency?: boolean;
     referenceTag?: string;
-    installerChoices?: any;
-    patches?: any;
+    installerChoices?: IChoiceType;
+    patches?: IModPatches;
     fileList?: IFileListItem[];
     newestVersion?: string;
     newestFileId?: number;
@@ -5289,6 +5363,20 @@ declare interface IModInfo_3 {
     [key: string]: any;
 }
 
+/**
+ * A mod's "install spec": not which mod it is, but how it was installed - the
+ * installer choices, file list, and binary patches. This is the data that
+ * distinguishes the user-facing "variants" of a mod; it is NOT the named variant
+ * itself (that is the `mod.attributes.variant` string). Declared here so IModRule,
+ * IDependency and the install-spec matchers all draw the same three fields from a
+ * single source rather than re-declaring them and risking drift.
+ */
+declare interface IModInstallSpec {
+    installerChoices?: IChoiceType;
+    fileList?: IFileListItem[];
+    patches?: IModPatches;
+}
+
 declare interface IModLookupData {
     fileName: string;
     fileSizeBytes: number;
@@ -5326,14 +5414,23 @@ declare interface IModLookupInfo {
     modId?: string;
     source?: string;
     referenceTag?: string;
-    installerChoices?: any;
-    patches?: any;
+    installerChoices?: IChoiceType;
+    patches?: IModPatches;
     fileList?: IFileListItem[];
 }
 
 declare interface IModLookupResult {
     key: string;
     value: IModLookupData;
+}
+
+/**
+ * Binary patches applied to a mod's files when it is installed as a dependency,
+ * keyed by file path. The value is the hash of the baseline file the patch is
+ * applied against.
+ */
+declare interface IModPatches {
+    [filePath: string]: string;
 }
 
 declare interface IModReference extends IReference {
@@ -5348,9 +5445,6 @@ declare interface IModReference extends IReference {
     } & IModRepoId;
     description?: string;
     instructions?: string;
-    installerChoices?: any;
-    fileList?: IFileListItem[];
-    patches?: any;
 }
 
 declare interface IModRepoId {
@@ -5359,15 +5453,34 @@ declare interface IModRepoId {
     fileId: string;
 }
 
-declare interface IModRule extends IRule {
+declare interface IModRule extends IRule, IModInstallSpec {
     reference: IModReference;
-    fileList?: IFileListItem[];
-    installerChoices?: any;
     downloadHint?: IDownloadHint;
-    extra?: {
-        [key: string]: any;
-    };
+    phase?: number;
+    extra?: IModRuleExtra;
     ignored?: boolean;
+}
+
+/**
+ * Free-form metadata bag carried on any mod rule (and copied onto the IDependency built
+ * from it). The bag is general, not collection-specific: keys arrive from mod-metadata /
+ * nexus dependency rules too (e.g. `rules` for nested dependencies, `onlyIfFulfillable`).
+ * The named fields below are the common ones (most populated by the collection converter);
+ * the index signature is kept deliberately so the bag stays open. Legacy `patches` /
+ * `phase` may also live here on older rules; read those through ruleInstallSpec() /
+ * rulePhase() rather than off `extra` directly.
+ */
+declare interface IModRuleExtra {
+    author?: string;
+    type?: string;
+    category?: string;
+    version?: string;
+    url?: string;
+    name?: string;
+    instructions?: string;
+    fileOverrides?: string[];
+    localPath?: string;
+    [key: string]: any;
 }
 
 declare interface IModsAPIExtension {
@@ -5694,7 +5807,7 @@ declare type InstallerMatchMode = "any" | "all";
 /** Public signature of the install function `declareInstallers` synthesises. */
 declare type InstallerSpecInstallFunc = (files: string[], destinationPath: string) => Promise<IInstallResult>;
 
-declare type InstallFunc = (files: string[], destinationPath: string, gameId: string, progressDelegate: ProgressDelegate, choices?: any, unattended?: boolean, archivePath?: string, options?: IInstallationDetails) => PromiseLike<IInstallResult>;
+declare type InstallFunc = (files: string[], destinationPath: string, gameId: string, progressDelegate: ProgressDelegate, choices?: IChoiceType, unattended?: boolean, archivePath?: string, options?: IInstallationDetails) => PromiseLike<IInstallResult>;
 
 /**
  * Install a custom icon set from a given path (for extensions).
@@ -5969,6 +6082,20 @@ declare interface IReducerSpec<T = {
     verifiers?: {
         [key: string]: IStateVerifier;
     };
+}
+
+/**
+ * The loose Nexus identifiers a reference can be matched against (a mod page + file ids/names),
+ * plus an optional caller-supplied fallback predicate. Shared so callers do not re-declare the
+ * shape inline.
+ */
+declare interface IReferenceIdentifiers {
+    gameId: string;
+    modId?: number;
+    fileId?: number;
+    fileNames?: string[];
+    fileIds?: string[];
+    condition?: () => boolean;
 }
 
 declare interface IRegisteredExtension {
@@ -6313,13 +6440,6 @@ declare interface IStarterInfo {
     logoName: string;
 }
 
-/**
- * interface for the top-level state object
- * this should precisely mirror the reducer structure
- *
- * @export
- * @interface IState
- */
 declare interface IState {
     app: IApp;
     user: IUser;
@@ -6354,6 +6474,7 @@ declare interface IState {
         };
         mods: IModTable;
         downloads: IStateDownloads;
+        collections: ICollectionsPersistentState;
         categories: {
             [gameId: string]: ICategoryDictionary;
         };
@@ -7402,7 +7523,7 @@ declare enum ModFileCategory {
  * @param {INameOptions} [options]
  * @returns {string}
  */
-declare function modName(mod: IMod, options?: INameOptions): string;
+declare function modName(mod: Pick<IMod, "attributes" | "installationPath">, options?: INameOptions): string;
 
 declare const modPathsForGame: ((state: IState, gameId: string) => {
     [typeId: string]: string;
@@ -7897,7 +8018,7 @@ declare function renderBBCode(input: string, context?: unknown): React_2.ReactCh
  */
 declare function renderError(err: string | Error | any, options?: IErrorOptions): IErrorRendered;
 
-declare function renderModReference(ref?: IModReference, mod?: IMod, options?: IRenderOptions): string;
+declare function renderModReference(ref?: IModReference, mod?: Pick<IMod, "attributes" | "installationPath">, options?: IRenderOptions): string;
 
 declare interface ReportableError {
     message: string;
@@ -7944,6 +8065,21 @@ declare function resolveCategoryPath(category: string | number, state: IState): 
 declare type Revertability = "yes" | "never" | "invalid";
 
 declare function rmdirAsync(dirPath: string): Promise_2<void>;
+
+/**
+ * The install spec (installer choices / file list / patches) a collection rule asks
+ * for. This is the single place that reads a rule's install-spec fields, so the
+ * legacy-location fallback for `patches` lives only here.
+ */
+declare function ruleInstallSpec(rule: IModRule): IModInstallSpec;
+
+/**
+ * The install-ordering phase a rule belongs to. `phase` is a first-class IModRule
+ * field, but older rules stored it under `extra.phase`; this is the single place that
+ * bridges the two locations (mirroring ruleInstallSpec for patches), so callers never
+ * have to know about the legacy location. Defaults to phase 0.
+ */
+declare function rulePhase(rule: IModRule | undefined): number;
 
 /**
  * run a function as an elevated process (windows only!).
@@ -8053,6 +8189,8 @@ declare namespace selectors {
         getCollectionModByReference,
         getCollectionModsByStatus,
         getCollectionRequiredMods,
+        getFailedRequiredMods,
+        getFailedOptionalMods,
         getCollectionOptionalMods,
         getCollectionModsByPhase,
         getCollectionModsForPhase,
@@ -8920,14 +9058,7 @@ declare function testModReference(mod: IMod | IModLookupInfo, reference: IModRef
     modId: string;
 }, fuzzyVersion?: boolean): boolean;
 
-declare function testRefByIdentifiers(identifiers: {
-    gameId: string;
-    modId?: number;
-    fileId?: number;
-    fileNames?: string[];
-    fileIds?: string[];
-    condition?: () => boolean;
-}, ref: IModReference): boolean;
+declare function testRefByIdentifiers(identifiers: IReferenceIdentifiers, ref: IModReference): boolean;
 
 declare type TestSupported = (files: string[], gameId: string, archivePath?: string, details?: ITestSupportedDetails) => PromiseLike<ISupportedResult>;
 
@@ -9049,10 +9180,16 @@ declare namespace types {
         IGameStored,
         IDeploymentManifest,
         IModLookupInfo,
+        IReferenceIdentifiers,
+        IChoiceType,
+        IFileListItem,
         IMod,
+        IModInstallSpec,
+        IModPatches,
         IModReference,
         IModRepoId,
         IModRule,
+        IModRuleExtra,
         IRemoveModOptions,
         IDeployOptions,
         InstallFunc,
@@ -9228,6 +9365,7 @@ declare namespace types {
         IOverlay,
         IOverlayOptions,
         IOverlaysState,
+        ICollectionsPersistentState,
         IState,
         IDiscoveryPhase,
         IDiscoveryState,
@@ -9323,6 +9461,7 @@ declare namespace util {
         findCommonRootDir,
         findDownloadByRef,
         findModByRef,
+        findRuleByRef,
         GameNotFound,
         instance_2 as GameStoreHelper,
         normalizeStoreQuery,
@@ -9382,6 +9521,8 @@ declare namespace util {
         renderModReference,
         resolveCategoryName,
         resolveCategoryPath,
+        ruleInstallSpec,
+        rulePhase,
         runElevated,
         runThreaded,
         sanitizeCSSId,
