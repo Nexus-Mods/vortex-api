@@ -8074,10 +8074,11 @@ declare function rmdirAsync(dirPath: string): Promise_2<void>;
 declare function ruleInstallSpec(rule: IModRule): IModInstallSpec;
 
 /**
- * The install-ordering phase a rule belongs to. `phase` is a first-class IModRule
- * field, but older rules stored it under `extra.phase`; this is the single place that
- * bridges the two locations (mirroring ruleInstallSpec for patches), so callers never
- * have to know about the legacy location. Defaults to phase 0.
+ * The install-ordering phase a rule belongs to. Optional (recommends) members always map to the
+ * dedicated OPTIONAL_PHASE regardless of their authored phase, so they run last as a group. For
+ * required rules, `phase` is a first-class IModRule field, but older rules stored it under
+ * `extra.phase`; this is the single place that bridges the two locations (mirroring ruleInstallSpec
+ * for patches), so callers never have to know about the legacy location. Defaults to phase 0.
  */
 declare function rulePhase(rule: IModRule | undefined): number;
 
