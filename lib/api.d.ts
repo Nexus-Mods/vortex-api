@@ -4720,13 +4720,16 @@ declare interface IHealthCheckEntry {
 
 declare interface IHealthCheckPersistentState {
     /**
-     * Map of mod nexusModId to array of hidden requirement IDs (from Nexus API)
-     * Uses requirement.id instead of requirement.modId to properly support external requirements
-     * Example: { 95885: ["req-id-1", "req-id-2", "req-id-3"] }
-     * This means mod 95885 has requirements with IDs "req-id-1", "req-id-2", and "req-id-3" hidden
+     * Mod-level hide store: requiring mod nexusModId -> hidden requirement ids.
+     * Persisted key kept as `hiddenRequirements` for backwards compat (selector is
+     * `hiddenModRequirements`).
      */
     hiddenRequirements: {
         [modId: number]: string[];
+    };
+    /** File-level hide store: source file UID -> hidden requirement definition ids. */
+    hiddenFileRequirements: {
+        [sourceFileUID: string]: string[];
     };
     /**
      * Map of mod nexusModId to array of requirement IDs that have received feedback
@@ -4737,17 +4740,17 @@ declare interface IHealthCheckPersistentState {
     };
     /** Whether mod requirements health check suggestions are enabled */
     modRequirementsEnabled: boolean;
+    /** Whether file-level requirements health check suggestions are enabled */
+    fileRequirementsEnabled: boolean;
 }
 
-declare interface IHealthCheckResult {
+declare interface IHealthCheckResult<TMetadata = unknown> {
     checkId: string;
     status: "passed" | "failed" | "warning" | "error";
     severity: HealthCheckSeverity;
     message: string;
     details?: string;
-    metadata?: {
-        [key: string]: any;
-    };
+    metadata?: TMetadata;
     executionTime: number;
     timestamp: Date;
     fixAvailable?: boolean;
@@ -5318,6 +5321,10 @@ declare interface IModFileInfo {
     isPrimary: boolean;
     /** Thumbnail URL if available */
     thumbnailUrl?: string;
+    /** Mod-level detail, denormalized onto each file (like thumbnailUrl): adult-content flag. */
+    adultContent?: boolean;
+    /** Mod-level detail, denormalized onto each file (like thumbnailUrl): mod summary. */
+    modSummary?: string;
 }
 
 /**
@@ -6983,7 +6990,9 @@ declare interface ITool {
      *  - Preferably the logo should *not* contain the game name because Vortex will display
      *    the name as text near the logo. This way the name can be localised.
      *  - Background should be transparent. The logo will be resized preserving aspect
-     *    ratio, the canvas has a 3:4 (portrait) ratio.
+     *    ratio, the canvas has a 2:3 (portrait) ratio (400x600). This image also serves
+     *    as the offline fallback for the game tile on the Games page (which otherwise
+     *    uses the Nexus tile.jpg), so authoring it at 2:3 avoids an awkward crop.
      *
      * @type {string}
      */
