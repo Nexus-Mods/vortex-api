@@ -103,6 +103,8 @@ declare type ActionFunc = (instanceId: string | string[]) => IActionDefinition[]
 
 declare namespace actions {
     export {
+        clearPendingPluginSort,
+        setPendingPluginSort,
         setNextProfile,
         setStateVersion,
         setApplicationVersion,
@@ -592,6 +594,14 @@ declare const clearModRules: reduxAct.ComplexActionCreator2<string, string, {
 }, {}>;
 
 declare const clearOAuthCredentials: reduxAct.ComplexActionCreator1<unknown, any, {}>;
+
+/**
+ * Clears every pending plugin-sort marker for a profile; a single successful sort orders all of the
+ * profile's plugins, so it satisfies all collections queued for that profile at once.
+ */
+declare const clearPendingPluginSort: ComplexActionCreator1<string, {
+profileId: string;
+}, {}>;
 
 declare type ClearTimeoutFunc<Timeout> = (timeout: Timeout) => void;
 
@@ -6520,6 +6530,7 @@ declare interface IStatePaths {
 
 declare interface IStateTransactions {
     transfer: {};
+    pendingPluginSort: Record<string, Record<string, number>>;
 }
 
 declare interface IStateVerifier {
@@ -8633,6 +8644,20 @@ secondary: boolean;
  * @returns {T}
  */
 declare function setOrNop<T>(state: T, path: string[], value: any): T;
+
+/**
+ * Durable "this profile still needs its plugins sorted/enabled" marker, keyed by the profile a
+ * collection was installed against (load order and plugin-enable state are per-profile). Set when a
+ * collection install begins and cleared only once a plugin sort actually succeeds, so an install
+ * interrupted by a crash/quit is recovered on the next activation of the profile (deploy then sort).
+ * Lives in the cross-extension transactions slice because it is written by the collections install
+ * flow but read/cleared by gamebryo plugin management. The value is the epoch-ms time it was queued.
+ */
+declare const setPendingPluginSort: ComplexActionCreator3<string, string, number, {
+profileId: string;
+collectionId: string;
+time: number;
+}, {}>;
 
 declare const setPickerLayout: ComplexActionCreator1<"list" | "small" | "large", {
 layout: "list" | "small" | "large";
