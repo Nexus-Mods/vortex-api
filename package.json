@@ -44,7 +44,7 @@
     "@types/react-dom": "16.9.25",
     "@types/redux": "3.6.0",
     "date-fns": "2.30.0",
-    "electron": "42.3.3",
+    "electron": "43.0.0",
     "i18next": "19.9.2",
     "modmeta-db": "0.9.3",
     "node-7z": "0.8.1",
