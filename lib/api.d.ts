@@ -637,6 +637,37 @@ declare const collapseGroup: reduxAct.ComplexActionCreator3<string, string, bool
 }, {}>;
 
 /**
+ * Shared outcome + count properties for the three terminal collection-install
+ * events (completed / failed / cancelled). Sourced from the install session SSOT
+ * so the outcomes reconcile: started == completed + failed + cancelled.
+ */
+declare interface CollectionInstallOutcomeProps {
+    collection_id: string;
+    revision_id: string;
+    game_id: number;
+    /** Total required members in the collection. */
+    required_total: number;
+    /** Members (required + optional) that reached "installed". */
+    installed: number;
+    /** Members that ended in "failed". */
+    failed: number;
+    /** Members skipped/ignored (unselected optionals, user-ignored). */
+    ignored: number;
+    /** Total optional (recommended) members. */
+    optional: number;
+    /** Elapsed time for the current install segment (resets on resume) in milliseconds. */
+    duration_ms: number;
+    /** Elapsed time from the first start across all pause/resume segments, in milliseconds. */
+    total_duration_ms: number;
+    /** Times the install was paused, accumulated across restarts. */
+    pause_count: number;
+    /** Times the install was resumed, accumulated across restarts. */
+    resume_count: number;
+    /** Whether the install was resumed at least once. */
+    was_resumed: boolean;
+}
+
+/**
  * Status of an individual mod within a collection installation.
  *
  * The live states are picked explicitly from a mod's ModState (the `keyof Pick<...>`):
@@ -735,56 +766,53 @@ declare class CollectionsDraftUploadedEvent implements MixpanelEvent {
 }
 
 /**
- * Event sent when a collection installation is cancelled.
- * @param collection_id ID of the collection
- * @param revision_id ID of the revision
- * @param game_id ID of the game
+ * Event sent when a collection installation is cancelled (user abandon, removal, free-user cancel).
  */
 declare class CollectionsInstallationCancelledEvent implements MixpanelEvent {
     readonly eventName = "collections_installation_cancelled";
     readonly properties: Record<string, any>;
-    constructor(collection_id: string, revision_id: string, game_id: number);
+    constructor(props: CollectionInstallOutcomeProps);
 }
 
 /**
- * Event sent when a collection installation is completed.
- * @param collection_id ID of the collection
- * @param revision_id ID of the revision
- * @param game_id ID of the game
- * @param mod_count Number of mods in the collection
- * @param duration_ms Duration in milliseconds
+ * Event sent when a collection installation completes with every required mod installed.
  */
 declare class CollectionsInstallationCompletedEvent implements MixpanelEvent {
     readonly eventName = "collections_installation_completed";
     readonly properties: Record<string, any>;
-    constructor(collection_id: string, revision_id: string, game_id: number, mod_count: number, duration_ms: number);
+    constructor(props: CollectionInstallOutcomeProps);
 }
 
 /**
- * Event sent when a collection installation fails.
- * @param collection_id ID of the collection
- * @param revision_id ID of the revision
- * @param game_id ID of the game
- * @param error_code Error code
- * @param error_message Error message
+ * Event sent when a collection installation finishes in a failed state.
+ *
+ * `failure_stage` distinguishes the two failure modes:
+ *   - "member_install": one or more required members failed to install. There is no
+ *     single error (failures happen per-member in InstallManager and can be many); the
+ *     `failed` count reports how many, and the per-member causes are on the individual
+ *     mods_installation_failed events (joinable via collection_id).
+ *   - "postprocessing": applying the collection's mod rules threw a single error, which
+ *     is classified into `error_code`.
  */
 declare class CollectionsInstallationFailedEvent implements MixpanelEvent {
     readonly eventName = "collections_installation_failed";
     readonly properties: Record<string, any>;
-    constructor(collection_id: string, revision_id: string, game_id: number, error_code: string, error_message: string);
+    constructor(props: CollectionInstallOutcomeProps & {
+        failure_stage: "member_install" | "postprocessing";
+        error_code?: string;
+    });
 }
 
-/** *
- * Event sent when a collection installation is started.
- * @param collection_id ID of the collection
- * @param revision_id ID of the revision
- * @param game_id ID of the game
- * @param mod_count Number of mods in the collection
+/**
+ * Event sent when a collection installation is started (genuine first start). Carries the full
+ * count snapshot (required/installed/failed/ignored/optional) + durations, the same shape as the
+ * terminal events, so start and end reconcile against the same fields. `mod_count` equals
+ * `required_total`.
  */
 declare class CollectionsInstallationStartedEvent implements MixpanelEvent {
     readonly eventName = "collections_installation_started";
     readonly properties: Record<string, any>;
-    constructor(collection_id: string, revision_id: string, game_id: number, mod_count: number);
+    constructor(props: CollectionInstallOutcomeProps);
 }
 
 /**
@@ -3053,6 +3081,12 @@ declare interface IDownload {
      * whether the download server supports resuming downloads
      */
     pausable?: boolean;
+    /**
+     * number of times this download has been resumed after a pause/interruption.
+     * Persisted, so it accumulates across app restarts (free users pause/resume the
+     * same download over multiple days). Surfaced on download analytics as pause_count.
+     */
+    pauseCount?: number;
 }
 
 declare interface IDownloadFailCause {
@@ -9465,6 +9499,7 @@ declare namespace util {
         getText,
         Normalize,
         ISteamEntry,
+        CollectionInstallOutcomeProps,
         Archive,
         ArgumentInvalid,
         batchDispatch,
