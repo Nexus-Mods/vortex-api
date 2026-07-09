@@ -5406,6 +5406,7 @@ declare interface IModInfo_3 {
          * install attribute extractor. Consumed by Mixpanel mod download analytics.
          */
         parentCollectionId?: string;
+        fileInfo?: IFileInfo;
         [key: string]: any;
     };
     referenceTag?: string;
