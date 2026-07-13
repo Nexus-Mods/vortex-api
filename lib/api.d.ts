@@ -6219,6 +6219,7 @@ declare interface IRunOptions {
     detach?: boolean;
     expectSuccess?: boolean;
     onSpawned?: (pid?: number) => void;
+    onExit?: (code: number | null) => void;
 }
 
 /**
