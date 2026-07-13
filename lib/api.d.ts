@@ -3167,6 +3167,8 @@ declare interface IEnableOptions {
     installed?: boolean;
     allowAutoDeploy?: boolean;
     willBeReplaced?: boolean;
+    reason?: ModChangeReason;
+    skipStateChangeEvent?: boolean;
 }
 
 declare interface IErrorOptions {
@@ -6036,6 +6038,7 @@ declare interface IProfile {
 declare interface IProfileMod {
     enabled: boolean;
     enabledTime: number;
+    disabledTime?: number;
 }
 
 declare interface IProgress {
@@ -6173,6 +6176,7 @@ declare interface IRemoveFileOptions {
 
 declare interface IRemoveModOptions {
     silent?: boolean;
+    reason?: ModChangeReason;
     willBeReplaced?: boolean;
     incomplete?: boolean;
     ignoreInstalling?: boolean;
@@ -7555,6 +7559,15 @@ export declare class Modal extends React_2.PureComponent<typeof Modal_2.prototyp
     private getContainerImpl;
     private setMenuLayer;
 }
+
+/**
+ * Why a mod was enabled/disabled/removed, on the ModsStateChanged / ModsRemoved events.
+ * A small, closed vocabulary so the data team can slice programmatic churn (collection
+ * updates/uninstalls, variant/version/profile replacement, health-check remediation) from
+ * user-driven changes. Install-completion enables are not represented here: they are covered
+ * by the mods_installation_* events, so no enable is emitted for them.
+ */
+declare type ModChangeReason = "user_manual" | "variant_replace" | "version_update" | "profile_replace" | "collection_update" | "collection_uninstall" | "stop_managing_game" | "health_check";
 
 /**
  * Nexus mod file category IDs
@@ -9501,6 +9514,7 @@ declare namespace util {
         Normalize,
         ISteamEntry,
         CollectionInstallOutcomeProps,
+        ModChangeReason,
         Archive,
         ArgumentInvalid,
         batchDispatch,
