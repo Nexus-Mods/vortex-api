@@ -1,3 +1,27 @@
+> ## ⚠️ This repository is archived
+>
+> Vortex API type definitions now ship as the NPM package **[`@nexusmods/vortex-api`](https://www.npmjs.com/package/@nexusmods/vortex-api)**, published from the Vortex 2.2 release onward. This repository no longer receives updates.
+>
+> **If your extension works and you aren't changing it, you don't need to do anything.** A GitHub dependency like `"vortex-api": "Nexus-Mods/vortex-api"` will keep resolving against this archived repo.
+>
+> **If you're making changes and want the current API**, move to the NPM package. Replace the dependency in your `package.json`:
+>
+> ```json
+> // before
+> "vortex-api": "Nexus-Mods/vortex-api"
+>
+> // after
+> "@nexusmods/vortex-api": "^2.2.0"
+> ```
+>
+> Then update your imports to the scoped name:
+>
+> ```ts
+> import { types, util, selectors } from "@nexusmods/vortex-api";
+> ```
+>
+> If you'd rather not touch imports, you can alias instead with `"vortex-api": "npm:@nexusmods/vortex-api@^2.2.0"`. Either works, but the scoped name is preferred so your dependencies match your imports. See the [Migration Guide](docs/MIGRATION.md) for details.
+
 # Vortex API
 
 Type definitions for the [Vortex](https://www.nexusmods.com/about/vortex/) extension API.
