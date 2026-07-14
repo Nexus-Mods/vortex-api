@@ -1,5 +1,27 @@
 # Migration Guide
 
+> ## ⚠️ This repository is archived
+>
+> Vortex API type definitions now ship as the NPM package **[`@nexusmods/vortex-api`](https://www.npmjs.com/package/@nexusmods/vortex-api)**, published from the Vortex 2.2 release onward. This repository no longer receives updates.
+>
+> The references to `vortex-api` (unscoped) throughout this guide now refer to the scoped **`@nexusmods/vortex-api`** package. Replace the dependency in your `package.json`:
+>
+> ```json
+> // before
+> "vortex-api": "Nexus-Mods/vortex-api"
+>
+> // after
+> "@nexusmods/vortex-api": "^2.2.0"
+> ```
+>
+> Then update your imports to the scoped name:
+>
+> ```ts
+> import { types, util, selectors } from "@nexusmods/vortex-api";
+> ```
+>
+> If you'd rather not touch imports, you can alias instead with `"vortex-api": "npm:@nexusmods/vortex-api@^2.2.0"`. Either works, but the scoped name is preferred so your dependencies match your imports.
+
 This guide covers the changes extension developers need to make when migrating from Vortex 1.16 to Vortex 2.0. The Vortex API surface is largely unchanged, so most extensions will not require source code modifications - the migration is primarily about build tooling and dependency management.
 
 ## Overview of Changes
